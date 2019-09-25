@@ -1,0 +1,11 @@
+--2018-09-24 15:49:16--  https://m2.neatideas.com.au/sageintegration/product/
+Resolving m2.neatideas.com.au (m2.neatideas.com.au)... 13.236.249.168
+Connecting to m2.neatideas.com.au (m2.neatideas.com.au)|13.236.249.168|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+index.html                             [  <=>                                                         ]  20.17K  14.4 B/s               index.html                             [   <=>                                                        ]  32.21K  22.1 B/s               index.html                             [    <=>                                                       ]  82.53K  56.6 B/s    in 24m 53s 
+
+2018-09-24 16:26:03 (56.6 B/s) - ‘index.html’ saved [84506]
+
