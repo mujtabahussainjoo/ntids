@@ -1,0 +1,89 @@
+<?php
+namespace App\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use App\Controller\CommonController;
+
+/*
+//use Magento\Framework\App\Bootstrap;
+//include('../../app/bootstrap.php');
+$bootstrap = Bootstrap::create(BP, $_SERVER);
+$objectManager = $bootstrap->getObjectManager();
+$storeManager = $objectManager->get('Magento\Store\Model\StoreManagerInterface'); 
+//print_r($storeManager);
+echo $baseUrl= $storeManager->getStore()->getBaseUrl(); 
+*/
+class SettingController
+{
+    public function __construct(){
+    	
+    }
+	
+	
+	/*
+	 * Customer forgot password function
+	 * 
+	 * request param  string  $email
+	 * 
+	 * return json response
+	 * */
+	public function getUserSetting(CommonController $common){
+		
+		$userData['customer_id'] = (isset($_REQUEST['customer_id']) && $_REQUEST['customer_id'] != '') ? $_REQUEST['customer_id'] : '';
+		//$userData1['oauth_token'] = (isset($_REQUEST['oauth_token']) && $_REQUEST['oauth_token'] != '') ? $_REQUEST['oauth_token'] : '';
+		
+		$accessToken = (isset($_REQUEST['oauth_token']) && $_REQUEST['oauth_token'] != '') ? $_REQUEST['oauth_token'] : '';
+				
+		$customerDetails = $common->getCurl($userData, $common->api_url().'customers/me/','GET',$accessToken);
+		$json = '{ "success" : "1", "data" : ['.json_encode($customerDetails).'], "message" : "valid data."}';
+		
+		return $this->SendResponse ( $json );
+	}
+	
+	public function sort_products(CommonController $common){
+		//$userData['keywords'] = (isset($_REQUEST['keywords']) && $_REQUEST['keywords'] != '') ? $_REQUEST['keywords'] : '';
+		//$userData['group_id'] = (isset($_REQUEST['group_id']) && $_REQUEST['group_id'] != '') ? $_REQUEST['group_id'] : '';
+		$sort_by = (isset($_REQUEST['sort_by']) && $_REQUEST['sort_by'] != '') ? $_REQUEST['sort_by'] : '';
+		//$userData['type'] = (isset($_REQUEST['type']) && $_REQUEST['type'] != '') ? $_REQUEST['type'] : '';
+		$accessToken = (isset($_REQUEST['oauth_token']) && $_REQUEST['oauth_token'] != '') ? $_REQUEST['oauth_token'] : '';
+		$userData = array();
+		$adminAccessToken = $common->admin_token();
+		//$accessToken = $userData['oauth_token'];
+		if($sort_by != ''){
+			//$searchCriteria = '?searchCriteria[page_size]=500&searchCriteria[sortOrders][0][field]=id&searchCriteria[sortOrders][0][direction]=DESC';
+			$searchCriteria = '?searchCriteria[sortOrders][0][field]=name&searchCriteria[sortOrders][0][direction]=DESC';
+			
+			//searchCriteria[page_size]=50&searchCriteria[filter_groups][0][filters][0][field]=price&searchCriteria[filter_groups][0][filters][0][value]=50&searchCriteria[filter_groups][0][filters][0][condition_type]=eq&
+			
+		} else {
+			$searchCriteria = '?searchCriteria';
+		}
+		echo $searchCriteria;
+		
+		//$test = '?searchCriteria[page_size]=50&searchCriteria[filter_groups][0][filters][0][field]=price&searchCriteria[filter_groups][0][filters][0][value]=50&searchCriteria[filter_groups][0][filters][0][condition_type]=eq';
+		//$searchCriteria = '&searchCriteria[sortOrders][0][field]=name&searchCriteria[sortOrders][0][direction]=DESC';
+		//echo $common->api_url().'products'.$test.$searchCriteria.'</br>'; 
+		
+		$productDetails = $common->getCurl($userData, $common->api_url().'products'.$searchCriteria,'GET',$adminAccessToken);
+		print_r($productDetails); exit;
+		$json = '{ "success" : "1", "data" : ['.json_encode($productDetails).'], "message" : "valid data."}';
+		
+		return $this->SendResponse ( $json );
+	}
+	
+	/*
+	 * return response
+	 * 
+	 * request param string  $body
+	 * 
+	 * return json response
+	 * */
+    public function SendResponse($body = '', $content_type = 'text/html') {
+        // header ( 'HTTP/1.1' );
+        // header ( 'Content-type: ' . $content_type );
+        // echo $body;
+        // exit ();
+        return new Response(
+            $body
+        );
+    }
+}

@@ -1,0 +1,159 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+login:
+    path: /user/login
+    controller: App\Controller\UserController::userLogin
+
+forgotpassword:
+    path: /user/forgot_password
+    controller: App\Controller\UserController::userForgotPassword
+
+changepassword:
+    path: /user/change_password
+    controller: App\Controller\UserController::userChangePassword
+    
+logout:
+    path: /user/logout
+    controller: App\Controller\UserController::logout
+
+#get_menu_options:
+#    path: /get_menu_options
+#    controller: App\Controller\MenuController::get_menu_options
+
+get_user_billing_information:
+    path: /get_user_billing_information
+    controller: App\Controller\CustomerController::getBillingInformation
+
+update_user_billing_information:
+    path: /update_user_billing_information
+    controller: App\Controller\CustomerController::updateBillingInformation
+    
+get_home_content:
+    path: /get_home_content
+    controller: App\Controller\CustomerController::getHomeContent
+
+get_general_info:
+    path: /get_general_info
+    controller: App\Controller\CustomerController::getGeneralInformation
+
+apply_promotion_code:
+    path: /apply_promotion_code
+    controller: App\Controller\CustomerController::applyPromoCode
+
+get_state_list:
+    path: /get_state_list
+    controller: App\Controller\CustomerController::getStateList
+
+get_cart_counter:
+    path: /get_cart_counter
+    controller: App\Controller\CustomerController::getCartCounter
+
+add_device_arn_id:
+    path: /user/add_device_arn_id
+    controller: App\Controller\UserController::deviceARNId
+
+get_promotion_product_details:
+    path: /get_promotion_product_details
+    controller: App\Controller\ProductController::promotionProducts
+
+getUserSetting:
+    path: /get_user_settings
+    controller: App\Controller\SettingController::getUserSetting
+    
+save_user_settings:
+    path: /save_user_settings
+    controller: App\Controller\SettingController::saveUserSetting
+
+sort_products:
+    path: /sort_products
+    controller: App\Controller\SettingController::sort_products    
+
+getFilterOptions:
+    path: /get_filter_options
+    controller: App\Controller\SettingController::getFilterOptions  
+
+getMenuOptions:
+    path: /get_menu_options
+    controller: App\Controller\AppmenuController::getMenuOptions
+
+getCatories:
+    path: /get_cinemas_categories
+    controller: App\Controller\CategoryController::getCinemasCategories
+    
+getSubCatories:
+    path: /get_sub_categories
+    controller: App\Controller\CategoryController::getSubCategories
+
+getCategoryDetailsWithProducts:
+    path: /get_category_details_with_products
+    controller: App\Controller\CategoryController::getCategoryDetailsWithProducts
+
+addToCart:
+    path: /get_add_to_cart
+    controller: App\Controller\CartController::addToCart
+
+checkQuantity:
+    path: /cart/checkQuantity
+    controller: App\Controller\CartController::checkQuantity
+
+StockUpdate:
+    path: /cart/stockupdate
+    controller: App\Controller\CartController::StockUpdate
+
+add_product_favorites:
+    path: /add_product_favorites
+    controller: App\Controller\ProductController::addRemoveFavourite
+
+get_user_favorite_products:
+    path: /get_user_favorite_products
+    controller: App\Controller\ProductController::get_user_favorite_products
+
+userCartDetails:
+    path: /get_user_cart_details
+    controller: App\Controller\CartController::userCartDetails
+
+releaseCartProduct:
+    path: /release_cart_product
+    controller: App\Controller\CartController::releaseCartProduct
+
+updateCartQuantity:
+    path: /update_cart_quantity
+    controller: App\Controller\CartController::updateCartQuantity
+
+#getUpsellItems:
+#    path: /get_upsell_items
+#    controller: App\Controller\CartController::getUpsellItems
+
+getCMSContent:
+    path: /get_cms_content
+    controller: App\Controller\AppmenuController::getCMSContent
+    
+confirm_purchase_details:
+    path: /confirm_purchase_details
+    controller: App\Controller\PurchaseController::getConfirmPurchaseDetails
+
+getConfirmPurchase:
+    path: /confirm_purchase
+    controller: App\Controller\PurchaseController::getConfirmPurchase
+
+getGenerateTokenCustom:
+    path: /get_generate_token
+    controller: App\Controller\PurchaseController::getGenerateTokenCustom
+
+getUserPurchase:
+    path: /get_user_purchases
+    controller: App\Controller\OrderController::getUserPurchase
+    
+getUserPurchaseDetails:
+    path: /get_user_purchase_details
+    controller: App\Controller\OrderController::getUserPurchaseDetails
+    
+getReorder:
+    path: /reorder
+    controller: App\Controller\SettingController::getReorder
+
+getLogo:
+    path: /getlogo
+    controller: App\Controller\SettingController::getLogo
