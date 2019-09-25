@@ -1,0 +1,40 @@
+& when (@media-common = true) {
+    .hdmx__schedule-status {
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+
+        &.status-close {
+            background: rgba(255, 85, 1, 0.08);
+            color: #E63737;
+        }
+        &.status-open {
+            background: rgba(1, 255, 196, 0.08);
+            color: #3EBB00;
+        }
+    }
+
+    .hdmx__schedule {
+        .lib-clearfix();
+        margin-bottom: 2rem;
+
+        table {
+            width: auto;
+            tr {
+                td.day {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .hdmx__schedule-working, .hdmx__schedule-upcoming {
+            float: left;
+            width: 45%;
+            margin-right: 1rem;
+        }
+
+        b {
+            font-weight: 600;
+        }
+    }
+}

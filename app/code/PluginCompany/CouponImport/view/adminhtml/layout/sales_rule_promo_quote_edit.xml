@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+* Created by:  Milan Simek
+* Company:     Plugin Company
+*
+* LICENSE: http://plugin.company/docs/magento-extensions/magento-extension-license-agreement
+*
+* YOU WILL ALSO FIND A PDF COPY OF THE LICENSE IN THE DOWNLOADED ZIP FILE
+*
+* FOR QUESTIONS AND SUPPORT
+* PLEASE DON'T HESITATE TO CONTACT US AT:
+*
+* SUPPORT@PLUGIN.COMPANY
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="PluginCompany_CouponImport::css/fieldset.css"/>
+    </head>
+    <body>
+        <referenceBlock name="promo_sales_rule_edit_tab_coupons" template="PluginCompany_CouponImport::tab/coupons.phtml">
+            <block class="PluginCompany\CouponImport\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\Import" name="plugincompany_import_coupons" />
+        </referenceBlock>
+        <referenceBlock name="promo_quote_edit_tab_coupons" template="PluginCompany_CouponImport::tab/coupons.phtml">
+            <block class="PluginCompany\CouponImport\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\Import" name="plugincompany_import_coupons_mage2012" before="-" />
+        </referenceBlock>
+    </body>
+    <referenceBlock name="head.components">
+        <block class="Magento\Framework\View\Element\Js\Components"
+               name="plugincompany_couponimport_js"
+               template="PluginCompany_CouponImport::js/import.phtml"
+        />
+    </referenceBlock>
+</page>

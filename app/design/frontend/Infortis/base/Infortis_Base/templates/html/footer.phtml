@@ -1,0 +1,182 @@
+<?php
+/**
+ * @var \Infortis\Base\Block\Html\Header $block
+ */
+?>
+<?php
+    $theme = $block->getHelperTheme();
+
+    // //Get HTML of header blocks
+    // $storeSwitcherHtml = $block->getChildHtml('store_switcher');
+    // $copyrightHtml = $block->getChildHtml('copyright');
+    // $footerLinksHtml = $block->getChildHtml('footer_links');
+    // $cmsFooterLinksContainerHtml = $block->getChildHtml('cms_footer_links_container');
+    // $newsletterHtml = $block->getChildHtml('subscribe');
+    // $magentoDefaultFooterContainerHtml = $block->getChildHtml('footer');
+?>
+<div class="footer-container page-footer">
+<div class="footer-container2">
+<div class="footer-container3">
+
+    <?php
+        $b = array();
+        if ($theme->getCfg('footer/footer_links') && $tmp = $block->getChildHtml('footer_links'))
+        {
+            //$b['top']['footer_links'] = $tmp;
+        }
+        //Custom footer links - override default Magento footer links
+        if ($tmp = $block->getChildHtml('block_footer_links'))
+        {
+            $b['top']['block_footer_links'] = $tmp;
+        }
+        //Secondary custom footer links
+        if ($tmp = $block->getChildHtml('block_footer_links2'))
+        {
+            $b['top']['block_footer_links2'] = $tmp;
+        }
+    ?>
+
+    <?php if (!empty($b['top'])): ?>
+
+    <div class="footer-top-container section-container">
+        <div class="footer-top footer container">
+            <div class="inner-container links-wrapper-separators">
+
+                <?php if (!empty($b['top']['footer_links'])): ?>
+                    <div class="item item-left"><?php echo $b['top']['footer_links']; ?></div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['top']['block_footer_links'])): ?>
+                    <div class="item item-left"><?php echo $b['top']['block_footer_links']; ?></div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['top']['block_footer_links2'])): ?>
+                    <div class="item item-right"><?php echo $b['top']['block_footer_links2']; ?></div>
+                <?php endif; ?>
+
+            </div> <!-- end: inner-container -->
+        </div> <!-- end: footer-top -->
+    </div>
+
+    <?php endif; ?>
+
+    <?php
+        $b['primary'] = $theme->getFormattedBlocks($block, $theme->getCfg('footer/links_column_auto_width'));
+
+        if ($tmp = $block->getChildHtml('block_footer_primary_bottom_left'))
+        {
+            $b['primary_bottom']['left'] = $tmp;
+        }
+        if ($tmp = $block->getChildHtml('block_footer_primary_bottom_right'))
+        {
+            $b['primary_bottom']['right'] = $tmp;
+        }
+        if ($theme->getCfg('footer/newsletter') && $tmp = $block->getChildHtml('subscribe'))
+        {
+            $b['primary_bottom']['newsletter'] = $tmp;
+        }
+
+        if ($tmp = $block->getChildHtml('footer'))
+        {
+         $b['primary_top']['magentoDefaultFooterContainerHtml'] = $tmp;
+        }
+    ?>
+    
+    <?php if (!empty($b['primary']) || !empty($b['primary_bottom']) || !empty($b['primary_top'])): ?>
+    
+    <div class="footer-primary-container section-container<?php //if($classString['primary-container']) echo " " . $classString['primary-container']; ?>">
+        <div class="footer-primary footer container">
+            <div class="inner-container">
+
+                <?php if (!empty($b['primary_top'])): ?>
+                <div class="footer-primary-top">
+                    <div class="<?php if(!empty($b['primary'])) echo 'footer-primary-top-spacing '; ?>inner">
+                        <?php echo $b['primary_top']['magentoDefaultFooterContainerHtml']; ?>
+                    </div> 
+                </div> <!-- end: footer-primary-top -->
+                <?php endif; ?>
+
+                <?php if (!empty($b['primary'])): ?>
+                    <div class="clearfix">
+                        <?php echo $b['primary']; ?>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($b['primary_bottom'])): ?>
+                <div class="footer-primary-bottom">
+                    <div class="<?php if(!empty($b['primary'])) echo 'footer-primary-bottom-spacing '; ?>inner">
+                    
+                        <?php if (!empty($b['primary_bottom']['left'])): ?>
+                            <div class="item item-left">
+                                <?php echo $b['primary_bottom']['left']; ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if (!empty($b['primary_bottom']['right'])): ?>
+                            <div class="item item-right">
+                                <?php echo $b['primary_bottom']['right']; ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if (!empty($b['primary_bottom']['newsletter'])): ?>
+                            <div class="item item-right newsletter-wrapper">
+                                <?php echo $b['primary_bottom']['newsletter']; ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                    </div> 
+                </div> <!-- end: footer-primary-bottom -->
+                <?php endif; ?>
+            
+            </div> <!-- end: inner-container -->
+        </div> <!-- end: footer-primary -->
+    </div>
+    
+    <?php endif; ?>
+
+    <?php
+        if ($tmp = $block->getChildHtml('copyright'))
+        {
+            $b['bottom']['copyright'] = $tmp;
+        }
+        if ($tmp = $block->getChildHtml('block_footer_payment'))
+        {
+            $b['bottom']['block_footer_payment'] = $tmp;
+        }
+        if ($theme->getCfg('footer/store_switcher') && $tmp = $block->getChildHtml('store_switcher'))
+        {
+            $b['bottom']['store_switcher'] = $tmp;
+        }
+    ?>
+
+    <?php if (!empty($b['bottom'])): ?>
+
+    <div class="footer-bottom-container section-container">
+        <div class="footer-bottom footer container">
+            <div class="inner-container">
+                
+                <?php if (!empty($b['bottom']['copyright'])): ?>
+                    <div class="item item-left">
+                        <div class="footer-copyright"><?php echo $b['bottom']['copyright']; ?></div>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['bottom']['block_footer_payment'])): ?>
+                    <div class="item item-right"><?php echo $b['bottom']['block_footer_payment']; ?></div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['bottom']['store_switcher'])): ?>
+                    <div class="item item-right"><?php echo $b['bottom']['store_switcher']; ?></div>
+                <?php endif; ?>
+
+            </div> <!-- end: inner-container -->
+        </div> <!-- end: footer-bottom -->
+    </div>
+
+    <?php endif; ?>
+    
+    <a id="scroll-to-top" class="ic ic-up" href="#top"></a>
+
+</div> <!-- end: footer-container3 -->
+</div> <!-- end: footer-container2 -->
+</div> <!-- end: footer-container -->

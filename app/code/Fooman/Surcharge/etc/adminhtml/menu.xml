@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Fooman_Surcharge::surcharge" title="Surcharges" module="Fooman_Surcharge" sortOrder="70" parent="Magento_Sales::sales_operation" action="surcharge/manage" resource="Fooman_Surcharge::surcharge"/>
+    </menu>
+</config>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author     Kristof Ringleff
+* @package    Fooman_SurchargePayment
+* @copyright  Copyright (c) 2016 Fooman Limited (http://www.fooman.co.nz)
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_cart_collect_items_and_amounts">
+        <observer name="fooman_surchargepayment_paypalcart" instance="Fooman\Surcharge\Observer\PaypalCart" />
+    </event>
+</config>

@@ -1,0 +1,33 @@
+<!--@subject New log information about {{var data.username}} update @-->
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+<tr>
+    <td align="center" valign="top" style="padding:20px 0 20px 0">
+        <!-- [ header starts here] -->
+        <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650" style="border:1px solid #E0E0E0;">
+            <tr>
+                <td bgcolor="#EAEAEA" align="center" style="background:#EAEAEA; text-align:center;">
+                    <p align="center" style="font-size:12px; margin:0;">
+                        <strong>New successful login notice</strong>
+                    </p>
+                </td>
+            </tr>
+            <!-- [ middle starts here] -->
+            <tr>
+                <td valign="top">
+                    <p style="font-size:12px; line-height:16px; margin:0 0 10px 0;">
+                        We noticed a new successful login into the backend on <strong>{{var data.date_time}}</strong>. Details:<br>
+                        Username: <strong>{{var data.username}}</strong><br/>
+                        Fullname: <strong>{{var data.fullname}}</strong><br/>
+                        Ip: <strong>{{var data.ip}}</strong><br/>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</div>
+</body>

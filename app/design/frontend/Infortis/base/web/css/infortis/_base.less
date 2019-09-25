@@ -1,0 +1,189 @@
+//
+//  Basic styles
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+//
+//  Additional reset
+//  _____________________________________________
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+//  Page Heading
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+
+//
+//  Page section containers
+//  _____________________________________________
+
+body,
+.page-wrapper,
+.header-container,
+.header-container2,
+.header-container3,
+.main-container,
+.footer-container,
+.footer-container2,
+.footer-container3 {
+    background-color: transparent;
+    background-repeat: repeat;
+    background-position: center top;
+    background-attachment: scroll;
+}
+
+
+
+//
+//  Container for page content
+//  _____________________________________________
+
+//  Max width of the page is applied to elements with this class
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+//  Inner container.
+//  Additional container, horizontal padding is applied to elements with this class
+
+.inner-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    *zoom: 1; // Clear floats
+    clear: both;
+}
+
+//  Full width container
+
+.container.full-width {
+    width: 100%;
+    max-width: none;
+}
+
+//  Expanded container (without inner side padding)
+
+.container.no-side-padding > .inner-container
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
+//
+//  Vertically aligned grid
+//  _____________________________________________
+
+.v-grid-container {
+    display:table;
+    width:100%;
+}
+.v-grid {
+    float:none;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+
+
+//
+//  Clearfix
+//  _____________________________________________
+
+.inner-container {
+    &:extend(.abs-add-clearfix all);
+}
+
+//  Clearfix for selected classes for backward compatibility
+
+.clearfix,
+.clearer, // Deprecated
+.section-line,
+.section-title,
+.block-related-thumbnails .product,
+.items-grid,
+//.products-list li.item,
+.product-view .box-description {
+    &:extend(.abs-add-clearfix all);
+}
+
+
+
+//
+//  Blocks
+//  _____________________________________________
+
+//  Block title and section heading
+
+.sidebar .block .block-title,
+.itemslider .block-title,
+.product-slider .block-title,
+
+.block.related .block-title,
+.block.upsell .block-title,
+.block.crosssell .block-title,
+
+.section-title {
+    &:extend(.abs-sidebar-block-title all);
+}
+
+.block {
+    .block-title {
+        strong {
+            & + span,
+            & + div {
+                margin-left: 5px;
+                .rtl & {
+                    margin-left: 0;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Sidebar blocks
+//  ---------------------------------------------
+
+// Part of the original styles for widgets is located in: Magento_Theme/web/css/source/_module.less
+.sidebar {
+    .block,
+    .widget.block:not(:last-child),
+    .widget:not(:last-child) {
+        margin-bottom: @sidebar-block__margin-bottom; //@indent__xl //30px
+    }
+}
+
+
+
+} // end: media-common

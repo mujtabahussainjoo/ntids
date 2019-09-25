@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_GroupSwitcherPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <tab id="magepsycho" translate="label" sortOrder="200">
+            <label>MagePsycho</label>
+        </tab>
+        <section id="magepsycho_groupswitcherpro" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>magepsycho</tab>
+            <label>Group Selector Pro</label>
+            <resource>MagePsycho_GroupSwitcherPro::config</resource>
+
+            <group id="support" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Fieldset\Support</frontend_model>
+            </group>
+
+
+            <group id="general" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Version</label>
+                    <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Field\Version</frontend_model>
+                </field>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="license_header_start" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[&nbsp;]]></label>
+                    <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>
+                <field id="domain" translate="label" type="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Domain Name</label>
+                    <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Field\Domain</frontend_model>
+                </field>
+                <field id="domain_type" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Type</label>
+                    <source_model>MagePsycho\GroupSwitcherPro\Model\System\Config\Source\DomainType</source_model>
+                </field>
+                <field id="dev_license" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Key (Development)*</label>
+                    <validate>required-entry</validate>
+                    <tooltip><![CDATA[License Key is mandatory for the proper functioning of the module. <br /> Note: You need to enter the License Key as per 'License Type']]></tooltip>
+                    <depends>
+                        <field id="domain_type">2</field>
+                    </depends>
+                </field>
+                <field id="prod_license" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Key (Production)*</label>
+                    <validate>required-entry</validate>
+                    <tooltip><![CDATA[License Key is mandatory for the proper functioning of the module. <br /> Note: You need to enter the License Key as per 'License Type']]></tooltip>
+                    <depends>
+                        <field id="domain_type">1</field>
+                    </depends>
+                </field>
+                <field id="license_header_end" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[&nbsp;]]></label>
+                    <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>
+
+                <field id="debug" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Debug Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="group" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" >
+                <label>Group Settings</label>
+                <field id="customer_group_selection_type" type="select"  translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Group Selector Type</label>
+                    <source_model>MagePsycho\GroupSwitcherPro\Model\System\Config\Source\SelectorType</source_model>
+                    <tooltip><![CDATA[Customer Group Selector Types<br /><strong>Dropdown:</strong> The customer group is shown as dropdown.<br /><strong>Group Code:</strong> The customer has to enter the group code and will be assigned to the matched customer group.]]></tooltip>
+                </field>
+                <field id="selector_type_dropdown_heading" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong>Dropdown Settings</strong>]]></label>
+                    <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                    <depends>
+                        <field id="customer_group_selection_type">1</field>
+                    </depends>
+                </field>
+                <field id="allowed_customer_groups" type="multiselect" translate="label" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Groups Available For Selection</label>
+                    <source_model>MagePsycho\GroupSwitcherPro\Model\System\Config\Source\CustomerGroup</source_model>
+                    <tooltip><![CDATA[The selected customer group(s) will be shown as dropdown options.]]></tooltip>
+                    <depends>
+                        <field id="customer_group_selection_type">1</field>
+                    </depends>
+                </field>
+
+                <field id="selector_type_group_code_heading" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong>Group Code Settings</strong>]]></label>
+                    <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                    <depends>
+                        <field id="customer_group_selection_type">2</field>
+                    </depends>
+                </field>
+                <field id="group_codes" translate="label" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Group Codes</label>
+                    <frontend_model>MagePsycho\GroupSwitcherPro\Block\Adminhtml\System\Config\Form\Field\FieldArray\GroupCode</frontend_model>
+                    <backend_model>MagePsycho\GroupSwitcherPro\Model\System\Config\Backend\FieldArray\GroupCode</backend_model>
+                    <depends>
+                        <field id="customer_group_selection_type">2</field>
+                    </depends>
+                </field>
+                <field id="group_is_required" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Required Field?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip><![CDATA[<strong>Yes</strong>: Makes group field mandatory.<br /><strong>No</strong>: Makes group field optional. If field is left empty then customer will be assigned to default group (Stores > Configuration > Customer Configuration > Create New Account Options > Default Group).]]></tooltip>
+                    <depends>
+                         <field id="customer_group_selection_type">2</field>
+                    </depends>
+                </field>
+                <field id="group_code_error_message" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Error Message</label>
+                    <tooltip><![CDATA[This message will be displayed for invalid group code.]]></tooltip>
+                    <depends>
+                        <field id="customer_group_selection_type">2</field>
+                    </depends>
+                </field>
+                <field id="group_selection_editable" type="select" translate="label" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Is Editable?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip><![CDATA[If selected to 'Yes', the customer can edit the value from: My Account > Account Information.]]></tooltip>
+                </field>
+                <field id="group_selection_label" type="text" translate="label" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Frontend Label</label>
+                    <tooltip><![CDATA[Frontend label for customer group field.]]></tooltip>
+                </field>
+            </group>
+        </section>
+
+    </system>
+</config>

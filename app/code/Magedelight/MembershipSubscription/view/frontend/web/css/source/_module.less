@@ -1,0 +1,258 @@
+// /**
+//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+//
+//    Common
+//--------------------------------------
+._transition-3 {
+	-webkit-transition: all 0.3s ease-in-out 0s;
+  	-moz-transition: all 0.3s ease-in-out 0s;
+  	-o-transition: all 0.3s ease-in-out 0s;
+  	transition: all 0.3s ease-in-out 0s;
+}
+@name-btm-line: #909090;
+
+/*******PRODUCT GRID START*******/
+@product-box1: 1;
+@product-box2: 2;
+@product-box3: 3;
+@product-box4: 4;
+.mymaingutter(@totalboxcol, @totalboxwidth) {
+	@margincolumn: (@totalboxcol - 1);
+    @totalmargin: 100 - (@totalboxcol * @totalboxwidth);
+    @mymaingutter: @totalmargin / @margincolumn;
+}
+.margingutter(@boxcol, @boxcontainer, @totalwidth) {
+    @margingutter: percentage(((@totalwidth / @boxcol) - @boxcontainer) / @totalwidth);
+}
+._pro-grid (@column, @margin, @total-width) {
+  	.margingutter(@column, @margin, @total-width);
+  	width: @margingutter;
+  	.mymaingutter(@column, @margingutter);
+  	margin-left: @mymaingutter;
+  	margin-bottom: @mymaingutter;
+  	&:nth-child(@{column}n+1) {
+    	margin-left: 0;
+  	}
+}
+/*******PRODUCT GRID END*******/
+
+& when (@media-common = true) {
+	.column.main {
+    	.magedelight_membership_subscription {
+      		.products-grid {
+        		.product-items {
+          			margin: 0;
+          			.product-item {
+			            border: 1px solid @color-gray-light2;
+			            -webkit-box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+			            -moz-box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+			            box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+			            text-align: center;
+			            padding: 0;
+			            margin: 0;
+			            position: relative;
+			            overflow: hidden;
+			            .product-item-info {
+			              	width: 100%;
+			              	position: relative;
+			              	&:not(:hover) {
+			                	&:not(.active) {
+				                  	.product-item-inner {
+										&:extend(.abs-visually-hidden-reset all);
+										border:0;
+										box-shadow: none;
+										margin: 0;
+										padding: 0;
+										background: transparent;
+				                  	}
+			                	}
+			              	}
+			              	.product-item-name {
+				                background: @color-gray64;
+				                border-bottom: 1px solid @name-btm-line;
+				                padding: 10px 5px;
+				                margin: 0;
+			                	.lib-font-size(22px);
+			                	line-height: 27px;
+			                	min-height: 55px;
+			                	display: table;
+			                	width: 100%;
+			                	.product-item-link {
+				                  	color: @color-white;
+				                  	text-transform: uppercase;
+				                  	display: table-cell;
+				                  	vertical-align: middle;
+					                &:hover {
+					                	text-decoration: none;
+					                }
+			                	}
+			              	}              
+			              	.price-box-membership {
+				                background: @color-white-smoke;
+				                padding: 10px 5px;
+				                min-height: 62px;
+				                color: @color-gray40;
+				                margin: 0 0 5px 0;
+				                position: relative;
+				                .price-label {
+					                width: 100%;
+					                display: inline-block;
+					                font-style: italic;
+				                }
+				                .price {
+				                	.lib-font-size(28px);
+				                  	font-weight: @font-weight__bold;
+				                  	display: inline-block;
+				                  	width: 100%;
+				                  	padding: 13px 0 0 0;
+				                }
+				                .price-label + .price {
+				                  	padding: 0;
+				                }
+				                .featured {
+				              		background: url('@{baseDir}Magedelight_MembershipSubscription/images/featured-green.png') no-repeat 0 0;
+				              		width: 80px;
+				              		height: 65px;
+				              		position: absolute;
+				              		right: 5px;
+									top: -1px;
+				              	}
+			              	}
+			              	.short_description {
+				                text-align: left;
+				                padding: 0 20px;
+			                	ul {
+					                padding: 5px 0;
+					                list-style: none;
+				                    li {
+					                    position: relative;
+					                    padding: 0 0 0 14px;
+					                    margin: 3px 0;
+				                    	&:before {
+					                      	content: "";
+					                      	width: 6px;
+					                      	height: 6px;
+					                      	background: @color-black;
+					                      	position: absolute;
+					                      	left: 0;
+					                      	top: 7px;
+				                    	}
+				                	}
+			                	}
+			              	}
+			              	.product-item-details {
+			              		background: rgba(255, 255, 255, 0.8);
+				                position: absolute;
+				                opacity: 0;
+				                bottom: -50px;
+				                left: 0;
+				                z-index: 9;
+				                width: 100%;
+				                height: 0;
+				                ._transition-3;
+			              	}
+			            }
+			            .product-item-actions {
+			            	margin: 0;
+			            }
+			            &:hover {
+			              	-webkit-box-shadow: 0 0 12px rgba(58, 51, 46, 0.60);
+				            -moz-box-shadow: 0 0 12px rgba(58, 51, 46, 0.60);
+				            box-shadow: 0 0 12px rgba(58, 51, 46, 0.60);
+			              	.product-item-inner,
+			              	.product-item-info {
+				                &:extend(.abs-visually-hidden-reset all);
+				                border:0;
+				                box-shadow: none;
+				                margin: 0;
+				                padding: 0;
+				                background: transparent;
+			              	}
+			              	.product-item-details {
+				                opacity: 1;
+				                height: auto;
+				                bottom: 0;
+			              	}
+			            }
+          			}
+        		}
+      		}
+    	}
+  	}
+}
+
+//
+//    Desktop
+//--------------------------------------
+
+@media only screen and (min-width: 800px) {
+	.column.main {
+    	.magedelight_membership_subscription {
+      		.products-grid {
+        		.product-items {
+          			margin: 0;
+          			.product-item {
+            			._pro-grid(@product-box4,@indent__base,@layout__max-width);
+          			}
+        		}
+      		}
+    	}
+  	}
+}
+
+//
+//    Ipad
+//--------------------------------------
+
+@media only screen and (min-width: 500px) and (max-width: 799px) {
+	.column.main {
+    	.magedelight_membership_subscription {
+      		.products-grid {
+        		.product-items {
+          			.product-item {
+            			._pro-grid(@product-box3,@indent__base,@layout__max-width);
+          			}
+        		}
+      		}
+    	}
+  	}
+}
+
+//
+//    Mobile-x
+//--------------------------------------
+
+@media only screen and (min-width: 400px) and (max-width: 499px) {
+	.column.main {
+    	.magedelight_membership_subscription {
+      		.products-grid {
+        		.product-items {
+          			.product-item {
+            			._pro-grid(@product-box2,@indent__base,@layout__max-width);
+          			}
+        		}
+      		}
+    	}
+  	}
+}
+
+//
+//    Mobile-y
+//--------------------------------------
+
+@media only screen and (min-width: 320px) and (max-width: 399px) {
+	.column.main {
+    	.magedelight_membership_subscription {
+      		.products-grid {
+        		.product-items {
+          			.product-item {
+          				width: 100%;
+            			margin-bottom: 20px;
+          			}
+        		}
+      		}
+    	}
+  	}
+}

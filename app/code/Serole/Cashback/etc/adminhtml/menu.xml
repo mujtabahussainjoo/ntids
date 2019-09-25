@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+  <menu>
+    <add id="Serole_Cashback::parent" title="Cashback" module="Serole_Cashback" sortOrder="100" resource="Serole_Cashback::parent"/>
+		<add id="Serole_Cashback::carddetails" title="Cashback Card Details" module="Serole_Cashback" sortOrder="30" parent="Serole_Cashback::parent" action="cashback/carddetails" resource="Serole_Cashback::carddetails"/>
+		<add id="Serole_Cashback::customerorder" title="Cashback Customer Orders" module="Serole_Cashback" sortOrder="40" parent="Serole_Cashback::parent" action="cashback/customerorder" resource="Serole_Cashback::customerorder"/>
+		<add id="Serole_Cashback::usedpoints" title="Cashback Used Points" module="Serole_Cashback" sortOrder="50" parent="Serole_Cashback::parent" action="cashback/usedpoints" resource="Serole_Cashback::usedpoints"/>
+
+    </menu>
+</config>

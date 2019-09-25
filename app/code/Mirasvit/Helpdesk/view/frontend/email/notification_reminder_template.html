@@ -1,0 +1,28 @@
+<!--@subject {{var ticket.getEmailSubject('Ticket Reminder')}} @-->
+{{var preheader_text | raw}}
+
+{{template config_path="design/email/header_template"}}
+
+
+{{var hidden_separator|raw}}
+<p>
+Please, answer the following ticket:<br><br>
+{{var ticket.subject}}<br>
+------------------------------<br><br>
+
+Ticket ID: {{var ticket.code}}<br>
+Name: {{var customer.name}}<br>
+Email address: {{var customer.email}}<br>
+Store: {{var store.getFrontendName()}}<br>
+Department: {{var ticket.department}}<br>
+Staff (Owner): -- Unassigned --<br>
+Status: {{var ticket.status}}<br>
+Priority: {{var ticket.priority}}<br>
+Created: {{var ticket.getCreatedAtFormated()}}<br>
+</p>
+{{var ticket.getLastMessageHtmlText()|raw}}
+{{block class='Mirasvit\\Helpdesk\\Block\\Email\\History' area='frontend'
+    template='Mirasvit_Helpdesk::email/history.phtml' ticket=$ticket}}
+{{var ticket.getHiddenCodeHtml()|raw}}
+
+{{template config_path="design/email/footer_template"}}

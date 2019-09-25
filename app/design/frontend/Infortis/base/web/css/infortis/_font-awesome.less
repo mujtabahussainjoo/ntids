@@ -1,0 +1,36 @@
+//
+//  Font Awesome
+//
+
+
+
+//
+//  Variables
+//  _____________________________________________
+
+//  Font Awesome icons are enabled by default.
+//  To disable, set the @fontawesome-enable variable to false.
+//  You can override it in your custom child-theme.
+
+@fontawesome-enable: true;
+@fontawesome-path: '@{baseDir}fonts/fontawesome-4.7.0/'; // @baseDir by default is "../"
+
+
+
+//
+//  Load Font Awesome mixins
+//  _____________________________________________
+
+@import 'font-awesome/_font-awesome.less';
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+.lib-fontawesome(@_font-path: @fontawesome-path);
+
+} // end: media-common

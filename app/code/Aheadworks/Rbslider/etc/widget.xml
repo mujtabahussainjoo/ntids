@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="aw_rbslider_widget" class="Aheadworks\Rbslider\Block\Widget\Banner">
+        <label translate="true">Rich Banner Slider by aheadWorks</label>
+        <description translate="true">Contents of a Rich Banner Slider</description>
+        <parameters>
+            <parameter name="banner_id" xsi:type="block" required="true" visible="true">
+                <label translate="true">Banner</label>
+                <block class="Aheadworks\Rbslider\Block\Adminhtml\Banner\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Banner...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

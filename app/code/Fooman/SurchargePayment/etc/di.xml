@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\CheckoutAgreements\Model\Checkout\Plugin\GuestValidation">
+        <plugin name="fooman_remove_tcs_validation_on_preview"
+                type="Fooman\SurchargePayment\Plugin\GuestAgreementsValidation"/>
+    </type>
+
+    <type name="Magento\CheckoutAgreements\Model\Checkout\Plugin\Validation">
+        <plugin name="fooman_remove_tcs_validation_on_preview"
+                type="Fooman\SurchargePayment\Plugin\AgreementsValidation"/>
+    </type>
+
+    <type name="Magento\OfflinePayments\Model\Purchaseorder">
+        <plugin name="fooman_remove_povalidation_on_preview"
+                type="Fooman\SurchargePayment\Plugin\PurchaseOrderValidation"/>
+    </type>
+</config>

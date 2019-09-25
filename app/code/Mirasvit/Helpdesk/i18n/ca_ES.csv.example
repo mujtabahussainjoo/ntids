@@ -1,0 +1,136 @@
+Department,Departament
+"Create New Ticket","Crea un nou bitllet"
+Status,Estat
+Priority,Prioritat
+Replies,Respostes
+View,Veure
+"Help Desk","Taulell d&#39;ajuda"
+"Thank you",Gràcies
+"Create Ticket","Crea bitllet"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","La vostra sol·licitud s&#39;ha enviat correctament. En breu haureu de rebre un correu electrònic de confirmació."
+Telephone,Telèfon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","La vostra consulta s&#39;ha enviat i es respondrà al més aviat possible. Gràcies per contactar amb nosaltres."
+"Unable to submit your request. Please, try again later","No es pot enviar la vostra sol·licitud. Siusplau, intenta-ho més tard"
+"Page not found.","Pàgina no trobada."
+"Your message was successfuly posted","El missatge s&#39;ha publicat correctament"
+"Your ticket was successfuly posted","La vostra entrada s&#39;ha publicat correctament"
+"Ticket was successfuly closed","El bitllet va ser tancat amb èxit"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","No es pot carregar el fitxer %1. La mida de càrrega màxima màxima és de %2 MB."
+"Allows only this file types: %1","Permet només aquest tipus d&#39;arxiu: %1"
+"Message added","S&#39;ha afegit un missatge"
+"Internal note added","S&#39;ha afegit una nota interna"
+"Third party message added","S&#39;ha afegit un missatge de tercers"
+"Private third party message added","S&#39;ha afegit un missatge privat de tercers"
+"-- Please Select --","- Seleccioneu -"
+"Contact Tab","Pestanya de contacte"
+"Contact Form","Formulari de contacte"
+" at %1 (%2) - %3","a %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","No teniu permisos per llegir aquest bitllet. Contacteu amb el vostre administrador."
+"Invalid Customer Email","E-mail client no vàlid"
+"not set","no configurat"
+"Unknown time","Temps desconegut"
+ago,fa
+"from now","des d&#39;ara"
+"1 sec ago","Fa 1 sec"
+"Open Ticket","Entrada oberta"
+"Open Tickets","Obrir entrades"
+"! Blocked file - ","! Fitxer bloquejat -"
+Disabled,"S&#39;ha desactivat"
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","Sistema de fitxers"
+Database,"Base de dades"
+Aqua,Aqua
+Grey,Gris
+Navy,Armada
+Silver,Plata
+Black,Negre
+Green,Verd
+Olive,Oliva
+Teal,Teal
+Blue,Blau
+Lime,Lima
+Purple,Porpra
+Fuchsia,Fucsia
+Maroon,Granat
+Red,Vermell
+Orange,Taronja
+Yellow,Groc
+Text,Text
+Date,Data
+Checkbox,"Caixa de verificació"
+"Drop-down list","Llista desplegable"
+"In minutes...","En minuts ..."
+"In hours...","En hores ..."
+"In days...","En dies ..."
+"In weeks...","A les setmanes ..."
+"In months...","En mesos ..."
+Custom,Personalitzat
+"--Please Select--","- Seleccioneu -"
+"New ticket created","S&#39;ha creat un nou bitllet"
+Success,Èxit
+Customer,Client
+Staff,Personal
+"Third party","Tercera festa"
+Closed,Tancat
+"Opened 24hr","Obert les 24 hores"
+"Helpdesk Tickets","Entrades de Helpdesk"
+"Cannot delete ticket with id %1","No es pot eliminar el tiquet amb l&#39;identificador %1"
+Edit,Edita
+"All Departments","Tots els Departaments"
+Back,Esquena
+"24 hrs x 7 days","24 h x 7 dies"
+"Select working days/hours","Seleccioneu dies laborables / hores"
+"Satisfaction survey","Enquesta de satisfacció"
+"to %1 (third party)","a %1 (tercers)"
+"%1 (third party)","%1 (tercers)"
+"added %1 (%2)","ha afegit %1 (%2)"
+"Ticket Summary","Resum d&#39;entrades"
+"Ticket ID","Identificador d&#39;entrada"
+Assignee,Cessionari
+"Additional Info","Informació addicional"
+"Ticket History","Historial d&#39;entrades"
+"Done by","Realitzat per"
+Changes,Canvis
+Name,Nom
+"Attach files","Adjunta fitxers"
+Submit,Presentar
+"Submit Ticket","Enviar tiquet"
+"What is your question?","Quina es la teva pregunta?"
+"We found the following topics that might be helpful:","Hem trobat els següents temes que poden ser útils:"
+"None of these are helpful - get in touch","Cap d&#39;aquests elements és útil: poseu-vos en contacte"
+"We have not found topics that can be helpful.","No hem trobat temes que puguin ser útils."
+"Contact Information","Informació de contacte"
+Comment,Comentari
+"We are open 24 x 7","Estem oberts 24 x 7"
+"We are closed","Estem tancats"
+"Timezone: %1","Zona horària: %1"
+"Please take a second to rate my reply...","Prengui un segon per valorar la meva resposta ..."
+Great,Genial
+Awesome,Impressionant
+"Fast, friendly, helpful, pleasant. Great job!","Ràpida, amable, servicial, agradable. Bona feina!"
+"Just Okay","Només està bé"
+"Fine, but definitely could have been better.","Bé, però definitivament podria haver estat millor."
+"Not good","No és bó"
+"Unfortunately, I wasn't happy with it at all.","Malauradament, no estava content amb això."
+"Thank you for participating in our survey!","Gràcies per participar a la nostra enquesta."
+"If you would like to provide additional comments, please do so below:","Si voleu proporcionar comentaris addicionals, feu-ho a continuació:"
+Message,Missatge
+"Submit Message","Enviar missatge"
+"Thank you for your feedback!","Gràcies pels seus comentaris!"
+Attachments,"Fitxers adjunts"
+Order,Ordre
+"-- Select an Order --","- Seleccioneu una comanda -"
+"Create ticket","Crea bitllet"
+"You don't have open tickets","No teniu bitllets oberts"
+"Post a Reply","Publica una resposta"
+"Reopen Ticket","Torneu a obrir el bitllet"
+"Close Ticket","Tanca l&#39;entrada"
+History,Història
+"Back to My Tickets","Tornar a Els meus bitllets"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Contacti amb nosaltres"
+Open,Obert
+Subject,Assignatura
+"Last Activity","Última activitat"
+"Request ID","Identificador de sol·licitud"

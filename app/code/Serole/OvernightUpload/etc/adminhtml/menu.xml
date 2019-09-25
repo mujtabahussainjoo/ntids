@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Serole_OvernightUpload::manager" title="Overnight Partner Uploads" module="Serole_OvernightUpload" sortOrder="100" resource="Serole_OvernightUpload::manager" />
+        <add id="Serole_OvernightUpload::add_row" title="Partner Codes" module="Serole_OvernightUpload" sortOrder="20" parent="Serole_OvernightUpload::manager" action="grid/grid" resource="Serole_OvernightUpload::add_row"/>
+        <add id="Serole_OvernightUpload::assign_provider" title="Assign Provider" module="Serole_OvernightUpload" sortOrder="20" parent="Serole_OvernightUpload::manager" action="grid/provider" resource="Serole_OvernightUpload::add_row"/>
+    </menu>
+</config>

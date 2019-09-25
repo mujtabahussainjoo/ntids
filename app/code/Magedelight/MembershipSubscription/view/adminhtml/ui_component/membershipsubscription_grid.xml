@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid_data_source</item>
+            <item name="deps" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">membershipsubscription_grid_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add Membership Product</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">catalog/product/new/set/4/type/Membership/</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="membershipsubscription_grid_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <!-- here we pass dataprovider name which i will define in di.xml file of module in next step -->
+            <argument name="name" xsi:type="string">membershipsubscription_grid_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">membership_product_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+		    <item name="storageConfig" xsi:type="array">
+                       <item name="indexField" xsi:type="string">membership_product_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <container name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="template" xsi:type="string">ui/grid/toolbar</item>
+                <item name="stickyTmpl" xsi:type="string">ui/grid/sticky/toolbar</item>
+            </item>
+        </argument>
+        <component name="columns_controls">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="columnsData" xsi:type="array">
+                        <item name="provider" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid.membershipsubscription_grid_columns</item>
+                    </item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/columns</item>
+                    <item name="displayArea" xsi:type="string">dataGridActions</item>
+                </item>
+            </argument>
+        </component>
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="columnsProvider" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid.membershipsubscription_grid_columns</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.filters</item>
+                    </item>
+                    <item name="templates" xsi:type="array">
+                        <item name="filters" xsi:type="array">
+                            <item name="select" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item name="childDefaults" xsi:type="array">
+                        <item name="provider" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid.listing_top.listing_filters</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid.membershipsubscription_grid_columns.${ $.index }:visible</item>
+                        </item>
+                    </item>
+                </item>
+                <item name="observers" xsi:type="array">
+                    <item name="column" xsi:type="string">column</item>
+                </item>
+            </argument>
+        </filters>
+        <paging name="listing_paging">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.paging</item>
+                    </item>
+                    <item name="selectProvider" xsi:type="string">membershipsubscription_grid.membershipsubscription_grid.membershipsubscription_grid_columns.ids</item>
+                </item>
+            </argument>
+        </paging>
+    </container>
+    <!-- from here we'll add columns of grid list -->
+    <columns name="membershipsubscription_grid_columns">
+        <column name="product_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Product Id</item>
+                    <item name="sortOrder" xsi:type="number">1</item>
+                </item>
+            </argument>
+        </column>
+        <column name="thumbnail" class="Magedelight\MembershipSubscription\Ui\Component\Listing\MembershipProduct\Column\Thumbnail">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/thumbnail</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="altField" xsi:type="string">name</item>
+                    <item name="has_preview" xsi:type="string">1</item>
+                    <item name="label" xsi:type="string" translate="true">Thumbnail</item>
+                    <item name="sortOrder" xsi:type="number">2</item>
+                </item>
+            </argument>
+        </column>
+        <column name="product_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Product Name</item>
+                    <item name="sortOrder" xsi:type="number">3</item>
+                </item>
+            </argument>
+        </column>
+        <column name="sku" class="Magedelight\MembershipSubscription\Ui\Component\Listing\MembershipProduct\Column\Sku">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortable" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string" translate="true">SKU</item>
+                    <item name="sortOrder" xsi:type="number">4</item>
+                </item>
+            </argument>
+        </column>
+        <column name="status" class="Magedelight\MembershipSubscription\Ui\Component\Listing\MembershipProduct\Column\Status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magento\Catalog\Model\Product\Attribute\Source\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="sortOrder" xsi:type="number">5</item>
+                </item>
+            </argument>
+        </column>
+        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Created At</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Add Action with each row of grid and for this we will create a class Action -->
+        <actionsColumn name="actions" class="Magedelight\MembershipSubscription\Ui\Component\Listing\MembershipProduct\Grid\Column\Action">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">product_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

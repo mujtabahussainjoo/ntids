@@ -1,0 +1,79 @@
+Delivered-To: support2@mirasvit.com.ua
+Received: by 10.227.207.74 with SMTP id fx10csp561398wbb;
+        Sun, 29 Dec 2013 02:36:29 -0800 (PST)
+X-Received: by 10.50.128.137 with SMTP id no9mr50311574igb.36.1388313389020;
+        Sun, 29 Dec 2013 02:36:29 -0800 (PST)
+Return-Path: <support+caf_=support2=mirasvit.com.ua@mirasvit.com>
+Received: from mail-ie0-f176.google.com (mail-ie0-f176.google.com [209.85.223.176])
+        by mx.google.com with ESMTPS id hu10si52280174igb.0.2013.12.29.02.36.28
+        for <support2@mirasvit.com.ua>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Sun, 29 Dec 2013 02:36:28 -0800 (PST)
+Received-SPF: neutral (google.com: 209.85.223.176 is neither permitted nor denied by best guess record for domain of support+caf_=support2=mirasvit.com.ua@mirasvit.com) client-ip=209.85.223.176;
+Authentication-Results: mx.google.com;
+       spf=neutral (google.com: 209.85.223.176 is neither permitted nor denied by best guess record for domain of support+caf_=support2=mirasvit.com.ua@mirasvit.com) smtp.mail=support+caf_=support2=mirasvit.com.ua@mirasvit.com
+Received: by mail-ie0-f176.google.com with SMTP id at1so10747551iec.7
+        for <support2@mirasvit.com.ua>; Sun, 29 Dec 2013 02:36:28 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :from:to:references:in-reply-to:subject:date:message-id:mime-version
+         :content-type:thread-index;
+        bh=JmRnT4tGi3cZgvLvyj7YqC+M9ZEdHiJ+w9GgZc3yKmo=;
+        b=T/L+69I+FgQMgFh9eb1aO2gqtLCRIMe94SQaR52ZZmD2+jmG4sSbEuoxaM1otJeS+g
+         Z1YspioNLgQ7IFJmfOcC6HaxW5J/SED0iOTtT1cFNynJh6gqTXHUDagwuLJ4khN1ehPB
+         sXAPu0crzTDJ1LbGIvRkHROQxFemAdQ2oISgLUJvdAm5W4QtWHjhzvsnkpsrRI4UV+27
+         /79OP8ZsYJv/KoEop2wy9y5AqQS+ZyVQAX5krA2+8QGeAMYuyZn87hBAYPIrlbhIjwKU
+         S+5IKOpDxRP+Rl81fIah0aPRP4Mv5t6Abhx0HG1PU/bzlrc6zSiWTH83/yrgzeJceU3b
+         um0g==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: best guess record for domain of igorkuimov@web.de designates 212.227.17.11 as permitted sender) smtp.mail=igorkuimov@web.de
+X-Gm-Message-State: ALoCoQlBrS7Ojsy+Y5jV4PkEpZZLeZAjaD+o+AgLvuJZye7uqV1KVHDN5GpbNQebTLXJgFwYTvEZ
+X-Received: by 10.50.62.102 with SMTP id x6mr10859326igr.35.1388313387819;
+        Sun, 29 Dec 2013 02:36:27 -0800 (PST)
+X-Forwarded-To: support2@mirasvit.com.ua
+X-Forwarded-For: support@mirasvit.com support2@mirasvit.com.ua
+Delivered-To: support@mirasvit.com
+Received: by 10.50.179.106 with SMTP id df10csp1172193igc;
+        Sun, 29 Dec 2013 02:36:27 -0800 (PST)
+X-Received: by 10.15.74.200 with SMTP id j48mr5663721eey.102.1388313386153;
+        Sun, 29 Dec 2013 02:36:26 -0800 (PST)
+Return-Path: <igorkuimov@web.de>
+Received: from mout.web.de (mout.web.de. [212.227.17.11])
+        by mx.google.com with ESMTPS id l44si47155672eem.229.2013.12.29.02.36.25
+        for <support@mirasvit.com>
+        (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 29 Dec 2013 02:36:26 -0800 (PST)
+Received-SPF: pass (google.com: best guess record for domain of igorkuimov@web.de designates 212.227.17.11 as permitted sender) client-ip=212.227.17.11;
+Received: from igorPC ([88.65.208.9]) by smtp.web.de (mrweb001) with ESMTPA
+ (Nemesis) id 0LtoGb-1VVD7F2unt-011EjC for <support@mirasvit.com>; Sun, 29 Dec
+ 2013 11:36:25 +0100
+From: <igorkuimov@web.de>
+To: <support@mirasvit.com>
+References: <6b0e0431792532e85ab04d305b9146c2@support.mirasvit.com>
+In-Reply-To: <6b0e0431792532e85ab04d305b9146c2@support.mirasvit.com>
+Subject: AW: [#UVK-845-29686]: Full Page Cache | #100000908 #100001146 #100002455
+Date: Sun, 29 Dec 2013 11:36:24 +0100
+Message-ID: <2BBB0B5A0CAE4B08941142FABB75035A@igorPC>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_00A9_01CF048A.3451D590"
+X-Mailer: Microsoft Office Outlook 11
+Thread-Index: Ac8EIQh+ogx5Q2E1TjOhQobKZ5YrtQAYH1RA
+X-MimeOLE: Produced By Microsoft MimeOLE V6.1.7601.17609
+X-Provags-ID: V03:K0:IU6hEVIP13suVLIxPOK2qXkisPIaRn4ssZo9He5OTwLGlc2iEM+
+ tVEBfcpU1SwVwt6APNwhHgLPpSzEmc4KsXiq1TwO3PIX+E8rR6uZN4fGW9w8T4zgLFtIonY
+ YP2fdHFVTOh/Y7UDO/bt8h29ZAGWanxAdwE4BUecx953Ek35HPT3Y66A7SAR6teQ/sFP09G
+ 5FFNc4PLOqdPCVYhUPaDQ==
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00A9_01CF048A.3451D590
+Content-Type: text/plain;
+	charset="koi8-r"
+Content-Transfer-Encoding: quoted-printable
+
+=F3=D0=C1=D3=C9=C2=CF =E1=CC=C5=CB=D3=C1=CE=C4=C5=D2, =D3 =
+=CE=C1=D3=D4=D5=D0=C1=C0=DD=C9=CD =EE=CF=D7=D9=CD =E7=CF=C4=CF=CD =
+=F7=C1=D3 =C9 =CB=CF=CD=C1=CE=C4=D5 Mirasvit!
+
+------=_NextPart_000_00A9_01CF048A.3451D590--

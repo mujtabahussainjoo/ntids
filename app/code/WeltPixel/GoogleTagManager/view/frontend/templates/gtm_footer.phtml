@@ -1,0 +1,34 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+$_helper = $this->helper('WeltPixel\GoogleTagManager\Helper\Data');
+?>
+<?php if ($_helper->isEnabled()) : ?>
+    <script>
+        require(['jquery','weltpixel_gtm'],
+            function ($, wpgtm) {
+                $( document ).ready(function() {
+                    setTimeout(function() {
+                        $.ajax({
+                            url: '<?php echo $_helper->getDimensionsActionUrl(); ?>',
+                            method: "POST"
+                        });
+                    }, 500);
+                });
+                $( document ).ajaxComplete(function( event, xhr, settings ) {
+                    if (settings.url.search('/customer\/section\/load/') > 0) {
+                        var response = xhr.responseJSON;
+                        if (response.gtm) {
+                            var dataLayerData = $.parseJSON(response.gtm.datalayer);
+                            for (index in dataLayerData) {
+                                window.dataLayer.push(dataLayerData[index]);
+                            }
+                        }
+                    }
+                });
+                var wpGtmOptions = {'enabled' : <?php echo $_helper->trackPromotions() ?> };
+                wpgtm.trackPromotion(wpGtmOptions);
+            });
+    </script>
+<?php endif; ?>

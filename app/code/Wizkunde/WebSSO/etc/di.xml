@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../vendor/magento/framework/ObjectManager/etc/config.xsd">
+
+    <preference for="Wizkunde\WebSSO\Api\ConnectionInterface" type="Wizkunde\WebSSO\Connection\Connection" />
+    <preference for="Wizkunde\WebSSO\Api\CustomerTokenServiceInterface" type="Wizkunde\WebSSO\Model\CustomerTokenService" />
+    <preference for="Wizkunde\WebSSO\Api\CertificateManagementInterface" type="Wizkunde\WebSSO\Model\CertificateManagementService" />
+    <preference for="Wizkunde\WebSSO\Api\Data\CertificateInterface" type="Wizkunde\WebSSO\Model\Api\Data\Certificate" />
+
+    <type name="Wizkunde\WebSSO\Model\CustomerManagement">
+        <arguments>
+            <argument name="customer" xsi:type="object">Magento\Customer\Api\Data\CustomerInterface</argument>
+            <argument name="accountManagement" xsi:type="object">Magento\Customer\Api\AccountManagementInterface</argument>
+            <argument name="customerRepository" xsi:type="object">Magento\Customer\Api\CustomerRepositoryInterface</argument>
+            <argument name="addressRepository" xsi:type="object">Magento\Customer\Api\AddressRepositoryInterface</argument>
+            <argument name="authentication" xsi:type="object">Magento\Customer\Model\AuthenticationInterface</argument>
+            <argument name="manager" xsi:type="object">Magento\Framework\Event\ManagerInterface</argument>
+            <argument name="eavHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Eav</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Helper\Server">
+        <arguments>
+            <argument name="context" xsi:type="object">Magento\Framework\App\Helper\Context</argument>
+            <argument name="serverModel" xsi:type="object">Wizkunde\WebSSO\Model\Server</argument>
+            <argument name="customerModel" xsi:type="object">Magento\Customer\Model\Customer</argument>
+            <argument name="request" xsi:type="object">Magento\Framework\App\RequestInterface</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Helper\Eav">
+        <arguments>
+            <argument name="context" xsi:type="object">Magento\Framework\App\Helper\Context</argument>
+            <argument name="customerAttributeCollection" xsi:type="object">Magento\Customer\Model\ResourceModel\Attribute\Collection</argument>
+            <argument name="customerAddressAttributeCollection" xsi:type="object">Magento\Customer\Model\ResourceModel\Address\Attribute\Collection</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\Connection">
+        <arguments>
+            <argument name="serverHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Server</argument>
+            <argument name="serverData" xsi:type="object">Wizkunde\WebSSO\Model\Server</argument>
+            <argument name="saml2Connection" xsi:type="object">Wizkunde\WebSSO\Connection\SAML2\Connection</argument>
+            <argument name="oauth2Connection" xsi:type="object">Wizkunde\WebSSO\Connection\OAuth2\Connection</argument>
+            <argument name="appState" xsi:type="object">Magento\Framework\App\State</argument>
+            <argument name="backendHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Backend</argument>
+            <argument name="frontendHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Frontend</argument>
+            <argument name="customerTokenService" xsi:type="object">Wizkunde\WebSSO\Api\CustomerTokenServiceInterface</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Helper\Backend">
+        <arguments>
+            <argument name="context" xsi:type="object">Magento\Framework\App\Helper\Context</argument>
+            <argument name="serverModel" xsi:type="object">Wizkunde\WebSSO\Model\Server</argument>
+            <argument name="user" xsi:type="object">Magento\User\Model\User</argument>
+            <argument name="authSession" xsi:type="object">Magento\Backend\Model\Auth\Session</argument>
+            <argument name="storeManager" xsi:type="object">Magento\Store\Model\StoreManagerInterface</argument>
+            <argument name="cookieManager" xsi:type="object">Magento\Framework\Stdlib\CookieManagerInterface</argument>
+            <argument name="adminConfig" xsi:type="object">Magento\Backend\Model\Session\AdminConfig</argument>
+            <argument name="cookieMetadataFactory" xsi:type="object">Magento\Framework\Stdlib\Cookie\CookieMetadataFactory</argument>
+            <argument name="adminSessionsManager" xsi:type="object">Magento\Security\Model\AdminSessionsManager</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Helper\Frontend">
+        <arguments>
+            <argument name="context" xsi:type="object">Magento\Framework\App\Helper\Context</argument>
+            <argument name="serverModel" xsi:type="object">Wizkunde\WebSSO\Model\Server</argument>
+            <argument name="customerFactory" xsi:type="object">Magento\Customer\Model\CustomerFactory</argument>
+            <argument name="customerSession" xsi:type="object">Magento\Customer\Model\Session</argument>
+            <argument name="storeManager" xsi:type="object">Magento\Store\Model\StoreManagerInterface</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Plugin\BeforeDispatch">
+        <arguments>
+            <argument name="frontendHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Frontend</argument>
+            <argument name="backendHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Backend</argument>
+            <argument name="serverHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Server</argument>
+            <argument name="appState" xsi:type="object">Magento\Framework\App\State</argument>
+            <argument name="serverData" xsi:type="object">Wizkunde\WebSSO\Model\Server</argument>
+            <argument name="connection" xsi:type="object">Wizkunde\WebSSO\Connection\Connection</argument>
+            <argument name="customerSession" xsi:type="object">Magento\Customer\Model\Session</argument>
+            <argument name="customerUrl" xsi:type="object">Magento\Customer\Model\Url</argument>
+            <argument name="appUrl" xsi:type="object">Magento\Framework\Url</argument>
+            <argument name="backendSession" xsi:type="object">Magento\Backend\Model\Auth\Session</argument>
+            <argument name="responseFactory" xsi:type="object">Magento\Framework\App\ResponseFactory</argument>
+            <argument name="redirectInterface" xsi:type="object">\Magento\Framework\App\Response\RedirectInterface</argument>
+            <argument name="redirector" xsi:type="object">Zend_Controller_Action_Helper_Redirector</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Model\Server">
+        <plugin name="after_load_mappings" type="Wizkunde\WebSSO\Plugin\AfterLoad" sortOrder="1" />
+    </type>
+
+    <type name="Wizkunde\SAMLBase\Metadata\ResolveService">
+        <arguments>
+            <argument name="httpClient" xsi:type="object">GuzzleHttp\Client</argument>
+        </arguments>
+    </type>
+
+    <type name="Twig_Loader_Filesystem">
+	<arguments>
+	    <argument name="paths" xsi:type="array">
+		<item name="rootPath" xsi:type="string">/</item>
+	    </argument>
+	</arguments>
+    </type>
+ 
+    <type name="Twig_Environment">
+	<arguments>
+	    <argument name="loader" xsi:type="object">Twig_Loader_Filesystem</argument>
+	</arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\SAML2\Service\Binding">
+        <arguments>
+            <argument name="serverHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Server</argument>
+            <argument name="signature" xsi:type="object">Wizkunde\WebSSO\Connection\SAML2\Service\Signature</argument>
+            <argument name="idpMetadata" xsi:type="object">Wizkunde\SAMLBase\Metadata\IDPMetadata</argument>
+            <argument name="redirectBinding" xsi:type="object">Wizkunde\SAMLBase\Binding\Redirect</argument>
+            <argument name="postBinding" xsi:type="object">Wizkunde\SAMLBase\Binding\Post</argument>
+            <argument name="artifactBinding" xsi:type="object">Wizkunde\SAMLBase\Binding\Artifact</argument>
+            <argument name="resolveService" xsi:type="object">Wizkunde\SAMLBase\Metadata\ResolveService</argument>
+            <argument name="uniqueId" xsi:type="object">Wizkunde\SAMLBase\Configuration\UniqueID</argument>
+            <argument name="timestamp" xsi:type="object">Wizkunde\SAMLBase\Configuration\Timestamp</argument>
+            <argument name="settings" xsi:type="object">Wizkunde\SAMLBase\Configuration\Settings</argument>
+            <argument name="appState" xsi:type="object">Magento\Framework\App\State</argument>
+            <argument name="storeManager" xsi:type="object">\Magento\Store\Model\StoreManagerInterface</argument>
+            <argument name="localeResolver" xsi:type="object">\Magento\Framework\Locale\Resolver</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\SAMLBase\Security\Signature">
+        <arguments>
+            <argument name="prefix" xsi:type="string">ds</argument>
+        </arguments>
+    </type>
+    <type name="Wizkunde\SAMLBase\Security\Encryption">
+        <arguments>
+            <argument name="prefix" xsi:type="string">ds</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\SAML2\Service\Signature">
+        <arguments>
+            <argument name="serverHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Server</argument>
+            <argument name="certificate" xsi:type="object">Wizkunde\SAMLBase\Certificate</argument>
+            <argument name="signature" xsi:type="object">Wizkunde\SAMLBase\Security\Signature</argument>
+            <argument name="encryption" xsi:type="object">Wizkunde\SAMLBase\Security\Encryption</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\SAML2\Service\Response">
+        <arguments>
+            <argument name="signature" xsi:type="object">\Wizkunde\WebSSO\Connection\SAML2\Service\Signature</argument>
+            <argument name="response" xsi:type="object">\Wizkunde\SAMLBase\Response\AuthnResponse</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\SAML2\Connection">
+        <arguments>
+            <argument name="serverHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Server</argument>
+            <argument name="serverData" xsi:type="object">Wizkunde\WebSSO\Model\Server</argument>
+            <argument name="binding" xsi:type="object">Wizkunde\WebSSO\Connection\SAML2\Service\Binding</argument>
+            <argument name="signature" xsi:type="object">Wizkunde\WebSSO\Connection\SAML2\Service\Signature</argument>
+            <argument name="response" xsi:type="object">Wizkunde\WebSSO\Connection\SAML2\Service\Response</argument>
+            <argument name="attributeMapper" xsi:type="object">Wizkunde\SAMLBase\Claim\Attributes</argument>
+            <argument name="mappingHelper" xsi:type="object">Magento\Framework\App\State</argument>
+            <argument name="backendHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Backend</argument>
+            <argument name="frontendHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Frontend</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\SAML2\Plugin\AfterLoad">
+        <arguments>
+            <argument name="typeModel" xsi:type="object">Wizkunde\WebSSO\Connection\SAML2\Model\Type</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Model\Server">
+        <plugin name="after_load_saml2" type="Wizkunde\WebSSO\Connection\SAML2\Plugin\AfterLoad" sortOrder="3" />
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\OAuth2\OAuth2">
+        <arguments>
+            <argument name="cryptRsa" xsi:type="object">\phpseclib\Crypt\RSA</argument>
+            <argument name="result" xsi:type="object">Magento\Framework\Controller\ResultFactory</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\OAuth2\Provider">
+        <arguments>
+            <argument name="serverHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Server</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\OAuth2\Connection">
+        <arguments>
+            <argument name="oauth2Client" xsi:type="object">Wizkunde\WebSSO\Connection\OAuth2\Provider</argument>
+            <argument name="request" xsi:type="object">Magento\Framework\App\RequestInterface</argument>
+            <argument name="localeResolver" xsi:type="object">Magento\Framework\Locale\Resolver</argument>
+            <argument name="redirect" xsi:type="object">Magento\Customer\Model\Url</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Connection\OAuth2\Plugin\AfterLoad">
+        <arguments>
+            <argument name="typeModel" xsi:type="object">Wizkunde\WebSSO\Connection\OAuth2\Model\Type</argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Model\Server">
+        <plugin name="after_load_oauth2" type="Wizkunde\WebSSO\Connection\OAuth2\Plugin\AfterLoad" sortOrder="2" />
+    </type>
+
+    <type name="Wizkunde\WebSSO\Plugin\AfterLoad">
+        <arguments>
+            <argument name="mappingCollection" xsi:type="object">Wizkunde\WebSSO\Model\ResourceModel\Mapping\Collection</argument>
+            <argument name="eavHelper" xsi:type="object">Wizkunde\WebSSO\Helper\Eav</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\App\FrontController">
+        <plugin name="before_dispatch" type="Wizkunde\WebSSO\Plugin\DispatchPlugin" sortOrder="2"/>
+    </type>
+
+    <type name="Magento\Framework\App\Request\CsrfValidator">
+        <plugin name="around_validate_csrf" type="Wizkunde\WebSSO\Plugin\CsrfValidatorPlugin" sortOrder="1"/>
+    </type>
+
+    <preference for="Wizkunde\WebSSO\Model\ServerInterface" type="Wizkunde\WebSSO\Model\Server" />
+    
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sso_server_listing_data_source" xsi:type="object">Wizkunde\WebSSO\Model\ResourceModel\Server\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Model\ResourceModel\Server\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">wizkunde_websso_server</argument>
+            <argument name="eventPrefix" xsi:type="string">sso_server_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">sso_server_collection</argument>
+            <argument name="resourceModel" xsi:type="object">Wizkunde\WebSSO\Model\ResourceModel\Server</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sso_log_listing_data_source" xsi:type="object">Wizkunde\WebSSO\Model\ResourceModel\Log\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Model\ResourceModel\Log\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">wizkunde_websso_log</argument>
+            <argument name="eventPrefix" xsi:type="string">sso_log_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">sso_log_collection</argument>
+            <argument name="resourceModel" xsi:type="object">Wizkunde\WebSSO\Model\ResourceModel\Log</argument>
+        </arguments>
+    </type>
+
+    <preference for="Wizkunde\WebSSO\Model\MappingInterface" type="Wizkunde\WebSSO\Model\Mapping" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="websso_mapping_listing_data_source" xsi:type="string">Wizkunde\WebSSO\Model\ResourceModel\Mapping\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Wizkunde\WebSSO\Model\ResourceModel\Mapping\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">wizkunde_websso_mapping</argument>
+            <argument name="eventPrefix" xsi:type="string">websso_mapping_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">websso_mapping_collection</argument>
+            <argument name="resourceModel" xsi:type="object">Wizkunde\WebSSO\Model\ResourceModel\Mapping</argument>
+        </arguments>
+    </type>
+</config>

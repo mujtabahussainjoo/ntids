@@ -1,0 +1,7 @@
+<?php
+/** @var \Mirasvit\Helpdesk\Block\Ticket\Listing\Column\DefaultColumn $block */
+$ticket = $block->getItem();
+$column = $block->getColumn();
+?>
+<?= $block->escapeHtml($ticket->getLastReplyName()) ?>,
+<?= $block->formatDate($ticket->getLastReplyAt(), \IntlDateFormatter::MEDIUM) ?>

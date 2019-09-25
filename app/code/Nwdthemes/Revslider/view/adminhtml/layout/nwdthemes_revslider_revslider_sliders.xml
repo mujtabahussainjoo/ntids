@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="nwdthemes_revslider_common"/>
+    <body>
+        <referenceContainer name="master-view">
+            <block class="Nwdthemes\Revslider\Block\Adminhtml\SliderOverview" name="view" template="Nwdthemes_Revslider::slider-overview.phtml">
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="sliders-list" template="Nwdthemes_Revslider::templates/sliders-list.phtml" />
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="template-slider-selector" template="Nwdthemes_Revslider::templates/template-slider-selector.phtml" />
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="release_log" template="Nwdthemes_Revslider::release_log.phtml" />
+            </block>
+        </referenceContainer>
+    </body>
+</page>

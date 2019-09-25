@@ -1,0 +1,586 @@
+"Shipping Method","Shipping Method"
+Title,Title
+"Add Title","Add Title"
+Back,Back
+Save,Save
+"Save & New","Save & New"
+"Save & Close","Save & Close"
+"Store View Specific Labels","Store View Specific Labels"
+"Save and Continue Edit","Save and Continue Edit"
+"Store View Specific Estimated Delivery Time Messages","Store View Specific Estimated Delivery Time Messages"
+"MageWorx Shipping Rules","MageWorx Shipping Rules"
+"Add New Rule","Add New Rule"
+Duplicate,Duplicate
+"Edit Rule '%1'","Edit Rule '%1'"
+"New Rule","New Rule"
+"Rule Information","Rule Information"
+Actions,Actions
+"Hide Shipping Method","Hide Shipping Method"
+"Disabled Shipping Methods","Disabled Shipping Methods"
+"Display Error Message","Display Error Message"
+"If selected, the error message will be displayed instead of a disabled delivery method","If selected, the error message will be displayed instead of a disabled delivery method"
+"Error Message","Error Message"
+"Store specific error messages for the disabled shipping methods.","Store specific error messages for the disabled shipping methods."
+" "," "
+"Modify Shipping Cost","Modify Shipping Cost"
+Modifier,Modifier
+"Note: the ""per Item"" action uses each row in customers cart as multiplier (5 same products
+                                in one row and 2 same items in another row = 2 qty), the ""per Product"" action uses an
+                                each valid items qty as multiplier (5 same products in one row and 2 same items in
+                                another row = 7 qty).","Note: the ""per Item"" action uses each row in customers cart as multiplier (5 same products
+                                in one row and 2 same items in another row = 2 qty), the ""per Product"" action uses an
+                                each valid items qty as multiplier (5 same products in one row and 2 same items in
+                                another row = 7 qty)."
+"Apply to Shipping Methods","Apply to Shipping Methods"
+"Rule's Action","Rule's Action"
+Type,Type
+"Stop Further Processing","Stop Further Processing"
+Conditions,Conditions
+"Apply the rule only if the following conditions are met (leave blank for all products).","Apply the rule only if the following conditions are met (leave blank for all products)."
+"Apply to Items","Apply to Items"
+"Apply the rule only to cart items matching the following conditions (leave blank for all items).","Apply the rule only to cart items matching the following conditions (leave blank for all items)."
+"Apply To","Apply To"
+"General Information","General Information"
+"Rule Name","Rule Name"
+Description,Description
+Status,Status
+Active,Active
+Inactive,Inactive
+Priority,Priority
+"The Rule with a max priority (e.g. 999) will be applied first, then will be applied the
+                                rule with a lower priority (e.g. 100). The Rule with the lowest priority (e.g. 0) will
+                                be applied at the end.","The Rule with a max priority (e.g. 999) will be applied first, then will be applied the
+                                rule with a lower priority (e.g. 100). The Rule with the lowest priority (e.g. 0) will
+                                be applied at the end."
+"Store View","Store View"
+"Customer Groups","Customer Groups"
+"Available On","Available On"
+From,From
+To,To
+"Use Time","Use Time"
+Yes,Yes
+Time,Time
+"Time when Rule is","Time when Rule is"
+"Shipping Rules","Shipping Rules"
+ID,ID
+Rule,Rule
+Start,Start
+End,End
+"Edit location group '%1'","Edit location group '%1'"
+"New location group","New location group"
+"Location Group Information","Location Group Information"
+"Apply the rule only if the following conditions are met.","Apply the rule only if the following conditions are met."
+"Location Group Name","Location Group Name"
+"Location Group","Location Group"
+"Data has been imported.","Data has been imported."
+"Invalid file upload attempt","Invalid file upload attempt"
+"Shipping Carriers, Methods and Rates","Shipping Carriers, Methods and Rates"
+"Import and Export Shipping Carriers, Methods and Rates","Import and Export Shipping Carriers, Methods and Rates"
+"A total of %1 record(s) were updated.","A total of %1 record(s) were updated."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+Carriers,Carriers
+"You deleted the carrier","You deleted the carrier"
+"We can't delete the carrier right now. Please review the log and try again.","We can't delete the carrier right now. Please review the log and try again."
+"We can't find a carrier to delete.","We can't find a carrier to delete."
+"Edit Carrier","Edit Carrier"
+"New Carrier","New Carrier"
+"Please correct the data sent.","Please correct the data sent."
+"Something went wrong while saving the carrier.","Something went wrong while saving the carrier."
+"You saved the carrier.","You saved the carrier."
+"Something went wrong while saving the carrier data. Please review the error log.","Something went wrong while saving the carrier data. Please review the error log."
+"You deleted the zone.","You deleted the zone."
+"We can't delete the zone right now. Please review the log and try again.","We can't delete the zone right now. Please review the log and try again."
+"We can't find a zone to delete.","We can't find a zone to delete."
+"Edit Pop-up Zone","Edit Pop-up Zone"
+"New Pop-up Zone","New Pop-up Zone"
+"Pop-up Zones","Pop-up Zones"
+"Something went wrong while saving the zone.","Something went wrong while saving the zone."
+"You saved the zone.","You saved the zone."
+"Something went wrong while saving the zone data. Please review the error log.","Something went wrong while saving the zone data. Please review the error log."
+"You deleted the method","You deleted the method"
+"We can't delete the method right now. Please review the log and try again.","We can't delete the method right now. Please review the log and try again."
+"We can't find a method to delete.","We can't find a method to delete."
+"Edit Method","Edit Method"
+"New Method","New Method"
+"Shipping Methods","Shipping Methods"
+"Something went wrong while saving the method.","Something went wrong while saving the method."
+"You saved the method.","You saved the method."
+"Something went wrong while saving the method data. Please review the error log.","Something went wrong while saving the method data. Please review the error log."
+"You deleted the rule.","You deleted the rule."
+"We can't delete the rule right now. Please review the log and try again.","We can't delete the rule right now. Please review the log and try again."
+"We can't find a rule to delete.","We can't find a rule to delete."
+"You duplicated the rule.","You duplicated the rule."
+"Edit Rule","Edit Rule"
+"New Shipping Rule","New Shipping Rule"
+Catalog,Catalog
+"Something went wrong while saving the rule.","Something went wrong while saving the rule."
+"You saved the rule.","You saved the rule."
+"Something went wrong while saving the rule data. Please review the error log.","Something went wrong while saving the rule data. Please review the error log."
+"You deleted the rate %1.","You deleted the rate %1."
+"We can't delete the rate right now. Please review the log and try again.","We can't delete the rate right now. Please review the log and try again."
+"We can't find a rate to delete.","We can't find a rate to delete."
+"Edit Rate","Edit Rate"
+"New Rate","New Rate"
+"Shipping Rates","Shipping Rates"
+"Something went wrong while saving the rate.","Something went wrong while saving the rate."
+"You saved the rate.","You saved the rate."
+"Something went wrong while saving the rate data. Please review the error log.","Something went wrong while saving the rate data. Please review the error log."
+"You deleted the region","You deleted the region"
+"We can't delete the region right now. Please review the log and try again.","We can't delete the region right now. Please review the log and try again."
+"We can't find a region to delete.","We can't find a region to delete."
+"Edit Region","Edit Region"
+"New Region","New Region"
+"Country Regions","Country Regions"
+"Something went wrong while saving the region.","Something went wrong while saving the region."
+"You saved the region.","You saved the region."
+"Something went wrong while saving the region data. Please review the error log.","Something went wrong while saving the region data. Please review the error log."
+"You deleted the location group.","You deleted the location group."
+"We can't delete the location group right now. Please review the log and try again.","We can't delete the location group right now. Please review the log and try again."
+"We can't find a location group to delete.","We can't find a location group to delete."
+"Edit location group","Edit location group"
+"Locations Groups (Shipping Zones)","Locations Groups (Shipping Zones)"
+"Something went wrong while saving the location group.","Something went wrong while saving the location group."
+"You saved the location group.","You saved the location group."
+"Something went wrong while saving the location group data. Please review the error log.","Something went wrong while saving the location group data. Please review the error log."
+"Carrier code is required","Carrier code is required"
+"Method code is required","Method code is required"
+"Title is required","Title is required"
+"Price could not be a negative number","Price could not be a negative number"
+"Could not save the rate: %1","Could not save the rate: %1"
+"Rate with id ""%1"" does not exist.","Rate with id ""%1"" does not exist."
+"Could not delete the rate: %1","Could not delete the rate: %1"
+"Could not save the method: %1","Could not save the method: %1"
+"Method with id ""%1"" does not exist.","Method with id ""%1"" does not exist."
+"Method with a code ""%1"" does not exist.","Method with a code ""%1"" does not exist."
+"Could not delete the method: %1","Could not delete the method: %1"
+"Could not save the carrier: %1","Could not save the carrier: %1"
+"Carrier with id ""%1"" does not exist.","Carrier with id ""%1"" does not exist."
+"Carrier with code ""%1"" does not exist.","Carrier with code ""%1"" does not exist."
+"Could not delete the carrier: %1","Could not delete the carrier: %1"
+"Something goes wrong during a post code parsing process.","Something goes wrong during a post code parsing process."
+"Days only (rounded)","Days only (rounded)"
+"Hours only","Hours only"
+"Days with Hours","Days with Hours"
+"Select Country","Select Country"
+Overwrite,Overwrite
+Sum,Sum
+"Use Rate with Max Priority","Use Rate with Max Priority"
+"Use Rate with Max Price","Use Rate with Max Price"
+"Use Rate with Min Price","Use Rate with Min Price"
+"Sum Up All Rates","Sum Up All Rates"
+"Shipping Cost","Shipping Cost"
+"Overwrite Amount (Fixed)","Overwrite Amount (Fixed)"
+"Overwrite Amount (Percent)","Overwrite Amount (Percent)"
+"Shipping Cost per Product","Shipping Cost per Product"
+"Shipping Cost Per Item","Shipping Cost Per Item"
+"Shipping Cost Per 1 Unit of Weight","Shipping Cost Per 1 Unit of Weight"
+"Shipping Surcharge","Shipping Surcharge"
+"Add Surcharge (Fixed)","Add Surcharge (Fixed)"
+"Add Surcharge (Percent)","Add Surcharge (Percent)"
+"Shipping Surcharge per Product","Shipping Surcharge per Product"
+"Shipping Surcharge per Item","Shipping Surcharge per Item"
+"Shipping Surcharge per 1 Unit of Weight","Shipping Surcharge per 1 Unit of Weight"
+"Shipping Discount","Shipping Discount"
+"Add Discount (Fixed)","Add Discount (Fixed)"
+"Add Discount (Percent)","Add Discount (Percent)"
+"Shipping Discount per Product","Shipping Discount per Product"
+"Shipping Discount per Item","Shipping Discount per Item"
+"Shipping Discount per 1 Unit of Weight","Shipping Discount per 1 Unit of Weight"
+"Could not save the Pop-up Zone: %1","Could not save the Pop-up Zone: %1"
+"Pop-up Zone with id ""%1"" does not exist.","Pop-up Zone with id ""%1"" does not exist."
+"Could not delete the Pop-up Zone: %1","Could not delete the Pop-up Zone: %1"
+"IE Type","IE Type"
+"Invalid file upload attempt.","Invalid file upload attempt."
+"Unrecognized method %1","Unrecognized method %1"
+"Carrier with the code %1 does not exists","Carrier with the code %1 does not exists"
+"Method with the code %1 does not exists","Method with the code %1 does not exists"
+"Sorry, but we can't deliver to the destination country with this shipping module.","Sorry, but we can't deliver to the destination country with this shipping module."
+"Could not save the region: %1","Could not save the region: %1"
+"Region with id ""%1"" does not exist.","Region with id ""%1"" does not exist."
+"Could not delete the region: %1","Could not delete the region: %1"
+"There is no information about associated entity type ""%1"".","There is no information about associated entity type ""%1""."
+"Subtotal (base)","Subtotal (base)"
+"Subtotal with Discount (base)","Subtotal with Discount (base)"
+"Discount (base)","Discount (base)"
+"Total Items Quantity","Total Items Quantity"
+"Total Weight","Total Weight"
+"Coupon Code","Coupon Code"
+"Shipping Postcode","Shipping Postcode"
+"Shipping Region","Shipping Region"
+"Shipping State/Province","Shipping State/Province"
+"Shipping Country","Shipping Country"
+"Shipping Street","Shipping Street"
+"Shipping City","Shipping City"
+"Location Group (Shipping Zone)","Location Group (Shipping Zone)"
+"Please choose a condition to add.","Please choose a condition to add."
+"Product attribute combination","Product attribute combination"
+"Products subselection","Products subselection"
+"Conditions combination","Conditions combination"
+"Cart Attribute","Cart Attribute"
+"Cart Item SKU (including custom options SKUs)","Cart Item SKU (including custom options SKUs)"
+"Conditions Combination","Conditions Combination"
+"Cart Item Attribute","Cart Item Attribute"
+"Product Attribute","Product Attribute"
+FOUND,FOUND
+"NOT FOUND","NOT FOUND"
+"total quantity","total quantity"
+"total amount","total amount"
+is,is
+"is not","is not"
+"greater than","greater than"
+"less than","less than"
+"equals or greater than","equals or greater than"
+"equals or less than","equals or less than"
+"is one of","is one of"
+"is not one of","is not one of"
+"Could not save the rule: %1","Could not save the rule: %1"
+"Rule with id ""%1"" does not exist.","Rule with id ""%1"" does not exist."
+"Could not delete the rule: %1","Could not delete the rule: %1"
+"Location Group name is required","Location Group name is required"
+"Address Attribute","Address Attribute"
+"Could not save the zone: %1","Could not save the zone: %1"
+"Zone with id ""%1"" does not exist.","Zone with id ""%1"" does not exist."
+"Could not delete the zone: %1","Could not delete the zone: %1"
+"Empty or invalid rule","Empty or invalid rule"
+"Empty method code","Empty method code"
+"Empty calculator","Empty calculator"
+"Empty action code","Empty action code"
+"Table name is required","Table name is required"
+Edit,Edit
+Delete,Delete
+"Delete ""${ $.$data.name }""","Delete ""${ $.$data.name }"""
+"Are you sure you wan't to delete the carrier ""${ $.$data.name }"" ?","Are you sure you wan't to delete the carrier ""${ $.$data.name }"" ?"
+"Are you sure you wan't to delete the zone ""${ $.$data.name }"" ?","Are you sure you wan't to delete the zone ""${ $.$data.name }"" ?"
+"Delete ""${ $.$data.title }""","Delete ""${ $.$data.title }"""
+"Are you sure you wan't to delete the method ""${ $.$data.title }"" ?","Are you sure you wan't to delete the method ""${ $.$data.title }"" ?"
+"Are you sure you wan't to delete the rate ""${ $.$data.title }"" ?","Are you sure you wan't to delete the rate ""${ $.$data.title }"" ?"
+"Are you sure you wan't to delete the region ""${ $.$data.name }"" ?","Are you sure you wan't to delete the region ""${ $.$data.name }"" ?"
+"Are you sure you wan't to delete the rule ""${ $.$data.name }"" ?","Are you sure you wan't to delete the rule ""${ $.$data.name }"" ?"
+%1,%1
+Id,Id
+"Default Title","Default Title"
+"Is Active","Is Active"
+"System Name","System Name"
+"Carrier Code","Carrier Code"
+Price,Price
+"Shipping methods available on the checkout.","Shipping methods available on the checkout."
+"Add Method","Add Method"
+Remove,Remove
+"Method Code","Method Code"
+Cost,Cost
+"Zone Id","Zone Id"
+Carrier,Carrier
+"Rates for the Current Method","Rates for the Current Method"
+"Add New Rate","Add New Rate"
+Method,Method
+Import,Import
+Export,Export
+"Export Example Data","Export Example Data"
+"Time Range: ","Time Range: "
+"Save Changes","Save Changes"
+"Shipping Zone","Shipping Zone"
+Country,Country
+Region,Region
+State/Province,State/Province
+"MageWorx Shipping","MageWorx Shipping"
+Enabled,Enabled
+"Method Name","Method Name"
+"Calculate Handling Fee","Calculate Handling Fee"
+"Handling Fee","Handling Fee"
+"Sort Order","Sort Order"
+"Ship to Applicable Countries","Ship to Applicable Countries"
+"Ship to Specific Countries","Ship to Specific Countries"
+"Show Method if Not Applicable","Show Method if Not Applicable"
+"Displayed Error Message","Displayed Error Message"
+"Shipping Suite","Shipping Suite"
+"Shipping Suite Configuration","Shipping Suite Configuration"
+"Multiple rates price calculation","Multiple rates price calculation"
+"Validation Settings","Validation Settings"
+"Advanced Postcode Validation: Is Enabled","Advanced Postcode Validation: Is Enabled"
+"Advanced Postcode Validation: excessive data means postcode is valid","Advanced Postcode Validation: excessive data means postcode is valid"
+"One and only one zone can be set for the address in one time (most prioritized zone from available)","One and only one zone can be set for the address in one time (most prioritized zone from available)"
+"Shipping Methods Settings","Shipping Methods Settings"
+"Rename Shipping Methods","Rename Shipping Methods"
+"Display the Cheapest Shipping Method at the Top. Other methods will be displayed next ascending by price from low to high.","Display the Cheapest Shipping Method at the Top. Other methods will be displayed next ascending by price from low to high."
+"Popup Configuration","Popup Configuration"
+"Display Shipping Zones Popup","Display Shipping Zones Popup"
+"Display Only Country & Region Fields","Display Only Country & Region Fields"
+"Countries by Region Configuration","Countries by Region Configuration"
+Africa,Africa
+"North America","North America"
+"South America","South America"
+Oceania,Oceania
+"Western Africa","Western Africa"
+"Central America","Central America"
+"Eastern Africa","Eastern Africa"
+"Northern Africa","Northern Africa"
+"Middle Africa","Middle Africa"
+"Southern Africa","Southern Africa"
+Americas,Americas
+"Northern America","Northern America"
+Caribbean,Caribbean
+"Eastern Asia","Eastern Asia"
+"Southern Asia","Southern Asia"
+"Southeast Asia","Southeast Asia"
+"Southern Europe","Southern Europe"
+Australasia,Australasia
+Melanesia,Melanesia
+"Micronesian Region","Micronesian Region"
+Polynesia,Polynesia
+Asia,Asia
+"Central Asia","Central Asia"
+"Western Asia","Western Asia"
+Europe,Europe
+"Eastern Europe","Eastern Europe"
+"Northern Europe","Northern Europe"
+"Western Europe","Western Europe"
+"Latin America","Latin America"
+"Developer Settings","Developer Settings"
+"These settings are designed to make the search for the extension issues in your shop easier.
+                    Warning: please, do not change anything in these settings in case you are not sure what these settings are designed to.","These settings are designed to make the search for the extension issues in your shop easier.
+                    Warning: please, do not change anything in these settings in case you are not sure what these settings are designed to."
+"Resolve Address Parameters from API Request","Resolve Address Parameters from API Request"
+Labels,Labels
+"Add New Carrier","Add New Carrier"
+"Delete items","Delete items"
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+"Change Status","Change Status"
+"You really want to change the status of the chosen carriers?","You really want to change the status of the chosen carriers?"
+Code,Code
+"Created At","Created At"
+"Updated At","Updated At"
+"Pop-up Zone Information","Pop-up Zone Information"
+Name,Name
+"Add New Zone","Add New Zone"
+Select...,Select...
+"You really want to change the status of the chosen zones?","You really want to change the status of the chosen zones?"
+Image,Image
+Created,Created
+Updated,Updated
+"Method Information","Method Information"
+"
+                        Will be displayed on checkout if a Store-specific label was not set.
+                    ","
+                        Will be displayed on checkout if a Store-specific label was not set.
+                    "
+"
+                        The value should be unique. This code is visible in the back-end only.
+                    ","
+                        The value should be unique. This code is visible in the back-end only.
+                    "
+"This setting hides the method if there are no valid rates for it","This setting hides the method if there are no valid rates for it"
+"
+                        Hides that method if there is no one valid rate was applied.
+                    ","
+                        Hides that method if there is no one valid rate was applied.
+                    "
+"Replace method's title","Replace method's title"
+"
+                        This setting replaces the method's title by the applicable rate's title with the highest priority
+                    ","
+                        This setting replaces the method's title by the applicable rate's title with the highest priority
+                    "
+"
+                        Base price of the method (in base currency). Used for methods without rates.
+                    ","
+                        Base price of the method (in base currency). Used for methods without rates.
+                    "
+"Min Price Threshold","Min Price Threshold"
+"
+                        Used only in rates price calculation, does not overwrite own method price if there are no valid
+                        rates
+                    ","
+                        Used only in rates price calculation, does not overwrite own method price if there are no valid
+                        rates
+                    "
+"Max Price Threshold","Max Price Threshold"
+"
+                        Allows to configure the price-calculation method when more than one rate is valid.
+                    ","
+                        Allows to configure the price-calculation method when more than one rate is valid.
+                    "
+"Free Shipping Allowed","Free Shipping Allowed"
+"
+                        Triggered by a third party extension. Allows to set a free shipping (for a whole cart) in the
+                        modules like the Sales Rules.
+                    ","
+                        Triggered by a third party extension. Allows to set a free shipping (for a whole cart) in the
+                        modules like the Sales Rules.
+                    "
+"Display the Estimated Delivery Time on front-end","Display the Estimated Delivery Time on front-end"
+"
+                        In case when is enabled the Estimated Delivery Time message with a corresponding values would be
+                        displayed for the customer on the front-end (in a method title) - if enabled,
+                        the Estimated Delivery Time message with the corresponding values will be displayed
+                        on the front-end (in the method's title)
+                    ","
+                        In case when is enabled the Estimated Delivery Time message with a corresponding values would be
+                        displayed for the customer on the front-end (in a method title) - if enabled,
+                        the Estimated Delivery Time message with the corresponding values will be displayed
+                        on the front-end (in the method's title)
+                    "
+"Allow to replace Estimated Delivery Time","Allow to replace Estimated Delivery Time"
+"
+                        Allows to replace the Estimated Delivery Time values by the corresponding values
+                        from the valid rates
+                    ","
+                        Allows to replace the Estimated Delivery Time values by the corresponding values
+                        from the valid rates
+                    "
+"Estimated delivery time min","Estimated delivery time min"
+"Estimated delivery time max","Estimated delivery time max"
+"Estimated Delivery Time Display Type","Estimated Delivery Time Display Type"
+"
+                        Display min and max time as days, hours or days with hours.
+                    ","
+                        Display min and max time as days, hours or days with hours.
+                    "
+"Estimated Delivery Time Message","Estimated Delivery Time Message"
+"
+                        This message will be displayed with the method title. You can use the following variables
+                        that will be replaced with the corresponding values:
+                        {{min_days}} {{max_days}} {{min_hours}} {{max_hours}}
+
+                        Examples:
+                        1) ""Estimated Delivery Time Display Type"" is set to ""Days only (rounded)""
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+
+                        If the min or max value is set as the decimal value (5.6), then it will be rounded according to the math rules.
+
+                        2) ""Estimated Delivery Time Display Type"" is set to ""Hours""
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output nothing {{max_days}} will output nothing {{min_hours}} will output 5 {{max_hours}} will output 6
+
+                        If the min or max value is set as the decimal value (5.6), then it will be rounded according to the math rules.
+
+                        3) ""Estimated Delivery Time Display Type"" is set to ""Days with Hours""
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+
+                        Estimated delivery time min = 5.4
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 hours 10 minutes {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+                    ","
+                        This message will be displayed with the method title. You can use the following variables
+                        that will be replaced with the corresponding values:
+                        {{min_days}} {{max_days}} {{min_hours}} {{max_hours}}
+
+                        Examples:
+                        1) ""Estimated Delivery Time Display Type"" is set to ""Days only (rounded)""
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+
+                        If the min or max value is set as the decimal value (5.6), then it will be rounded according to the math rules.
+
+                        2) ""Estimated Delivery Time Display Type"" is set to ""Hours""
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output nothing {{max_days}} will output nothing {{min_hours}} will output 5 {{max_hours}} will output 6
+
+                        If the min or max value is set as the decimal value (5.6), then it will be rounded according to the math rules.
+
+                        3) ""Estimated Delivery Time Display Type"" is set to ""Days with Hours""
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+
+                        Estimated delivery time min = 5.4
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 hours 10 minutes {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+                    "
+Rates,Rates
+"Estimated Delivery Time Messages","Estimated Delivery Time Messages"
+"Add New Method","Add New Method"
+"You really want to change the status of the chosen methods?","You really want to change the status of the chosen methods?"
+"Carrier Id","Carrier Id"
+No,No
+"Hidden without valid rates","Hidden without valid rates"
+"Allow Free Shipping","Allow Free Shipping"
+"Replaceable Title","Replaceable Title"
+"Multi-rates price calc.","Multi-rates price calc."
+"Estimated Delivery Time min","Estimated Delivery Time min"
+"Estimated Delivery Time max","Estimated Delivery Time max"
+"Display Estimated Delivery Time","Display Estimated Delivery Time"
+"Replace Estimated Delivery Time","Replace Estimated Delivery Time"
+"You really want to change the status of the chosen rules?","You really want to change the status of the chosen rules?"
+"Rate Information","Rate Information"
+"
+                        The Rate with a max priority (e.g. 999)
+                        will be applied first, then will be applied the Rate with a lower priority (e.g. 100).
+                        The Rate with the lowest priority (e.g. 0) will be applied at the end.
+                    ","
+                        The Rate with a max priority (e.g. 999)
+                        will be applied first, then will be applied the Rate with a lower priority (e.g. 100).
+                        The Rate with the lowest priority (e.g. 0) will be applied at the end.
+                    "
+"Price Calculation Method","Price Calculation Method"
+"
+                        Allows to overwrite a price of a method or take the sum of the methods price and the
+                        resulted price of the rate.
+                    ","
+                        Allows to overwrite a price of a method or take the sum of the methods price and the
+                        resulted price of the rate.
+                    "
+"Region (plain text)","Region (plain text)"
+"Zip From","Zip From"
+"Zip To","Zip To"
+"Total Price From","Total Price From"
+"Total Price To","Total Price To"
+"Total Qty From","Total Qty From"
+"Total Qty To","Total Qty To"
+"Total Weight From","Total Weight From"
+"Total Weight To","Total Weight To"
+"Rate Pricing","Rate Pricing"
+"Total Price","Total Price"
+"Price Per Each Product","Price Per Each Product"
+"Price Per Each Item","Price Per Each Item"
+"Price Per Each Product (% of the method price)","Price Per Each Product (% of the method price)"
+"Price Per Each Item (% of the method price)","Price Per Each Item (% of the method price)"
+"Price Per Each Item (% of the item price)","Price Per Each Item (% of the item price)"
+"Price Per 1 Unit of Weight","Price Per 1 Unit of Weight"
+"You really want to change the status of the chosen ratess?","You really want to change the status of the chosen ratess?"
+"Region Id","Region Id"
+"Zip/Postal Code From","Zip/Postal Code From"
+"Zip/Postal Code To","Zip/Postal Code To"
+"Price From","Price From"
+"Price To","Price To"
+"Qty From","Qty From"
+"Qty To","Qty To"
+"Weight From","Weight From"
+"Weight To","Weight To"
+"Price Per Product","Price Per Product"
+"Price Per Item","Price Per Item"
+"Price Percent Per Product","Price Percent Per Product"
+"Price Percent Per Item","Price Percent Per Item"
+"Item Price Percent","Item Price Percent"
+"Price Per One Unit Of Weight","Price Per One Unit Of Weight"
+Rate,Rate
+"Region Information","Region Information"
+"Is Custom","Is Custom"
+"Default Name","Default Name"
+"Add New Region","Add New Region"
+"You really want to change the status of the chosen regions?","You really want to change the status of the chosen regions?"
+"Country Id","Country Id"
+Custom,Custom
+Original,Original
+"Add New Location Group","Add New Location Group"
+"You really want to change the status of the chosen Location Groups?","You really want to change the status of the chosen Location Groups?"
+"When disabled - only the code field will be used for binding for the all entities, except a rates, which will be created anew","When disabled - only the code field will be used for binding for the all entities, except a rates, which will be created anew"
+"Import/Export Configuration","Import/Export Configuration"
+"Use the ID field to bind fields during the import-export process","Use the ID field to bind fields during the import-export process"
+"A total of %1 record(s) have been deactivated.","A total of %1 record(s) have been deactivated."
+"Something went wrong, nothing was deleted.","Something went wrong, nothing was deleted."
+"total weight","total weight"

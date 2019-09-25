@@ -1,0 +1,444 @@
+"-- Next Slide --","-- Slide suivant --"
+"-- Not Chosen --","- Non Défini -"
+"-- Previous Slide --","-- Slide précédent -"
+"-- wrong alias -- ","-- mauvais alias -- "
+"1st Slide","1èr Slide"
+"2 x 2 Black","2 x 2 Noir"
+"2 x 2 White","2 x 2 Blanc"
+"3 x 3 Black","3 x 3 Noir"
+"3 x 3 White","3 x 3 Blanc"
+"A new delay value for the Slide. If no delay defined per slide, the delay defined via Options (9000ms) will be used.","Une nouvelle durée pour le Slide . Si une durée par Slide n'edt pas précisée, la durée définie par Options (9000ms) sera utilisée."
+Add,Ajouter
+"Add Blank Slide","Ajouter Slide Vide"
+"Add Bulk Slides","Ajout Plusi. Slides"
+"Add Button Layer","Ajouter Bouton Calque"
+"Add New","Ajouter Nouveau"
+"Add Slide","Ajouter Slide"
+"Add This Video","Ajouter cette vidéo"
+"Add as many attributes as you wish here. (i.e.: data-layer=""firstlayer"" data-custom=""somevalue"").","Ajouter autant d'attributs que vous souhaitez ici. (i.e.: data-layer=""firstlayer"" data-custom=""somevalue"")."
+"Add from Template","Ajout depuis Modèle"
+"Add to Templates","Ajout aux Templates"
+"Advanced CSS","CSS Avancées "
+"Advanced Settings","Paramètres Avancés"
+"Advanced Style on/off","Style Avancé on/off"
+All,Tout
+"All Layers","Tous les Calques"
+"All Slides","Tous les Slides"
+"Always Show","Toujours Afficher"
+"Always Show ","Tojours Afficher"
+"Animation Duration","Durée Animation"
+"Animation Duration:","Durée Animation:"
+"Animation already exists, overwrite?","Animation existe déjà, écraser?"
+"Animation deleted","Animation effacée"
+"Animation exists, override existing animation?","Animation existe déjà, écraser?"
+"Animation saved","Animation enregistrée"
+"Animationname already existing","Nom d'Animation déjà utilisé"
+Appearance,Apparence
+"Are you sure to replace the urls?","Etes-vous sûr(e) de remplacer les urls?"
+Arrows,Flèches
+"Arrows Style","Style Flèche"
+Ascending,Ascendant
+"Aspect Ratio:","Ratio Aspect:"
+Attributes,Attributs
+"Auto Linebreak (on/off - White Space:normal / nowrap).  ","Saut de ligne automatique (on / off - Blanc Espace: normale / nowrap)."
+Autoplay:,"Lecture auto:"
+Background,Arrière-Plan
+"Background Color","Couleur de fond"
+"Background Position","Position Arrière-Plan"
+"Background Position:","Position Arrière-Plan"
+"Background Repeat:","Répétition Arrière-Plan:"
+"Background color","Couleur Arrière-Plan"
+Behavior,Comportement
+Blur,Flou
+Border,Bord
+Bottom,Bas
+"Bottom Left","En Bas à Gauche"
+"Bottom Right","En Bas à Droite"
+Box-Shadow,"Ombres Boite"
+"Bullet Style","Style Puce"
+Bullets,Puces
+Button,Bouton
+Buttons,Boutons
+"By Favorit","Par Favori"
+"By ID","Par ID"
+"By Name","Par Nom"
+"By Type","Par Type"
+"CSS classname already existing","CSS classname déjà existante"
+"CSS classname not found","Nom de Class non trouvé"
+"CSS could not be saved","CSS n'a pu être sauvé"
+"CSS saved","CSS enregistré"
+"Carousel Settings","Paramètres Carousel"
+Center,Centre
+"Change Video","Modifier la vidéo"
+"Choose Slider","Choisir Slider"
+"Choose the import file","Choisissez le fichier d'importation"
+"Class already exists, overwrite?","Class existe déjà, écraser?"
+"Class must be a valid CSS class name","Le nom de la Class doit être un nom de class CSS valide"
+"Class name renamed","Class renommée"
+"Class not found in database","Class non trouvée ds la base de données"
+Click,Clic
+"Click Here",Cliquez-ici
+"Click on Element to add it","Cliquez sur l'élément pour l'ajouter"
+"Click your Shape below to add it","Cliquez sur votre forme ci-dessous pour l'ajouter"
+Close,Fermer
+Color,Couleur
+"Color 2","Couleur 2"
+"Color of the progress bar.","Couleur de la barre de progression"
+Content,Contenu
+Copy,Copier
+"Copy / Move","Copier / Déplacer"
+"Copy / move slide","Copier / déplacer Slide ."
+"Could not save Slide as Template","Impossible d'enregistrer le Slide en tant que Template"
+"Cover Image need to be set for videos","Image de couverture doivent être définies pour les vidéos"
+"Create Template","Créer un Template"
+"Current Slide","Slide Courant "
+"Current Slide as jQuery Object","Slide courant comme Jquery Objetc"
+Custom,Personnaliser
+"Custom Animations","Animations personnalisées:"
+"Custom Animations:","Animations personnalisées:"
+"Custom CSS","CSS personnalisé"
+"Custom Fields:","Champs Personnalisés:"
+"Custom JavaScript","JavaScript personnalisé"
+"Date created","Date de Création"
+Default,Défaut
+"Default Setting","Param. par défaut"
+"Default Slider","Slider par Défaut"
+"Default transition by creating a new slide.","Transition par défaut nouveau Slide."
+"Default transition duration by creating a new slide.","Durée Transition par défaut nouveau Slide."
+Defaults,Défauts
+Delete,Effacer
+"Delete All Layers","Supprimer tous les Calques"
+"Delete Slider","Effacer Slider"
+"Delete this Navigation?","Supprimer cette Navigation?"
+"Delete this slide?","Effacer ce Slide . ?"
+Descending,Descendant
+"Description of Slider:","Description du Slider:"
+Desktop,Bureau
+Disable,Désactivé
+"Disable Slider on Mobile","Désactiver le Slider sur Mobile"
+"Disable on Mobile","Désactivé sur mobile"
+Disabled,Désactivé
+"Display a gallery","Afficher une galerie"
+"Display an album","Afficher un album"
+"Display this number of photos","Afficher ce nombre de photos"
+"Display this number of posts","Afficher ce nombre de messages"
+"Display this number of tweets","Afficher ce nombre de tweets"
+"Do you really want to delete","Voulez-vous vraiment supprimer"
+"Do you really want to delete all the layers?","Confirmez-vous la suppression de tous les calques?"
+DragMe,Tirez-moi
+Duplicate,Dupliquer
+"Duration (in ms):","Durée (en ms):"
+"Edit Slider","Editer Slider"
+"Edit Slides","Éditer Diapositives"
+Editing,Rédaction
+Enable,Activé
+"Enable / Disable Thumbnails","Activer / Désactiver Vignette"
+"Enable Link:","Activer lien:"
+"Enable Thumbnails","Vignettes Actives"
+"End At:","Fin à:"
+"Enter a correct class name","Entrez un nom de Class correcte"
+"Enter your Slider Alias here","Indiquez l'alias de votre Slider ici"
+"Enter your Slider Name here","Entrer le nom de votre Slider ici"
+Event,Événement
+Events,Evènements
+Export,Exporter
+"Export Slider","Exporter Slider"
+"Export to HTML","Exporter en  HTML"
+"External URL","URL Externe"
+"Facebook Page","Page Facebook"
+"Facebook Stream","Flux Facebook"
+"Filter By:","Filtrer par:"
+Font,Police
+"Font Color","Couleur Police"
+"Font Decoration","Décoration Police"
+"Font Family","Famille de police"
+"Font Size","Taille Police"
+"Font Size (px)","Taille Police (px)"
+"Font Weight","Epaisseur Police"
+"For Example: 00:17","Par Exemple:: 00:17"
+"Force Cover:","Forcer à Recouvrir :"
+"Force Full Width:","Force Aff. Plein Écran:"
+"Full Screen:","Plein Écran:"
+Full-Height,"Pleine Hauteur"
+Full-Screen,"Plein écran"
+Full-Width,"Pleine Largeur"
+Function,Fonction
+Gallery,Galerie
+"General Settings","Paramètres Généraux"
+"General settings updated","Paramètres généraux mis à jour"
+"Global Settings","Paramètres généraux"
+"Global Styles Editor","Éditeur de Styles Généraux"
+Height,Hauteur
+Height:,Hauteur:
+Help,Aide
+"Helper Grid:","Grille d'Aide:"
+"Hide After","Cacher Après"
+"Hide After on Mobile","Cacher Après sur Mobile"
+"Hide Controls:","Masquer les commandes:"
+"Hide Element Under Width:","Cacher l'Élément si largeur inférieur à:"
+"Hide Slide Options","Masquer les options du Slide"
+High,Haut
+"Horizontal Align","Align. Horizonta"
+"Horizontal Aligns","Alignements horizontaux"
+Hover,Survol
+"Hover State","État Survol"
+"ID missing, something went wrong. Please try again!","ID manquant, quelque chose n'a pas fonctionné. Merci d'essayer à nouveau!"
+"If set, slide will be visible after the date is reached.","Si définie, le Slide sera afiché lorsque la date indiquée est atteinte."
+"If set, slide will be visible till the date is reached.","Si définie, le Slide sera afiché tant que la date indiquée  n'est pas atteinte."
+Import,Importer
+"Import Slider","Importer Slider"
+"Import Template Slide","Importer Slide Template "
+"Infinity Scroll","Défilement infini"
+"Insert Meta","Inserer Meta"
+"Installed Version","Version installée"
+"Italic Font","Police Italique"
+"Italic Font On/Off","Police Italique On/Off"
+"Jump to Slide","Aller au Slide"
+"Keep Aspect Ratio (on/off)","Conserver les proportions (on / off)"
+"Ken Burns / Pan Zoom:","Video Muette:"
+"Last Modify Date","Date de modification"
+"Last Slide","Dernier Slide."
+"Layer Align Center","Calque centré"
+"Layer Align Left","Calque aligné à Gauche"
+"Layer Align Right","Calque aligné à Droite"
+"Layer Animation Editor","Éditeur Animation Calque"
+Layers,Calques
+Left,Gauche
+"Line Height","Hauteur de Ligne"
+"Line Height (px)","Hauteur de Ligne (px)"
+Link,Lien
+"Link Sensibility:","Sensibilité du Lien"
+"Link Target:","Cible Lien:"
+"Link To Slide:","Lien vers le Slide:"
+"Link Type:","Type Lien:"
+"Link Url","Lien Url"
+"Link the Full Slide to an URL or Action.","Lier le Slider complet à une URL ou une Action."
+"Loading Error","Erreur de chargement"
+"Loop Parameters","Paramètres Boucle"
+"Loop Video:","Boucle vidéo:"
+"Loop, Slide does not stop","En Boucle, le Slide ne s'arrête pas"
+"Loop, Slide is paused","Boucle, Slide  en pause"
+"Low Resolution","Résolution Faible"
+"Main / Background Image","Image Arrière-Plan / Principale"
+"Main Background","Arrière-Plan Principal"
+"Making changes to these settings will probably overwrite advanced settings. Continue?","Apporter des modifications à ces paramètres modifiera probablement les paramètres avancés. Continuer?"
+"Max. Chars","Max. Caract."
+"Max. Res.","Res. Max."
+Medium,Moyen
+"Medium 640","Moyen 640"
+"Medium 800","Moyen  800"
+"Min. Height","Hauteur Min."
+"Mouse Enter","Entrée Souris"
+"Mouse Leave","Départ Souris"
+"Mouse Move","Déplacement Souris"
+"Mouse Sensibility","Souris Sensibilitée"
+Move,Déplacer
+"Move and Scroll","Mouvement et Défilement"
+"Must be greater than start time","Doit être supérieur au temps de départ"
+"Mute Video:","Vidéo muette"
+"Name too short, at least 3 letters between a-zA-z needed","Nom trop court, au moins 3 lettres entre a-zA-z nécessaires"
+"Navigation Bullets and Arrows are now set to none.","Puces et flèches de navigation sont désormais réglés à aucun."
+"Navigation Editor","Editeur Navigation"
+"Navigation deleted","Navigation effacée"
+"Navigation name already exists, please choose a different name","Nom de navigation déjà utilisé, merci de choisir un autre nom"
+"Navigation name could not be updated","Nom de navigation ne peut pas être mis à jour"
+"Navigations updated","Navigations msies à jour"
+"New Slider","Nouveau Slider"
+"New Window","Nouvelle Fenêtre"
+"Next Slide","Prochain Slide"
+"Next Slide On End:"," Slide Suiv. une fois lue"
+No,Non
+"No Data Received","Aucune Donnée Reçue"
+"No ID given","Aucun ID indiqué"
+"No Parallax","Pas de Parallax"
+"No Shadow","Pas D'ombre"
+"No Sliders Found","Aucun Slider trouvé"
+None,Aucun
+Notebook,Portable
+"Number of Comments","Nombre de Commentaires"
+"Number of Likes","Nombre de Likes"
+"Number of Views","Nombre de Vues"
+"On IE8","Sur IE8"
+"On Mobile","Sur Mobile"
+"On Mobile and IE8","Sur Mobile et IE8"
+Opacity,Opacité
+"Original CSS classname not found","Le nom de la classe CSS originale est introuvable"
+"Original Size","Taille d'Origine"
+"Overflow Hidden","Débordement Invisible"
+"Overwrite current animation?","Ecraser animation courrante?"
+"Parallax Level:","Niveau Parallax:"
+"Parallax Levels","Niveaux Parallax:"
+Parameter,Paramètre
+"Parameter ",Paramètre
+Parameters,Paramètres
+"Performance and SEO Optimization","Performances et optimisation SEO"
+"Play/Pause Layer Loop Animation","Play/Pause Calque Animation Boucle"
+"Please Wait a Moment","Merci de Patienter"
+"Please Wait...","S'il vous plaît patienter ..."
+"Please enter a Slide title","Merci de renseigner un titre pour ce Slide"
+"Please select an existing Style Template","Merci de sélectionner un template existant"
+"Please select at least one device type","S'il vous plaît sélectionner au moins un type d'appareil"
+"Post Title","Titre Post"
+"Post deleted","Post effacé"
+"Predefined Elements","Éléments Prédéfinis"
+"Preset name already exists, please choose a different name","Nom de navigation déjà utilisé, merci de choisir un autre nom"
+Preview,Aperçu
+"Preview Slider","Aperçu Slider"
+"Previous Slide","Slide Précédent"
+"Previous Slide as jQuery Object","Slide précédent comme Objet Jquery"
+"Progress Bar","Barre de progression"
+"Progress Bar Color","Couleur de la barre de progression"
+Published,Publiée
+"Pulbishing Date","Date Publication"
+"Purchase Code is invalid","Purchase Code invalide"
+Random,Aléatoire
+"Read <a target=""_blank"" href=""http://weblizar.com/get-flickr-api-key/"">here</a> how to receive your Flickr API key","Comment recevoir votre clé API Flickr"
+"Really change font settings?","Vraiment modifier les paramètres de police?"
+"Really delete Class","Langue source : Anglais
+Vraiment supprimer la classe"
+"Really delete animation:","Confirmez la suppression de l'animation:"
+"Really delete font?","Confirmez la suppression de la police?"
+"Really delete this preset?","Confirmez la suppression de ce preset?"
+"Really overwrite Class?","Vraiment écraser la classe?"
+"Really overwrite animation?","Vraiment écraser animation?"
+"Really update global styles?","Confirmez la mise à jour des styles généraux?"
+Remove,Retirer
+"Remove current element from Navigation?","Retirer l'élément courant de la navigation?"
+Rename,Renommer
+"Rename Animation","Renommer Animation"
+"Rename CSS","Renommer CSS"
+"Rename to:",Renommer:
+"Replace URL","Remplacer URL"
+"Replace URL's","Remplacer URLS"
+Replies,Réponses
+Reset,Réinitialiser
+Right,Droit
+"Rotation enabled/disabled for not focused elements.","Rotation activée / désactivée pour les éléments non ciblés."
+"Same Window","Même Fenêtre"
+Save,Enregistrer
+"Save As","Enregistrer Sous"
+"Save As:","Enregistrer Sous:"
+"Save Performance:","Enregistrer Performance:"
+"Save Settings","Enregistrer les paramètres"
+"Save Slide","Enregistrer Slide"
+"Save Under","Enregistrer Sous"
+"Save Under:","Enregistrer Sous:"
+"Select Album","Sélectionnez l'album"
+"Select Image","Sélectionner une Image"
+"Select Layer Image","Sélectionner un Calque Image"
+"Select Slide Image","Selectionner Image Slide "
+"Select Slide Video","Selectionner Image Slide "
+"Select Static Layer Image","Sélectionner Calque Image Statique"
+"Select a Slider Type","Sélectionnez un type de Slider"
+"Select the album to pull the data from ","Sélectionnez l'album source"
+"Set selected settings on all Slides of this Slider? (This will be saved immediately)","Appliquer les paramètres sélectionnés à tous les Slides de ce Slider ? (Ces changements seront automatiquement enregistrés)"
+Settings,Paramètres
+"Shadow Type","Type d'Ombre"
+Shape,Forme
+"Shape Settings","Paramètres Forme"
+"Show Layers from Slide:","Afficher les calques du Slide"
+"Show Slide Options","Afficher les options du Slide"
+"Simple Link","Simple Lien"
+"Simulate Click","Simuler Clic"
+Sizing,Dimensions
+"Slide ""Delay"":","Slide ""Durée"":"
+"Slide Created","Slide Créée"
+"Slide Created, redirecting...","Slide Créé, rediriection ..."
+"Slide Description","Descritption Slide ."
+"Slide Info","Info Slide"
+"Slide Thumbnail. If not set - it will be taken from the slide image.","Vignette Slide, Si non défini - il sera automatiquement généré depuis l'image du slide"
+"Slide Title","Titre Slide ."
+"Slide added to Templates","Slide ajouter aux Templates"
+"Slide changed","Slide  changée"
+"Slide copied to current Slider, redirecting...","Slide copié dans le Slider, redirection ..."
+"Slide could not be copied","Slide ne peut être copié"
+"Slide could not be duplicated","Diapo ne peut être dupliquée"
+"Slide deleted","Slide  supprimée"
+"Slide duplicated","Slide dupliqué"
+"Slide name should not be empty","Nom du Slide doit être renseigné"
+"Slide updated","Slide mise à jour"
+"Slider Background","Slider Arrière-Plan"
+"Slider Settings","Param. Slider"
+"Slider created","Daiporam créé"
+"Slider deleted","Slider supprimé"
+"Slider not found","Slider non trouvé"
+"Slider setting could not be changed","LEs paramètres du Slider ne peuvent être changés"
+"Slider updated","Slidermis à jour"
+"Slides (max 60)","Sliders (max 60)"
+"Slides Created","Slides Créés"
+Small,Petit
+"Small 320","Petit 320"
+Smart,Intelligent
+"Sort By:","Trier par:"
+"Sortby updated","Tri mise à jour"
+"Source Settings","Configuration de la source"
+Space,Espace
+"Space between slides","Eepace entre les Slides"
+"Space between the bullets.","Eepace entre les puces"
+Square,Carré
+"Standard Resolution","Résolution Standard"
+"Start At:","Démarrer à:"
+"Static Layers","Calques Statiques"
+"Stream Video","Flux Video"
+"Style deleted!","Style supprimé!"
+Success!,Succès!
+"Success! Refreshing page...","Succès! Actualisation de la Page..."
+"Suggested Height:","Hauteur Suggérée:"
+"Suggested Width:","Largeur Suggérée:"
+Tablet,Tablette
+Tabs,Onglets
+Text,Texte
+"Text Align","Align. Texte"
+Text-Shadow,"Ombre Texte"
+"The duration of the transition.","la durée de la transition."
+"The state of the slide. The unpublished slide will be excluded from the slider.","L'état du slide. un slide non publié sera exclue du Slider."
+"The target of the slide link.","La cible du lien du Slide."
+"The title of the slide, will be shown in the slides list.","Le titre du slide , sera affiché dans la liste des slides."
+"This class does not exist.","Cette classe n'existe pas  ."
+"This navigation element does not exist, create one?","Cet élément de navigation n'existe pas, souhaitez-vous le créer?"
+"This will reset the navigation, continue?","Ceci réinitialisera la navigation, continuer?"
+Thumbnail,Vignette
+Thumbnail:,Vignette:
+Thumbnails,Vignettes
+Thumbs,Vignettes
+Title,Titre
+"Title updated","Titre mis à jour"
+Title:,Titre:
+Top,Haut
+"Top Left","En haut à gauche"
+"Top Right","En haut à droite"
+Transform,Transformer
+Unpublished,"Non Publiée"
+Update,"Mise à jour"
+"Update History","Historiques Mises à jour"
+"Use Alternative Image","Utilser une Image Alternative"
+User,Utilisateur
+Username,"Nom d'utilisateur"
+"Vertical Align","Align. Vertical"
+"Vertical position of the right arrow.","Position verticale de la flèche droite."
+"Video Preload:","Video Préchargement:"
+"Video Settings","Paramètres Video"
+"Video Speed:","Vitesse vidéo:"
+View,Vue
+Views,Vues
+"Vimeo Stream","Flux Vimeo"
+Visibility,Visibilité
+"Visibility on Devices","Visibilité sur Appareils"
+"Visible from:","Visible à partir du:"
+"Visible until:","Visible jusqu'à:"
+"White Space",Espacement
+Width,Largeur
+Width:,Largeur:
+"Wrong Request","Mauvais Requête"
+Yes,Oui
+"YouTube Stream","Flux YouTube"
+"Zoom End","Zoom Fin"
+"Zoom Start","Zoom Départ"
+cover,"Forcer à Recouvrir :"
+example,exemple
+"example: 30300114","exemple: 30300114"
+"jQuery Link","Lien jQuery "
+none,aucun
+overwrite,écraser
+updating...,"mise à jour..."
+use,utiliser

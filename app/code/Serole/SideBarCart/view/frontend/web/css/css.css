@@ -1,0 +1,15 @@
+.bagDropList .section-actions .tocart{	
+	background: url(../images/delete.png)no-repeat #ffff!important;
+    width: 0%!important;
+    /* float: right!important; */
+}
+.bagDropList .section-actions .edit{	
+	background: url(../images/edit.png)no-repeat #ffff!important;
+    width: 0%!important;
+    /* float: right!important; */
+}
+@media (max-width: 768px){ 
+	.bagDrop{display:none;}
+}
+.filter-options-content a{padding: 0px 4px!important;}
+

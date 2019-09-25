@@ -1,0 +1,138 @@
+<?php
+/** @var \Mirasvit\Helpdesk\Block\Ticket\Create $block */
+?>
+<form action="<?= $block->getSubmitUrl() ?>" method="POST" enctype="multipart/form-data"
+      data-mage-init='{"validation":{}}' class="hdmx__ticket-new">
+    <fieldset class="fieldset" data-mage-init='{"helpdeskCustomerAccount":{}}'>
+        <legend class="legend">
+            <span><?= __('Create New Enquiry') ?></span>
+        </legend>
+
+        <div class="fields group">
+            <div class="field required subject">
+                <label class="label" for="subject">
+                    <span><?= __('Subject') ?></span>
+                </label>
+
+                <div class="control">
+                    <input type="text" name="subject" data-id="subject" class="subject input-text required-entry">
+                </div>
+            </div>
+
+            <?php if ($block->getFrontendIsAllowPriority()): ?>
+                <div class="field required priority">
+                    <label class="label" for="priority_id">
+                        <span><?= __('Priority') ?></span>
+                    </label>
+
+                    <div class="control">
+                        <select name="priority_id" data-id="priority_id" class="priority_id">
+                            <?php foreach ($block->getPriorityCollection() as $priority): ?>
+                                <option value="<?= $priority->getId() ?>">
+                                    <?= $priority->getName() ?>
+                                </option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if ($block->getFrontendIsAllowDepartment()): ?>
+                <div class="field required department">
+                    <label class="label" for="department_id">
+                        <span><?= __('Department') ?></span>
+                    </label>
+
+                    <div class="control">
+                        <select name="department_id" class="department_id" data-id="department_id">
+                            <?php foreach ($block->getDepartmentCollection() as $department): ?>
+                                <option value="<?= $department->getId() ?>">
+                                    <?= $department->getName() ?>
+                                </option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+        </div>
+
+        <div class="fields group">
+            <div class="field required message">
+                <label class="label" for="message">
+                    <span><?= __('Message') ?></span>
+                </label>
+
+                <div class="control">
+                    <textarea name="message" data-id="message" class="message input-text required-entry"
+                              rows="5"></textarea>
+                </div>
+            </div>
+            <div class="field required"></div>
+        </div>
+
+        <div class="fields group">
+            <div class="field">
+                <label class="label" for="attachment">
+                    <span><?= __('Attachments') ?></span>
+                </label>
+
+                <div class="control">
+                    <input type="file" class="multi attachment" name="attachment[]" data-id="attachment"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="fields group">
+            <?php if ($block->getFrontendIsAllowOrder() && $block->getOrderCollection()->count()): ?>
+                <div class="field order">
+                    <label class="label" for="order_id">
+                        <span><?= __('Order') ?></span>
+                    </label>
+
+                    <div class="control">
+                        <select name="order_id" data-id="order_id" class="order_id">
+                            <option value=""><?= __('-- Select an Order --') ?></option>
+                            <?php foreach ($block->getOrderCollection() as $order): ?>
+                                <option
+                                        value="<?= $order->getId() ?>"><?= $block->getOrderLabel($order) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php foreach ($block->getCustomFields() as $field): ?>
+                <div class="field custom">
+                    <label class="label" for="<?= $field->getCode() ?>">
+                        <span><?= $field->getName(); ?></span>
+                    </label>
+                    <div class="control">
+                        <?= $block->getInputHtml($field) ?>
+                    </div>
+                    <p class="note"><?= $field->getDescription() ?></p>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <button type="submit" class="action primary" title="<?= __('Submit Enquiry') ?>">
+            <span><?= __('Submit Enquiry') ?></span>
+        </button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        'mage/validation'
+    ], function ($) {
+        var submitBtn = $('.hdmx__ticket-new .action.primary');
+        $('form').on('invalid-form.validate', function(event, validation) {
+            $(submitBtn).show();
+        });
+        $(submitBtn).click(function() {
+            $(submitBtn).hide();
+        })
+    });
+</script>

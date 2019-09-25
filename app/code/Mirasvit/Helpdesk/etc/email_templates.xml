@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Email/etc/email_templates.xsd">
+    <template id="helpdesk_notification_new_ticket_template" label="Helpdesk - Customer - New Ticket" file="notification_new_ticket_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_staff_new_ticket_template" label="Helpdesk - Staff - New Ticket" file="notification_staff_new_ticket_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_staff_assign_ticket_template" label="Helpdesk - Staff - Assign Ticket" file="notification_staff_assign_ticket_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_new_message_template" label="Helpdesk - Customer - New Message" file="notification_new_message_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_staff_new_message_template" label="Helpdesk - Staff - New Message" file="notification_staff_new_message_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_third_new_message_template" label="Helpdesk - Third Party - New Message" file="notification_third_new_message_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_reminder_template" label="Helpdesk - Staff - Ticket Reminder" file="notification_reminder_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_rule_template" label="Helpdesk - Template of Rule Notifications" file="notification_rule_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+    <template id="helpdesk_notification_staff_new_satisfaction_template" label="Helpdesk - Survey Satisfaction Result" file="notification_staff_new_satisfaction_template.html" type="html" module="Mirasvit_Helpdesk" area="frontend"/>
+</config>

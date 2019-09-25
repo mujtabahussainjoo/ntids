@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="adminhtml.user.editroles">
+            <block class="Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Scope" name="adminhtml.user.tab.amrolepermissions.scope"/>
+            <block class="Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Categories" name="adminhtml.user.tab.amrolepermissions.categories"/>
+            <block class="Magento\Backend\Block\Widget\Tab" name="adminhtml.user.tab.amrolepermissions.products">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Advanced: Products</argument>
+                    <argument name="class" xsi:type="string">ajax</argument>
+                    <argument name="url" xsi:type="url" path="amasty_rolepermissions/product/allowed">
+                        <param name="_current">1</param>
+                    </argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Tab" name="adminhtml.user.tab.amrolepermissions.attributes">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Advanced: Product Attributes</argument>
+                    <argument name="class" xsi:type="string">ajax</argument>
+                    <argument name="url" xsi:type="url" path="amasty_rolepermissions/product/attributes">
+                        <param name="_current">1</param>
+                    </argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Tab" name="adminhtml.user.tab.amrolepermissions.roles">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Advanced: Admin User Role</argument>
+                    <argument name="class" xsi:type="string">ajax</argument>
+                    <argument name="url" xsi:type="url" path="amasty_rolepermissions/role/allowed">
+                        <param name="_current">1</param>
+                    </argument>
+                </arguments>
+            </block>
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">amrolepermissions.scope</argument>
+                <argument name="block" xsi:type="string">adminhtml.user.tab.amrolepermissions.scope</argument>
+                <argument name="after" xsi:type="string">roles</argument>
+            </action>
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">amrolepermissions.categories</argument>
+                <argument name="block" xsi:type="string">adminhtml.user.tab.amrolepermissions.categories</argument>
+                <argument name="after" xsi:type="string">amrolepermissions.scope</argument>
+            </action>
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">amrolepermissions.products</argument>
+                <argument name="block" xsi:type="string">adminhtml.user.tab.amrolepermissions.products</argument>
+                <argument name="after" xsi:type="string">amrolepermissions.categories</argument>
+            </action>
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">amrolepermissions.attributes</argument>
+                <argument name="block" xsi:type="string">adminhtml.user.tab.amrolepermissions.attributes</argument>
+                <argument name="after" xsi:type="string">amrolepermissions.products</argument>
+            </action>
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">amrolepermissions.roles</argument>
+                <argument name="block" xsi:type="string">adminhtml.user.tab.amrolepermissions.roles</argument>
+                <argument name="after" xsi:type="string">amrolepermissions.attributes</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

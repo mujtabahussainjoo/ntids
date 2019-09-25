@@ -1,0 +1,1101 @@
+//
+//  Page header
+//
+
+
+
+//
+//  Variables
+//  _____________________________________________
+
+@breakpoint__mobile-header: 770px;
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+.header {
+    padding: 0;
+}
+
+.header-container {
+
+    //
+    //  Widgets and blocks added via widgets
+    //  ---------------------------------------------
+
+    .widget,
+    .widget.block {
+        margin-bottom: 0;
+    }
+
+}
+
+
+//
+//  User menu and Top Links
+//  ---------------------------------------------
+
+/* Clear floats and override custom styles to avoid incorrect position of elements */
+.user-menu {
+    width:100%;
+    float:none;
+    margin:0;
+    &:extend(.abs-add-clearfix all);
+}
+
+/* Top links */
+.top-links ul {
+    float: left;
+    &:extend(.abs-add-clearfix all);
+}
+
+/* Line breaker */
+.user-menu .line-break-after {
+    clear: both;
+    margin-bottom: 1px;
+}
+
+//
+//  Logo
+//  ---------------------------------------------
+
+//  Important: logo needs to be displayed as inline-block to avoid 
+//  excessive width of the logo when the logo is narrower than its container.
+//  Otherwise, the logo would scale up to fill the entire container.
+
+.header .logo-wrapper .logo {
+    display: inline-block;
+    max-width: 94%;
+    margin: 3px 0;
+    text-decoration: none !important;
+}
+// If logo is h1, the link is inside so make it displayed as block
+.header .logo-wrapper h1.logo a {
+    display: block;
+}
+.header .logo strong {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -999em;
+    overflow: hidden;
+}
+
+//
+//  Block markers
+//  ---------------------------------------------
+
+#nav-marker-regular,
+#nav-marker-regular2,
+#search-marker-regular,
+#account-links-marker-regular,
+#mini-compare-marker-regular,
+#mini-cart-marker-regular,
+
+#nav-marker-mobile,
+#search-marker-mobile,
+#account-links-marker-mobile,
+#mini-compare-marker-mobile,
+#mini-cart-marker-mobile
+{
+    display: none;
+}
+
+//
+//  Sticky header
+//  ---------------------------------------------
+
+.sticky-header .sticky-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+/* Reset selected styles of the menu bar in sticky header
+-------------------------------------------------------------- */
+/* Remove additional padding above and below the menu container */
+.sticky-header .nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+/* Remove background color and vertical padding (they work as an outline of the menu bar) from the nav container */
+.sticky-header .nav-container .nav {
+    background-color: transparent;
+    padding-top: 0;
+    padding-bottom: 0;  
+}
+
+/* Remove shadow from the menu bar wrapper and from the menu bar container */
+.sticky-header .nav-container .nav,
+.sticky-header .nav-container .navi-wrapper,
+.sticky-header .nav-container .navi:not(.nav-vert) {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/* When inside columns, menu is floating to align it horizontally 
+   with holders wrapper. Floating has to be disabled when sticky
+   header is active.
+-------------------------------------------------------------- */
+.sticky-header .left-column .navi,
+.sticky-header .right-column .navi {
+    float: none !important;
+}
+
+/* Category labels
+-------------------------------------------------------------- */
+/* Make top-level category labels invisible */
+.sticky-header .nav-regular .nav-item.level0 > a .cat-label {
+    display: none;
+}
+/* Alternatively, we can make the labels smaller */
+/*.sticky-header .nav-regular .nav-item.level0 > a .cat-label {
+    font-size: 11px;
+    line-height: 15px;
+    padding: 0 4px;
+    top: 2px;
+}
+.sticky-header .nav-regular .nav-item.level0 > a .pin-bottom:before { display: none; }*/
+
+/* Full width content 
+-------------------------------------------------------------- */
+.sticky-header .sticky-container--full-width .container {
+    /* Stretch the container to take all available space */
+    max-width: none;
+    width: 100%;
+}
+.sticky-header .sticky-container--full-width .inner-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Hide selected elements
+-------------------------------------------------------------- */
+/* Text label of the dropdown when inside sticky header */
+.sticky-header .nav-holder .dropdown-heading .label {
+    display: none;
+}
+
+//
+//  Minimal header (displayed on checkout page)
+//  ---------------------------------------------
+
+// .header-container-micro {
+//     background-color: rgba(0,0,0, 0.02);
+// }
+
+
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xxs) {
+
+    .header-container {
+        .header-collateral {
+            float: none;
+            text-align:center;
+        }
+        .header-collateral > * {
+            display: inline-block;
+        }
+        .logo-wrapper--mobile {
+            float: none !important;
+            text-align: center !important;
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+
+    .header-container {
+        .skip-link .label {
+            display: none !important;
+        }
+        .skip-link .icon {
+            margin-right: 0;
+        }
+
+        // Dropdowns in mobile header collaterals
+        .header-collateral .dropdown-block .dropdown-heading {
+            line-height: 36px;
+            max-height: 36px;
+        }
+
+        // Hide labels of switchers
+        .lang-switcher .dropdown-heading .value,
+        .currency-switcher .dropdown-heading .label {
+            display: none !important;
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    //  Deprecated:
+    //  old styles applied when mobile header mode is not enabled
+    //  and the "header-regular" class is not removed from header container on narrow screens.
+    //  _____________________________________________
+
+    //
+    //  Align center header elements.
+    //  ---------------------------------------------
+
+    .header-regular {
+
+        .header .links {
+            text-align: center;
+        }
+        .header .links li {
+            float: none;
+            display: inline-block;
+        }
+
+        .user-menu {
+            text-align: center;
+        }
+        .user-menu > *,
+        .user-menu .links,
+        .dropdown {
+            float: none !important;
+            display: inline-block !important;
+        }
+
+        .logo-wrapper {
+            text-align: center;
+        }
+        .logo-wrapper .logo {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    } // end: .header-regular
+
+}
+
+//
+//  Mobile header mode
+//  IMPORTANT: custom breakpoint: @breakpoint__mobile-header
+//  ---------------------------------------------
+
+//TODO:
+//.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @breakpoint__mobile-header) {
+
+@media only screen and (max-width: (@breakpoint__mobile-header - 1)) {
+
+    //header-mobile
+    .header-container {
+
+        // // Get rid of vertical padding
+        // .header-top,
+        // .header-primary,
+        // .nav {
+        //     padding-top: 0;
+        //     padding-bottom: 0;
+        // }
+
+
+        /* Vertically aligned grid of blocks (in "Header - Primary" section).
+           In mobile header all blocks are stretched to full width
+           and stack vertically.
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        .hp-blocks-holder .hp-block {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+
+        /* Header items
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        /* In mobile header, only items inside mobile container can float */
+        .header-m-container .item-left {
+            float: left;
+            text-align: left;
+        }
+        .header-m-container .item-right {
+            float: right;
+            text-align: right;
+        }
+
+
+        /* Selected elements
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        /* Top links
+        -------------------------------------------------------------- */
+        .top-links {
+            float: none !important;
+            clear: both;
+        }
+        .top-links ul {
+            float: none !important;
+        }
+
+        /* Logo and collateral elements
+        -------------------------------------------------------------- */
+        /* Regular logo */
+        .logo-wrapper--regular {
+            display: none;
+        }
+
+        /* Mobile logo */
+        .logo-wrapper--mobile {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .logo-wrapper--mobile .logo {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Header collateral elements
+        -------------------------------------------------------------- */
+        .header-collateral {
+            float: right;
+            text-align: right;
+        }
+        /* If collateral next to logo, logo floats left */
+        .header-collateral + .logo-wrapper--mobile {
+            float: left;
+            text-align: left;
+        }
+
+        /* User menu
+        -------------------------------------------------------------- */
+        .user-menu {
+            float: none !important;
+            margin: 0; /* Important: remove margins to collapse the block completely */
+        }
+
+        /* Language/currency switcher
+        -------------------------------------------------------------- */
+        /* The "move-switchers" class indicates that in mobile header the default language/currency switchers
+           should be hidden because they are replaced with switchers in alternative position (next to the logo).
+           So we need to hide switchers from both wrappers: regular and mobile. */
+        &.move-switchers {
+            #lang-switcher-wrapper-regular,
+            #currency-switcher-wrapper-regular {
+                display: none;
+            }
+            #lang-switcher-wrapper-mobile,
+            #currency-switcher-wrapper-mobile {
+                display: none;
+            }
+        }
+
+        /* Other
+        -------------------------------------------------------------- */
+        .line-break-after {
+            display: none !important;
+        }
+
+
+        /* Menu elements
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        /* Hide/show basic elements */
+        .nav-mobile { display: block !important; } /* Always displayed */
+        .vertnav-trigger { display: none !important; } /* Always hidden */
+        .mobnav-trigger { display: none !important; } /* Always hidden */
+        .nav-inline-links { display: none !important; } /* Always hidden */
+
+        /* Containers
+        -------------------------------------------------------------- */
+        /* Important: menu container is also a "skip-content" block */
+        .nav-container {
+
+            /* Padding for menu container may be added via admin panel so we need to remove it for mobile header */
+            padding: 0;
+
+            /* If needed, reset also other styles which are added to standard "skip-content" blocks */
+            /* Remove background color */
+            background-color: transparent;
+        }
+
+        /* Menu bar
+        -------------------------------------------------------------- */
+        /* Remove shadow */
+        .nav-container .nav,
+        .nav-container .navi {
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .nav-border-bottom
+        {
+            border-bottom: none;
+        }
+
+        /* Menu items
+        -------------------------------------------------------------- */
+        /* Mobile menu - remove possible gap from the top of the very first item.
+           Gaps are added as dividers between items of the mobile menu accordion. */
+        .nav-mobile .nav-item.nav-1 {
+            margin-top: 0 !important;
+        }
+
+
+        /* Elements hidden in mobile header
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        /* Hide regular header containers in mobile header */
+        /* .header-top-container,
+        .header-primary-container, */
+
+        /* Deprecated rules to hide elements in mobile header (left for backward compatibility) */
+        #lang-switcher-wrapper-regular,
+        #currency-switcher-wrapper-regular
+        {
+            display: none;
+        }
+
+        .header-top .item:not(.item-interface)
+        {
+            display: none;
+        }
+
+
+        /* Skip links in mobile header
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        .skip-link {
+            position: relative;
+            float: left;
+            width: 20%;
+            text-align: center;
+            cursor: pointer;
+            height: 50px;
+            line-height: 50px;
+            max-height: 50px; /* To avoid flickering on load (height of mini cart tab is too small) in mobile view */
+
+            .caret {
+                display: none !important;
+            }
+        }
+        a.skip-link {
+            text-decoration: none;
+        }
+
+        /* Skip link icon
+        -------------------------------------------------------------- */
+        .skip-link .icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 3px;
+            font-size: 16px !important; /* Override possible inline styles */
+            line-height: 16px;
+        }
+
+        /* In mobile view override desktop view styles of iconbox */
+        .skip-link .icon.ib {
+            line-height: 50px;
+            height: 50px;
+            width: 16px;
+            background-color: transparent;
+            color: inherit; /* Inherit from skip links */
+
+            /* Override (remove) transitions. 
+               Note: if you want to add transitions, add them for the entire skip link */
+            -webkit-transition: none;
+            -moz-transition: none;
+            transition: none;
+        }
+
+        /* Skip link elements
+        -------------------------------------------------------------- */
+        // Important: make the selector more specific, because label can be hidden (cart and compare dropdowns) with class "hide"
+        .skip-link.dropdown-heading .label.hide,
+        .skip-link .label {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 16px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        // Product counter in mobile header view (when dropdown is not active)
+        .skip-link .counter {
+            display: inline-block;
+            vertical-align: middle;
+
+            // The same styles as for ".dropdown-block .dropdown-heading .counter" in _dropdown.less
+            line-height: 24px;
+            height: 24px;
+            width: 24px;
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+        }
+        
+        .skip-link .caret {
+            display: none;
+        }
+
+        /* Active link
+        -------------------------------------------------------------- */
+        .skip-link.skip-active,
+        .skip-link:hover {
+            color: inherit;
+        }
+
+        /* Size
+        -------------------------------------------------------------- */
+        .skip-links--1 .skip-link { width: 100%; }
+        .skip-links--2 .skip-link { width: 50%; }
+        .skip-links--3 .skip-link { width: 33.33%; }
+        .skip-links--4 .skip-link { width: 25%; }
+        .skip-links--5 .skip-link { width: 20%; }
+        .skip-links--6 .skip-link { width: 16.66%; }
+
+
+        /* Skip content
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        /* In mobile header the content is hidden.
+           It's displayed only when skip link was clicked.
+        -------------------------------------------------------------- */
+        .skip-content {
+            display: none;
+        }
+        .skip-content.skip-active {
+            display: block;
+        }
+
+        /* Styls (required in skip-content blocks) are added through
+           this special class so that we can control which content
+           blocks are styled.
+        -------------------------------------------------------------- */
+        .skip-content--style {
+            clear: both; /* Required instead of clearfix */
+            padding: 20px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            /* Skip content blocks have to be reset the same as all grid units
+               because skip content blocks can have grid units */
+            width:100% !important; /* Added "!important" to override units with "no-gutter" class */
+            margin: 0;
+            &:extend(.abs-add-clearfix-mobile-m all); //TODO: check if applied inside this custom breakpoint
+        }
+
+        // // Removes padding around skip content when it's menu
+        // #header-nav.skip-content--style {
+        //     padding: 0;
+        // }
+
+
+        /* Selected skip links
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        /* Compare
+        -------------------------------------------------------------- */
+        /* Hide compare block's heading (only heading) */
+        .skip-link.mini-compare-heading {
+            display: none;
+        }
+
+
+        /* Selected skip content
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        /* Generic vertical inline links (e.g. account links)
+        -------------------------------------------------------------- */
+        .account-links .links > li {
+            float: none;
+        }
+        .account-links .links > li > a {
+            background-image: none; /* Remove link separators */
+        }
+        .account-links.links-wrapper-separators .links > li:first-child,
+        .account-links.links-wrapper-separators-left .links > li:first-child {
+            /* In links with separators, we can't remove the negative margin in first item */
+            margin-left: -1px;
+        }
+
+        /* Cart + compare
+        -------------------------------------------------------------- */
+        /* Important: possible value "relative" of the "position" property.
+           Cart can be a dropdown, so in mobile header we need to reset "position" of the dropdown container so that it doesn't cover other skip links.
+           We also need to remove float.
+           */
+        .mini-cart,
+        .mini-compare {
+            position: static;
+            float: none;
+            display: block; /* To make sure it's not "inline-block" */
+        }
+
+        .skip-content.mini-cart-content,
+        .skip-content.mini-compare-content {
+            clear: both;
+            width: 100%;
+        }
+
+        /* Compare
+        -------------------------------------------------------------- */
+        .mini-compare .skip-content .actions {
+            border: none;
+            padding-top: 0;
+        }
+
+        /* Cart
+        -------------------------------------------------------------- */
+        .minicart-items-wrapper {
+            // Override fixed height which is applied to list of items of dropdown minicart
+            height: auto !important;
+        }
+
+        .minicart-items {
+            // Override fixed height which is applied to list of items of dropdown minicart
+            height: auto !important;
+        }
+
+
+        /* Search
+        -------------------------------------------------------------- */
+        .skip-content .block-search {
+            display: block; /* Inside skip-content, search box needs to have block display */
+        }
+
+        /* Additional styles for dropdownDialog widget
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        // We need to make the wrapper (added by the dropdownDialog widget) always 
+        // displayed when header is in mobile view.
+        // Otherwise, the wrapper will be shown on mouse hover over the skip link.
+        .mini-cart .mage-dropdown-dialog {
+            display: block !important;
+        }
+
+    } // end: mobile header mode
+
+    .hide-when-mobile-header {
+        display:none !important;
+    }
+
+} // end: mobile
+
+
+
+//
+//  Desktop
+//  IMPORTANT: custom breakpoint: @breakpoint__mobile-header
+//  _____________________________________________
+
+//
+//  Regular header mode
+//  ---------------------------------------------
+
+//TODO:
+//.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @breakpoint__mobile-header) {
+
+@media only screen and (min-width: @breakpoint__mobile-header) {
+
+    //header-regular
+    .header-container {
+
+        //
+        //  Vertically aligned grid (in "Header - Primary" section)
+        //  ---------------------------------------------
+
+        .hp-blocks-holder {
+            display:table;
+            width:100%;
+        }
+        .hp-blocks-holder .hp-block {
+            float:none;
+            display:table-cell;
+            vertical-align:middle;
+        }
+        .hp-blocks-holder .hp-block {
+            .lib-clearfix();
+            &:extend(.abs-add-clearfix all); //TODO: check if it is applied in this specific custom breakpoint
+        }
+
+        //
+        //  Header items
+        //  ---------------------------------------------
+
+        .item-left {
+            float: left;
+            margin-right: 10px;
+            text-align: left;
+        }
+        .item-right {
+            float: right;
+            margin-left: 10px;
+            text-align: right;
+        }
+
+        //
+        //  Header columns
+        //  ---------------------------------------------
+
+        .left-column {
+            text-align: left;
+        }
+        .central-column {
+            text-align: center;
+        }
+        .right-column {
+            text-align: right;
+        }
+
+        //  Central column inside primary header
+
+        .header-primary .central-column {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        /* Left column 
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        /* Dropdowns
+        -------------------------------------------------------------- */
+
+        /* Avoid dropdown heading stretched in containing block */
+        .left-column .dropdown-block {
+            display: inline-block;
+        }
+
+        /* Search box
+        -------------------------------------------------------------- */
+        // .left-column .block-search {
+        //     float: left;
+        // }
+
+        /* Elements of User Menu
+        -------------------------------------------------------------- */
+        .left-column .user-menu .block-search,
+        .left-column .user-menu .mini-cart,
+        .left-column .user-menu .mini-compare,
+        .left-column .user-menu .top-links,
+        .left-column .user-menu .top-links ul {
+            float: left;
+        }
+
+        /* Menu, holders and holders wrapper
+        -------------------------------------------------------------- */
+        .left-column .nav-holders-wrapper,
+        .left-column .navi {
+            float: left;
+        }
+        .left-column .nav-holders-wrapper .nav-holder {
+            float: left;
+        }
+
+
+        /* Right column
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        /* Dropdowns
+        -------------------------------------------------------------- */
+
+        /* Avoid dropdown heading stretched in containing block */
+        .right-column .dropdown-block {
+            display: inline-block;
+        }
+
+        /* Elements of User Menu
+        -------------------------------------------------------------- */
+        .right-column .user-menu .block-search,
+        .right-column .user-menu .mini-cart,
+        .right-column .user-menu .mini-compare,
+        .right-column .user-menu .top-links,
+        .right-column .user-menu .top-links ul {
+            float: right;
+        }
+
+        /* Menu, holders and holders wrapper
+        -------------------------------------------------------------- */
+        .right-column .nav-holders-wrapper,
+        .right-column .navi {
+            float: right;
+        }
+        .right-column .nav-holders-wrapper .nav-holder {
+            float: right;
+        }
+
+        /* Top links
+        -------------------------------------------------------------- */
+        .right-column .top-links ul {
+            float: right;
+        }
+
+
+        /* Central column
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        /* Elements of User Menu
+        -------------------------------------------------------------- */
+        /* Elements of the central column are centered so the "user-menu" container also needs to be centered:
+           so it needs to be inline-block, it can't float and can't have 100% width. */
+        .central-column .user-menu {
+            display: inline-block;
+            float: none;
+            width: auto;
+        }
+        .central-column .user-menu .block-search,
+        .central-column .user-menu #mini-cart-wrapper-regular, /* IMPORTANT: cart wrapper also needs to float */
+        .central-column .user-menu .mini-cart,
+        .central-column .user-menu .mini-compare,
+        .central-column .user-menu .top-links,
+        .central-column .user-menu .top-links ul {
+            float: right;
+        }
+
+
+        /* Top header
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        .header-top .central-column {
+            text-align: center;
+            width: 100%;
+            &:extend(.abs-add-clearfix all);
+        }
+        .header-top .central-column .item {
+            display: inline-block;
+            float: none;
+            // To avoid incorrect alignment of contained elements ("inline-block" elements) which results in excessive height of the container
+            vertical-align: top;
+        }
+
+
+        /* Top header - selected elements
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        /* User menu inside top header
+        -------------------------------------------------------------- */
+        .header-top .item-left .user-menu > * {
+            float: left;
+        }
+        .header-top .item-right .user-menu > * {
+            float: right;
+        }
+
+
+        /* Selected elements
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        //
+        //  Widgets and blocks added via widgets
+        //  ---------------------------------------------
+
+        .widget {
+            display: inline-block;
+        }
+
+        //
+        //  Search
+        //  ---------------------------------------------
+
+        //  Let the search box have the same width as containing block
+
+        .block-search {
+            width: 100%;
+        }
+
+        //
+        //  Logo
+        //  ---------------------------------------------
+
+        //  Fix for Firefox and IE. In regular header, stretch the image to full width.
+        //  Thanks to that, on small screens when logo is scaled down it will not expand its container. */
+
+        .logo-wrapper .logo img {
+            width: 100%;
+        }
+
+        /* Menu elements
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        /* Simple menu container
+        -------------------------------------------------------------- */
+        /* Menu container is marked with "simple" class.
+           It's added when menu is inside a container which is not full-width but is narrow
+           and placed in one of the header sections. */
+
+        /* Expand the width of the "nav" class element */
+        .nav-container.simple .nav {
+            width: 100%;
+        }
+        /* Remove side padding from inner container */
+        .nav-container.simple .inner-container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
+        /* Other
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        /*.header-top .lang-switcher,
+        .header-top .currency-switcher, */
+        #lang-switcher-wrapper-regular,
+        #currency-switcher-wrapper-regular {
+            margin: 0;
+        }
+
+
+        /* Elements hidden in regular header
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+        .header-m-container,
+        .skip-links-clearer,
+        #header-nav, /* Important: "#nav-marker-mobile" is wrapped inside "#header-nav" */
+
+        /* Deprecated rules to hide elements in regular header (left for backward compatibility) */
+        .skip-link,
+        .logo-wrapper--mobile,
+        .header-collateral,
+        .after-mobile-logo
+        {
+            display: none;
+        }
+
+
+        /* Selected skip links in regular header
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        */
+
+        /* Cart + compare
+        -------------------------------------------------------------- */
+        /* Skip links has to be hidden except cart and compare */
+        .mini-cart-heading,
+        .mini-compare-heading { 
+            display: block;
+        }
+
+        .mini-cart-heading .label.no-display,
+        .mini-compare-heading .label.no-display {
+            display: none;
+        }
+
+    } // end: regular header mode
+
+} // end: desktop
+
+
+
+//
+//  Small Desktop / Mobile
+//  _____________________________________________
+
+//
+//  Regular header - stacked columns.
+//  Special class indicates that the columns of the primary
+//  header section become full width and stack vertically.
+//  IMPORTANT: these styles need to be placed
+//  after mobile menu styles to override them.
+//  ---------------------------------------------
+
+// TODO:
+//.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @breakpoint__M) {
+
+// TODO: or narrow down the range, if needed:
+//@media only screen and (min-width: @breakpoint__mobile-header) and (max-width: @breakpoint__M) {
+//.media-width-range(@min, @max) when (@min = @breakpoint__mobile-header) and (@max = @breakpoint__M) {
+
+@media only screen and (max-width: 992px) {
+
+    //.header-regular {
+    .header-container {
+
+        /* Reset blocks below this breakpoint */
+        .hp-blocks-holder--stacked .hp-block {
+            display: block;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .hp-blocks-holder--stacked .right-column {
+            text-align: inherit;
+        }
+        .hp-blocks-holder--stacked .left-column {
+            text-align: inherit;
+        }
+        
+        /* Menu - positionning of menu, holders and holders wrapper
+        -------------------------------------------------------------- */
+        /* Remove floating of the menu container */
+        .hp-blocks-holder--stacked .nav-container {
+            float: none;
+        }
+
+        /* Remove floating of the menu */
+        .hp-blocks-holder--stacked .navi {
+            float: none;
+        }
+
+        /* Logo
+        -------------------------------------------------------------- */
+        .hp-blocks-holder--stacked .logo-wrapper {
+            text-align: center;
+        }
+        .hp-blocks-holder--stacked .logo-wrapper .logo {
+            max-width: 60%;
+            margin-left: auto; /* Margins "auto" not needed. Left in case custom CSS removes "display:inline-block" from the ".logo" element. */
+            margin-right: auto;
+        }
+            
+        /* Search
+        -------------------------------------------------------------- */
+        .hp-blocks-holder--stacked .block-search {
+            display: block;
+            float: none;
+            max-width: 440px;
+            margin: 10px auto; /* Add space above and below search box */
+        }
+
+        /* But if search box is inside nav-holder, remove margin */
+        .hp-blocks-holder--stacked .nav-holder .block-search {
+            margin: 0;
+        }
+
+    }
+
+}

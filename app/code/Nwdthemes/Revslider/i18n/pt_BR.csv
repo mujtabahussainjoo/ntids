@@ -1,0 +1,171 @@
+"-- Next Slide --","-- Próximo Slide --"
+"-- Not Chosen --","-- Não Escolhido --"
+"-- Previous Slide --","-- Slide Anterior --"
+"-- Scroll Below Slider --","-- Rolar Abaixo Do Slider --"
+"2 x 2 Black","2 x 2 Preto"
+"2 x 2 White","2 x 2 Branco"
+"3 x 3 Black","3 x 3 Preto"
+"3 x 3 White","3 x 3 Branca"
+"API Functions","Funções de API"
+Actions,Ações
+"Add Layer","Adicionar Camada"
+"Add Slide","Adicionar Slide"
+"Add This Video","Adicionar Este Video"
+Appearance,Aparência
+Arguments:,Argumentos:
+"Aspect Ratio:",Proporção:
+"Auto Responsive","Auto Responsivo"
+"Background Fit:","Ajuste do Background:"
+"Background Image Url","URL da Imagem de Fundo"
+"Background Position:","Posição do Background:"
+"Background Repeat:","Repetição do Background:"
+"Background color","Cor de fundo"
+Both,Ambos
+Bottom,Fundo
+Center,Centro
+"Choose Operation","Escolha Operação"
+"Choose Slider","Escolha Slider"
+"Choose the import file","Escolha o arquivo de importação"
+"Choose video type","Escolha o tipo de video"
+Close,Fechar
+Copy,Copiar
+"Copy / Move","Copiar / Mover"
+"Copy / move slide","Copiar / mover slide"
+Custom,Personalizado
+"Custom Animations:","Animações Personalizadas:"
+"Date created","Criado na data"
+Delay,Atraso
+Delete,Apagar
+"Delete All Layers","Apagar Todas as Camadas"
+"Delete Layer","Apagar Camada"
+"Delete Slider","Apagar Slider"
+"Delete this slide?","Apagar este slide?"
+Disable,Desabilitar
+"Do It!",Faça!
+"Dotted Overlay:","Camada pontilhada:"
+Duplicate,Duplicar
+"Duplicate Layer","Duplicar Camada"
+"Duration (in ms):","Duração (em ms)"
+Easing:,Transição:
+"Edit Slider","Editar Slider"
+"Edit Slides","Editar Slides"
+Enable,Habilitar
+"Enable Swipe Function on touch devices","Ativar Função Swipe em dispositivos de toque"
+"End Position:","Posição Final:"
+"Export Slider","Exportar Slider"
+"Export with Dummy Images","Exportar com Imagens de Exemplo"
+"External Scroll","Rolagem Externa"
+"External URL","URL Externa"
+"First Transition Active","Primeira Transição Ativa"
+"First slide transition type","Tipo de transição do primeiro slide"
+Gallery,Galeria
+"General Settings","Ajustes Gerais"
+"General settings updated","Configurações gerais atualizadas"
+"Get External","Pegar Externa"
+"Global Settings","Configurações Globais"
+"Go To Slide","Ir Para Slide"
+Height,Altura
+Help,Ajuda
+"Hide Controls:","Esconder Controles:"
+"Import Slider","Importar Slider"
+Left,Esquerda
+"Loop Video:","Loop de Video:"
+"Margin Bottom","Margem de Fundo"
+"Margin Left","Margem à Esquerda"
+"Margin Right","Margem à Direita"
+"Margin Top","Margem de Topo"
+Move,Mover
+Mute:,Mudo:
+Name,Nome
+Navigation,Navegação
+"New Slider","Novo Slider"
+"New Window","Nova Janela"
+"Next Slide","Próximo Slide"
+"Next Slide On End:","Próximo Slide No Fim:"
+No,Não
+"No Corner","Sem Cantos"
+"No Shadow","Sem Sombra"
+"No Sliders Found","Nenhum Slider Encontrado"
+None,Nenhum
+Off,Desligar
+On,LIgar
+Opacity,Opacidade
+"Overwrite current static styles?","Sobrescrever estilos estáticos atuais?"
+"Pause Slider","Pausar Slider"
+Perspective,Perspectiva
+Position,Posição
+"Position on the page","Posição na página"
+"Post Title","Título do Post"
+"Post content","Conteúdo do post"
+"Poster Image Url","URL da Imagem de Poster"
+Preview,Pré-visualização
+"Preview Slider","Slider Anterior"
+"Previous Slide","Slide Anterior"
+Published,Publicado
+"Redraw Slider","Redesenhar Slider"
+Remove,Remover
+Replacing...,Substituindo...
+"Resume Slider","Retomar Slider"
+"Revolution Slider Error","Erro no Revolution Slider"
+Right,Direita
+Rotation,Rotação
+"Same Window","Mesma Janela"
+"Save As","Salvar Como"
+"Save Settings","Salvar Configurações"
+"Save Static Styles","Salvar Estilos Estáticos"
+Scale,Escala
+"Select Slide Image","Selecione Imagem do Slide"
+Set,Ajustar
+Settings,Configurações
+"Settings in all Slides changed","Configurações em todos os Slides modificadas"
+"Shadow Type","Tipo de Sombra"
+Sharp,Agudo
+"Sharp Reversed","Agudo Reverso"
+"Show Background Image","Mostrar Imagem de Background"
+Skew,Torcido
+"Slide Created","Slider Criado"
+"Slide Created, redirecting...","Slide Criado. Redirecionando..."
+"Slide Thumbnail. If not set - it will be taken from the slide image.","Miniatura do Slide. Se não definido - será usada a imagem do slide."
+"Slide Title","Título do Slide"
+"Slide updated","Slide atualizado"
+"Slider Settings","Configurações do Slider"
+"Slider updated","Slider atualizado"
+"Slides Created","Slides Criados"
+"Sortby updated","Forma de organização atualizada"
+Source,Fonte
+"Source Type","Tipo de Fonte"
+Style,Estilo
+"The bottom margin of the slider wrapper div","A margem no fundo da div wrapper do slider"
+"The left margin of the slider wrapper div","A margem à esquerda da div wrapper do slider"
+"The link to the post","O link para o post"
+"The right margin of the slider wrapper div","A margem à direita da div wrapper do slider"
+"The state of the slide. The unpublished slide will be excluded from the slider.","O estado do slide. O slide não publicado será excluído do slider."
+"The title of the slide, will be shown in the slides list.","O título do slide, quando mostrado na lista de slides."
+"The top margin of the slider wrapper div","A margem no topo da div wrapper do slider"
+Thumbnail,Miniatura
+Thumbnails,Miniaturas
+Title,Título
+"To Slide","Para Slide"
+Top,Topo
+"Touch Enabled","Touch Ativado"
+"Transition Duration","Duração da Transição"
+Transitions,Transições
+Transparent,Transparente
+Troubleshooting,"Resolvendo Problemas"
+Unpublished,"Não publicado"
+Update,Atualizar
+"Update Video","Atualizar Video"
+"Video MP4 Url","URL de Video MP4"
+"Video OGV Url","Url de Video OGV"
+"Video Settings","Ajustes de Video"
+"Video WEBM Url","URL de Video WEBM"
+Width,Largura
+Width:,Largura:
+Yes,Sim
+append,anexar
+example,exemplo
+none,nenhuma
+overwrite,sobrescrever
+text,texto
+updating...,atualizando...
+use,usar

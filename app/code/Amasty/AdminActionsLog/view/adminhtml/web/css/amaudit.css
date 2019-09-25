@@ -1,0 +1,40 @@
+ins {color:green;background:#dfd;text-decoration:none}
+del {color:red;background:#fdd;text-decoration:none}
+td.onlyDeletions ins {display:none}
+td.onlyInsertions del {display:none}
+
+.amaudit-Edit, .amaudit-MassChangeMode {
+    background: url("../images/edit.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 20px;
+}
+
+.amaudit-exportCsv,
+.amaudit-exportXml {
+    background: url("../images/export.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 20px;
+}
+
+.amaudit-Delete {
+    background: url("../images/delete.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 16px;
+}
+.amaudit-Restore {
+    background: url("../images/restore.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 16px;
+}
+.amaudit-New {
+    background: url("../images/new.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 20px;
+}
+.amaudit-Run, .amaudit-MassEnable {
+    background: url("../images/run.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 20px;
+}
+.amaudit-Disable, .amaudit-MassDisable {
+    background: url("../images/disable.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 20px;
+}
+.amaudit-Recompile, .amaudit-FlushSystem, .amaudit-CleanImages, .amaudit-FlushAll, .amaudit-CleanMedia, .amaudit-MassRefresh, .amaudit-MassReindex {
+    background: url("../images/recompile.png")  no-repeat scroll 0 50% transparent;
+    padding-left: 20px;
+}

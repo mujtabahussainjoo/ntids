@@ -1,0 +1,136 @@
+Department,Departament
+"Create New Ticket","Creați un nou bilet"
+Status,Stare
+Priority,Prioritate
+Replies,Răspunsuri
+View,Vedere
+"Help Desk","Ghișeu de ajutor"
+"Thank you",Mulțumesc
+"Create Ticket","Creați un bilet"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Solicitarea dvs. a fost trimisă cu succes. Ar trebui să primiți un e-mail de confirmare în scurt timp."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Ancheta dvs. a fost trimisă și va fi răspunsată cât mai curând posibil. Mulțumim că ne-ai contactat."
+"Unable to submit your request. Please, try again later","Nu puteți trimite solicitarea dvs. Vă rugăm să încercați din nou mai târziu"
+"Page not found.","Pagina nu a fost gasita."
+"Your message was successfuly posted","Mesajul dvs. a fost publicat cu succes"
+"Your ticket was successfuly posted","Biletul dvs. a fost publicat cu succes"
+"Ticket was successfuly closed","Biletul a fost închis cu succes"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Nu se poate încărca fișierul %1. Dimensiunea maximă permisă pentru încărcare este %2 MB."
+"Allows only this file types: %1","Permite numai aceste tipuri de fișiere: %1"
+"Message added","Mesajul a fost adăugat"
+"Internal note added","Notă internă adăugată"
+"Third party message added","Mesajul terță parte a fost adăugat"
+"Private third party message added","Mesaj terț privat adăugat"
+"-- Please Select --","-- Te rog selecteaza --"
+"Contact Tab","Fila de contact"
+"Contact Form","Formular de contact"
+" at %1 (%2) - %3","la %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Nu aveți permisiuni să citiți acest bilet. Contactați administratorul dvs."
+"Invalid Customer Email","E-mail de client nevalid"
+"not set","nu este setat"
+"Unknown time","Timp necunoscut"
+ago,"în urmă"
+"from now","de acum"
+"1 sec ago","Acum 1 secundă"
+"Open Ticket","Bilet deschis"
+"Open Tickets","Bilete deschise"
+"! Blocked file - ","! Fișier blocat -"
+Disabled,Invalid
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","Sistemul de fișiere"
+Database,"Bază de date"
+Aqua,Apă
+Grey,Gri
+Navy,Navy
+Silver,Argint
+Black,Negru
+Green,Verde
+Olive,Oliv
+Teal,Turcoaz
+Blue,Albastru
+Lime,"Lămâie verde"
+Purple,Violet
+Fuchsia,Fucsie
+Maroon,Maro
+Red,Roșu
+Orange,Portocale
+Yellow,Galben
+Text,Text
+Date,Data
+Checkbox,"Caseta de bifat"
+"Drop-down list","Lista verticală"
+"In minutes...","În câteva minute ..."
+"In hours...","În ore ..."
+"In days...","În zile ..."
+"In weeks...","În săptămâni ..."
+"In months...","În lunile ..."
+Custom,Personalizat
+"--Please Select--","--Te rog selecteaza--"
+"New ticket created","A fost creat un bilet nou"
+Success,Succes
+Customer,Client
+Staff,Personal
+"Third party",Terț
+Closed,Închis
+"Opened 24hr","Deschis 24 de ore"
+"Helpdesk Tickets","Bilete de asistență tehnică"
+"Cannot delete ticket with id %1","Nu se poate șterge biletul cu id %1"
+Edit,"Editați | ×"
+"All Departments","Toate departamentele"
+Back,Înapoi
+"24 hrs x 7 days","24 ore x 7 zile"
+"Select working days/hours","Selectați zile / ore lucrătoare"
+"Satisfaction survey","Sondaj de satisfacție"
+"to %1 (third party)","la %1 (terță parte)"
+"%1 (third party)","%1 (terță parte)"
+"added %1 (%2)","adăugat %1 (%2)"
+"Ticket Summary","Sumarul biletului"
+"Ticket ID","ID-ul biletului"
+Assignee,Cesionar
+"Additional Info","Informații suplimentare"
+"Ticket History","Istoricul biletelor"
+"Done by","Făcut de"
+Changes,Schimbări
+Name,Nume
+"Attach files","Ataseaza fisiere"
+Submit,"A depune"
+"Submit Ticket","Trimiteți bilet"
+"What is your question?","Care este intrebarea ta?"
+"We found the following topics that might be helpful:","Am găsit următoarele subiecte care ar putea fi de ajutor:"
+"None of these are helpful - get in touch","Niciunul dintre acestea nu este de ajutor - contactează-te"
+"We have not found topics that can be helpful.","Nu am gasit subiecte care sa fie de ajutor."
+"Contact Information","Informatii de contact"
+Comment,Cometariu
+"We are open 24 x 7","Suntem deschisi 24 x 7"
+"We are closed","Am inchis"
+"Timezone: %1","Fus orar: %1"
+"Please take a second to rate my reply...","Vă rugăm să luați o secundă pentru a evalua răspunsul meu ..."
+Great,Grozav
+Awesome,Minunat
+"Fast, friendly, helpful, pleasant. Great job!","Rapid, prietenos, util, plăcut. Buna treaba!"
+"Just Okay","Doar bine"
+"Fine, but definitely could have been better.","Bine, dar cu siguranță ar fi putut fi mai bine."
+"Not good","Nu e bine"
+"Unfortunately, I wasn't happy with it at all.","Din păcate, nu am fost deloc mulțumit de asta."
+"Thank you for participating in our survey!","Vă mulțumim pentru participarea la sondajul nostru!"
+"If you would like to provide additional comments, please do so below:","Dacă doriți să oferiți comentarii suplimentare, vă rugăm să faceți acest lucru în continuare:"
+Message,Mesaj
+"Submit Message","Trimite mesajul"
+"Thank you for your feedback!","Multumim pentru feedback-ul dvs!"
+Attachments,"Fișiere atașate"
+Order,Ordin
+"-- Select an Order --","- Selectați o comandă -"
+"Create ticket","Creați bilet"
+"You don't have open tickets","Nu aveți bilete deschise"
+"Post a Reply","Posteaza un raspuns"
+"Reopen Ticket","Redeschideți biletul"
+"Close Ticket","Închideți biletul"
+History,Istorie
+"Back to My Tickets","Înapoi la biletele mele"
+"Help Desk MX","Help Desk MX"
+"Contact Us",Contacteaza-ne
+Open,Deschis
+Subject,Subiect
+"Last Activity","Ultima activitate"
+"Request ID","ID-ul solicitării"

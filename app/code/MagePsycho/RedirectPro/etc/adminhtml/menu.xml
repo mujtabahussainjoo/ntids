@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_RedirectPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!-- Parent Menu -->
+        <add id="MagePsycho_RedirectPro::core" title="MagePsycho" module="MagePsycho_RedirectPro" sortOrder="55" resource="MagePsycho_RedirectPro::core"/>
+
+        <!-- Menu Group -->
+        <add id="MagePsycho_RedirectPro::menu_section" title="Custom Redirect Pro" module="MagePsycho_RedirectPro" sortOrder="20" parent="MagePsycho_RedirectPro::core" resource="MagePsycho_RedirectPro::menu_section"/>
+
+        <!-- Child Menus -->
+        <add id="MagePsycho_RedirectPro::menu_config" title="Manage Settings" module="MagePsycho_RedirectPro" sortOrder="20" parent="MagePsycho_RedirectPro::menu_section" action="adminhtml/system_config/edit/section/magepsycho_redirectpro" resource="MagePsycho_RedirectPro::menu_config" />
+
+    </menu>
+</config>

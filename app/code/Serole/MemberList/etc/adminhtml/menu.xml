@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <!--<add id="Serole_MemberList::parent" title="MemberList" module="Serole_MemberList" sortOrder="100" resource="Serole_MemberList::parent"/>-->
+		<add id="Serole_MemberList::memberlist" title="Manage Membership List" module="Serole_MemberList" sortOrder="110" parent="Magento_Customer::customer" action="memberlist/memberlist" resource="Serole_MemberList::memberlist"/>
+        <add id="Serole_MemberList::index" title="Upload Membership List" module="Serole_MemberList" sortOrder="120" action="memberlist/index" resource="Serole_MemberList::index" parent="Magento_Customer::customer"/>
+    </menu>
+</config>

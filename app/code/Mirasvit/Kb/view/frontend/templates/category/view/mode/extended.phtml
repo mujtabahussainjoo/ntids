@@ -1,0 +1,80 @@
+<?php
+// @codingStandardsIgnoreFile
+/** @var \Mirasvit\Kb\Block\Category\View $block */
+
+$rootCategory = $block->getCategory();
+$l1Categories = $rootCategory->getChildren();
+?>
+
+<?= $block->getChildHtml('kb.search.form'); ?>
+
+<h1 class="page-title"><?= $rootCategory->getName() ?></h1>
+
+<?php if ($rootCategory->getDescription()): ?>
+    <div class="kb__category-description">
+        <?= $rootCategory->getDescriptionHtml() ?>
+    </div>
+<?php endif ?>
+
+<?php if ($l1Categories->count()): ?>
+    <div class="kb-category__grid">
+        <?php foreach ($l1Categories as $l1Category): ?>
+            <div class="kb__category-title l1">
+                <h2><?= $l1Category->getName() ?></h2>
+                <a href="<?= $l1Category->getUrl() ?>"><?= __('View') ?></a>
+            </div>
+
+            <?php $l2Categories = $l1Category->getChildren(null, true) ?>
+
+            <?php if ($l2Categories->count()): ?>
+                <?php foreach ($l2Categories as $l2Category): ?>
+                    <?php $l3Categories = $l2Category->getChildren(null, true) ?>
+                    <section class="kb__category">
+                        <div class="kb__category-title">
+                            <h3><?= $l2Category->getName() ?></h3>
+                            <a href="<?= $l2Category->getUrl() ?>"><?= __('View') ?></a>
+                        </div>
+
+                        <?php if ($l3Categories->count()): ?>
+                            <ol>
+                                <?php foreach ($l3Categories as $l3Category): ?>
+                                    <li>
+                                        <a href="<?= $l3Category->getUrl() ?>">
+                                            <i class="fa fa-fw fa-folder-open-o"></i> <?= $l3Category->getName() ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach ?>
+                            </ol>
+                        <?php else: ?>
+                            <ol>
+                                <?php $articles = $block->getArticleCollection($l2Category) ?>
+                                <?php foreach ($articles as $article): ?>
+                                    <li>
+                                        <a href="<?= $article->getUrl() ?>">
+                                            <i class="fa fa-fw fa-file-text-o"></i> <?= $article->getName() ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach ?>
+                            </ol>
+                        <?php endif ?>
+                    </section>
+                <?php endforeach ?>
+            <?php else: ?>
+                <section class="kb__category">
+                    <ol>
+                        <?php $articles = $block->getArticleCollection($l1Category) ?>
+                        <?php foreach ($articles as $article): ?>
+                            <li>
+                                <a href="<?= $article->getUrl() ?>">
+                                    <i class="fa fa-fw fa-file-text-o"></i> <?= $article->getName() ?>
+                                </a>
+                            </li>
+                        <?php endforeach ?>
+                    </ol>
+                </section>
+            <?php endif ?>
+        <?php endforeach ?>
+    </div>
+<?php else: ?>
+    <?= $block->getChildHtml('kb.category.articles') ?>
+<?php endif ?>

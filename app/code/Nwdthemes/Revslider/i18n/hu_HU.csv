@@ -1,0 +1,594 @@
+" due to action: ","akcion keresztül:"
+" not found!<br>"," nem talalhato!"
+"-- Next Slide --","-- Következö Slide --
+"
+"-- Not Chosen --","-- Nincs Valasztva --"
+"-- Previous Slide --","-- Elözö Slide --"
+"-- Scroll Below Slider --","-- Slide Ala Scrollozni --"
+"-- wrong alias -- ","-- hibas alias --"
+"A link on the whole slide pic (use {{link}} or {{meta:somemegatag}} in template sliders to link to a post or some other meta)","Egy link az egesz kepre (hasznald a {{link}} vagy {{meta:somemetatag}} a slider sablonokban hogy linkeljen a ""hozzaszoalshoz"" vagy mas meta tagra)"
+"A new delay value for the Slide. If no delay defined per slide, the delay defined via Options (9000ms) will be used.","Egy uj ""hossz"" definicio. Ha nincs kitöltve, akkor az alap ertek lesz veve a Slider Beallitasokbol. Default 9000ms."
+Actions,Akciok
+Add,hozzáad
+"Add Blank Slide","Uj üres Slide"
+"Add Bulk Slides","Hozzafüzni több Slide-ot"
+"Add New","Új Hozzáadása"
+"Add Slide","Uj Slide"
+"Add This Video","Video hozzafüzese"
+"Add as many attributes as you wish here. (i.e.: data-layer=""firstlayer"" data-custom=""somevalue"").","Addj annyi Attributot amennyit csak szeretnel.  (pl.: data-layer=""firstlayer"" data-custom=""valami"")."
+"Add from Template","Uj 
+Sablonbol"
+"Add to Templates","Füzd hozza a Sablonokhoz"
+"Additional Custom Styling","További Custom Styling"
+"Adds a unique ID to the li of the Slide like id=""rev_special_id"" (add only the id)","Ad egy unique ID a slide ""li"" tag-hoz mint pl. id=""rev_special_id""  (csak az ID-t kell definialni)"
+"Adds a unique class to the li of the Slide like class=""rev_special_class"" (add only the classnames, seperated by space)","Ad egy unique osztalyt a Slide ""li"" tag-hoz, mint pl. class=""rev_special_class""  (csak a class neveket, szokozzel valasztva add meg)"
+"Advanced CSS","Reszletes CSS"
+"Advanced Custom Styling","Részletes Custom Styling"
+"Advanced Embeding","Részletes beagyazas"
+"Advanced Settings","Speciális beállítások"
+"Advanced Style on/off","Halado Stilus ki/be"
+All,Mind
+Angle,Szög
+Animation,Animacio
+"Animation Delay between Splitted Elements","Animacio Varakozas Torott Elementek kozott"
+"Animation Duration:","Animacio hossza:"
+"Animation Perspective (default 600)","Animacio Perspektive (alap:600)"
+"Animation Speed (in ms)","Animacio Sebesseg"
+"Animation Template","Animacio Sablon"
+"Animation already existing with given handle, please choose a different name.","Animacio letazik mar a Handle-vel, kerlek valassz egy masik nevet."
+"Animation already exists, overwrite?","Animacio letezik mar, felülirjam?"
+"Animation deleted","Animacio törölve"
+"Animation exists, override existing animation?","Animacio mar letezik, felülirjam?"
+"Animation saved","Animacio mentve"
+"Animationname already existing","Animacio nev mar letezik"
+"Appended Inline to the Layer Markup","Kiadvva a Layer markupban inline"
+"Appended in the Class:","Classhoz hozzafüzve:"
+"Are you sure to replace the urls?","Biztosan ki akarod cserelni az urlt ?"
+Arguments,Argumentek
+"Arguments Vimeo:","Vimeo Argumentk:"
+"Arguments YouTube:","Youtube Argumentek:"
+Arguments:,Argumentek:
+Arrows,Nyilak
+"Aspect Ratio:",Képarány:
+Attributes,Attribútumok
+"Auto Linebreak (on/off - White Space:normal / nowrap).  ","Automatikus Sortöres (on/off - White Space: normal/nowrap)"
+Back,Hatterben
+Background,Hatter
+"Background Color","Hatter szine"
+"Background Fit:","Hatter illesztese:"
+"Background Position:","Hatter 
+pozíciója:
+"
+"Background Repeat:","Hatter Ismetlese:"
+Behavior,Viselkedes
+Blur,homályossag
+Border,Keret
+"Border Color","Keret szine"
+"Border Opacity","Keret Atlathatosag"
+"Border Radius","Keret 
+sugár"
+"Border Radius (px)","Border sugar (px)"
+"Border Radius Bottom Left","Bal alsó keret sugara"
+"Border Radius Bottom Right","Jobb alsó keret sugara"
+"Border Radius Top Left","Bal felső keret sugara"
+"Border Radius Top Right","Jobb felső keret sugara"
+"Border Style","Keret Stilusa"
+"Border Width","Border szelessege"
+Bottom,alsó
+"Bottom Left","bal alsó"
+"Bottom Right","jobb alsó"
+Bullets,Bulletek
+"By Favorit",Favorit
+"By ID",ID
+"By Name",Nev
+"By Type",Tipus
+COPY,Másol
+"CSS classname already existing","CSS 
+osztály
+ nev letezik mar
+"
+"CSS classname not found","CSS 
+osztály nev nem talalhato"
+"CSS could not be saved","CSS-t nem lehetett menteni"
+"CSS saved","CSS Mentve"
+"Call Slide Action","Slide Akcio hivasa:"
+"Can not remove last transition!","Nem lehet eltávolítani az utolsó Slide Animaciot !"
+"Caption Style","Layer Stilus"
+Center,Közep
+"Change Video","Video csere"
+"Char Based",Karakterenkent
+"Choose Operation","Válasszon Operatiot"
+"Choose Slider","Válasszon Slidert
+"
+"Choose the import file","Válassza ki az import fájl"
+"Choose video type","Valassz Video Tipust"
+"Class already exists, overwrite?","Class már létezik , felülírjam?"
+"Class must be a valid CSS class name","Class-nak 
+érvényes CSS nevet kell adnod"
+"Class name renamed","Class atnevezve"
+"Class not found in database","Class nem talalhato az adatabazisban"
+"Cleared Albums","Albumok sikeresen kitakaritva"
+"Cleared Photosets","Foto Szettek kitakaritva"
+Close,Bezár
+"Color Value","Szin Ertek"
+Content,Tartalom
+Copy,Másol
+"Copy From Hover","Másol Hover allapotbol"
+"Copy From Idle","Másol tetlen allapotbol"
+"Copy From In Animation","Másol a bejövö Animaciobol"
+"Copy From Out Animation","Masol a kimeno Animaciobol"
+"Copy hover styles to idle?","Felülirod az Idle style-t a Hover style-al?"
+"Copy idle styles to hover?","Felülirod  a Hover style-t az Idle style-al?"
+Corners,Sarkak
+"Could not fetch Facebook albums","Facebook albumokat nem lehetett 
+beolvasni"
+"Could not fetch YouTube playlists","Nem lehetett YouTube listakat olvasni"
+"Could not fetch flickr photosets","Flickr photo szetteket nem lehet beolvasni"
+"Could not remove Validation!","Nem lehet aktivalast törölni"
+"Could not save Slide as Template","Slide nem menthetö mint Sablon"
+"Cover Image need to be set for videos","Cover Image-t kell állítani a videókhoz"
+"Cover Image:","Fedö kep:"
+"Cover Mode","Fedö Mod"
+"Create Template","Sablon létrehozása"
+"Custom Animations:","Egyedi animációk :"
+"Custom Fields:","Egyéni mezők:"
+"Custom Navigations","Sajat Navigacio"
+"Date created","Keszites Idöpontja"
+Default,Alap
+"Default Navigations","Alap Navigacio"
+"Default Settings for Advanced Responsive Grid Sizes:","Alapértelmezett beállítások a Advanced  Responsive  Grid meretekhez:"
+"Define a description here to show at the navigation if enabled in Slider Settings","Ez a leiras hasznalhato pl. a Slider Navigacio elemekben.  Vagy csak egy altalanos info kesobbre."
+"Define the default Grid Sizes for devices: Desktop, Tablet and Mobile","Adja meg az alapértelmezett Grid méreteit az eszközökhöz : Desktop, Tablet, Mobile"
+Delete,Törles
+"Delete this Navigation?","Navigaciot törölni?"
+"Delete this caption? This may affect other Slider","Töröljem a layert ? Ez hatassal lehet a Sliderre is"
+"Delete this slide?","Ezt a Slide-ot Törölni?"
+"Description of Slider:","Slider leirasa:"
+"Desktop Grid Width","Desktop Grid szélesség"
+Disable,Kikapcsolva
+Distance,Távolság
+"Do It!",Csináld!
+"Do you really want to delete","Bizotsan akarod törölni"
+"Do you really want to delete all the layers?","Tényleg akarod az összes Layert törölni ?"
+"Dotted Overlay:","Pontozott Fedes:"
+Duplicate,Duplizieren
+"Duration (in ms):","Meddig tart (ms):"
+"Dynamic Styles","Dinamikus Stilus"
+"Easing Out:","Easing ""ki"": "
+Edit,Szerkesztes
+"Edit Layer End","Layer End szerkesztese"
+"Edit Layer Start","Layer 
+Start
+ Szerkesztese"
+"Editable via Option Fields, Saved in the Class:","Szerkeszthető Option Fields 
+keresztül
+, a Class-ban mentve :"
+Editing,Szerkesztés
+Enable,Engedelyezes
+"Enable Link:","Link engedelyezese:"
+"Enable Markup Export option:","Engedélyezze a Markup Exportjat:"
+"End At:",Vegez:
+"End at:",Vege:
+"Enter a correct class name","Adj meg egy helyes osztály nevét"
+"Exceeded filesize limit.","Filemeret tullepve ! "
+Excerpt,Részlet
+"External URL","Külsö URL"
+"Failed to load Stream","Stream Problema"
+"Favorite Count","Favori Szama"
+"Filter By:",Szűrés:
+"Font Color","Font Szin"
+"Font Decoration","Font dekoraciok"
+"Font Family","Font Csalad"
+"Font Loading URL:","Font betöltése URL :"
+"Font Size","Font Meret"
+"Font Size (px)","Font Meret (px)"
+"Font Weight","Font vastagsag"
+"Fonts Loaded:","Font betöltve:"
+"For Example: 00:17","pl.: 00:17"
+"For Example: 02:17","pl.: 02:17"
+"For the",Hozza:
+"Force Cover:","Mindenkeppen fedje:"
+From,Mettöl:
+"From Filename",Filebol
+"From Media Library","Media Könyvtarbol"
+"From Stream",Streamböl
+"From the",Honnan:
+Front,Elöl
+Gallery,Galleriak
+"General Settings","Általános beállítások"
+"General settings updated","General Settings frissitve"
+"Get External","Tölts Külsö Forrast"
+"Given animation name is a default animation. These can not be changed.","A megadott Animaco nev egy Default Animacio nev. Valassz egy masik nevet ! "
+"Global Settings","Globális beállítások"
+"Global Styles Editor","Globális style szerkesztése
+"
+"Handle has to be at least three character long","A Handle  legalább három karakter hosszú legyen"
+Height:,Magasság:
+Help,Segít
+"Hide Controls:","Kontroll Elrejtese:"
+"Hide Details","Reszletek elrejtese"
+"Hide Slide Options","Slide opciók elrejtése"
+High,Magas
+"Horizontal Offset from Aligned Position (px)","Vízszintes Eltolás a kiigazított helyzetben ( px )"
+"Horizontal Origin","Vízszintes Origin"
+"Hover Animation Easing","Hover Animacio Ease"
+"Hover Animation Speed (in ms)","Hover animacio sebessege (ms)"
+"ID missing, something went wrong. Please try again!","ID Hianyzik, valami nem müködik rendesen, kerlek probald meg kesobb meg egyszer!"
+Idle,"Tetlen allapot"
+"If set, slide will be visible after the date is reached.","A slide akkor lesz lathato ha a ""mettöl"" idöpont elerkezett."
+"If set, slide will be visible till the date is reached.","A slide addig lesz lathato amig a ""meddig"" idöpont meg lesz."
+"Image &lt;img /&gt;","Kép 
+&lt;img /&gt;"
+"Image Library","Kep Könyvtar"
+"Image Source Size:","Kep Forrasanak merete:"
+"Image URL","Kép URL"
+"Include RevSlider libraries globally:","Globalis hasznalata a Slidernek"
+"Insert Meta","Meta beszurasa"
+"Installed Version","Installalt 
+verzió"
+"Italic Font","Dölt Betü"
+"Italic Font On/Off","Dölt Betü on/off"
+"Keep Aspect Ratio (on/off)","Oldalviszony
+ megtartasa (on/off)"
+Large,Nagy
+"Large Square","Nagy negyzet"
+"Last Modify Date","Módosítás dátuma"
+"Last Slide","Utolso Slide"
+"Layer Align Bottom","Layer igazitas alulra"
+"Layer Align Center","Layer Közepre igazítás"
+"Layer Align Left","Layer 
+Balra igazítás"
+"Layer Align Middle","Layer igazitas közepre"
+"Layer Align Right","Layer Jobbra igazítás"
+"Layer Align Top","Layer igazitas felülre"
+"Layer Animation Editor","Layer Animacio Szerkesztö"
+"Layer Height (px) Use 'auto' to respect White Space","Layer magassaga ( px ) . Használj ""auto-t"" , hogy 
+tiszteletben  
+tartsa a White Space-t"
+"Layer Height (px). Use 'auto' to respect White Space","Layer magassaga ( px ) . Használj ""auto-t"" , hogy 
+tiszteletben  
+tartsa a White Space-t"
+"Layer Inline CSS","Layer belsö CSS"
+"Layer is triggered by ","Layer triggered by"
+Left,bal
+"Line Based",Soronkent
+"Line Height",sormagasság
+"Line Height (px)","Sormagasság (px)"
+"Link Sensibility:","Link 
+érzékenység:"
+"Link Target:","Link Celja:"
+"Link To Slide:","Link a Slidehoz:"
+"Link Type:","Link Tipusa:"
+"Link the Full Slide to an URL or Action.","Az egesz slide-ot linkeli egy adott URL-re vagy Akciora."
+"Live Preview - Hover & Click for test","Elö Teszt, Hover es Click a teszthez"
+"Loading Error","Hiba Töltes közben"
+"Loading Error: ","Hiba töltes közben:"
+"Loop Video:","Video Loop:"
+"Loop, Slide does not stop","Ismetel es Slide megy tovabb"
+"Loop, Slide is paused","Ismetel es Slide var"
+"Low Resolution","Alacsony Felbontas"
+"Main / Background Image","Fö Hatter 
+kép"
+"Main Background","Fö hatter"
+"Making changes to these settings will probably overwrite advanced settings. Continue?","A változtatások valószínűleg felülírjak a speciális beállításokat . Folytatás ?"
+"Max. Chars","Max. Karakter"
+"Max. Res.","Max. Meret."
+Medium,Közepes
+"Medium 640","Közepes 640"
+"Medium 800","Közepes 800"
+"Missing redirect ID!","Hianyzik az 
+átirányítás ID!"
+"Missing values to add preset","hiányzó értékeket nem lehet Presethez adni"
+"Missing values to remove preset","Hianyzo ertekek a Preset eltavolitasahoz"
+"Missing values to update preset","Hianyzo ertekek a Preset felülirasahoz"
+"Mobile Grid Width","Mobile Grid szélesség"
+"More Style Settings","További beállítások"
+"Mouse Cursor","Eger Kurzor"
+Move,Mozgattas
+"Must be greater than start time","Nagyobbnak kell hogy legyen mint a Start idö"
+"Mute Video:","Hangtalan Video:"
+Mute:,Hangtalanul:
+"Name too short, at least 3 letters between a-zA-z needed","Túl rövid név , legalább 3 betű legyen (a-zA- Z)"
+"Navigation Bullets and Arrows are now set to none.","Navigáció Bulletek es Nyilak kikapcsolva."
+"Navigation Editor",navigáció szerkesztö
+"Navigation deleted","Navigacio Törölve"
+"Navigation name already exists, please choose a different name","Navigáció név már létezik , kérjük válassz másik nevet"
+"Navigation name could not be updated","Navigacio nevet nem lehetett felülirni"
+"Navigation saved/updated","Navigacio mentve/valtoztatva"
+"Navigations updated","Navigacio megvaltoztatva"
+"New Window","Uj ablakba"
+"Next Slide On End:","Következö Slide ha vege:"
+"No API KEY - Could not fetch flickr photosets","Nincs API Kulcs, nem lehetett Flickr Foto szetteket beolvasni"
+"No Corner","Nincs sarok"
+"No Data Received","Nem erkezett adat"
+"No ID given","ID nem talalhato"
+"No Parallax","Nincs Parallax"
+"No Sliders Found","Nincsenek Sliderek"
+"No Split","Töres Nelkül"
+"No User URL - Could not fetch flickr photosets","Nem Felhasználó URL - Nem sikerült beolvasni a flickr  Foto szetteket"
+"No file sent.","Nem talalhato a file."
+"No slides found, please add at least one Slide Template to the choosen language.","Nem talalhato Slide a sliderben. Legalabb egy Slide-ot ki kell valasztani."
+"No slides found, please add some slides","Nem talalhato Slide a sliderben."
+"No valid Slide ID given","Beadott Slide ID nem 
+érvényes"
+"No valid title given","Beadott Cim nem ervenyes"
+"Not on 1st Time","Mindig kiveve elöször"
+"Note: styles templates will be updated if they exist!","Megjegyzés : stílusok sablonok frissítésre kerülnek , ha léteznek !"
+"Notebook Grid Width","Notebook Grid szélesség"
+"Number of Comments","Hozzászólások száma"
+"Number of Likes","Likes 
+Száma"
+"Number of Views","Olvasások száma"
+Off,Ki
+Offset,Különbseg
+On,Be
+"On 1st Time","Csak elöször"
+Opacity,"átll
+áthato
+ság"
+"Order updated","Rendezes frissitve"
+"Original CSS classname not found","Original CSS 
+osztály
+ nev nem talalhato
+"
+"Original Size","Eredeti Meret"
+"Overwrite current animation?","Felülirjam az aktualis animaciot?"
+"Overwrite current static styles?","Felülirja az aktualis Statikus Stilusokat?"
+"Padding Bottom","Padding lenn"
+"Padding Left","Padding balra"
+"Padding Right","Padding jobbra"
+"Padding Top","Padding felül"
+"Pages to include RevSlider libraries:","Melyik oldalakon töltsön a Slider:"
+"Parallax Feature in Slider Settings is deactivated, parallax will be ignored.","Parallax Feature Slider Beállítások ki van kapcsolva a Slider Beallitasokban. Parallaxis figyelmen kívül hagyva."
+"Parameter ",Parameter
+Parameters,Parameterek
+Perspective,Perspektive
+"Play/Pause Layer Loop Animation","Play/Pause Ismetlodo Animaciot"
+"Play/Pause Single Layer Animation","Play/Pause egyeni Layer Animaciot"
+"Please Wait a Moment","Kérlek, várj"
+"Please Wait...","Kerlek varj..."
+"Please enter a Slide title","Adj meg egy Slide címet"
+"Please select an existing Style Template","Kérjük, válassz ki egy meglévő Stílussablont"
+"Please select at least one device type","Kérjük válassz legalább egy eszköz típust"
+"Please select the correct zip file, checksum failed!","Kerem valasszon egy korrekt ZIP filet. "
+"Post Title","Hozzászólás
+ Cime"
+"Post content","Hozzászólás Tartalma"
+"Post deleted","Post törölve"
+"Poster Image Url","Poster Kep URL"
+"Preset Loaded","Preset betöltve"
+"Preset created","Preset Elkeszitve"
+"Preset deleted","Preset Törölve"
+"Preset name already exists, please choose a different name","Az előre beállított név már létezik , kérjük válassz másik nevet"
+"Preset not found","Preset nem talalhato"
+Preview,Előnézet
+Published,Közzetett
+"Pulbishing Date","Pulbishing dátuma"
+"Purchase Code Successfully Activated","Vasarlasi Kod sikeresen aktivalva"
+"Purchase Code is invalid","Vasarlasi kod nem ervenyes"
+"Really change font settings?","Tényleg akarod frissíteni a font 
+beállításokat ?"
+"Really delete Class","Tényleg akarod a Class-t törölni ?"
+"Really delete animation:","Tenyleg törölni akarod az animaciot:"
+"Really delete font?","Tényleg akarod törölni a fontot?
+"
+"Really delete this preset?","Valóban törlöd ezt a presetet?"
+"Really overwrite Class?","Tényleg akarod a Class-t 
+felülírni ?"
+"Really overwrite animation?","Tenyleg felülirjam az animaciot?"
+"Really remove this action?","Tenyleg törlöd ezt az Akciot?"
+"Really update global styles?","Tényleg akaros frissíteni a globális 
+style-t
+ ?"
+"Regular - Link to URL,  To Slide - Call a Slide Action","Regular - link egy sima Url-lre, Slidehoz - hiv egy masik Slide-ot"
+Remove,Eltávolít
+"Remove current element from Navigation?","Aktualis elem törlese a Navigaciobol?"
+Rename,Atnevezés
+"Rename Animation","Animacio atnevezese"
+"Rename CSS","CSS Atnevezese"
+"Rename to:","Nevezd at:"
+Reset,Visszaállítás
+"Reset Style Template","Stilus 
+Sablon
+ Visszaállítása"
+"Retweet Count","Retweet Szama"
+"Revolution Slider Error","Revolution Slider Hiba"
+"Revolution Sliders","Revolution Sliderek"
+"Rewind at Slide Start:","Ujra elöröl legközelebb:"
+Right,Jobb
+Rotation,Forgatas
+"Rotation on X axis (+/-)","Forgatás az X tengelyen ( +/- )"
+"Rotation on Y axis (+/-)","Forgatás az Y tengelyen ( +/- )"
+"Rotation on Z axis (+/-)","Forgatás a Z tengelyen ( +/- )"
+Rotation:,Forgatas:
+"Same Window","Ugyanabba az ablakba"
+Save,Mentés
+"Save All Changes","Ments mindent"
+"Save As","Mentés másként"
+"Save As:","Mentés másként:"
+"Save Performance:","Teljesítmény növelese:"
+"Save Slide","Slide Mentese"
+"Save Static Styles","Statikus Stilusok Mentese"
+"Save Under","Mentés másként"
+"Save Under:","Mentés másként:"
+"Scale: (in %):","Zoom (%):"
+"Select Image","Válassz képet"
+"Select Layer Image","Válassz Layer képet"
+"Select Slide Image","Válassz Slide 
+képet"
+"Select Slide Video","Válassz Slide 
+videot"
+"Select Static Layer Image","Válassz Static Layer képet"
+"Select the Navigation Category to Edit","Valassz egy Navigacio Kategoriat szerkeszteni"
+"Selected layer not set","A kivalasztott Layer nincs beallitva"
+"Set selected settings on all Slides of this Slider? (This will be saved immediately)","Hasznalni akarod a 
+kiválasztot
+ beállításokat az összes Slideban ? ( Ez mentésre kerül azonnal )
+"
+"Setting Changed!","Beallitas megvaltoztatva!"
+Settings,Beállítások
+"Settings in all Slides changed","Beallitasok az osszes Slide-ban megvaltoztatva"
+Sharp,Elesseg
+"Sharp Left","Elesen balra"
+"Sharp Reversed","Elesseg visszafele"
+"Sharp Right","Elesen jobbra"
+"Show Cover at Pause:","Kep mutatasa szünetben:"
+"Show Details","Reszletek mutatasa"
+"Show Layers from Slide:","Mutass Layereket a Slidebol:"
+"Show Slide Options","Slide opciók megtekintése
+"
+"Simulate Click","Click Szimulacio"
+Sizing,Méretezés
+"Skin Name","Skin Nev"
+"Slide ""Delay"":","Slide ""hossza"":"
+"Slide Animation","Slide Animacio"
+"Slide Created","Slide elkeszitve"
+"Slide Created, redirecting...","Slide elkeszitve, 
+átirányítás..."
+"Slide Description","Slide 
+leírás"
+"Slide End Transition will first start when last Layer has been removed.","A Slide Kianimalasa akkor kezdodik, ha az utolso layer eltunt."
+"Slide Info","Slide Informacio"
+"Slide Thumbnail. If not set - it will be taken from the slide image.","Slide Thumbnail. Ha nincs beallitva, akkor a Slide kepe lesz automatikusan hasznalva."
+"Slide Title","Slide Cime"
+"Slide added to Templates","Slide Sablonhoz hozzaadva"
+"Slide changed","Slide valtoztatva"
+"Slide copied to current Slider, redirecting...","Slide az aktualis Sliderbe masolva, 
+átirányítás..."
+"Slide could not be copied","Slideot nem lehetett masolni"
+"Slide could not be duplicated","Slideot nem lehetett duplikalni"
+"Slide deleted","Slide törölve"
+"Slide duplicated","Slide duplikalva"
+"Slide is now the new active Hero Slide","A Slide most az uj Aktualis Hero Slide"
+"Slide name should not be empty","Slide neve nem lehet üres"
+"Slide updated","Slide frissitve"
+"Slider Settings","Slider Beallitasok"
+"Slider created","Slider elkeszitve"
+"Slider deleted","Slider törölve"
+"Slider not found","Slider nem tallhato"
+"Slider setting could not be changed","Slider beállítást nem lehet változtatni"
+"Slider updated","Slider frissitve"
+"Slides Created","Slideok elkeszitve"
+"Slot / Box Amount:","Resek / Negyzetek szama:"
+"Slot Rotation:","Resek Forgatasa:"
+Small,Kicsi
+"Small 320","Kicsi 320"
+"Sort By:",Sorrend:
+"Sortby updated","Sortby frissitve"
+Source,Forrás
+"Source Settings","Forrás Beallitasok"
+"Source must be from Stream","A Source a Streambol kell hogy szarmazzon."
+"Split Animaton Text (will not respect Html Markups !)","Animacio Text Törese"
+Square,Negyzet
+Standard,Standart
+"Standard Embeding","Normalis beagyazas"
+"Standard Resolution","Standard Felbontas"
+"Start At:",Kezd:
+"Start Layer ""in"" animation","Start Layer ""be"" animaciot"
+"Start Layer ""out"" animation","Start Layer ""ki"" animaciot"
+"Start Rotation of Transition (deg).","Kezdeti forgatasa az Animacionak (fokban)."
+"Start at:",Kezdes:
+"Static Global Layers updated","Static Layers Felülirva"
+"Static Layers","Statik Layerek"
+"Static Layers will be shown on every slide in template sliders","A Statikus Layerek lathatoak minden Slide-jan a Sablon Slidernek"
+"Stream Image","Stream 
+kép"
+"Stream Video + Image","Stream Video+
+ kép"
+"Style Helper","Style Segitö"
+"Style Options","Stilus Opciok"
+"Style Template","Stilus Sablon"
+"Style deleted!","Style törölve!"
+Success!,"Sikeres! "
+"Success! Refreshing page...","Sikeressen befejezve! Oldal ujratöltese..."
+"Successfully fetched Facebook albums","Facebook albumok sikeres beolvasasa"
+"Successfully fetched YouTube playlists","YouTube listak sikeres beolvasasa"
+"Successfully fetched flickr photosets","Flickr Foto szettek sikeres 
+beolvasasa"
+"Successfully removed validation","Aktivalas törölve"
+"Suggested Height:","Javasolt Magassag:"
+"Suggested Width:","Javasolt Szelesseg:"
+"Tablet Grid Width","Tablet Grid szélesség"
+Tabs,Tab-ek
+Template,Sablon
+"Template Options","Sablon Opciok"
+"Template can't be deleted, it is still being used by the following Sliders: ","Sablont nem lehet törölni , még mindig használják a következő Sliderek:"
+"Template will have the state of the last save, proceed?","Sablon visszaallitodik az utolso mentett allapotra, folytatod?"
+"Text Align","Szöveg igazítása"
+Text-Shadow,"Text Arnyek"
+"The duration of the transition.","Az animacio hossza (idoben)."
+"The easing of Appearing transition.","A kezdeti animaciok Ease-e."
+"The easing of Disappearing transition.","A kimeno animacio Ease-e."
+"The link to the post","A Link a 
+Hozzászóláshoz"
+"The state of the slide. The unpublished slide will be excluded from the slider.","Slide Allapota. Nem közze tett slide nem lesz lathato a sliderben."
+"The target of the slide link.","A Link celja"
+"The title of the slide, will be shown in the slides list.","A slider címe ami látható lesz a slideok listáj
+á
+n ."
+"The z-index position of the link related to layers","A z-index pozicioja a link layernek"
+"This class does not exist.","Ez az osztaly nem letezik."
+"This navigation element does not exist, create one?","Ez a navigációs elem nem létezik , létre hozzam ?"
+"This will enable the option to export the Slider Markups to copy/paste it directly into websites.","Ez lehetővé teszi a lehetőséget, hogy a slider markapjat copy/paste segitsegevel direkt html dokumentbe begyazhassa"
+"This will reset the navigation, continue?","Ez visszaállítja a navigációt, folytatni?"
+"This will update the Class with the current set Style settings, this may affect other Sliders. Proceed?","Ez frissíti az osztályban a jelenlegi készlet Stílus beállításokat, ez hatással lehet más Sliderekre is . Folytatod?"
+"This will update the preset with the current settings. Proceed?","Ez felülirja az aktualis Preset beallitasokat. Tovabb ?"
+Thumbnails,Thumbnailek
+Title,Cim
+"Title updated","Cim frissitve"
+Title:,Cim:
+To,Meddig:
+"To Slide",Slidehoz
+"Toggle Layer Animation","Ki/Be Layer Animacio"
+"Toogle Class","Ki/Be Class"
+Top,felső
+"Top Left","bal felső"
+"Top Right","jobb felső"
+Transform,Transzform
+Transparent,Atlatszo
+Unknown,Ismeretlen
+Unpublished,"Nem Közze tett"
+Update,Frissítés
+"Update History","Frissítési előzmények"
+"Update Video","Video 
+frissítés"
+"Use Cover","Hasznalj Cover-t"
+"Used Transitions (Order in Loops)","Hasznalt Slide Animaciok (sorrendben es ismetelve)"
+Username,"Felhasznalo neve"
+"Vertical Offset from Aligned Position (px)","Függöleges Eltolás a kiigazított helyzetben ( px )"
+"Vertical Offsets:","Vertikalis eltolas:"
+"Vertical Origin","Függőleges Origin
+"
+"Video Height (px). Use 'auto' to respect White Space","Video magassaga ( px ) . Használj ""auto-t"" , hogy 
+tiszteletben  
+tartsa a White Space-t"
+"Video Preload:","Video Elötöltese:"
+"Video Speed:","Video Sebesseg:"
+View,Megtekintes
+Views,Megtekintesek
+"Vimeo ID or URL","Vimeo ID vagy URL"
+Visibility,Lathatosag
+"Visible from:","Lathato mettöl:"
+"Visible until:","Lathato Meddig:"
+Width:,Szélesség
+"Word Based",Szavankent
+"Wrong ID given","Rossz ID megadasa"
+"Wrong Request","Rossze Keres"
+"X Skew (+/-  px)","X megdönteni ( +/- px )"
+"Y Skew (+/-  px)","Y megdönteni ( +/- px )"
+"YouTube ID or URL","YouTube ID vagy URL"
+"Z Offset (+/-  px)","Z Eltolas (+/- px)"
+append,hozzafüz
+"could not find correct Slide to copy, please try again.","Az original Slide nem talalhato masolashoz. Probalja meg megy egyszer."
+example,pelda
+"example: 30300114","peldaul: 30300114"
+"example: T8--OggjJKQ","peldaul: T8--OggjJKQ"
+extern,külsö
+"i.e.: 0:17","pl.: 0:17"
+"i.e.: 2:41","p.l.: 2:41"
+"insert the shortcode:","helyezze be a shortcodet :"
+"jQuery Loaded:","jQuery betöltve:"
+missing,Hianyzik
+none,None
+overwrite,felülír
+use,hasznal

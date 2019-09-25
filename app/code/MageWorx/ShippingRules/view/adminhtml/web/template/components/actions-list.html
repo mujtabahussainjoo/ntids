@@ -1,0 +1,24 @@
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<button class="action-delete"
+        attr="{'data-action': 'remove_row'}"
+        data-bind="
+            click: function(){ $parent.deleteMethodX($record().recordId); },
+            attr: {
+                title: $parent.deleteButtonLabel
+            }
+        ">
+    <span data-bind="text: $parent.deleteButtonLabel"></span>
+</button>
+<button class="action-delete"
+        data-bind="
+            click: function(){
+                $parent.editMethodX($record().recordId);
+            }
+        ">
+    <span data-bind="text: $parent.editButtonLabel"></span>
+</button>

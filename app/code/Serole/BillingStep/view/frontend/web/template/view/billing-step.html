@@ -1,0 +1,43 @@
+<!--The 'step_code' value from the .js file should be used-->
+<li id="custom-billing-step" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Billing Information'" data-role="title"></div>
+    <div id="checkout-step-title" class="step-content" data-role="content">
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <!-- ko foreach: getRegion('afterMethods') -->
+            <!-- ko template: getTemplate() -->
+            <!-- /ko -->
+            <!-- /ko -->
+
+            <div class="field">
+                <label class="label" for="billingemail">
+                <span data-bind="i18n: 'Enter Billing Email'"></span><span style="color: #e02b27;font-size: 1.2rem;margin: 0 0 0 5px;">*</span>
+                (Order confirmation will be sent to this address)
+                </label>
+                <div class="control">
+                    <input type="email" class="input-text" id="billingemail" name="billingemail" data-bind="attr:{placeholder: $t('Enter Billing Address')} " />
+                </div>
+            </div>
+
+            <!--<div class="field">
+                <label class="label" for="confirmbillingemail">
+                    <span data-bind="i18n: 'Confirm Billing Email'"></span>
+                </label>
+                <div class="control">
+                    <input type="email" class="input-text" id="confirmbillingemail" name="confirmbillingemail" data-bind="attr:{placeholder: $t('Confirm Billing Address')} " />
+                </div>
+            </div>-->
+
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span>
+                            <!-- ko i18n: 'Next'-->
+                            <!-- /ko -->
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</li>

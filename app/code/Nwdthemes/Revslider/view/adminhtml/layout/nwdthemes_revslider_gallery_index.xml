@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root">
+        <block class="Nwdthemes\Revslider\Block\Adminhtml\Gallery\Content" name="wysiwyg_images.content" template="Magento_Cms::browser/content.phtml">
+            <block class="Nwdthemes\Revslider\Block\Adminhtml\Gallery\Tree" name="wysiwyg_images.tree" template="Magento_Cms::browser/tree.phtml" />
+            <block class="Nwdthemes\Revslider\Block\Adminhtml\Gallery\Content\Uploader" name="wysiwyg_images.uploader" template="Nwdthemes_Revslider::gallery/uploader.phtml" />
+        </block>
+    </container>
+</layout>

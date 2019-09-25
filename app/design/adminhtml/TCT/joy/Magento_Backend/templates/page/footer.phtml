@@ -1,0 +1,199 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<p class="magento-version">
+    <strong><?= /* @escapeNotVerified */ __('Magento') ?></strong>
+    <?= /* @escapeNotVerified */ __('ver. %1', $block->getMagentoVersion()) ?>
+</p>
+<?php
+ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+ $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
+ $backendhide=$objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue("htmlelements/htmlelements/adminhide",$storeScope);
+ $backenddisable=$objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue("htmlelements/htmlelements/admindisable",$storeScope);
+
+// echo "<pre>";
+ //print_r (explode(",",$backenddisable));
+// print_r ($backendhide);
+?>
+<script>
+	/*require(['jquery', 'jquery/ui'], function($){
+    jQuery('body').ajaxStop( function() {
+		if(jQuery("input[name='product[sage_synced_date]']"))
+		  jQuery("input[name='product[sage_synced_date]']").prop("disabled", "disabled");
+	    if(jQuery("input[name='product[supplier_code]']"))
+		  jQuery("input[name='product[supplier_code]']").prop("disabled", "disabled");
+	    if(jQuery("input[name='product[backtoback]']"))
+		  jQuery("input[name='product[backtoback]']").prop("disabled", "disabled");
+		var backendHide ='<?php echo $backendhide;?>';
+		var backendDisable ='<?php echo $backenddisable;?>';
+		var backendHideElements = backendHide.split(',');
+		var backendDisableElements = backendDisable.split(',');
+		if(jQuery( ".action-additional" ))
+		//jQuery( ".action-additional" ).trigger( "click" );
+		if(jQuery( ".action-close" ))
+		// jQuery( ".action-close" ).trigger( "click" );
+		for(k=0; k<backendHideElements.length; ++k){
+			var fullString = backendHideElements[k];
+			if (fullString.indexOf("class@") != -1){
+				 var classHideElements=fullString.split('@');
+				 var classHideElement=classHideElements[1];
+				 //alert(classHideElement);
+				 if(jQuery("."+classHideElement))
+				   jQuery("."+classHideElement).hide();
+			}else{
+				
+				var idHideElements= backendHideElements[k];
+				//alert(idHideElements);
+				if(jQuery("#"+idHideElements))
+					jQuery("#"+idHideElements).hide();
+				
+				if(jQuery("[name='"+idHideElements+"']"))
+					jQuery("[name='"+idHideElements+"']").hide();
+				
+				if(jQuery("[title='"+idHideElements+"']"))
+					jQuery("[title='"+idHideElements+"']").hide();
+				
+				if(jQuery("[data-index='"+idHideElements+"']"))
+					jQuery("[data-index='"+idHideElements+"']").hide(); 
+			}	 
+		}
+		for(j=0; j<backendDisableElements.length; ++j){
+			var fullStrings = backendDisableElements[j];
+			if (fullStrings.indexOf("class@") != -1){
+				 var classDisableElements=fullStrings.split('@');
+				 var classDisableElement=classDisableElements[1];
+				 //alert(classDisableElement);
+				 if(jQuery("."+classDisableElement))
+				   jQuery("."+classDisableElement).prop("disabled", "disabled");
+			}else{
+				var idHideElements= backendDisableElements[j];
+				//alert(idHideElements);
+				if(jQuery("#"+idHideElements))
+					jQuery("#"+idHideElements).prop("disabled", "disabled");
+				console.log(jQuery("[name='"+idHideElements+"']").val());
+				 if(jQuery("[name='"+idHideElements+"']"))
+					jQuery("[name='"+idHideElements+"']").prop("disabled", "disabled");
+				
+				if(jQuery("[title='"+idHideElements+"']"))
+					jQuery("[title='"+idHideElements+"']").prop("disabled", "disabled");
+			}
+			//jQuery("."+classDisableElements).attr('disabled',true);
+		}
+	});
+  
+    jQuery(document).ready( function() {
+		
+		var backendHide ='<?php echo $backendhide;?>';
+		var backendDisable ='<?php echo $backenddisable;?>';
+		var backendHideElements = backendHide.split(',');
+		var backendDisableElements = backendDisable.split(',');
+		if(jQuery( ".action-additional" ))
+		   //jQuery( ".action-additional" ).trigger( "click" );
+	   if(jQuery( ".action-close" ))
+		  //jQuery( ".action-close" ).trigger( "click" );
+	  
+		for(k=0; k<backendHideElements.length; ++k){
+			var fullString = backendHideElements[k];
+			if (fullString.indexOf("class@") != -1){
+				 var classHideElements=fullString.split('@');
+				 var classHideElement=classHideElements[1];
+				 //alert(classHideElement);
+				 if(jQuery("."+classHideElement))
+				   jQuery("."+classHideElement).hide();
+			}else{
+				var idHideElements= backendHideElements[k];
+				//alert(idHideElements);
+				if(jQuery("#"+idHideElements))
+					jQuery("#"+idHideElements).hide();
+				
+				if(jQuery("[name='"+idHideElements+"']"))
+					jQuery("[name='"+idHideElements+"']").hide();
+				
+				if(jQuery("[title='"+idHideElements+"']"))
+					jQuery("[title='"+idHideElements+"']").hide();
+			}	 
+		}
+		
+		for(j=0; j<backendDisableElements.length; ++j){
+			var fullStrings = backendDisableElements[j];
+			if (fullStrings.indexOf("class@") != -1){
+				 var classDisableElements=fullStrings.split('@');
+				 var classDisableElement=classDisableElements[1];
+				 //alert(classDisableElement);
+				 if(jQuery("."+classDisableElement))
+				   jQuery("."+classDisableElement).prop("disabled", "disabled");
+			}else{
+				// var idHideElements= backendDisableElements[j];
+				// //alert(idHideElements);
+				// if(jQuery("#"+idHideElements))
+					// jQuery("#"+idHideElements).prop("disabled", "disabled");
+				
+				 // if(jQuery("[name='"+idHideElements+"']"))
+					// jQuery("[name='"+idHideElements+"']").prop("disabled", "disabled");
+				
+				// if(jQuery("[title='"+idHideElements+"']"))
+					// jQuery("[title='"+idHideElements+"']").prop("disabled", "disabled");
+			}
+			//jQuery("."+classDisableElements).attr('disabled',true);
+		}
+		
+	});
+	
+	
+});
+*/
+require(['jquery', 'jquery/ui'], function($){
+/*	jQuery('body').ajaxStart(function(){
+		if(jQuery("input[name='product[sage_synced_date]']"))
+			jQuery("input[name='product[sage_synced_date]']").prop("disabled", "disabled");
+		if(jQuery("input[name='product[supplier_code]']"))
+			$("input[name='product[supplier_code]']").prop("disabled", "disabled");
+	});*/
+    $( document ).ready(function() {
+        /* console.log('Ajax request document ready !');
+         jQuery("input[name='product[is_stock_item]']").prop("disabled", "disabled");
+         jQuery("input[name='product[isserializeditem]']").prop("disabled", "disabled");
+         jQuery("input[name='product[backtoback]']").prop("disabled", "disabled");
+         jQuery("input[name='product[enable_vendor_email]']").prop("disabled", "disabled");
+         jQuery("input[name='product[vendor_email_address]']").prop("disabled", "disabled");
+         jQuery("input[name='product[sage_synced_date]']").prop("disabled", "disabled");
+         jQuery("input[name='product[supplier_code]']").prop("disabled", "disabled");  */    
+    });
+    $( document ).ajaxComplete(function() {
+         /* console.log('Ajax request complete !');
+         jQuery("input[name='product[is_stock_item]']").prop("disabled", "disabled");
+         jQuery("input[name='product[isserializeditem]']").prop("disabled", "disabled");
+         jQuery("input[name='product[backtoback]']").prop("disabled", "disabled");
+         jQuery("input[name='product[enable_vendor_email]']").prop("disabled", "disabled");
+         jQuery("input[name='product[vendor_email_address]']").prop("disabled", "disabled");
+         jQuery("input[name='product[sage_synced_date]']").prop("disabled", "disabled");
+         jQuery("input[name='product[supplier_code]']").prop("disabled", "disabled"); */     
+    });
+    $( document ).ajaxStart(function() {
+        /*  console.log('Ajax request start !');
+         jQuery("input[name='product[is_stock_item]']").prop("disabled", "disabled");
+         jQuery("input[name='product[isserializeditem]']").prop("disabled", "disabled");
+         jQuery("input[name='product[backtoback]']").prop("disabled", "disabled");
+         jQuery("input[name='product[enable_vendor_email]']").prop("disabled", "disabled");
+         jQuery("input[name='product[vendor_email_address]']").prop("disabled", "disabled");
+         jQuery("input[name='product[sage_synced_date]']").prop("disabled", "disabled");
+         jQuery("input[name='product[supplier_code]']").prop("disabled", "disabled"); */     
+    });
+    $( document ).ajaxStop(function() {
+        /* console.log('Ajax request stop !');
+         jQuery("input[name='product[is_stock_item]']").prop("disabled", "disabled");
+         jQuery("input[name='product[isserializeditem]']").prop("disabled", "disabled");
+         jQuery("input[name='product[backtoback]']").prop("disabled", "disabled");
+         jQuery("input[name='product[enable_vendor_email]']").prop("disabled", "disabled");
+         jQuery("input[name='product[vendor_email_address]']").prop("disabled", "disabled");
+         jQuery("input[name='product[sage_synced_date]']").prop("disabled", "disabled");
+         jQuery("input[name='product[supplier_code]']").prop("disabled", "disabled");*/      
+    });
+});
+</script>

@@ -1,0 +1,136 @@
+Department,Departamentas
+"Create New Ticket","Sukurkite naują bilietą"
+Status,Statusas
+Priority,Prioritetas
+Replies,Atsakymai
+View,Vaizdas
+"Help Desk","Pagalbos tarnyba"
+"Thank you",Ačiū
+"Create Ticket","Sukurkite bilietą"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Jūsų prašymas buvo sėkmingai pateiktas. Netrukus turėtumėte gauti patvirtinimo el. Laišką."
+Telephone,Telefonas
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Jūsų užklausa buvo pateikta ir kuo greičiau bus atsakyta. Dėkojame tau už susisiekimą su mumis."
+"Unable to submit your request. Please, try again later","Nepavyko pateikti jūsų užklausos. Pabandykite dar kartą vėliau"
+"Page not found.","Puslapis nerastas."
+"Your message was successfuly posted","Jūsų žinutė buvo sėkmingai paskelbta"
+"Your ticket was successfuly posted","Bilietas buvo sėkmingai paskelbtas"
+"Ticket was successfuly closed","Bilietas buvo sėkmingai uždarytas"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Nepavyko įkelti failo %1. Didžiausias leistinas įkėlimo dydis yra %2 MB."
+"Allows only this file types: %1","Leidžia tik šiuos failų tipus: %1"
+"Message added","Pranešimas pridėtas"
+"Internal note added","Vidaus įrašas pridėtas"
+"Third party message added","Trečiosios šalies žinutė pridėta"
+"Private third party message added","Pridėtas privatus trečiosios šalies pranešimas"
+"-- Please Select --","-- Prašome pasirinkti --"
+"Contact Tab","Skirtukas &quot;Kontaktai&quot;"
+"Contact Form","Kontaktinė forma"
+" at %1 (%2) - %3","ne %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Jūs neturite teisių skaityti šį bilietą. Susisiekite su savo administratoriumi."
+"Invalid Customer Email","Netinkamas el. Pašto adresas"
+"not set",nenustatytas
+"Unknown time","Nežinomas laikas"
+ago,prieš
+"from now","nuo dabar"
+"1 sec ago","Prieš 1 sek"
+"Open Ticket","Atviras bilietas"
+"Open Tickets","Atidaryti bilietus"
+"! Blocked file - ","! Užblokuotas failas -"
+Disabled,Neįgalus
+"AW Helpdesk","AW pagalbos tarnyba"
+"MW Helpdesk","MW pagalbos tarnyba"
+"File System","Failų sistema"
+Database,"Duomenų bazė"
+Aqua,Aqua
+Grey,Pilka
+Navy,"Karinis jūrų laivynas"
+Silver,Sidabras
+Black,Juoda
+Green,Žalias
+Olive,"Alyvuogių aliejus"
+Teal,Teal
+Blue,Mėlyna
+Lime,Kalkės
+Purple,Violetinė
+Fuchsia,Fuksija
+Maroon,Maroon
+Red,Raudona
+Orange,Oranžinė
+Yellow,Geltona
+Text,Tekstas
+Date,Data
+Checkbox,"Žymimasis langelis"
+"Drop-down list","Pasirinkimu sarasas"
+"In minutes...","Per kelias minutes ..."
+"In hours...","Valandomis ..."
+"In days...","Per dienas ..."
+"In weeks...","Per kelias savaites ..."
+"In months...","Per mėnesius ..."
+Custom,Tinkintas
+"--Please Select--","--Prašome pasirinkti--"
+"New ticket created","Sukurtas naujas bilietas"
+Success,Sėkmė
+Customer,Klientas
+Staff,Darbuotojai
+"Third party","Trečias vakarėlis"
+Closed,Uždaryta
+"Opened 24hr","Atidaryta 24 val"
+"Helpdesk Tickets","Pagalbos biuro bilietai"
+"Cannot delete ticket with id %1","Negalima ištrinti bilieto su id %1"
+Edit,Redaguoti
+"All Departments","Visi departamentai"
+Back,Atgal
+"24 hrs x 7 days","24 val. X 7 dien"
+"Select working days/hours","Pasirinkite darbo dienas / valandas"
+"Satisfaction survey","Pasitenkinimo apklausa"
+"to %1 (third party)","iki %1 (trečioji šalis)"
+"%1 (third party)","%1 (trečioji šalis)"
+"added %1 (%2)","pridėjo %1 (%2)"
+"Ticket Summary","Bilietų suvestinė"
+"Ticket ID","Bilieto ID"
+Assignee,Įgaliotinis
+"Additional Info","Papildoma informacija"
+"Ticket History","Bilietų istorija"
+"Done by",Padaryta
+Changes,Pokyčiai
+Name,Vardas
+"Attach files","Prisegti failus"
+Submit,Pateikti
+"Submit Ticket","Pateikti bilietą"
+"What is your question?","Koks tavo klausimas?"
+"We found the following topics that might be helpful:","Mes radome šias temas, kurios gali būti naudingos:"
+"None of these are helpful - get in touch","Nė vienas iš jų nėra naudingas - susisiekite su mumis"
+"We have not found topics that can be helpful.","Mes neradome temų, kurios gali būti naudingos."
+"Contact Information","Kontaktinė informacija"
+Comment,Komentaras
+"We are open 24 x 7","Mes esame atviri 24 x 7"
+"We are closed","Mes uždaryta"
+"Timezone: %1","Laiko juosta: %1"
+"Please take a second to rate my reply...","Prašau sekundę įvertinti mano atsakymą ..."
+Great,Puiku
+Awesome,Nuostabu
+"Fast, friendly, helpful, pleasant. Great job!","Greitas, draugiškas, naudingas, malonus. Puikus darbas!"
+"Just Okay","Tiesiog gerai"
+"Fine, but definitely could have been better.","Gerai, bet tikrai galėjo būti geriau."
+"Not good",Negerai
+"Unfortunately, I wasn't happy with it at all.","Deja, man visai nepavyko."
+"Thank you for participating in our survey!","Dėkojame už dalyvavimą mūsų apklausoje!"
+"If you would like to provide additional comments, please do so below:","Jei norėtumėte pateikti papildomų komentarų, atlikite šiuos veiksmus:"
+Message,Pranešimas
+"Submit Message","Pateikti pranešimą"
+"Thank you for your feedback!","Dėkojame už jūsų atsiliepimus!"
+Attachments,Priedai
+Order,Įsakymas
+"-- Select an Order --","- Pasirinkite užsakymą -"
+"Create ticket","Sukurkite bilietą"
+"You don't have open tickets","Jūs neturite atvirų bilietų"
+"Post a Reply","Paskelbti atsakymą"
+"Reopen Ticket","Atnaujinti bilietą"
+"Close Ticket","Uždaryti bilietą"
+History,Istorija
+"Back to My Tickets","Atgal į Mano bilietus"
+"Help Desk MX","Pagalbos tarnyba MX"
+"Contact Us","Susisiekite su mumis"
+Open,Atviras
+Subject,Tema
+"Last Activity","Paskutinė veikla"
+"Request ID","Prašymo ID"

@@ -1,0 +1,136 @@
+Department,Oddelek
+"Create New Ticket","Ustvari novo karto"
+Status,Stanje
+Priority,Prednost
+Replies,Odgovori
+View,Pogled
+"Help Desk",Informacije
+"Thank you","Hvala vam"
+"Create Ticket","Ustvari vstopnico"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Vaša zahteva je bila uspešno poslana. Kmalu boste prejeli potrditveno e-poštno sporočilo."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Vaša poizvedba je bila poslana in bo odgovorjena čim prej. Hvala, ker ste se obrnili na nas."
+"Unable to submit your request. Please, try again later","Vaše zahteve ni bilo mogoče poslati. Prosim poskusite kasneje"
+"Page not found.","Stran ni najdena."
+"Your message was successfuly posted","Vaše sporočilo je bilo uspešno objavljeno"
+"Your ticket was successfuly posted","Vaša vozovnica je bila uspešno objavljena"
+"Ticket was successfuly closed","Vozovnica je bila uspešno zaprta"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Datoteke %1 ni mogoče naložiti. Največja dovoljena velikost nalaganja je %2 MB."
+"Allows only this file types: %1","Omogoča samo te vrste datotek: %1"
+"Message added","Sporočilo dodano"
+"Internal note added","Dodano je notranje noto"
+"Third party message added","Dodano je sporočilo tretje osebe"
+"Private third party message added","Dodano zasebno sporočilo tretje osebe"
+"-- Please Select --","-- Prosim izberite --"
+"Contact Tab","Kartica za stike"
+"Contact Form","Kontaktni obrazec"
+" at %1 (%2) - %3","na %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Nimate dovoljenja za branje te vozovnice. Obrnite se na skrbnika."
+"Invalid Customer Email","Neveljavna e-poštna odjemalca"
+"not set","ni nastavljen"
+"Unknown time","Neznan čas"
+ago,nazaj
+"from now","od sedaj"
+"1 sec ago","1 sekundo nazaj"
+"Open Ticket","Odprite vstopnico"
+"Open Tickets","Odprite vstopnice"
+"! Blocked file - ","! Blokirana datoteka -"
+Disabled,Onemogočeno
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","Datotečni sistem"
+Database,"Baza podatkov"
+Aqua,Aqua
+Grey,Siva
+Navy,Mornarica
+Silver,Srebrna
+Black,Črna
+Green,Zelena
+Olive,Oljka
+Teal,Zelenomodra
+Blue,Modra
+Lime,Lime
+Purple,Vijolična
+Fuchsia,Fuchsia
+Maroon,Maroon
+Red,Rdeča
+Orange,Oranžna
+Yellow,Rumena
+Text,Besedilo
+Date,Datum
+Checkbox,"Potrditveno polje"
+"Drop-down list","Spustni seznam"
+"In minutes...","V nekaj minutah ..."
+"In hours...","V urah ..."
+"In days...","V dnevih ..."
+"In weeks...","V tednih ..."
+"In months...","V mesecih ..."
+Custom,"Po meri"
+"--Please Select--","--Prosim izberite--"
+"New ticket created","Nova vozovnica je ustvarjena"
+Success,Uspeh
+Customer,Stranka
+Staff,Osebje
+"Third party","Tretja oseba"
+Closed,Zaprto
+"Opened 24hr","Odprto je 24 ur"
+"Helpdesk Tickets","Vstopnice za pomoč uporabnikom"
+"Cannot delete ticket with id %1","Ticket z ID-jem ni mogoče izbrisati %1"
+Edit,Uredi
+"All Departments","Vsi oddelki"
+Back,Nazaj
+"24 hrs x 7 days","24 ur x 7 dni"
+"Select working days/hours","Izberite delovne dneve / ure"
+"Satisfaction survey","Anketa o zadovoljstvu"
+"to %1 (third party)","do %1 (tretja oseba)"
+"%1 (third party)","%1 (tretja stranka)"
+"added %1 (%2)","dodano %1 (%2)"
+"Ticket Summary","Povzetek vstopnic"
+"Ticket ID","ID kartice"
+Assignee,Prevzemnik
+"Additional Info","Dodatne informacije"
+"Ticket History","Zgodovina vstopnic"
+"Done by",Dokončano
+Changes,Spremembe
+Name,Ime
+"Attach files","Priložite datoteke"
+Submit,Pošlji
+"Submit Ticket","Pošlji vozovnico"
+"What is your question?","Kaj je vaše vprašanje?"
+"We found the following topics that might be helpful:","Našli smo naslednje teme, ki bi lahko bile v pomoč:"
+"None of these are helpful - get in touch","Nobena od teh ni v pomoč - stopite v stik"
+"We have not found topics that can be helpful.","Nismo našli tem, ki bi lahko bile koristne."
+"Contact Information","Kontaktni podatki"
+Comment,Komentar
+"We are open 24 x 7","Odprli smo 24 x 7"
+"We are closed","Zaprti smo"
+"Timezone: %1","Časovni pas: %1"
+"Please take a second to rate my reply...","Prosim, vzemite si sekundo, da ocenite moj odgovor ..."
+Great,Super
+Awesome,Odlično
+"Fast, friendly, helpful, pleasant. Great job!","Hitra, prijazna, koristna, prijetna. Odlično opravljeno!"
+"Just Okay","V redu"
+"Fine, but definitely could have been better.","Dobro, toda zagotovo bi bilo bolje."
+"Not good",Slabo
+"Unfortunately, I wasn't happy with it at all.","Na žalost sploh nisem bila zadovoljna s tem."
+"Thank you for participating in our survey!","Hvala, ker ste sodelovali v naši anketi!"
+"If you would like to provide additional comments, please do so below:","Če želite dodatne pripombe, prosimo, spodaj:"
+Message,Sporočilo
+"Submit Message","Pošlji sporočilo"
+"Thank you for your feedback!","Hvala za vaše mnenje!"
+Attachments,Priloge
+Order,Naročilo
+"-- Select an Order --","- Izberite naročilo -"
+"Create ticket","Ustvarite vstopnico"
+"You don't have open tickets","Nimate odprtih vozovnic"
+"Post a Reply","Objavite odgovor"
+"Reopen Ticket","Ponovitev vozovnice"
+"Close Ticket","Zapri vstopnico"
+History,Zgodovina
+"Back to My Tickets","Nazaj na Moje vstopnice"
+"Help Desk MX","Pomočnica MX"
+"Contact Us","Kontaktiraj nas"
+Open,Odprto
+Subject,Predmet
+"Last Activity","Zadnja aktivnost"
+"Request ID","Zahtevaj ID"

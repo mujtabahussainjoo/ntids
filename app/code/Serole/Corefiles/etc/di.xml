@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Backend\App\Request\BackendValidator" type="Serole\Corefiles\App\Request\BackendValidator" />
+    <preference for="Magento\Backend\Block\Widget\Form\Renderer\Fieldset\Element" type="Serole\Corefiles\Block\Widget\Form\Renderer\Fieldset\Element" />
+    <!--<preference for="Magento\SalesSequence\Model\Sequence" type="Serole\Corefiles\Model\Sequence" />-->
+    <preference for="Magento\CustomerImportExport\Model\Import\Customer" type="Serole\Corefiles\Model\Import\Customer" />
+    <preference for="Magento\CheckoutAgreements\Model\Checkout\Plugin\Validation" type="Serole\Corefiles\Model\Checkout\Plugin\Validation" />
+    <!--<type name="Magento\CheckoutAgreements\Model\Checkout\Plugin\Validation">
+        <plugin name="checkout-aggerements" type="Serole\Corefiles\Model\Checkout\Plugin\Validation" sortOrder="1" />
+    </type>-->
+    <preference for="Magento\Framework\Serialize\Serializer\Json" type="Serole\Corefiles\Serialize\Serializer\Json" />
+
+    <preference for="Magento\Shipping\Controller\Adminhtml\Order\Shipment\Start" type="Serole\Corefiles\Controller\Adminhtml\Order\Shipment\Start"/> 
+
+    <type name="Magento\Sales\Controller\Adminhtml\Shipment\AbstractShipment\View">
+        <plugin name="plugin_creditmemo_admin_grid" type="Serole\Corefiles\Plugin\Adminhtml\Shipment\AbstractShipment\View" sortOrder="10" disabled="false"  />
+    </type>
+	<type name="Magento\Framework\DB\Sequence\SequenceInterface">
+        <arguments>
+            <argument name="pattern" xsi:type="string">%s%'.010d%s</argument>
+        </arguments>
+    </type>
+</config>

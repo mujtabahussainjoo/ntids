@@ -1,0 +1,11 @@
+<form action="<?php echo $block->escapeHtml($block->getSaveUrl()) ?>" method="post" id="surcharge-edit-form">
+    <?php echo $block->getBlockHtml('formkey'); ?>
+</form>
+<script>
+    require([
+        "jquery",
+        "mage/mage"
+    ], function ($) {
+        $('#surcharge-edit-form').mage('form').mage('validation');
+    });
+</script>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="copyright" remove="true"/>
+
+        <referenceContainer name="content">
+            <block name="form" class="Mirasvit\Helpdesk\Block\Contact\Form" template="contact/form/form.phtml">
+                <block name="helpdesk_contacts_schedule_status_feedback"
+                       class="Mirasvit\Helpdesk\Block\Contacts\Schedule\Status"
+                       template="contacts/schedule/status.phtml">
+                    <arguments>
+                        <argument name="page" xsi:type="string">feedback-popup</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

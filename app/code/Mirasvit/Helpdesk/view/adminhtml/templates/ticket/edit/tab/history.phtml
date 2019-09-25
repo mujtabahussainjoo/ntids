@@ -1,0 +1,31 @@
+<?php
+/** @var \Mirasvit\Helpdesk\Block\Adminhtml\Ticket\Edit\Tab\History $block */
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?= __("Ticket History") ?></h4>
+    <div class="form-buttons"></div>
+</div>
+	<div class="fieldset " id="edit_fieldset">
+		<div class="hor-scroll">
+<table class="data-grid">
+	<thead>
+		<tr>
+			<th class="data-grid-th"><span><?= __('Date')?></span></th>
+			<th class="data-grid-th"><span><?= __('Done by')?></span></th>
+			<th class="data-grid-th"><span><?= __('Changes')?></span></th>
+		</tr>
+	</thead>
+	<tbody>
+<?php foreach ($block->getHistoryCollection() as $history): ?>
+	<tr>
+		<td><?= $block->formatDate($history->getCreatedAt(), \IntlDateFormatter::MEDIUM) ?> <?= $block->formatTime($history->getCreatedAt(), \IntlDateFormatter::SHORT) ?></td>
+		<td><?= $block->escapeHtml($history->getName()) ?></td>
+		<td><?= str_replace("\n", "<br>", $block->escapeHtml($history->getMessage())) ?></td>
+	</tr>
+<?php endforeach ?>
+	</tbody>
+</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="Serole\OvernightUpload\Model\ResourceModel\Grid\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">overnightupload_partnercode</argument>
+            <argument name="resourceModel" xsi:type="string">Serole\OvernightUpload\Model\ResourceModel\Grid</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="grid_record_grid_list_data_source" xsi:type="string">Serole\OvernightUpload\Model\ResourceModel\Grid\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+
+    <virtualType name="Serole\OvernightUpload\Model\ResourceModel\Providergrid\Providergrid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">provider_partnergroupcode</argument>
+            <argument name="resourceModel" xsi:type="string">Serole\OvernightUpload\Model\ResourceModel\Providergrid</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="grid_providergrid_list_data_source" xsi:type="string">Serole\OvernightUpload\Model\ResourceModel\Providergrid\Providergrid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

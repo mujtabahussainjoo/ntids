@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+* Created by:  Milan Simek
+* Company:     Plugin Company
+*
+* LICENSE: http://plugin.company/docs/magento-extensions/magento-extension-license-agreement
+*
+* YOU WILL ALSO FIND A PDF COPY OF THE LICENSE IN THE DOWNLOADED ZIP FILE
+*
+* FOR QUESTIONS AND SUPPORT
+* PLEASE DON'T HESITATE TO CONTACT US AT:
+*
+* SUPPORT@PLUGIN.COMPANY
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\Form">
+        <plugin name="addGenerateFieldsetName"
+                type="PluginCompany\CouponImport\Plugin\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\FormPlugin"
+        />
+    </type>
+</config>

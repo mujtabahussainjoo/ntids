@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="nwdthemes_revslider_common"/>
+    <update handle="nwdthemes_revslider_gallery"/>
+    <body>
+        <referenceContainer name="master-view">
+			<block class="Nwdthemes\Revslider\Block\Adminhtml\NavigationEditor" name="view" template="Nwdthemes_Revslider::navigation-editor.phtml">
+			</block>
+        </referenceContainer>
+    </body>
+</page>

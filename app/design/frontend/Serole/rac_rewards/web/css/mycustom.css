@@ -1,0 +1,14 @@
+.header-container {
+    margin-left: 0% !important;
+    width: 100% !important;
+	background-image:url('../images/header.png');
+	background-position: center -222px;
+}
+.right-column .item.item-right.item-interface{ 
+	background-color:#33424D;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	margin-right: -11px;
+	color:#fff;
+}
+ .header.links a{color:#fff !important; }

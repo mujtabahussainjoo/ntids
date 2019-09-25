@@ -1,0 +1,15 @@
+<?php
+  $blockData = $block->getData();
+  $sessionOrderid = $blockData['data'];
+?>
+<div class="block-content">
+    <button  type="button" title="Get Tickets" class="button btn-gettickets btn-gettickets-color <?php if($sessionOrderid){echo "deactive-gettickets";}?>" id="gettickets" <?php if($sessionOrderid){echo "disabled";}?>>
+        <span><span>Secure <br />Tickets</span></span>
+    </button>
+    <button  type="button" title="Confirm Order" class="button btn-confirmorder <?php if($sessionOrderid){echo "active-confirmorder";}?>" orderid="<?php if($sessionOrderid){echo $sessionOrderid;}?>" id="confirmorder">
+        <span><span>Confirm & <br />Print Tickets</span></span>
+    </button>
+    <button  type="button" title="Cancel Order" class="button btn-cancelorder <?php if($sessionOrderid){echo "active-cancelorder";}?>" orderid="<?php if($sessionOrderid){echo $sessionOrderid;}?>" id="cancelorder">
+        <span><span>Cancel<br />Order</span></span>
+    </button>
+</div>

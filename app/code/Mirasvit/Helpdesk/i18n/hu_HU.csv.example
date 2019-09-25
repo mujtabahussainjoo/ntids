@@ -1,0 +1,136 @@
+Department,Osztály
+"Create New Ticket","Új jegy létrehozása"
+Status,Állapot
+Priority,"Kiemelten fontos"
+Replies,Válaszok
+View,Kilátás
+"Help Desk",Ügyfélszolgálat
+"Thank you",Köszönöm
+"Create Ticket","Jegy készítése"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Kérelmét sikeresen elküldtük. Hamarosan visszaigazoló e-mailt kell kapnia."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","A kérdése beérkezett, és a lehető leghamarabb válaszol. Köszönjük, hogy kapcsolatba lépett velünk."
+"Unable to submit your request. Please, try again later","A kérelmet nem tudta elküldeni. Kérlek, próbáld újra később"
+"Page not found.","Az oldal nem található."
+"Your message was successfuly posted","Az üzenete sikeresen megjelent"
+"Your ticket was successfuly posted","A jegyed sikeresen megjelent"
+"Ticket was successfuly closed","A jegy sikeresen lezárult"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Nem sikerült feltölteni a fájlt %1. A maximális feltöltési méret %2 MB."
+"Allows only this file types: %1","Csak ezt a fájltípust engedélyezi: %1"
+"Message added","Üzenet hozzáadva"
+"Internal note added","Belső megjegyzés hozzáadva"
+"Third party message added","Harmadik fél üzenet hozzáadásra került"
+"Private third party message added","Privát harmadik fél üzenetet adott hozzá"
+"-- Please Select --","-- Kérlek, válassz --"
+"Contact Tab",Kapcsolatfül
+"Contact Form","Kapcsolatfelvételi űrlap"
+" at %1 (%2) - %3","%1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Nincs jogosultsága ennek a jegynek a felolvasására. Kérjük, lépjen kapcsolatba rendszergazdájával."
+"Invalid Customer Email","Érvénytelen ügyfél-e-mail"
+"not set","nincs beállítva"
+"Unknown time","Ismeretlen idő"
+ago,ezelőtt
+"from now",mostantól
+"1 sec ago","1 másodperc ezelőtt"
+"Open Ticket","Nyílt jegy"
+"Open Tickets","Jegyek megnyitása"
+"! Blocked file - ","! Blokkolt fájl -"
+Disabled,Tiltva
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System",Fájlrendszer
+Database,Adatbázis
+Aqua,Aqua
+Grey,Szürke
+Navy,Haditengerészet
+Silver,Ezüst
+Black,Fekete
+Green,Zöld
+Olive,Olajbogyó
+Teal,"A zöldeskék"
+Blue,Kék
+Lime,Mész
+Purple,Lila
+Fuchsia,Fukszia
+Maroon,Gesztenyebarna
+Red,Piros
+Orange,Narancs
+Yellow,Sárga
+Text,Szöveg
+Date,Dátum
+Checkbox,Jelölőnégyzetet
+"Drop-down list","Legördülő lista"
+"In minutes...","Perceken belül ..."
+"In hours...","Órákban ..."
+"In days...","Napokban ..."
+"In weeks...","Hetek alatt ..."
+"In months...","Hónapokban ..."
+Custom,Szokás
+"--Please Select--","--Kérlek, válassz--"
+"New ticket created","Új jegyet hoztak létre"
+Success,Siker
+Customer,Vevő
+Staff,Személyzet
+"Third party","Harmadik fél"
+Closed,Zárva
+"Opened 24hr","24 órás nyitva tartás"
+"Helpdesk Tickets","Helpdesk Jegyek"
+"Cannot delete ticket with id %1","A jegyet nem lehet törölni id %1"
+Edit,Szerkesztése
+"All Departments","Minden részleg"
+Back,Hát
+"24 hrs x 7 days","24 óra x 7 nap"
+"Select working days/hours","Válasszon munkanapokat / órákat"
+"Satisfaction survey","Elégedettségi felmérés"
+"to %1 (third party)","-hoz %1 (harmadik fél)"
+"%1 (third party)","%1 (harmadik fél)"
+"added %1 (%2)","hozzáadva %1 (%2)"
+"Ticket Summary",Jegyösszesítő
+"Ticket ID",Jegyazonosító
+Assignee,Engedményes
+"Additional Info","További információ"
+"Ticket History","Jegy története"
+"Done by","Által végzett"
+Changes,Változtatások
+Name,Név
+"Attach files","Fájlok csatolása"
+Submit,Beküldése
+"Submit Ticket","Jegy eladása"
+"What is your question?","Mi a kérdése?"
+"We found the following topics that might be helpful:","A következő témákat találtuk hasznosnak:"
+"None of these are helpful - get in touch","Ezek közül egyik sem hasznos - lépjen kapcsolatba"
+"We have not found topics that can be helpful.","Nem találtunk olyan témákat, amelyek hasznosak lehetnek."
+"Contact Information",Elérhetőség
+Comment,Megjegyzés
+"We are open 24 x 7","Nyitott 24 x 7"
+"We are closed","Zárva vagyunk"
+"Timezone: %1","Időzóna: %1"
+"Please take a second to rate my reply...","Kérjük, vegye be egy másodpercet, hogy értékelje a válaszomat ..."
+Great,Nagy
+Awesome,Fantasztikus
+"Fast, friendly, helpful, pleasant. Great job!","Gyors, barátságos, segítőkész, kellemes. Nagyszerű munka!"
+"Just Okay","Csak rendben"
+"Fine, but definitely could have been better.","Jó, de biztosan jobb lett volna."
+"Not good","Nem jó"
+"Unfortunately, I wasn't happy with it at all.","Sajnos nem voltam elégedett vele."
+"Thank you for participating in our survey!","Köszönjük, hogy részt vett a felmérésünkben!"
+"If you would like to provide additional comments, please do so below:","Ha további megjegyzéseket szeretne benyújtani, tegye meg az alábbiakat:"
+Message,Üzenet
+"Submit Message","Üzenet elküldése"
+"Thank you for your feedback!","Köszönjük a visszajelzést!"
+Attachments,Mellékletek
+Order,Sorrend
+"-- Select an Order --","- Válasszon rendelést -"
+"Create ticket","Jegy készítése"
+"You don't have open tickets","Nincsenek nyitott jegyek"
+"Post a Reply",Válaszoljon
+"Reopen Ticket","Indítsa újra a jegyet"
+"Close Ticket","Zárja be a jegyet"
+History,Történelem
+"Back to My Tickets","Vissza a Jegyekhez"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Lépjen kapcsolatba velünk"
+Open,"Nyisd ki"
+Subject,Tantárgy
+"Last Activity","Utolsó bejelentkezés, utolsó használat"
+"Request ID","Request ID"

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Serole_Orderreport::orderreport" title="Partner Reports" module="Serole_Orderreport" sortOrder="51" resource="Serole_Orderreport::orderreport"/>
+        <add id="Serole_Orderreport::subsidyorderreport" title="Subsidy Report" module="Serole_Orderreport" sortOrder="10" action="orderreport/subsidy/index" resource="Serole_Orderreport::subsidyorderreport" parent="Serole_Orderreport::orderreport"/>
+        <add id="Serole_Orderreport::websiteorderreport" title="Website Order Report" module="Serole_Orderreport" sortOrder="20" action="orderreport/Website/index" resource="Serole_Orderreport::websiteorderreport" parent="Serole_Orderreport::orderreport" />
+        <add id="Serole_Orderreport::salesorderreport" title="Sales Order Report" module="Serole_Orderreport" sortOrder="30" action="orderreport/salesorder/index" resource="Serole_Orderreport::salesorderreport" parent="Serole_Orderreport::orderreport"/>
+    </menu>
+</config>

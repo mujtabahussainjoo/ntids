@@ -1,0 +1,7 @@
+<?php
+    $helperFont = $this->helper('Infortis\Base\Helper\Fonts');
+    $url = $helperFont->getGoogleFontsFinalUrl();
+?>
+<?php if (!empty($url)): ?>
+    <link href="<?php echo $url; ?>" rel="stylesheet" type="text/css" />
+<?php endif;?>

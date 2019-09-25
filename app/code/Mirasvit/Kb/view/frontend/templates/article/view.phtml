@@ -1,0 +1,111 @@
+<?php
+/** @var \Mirasvit\Kb\Block\Article\View $block */
+//@codingStandardsIgnoreFile
+$article = $block->getArticle();
+$tags = $block->getTags();
+?>
+
+<?= $block->getChildHtml('kb.search.form') ?>
+
+<?= $block->getKbPageTitle() ?>
+
+<div class="kb-article__metadata">
+    <div class="author">
+        <?php if ($block->isShowAuthor()): ?>
+            <?= $article->getUser()->getName(); ?>
+        <?php endif; ?>
+        <?php if ($block->isShowDate()): ?>
+            <?php if ($block->isShowAuthor()): ?>
+                <?= __(' posted this at '); ?>
+            <?php endif; ?>
+            <?= $block->formatDate($article->getCreatedAt(), \IntlDateFormatter::MEDIUM); ?>
+        <?php endif; ?>
+    </div>
+
+    <?php if ($article->getRating() && $block->isRatingEnabled()): ?>
+        <div class="rating">
+            <i class="fa fa-thumbs-o-up"></i><?= $article->getPositiveVoteNum() ?>
+        </div>
+    <?php endif ?>
+</div>
+
+<div class="kb-article__body cms-content">
+    <?= $article->getTextHtml() ?>
+</div>
+
+<div class="kb-article__body-info-left">
+    <div class="kb-article__categories">
+        <?= __('Categories:') ?>
+        <?php foreach ($block->getCategories() as $category): ?>
+            <span><a href='<?= $category->getUrl() ?>'><?= $category->getName() ?></a></span>
+        <?php endforeach ?>
+    </div>
+
+
+    <div class="kb-article__tags">
+        <?php if ($tags->count()): ?>
+            <?= __('Tags:') ?>
+            <?php foreach ($tags as $tag): ?>
+                <span><a href='<?= $tag->getUrl() ?>'><?= $tag->getName() ?></a>&nbsp;</span>
+            <?php endforeach ?>
+        <?php endif ?>
+    </div>
+</div>
+<div class="kb-article__body-info-right">
+    <?php if ($block->isRatingEnabled()): ?>
+        <div class="kb-article__helpful">
+            <?php if (!$block->getVoteResult()): ?>
+                <div class="metadata">
+                    <strong><?= __('Was this article helpful?'); ?></strong>
+                    <span
+                        class="count"><?= __('%1 out %2 found this helpful', $article->getPositiveVoteNum(), $article->getVotesNum()); ?></span>
+                </div>
+                <a href="<?= $block->getVoteUrl(5) ?>"><i class="fa fa-thumbs-o-up"></i></a>
+                <a href="<?= $block->getVoteUrl(1) ?>"><i class="fa fa-thumbs-o-down"></i></a>
+            <?php else: ?>
+                <?php if ($block->getVoteResult() == 5): ?>
+                    <div class="metadata">
+                    <span class="count">
+                        <?php if ($article->getPositiveVoteNum() > 1): ?>
+                            <?= __('You and %1 people found this helpful.', $article->getPositiveVoteNum()) ?>
+                        <?php else: ?>
+                            <?= __('You found this helpful.') ?>
+                        <?php endif ?>
+                    </span>
+                    </div>
+                <?php endif ?>
+            <?php endif ?>
+        </div>
+    <?php endif ?>
+</div>
+<div class="clearfix"></div>
+
+<?php if ($block->getCommentProvider() == 'disqus'): ?>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+        };
+        (function () {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//<?=$block->getDisqusShortname() ?>.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+<?php elseif ($block->getCommentProvider() == 'facebook'): ?>
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-comments" data-href="<?= $article->getUrl() ?>"
+         data-numposts="5" width="100%"></div>
+<?php endif ?>

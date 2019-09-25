@@ -1,0 +1,43 @@
+tables:
+  admin/user:
+    - user_id: 2
+      firstname: Mike
+      lastname: Peterson
+      email: mike@company.com
+      username: mike
+      is_active: 1
+  helpdesk/email:
+    -
+      email_id: 2
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: Ticket Subject 2
+      body: Ticket Body 2
+      sender_name: John Doe
+      gateway_id: 2
+    -
+      email_id: 3
+      from_email: mike@company.com
+      to_email: support@company.com
+      subject: '[#AAA-123-45678]Ticket Subject 2'
+      body: Ticket Body 3
+      sender_name: Mike Peterson
+      gateway_id: 2
+  helpdesk/department:
+    -
+      department_id: 2
+      name: Customer Care Department
+      sender_email: sales
+      is_active: 1
+      signature: "Customer Care Team"
+      sort_order: 10
+      is_notification_enabled: 1
+      notification_email: test@mirasvit.com
+  helpdesk/gateway:
+    -
+      gateway_id: 2
+      name: Gateway 2
+      department_id: 2
+      store_id: 1
+  helpdesk/ticket:
+  helpdesk/message:

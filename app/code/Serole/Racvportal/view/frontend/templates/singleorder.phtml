@@ -1,0 +1,103 @@
+<div class="content-inner-html">
+    <div class="creditmemo-message"></div>
+    <h2>Last Confirmed Order</h2>
+	<p><b>	Please be aware that once cancellation is processed all items within the order are returned to stock for resale. </b></p>
+	<p><b>Please do not issue cancelled vouchers and if printed please destroy them.</b></p>
+    <?php
+      $orderData = $block->getData();
+    ?>
+      <table class="past-orders table table-striped">
+          <tr>
+			  <th>Order #</th>
+              <th>Date</th>
+              <th>Shop</th>
+              <th>User</th>
+              <th class="order-total">Total</th>
+              <th></th>
+			  <th></th>
+          </tr>
+
+          <?php
+              $baseUrl = $this->getPdfFileUrl();
+          ?>
+
+      <?php
+          if($orderData['data']) {
+              foreach ($orderData['data'] as $key => $orderItem) { ?>
+                  <tr class="<?php if ($key % 2 == 0) {
+                      echo "even";
+                  } else {
+                      echo "odd";
+                  } ?>">
+                      <td><?php echo $orderItem['increment_id'] ?></td>
+                      <td><?php echo $orderItem['created_at'] ?></td>
+                      <td><?php echo $orderItem['shop_name'] ?></td>
+                      <td><?php echo $orderItem['customer_firstname'] . ' ' . $orderItem['customer_lastname'] ?></td>
+                      <td><?php echo $orderItem['grand_total'] ?></td>
+                      <?php if (isset($orderItem['increment_id'])) {
+                          if (file_exists($this->getPdfFilePath($orderItem['increment_id']))) { ?>
+                              <?php $url = $baseUrl . "racvportal/pdf/download/incrementid/" . $orderItem['increment_id']; ?>
+                              <td>
+                                  <button class="button pastorder-button" onclick='window.open("<?php echo $url ?>")'>
+                                      Download
+                                  </button>
+                              </td>
+                              <?php
+                          }
+                      }
+					  if(count($orderData['data']) == 1)
+					  {
+                      ?>
+					  <td>
+					     <button id="can_btn" class="button cancel-button creditmemo-button" incrementid="<?php echo $orderItem['increment_id'] ?> " style="background-color: red!important; border-color:none !important;">Cancel</button>
+                      </td>
+					  <?php
+					  }
+					  ?>
+                  </tr>
+       <?php  }
+          } else{?>
+              <tr>
+                  <p>No Data found</p>
+              </tr>
+         <?php }?>
+      </table>
+</div>
+<script type="application/javascript">
+    require(['jquery', 'jquery/ui'], function($){
+      
+        jQuery('.creditmemo-button').click(function () {
+            jQuery('.creditmemo-button').attr("disabled",true);
+            var orderId = jQuery(this).attr('incrementid');
+            var loderurl = '<?php echo $this->getViewFileUrl('Serole_Racvportal::images/loader.gif');?>';
+            console.log(loderurl);
+            jQuery('.html-content').css('background-image','url("'+loderurl+'")');
+            jQuery('.html-content').css('background-repeat', 'no-repeat');
+			jQuery('.html-content').css('background-repeat', 'no-repeat');
+
+            $.ajax({
+                url  : '<?php echo $this->getBaseUrl().'racvportal/cart/createcreditmemo'; ?>',
+                type : 'POST',
+                data : {orderid:orderId},
+                dataType:'json',
+                async:true,
+                success : function(data) {
+                    console.log(data);
+					jQuery('.html-content').css('background-image','url(" ")');
+                    if (data["status"] == 'success') {
+                      jQuery('.creditmemo-message').html("<p style='color:green;font-weight: bolder;'>Creditmeo Created for "+orderId+"</p>");
+                      jQuery('.pastorder-button').remove();
+                      jQuery('.creditmemo-button').remove();
+                    }else{
+                      jQuery('.creditmemo-message').html("<p style='color:red;font-weight: bolder;'>"+data["message"]+"</p>");
+                      console.log(data['message']);
+                    }
+                },
+                error : function(request,error){
+                    console.log(error);
+                    jQuery('.creditmemo-message').html("Someting went wrong");
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,10 @@
+<p>Home page as checkout page</p>
+<p>{{block class="Serole\Racvportal\Block\Onepage" template="Serole_Racvportal::onepage.phtml"}}</p>
+  <head>
+        <css src="Serole_Racvportal::css/onepage.css" />
+   </head>
+
+We are used jquer lib for pop-up messages
+ http://jsfiddle.net/ifightcrime/Us6WX/1008/
+
+ https://github.com/ifightcrime/bootstrap-growl

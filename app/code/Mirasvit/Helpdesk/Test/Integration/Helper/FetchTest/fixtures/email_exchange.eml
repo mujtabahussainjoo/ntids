@@ -1,0 +1,520 @@
+Delivered-To: help@fafa.com
+Received: by 10.200.3.159 with SMTP id t31csp20706qtg;
+        Tue, 7 Nov 2017 03:56:22 -0800 (PST)
+X-Received: by 10.28.21.10 with SMTP id 10mr1137545wmv.41.1510055782607;
+        Tue, 07 Nov 2017 03:56:22 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1510055782; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ev1JDmhNx0EP+KdrWpgExP3yrAvVHu85jT1kczleRokcKnaTLvUQA0h2UzhupaZOzJ
+         imeMhT8wrSrEfEZRqGOIbUPg4Mj9ejxwBzhcgj4nh87EI9skcCzX5c9mP9zLNehDrxld
+         6ifVk3n0L1PqPz7QvoUKgBXsPHyOPltbaet5E+To9gZJGzchMkta+z9OC7uxYVxETO5/
+         Q2o2qGaMjTYO4b6CMaNd2nSFaPTrIdT2ilbxilOegJzYWOmXiItABHO+u5LloRhveOjm
+         iIjnjXCPuLl62gqqUYn1lf+LCQzfLGdK2XTeqb7bZtc3gWaBO2RTpTcL2fLABnzusBCj
+         6yww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:to:from:subject:date:message-id:dkim-signature
+         :arc-authentication-results;
+        bh=YVm/LAEKxcjDHZRj5s+25dlSL/THvs9eJk1z8fxqC0s=;
+        b=f0jInPhrtSjWylzmL4tANz88z3eDGEroBFcsUJoGD9BUysFnuuwF3twKeK4To5T8HZ
+         raBE6Ohhju7Fz/tspY8rvvRfnLLxZt+T89Lh6q1zIj6osNQYysiL9mHaNyob9vN+IfUq
+         I7yYAqXyuErTSgV29vBwTZ04RSJkjPqyw1xCZ+5Kt4GBcP4d7hAznxpm82FLny0jLKVT
+         aUZUt6KyNLyTtYkz1QQucuR4lCGpnTBagCaH+Z8ftN1cxDXRJPsr8tpkFKiqnhqFx3eo
+         oplvoDwVIiOs4rpw3GL2sArqzFJJCkuQbldoAIoVtDEQkhWeszf3QjD2z+5Z7sajz+G9
+         rLcw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@customer.com header.s=google header.b=6ScnG5nv;
+       spf=pass (google.com: domain of help@customer.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=help@customer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=customer.com
+Return-Path: <help@customer.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id t68sor470134wrc.48.2017.11.07.03.56.22
+        for <help@fafa.com>
+        (Google Transport Security);
+        Tue, 07 Nov 2017 03:56:22 -0800 (PST)
+Received-SPF: pass (google.com: domain of help@customer.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@customer.com header.s=google header.b=6ScnG5nv;
+       spf=pass (google.com: domain of help@customer.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=help@customer.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=customer.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=customer.com; s=google;
+        h=message-id:date:subject:from:to:mime-version;
+        bh=YVm/LAEKxcjDHZRj5s+25dlSL/THvs9eJk1z8fxqC0s=;
+        b=6ScnG5nvtpQynwoU9rvRBO52MOJuQ+EJ7kz2Lmyb+nuATzX/41V6InyOP8hI3YUkfd
+         Aic3FIxKcxDYJL7IiYP9syEI/uzHBvRJ+dXUqlG1vpppjCO+3WdcCOf8z8fKRHHlrFQP
+         cvCRX/vXPCq7ogiutPxjD0MQv5yPo4qQ7RDLU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:message-id:date:subject:from:to:mime-version;
+        bh=YVm/LAEKxcjDHZRj5s+25dlSL/THvs9eJk1z8fxqC0s=;
+        b=Xht3DsjMEtQCW9QD/SybXyWcR+0YWxHi9OY+nJDbXFBC+6aKf3ZjT46FXZ3bK+M7dk
+         OzFD8o1ogIO5XGxeX9StQWzHbYa3xI60ZtgOCikic9s8uFS524lSaIR1S03aEzE87Rct
+         JbjCvu+D2l4qr0tgMUZHRgYE6/0Y67RGy6zlk4BhbPyqpDpUvSv3RzcRNbYC3tloOfo5
+         8SWbb/1MyuHxmTDmN5sNZq3MJZ8vjyqIc95BbJ47zuLcfBLCcKFRd9U6bU+rXQx6vbpf
+         GCGT9d6TMdirC6OHKAqE+EbA7968Jmfvycw0HDxt4J55xNrrwKyCm/uVHhxS62v/NdHl
+         LwXQ==
+X-Gm-Message-State: AMCzsaVgtHHySLG14XhLSUSzQfWuT72BhtJdzqB895g2hWUOjm/Ua8KP
+	S6MICRFPsD6ad8RgPddcQcmzt07Q
+X-Google-Smtp-Source: ABhQp+RAPksJbY0EClszucgatbtWntaA01HY25h0kF3G2TJ29SckosK5TVLJzBCEci1Wvmy9Wc3MlQ==
+X-Received: by 10.223.163.143 with SMTP id l15mr14825023wrb.65.1510055781834;
+        Tue, 07 Nov 2017 03:56:21 -0800 (PST)
+Return-Path: <help@customer.com>
+Received: from [127.0.0.1] ([5.135.67.102])
+        by smtp.gmail.com with ESMTPSA id f56sm2938193wra.75.2017.11.07.03.56.20
+        for <help@fafa.com>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Tue, 07 Nov 2017 03:56:21 -0800 (PST)
+Message-ID: <1510056485.5a01a22596df2@swift.generated>
+Date: Tue, 07 Nov 2017 12:08:05 +0000
+Subject: [M2 LookFabulousForever.com] New comment on 'Mirasvit Search M2: Not
+ found terms result page look' task {TASK/49993}
+From: Support <help@customer.com>
+To: Mirasvit Support <help@fafa.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_v4_15100564855a01a22597c21_=_"
+
+
+--_=_swift_v4_15100564855a01a22597c21_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Email Notification
+
+	-- REPLY ABOVE THIS LINE --
+
+	Task=
+:
+	Mirasvit Search M2: Not found terms result page look [https://pro=
+jects.customer.com/public/index.php?path_info=3Dprojects%2Fm2-lookfabulo=
+usforevercom%2Ftasks%2F251]
+
+	Project:
+	M2 LookFabulousFor=
+ever.com [https://projects.customer.com/public/index.php?path_info=3Dpro=
+jects%2Fm2-lookfabulousforevercom] - MS: Advanced Search [https://projec=
+ts.customer.com/public/index.php?path_info=3Dprojects%2Fm2-lookfabulousf=
+orevercom%2Fmilestones%2F48824]
+
+	Responsibility:
+	Masha S.=
+ is responsible.
+
+Created by
+ Masha S. [https://projects.2bu=
+y1click.com/public/index.php?path_info=3Dpeople%2F8%2Fusers%2F24]	=
+
+
+							 [a8v1oq0kggnvsinmg6dv@fafa.com]
+
+					=
+		Mirasvit M. [a8v1oq0kggnvsinmg6dv@fafa.com]   07/11/2017   New=
+!
+
+								[CONTENT NOT PROVIDED]
+
+							 [a8v1oq0k=
+ggnvsinmg6dv@fafa.com]
+
+							Mirasvit M. [a8v1oq0kggnvsinmg=
+6dv@fafa.com]   07/11/2017
+
+								[CONTENT NOT PROVIDED=
+]
+
+							 [a8v1oq0kggnvsinmg6dv@fafa.com]
+
+					=
+		Mirasvit M. [a8v1oq0kggnvsinmg6dv@fafa.com]   07/11/2017
+
+	=
+							[CONTENT NOT PROVIDED]
+
+							 [a8v1oq0kggnvsinmg6dv@mir=
+asvit.com]
+
+							Mirasvit M. [a8v1oq0kggnvsinmg6dv@fafa.com=
+]   07/11/2017
+
+								[CONTENT NOT PROVIDED]
+
+					=
+		 [a8v1oq0kggnvsinmg6dv@fafa.com]
+
+							Mirasvit M. [a8v1o=
+q0kggnvsinmg6dv@fafa.com]   07/11/2017
+
+								[CONTENT NOT =
+PROVIDED]
+
+										          Showing All 0 Comment=
+s
+
+	Stop receiving email notifications [https://projects.2buy1cl=
+ick.com/public/index.php?path_info=3Dpublic%2Fnotifications%2Funsubscribe&=
+code=3DSUBS-163188-DNPY0CZZ4N] about this task.
+
+	(c)2017 by 2=
+buy1click Ltd. Powered by: activeCollab [http://www.activecollab.com].
+
+--_=_swift_v4_15100564855a01a22597c21_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html
+xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+content="text/html; charset=utf-8" /><meta name="viewport"
+content="width=device-width, initial-scale=1.0" /><title>Email
+Notification</title><style type="text/css">
+
+										#outlook a {padding:0;}
+
+										body{width:100% !important; -webkit-text-size-adjust:100%;
+-ms-text-size-adjust:100%; margin:0; padding:0;}
+
+										.ExternalClass {width:100%;}
+
+										.ExternalClass, .ExternalClass p, .ExternalClass span,
+.ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:
+100%;}
+
+										#backgroundTable {margin:0; padding:0; width:100% !important;
+line-height: 100% !important;}
+
+										img {max-width:100%; outline:none; text-decoration:none;
+-ms-interpolation-mode: bicubic;}
+										td.avatar img {max-width:none;}
+
+										a img {border:none;}
+
+										.image_fix {display:block;}
+
+										p {margin: 1em 0; line-height:14px !important;}
+
+										h1, h2, h3, h4, h5, h6 {color: black !important;}
+
+										h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
+
+										h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active,
+h6 a:active { color: red !important;}
+
+										h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5
+a:visited, h6 a:visited { color: purple !important; }
+
+										table td {border-collapse: collapse;}
+
+										table { border-collapse:collapse; mso-table-lspace:0pt;
+mso-table-rspace:0pt; }
+
+
+										@media only screen and (max-device-width: 480px) {
+											table[id=greetings], table[id=attachment]{ width:auto !important; }
+											a[href^="tel"], a[href^="sms"] { text-decoration: none; color:
+black; pointer-events: none; cursor: default; }
+											.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+text-decoration: default; color: orange !important; pointer-events: auto;
+cursor: default; }
+											table[id=mainTable], td[id=mainContent]{ width: auto !important;
+max-width: 656px !important;}
+											#mainContent{ padding: 20px 5px !important;}
+											td[id=mainContent]{	padding: 20px 5px; }
+											td[class=avatar] img{ width: 30px !important; height: 30px
+!important;}
+											td[class=avatar]{ padding-left:5px !important; padding-right:5px
+!important; width:30px;}
+											td[class=branding] img{ width: 40px; height: 40px;}
+											td[class=branding]{ padding-left:5px !important; padding-right:5px
+!important;}
+											table[id=inspector]{ padding-left:5px !important;
+padding-right:5px !important; width: auto !important;}
+											table[id=createdBy]{ width:100px !important;}
+											td[id=content]{padding: 10px !important;}
+											td[id=content] td{padding: 5px !important;}
+											td[id=content] img{max-width:270px;}
+										}
+
+										@media only screen and (min-device-width: 481px) and
+(max-device-width: 768px) {
+											table[id=greetings], table[id=attachment]{ width:auto !important; }
+											a[href^="tel"], a[href^="sms"] { text-decoration: none; color:
+blue; pointer-events: none; cursor: default;}
+											.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+text-decoration: default; color: orange !important; pointer-events: auto;
+cursor: default;}
+											table[id=mainTable], td[id=mainContent]{ width: auto !important;
+max-width: 656px !important;}
+										}
+
+										@media only screen and (min-device-width: 768px) and
+(max-device-width: 1024px) {
+											table[id=attachment]{ width:auto !important; }
+											a[href^="tel"], a[href^="sms"] { text-decoration: none; color:
+blue; pointer-events: none; cursor: default;}
+											.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+text-decoration: default; color: orange !important; pointer-events: auto;
+cursor: default; }
+											table[id=inspector]{ width: auto !important;}
+											#mainTable, #mainContent{ width: auto !important; max-width: 656px
+!important; }
+										}
+
+										@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+											table[id=greetings], table[id=attachment]{ width:auto !important; }
+											table[id=inspector]{ width: auto !important;}
+											table[id=mainTable], td[id=mainContent]{ width: auto !important;
+max-width: 656px !important;}
+										}
+
+										@media only screen and (-webkit-device-pixel-ratio:.75){
+											table[id=greetings], table[id=attachment]{ width:auto !important; }
+											table[id=inspector]{ width: auto !important;}
+											table[id=mainTable], td[id=mainContent]{ width: auto !important;
+max-width: 656px !important;}
+										}
+
+										@media only screen and (max-device-width: 480px) and
+(-webkit-device-pixel-ratio:1) {
+											table[id=greetings], table[id=attachment]{ width:auto !important; }
+											table[id=inspector]{ width: auto !important;}
+											table[id=mainTable], td[id=mainContent]{ width: auto !important;
+max-width: 656px !important;}
+											td[id=mainContent]{ padding: 20px 5px !important;}
+											td[class=avatar] img{ width: 30px !important; height: 30px
+!important;}
+											td[class=avatar]{padding-left:5px !important; padding-right:5px
+!important; width:30px;}
+											td[class=branding] img{ width: 40px; height: 40px;}
+											td[class=branding]{padding-left:5px !important; padding-right:5px
+!important;}
+											table[id=inspector]{ padding-left:5px !important;
+padding-right:5px !important;}
+											table[id=createdBy]{ width:100px !important;}
+										}
+
+										@media only screen and (-webkit-device-pixel-ratio:1.5){
+											table[id=greetings], table[id=attachment]{ width:auto !important; }
+											table[id=inspector]{ width: auto !important;}
+											table[id=mainTable], td[id=mainContent]{ width: auto !important;
+max-width: 656px !important;}
+										}
+									</style>
+
+									<!--[if IEMobile]>
+										<style type="text/css">
+											#inspector{ width: auto !important;}
+											#mainTable, #mainContent{ width: auto !important;  max-width:300px
+!important;}
+											table[id=greetings], table[id=attachment]{ width:auto !important; }
+											td[id=mainContent]{ padding: 20px 5px !important;}
+											td[class=avatar] img{ width: 20px; height: 20px;}
+											td[class=avatar]{padding-left:5px !important; padding-right:5px
+!important; width:20px;}
+											td[class=branding] img{ width: 40px; height: 40px;}
+											td[class=branding]{padding-left:5px !important; padding-right:5px
+!important;}
+											table[id=inspector]{ padding-left:5px !important;
+padding-right:5px !important;}
+											table[id=createdBy]{ width:100px !important;}
+										</style>
+									<![endif]-->
+
+									<!--[if gte mso 9]>
+									<style>
+										td[id=openInBrowser]{ padding:0 !important; font-family: Lucida
+Grande, Verdana, Arial, Helvetica, sans-serif; }
+										td[id=openInBrowser] a{ padding:5px 10px !important; font-family:
+Lucida Grande, Verdana, Arial, Helvetica, sans-serif; }
+									</style>
+									<![endif]--></head><body><table cellpadding="0" cellspacing="0"
+border="0" id="backgroundTable" width="100%" style="font-family: Lucida
+Grande, Verdana, Arial, Helvetica, sans-serif; background: #f2f2e3;"
+align="center"><tr><td v-align="top" align="center" style="text-transform:
+uppercase; font-size: 11px; height:20px; background: #ededde; color: #727265;
+text-align: center; v-align:top; padding: 5px 0;">-- REPLY ABOVE THIS LINE
+--</td></tr><tr><td style="border-bottom:1px solid #e3e3ce; height:1px;
+line-height:1; padding:0; margin:0;"></td></tr><tr><td style="padding:40px
+20px;" cellpadding="0" cellspacing="0" id="mainContent" align="center"><table
+width="654" cellpadding="0" cellspacing="0" border="0" align="center"
+id="mainTable" style="width:654px; margin: 0 auto; border-spacing: 0;
+border-collapse:separate; border:1px solid #d0d2c9; -webkit-border-radius:
+20px; -moz-border-radius: 20px; border-radius: 20px; text-align:left;">
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" align="center"
+style="border-collapse:separate; padding: 15px; -webkit-border-radius: 20px;
+-moz-border-radius: 20px; border-radius: 20px;" id="inspector">
+
+				<tr>
+					<td class="branding" style="text-align: center; padding:10px;">
+						<img
+src="https://projects.customer.com/public/brand/logo.80x80.png?timestamp="
+alt="Logo">
+					</td>
+					<td style="text-align: left; width:624px;"><table cellpadding="0"
+cellspacing="0" border="0" align="left" style="font-family: Lucida Grande,
+Verdana, Arial, Helvetica, sans-serif; font-size:12px; background:#f2f2e3;
+line-height:16px;"><tr><td style="width: 80px; vertical-align: top; padding:
+3px 2px 4px 4px;">Task:</td><td style="vertical-align: top; padding: 2px;
+width:auto !important;"><a
+href="https://projects.customer.com/public/index.php?path_info=projects%2Fm2-lookfabulousforevercom%2Ftasks%2F251"
+style="color: #950000; text-decoration: underline;">Mirasvit Search M2: Not
+found terms result page look</a></td></tr><tr><td style="width: 80px;
+vertical-align: top; padding: 3px 2px 4px 4px;">Project:</td><td
+style="vertical-align: top; padding: 2px; width:auto !important;"><a
+href="https://projects.customer.com/public/index.php?path_info=projects%2Fm2-lookfabulousforevercom"
+style="color: #950000; text-decoration: underline;">M2
+LookFabulousForever.com</a> - <a
+href="https://projects.customer.com/public/index.php?path_info=projects%2Fm2-lookfabulousforevercom%2Fmilestones%2F48824"
+style="color: #950000; text-decoration: underline;">MS: Advanced
+Search</a></td></tr><tr><td style="width: 80px; vertical-align: top; padding:
+3px 2px 4px 4px;">Responsibility:</td><td style="vertical-align: top;
+padding: 2px; width:auto !important;">Masha S. is
+responsible.</td></tr></table></td><td><table cellpadding="0" cellspacing="0"
+border="0" align="center" id="createdBy" style="width:150px; font-family:
+Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;"><tr><td align="right" style="margin: 5px; width:100px;"
+width="100">Created by<br> <a
+href="https://projects.customer.com/public/index.php?path_info=people%2F8%2Fusers%2F24"
+style="padding-top:5px; color: #950000; text-decoration: underline;">Masha
+S.</a></td><td style="padding: 5px 10px;" class="avatar"><img
+src="https://projects.customer.com/public/avatars/24.40x40.png?time=1502454899"
+alt=""></td></tr></table></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 654px; background-color:#ffffff;
+border-collapse:separate; -webkit-border-bottom-right-radius: 20px;
+-webkit-border-bottom-left-radius: 20px; -moz-border-radius-bottomright:
+20px; -moz-border-radius-bottomleft: 20px; border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;">
+			<table border="0" cellpadding="0" cellspacing="0" class="ExternalClass"
+style="font-family: Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;">
+				<tr><td colspan="2" style="border-top:1px solid #d7d8cf; height:1px;
+line-height:1px; width:654px;"></td></tr>
+
+									<tr>
+						<td class="avatar" style="padding: 15px; vertical-align: top;
+text-align:center; width:40px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com"><img
+src="https://projects.customer.com/public/assets/images/authentication/default/user-roles/member.40x40.png"
+alt="avatar"></a></td>
+						<td style="padding: 15px 15px 15px 0;">
+							<div style="padding-bottom: 5px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com" style="color: #950000;
+text-decoration: underline; font-weight: bold;">Mirasvit M.</a> &nbsp;
+07/11/2017 &nbsp; <span style="font-weight: bold;">New!</span></div>
+							<div>
+								[CONTENT NOT PROVIDED]
+
+							</div>
+						</td>
+					</tr>
+
+											<tr><td colspan="3" height="1" style="width: 654px;"><div
+style="height:1px; border-bottom:1px solid #d7d8cf; padding:0; height:1;
+line-height:1;"></div></td></tr>
+						      					<tr>
+						<td class="avatar" style="padding: 15px; vertical-align: top;
+text-align:center; width:40px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com"><img
+src="https://projects.customer.com/public/assets/images/authentication/default/user-roles/member.40x40.png"
+alt="avatar"></a></td>
+						<td style="padding: 15px 15px 15px 0;">
+							<div style="padding-bottom: 5px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com" style="color: #950000;
+text-decoration: underline; font-weight: bold;">Mirasvit M.</a> &nbsp;
+07/11/2017</div>
+							<div>
+								[CONTENT NOT PROVIDED]
+
+							</div>
+						</td>
+					</tr>
+
+											<tr><td colspan="3" height="1" style="width: 654px;"><div
+style="height:1px; border-bottom:1px solid #d7d8cf; padding:0; height:1;
+line-height:1;"></div></td></tr>
+						      					<tr>
+						<td class="avatar" style="padding: 15px; vertical-align: top;
+text-align:center; width:40px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com"><img
+src="https://projects.customer.com/public/assets/images/authentication/default/user-roles/member.40x40.png"
+alt="avatar"></a></td>
+						<td style="padding: 15px 15px 15px 0;">
+							<div style="padding-bottom: 5px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com" style="color: #950000;
+text-decoration: underline; font-weight: bold;">Mirasvit M.</a> &nbsp;
+07/11/2017</div>
+							<div>
+								[CONTENT NOT PROVIDED]
+
+							</div>
+						</td>
+					</tr>
+
+											<tr><td colspan="3" height="1" style="width: 654px;"><div
+style="height:1px; border-bottom:1px solid #d7d8cf; padding:0; height:1;
+line-height:1;"></div></td></tr>
+						      					<tr>
+						<td class="avatar" style="padding: 15px; vertical-align: top;
+text-align:center; width:40px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com"><img
+src="https://projects.customer.com/public/assets/images/authentication/default/user-roles/member.40x40.png"
+alt="avatar"></a></td>
+						<td style="padding: 15px 15px 15px 0;">
+							<div style="padding-bottom: 5px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com" style="color: #950000;
+text-decoration: underline; font-weight: bold;">Mirasvit M.</a> &nbsp;
+07/11/2017</div>
+							<div>
+								[CONTENT NOT PROVIDED]
+
+							</div>
+						</td>
+					</tr>
+
+											<tr><td colspan="3" height="1" style="width: 654px;"><div
+style="height:1px; border-bottom:1px solid #d7d8cf; padding:0; height:1;
+line-height:1;"></div></td></tr>
+						      					<tr>
+						<td class="avatar" style="padding: 15px; vertical-align: top;
+text-align:center; width:40px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com"><img
+src="https://projects.customer.com/public/assets/images/authentication/default/user-roles/member.40x40.png"
+alt="avatar"></a></td>
+						<td style="padding: 15px 15px 15px 0;">
+							<div style="padding-bottom: 5px;"><a
+href="mailto:a8v1oq0kggnvsinmg6dv@fafa.com" style="color: #950000;
+text-decoration: underline; font-weight: bold;">Mirasvit M.</a> &nbsp;
+07/11/2017</div>
+							<div>
+								[CONTENT NOT PROVIDED]
+
+							</div>
+						</td>
+					</tr>
+
+											<tr><td colspan="3" style="padding: 15px; color: #999; text-align:
+center;">
+
+										          Showing All 0 Comments
+			        						</td></tr>
+
+			</table>
+		</td>
+	</tr>
+</table></td></tr><tr><td style="text-align: center; padding: 5px 0;
+font-size: 11px;"><a
+href="https://projects.customer.com/public/index.php?path_info=public%2Fnotifications%2Funsubscribe&amp;code=SUBS-163188-DNPY0CZZ4N"
+style="color: #950000; text-decoration: underline;">Stop receiving email
+notifications</a> about this task.</td></tr><tr><td style="text-align:
+center; padding: 5px 0 20px 0; font-size: 11px;">&copy;2017 by customer.com
+Ltd. Powered by: <a href="http://www.activecollab.com" target="_blank"
+style="color: #950000; text-decoration:
+underline;">activeCollab</a>.</td></tr></table></body></html>
+
+--_=_swift_v4_15100564855a01a22597c21_=_--

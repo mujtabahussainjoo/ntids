@@ -1,0 +1,85 @@
+
+/*******************wittlsea************************/
+body {
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 400;
+    background-color: #ffffff;
+}
+	@media (min-width: 768px){
+	.nav-item.level0.nav-1 .cat_img{height: 40px;width: 104px!important;margin-top:4%;}
+	.nav-item.level0.level-top {width: 14%;}
+	.cms-index-index .inner-container #maincontent .columns{display:none;}	
+	.header-container .right-column .dropdown-block {
+		margin-top: -2px!important;
+	}
+	.nav-regular .nav-item.level0 > a { 
+		font-size: 15px!important;
+		font-weight: 700!important;
+		text-transform: none!important;
+		color: #272727!important;
+	}	
+	.header.links > li > a,.inner-heading .label{
+		font-size: 12px!important;
+		color: white;
+		/* padding: 8px 9px; */
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.item.item-left ul > li > a,.block_footer_payment{
+		font-size: 13px;
+		transition: color 0.3s ease;
+		font-weight: normal;
+		
+	}
+	.main-container {
+		border-radius:5px!important;
+		background-color: transparent !important;
+		margin: 0 0 5% 0!important;
+	}
+	/* .item{height: 172px !important;} */
+	.navi > ul {
+		margin:0% !important;
+		line-height: 50px !important;
+	}
+	.navi-wrapper, .nav-regular {
+		border-radius: 10px !important;
+	}
+	.container{ 
+		margin-top:9.6px !important;
+
+	}
+	.header-top .dropdown-block .dropdown-heading{line-height:30px!important;}
+	.nav-container {
+		background-color: transparent!important;
+	}
+}
+	.footer-bottom-container {
+		margin-top: -1%;
+	}
+	.maincontent{
+		margin-top: -22px!important;
+	}
+	.main.container{    border-radius: 5px!important;}
+	.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{ 
+		background-image: none !important;
+		background-color: transparent !important;
+		border: 2px solid black;
+		border-radius: 30px!important;
+		box-shadow: none;
+		color: black !important;
+		overflow: hidden;
+	}
+
+	.nav-regular:not(.nav-vert) .nav-item.level0:hover > a{background-color:transparent!important; color:#65D6F9!important;}
+	.container {max-width: 1156px!important;}
+	.cat_img{width:80%!important;}
+	.sticky-container .nav.container {
+		border-radius: 3px !important;
+	}
+
+.nav-container {
+    border-radius: 8px;
+}
+.cat-img{
+    width: 74%!important;
+}

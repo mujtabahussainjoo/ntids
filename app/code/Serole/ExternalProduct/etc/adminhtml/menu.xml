@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+	    <add id="Serole_ExternalProduct::other" title="Other" translate="title" module="Magento_Catalog" sortOrder="30" parent="Magento_Catalog::catalog" dependsOnModule="Serole_ExternalProduct" resource="Serole_ExternalProduct::referral"/>
+        <add id="Serole_ExternalProduct::referral" title="External Product" module="Serole_ExternalProduct" sortOrder="40" parent="Magento_Catalog::catalog" action="externalproduct/referral" resource="Serole_ExternalProduct::referral"/>
+    </menu>
+</config>

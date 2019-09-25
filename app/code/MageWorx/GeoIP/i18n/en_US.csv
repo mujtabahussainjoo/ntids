@@ -1,0 +1,15 @@
+Update Database,Update Database
+Last update,Last update
+DataBase source is temporary unavailable,DataBase source is temporary unavailable
+Can't create new file. Check that folder %s has write permissions,Can't create new file. Check that folder %s has write permissions
+GeoIP Country,GeoIP Country
+GeoIP City,GeoIP City
+GeoIP Extensions,GeoIP Extensions
+GeoIP DataBase,GeoIP DataBase
+Database Type,Database Type
+Update Current Database,Update Current Database
+"Remember that http://maxmind.com has limits on downloads of GeoIP database per day","Remember that http://maxmind.com has limits on downloads of GeoIP database per day"
+Create backup,Create backup
+n/a,n/a
+"Error! GeoIP database file not found.","Error! GeoIP database file not found."
+"Error! GeoIP database file open failed.","Error! GeoIP database file open failed."

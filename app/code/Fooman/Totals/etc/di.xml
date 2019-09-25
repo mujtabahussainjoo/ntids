@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author     Kristof Ringleff
+* @package    Fooman_Totals
+* @copyright  Copyright (c) 2016 Fooman Limited (http://www.fooman.co.nz)
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Fooman\Totals\Api\Data\TotalGroupInterface" type="Fooman\Totals\Model\Group" />
+    <preference for="Fooman\Totals\Api\Data\QuoteAddressTotalGroupInterface" type="Fooman\Totals\Model\QuoteAddressGroup" />
+    <preference for="Fooman\Totals\Api\Data\InvoiceTotalInterface" type="Fooman\Totals\Model\InvoiceTotal" />
+    <preference for="Fooman\Totals\Api\Data\CreditmemoTotalInterface" type="Fooman\Totals\Model\CreditmemoTotal" />
+    <preference for="Fooman\Totals\Api\Data\OrderTotalInterface" type="Fooman\Totals\Model\OrderTotal" />
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="fooman_totals_process_order" type="Fooman\Totals\Plugin\OrderRepository"/>
+    </type>
+    <type name="Magento\Sales\Api\InvoiceRepositoryInterface">
+        <plugin name="fooman_totals_process_invoice" type="Fooman\Totals\Plugin\InvoiceRepository"/>
+    </type>
+    <type name="Magento\Sales\Api\CreditmemoRepositoryInterface">
+        <plugin name="fooman_totals_process_creditmemo" type="Fooman\Totals\Plugin\CreditmemoRepository"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Address\ToOrder">
+        <plugin name="fooman_totals_to_order" type="Fooman\Totals\Plugin\ToOrderConverter" />
+    </type>
+    <type name="Magento\Quote\Api\CartRepositoryInterface">
+        <plugin name="fooman_totals_cart_save" type="Fooman\Totals\Plugin\CartSave"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote">
+        <plugin name="fooman_totals_quote_save" type="Fooman\Totals\Plugin\QuoteSave"/>
+    </type>
+    <type name="Magento\Quote\Api\CartTotalRepositoryInterface">
+        <plugin name="fooman_totals_cart_total_get" type="Fooman\Totals\Plugin\CartTotalGet"/>
+    </type>
+    <type name="Magento\Quote\Model\QuoteRepository\LoadHandler">
+        <plugin name="fooman_totals_quoterepo_loadhandler" type="Fooman\Totals\Plugin\LoadHandler"/>
+    </type>
+</config>

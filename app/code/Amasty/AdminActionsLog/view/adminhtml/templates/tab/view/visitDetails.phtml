@@ -1,0 +1,42 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+?>
+<?php
+/**
+ * @var \Amasty\AdminActionsLog\Block\Adminhtml\VisitHistory\Edit\Tab\View\Details $block
+ */
+$logRows = $block->getLogRows();
+?>
+
+<?php if (count($logRows)): ?>
+    <div class="dashboard-item-content">
+        <table class="admin__table-primary dashboard-data" id="<?php /* @escapeNotVerified */ echo $block->getId() ?>_table">
+            <thead>
+            <tr>
+                <th><?php echo __('#') ?></th>
+                <th><?php echo __('Page Name') ?></th>
+                <th><?php echo __('Page Url') ?></th>
+                <th><?php echo __('Stay Duration') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($logRows as $value): ?>
+                <tr>
+                    <td><?php echo $value['id'] ?></td>
+                    <td><?php echo $value['page_name'] ?></td>
+                    <td><?php echo $value['page_url'] ?></td>
+                    <td><?php echo $value['stay_duration'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="clear"></div>
+<?php else: ?>
+    <div class="<?php /* @escapeNotVerified */ echo $block->getEmptyTextClass() ?>"><?php /* @escapeNotVerified */ echo $block->getEmptyText() ?></div>
+<?php endif; ?>
+

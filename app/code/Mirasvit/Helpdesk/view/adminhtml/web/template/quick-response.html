@@ -1,0 +1,9 @@
+<select class="admin__control-select" name="quick-response"
+        data-bind="value: currentTemplateId,
+        options: templates,
+        optionsValue: 'id',
+        optionsText: 'name',
+        event: {change: onChangeResponse},
+        visible: hasTemplates()">
+
+</select>

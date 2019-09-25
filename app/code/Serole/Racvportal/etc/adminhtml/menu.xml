@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Serole_Racvportal::parent" title="Racvportal" module="Serole_Racvportal" sortOrder="100" resource="Serole_Racvportal::parent"/>
+		<add id="Serole_Racvportal::ravportal" title="Racvportal" module="Serole_Racvportal" sortOrder="20" parent="Serole_Racvportal::parent" action="racvportal/ravportal" resource="Serole_Racvportal::ravportal"/>
+
+    </menu>
+</config>

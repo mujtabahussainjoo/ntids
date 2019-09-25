@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="Nwdthemes_Revslider::revslider"
+            title="Slider Revolution"
+            module="Nwdthemes_Revslider"
+            sortOrder="100"
+            resource="Nwdthemes_Revslider::revslider"
+            parent="Nwdthemes_Base::base"
+            />
+        <add
+            id="Nwdthemes_Revslider::overview"
+            title="Slider Overview"
+            module="Nwdthemes_Revslider"
+            sortOrder="100"
+            resource="Nwdthemes_Revslider::overview"
+            parent="Nwdthemes_Revslider::revslider"
+            action="nwdthemes_revslider/revslider/sliders"
+            />
+        <add
+            id="Nwdthemes_Revslider::navigation"
+            title="Navigation Editor"
+            module="Nwdthemes_Revslider"
+            sortOrder="110"
+            resource="Nwdthemes_Revslider::navigation"
+            parent="Nwdthemes_Revslider::revslider"
+            action="nwdthemes_revslider/revslider/navigation"
+            />
+        <add
+                id="Nwdthemes_Revslider::addon"
+                title="Add-Ons"
+                module="Nwdthemes_Revslider"
+                sortOrder="120"
+                resource="Nwdthemes_Revslider::addon"
+                parent="Nwdthemes_Revslider::revslider"
+                action="nwdthemes_revslider/revslider/addon"
+        />
+        <add
+                id="Nwdthemes_Revslider::settings"
+                title="Global Settings"
+                module="Nwdthemes_Revslider"
+                sortOrder="120"
+                resource="Nwdthemes_Revslider::addon"
+                parent="Nwdthemes_Revslider::revslider"
+                action="nwdthemes_revslider/revslider/settings"
+        />
+        <add
+            id="Nwdthemes_Revslider::config"
+            title="Configuration"
+            module="Nwdthemes_Revslider"
+            sortOrder="130"
+            resource="Nwdthemes_Revslider::config"
+            parent="Nwdthemes_Revslider::revslider"
+            action="adminhtml/system_config/edit/section/nwdthemes_revslider"
+            />
+    </menu>
+</config>

@@ -1,0 +1,66 @@
+.header .links > li  {
+	background-color: #009FDF;
+	border-bottom-right-radius: 5px;
+	
+}
+.header-container{ 
+	margin-left:0% !important;
+	width: 100% !important;
+}
+
+.footer-top{
+	border-top:4px solid #053A50;
+}
+
+.header-container .logo-wrapper .logo img{width:70%!important;}
+
+.block-search .block.block-content {
+    padding: 0 0 0 214px!important;
+}
+@font-face {
+  font-family: 'Chalet Book';
+  src:url('../fonts/ChaletBook_10032.ttf') format('truetype'),
+}
+.header.links > li >a,.mini-cart-heading .label{
+  font-family: 'Chalet Book';
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Chalet Book'!important;
+  font-style: normal;
+  font-weight: normal;
+}
+.header.links > li > a,.inner-heading .label{
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}		
+@media (min-width: 768px){ 
+	.header-top .dropdown-block .dropdown-heading{line-height: 28px!important;}
+	#minicart{
+		background: #009FDF;
+		border-bottom-right-radius: 5px;
+		font-size:12px;
+	}
+	.item.item-right.block_footer_payment{margin-top: 1%!important;}
+	.links-wrapper-separators-left .links > li{margin-left: 3px!important;}
+	.header-top .links > li > * {
+		line-height: 30px!important;
+	}
+	.header-top .dropdown-block .dropdown-heading {
+		max-height: 30px!important;
+	}
+	.header-primary-container{margin: 0% 0% 1% 0%;border-bottom:1px solid rgba(0,0,0,0.3);}
+	.hp-block.left-column.grid12-4{width: 29%;}
+	#mainmenu{margin:3% 0% 0% -18%;}
+	.btn-rgtr-cust {
+		margin-left: 66%;
+		margin-top: 18% !important;
+	}
+	.header.links > li a{font-size:12px!important;}
+	.customer-account-create h1.page-title .base{font-family:'Chalet Book'!important;font-weight: bold;font-size:25px;}
+	.customer-account-login .action.primary{font-family:'Chalet Book'!important; font-size:13px;}
+	.footer a,.footer-copyright {font-family: 'Open Sans', sans-serif; font-size:13px;}
+	.customer-account-login .btn-rgtr-cust .primary .action, .customer-account-login .btn-rgtr .primary .action{background-color: #009fdf !important;background-image:none;}
+}

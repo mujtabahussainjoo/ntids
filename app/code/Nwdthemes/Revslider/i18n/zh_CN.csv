@@ -1,0 +1,105 @@
+"-- Next Slide --","-- 下一张滑块 --"
+"-- Not Chosen --","-- 未选择 --"
+"-- Previous Slide --","-- 上一张幻灯片 --"
+Actions,操作
+Animation,动画
+Appearance,外观
+"Auto Responsive",自动适应
+"Background Fit:",背景适合：
+"Background Image Url",背景图片的URL地址
+"Background Position:",背景位置：
+"Background Repeat:",背景重复：
+"Background color",背景颜色
+Bottom,下部
+Center,居中
+"Choose the import file",选择导入文件
+"Choose video type",选择视频类型
+Close,关闭
+Custom,自定义
+"Custom Animations:",自定义动画：
+Delay,延迟时间
+Delete,删除
+"Delete All Layers",删除所有幻灯片
+"Delete Slider",删除滑块
+Disable,禁用
+Duplicate,复制/备份
+"Edit Slider",编辑滑块
+"Edit Slides",编辑幻灯片
+Enable,启用
+"Enable Swipe Function on touch devices",启用具有滑动功能的触摸设备
+"Export Slider",导出滑块
+"External URL",外部URL
+"First Transition Active",当前的第一个过度
+"First slide transition type",第一张幻灯片过渡类型
+Gallery,图片墙
+"General Settings",通用设置
+"Get External",外部链接地址
+"Global Settings",全局设置
+"Go To Slide",转到幻灯片
+Help,帮助
+"Lazy Load",延迟加载
+Left,左边
+"Margin Bottom","下边距(Margin Bottom)"
+"Margin Left",左边距
+"Margin Right",有边距
+"Margin Top","上边距(Margin Top)"
+Navigation,导航
+"New Slider",新建滑块
+"New Window",新窗口
+"Next Slide",下一张幻灯片
+No,否
+"No Shadow",无阴影
+"No Sliders Found",没有找到幻灯片
+None,空
+Off,关闭
+On,打开
+"Pause Slider",暂停滑块
+Position,位置
+"Position on the page",页面上的位置
+Preview,预览
+"Preview Slider",预览滑块
+"Previous Slide",上一张幻灯片
+Published,已发布
+Regular,正常
+Replacing...,替换中...
+"Resume Slider",重命名滑块
+"Revolution Sliders",革命滑块
+Right,右边
+Rotation,旋转
+"Same Window",同一窗口
+"Save Settings",保存设置
+Settings,设置
+"Shadow Type",阴影类型
+"Show Background Image",显示背景图片
+"Slide Created",幻灯片已创建
+"Slide Thumbnail. If not set - it will be taken from the slide image.",滑块缩略图。如果没有设置，将会选取幻灯片里的图片
+"Slide Title",幻灯片的标题
+"Slide updated",幻灯片已更新
+"Slider Settings",滑块设置
+"Slider updated",幻灯片已更新
+"Source Type",源类型
+Style,样式
+"The bottom margin of the slider wrapper div",幻灯片距下部div的下边距
+"The left margin of the slider wrapper div",滑块距左部div的左边距
+"The right margin of the slider wrapper div",幻灯片距右部div的右边距
+"The state of the slide. The unpublished slide will be excluded from the slider.",幻灯片的状态。未发表的幻灯片将不会使用
+"The title of the slide, will be shown in the slides list.",幻灯片的标题，将显示在幻灯片列表中。
+"The top margin of the slider wrapper div",幻灯片距上部div的上边距
+Thumbnail,缩略图
+Thumbnails,缩略图
+"To Slide",链接到另一个幻灯片
+Top,顶部
+"Touch Enabled",启用点触设备
+"Transition Duration",过渡时间
+Transitions,过渡
+Transparent,透明
+Troubleshooting,故障排除
+Unpublished,未发布
+Yes,是
+append,附加
+example,例如
+ms,毫秒(ms)
+overwrite,覆盖
+px,像素(px)
+updating...,更新中...
+use,使用

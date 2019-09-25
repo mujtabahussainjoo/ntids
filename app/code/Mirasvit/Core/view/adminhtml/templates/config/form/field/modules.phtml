@@ -1,0 +1,105 @@
+<?php
+/** @var \Mirasvit\Core\Block\Adminhtml\Config\Form\Field\Modules $block */
+$modules = $block->getModules();
+?>
+<div class="section-config active" style="padding-top: 2rem;">
+    <div class="entry-edit-head admin__collapsible-block">
+        <span id="core_modules-link" class="entry-edit-head-link"></span>
+        <a id="core_modules-head" href="#core_modules-link"
+           onclick="Fieldset.toggleCollapse('core_modules'); return false;" class="open">
+            <?= __('Validate Installation') ?>
+        </a>
+    </div>
+    <input id="core_modules-state" name="config_state[core_modules]" type="hidden" value="1">
+    <fieldset class="admin__collapsible-block" id="core_modules">
+        <div class="admin__data-grid-wrap-static" data-bind="scope: 'mstValidator'">
+            <table class="data-grid">
+                <thead>
+                <tr>
+                    <th class="data-grid-th"><?= __('Module') ?></th>
+                    <th class="data-grid-th" nowrap><?= __('Installed Version') ?></th>
+                    <th class="data-grid-th" nowrap><?= __('Latest Version') ?></th>
+                    <th class="data-grid-th" nowrap>
+                        <button type="button"
+                                class="action-default"
+                                data-bind="click: validate.bind($data, '')"
+                                style="width: 100%;">
+                            Validate All
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <?php foreach ($modules as $i => $module): ?>
+                    <tr>
+                        <td>
+                            <?= $module->getModuleName() ?>
+
+                            <?php if ($module->getUrl()): ?>
+                                <a href="<?= $module->getUrl() ?>"><span class="fa fa-fw fa-external-link"></span></a>
+                            <?php endif ?>
+
+                            <?php if ($module->getInstalledVersion() && version_compare($module->getInstalledVersion(), $module->getLatestVersion()) == -1): ?>
+                                <div style="float: right; color: #eb5202;">
+                                    <span class="fa fa-fw fa-code-fork"></span> New version is available
+                                </div>
+                            <?php endif ?>
+                        </td>
+                        <?php if ($module->isMetaPackage()): ?>
+                            <td colspan="2"></td>
+                        <?php else: ?>
+                            <td><?= $module->getInstalledVersion() ?></td>
+                            <td><?= $module->getLatestVersion() ?></td>
+                        <?php endif ?>
+                        <td align="center">
+                            <button type="button"
+                                    class="action-default"
+                                    data-bind="click: validate.bind($data, '<?= $module->getModuleName() ?>')"
+                                    <?php if (!$block->isValidationAvailable($module)): ?>style="visibility: hidden"<?php endif ?>>
+                                Validate Installation
+                            </button>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+        </div>
+    </fieldset>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        require(['prototype'], function () {
+            Fieldset.applyCollapse('core_modules');
+        });
+        //]]>
+    </script>
+</div>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "mstValidator": {
+                    "component": "Mirasvit_Core/js/validator",
+                    "config": {
+                        "url": "<?= $block->getValidationUrl() ?>"
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,24 @@
+{
+  "name": "magedelight/membershipsubscription",
+  "description": "Membership Subscription module in Magento2",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "type": "magento2-module",
+  "license": "GPL-3.0",
+  "version": "1.1.1",
+  "authors": [
+    {
+      "name": "Magedelight",
+      "email": "info@magedelight.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magedelight\\MembershipSubscription\\": ""
+    }
+  }
+}

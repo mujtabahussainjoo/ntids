@@ -1,0 +1,1278 @@
+" due to action: ","при действии:"
+" not found!<br>","не найдено!
+<br>"
+"## Custom Animation ##","## Пользовательские Анимации ##"
+"(only for internal usage):","(только для внутреннего использования):"
+"*Only Illustration, most changes are not visible.","* Только для иллюстрации, большинство изменений невидимо."
+"- SAVED CUSTOM ANIMATIONS -","- Сохраненные Пользовательские 
+Анимации 
+-"
+"- VERSION 4.0 ANIMATIONS -","- VERSION 4.0 
+Анимации 
+-"
+"- VERSION 5.0 ANIMATIONS -","- VERSION 5.0 
+Анимации 
+-"
+"-- Next Slide --","-- Следующий слайд --"
+"-- Not Chosen --","-- Не выбрано --"
+"-- Previous Slide --","-- Предыдущий слайд --"
+"-- Scroll Below Slider --","-- Прокрутка под Слайдером --"
+"-- wrong alias -- ","--  неправильный псевдоним --"
+"1st Slide","1-й Слайд"
+"2 x 2 Black","2 x 2 Черный"
+"2 x 2 White","2 x 2 Белый"
+"2D Rotation X Origin","2D Поворот позиция по Х "
+"2D Rotation Y Origin","2D Поворот позиция по Y "
+"2D Rotation end deg.","2D Поворот конечный град."
+"2D Rotation start deg.","2D Поворот начальный град."
+"3 x 3 Black","3 x 3 Черный"
+"3 x 3 White","3 x 3 Белый"
+"A link on the whole slide pic (use {{link}} or {{meta:somemegatag}} in template sliders to link to a post or some other meta)","Ссылка изображения слайда ( используйте {{link}} или {{meta:somemegatag}} в Шаблонах Слайдеров чтобы ссылаться на запись или страницу )"
+"A new delay value for the Slide. If no delay defined per slide, the delay defined via Options (9000ms) will be used.","Новое значение ""задержки"" для Слайда. Если время 
+""задержки"" для слайда не задано, будет использовано время 
+""задержки"" из Основных Настроек Слайдера."
+"API Functions","API Функции"
+Actions,Действия
+Add,Добавить
+"Add Blank Slide","Добавить пустой Слайд"
+"Add Bulk Slides","Пакетное добавление Слайдов"
+"Add Button Layer","Добавить слой с кнопкой"
+"Add New","Добавить новый"
+"Add Shape Layer","Добавить слой с Фигурой"
+"Add Slide","Добавить Слайд"
+"Add This Video","Добавить это Видео"
+"Add as many attributes as you wish here. (i.e.: data-layer=""firstlayer"" data-custom=""somevalue"").","Здесь вы можете добавить дополнительные аттрибуты. ( например: data-layer=""firstlayer"" data-custom=""somevalue"")."
+"Add from Template","Добавить из Шаблона"
+"Add to Templates","Добавить в шаблоны"
+"Additional Custom Styling","Дополнительные пользовательские Стили"
+"Adds a unique ID to the li of the Slide like id=""rev_special_id"" (add only the id)","Добавляет уникальный ID для LI элементов слайда, например class=""rev_special_id"" ( добавляйте только ID ) "
+"Adds a unique class to the li of the Slide like class=""rev_special_class"" (add only the classnames, seperated by space)","Добавляет уникальный класс для LI элементов слайда, например class=""rev_special_class"" ( добавляйте только имена классов разделенные пробелом ) "
+"Adds overflow:hidden to the slider wrapping container which will hide / cut any overlapping elements. Mostly used in Carousel Sliders.","Добавляет overflow:hidden контейнеру слайдера. В основном используется в Слайдер Карусели"
+"Advanced CSS","Расширенный CSS"
+"Advanced Custom Styling","Расширенные Пользовательские Стили"
+"Advanced Settings","Расширенные Настройки"
+"Advanced Style on/off","Расширенные Стили вкл/выкл"
+"Advanced Styles will alwys be applied to all Device Sizes.","Расширенные Стили 
+будут применены ко всем Размерам Устройств"
+Album,Альбом
+"Album ID","ID Альбома"
+Align,Выравнивание
+Aligns,Выравнивание
+All,Все
+"All Layers","Все слои"
+"All Slides","Все слайды"
+"All elements out of focus will get some Opacity value based on the Distance to the current focused element, or only the coming/leaving elements.","Или все элементы не в фокусе станут в какой-то мере прозрачными в зависимости от расстояния до фокусного элемента, или только появляющиеся / исчезающие элементы."
+"Allow to stop the Slider out of viewport.","Позволяет остановить слайдер когда он находится за границами видимой области."
+"Allow/disallow to navigate the slider with Mouse Scroll.","Включить / выключить навигацию с помощью скролла мышки."
+"Allow/disallow to navigate the slider with keyboard.","Включить / выключить навигацию на клавиатуре."
+Alt,"Альтернативный текст"
+Alt:,"Альтернативный текст:"
+"Alternate Image","Альтернативное изображение"
+"Alternative 1st Slide","Альтернативный 1-й Слайд"
+"Always Show","Всегда показывать"
+"Always Show ","Всегда Показывать"
+"Amount of Loops","Кол-во циклов"
+Angle,Угол
+Animation,Анимация
+"Animation Delay between Splitted Elements","Задержка анимации между разделенными элементами"
+"Animation Duration","Длительность Анимации"
+"Animation Duration:","Длительность Анимации:"
+"Animation Easing","Функция скорости анимации"
+"Animation Perspective (default 600)","Перспектива Анимации (  по умолчанию 600 )"
+"Animation Speed (in ms)","Скорость Анимации ( в ms )"
+"Animation Template","Шаблон Анимации"
+"Animation Timing","Время анимации"
+"Animation already existing with given handle, please choose a different name.","Анимация с данным именем уже существует, пожалуйста выберите другое имя."
+"Animation already exists, overwrite?","Анимация уже существует, перезаписать?"
+"Animation deleted","Анимация удалена"
+"Animation exists, override existing animation?","Анимация уже существует, перезаписать текущую анимацию?"
+"Animation saved","Анимация сохранена"
+"Animationname already existing","Анимация с таким именем уже существует"
+Appearance,"Внешний вид"
+"Appended Inline to the Layer Markup","Добавить Inline CSS к разметке слоя"
+"Appended in the Class:","Добавлено в класс:"
+"Apply Styles to Selection","Применить стили к выбранному"
+"Are you sure to replace the urls?","Вы уверены что хотите заменить URLs?"
+"Area out of ViewPort:","Размер области 
+за границами видимой области"
+Arguments,Аргументы
+Arguments:,Аргументы:
+Arrows,Стрелочки
+"Arrows Style","Стиль Стрелок"
+Ascending,"по возрастанию"
+"Aspect Ratio:","Соотношение сторон:"
+"At Slide",Слайд
+Attributes,Аттрибуты
+Auto,Авто
+"Auto Linebreak (on/off - White Space:normal / nowrap).  ","Автоперенос (on/off - White Space:normal / nowrap).  "
+"Auto Responsive","Автоматически Адаптивный"
+"Automatic Reverse","Автоматический Реверс"
+Autoplay:,Автозапуск:
+Back,"Задняя сторона"
+Background,Фона
+"Background Color","Цвет Фона"
+"Background Fit","Положения Фона В контейнере"
+"Background Fit:","Закрепить Фон:"
+"Background Image Url","Адрес фонового изображения"
+"Background Position","Позиция Фона"
+"Background Position:","Позиция Фона:"
+"Background Repeat","Повтор Фона"
+"Background Repeat:","Повторять Фон:"
+"Background color","Цвет Фона"
+Basics,Основные
+Behavior,Поведение
+Blur,Размытие
+Border,Граница
+"Border Color","Цвет Границы"
+"Border Opacity","Прозрачность Границы"
+"Border Radius","Радиус границы"
+"Border Radius (px)","Радиус Границы ( рх )"
+"Border Style","Стиль Границы"
+"Border Width","Ширина Границы"
+Bottom,Низ
+"Bottom Left","Нижний Левый"
+"Bottom Right","Нижний Правый"
+"Bullet Style","Стиль маркера"
+Bullets,Маркеры
+Button,Кнопка
+Buttons,Кнопки
+"By Favorit","По 
+Избранным"
+"By ID","По ID"
+"By Name","По Имени"
+"By Type","По Типу"
+COPY,Копировать
+"CSS Loaded:","Загруженный CSS:"
+"CSS Performance","Производительность CSS"
+"CSS classname already existing","CSS класс с таким именем уже существует"
+"CSS classname not found","CSS класс не найден"
+"CSS could not be saved","CSS не может быть сохранен"
+"CSS saved","CSS сохранен"
+"Cache (sec)","Кэш ( сек )"
+"Cache the stream for x seconds","Кешировать Х секунд потока"
+"Call Slide Action","Переключиться на Слайд"
+"Call next slide when inactive browser tab is focused again. Use this for avoid dissorted layers and broken timeouts after bluring the browser tab.","Переключает на след. слайд когда неактивный таб в браузере снова стает активным. Используйтся для избежания ситуации с поломанными слоями и таймаутами после переключения табов в браузере."
+"Call this function to pause the slider.","Используйте эту функцию для остановки слайдера."
+"Call this function to play the slider if it is paused.","Используйте эту функцию для воспроизведения слайдера если он 
+остановлен 
+."
+"Can not remove last transition!","Невозможно удалить последнюю анимацию!"
+"Caption Style","Стиль Заголовка"
+"Carousel Settings","Настройки Карусели"
+"Carousel Slider","Cлайдер 
+Карусель"
+Center,Центр
+"Change Video","Изменить Видео"
+Channel,Канал
+"Channel ID","ID Канала"
+"Char Based","Разделить на буквы"
+"Child Elements Responsive","Адаптивные дочерние элементы"
+"Choose Operation","Выберите операцию"
+"Choose Slider","Выберите Slider"
+"Choose Spinner","Выберите Загрузчик"
+"Choose the import file","Выберите файл импорта"
+"Choose video type","Выберите тип видео"
+"Class already exists, overwrite?","Класс уже существует, перезаписать?"
+"Class must be a valid CSS class name","Класс должен быть валидным именем CSS класса"
+"Class name renamed","Класс переименован"
+"Class not found in database","Класс не найден в базе данных"
+Class:,Класс:
+Classes,Классы
+"Cleared Albums","Очищенные альбомы"
+"Cleared Photosets","Очищенные фотосеты"
+Click,"Нажатие мышки"
+"Click Here","Нажмите Сюда"
+"Click on Element to add it","Нажмите на Элемент чтобы добавить его"
+"Click your Shape below to add it","Выберите фигуру "
+Close,Закрыть
+Color,Цвет
+"Color 2","Цвет 2"
+"Color Value",Цвет
+"Color of the progress bar.","Цвет Индикатора прогресса."
+"Coming Slide as jQuery Object","Следующий слайд как объект jQuery"
+Containers,Контейнеры
+Content,Контент
+"Content Source","Источник Контента"
+Copy,Копировать
+"Copy / Move","Копия / Перенос"
+"Copy / move slide","Копия / перенос"
+"Copy From Hover","Копировать из Hover состояния"
+"Copy From Idle","Копировать из обычного состояния"
+"Copy From In Animation","Копировать из начальной Анимации"
+"Copy From Out Animation","Копировать из конечной Анимации"
+"Copy hover styles to idle?","Копировать hover стили в обычные стили?"
+"Copy idle styles to hover?","Копировать обычные стили в hover стили?"
+Corners,Углы
+"Could not fetch Facebook albums","Невозможно загрузить Альбомы Facebook "
+"Could not fetch YouTube playlists","Невозможно загрузить плейлисты Youtube"
+"Could not fetch flickr photosets","Невозможно загрузить фотосеты Flickr"
+"Could not remove Validation!","Не удалось удалить Проверка!"
+"Could not save Slide as Template","Невозможно сохранить Слайд как Шаблон"
+"Cover Image need to be set for videos","Видео должно иметь Изображение-обложку "
+"Cover Image:","Изображение обложки:"
+"Cover Mode","Режим обложки"
+"Create Template","Создать Шаблон"
+"Current  Slide as jQuery Object","Текущий слайд как объект jQuery"
+"Current Slide","Текущий Слайд"
+"Current Slide as jQuery Object","Текущий слайд как объект jQuery"
+Custom,Свой
+"Custom Animations","Пользовательские Анимации"
+"Custom Animations:","Своя Анимация:"
+"Custom CSS","Пользовательский CSS"
+"Custom CSS / Javascript","Пользовательский CSS / JavaScript"
+"Custom Fields:","Пользовательские Поля:"
+"Custom Grid Size","Пользовательский размер сетки"
+"Custom JavaScript","Пользовательский JavaScript"
+"Custom Navigations","Пользовательские Навигации"
+"Customize, Build & Implement","Настройка, Создание и Реализация"
+Date,Дата
+"Date created","Дата создания"
+"Decrease/Increase height of Slider. Can be used with px and %. Positive/Negative values allowed. Example: 40px or 10%","Уменьшить / Увеличить высоту Слайдера. Может быть в px или %. Разрешены положительные / отрицательные значения. Пример: 40px , 10%"
+Default,"По умолчанию"
+"Default Ken/Burn setting by creating a new slide.","Значение параметра ""Ken/Burn"" по умолчанию при создании нового слайда."
+"Default Navigations","Стандартные Навигации"
+"Default Setting","Стандартные Настройки"
+"Default Settings for Advanced Responsive Grid Sizes:","Стандартные настройки для Раширенных Адаптивных Размеров Сетки:"
+"Default Settings for Layer","Стандартные настройки для Слоя"
+"Default Slide Duration","Длительность Слайд по умолчанию"
+"Default Slider","Стандартный Слайдер"
+"Default background position by creating a new slide.","Значение параметра ""Позиция Фона"" по умолчанию при создании нового слайда."
+"Default background repeat by creating a new slide.","Значение параметра ""Повтор Фона"" по умолчанию при создании нового слайда."
+"Default background size by creating a new slide.","Значение параметра ""Размер Фона"" по умолчанию при создании нового слайда."
+"Default transition by creating a new slide.","Анимация по умолчанию при создании нового слайда."
+"Default transition duration by creating a new slide.","Длительность анимация по умолчанию при создании нового слайда."
+Defaults,"По Умолчанию"
+"Define a description here to show at the navigation if enabled in Slider Settings","Введите описание для показа в навигации ( если опция включена в Настройках Слайдера )"
+"Define the default Grid Sizes for devices: Desktop, Tablet and Mobile","Задает стандартные размеры сетки для следующих устройств: Десктоп, Планшет, Телефон"
+"Defines how many fingers are needed minimum for swiping","Определяет сколько пальцев используется для свайпа. ( Не меньше чем текущее значение )"
+"Defines on what event type the parallax should react to","Определяет на какой тип события должен реагировать параллакс"
+"Defines the sensibility of gestures. Smaller values mean a higher sensibility","Чувствительность жестов. Чем меньше значение тем больше чувствительность"
+Delay,Задержка
+Delete,Удалить
+"Delete All Layers","Удалить Все Слои"
+"Delete Slider","Удалить слайдер"
+"Delete this Navigation?","Удалить Навигацию?"
+"Delete this caption? This may affect other Slider","Удалить этот заголовок? Это может повлиять на другие Слайдеры"
+"Delete this slide?","Удалить этот слайд?"
+Descending,"по убыванию"
+"Description of Slider:","Описание Слайдера:"
+Desktop,Десктоп
+"Desktop Grid Width","Ширина сетки для Десктопа"
+"Desktop Large","Режим широкоформатного монитора"
+Direction,Направление
+"Direction of the Bullets. Vertical or Horizontal.","Направление маркеров. Вертикальное или горизонтальная"
+"Direction of the Tabs. Vertical or Horizontal.","Направление Табов. Вертикальное или Горизонтальное."
+"Direction of the Thumbnails. Vertical or Horizontal.","Направление миниатюр. Вертикальное или горизонтальное."
+Disable,Запретить
+"Disable KenBurn On Mobile","Выключить KenBurn на Телефоне"
+"Disable Slider on Mobile","Выключить слайдер на Телефоне"
+"Disable on Mobile","Выключить на Телефоне"
+Disabled,Выключено
+"Disables the Slider and load an alternative image instead","Выключить слайдер и загрузить альтернативное изображение вместо слайдера"
+"Display a certain photoset from a user","Показывать определенный фотосет пользователя"
+"Display a gallery","Показывать галерею"
+"Display a playlist","Показывать плейлист"
+"Display an album","Показывать альбом"
+"Display the channel´s videos","Показывать видео канала"
+"Display this number of photos","Показывать это кол-во фотографий"
+"Display this number of posts","Показывать определенное кол-во записей"
+"Display this number of tweets","Показывать определенное кол-во твитов"
+"Display this number of videos","Показывать определенное кол-во видео"
+Distance,Дистанция
+"Do It!","Сдеалть это!"
+"Do you really want to delete","Вы действительно хотите удалить"
+"Do you really want to delete all the layers?","Вы уверены что хотите удалить все слои?"
+"Dotted Overlay Size","Размер Точечного Слоя"
+"Dotted Overlay:","Наложение точек:"
+"Drag Block Vertical","Тянуть блок Вертикально"
+DragMe,ТяниМеня
+Duplicate,Дублировать
+"Duration (in ms):","Длительность (в мс):"
+"Dynamic Styles","Динамические стили"
+"Easing In:","Функция скорости анимации появления:"
+"Easing Out:","Функция скорости анимации исчезания:"
+Easing:,"Функция скорости анимации
+:"
+Edit,Редактирование
+"Edit Layer End","Редактировать Окончание Слоя"
+"Edit Layer Start","Редактировать Начало Слоя"
+"Edit Slider","Редактировать слайдер"
+"Edit Slides","Редактировать слайды"
+"Editable via Option Fields, Saved in the Class:","Редактируется в полях Параметров, сохраненных в Классе:"
+Editing,Редактирование
+"Either the shortcut URL of the channel","Или shortcut URL или ID канала"
+"Either the shortcut URL or ID of the group","Или shortcut URL или ID группы"
+"Either the shortcut URL or ID of the user","Или shortcut URL или ID пользователя"
+"Embed Slider","Вставить Слайдер"
+Enable,Включить
+"Enable / Disable Arrows","Включить / Выключить стрелочки"
+"Enable / Disable Bullets","Включить / Выключить маркеры"
+"Enable / Disable Thumbnails","Включить / Выключить Миниатюры"
+"Enable / Disable navigation tabs.","Включить / Выключить табы"
+"Enable / disable progress var","Включить / Выключить  индикатор прогресса"
+"Enable Arrows","Включить Стрелки"
+"Enable Bullets","Включить маркеры"
+"Enable Link:","Включить Ссылку:"
+"Enable Markup Export option:","Включить возможность экспорта разметки:"
+"Enable Swipe Function on touch devices","Включить функцию Swipe на сенсорных устройствах"
+"Enable Tabs","Включить Табы"
+"Enable Thumbnails","Включить Миниатюры"
+"Enable to make arrows always visible. Disable to hide arrows after the defined time.","Включить чтобы сделать стрелки видимыми. Выключить чтобы скрыть стрелки после определенного времени."
+"Enable to make bullets always visible. Disable to hide bullets after the defined time.","Включить чтобы сделать маркеры видимыми всегда.  Выключить чтобы скрыть маркеры после определенного времени"
+"Enable to make tabs always visible. Disable to hide tabs after the defined time.","Включить чтобы табы были видны всегда. Выключить чтобы спрятать табы после определенного времени."
+"Enable to make thumbnails always visible. Disable to hide thumbnails after the defined time.","Включить - миниатюры всегда видимы. Выключить - спрятать миниатюры после определенного времени."
+"Enabling this, will give you new options in the slides to create a unique parallax effect","Даст вам новые настройки в слайдах для создания уникального параллакс эффекта"
+End,Конец
+"End At:",Конец:
+"End Fit: (in %):","Конечное положение ( в % ):"
+"End Offset X:","Конечный сдвиг по Х:"
+"End Offset Y:","Конечный сдвиг по Y:"
+"End X Offset","Конечный сдвиг по Х"
+"End Y Offset","Конечный сдвиг по Y"
+"End at:","Конец: "
+"End on Slide","Закончить на Слайде"
+"Enter a correct class name","Введите корректное имя класса"
+"Enter your Slider Alias here","Введите алиас Слайдера"
+"Enter your Slider Name here","Введите имя Слайдера"
+Event,Событие
+Events,События
+"Example: #header or .header, .footer, #somecontainer | Height of Slider will be decreased with the height of these Containers to fit perfect in the screen.","Пример: #header или .header, .footer, #somecontainer | Высота Слайдера будет уменьшена на высоту этих элементов."
+Excerpt,Отрывок
+Export,Экспорт
+"Export Slider","Экспорт слайдера"
+"Export to HTML","Экспорт в HTML"
+"Export with Dummy Images","Экспортировать с пустыми изображениями "
+"External Scroll","Внешняя прокрутка"
+"External URL","Внешняя ссылка"
+"Facebook Page","Страница Facebook"
+"Fade All Elements","Скрывать все Элементы"
+"Fade is varying based on the distance to the focused element.","Скрытие варьируется от расстояния до фокусного элемента."
+"Failed to load Stream","Ошибка загрузки Потока"
+Fallbacks,Откаты
+Fast,Быстро
+"Favorite Count","Кол-во Избранных"
+"Filter By:","Фильтровать По:"
+"Find information about the YouTube API key <a target=""_blank"" href=""https://developers.google.com/youtube/v3/getting-started#before-you-start"">here</a>","Получить YouTube API key <a target=""_blank"" href=""https://developers.google.com/youtube/v3/getting-started#before-you-start"">здесь</a>"
+"Finnished with slide change","Завершена смена слайда"
+"First Transition Active","Первая активная анимация"
+"First slide transition duration.","Длительность анимации первого слайда."
+"First slide transition type","Тип анимации первого слайда"
+"Flickr Gallery Url","Ссылка на галерею Flickr"
+"Flickr Group Url","Ссылка на группу Flickr"
+"Flickr User Url","Ссылка пользователя Flickr"
+Font,Шрифт
+"Font Color","Цвет Шрифта"
+"Font Decoration","Декорация шрифта"
+"Font Family",Шрифт
+"Font Loading URL:","URL Шрифта:"
+"Font Size","Размер шрифта"
+"Font Size (px)","Размер шрифта ( px )"
+"Font Weight","Толщина шрифта"
+"Fonts Loaded:","Загруженные шрифты:"
+"For Example: 00:17","Например: 00:17"
+"For Example: 02:17","Например: 02:17"
+"For the",Для
+"Force Cover:","Принудительно Использовать Обложку"
+"Force Full Width:","Полная ширина принудительно:"
+"Force Hide Navigation Arrows under width","Принудительно скрывать стрелки при ширине меньше чем"
+"Force Hide Navigation Bullets over width","Принудительно скрыть маркеры при ширине больше чем"
+"Force Hide Navigation Bullets under width","Принудительно скрыть маркеры при ширине меньше чем"
+"Force Hide Navigation Thumbnails under width","Принудительно прятать миниатюры при ширине меньше чем"
+"Force Hide Navigation over width","Принудительно скрыть навигацию при ширине больше чем"
+"Force Hide Navigation tabs under width","Скрыть табы принудительно при ширине меньше чем"
+"Force Lazy Loading","Ленивая загрузка принудительно"
+From,С
+"From Filename","Из Файла"
+"From Media Library","Из Медиа Библиотеки"
+"From Stream","Из потока"
+"From the",В
+Front,"Передняя сторона"
+"Full Screen:","Полный Экран:"
+Full-Height,"Полная Высота"
+Full-Screen,"Полноэкранный режим"
+Full-Width,"Полная Ширина"
+"FullScreen Align Force","Принудительное выравнивание в полноэкранном режиме."
+Function,Функция
+Gallery,Галерея
+"General Settings","Общие параметры"
+"General background color for slider. Clear value to get transparent slider container.","Цвет фона слайдер. Оставьте пустым для получения прозрачного фона."
+"General background image position.  i.e. center center to always center vertical and horizontal the image in the slider background.","Позиция изображения общего фона ( например  ""центр центр"" чтобы отцентрировать изображение фона по горизонтали и вертикали )"
+"General background image repeat attitude. Used for tiled images.","Повтор изображения общего фона. Используется для изображений плиткой."
+"General background image size. Cover - always fill the container, cuts overlays. Contain- always fits image into slider.","Размер изображения общего фона. Cover - полностью заполняет контейнер и обрезает части которые не поместились. Contain - все изображение видно в контейнере."
+"General settings updated","Основные настройки обновлены"
+"Get External",Внешние
+"Get the amount of existing slides in the slider.","Получить количество слайдов в слайдере."
+"Get the current focused slide index.","Получить индекс текущего слайда"
+"Get the previously played slide.","Получить предыдущий слайд."
+"Given animation name is a default animation. These can not be changed.","Указанное имя анимации используется для стандартной анимации и не может быть изменено."
+"Global Settings","Общие настройки"
+"Global Styles Editor","Редактор Глобальных Стилей"
+"Go To Slide","Перейти на слайд"
+"Go To Slide with ID","Перейти к слайду с ID"
+"Go for further customization using the advanced settings on the right of this configuration page.","Уточните конфигурацию слайдера используя дополнительные настройки справа."
+"Google Fonts","Шрифты Google "
+"Google Fonts Performance","Производительность Google Fonts"
+"Grid Based","По сетке"
+Group,Группа
+"HTML5 Video","HTML5 Видео"
+"Handle has to be at least three character long","Значение должно быть не меньше 3 символов"
+Height,Высота
+Height:,Высота:
+Help,Помощь
+"Help Lines","Вспомогательные Линии"
+"Helper Grid:","Вспомогательная сетка:"
+"Hide  After","Скрыть Через"
+"Hide  After on Mobile","Скрыть Через ( на Телефоне )"
+"Hide 'Under' Width","Скрыть если ширина меньше чем"
+"Hide After","Скрыть при"
+"Hide After on Mobile","Скрыть на Телефоне при"
+"Hide Controls:","Скрыть управление:"
+"Hide Details","Спрятать Детали"
+"Hide Element Under Width:","Скрыть элемент при ширине меньше:"
+"Hide Over","Скрыть при ширине больше"
+"Hide Slide Options","Спрятать Параметры Слайда"
+"Hide Under","Скрыть после"
+"Hide all layers under the defined slider width. Value 0 will disable the function.","Скрыть все слои если ширина меньше чем указанная. Значение 0 отключит эту функцию"
+"Hide over Width","Скрыть при ширине больше "
+"Hide the selected layers (set layers hide under in slide editor) under the defined slider width. Value 0 will disable the function.","Скрыть выбранные слои ( слои можно выбрать в редакторе слайдов )  если ширина меньше чем указанная. Значение 0 отключит эту функцию"
+"Hide the slider under the defined slider width. Value 0 will disable the function.","Скрыть слайдер если ширина меньше чем указанная. Значение 0 отключит эту функцию"
+"Hide under Width","Скрыть при ширине меньше"
+High,Высокий
+Horizontal,Горизонтальное
+"Horizontal Align","Горизонтальное выравнивание"
+"Horizontal Align of the Carousel.","Горизонтальное выравнивание карусели."
+"Horizontal Aligns","Горизонтальное выравнивание"
+"Horizontal Offset","Горизонтальный сдвиг"
+"Horizontal Offset from Aligned Position (px)","Горизонтальный сдвиг от позиции выравнивания ( рх )"
+"Horizontal Origin","Горизонтальный Origin"
+"Horizontal position of bullets ","Горизонтальная позиция маркеров"
+"Horizontal position of tabs.","Горизонтальная позиция табов."
+"Horizontal position of the left arrow.","Горизонтальная позиция левой стрелки"
+"Horizontal position of the right arrow.","Горизонтальная позиция правой стрелки"
+"Horizontal position of thumbnails","Горизонтальная позиция миниатюр"
+Hover,"Наведение Мышки"
+"Hover Animation Easing","Функция скорости анимации исчезания."
+"Hover Animation Speed (in ms)","Скорость Анимации при наведении мышки ( в ms )"
+"Hover State","Состояние наведения мышки"
+"ID missing, something went wrong. Please try again!","ID отсутствует, видимо что-то случилось.  Попробуйте еще раз!"
+Idle,"Обычное Состояние"
+"Idle State","Обычное Состояние"
+"If active, it will overwrite the first slide transition. Use it to get special transition for the first slide.","Эта опция заменит анимацию первого слайда. Используйте ее для назначения специальной анимации для первого слайда."
+"If browser size goes below this value, then Navigation Arrows are hidden.","Если ширина браузера меньше заданной, стрелки будут скрыты"
+"If browser size goes below this value, then Navigation bullets are hidden.","Если ширина браузера меньше заданной, маркеры будут скрыты"
+"If browser size goes below this value, then Navigation tabs are hidden.","Если ширина браузера меньше этого значения, табы будут скрыты."
+"If browser size goes below this value, then Navigation thumbs are hidden.","Если ширина браузера меньше этого значения, миниатюры будут скрыты."
+"If browser size goes over this value, then Navigation Arrows are hidden.","Если ширина браузера больше заданной, стрелки будут скрыты"
+"If only one Slide is in the Slider, you can choose wether the Slide should loop or if it should stop. If only one Slide exist, slide will be duplicated !","Если в Слайдере только один Слайд, вы можете выбрать будет ли Слайд зациклен или он должен остановиться. 
+Если создан только один Слайд, он будет сдублирован !"
+"If set to on, parallax will be disabled on mobile devices to save performance","Параллакс будет отключен на мобильных устройствах для большей производительности"
+"If set, slide will be visible after the date is reached.","Слайд будет виден после этой даты"
+"If set, slide will be visible till the date is reached.","Слайд будет виден до этой даты"
+"If this is enabled, the slider will not be loaded on mobile devices.","Включить чтобы слайдер на загружался на мобильных устройствах."
+"Ignore Lazy Loading","Игнорировать ленивую загрузку"
+Image,Изображение
+"Image &lt;img /&gt;","Изображение &lt;img /&gt;"
+"Image Layer Title ","Название Изображения Слоя"
+"Image Library","Библиотека Изображений"
+"Image Performance","Производительность Изображений"
+"Image Source Size:","Размер Изображения:"
+"Image URL","Ссылка Изображения"
+"Images Loaded:","Загруженные изображения:"
+"Implement your Slider","Создайте ваш Слайдер"
+Import,Импорт
+"Import / Export / Replace","Импорт / Экспорт / Заменить"
+"Import Slider","Импортировать Слайдер"
+"Import Template Slide","Импортировать Шаблон Слайда"
+"Import Template Slider","Импортировать Шаблон Слайдера"
+"In Animation Default and Out Animation Wait for Trigger","Начальная и конечная анимация ждут события"
+"In and Out Animation Default","Начальная и конечная анимация по умолчанию"
+"Include RevSlider libraries globally:","Включить библиотеки RevSlider глобально:"
+"Infinity Carousel Scroll. No Endpoints exists at first and last slide if valuse is set to ON.","Бесконечная карусель. После последнего слайда показывается первый слайд."
+"Infinity Scroll","Бесконечная Карусель"
+"Initialization Delay","Задержка при инициализации"
+"Inner / outer","Внешний / Внутренний"
+"Inner Slider","Внутренний Слайдер"
+"Insert Meta","Вставить Мета"
+"Installed Version","Установленная Версия"
+"Internal Classes:","Внутренние классы:"
+"Invalid ID","Неверный ID"
+"It will keep aspect ratio and ignore max height of Layer Grid by upscaling. Layer Area will be vertical centered.","Сохранит пропорции и будет игнорировать макс. высоту Сетки Слоя. Слой будет вертикально отцентрирован."
+"Italic Font","Курсивный Шрифт"
+"Italic Font On/Off","Включить / Выключить Курсивный Шрифт"
+"Jump to Slide","Перейти к Слайду"
+"Keep Aspect Ratio (on/off)","Сохранять пропорции"
+"Keep Hidden","Оставить скрытым"
+"Keep last selected State","Сохранять последнее выбранное состояние"
+"Key Direction",Направление
+"Keyboard Direction to swap slides (horizontal - left/right arrow, vertical - up/down arrow)?","Навигация на клавиатуре для переключения слайдов ( горизонтальное - левая / правая стрелка, вертикальное - вверх / вниз стрелка ) "
+"Keyboard Navigation","Навигацию на Клавиатуре"
+"Kill Slider","Уничтожить Слайдер"
+Large,Большой
+"Large Square","Большой Квадратный"
+"Last Modify Date","Дата последнего изменения"
+"Last Slide","Последний Слайд"
+"Last slide starts","Последний слайд стартует"
+Layer,Слой
+"Layer Action (enterstage, enteredstage, leavestage,leftstage)","Действия слоя (enterstage, enteredstage, leavestage, leftstage)"
+"Layer Align Bottom","Выровнять слой по нижнему краю"
+"Layer Align Center","Выровнять слой по центру"
+"Layer Align Left","Выровнять слой по левому краю"
+"Layer Align Middle","Выровнять слой по центру"
+"Layer Align Right","Выровнять слой по правому краю"
+"Layer Align Top","Выровнять слой по вернему краю"
+"Layer Animation Editor","Редактор Анимации Слоя"
+"Layer Events","События Слоя"
+"Layer Grid Size","Размер Сетки Слоя"
+"Layer Height (px) Use 'auto' to respect White Space","Высота слоя ( px ). Используйте ""auto"" чтобы учитывать пробелы"
+"Layer Height (px). Use 'auto' to respect White Space","Высота слоя ( px ). Используйте ""auto"" чтобы учитывать пробелы"
+"Layer Hover","Наведение Мышки на Слой"
+"Layer Inline CSS","Inline CSS Слоя"
+"Layer Type (image,video,html)","Тип слоя (image,video,html)"
+"Layer as jQuery Object","Слой как объект jQuery"
+"Layer is triggered by ","Слой инициируется"
+Layers,Слои
+"Layers align within the full slider instead of the layer grid.","Выравнивание слоев по ширине слайдера, а не по сетке слоя."
+"Layout & Visual","Лейаут и Внешний Вид"
+"Lazy Load","Ленивая Загрузка"
+"Lazy Loading","Ленивая загрузка"
+Left,Лево
+"Left Arrow Position","Позиция левой стрелки"
+"Level Depth 1","Уровень Глубины 1"
+"Level Depth 10","Уровень Глубины 10"
+"Level Depth 2","Уровень Глубины 2"
+"Level Depth 3","Уровень Глубины 3"
+"Level Depth 4","Уровень Глубины 4"
+"Level Depth 5","Уровень Глубины 5"
+"Level Depth 6","Уровень Глубины 6"
+"Level Depth 7","Уровень Глубины 7"
+"Level Depth 8","Уровень Глубины 8"
+"Level Depth 9","Уровень Глубины 9"
+"Line Based","Разделить на строки"
+"Line Height","Высота строки"
+"Line Height (px)","Высота строки ( рх )"
+Link,Ссылка
+"Link & Seo","Ссылки и SEO"
+"Link Sensibility:","Чувствительность ссылки:"
+"Link Target:","Цель ссылки :"
+"Link To Slide:","Ссылка на Слайд:"
+"Link Type:","Тип Ссылки:"
+"Link Url","URL Ссылки"
+"Link the Full Slide to an URL or Action.","Целый Слайд ведет на определенную ссылку или действие."
+"Live Preview - Hover & Click for test","Живой Предпросмотр - Наведите мышку и нажмите для тестов"
+"Load Speed DSL:","Скорость загрузки 
+DSL:"
+"Load Speed T1:","Скорость загрузки 
+T1:"
+"Load Speed UMTS:","Скорость загрузки 
+UMTS:"
+"Load a Preset from this Slider Type","Загрузить Набор Настроек для этого типа Слайдера"
+"Loading Error","Ошибка Загрузки"
+"Loading Error: ","Ошибка Загрузки:"
+"Look of the Bullets","Вид маркера"
+"Look of the navigation Arrows","Вид навигационных стрелок"
+"Loop Easing","Функция скорости цикла"
+"Loop Parameters","Параметры цикла"
+"Loop Single Slide","Зациклить Единственный Слайд"
+"Loop Speed (ms)","Скорость цикла ( ms )"
+"Loop Speed (sec) - 0.3 = 300ms","Скорость цикла (
+sec) - 0.3 = 300ms"
+"Loop Video:","Зациклить Видео:"
+"Loop, Slide does not stop","Зациклить, Слайд не останавливается"
+"Loop, Slide is paused","Зациклить, Слайд остановлен"
+"Low Resolution","Низкое разрешение"
+"Main / Background Image","Главное / Фоновое Изображение"
+"Main Background","Главный Фон"
+"Making changes to these settings will probably overwrite advanced settings. Continue?","Изменение этих настроек может перезаписать расширенные настройки. Продолжить?"
+"Margin Bottom","Нижний Край"
+"Margin Left","Левый Край"
+"Margin Right","Правый Край"
+"Margin Top","Верхний Край"
+Markup,Разметка
+"Mask is not available due Style Transitions. Please remove any Rotation, Scale or skew effect form Idle and Hover settings","Маска недоступна. Пожалуйста уберите эффекты поворота, scale, skew из обычного и hover состояния."
+Masking,Маска
+Max,Макс.
+"Max Slides","Макс. кол-во слайдов"
+"Max. Chars","Макс. кол-во символов"
+"Max. Res.","Макс. Разрешение"
+"Max. Rotation","Макс. поворот"
+"Max. Scaledown","Макс. уменьшение"
+"Max. Visible Items","Макс. кол-во Видимых Элементов."
+Medium,Средний
+"Medium 640","Средний 640"
+"Medium 800","Средний 800"
+Metadata,Метаданные
+Methods,Методы
+"Min. Height","Мин. высота"
+"Min. Size of Slider must be in Viewport before slide starts again.","Мин. размер Слайдера в видимой области перед тем как слайдер начнет воспроизведение."
+"Min. Tab Width","Минимальная ширина таба"
+Misc.,Допольнительно
+"Missing redirect ID!","Отсутствует ID переадресации!"
+"Missing values to add preset","Отсутствуют значения для добавления Набора Настроек"
+"Missing values to remove preset","Отсутствуют значения для удаления Набора Настроек"
+Mobile,Телефон
+"Mobile Grid Width","Ширина сетки для Телефона"
+"More Style Settings","Больше Настроек Стиля"
+"Mouse Based parallax calculation Origo","Параллакс Origo основанные на движении мышки"
+"Mouse Cursor","Курсор мышки"
+"Mouse Enter","Мышка над элементом"
+"Mouse Enter Point","Точка входа Мышки"
+"Mouse Leave","Мышка вышла за границы элемента"
+"Mouse Move","Движение мышки"
+"Mouse Scroll Navigation","Навигацию Скроллом Мышки"
+"Mouse Sensibility","Чувствительность мышки"
+Move,Переместить
+"Move and Scroll","Движения и Скролл"
+"Must be greater than start time","Значение должно быть больше чем время старта"
+"Mute Video:","Выключить звук Видео:"
+Mute:,Пауза:
+"Name too short, at least 3 letters between a-zA-z needed","Имя слишком короткое, минимальная длина три буквы a-zA-Z"
+Navigation,Навигация
+"Navigation Bullets and Arrows are now set to none.","Навигационные Маркеры и Стрелки выключены"
+"Navigation Editor","Редактор Навигации"
+"Navigation could not be deleted","Навигация не может быть удалена"
+"Navigation deleted","Навигация удалена"
+"Navigation name already exists, please choose a different name","Навигация с таким именем уже существует, пожалуйста выберите другое имя"
+"Navigation name could not be updated","Имя навигации не может быть обновлено."
+"Navigation saved/updated","Навигация сохранена / обновлена"
+"Navigations updated","Навигации обновлены"
+"Need Some Attention","Требует Внимания"
+"New Slider","Новый слайдер"
+"New Window","Новое Окно"
+"Next Slide","Следующий слайд"
+"Next Slide On End:","Следующий Слайд и последний:"
+"Next Slide on Focus","След. слайд на Фокус"
+No,Нет
+"No API KEY - Could not fetch flickr photosets","Отсутствует API KEY - невозможно загрузить фотосеты Flickr"
+"No Corner","Нет углов"
+"No Data Received","Данные не получены"
+"No ID given","Не указано ID"
+"No Lazy Loading","Выключить ленивую загрузку"
+"No Parallax","Параллакс выключен"
+"No Shadow","Нет Тени"
+"No Sliders Found","слайдеры не найдены"
+"No Split","Без разделения"
+"No Style","Нет Стиля"
+"No User URL - Could not fetch flickr photosets","Отсутствует URL пользователя - невозможно загрузить фотосеты Flickr"
+"No slides found, please add some slides","Слайды не найдены, пожалуйста добавьте слайды"
+"No valid Slide ID given","Недействительный ID Слайда"
+"No valid title given","Недействительный заголовок"
+None,Ничего
+"Note! The replace process is not reversible !","Обратите внимание! Процесс замены необратим!"
+Notebook,Ноутбук
+"Notebook Grid Width","Ширина сетки для Ноутбука"
+"Number of Comments","Кол-во комментариев"
+"Number of Likes","Кол-во лайков"
+"Number of Views","Кол-во просмотров"
+Off,Выкл.
+Offset,Сдвиг
+"Offset from current Horizontal position.","Сдвиг от текущей горизонтальной позиции."
+"Offset from current Vertical  position.","Сдвиг от текущей вертикальной позиции"
+"Offset from current Vertical position.","Сдвиг от текущей вертикальной позиции."
+"Offset from current horizontal position of of left arrow.","Сдвиг от текущей горизонтальной позиции левой стрелки"
+"Offset from current horizontal position of of right arrow.","Сдвиг от текущей горизонтальной позиции правой стрелки"
+"Offset from current horizontal position of tabs.","Сдвиг от текущей горизонтальной позиции табов."
+"Offset from current horizontal position.","Сдвиг от текущей горизонтальной позиции"
+"Offset from current vertical position of of left arrow.","Сдвиг от текущей вертикальной позиции левой стрелки"
+"Offset from current vertical position of of right arrow.","Сдвиг от текущей вертикальной позиции правой стрелки"
+"Offset from current vertical position of tabs.","Сдвиг от текущей 
+вертикальной 
+позиции табов."
+Ok,Ок
+On,Вкл.
+"On IE8","На IE8"
+"On Mobile","На Телефоне"
+"On Mobile and IE8","На Телефоне и IE8"
+"Only on Slider Hover","Только при наведении мышки на Слайд"
+Opacity,Прозрачность
+"Opacity (1 = 100% Visible / 0.5 = 50% opacaity / 0 = transparent)","Прозрачность. (1 = 100% видимость / 0.5 = 50% п
+розрачности
+/ 0 = 
+п
+розрачное
+)"
+"Opacity. (1 = 100% Visible / 0.5 = 50% opacaity / 0 = transparent)","Прозрачность. (1 = 100% видимость / 0.5 = 50% п
+розрачности
+/ 0 = 
+п
+розрачное
+)"
+"Order updated","Заказ обновлен"
+Original,Оригинал
+"Original CSS classname not found","Оригинальный CSS класс не найден"
+"Original Size","Оригинальный Размер"
+"Our drag and drop editor will make creating slide content an absolut breeze. This is where the magic happens!","Наш drag-n-drop редактор серьозно облегчает процесс создание слайда. Вот где происходит волшебство!"
+"Out Of ViewPort:","За границами видимой области:"
+"Overall Slider Performance","Общая Производительность Слайдера"
+"Overwrite Selected Settings on all Slides","Перезаписать Выбранные настройки для всех Слайдов"
+"Overwrite current animation?","Перезаписать анимацию?"
+"Overwrite current static styles?","Переписать текущие статические стили?"
+"Overwrite or append the custom animations due the new imported values ?","Перезаписать или добавить к пользовательским анимациям импортируемые?"
+PLAY,Воспроизводить
+"PX or %","PX или %"
+"Padding around the slider. Together with background color shows as slider border.","Отступ вокруг слайдера. Если задать цвет фона, то будет выглядеть как граница слайдера."
+"Padding as Border","Отступ как Граница"
+"Pages to include RevSlider libraries:","Укажите страницы для которых будут подключены библиотеки RevSlider:"
+"Parallax Feature in Slider Settings is deactivated, parallax will be ignored.","Параллакс выключен в настройках Слайдера, параллакс будет проигнорирован."
+"Parallax Level:","Уровень Параллакса:"
+"Parallax Levels","Уровни Параллакса"
+"Parallax Origo","Параллакс Origo"
+Parameter,Параметр
+"Parameter ",Параметр
+Parameters,Параметры
+Pause,Пауза
+"Pause Slider","Приостановить слайдер"
+"Performance and SEO Optimization","Производительность и SEO Оптимизация"
+Perspective,Перспектива
+"Place the shortcode where you want to show the slider","Вставьте шорткод в место где вы хотите показать слайдер."
+"Play In Animation","Проигрывать Анимацию"
+"Play Slider","Воспроизводить Слайдер"
+"Play/Pause Layer Loop Animation","Воспроизвести / Остановить цикличную анимацию слоя"
+"Play/Pause Single Layer Animation","Воспроизвести / Остановить анимацию единственного слоя"
+Playlist,Плейлист
+"Please <a target=""_blank"" href=""https://dev.twitter.com/apps"">register</a> your application with Twitter to get the values","Пожалуйста <a target=""_blank"" href=""https://dev.twitter.com/apps"">зарегистрируйте</a> ваше приложение в Twitter для загрузки данных"
+"Please Wait a Moment","Пожалуйста подождите"
+"Please Wait...",Ждите...
+"Please enter a Slide title","Пожалуйста введите название Слайда"
+"Please select an existing Style Template","Пожалуйста выберите существующий Шаблон Стиля"
+"Please select at least one device type","Пожалуйста выберите хотя бы один тип устройств"
+"Please select the correct zip file, checksum failed!","Пожалуйста выберите корректный zip файл, ошибка проверки контрольной суммы "
+"Please select the corresponding zip file from the download packages import folder called","Пожалуйста выберите соответствующий архив ( zip file ) из директории для загруженных пакетов называемый"
+Position,Позиция
+"Position of the progress bar.","Позиция Индикатора прогресса."
+"Position on the page","Позиция на странице"
+"Post Title","Заголовок записи"
+"Post Types:","Типы записей:"
+"Post content","Содержимое записи"
+"Post deleted","Запись удалена"
+"Poster Image Url","Постер картинки Url"
+"Predefined Elements","Предопределенные элементы"
+"Predefined Layers","Предопределенные Слои"
+"Preloaded Slides Size:","Размер предзагруженных слайдов"
+"Prepared for slide change","Подготовлен для смены слайда"
+"Preset Loaded","Набор Настроек загружен"
+"Preset Name","Имя Набора Настроек"
+"Preset created","Набор Настроек создан"
+"Preset deleted","Набор Настроек удален"
+"Preset name already exists, please choose a different name","Набор Настроек с таким именем уже существует, пожалуйста выберите другое имя"
+"Preset not found","Набор Настроек не найден"
+Preview,Просмотр
+"Preview Slider","Простмотр слайдера"
+"Previous Slide","Предыдущий слайд"
+"Previous Slide as jQuery Object","Предыдущий слайд как объект jQuery"
+"Problem Handlings","Решение Проблем"
+"Progress Bar","Индикатор прогресса"
+"Progress Bar Active","Индикатор прогресса включен"
+"Progress Bar Color","Цвет Индикатора прогресса"
+"Progress Bar Position","Позиция Индикатора прогресса"
+Published,Опубликован
+"Pulbishing Date","Дата Публикации"
+Pulse,Пульс
+"Purchase Code Successfully Activated","Код покупки
+ успешно активирован!"
+"Purchase Code already registered!","Код покупки уже
+ зарегистрирован!"
+"Purchase Code is invalid","Код покупки
+ недействителен"
+"Put in the Facebook App ID","Введите Facebook App ID"
+"Put in the Facebook App secret","Введите Facebook App secret
+"
+"Put in the ID of the YouTube channel","Введите 
+ID канала на Youtube"
+"Put in the Twitter Account to stream from","Введите аккаунт Twitter"
+"Put in the URL of the flickr Gallery","Введите URL для галереи 
+Flickr"
+"Put in the URL of the flickr Group","Введите URL для группы 
+Flickr"
+"Put in the URL of the flickr User","Введите URL для пользователя 
+Flickr"
+"Put in the URL/ID of the Facebook page","Введите 
+URL/ID страницы Facebook"
+"Put in your Flickr API Key","Введите ваш
+ 
+Flickr API Key"
+"Put in your Twitter Access Secret","Введите Twitter Access Secret"
+"Put in your Twitter Access Token","Введите Twitter Access Token"
+"Put in your Twitter Consumer Key","Введите Twitter Consumer Key"
+"Put in your Twitter Consumer Secret","Введите Twitter Consumer Secret"
+"Put in your YouTube API Key","Введите 
+Youtube API Key"
+"Put the tabs inside or outside of the slider container. Outside added tabs will decrease the size of the slider.","Определить положение Табов - внутри или снаружи контейнера слайда. 
+Табы 
+снаружи слайдера уменьшат размер слайдера."
+"Put the thumbnails inside or outside of the slider container. Outside added thumbnails will decrease the size of the slider.","Определить положение Миниатюр - внутри или снаружи контейнера слайда. Миниатюры снаружи слайдера уменьшат размер слайдера."
+Radius,Радиус
+"Radius of Rotation / Pendulum","Радиус поворота / Pendulum"
+Random,Случайный
+"Randomize the order of the slides at every Page reload.","Случайный порядок слайдов при каждой загрузке страницы."
+"Read <a target=""_blank"" href=""http://weblizar.com/get-flickr-api-key/"">here</a> how to receive your Flickr API key","Читать <a target=""_blank"" href=""http://weblizar.com/get-flickr-api-key/"">здесь</a> как получить ваш Flickr API key"
+"Really change font settings?","Вы уверены что хотите изменить настройки шрифта?"
+"Really delete Class","Вы уверены что хотите удалить Класс?"
+"Really delete animation:","Вы уверены что хотите удалить анимацию ?"
+"Really delete font?","Вы уверены что хотите удалить шрифт?"
+"Really delete this preset?","Вы уверены что хотите удалить Набор Настроек?"
+"Really overwrite Class?","Вы уверены что хотите перезаписать Класс?"
+"Really overwrite animation?","Вы уверены что хотите перезаписать анимацию?"
+"Really remove this action?","Вы уверены что хотите удалить это действие?"
+"Really update global styles?","Вы уверены что хотите обновить глобальные стили?"
+"Recalculate all positions, sizing etc in the slider.  This should be called i.e. if Slider was invisible and becomes visible without any window resize event.","Пересчитывает все позиции, размеры и т.д. в слайдере. Используйте если к примеру слайдер был невидим а потом стал видимым без события resize окна."
+"Redraw Slider","Перерисовать Слайдер"
+Regular,Постояно
+"Regular - Link to URL,  To Slide - Call a Slide Action","Обычный - ссылка на URL, На Слайд - переключиться на слайд"
+Remove,Убрать
+"Remove current element from Navigation?","Удалить элемент из Навигации?"
+Rename,Переименовать
+"Rename Animation","Переименовать Анимацию"
+"Rename CSS","Переименовать CSS"
+"Rename to:",Переименовать:
+"Replace From","Заменить С"
+"Replace To","Заменить на"
+"Replace URL","Заменить URL"
+"Replace URL's","Заменить URL's"
+Replacing...,Замена...
+Replies,Ответы
+Reset,Сбросить
+"Reset Animation and Trigger States every loop","Сбрасывать состояния Анимации и События каждый цикл"
+"Reset Style Template","Сбросить Шаблон Стиля"
+"Respect Aspect Ratio","Сохранять пропорции"
+"Responsive Offset","Адаптивное Смещение"
+"Resume Slider","Продолжить слайдер"
+"Retweet Count","Кол-во ретвитов"
+Retweets,Ретвиты
+"Revolution Slider Error","Revolution Slider Ошибка"
+"Rewind at Slide Start:","Перемотать на старте слайда:"
+Right,Право
+"Right Arrow Position","Позиция правой стрелки"
+Rotate,Поворот
+Rotation,Чередование
+"Rotation enabled/disabled for not focused elements.","Поворот включен / выключен для элементов не в фокусе."
+"Rotation is varying based on the distance to the focused element.","Поворот варьируется от расстояния до фокусного элемента."
+"Rotation on X axis (+/-)","Поворот по оси X (+/-)"
+"Rotation on Y axis (+/-)","Поворот по оси Y (+/-)"
+"Rotation on Z axis (+/-)","Поворот по оси Z (+/-)"
+Rotation:,Ротация:
+"Same Window","Текущее Окно"
+Save,Сохранить
+"Save All Changes","Сохранить все изменения"
+"Save As","Сохранить как"
+"Save As:","Сохранить как:"
+"Save Current Settings as Preset","Сохранить Текущие Настройки как Набор Настроек"
+"Save Performance:","Сохранить Производительность:"
+"Save Settings","Сохранить Настройки"
+"Save Settings as Preset","Сохранить Настройки как Набор Настроек"
+"Save Slide","Сохранить слайд"
+"Save Static Styles","Сохранить статические стили:"
+"Save Under","Сохранить Как"
+"Save Under:","Сохранить Как:"
+Scale,Масштабирование
+"Scale enabled/disabled for not focused elements.","Масштабирование включено / отключено для не
+сфокусированных  
+элементов"
+"Scale is varying based on the distance to the focused element.","Масштаб определяется в зависимости от расстояния до сфокусированного элемента."
+"Scale: (in %):","Масштабирование 
+: (в %):"
+"Scroll Below Slider","Прокрутить под Слайдер"
+"Scroll Offset","Сдвиг Скролла"
+"Scroll Position","Позиция Прокрутки"
+"Scroll below slider on vertical swipe","Прокручивать окно под слайдер при вертикальном свайпе"
+"Scroll page under the slider.","Прокрутить страницу под слайдер."
+"See how to find the Youtube channel ID <a target=""_blank"" href=""https://support.google.com/youtube/answer/3250431?hl=en"">here</a>","Получить Youtube channel ID <a target=""_blank"" href=""https://support.google.com/youtube/answer/3250431?hl=en"">здесь</a>"
+Select,Выбрать
+"Select Album","Выберите Альбом"
+"Select Image","Выбрать Изображение"
+"Select Layer Image","Выбрать изображение слоя"
+"Select Photoset","Выберите фотосет"
+"Select Playlist","Выбрать плейлист"
+"Select Slide Image","Выбрать изображение слайда"
+"Select Slide Video","Выбрать Видео для Слайда"
+"Select Static Layer Image","Выбрать изображение статического слоя"
+"Select a Slider Type","Выберите Тип Слайдера"
+"Select a Spinner for your Slider","Выберите загрузчик для вашего Слайдера"
+"Select the Navigation Category to Edit","Выберите категорию Навигации для редактирования"
+"Select the album to pull the data from ","Выберите альбом для загрузки данных"
+"Select the photoset to pull the data from ","Выберите фотосет для загрузки данных"
+"Selected layer not set","Выбранный слой не установлен"
+Set,Назначить
+"Set selected settings on all Slides of this Slider? (This will be saved immediately)","Применить выбранные настройки для всех Слайдов этого Слайдера? ( Изменения сохранятся мгновенно )"
+"Sets a delay before the Slider gets initialized","Устанавливает задержку перед инициализацией Слайдера"
+"Setting Changed!","Настройки изменены!"
+Settings,Настройки
+"Settings in all Slides changed","Настройки во всех слайдах изменились"
+"Shadow Type","Тип Тени"
+Shape,Фигура
+"Shape Settings","Настройки Фигуры"
+Sharp,Четкий
+"Sharp Reversed","Четкий обратный ход"
+"Show Advanced Size Options","Показать Расширенные Параметры Размера"
+"Show Background Image","Показать фоновое изображение"
+"Show Cover at Pause:","Показывать обложку во время паузы:"
+"Show Details","Показать Детали"
+"Show Layers from Slide:","Показывать Слои из Слайда:"
+"Show Slide Options","Показать Параметры Слайда"
+"Show a dotted overlay over the slides.","Показывать точечный слой над слайдами."
+"Shuffle / Random Mode","Режим Случайного порядка"
+"Simple Link","Простая Ссылка"
+"Simplify on IOS4/IE8","Упрощать на IOS4/IE8"
+"Simplyfies the Slider on IOS4 and IE8","Упрощает слайдер на IOS4/IE8"
+"Simulate Click","Имитировать Нажатие"
+Single,"Единичный режим"
+Sizing,Размеры
+Skew,Наклон
+"Skin Name","Имя скина"
+"Slide ""Delay"":","""Задержка"" Слайда"
+"Slide Animation","Анимация Слайда"
+"Slide Based","По слайду"
+"Slide Created","Слайдер Создан"
+"Slide Created, redirecting...","Слайд Создан, перенаправление..."
+"Slide Description","Описание Слайда"
+"Slide End Transition will first start when last Layer has been removed.","Анимация исчезания слайда начнется когда будет скрыт последний слой."
+"Slide Info","Информация о Слайде"
+"Slide Layout","Лейаут Слайда"
+"Slide Link:","Ссылка Слайда:"
+"Slide Thumbnail. If not set - it will be taken from the slide image.","Миниатюра Слайда. Если не задана - будет сгенерирована из изображения слайда."
+"Slide Title","Название Слайда"
+"Slide added to Templates","Слайд добавлен в Шаблоны"
+"Slide changed","Слайд Изменен"
+"Slide contains no layers","В Слайде отсутствуют слои "
+"Slide copied to current Slider, redirecting...","Слайд скопирован в текущий Слайдер"
+"Slide could not be copied","Слайд не может быть скопирован"
+"Slide could not be duplicated","Слайд не может быть сдублирован"
+"Slide deleted","Слайд удален"
+"Slide duplicated","Слайд сдублирован"
+"Slide name should not be empty","Имя Слайда не может быть пустым"
+"Slide updated","Слайдер обновлен"
+Slider,Слайдер
+"Slider Background","Фон слайдера"
+"Slider Center","Центр Слайдера"
+"Slider Loaded","Слайдер загружен"
+"Slider Settings","Настройки слайдера"
+"Slider Title & ShortCode","Название и шорткод Слайдера"
+"Slider created","Слайдер создан"
+"Slider deleted","Слайдер удален"
+"Slider is Playing after pause","Слайдер воспроизводится после паузы"
+"Slider not found","Слайдер не найден"
+"Slider paused","Слайдер остановлен"
+"Slider reached the 'stop at' slide","Слайдер достиг ""остановиться на"" слайда."
+"Slider setting could not be changed","Настройки слайдера не могут быть изменены"
+"Slider swapped to an other slide","Слайдер переключился на другой слайд"
+"Slider updated","Слайдер обновлён"
+"Slides (max 25)","Слайды ( макс. 25 )"
+"Slides (max 50)","Слайды ( макс. 50 )"
+"Slides (max 500)","Слайды ( макс. 500 )"
+"Slides (max 60)","Слайды ( макс. 60 )"
+"Slides Created","Слайдеры Созданы"
+Slideshow,Слайдшоу
+"Slot / Box Amount:","Кол-во слотов:"
+"Slot Rotation:","Поворот слота:"
+Slow,Медленно
+Small,Маленький
+"Small 320","Маленький 320"
+Smart,"Умный режим"
+"Snap to:","Привязать к:"
+Social,Социальный
+"Sort By:","Сортировать По:"
+"Sort Direction:","Порядок сортировки:"
+"Sortby updated","Сортировка обновлёна"
+Source,Источник
+"Source Settings","Настройки Источника"
+"Source Type","Тип источника"
+"Source must be from Stream","Источник должен быть из Потока"
+Space,Расстояние
+"Space between slides","Расстояние между слайдами"
+"Space between the bullets.","Расстояние между маркерами"
+"Space between the tabs.","Расстояние между табами."
+"Space between the thumbnails.","Расстояние между миниатюрами."
+"Span Wrapper","Растянуть Контейнер"
+"Span wrapper to full width or full height based on the direction selected","Растянуть контейнер до полной ширины или полной высоты на основе выбранного направления."
+"Span wrapper to full width or full height based on the direction selected.","Растянуть контейнер на полную ширину или высоту в зависимости от выбранного направления."
+"Specify a layer grid size above","Задает размер сетки слоя"
+Spinner,Загрузчик
+"Spinner Color","Цвет Загрузчика"
+Square,Квадратный
+Standard,Стандартный
+"Standard Resolution","Стандартное разрешение"
+"Standard Slider","Стандартный Слайдер"
+Start,Начало
+"Start Angle","Начальный Угол"
+"Start At:",Старт:
+"Start Building Slides","Начать Создание Слайдов"
+"Start Fit: (in %):","Начальное положение ( в % ):"
+"Start Layer ""in"" Animation","Начать ""начальную"" анимацию Слоя"
+"Start Layer ""in"" animation","Начать анимацию ""появления"" Слоя"
+"Start Layer ""out"" Animation","Начать ""конечную"" анимацию Слоя"
+"Start Layer ""out"" animation","Начать анимацию ""исчезания"" Слоя"
+"Start Offset X:","Начальный сдвиг по Х:"
+"Start Offset Y:","Начальный сдвиг по Y:"
+"Start Rotation of Transition (deg).","Начальный поворот перехода ( град. )"
+"Start X Offset","Начальный сдвиг по Х"
+"Start Y Offset","Начальный сдвиг по Y"
+"Start at:",Старт:
+"Start from a different slide instead of the first slide. I.e. good for preview / edit mode.","Начать с альтернативного слайда вместо первого слайда. Можно использовать при предпросмотре или режиме редактирования."
+"Start on Slide","Начать со Слайда"
+"Static / Global Layers","Статические / Глобальные Слои"
+"Static Global Layers updated","Статические Глобальные Слои обновлены"
+"Static Layers","Статические Слои"
+"Static Layers will be shown on every slide in template sliders","Статические слои будут видны на каждом слайде в Шаблоне Слайдера"
+"Static Styles","Статические Стили"
+"Stop Slide On Hover","Останавливает слайд при наведении мышки"
+"Stop Slider After ...","Остановить слайдер после..."
+"Stop Slider Out of ViewPort","Остановить слайдер за границами видимой области"
+"Stops the Timer when mouse is hovering the slider.","Останавливает таймер при наведении мышки на слайдер."
+"Stops the slider after certain amount of loops. 0 related to the first loop.","Остановить слайдер после определенного кол-ва циклов. 0 относится к первому циклу."
+"Stops the slider at the given slide","Останавливает слайдер на определенном слайде"
+"Stops the slideshow after the predefined loop amount at the predefined slide.","Остановить слайдшоу после определенного кол-ва циклов на определенном слайде"
+"Stream Image","Потоковое Изображение"
+"Stream Video","Потоковое Видео"
+"Stretch Element","Растягивать Элементы"
+"Stretch carousel element width to the wrapping container width.  Using this you can see only 1 item in same time.","Растягивать ширину элементов карусели до размера родительского контейнера. Используя этот параметр вы будете видеть только один элемент."
+Style,Стиль
+"Style Helper","Помощник стилей"
+"Style Options","Опции Стиля"
+"Style Template","Шаблон Стиля"
+"Style deleted!","Стиль удален!"
+"Style of the tabs.","Стиль табов."
+"Style of the thumbnails.","Стиль миниатюр."
+Success!,"Операция завершена успешно!"
+"Success! Refreshing page...","Операция завершена успешно! Обновляем страницу..."
+"Successfully fetched Facebook albums","Альбомы Facebook успешно загружены"
+"Successfully fetched YouTube playlists","Плейлисты Youtube
+ успешно загружены"
+"Successfully fetched flickr photosets","Flickr photosets
+ успешно загружены"
+"Successfully removed validation","Успешно удалены проверки"
+"Suggested Height:","Предлагаемая высота:"
+"Suggested Width:","Предлагаемая ширина:"
+"Swipe Direction","Направление свайпа"
+"Swipe Direction to swap slides?","Направление свайпа для переключение слайдов"
+"Swipe Min Finger","Мин. кол-во пальцев"
+"Swipe Treshhold (0 - 200)","Порог Свайпа (0 - 200)"
+"Switch slider to next slide.","Переключиться на следующий слайд."
+"Switch slider to previous slide.","Переключиться на 
+предыдущий слайд."
+"Switch to the slide which is defined as parameter.","Переключиться на слайд, указанный параметром."
+"Tab Sizes","Размеры Табов"
+Tablet,Планшет
+"Tablet Grid Width","Ширина сетки для Планшета"
+Tabs,Табы
+"Tabs Height","Высота Табов"
+"Tabs Style","Стиль Табов"
+"Tabs Width","Ширина Табов"
+"Tabs wrapper background color. For transparent leave empty.","Цвет фона табов. Если не указан - прозрачный."
+Template,Шаблон
+"Template Options","Параметры Шаблона"
+"Template can't be deleted, it is still being used by the following Sliders: ","Шаблон не может быть удален, он используется следующими слайдерами:"
+"Template will have the state of the last save, proceed?","Шаблон останется в состоянии последнего сохранения. Продолжить?"
+Text,Текст
+"Text / Icon","Текст / Иконка"
+"Text Align","Выравнивание текста"
+"Text Tweets","Текстовые твиты"
+Text/Html,"Текст / HTML"
+"The Color the Spinner will be shown in","Цвет Загрузчика"
+"The ID of the album","ID Альбома"
+"The Shadow display underneath the banner.","Тень под слайдером."
+"The Video API to Manage Video functions","Видео API для контроля Видео функций"
+"The alias for embedding your slider, example: slider1","Алиас вашего слайдера, например: slider1"
+"The amount of max visible Thumbnails in the same time. ","Максимальное кол-во одновременно видимых миниатюр."
+"The amount of max visible tabs in same time.","Макс. кол-во одновременно видимых табов."
+"The basic Height of one Thumbnail.","Базовая высота миниатюры."
+"The basic width of one tab.","Стандартная ширина одного таба."
+"The border radius of slides","Радиус границы слайдов"
+"The bottom margin of the slider wrapper div","Нижний край поля обертки слайдера div"
+"The duration of the transition.","Длительность анимации"
+"The easing of Appearing transition.","Функция скорости анимации появления."
+"The easing of Disappearing transition.","Функция скорости анимации исчезания."
+"The height of the progress bar","Высота Индикатора прогресса."
+"The horizontal gap/space between the slides","Горизонтальное расстояние между слайдами"
+"The image that will be loaded instead of the slider.","Изображение, которое будет загружено вместо слайдера."
+"The left margin of the slider wrapper div","Левый край поля обертки слайдера div"
+"The link to the post","Ссылка на запись"
+"The maximum rotation of the Side elements. Rotation will depend on the element distance to the current focused element. 0 will turn off the Rotation","Макс. поворот боковых элементов. Поворот зависит от расстояния элемента до текущего элемента. 0 - выключит поворот."
+"The maximum scale down of the Side elements. Scale will depend on the element distance to the current focused element. Min value is 0 and max value is 100.","Макс. уменьшение боковых элементов. Масштабирование зависит от расстояния между элементом и сфокусированным элементом. Мин. значение = 0, макс. значение = 100."
+"The maximum visible items in same time.","Макс. кол-во одновременно видимых элементов."
+"The minimum height of the Slider in FullScreen mode.","Минимальная высота Слайдера в полноэкранном режиме"
+"The minimum height of the Slider in FullWidth or Auto mode.","Минимальная высота Слайдера в режиме Полной Ширины или Авто режиме."
+"The minimum width of the auto resized Tabs. Between Max and Min width the sizes are auto calculated).","Минимальная ширина табов. Размер между макс. и мин. шириной рассчитывается автоматически."
+"The minimum width of the auto resized thumbs. Between Max and Min width the sizes are auto calculated).","Минимальная ширина миниатюры. Значения между мин. и макс. шириной рассчитываются автоматически."
+"The number of slots or boxes the slide is divided into.","Кол-во слотов на которые делится слайд."
+"The padding bottom of slides","Отступ снизу для слайдов"
+"The padding top of slides","Отступ сверху для слайдов"
+"The position of the slider within the parrent container. (float:left or float:right or with margin:0px auto;). We recomment do use always CENTER, since the slider will auto fill and grow with the wrapping container. Set any border,padding, floating etc. to the wrapping container where the slider embeded instead of using left/right here !","Позиция слайдера внутри родительского контейнера. 
+(float:left или float:right или с  margin:0px auto;). Мы рекомендуем всегда использовать ЦЕНТР, потому что слайдер самостоятельно займет все свободное пространство 
+родительского контейнера. Используйте CSS для 
+родительского контейнера ( border, padding, float ... ) "
+"The right margin of the slider wrapper div","Правый край поля обертки слайдера div"
+"The source of the general background image.","Источник 
+изображения общего фона."
+"The state of the slide. The unpublished slide will be excluded from the slider.","Состояние слайда. Неопубликованные слайд будут исключены из ползунка."
+"The target of the slide link.","Цель ссылки."
+"The time one slide stays on the screen in Milliseconds. This is a Default Global value. Can be adjusted slide to slide also in the slide editor.","Время показа одного слайда в ms. Это глобальное значение по умолчанию. Может быть изменено для конкретного слайда в редакторе слайдов."
+"The title of the slide, will be shown in the slides list.","Название слайда, будут показаны в списке слайдов."
+"The title of the slider, example: Slider 1","Название слайдера, например: Slider 1"
+"The top margin of the slider wrapper div","Верхний край поля обертки слайдера div"
+"The wrapper div padding of tabs.","Отступы контейнера табов."
+"The wrapper div padding of thumbnails","Padding контейнера миниатюр"
+"The z-index position of the link related to layers","z-index позиция ссылки относительно слоев"
+"There are several ways to add your slider to your wordpress post / page / etc.","Существует несколько способов добавления слайдера на страницу / запись Wordpress'а"
+"This class does not exist.","Класс не найден."
+"This navigation element does not exist, create one?","Элемент Навигации не существует, создать Элемент?"
+"This will disable KenBurns on mobile devices to save performance","Выключит KenBurn на телефонах для большей производительности"
+"This will enable the option to export the Slider Markups to copy/paste it directly into websites.","Включить возможность экспорта разметки для вставки / копирования непосредственно на сайт."
+"This will reset the navigation, continue?","Это сбросит навигацию, продолжить?"
+"This will update the Class with the current set Style settings, this may affect other Sliders. Proceed?","Настройки Класса будет обновлены в соответствии с текущими настройками Стиля, это может отразиться на других Слайдерах. Продолжить?"
+Thumbnail,Миниатюра
+Thumbnail:,Миниатюра:
+Thumbnails,Миниатюры
+"Thumbnails Style","Стиль Миниатюр"
+"Thumbnails wrapper background color. For transparent leave empty.","Цвет фона миниатюр. Если не указан - прозрачный."
+Thumbs,Миниатюры
+"Time after that the bullets will be hidden(Default: 200 ms)","Время после которого маркеры будут скрыты. ( По умолчанию: 200 ms )"
+"Time after that the tabs will be hidden on Mobile (Default: 1200 ms)","Время после которого табы будут скрыты на Телефоне ( По умолчанию: 1200 ms )"
+"Time after that the tabs will be hidden(Default: 200 ms)","Время после которого табы будут скрыты ( По умолчанию: 200 ms )"
+"Time after that the thumbnails will be hidden on Mobile (Default: 1200 ms)","Время после которого миниатюры будут спрятаны на Телефоне ( по умолчанию: 1200 ms)"
+"Time after that the thumbnails will be hidden(Default: 200 ms)","Время после которого миниатюры будут спрятаны ( по умолчанию: 200 ms )"
+"Time after the Arrows will be hidden on Mobile(Default: 1200 ms)","Время после которого стрелки будут скрыты на Телефоне. ( По умолчанию: 1200 ms )"
+"Time after the Arrows will be hidden(Default: 200 ms)","Время после которого стрелки будут скрыты. ( По умолчанию: 200 ms )"
+"Time after the bullets will be hidden on Mobile (Default: 1200 ms)","Время после которого маркеры будут скрыты на Телефоне. ( По умолчанию: 1200 ms )"
+Timeline,Таймлайн
+Title,Название
+"Title updated","Название обновлено"
+Title:,Заголовок:
+To,До
+"To Slide","На Слайд"
+"Toggle Layer Animation","Переключить Анимацию Слоя"
+"Toggle Layer Class","Переключить Класс Слоя"
+"Toggle Slider","Переключить Слайдер"
+"Toogle Class","Переключить Класс"
+Top,Верх
+"Top Left","Верхний Левый"
+"Top Right","Верхний Правый"
+"Total Slider Size:","Общий Размер Слайдера:"
+Touch,Касание
+"Touch Enabled","Реагировать на нажатия пальца "
+Transform,Трансформация
+Transformations,Трансформации
+"Transition Duration","Длительность Анимации"
+"Transition Slot Amount","Кол-во слотов Анимации"
+"Transition Type","Тип Анимации"
+Transitions,Переходы
+Transparent,Прозрачность
+"Trigger Memory","Память События"
+Troubleshooting,"Устранение неисправностей"
+"Twitter Name @","Имя Twitter @"
+"Unbind all listeners, remove current animations and delete containers. Ready for Garbage collection.","Убрать все события, анимации и удалить контейнеры. Готов для сборки мусора."
+Unknown,Неизвестно
+Unpublished,Неопубликован
+Unsorted,Несортированный
+Update,Обновить
+"Update History","История обновлений"
+"Update Video","Обновить Видео"
+"Use Alternative Image","Использовать альтернативное изображение"
+"Use Cover","Использовать Обложку"
+"Use a general background image instead of general background color.","Использовать изображения общего фона вместо цвета фона."
+"Used Transitions (Order in Loops)","Используемые Анимации ( Порядок в циклах )"
+User,Пользователь
+"User Photoset","Фотосет Пользователя"
+"User Public Photos","Публичные фотографии пользователя"
+Username,"Имя пользователя"
+"Varying Fade","Варьирование Скрытия"
+"Varying Rotation","Варьирование Поворота"
+"Varying Scale","Варьируемое Масштабирование"
+Vertical,Вертикальное
+"Vertical Align","Вертикальное выравнивание"
+"Vertical Align of the Carousel.","Вертикальное выравнивание карусели"
+"Vertical Aligns","Вертикальное выравнивание"
+"Vertical Offset","Вертикальный сдвиг"
+"Vertical Offset from Aligned Position (px)","Вертикальный сдвиг от позиции выравнивания ( рх )"
+"Vertical Offsets:","Вертикальные сдвиги:"
+"Vertical Origin","Вертикальный Origin"
+"Vertical position of tabs.","Вертикальная позиция табов."
+"Vertical position of the left arrow.","Вертикальная позиция левой стрелки"
+"Vertical position of the right arrow.","Вертикальная позиция правой стрелки"
+"Vertical position of thumbnails","Вертикальная позиция миниатюр"
+"Vertical positions of bullets ","Вертикальная позиция маркеров"
+Video,Видео
+"Video Height (px). Use 'auto' to respect White Space","Высота видео ( px ). Используйте ""auto"" чтобы учитывать пробелы"
+"Video MP4 Url","Видео MP4 Url"
+"Video OGV Url","Видео OGV Url"
+"Video Performance","Производительность Видео"
+"Video Preload:","Предварительная загрузка видео:"
+"Video Settings","Параметры Видео"
+"Video Speed:","Скорость Видео:"
+"Video Thumbnail","Миниатюра Видео"
+"Video WEBM Url","Видео WEBM Url"
+"Video is playing in slider","Видео 
+в слайдере воспроизводится"
+"Video stopped in slider","Видео 
+в слайдере 
+остановлено "
+"Videos Loaded (max):","Загруженные видео ( макс ):"
+View,Просмотр
+Views,Просмотры
+"Vimeo ID or URL","Vimeo ID или URL"
+"Vimeo Video","Vimeo Видео"
+Visibility,Видимость
+"Visibility on Devices","Видимость на устройствах"
+"Visible Tabs Amount","Кол-во видимых табов"
+"Visible Thumbs Amount","Кол-во видимых Миниатюр"
+"Visible from:","Видим с:"
+"Visible until:","Видим до:"
+Wait,Ожидание
+"Wait for Trigger","Ждать События"
+Wave,Волна
+"White Space",Пробелы
+Width,Ширина
+Width:,Ширина:
+"Woo Commerce Slider","Woo Commerce Слайдер"
+"Word Based","Разделить на слова"
+"Wrapper Color","Цвет контейнера"
+"Wrapper Container",Контейнер
+"Wrapper Padding",Отступ
+"Wrapper color","Цвет контейнера"
+"Wrong ID given","Неверный ID"
+"Wrong Request","Неверный Запрос"
+"X Scale  1 = 100%, 0.5=50%... (+/-)","X Масштабирование 1 = 100%, 0.5=50%... (+/-)"
+"X Skew (+/-  px)","X Наклон (+/-  px)"
+"Y Scale  1 = 100%, 0.5=50%... (+/-)","Y 
+Масштабирование 
+1 = 100%, 0.5=50%... (+/-)"
+"Y Skew (+/-  px)","Y 
+Наклон 
+(+/-  px)"
+Yes,Да
+"YouTube ID or URL","YouTube ID или URL"
+"YouTube Video","YouTube Видео"
+"Youtube API Key","Youtube API Key
+"
+"Z Offset (+/-  px)","Z Смещение (+/-  px)"
+"Zoom End","Конец Увеличения"
+"Zoom Start","Начало Увеличения"
+"a Tag Link","Ссылка - Таг"
+append,добавить
+"center bottom","центра снизу"
+"center center","центр центр"
+"center right","центр справа"
+"center top","центр сверху"
+"could not find correct Slide to copy, please try again.","невозможно найти корректный слайд для копирования, попробуйте еще раз."
+deg,град.
+example,пример
+"example: 30300114","пример: 30300114"
+"example: T8--OggjJKQ","например: T8--OggjJKQ"
+"i.e.: 0:17","например: 0:17"
+"i.e.: 2:41","например: 2:41"
+"insert the shortcode:","Вставить shortcode:"
+"jQuery Link","Ссылка jQuery"
+"jQuery Loaded:","jQuery загружено:"
+"jQuery Performance","Производительность jQuery"
+layer:,слой:
+"left bottom","слева снизу"
+"left center","слева центр"
+"left top","слева сверху"
+missing,отсутствует
+ms,мс
+none,пусто
+overwrite,заменить
+"right bottom","справа внизу"
+"right center","справа центр"
+"right top","справа сверху"
+"the basic height of one tab.","Стандартная длина одного таба."
+updating...,обновляются...
+use,изпользовать

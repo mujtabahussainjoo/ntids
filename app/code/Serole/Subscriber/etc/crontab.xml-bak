@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="serole_subscriber_cron_group">
+	
+        <job name="serole_subscriber_cronjob_subscriberlist" instance="Serole\Subscriber\Cron\Subscriberlist" method="execute">
+            <!-- <schedule>*/5 * * * *</schedule> -->
+            <!-- <schedule>0 4 * * *</schedule> -->
+        </job>
+		 
+    </group>
+</config>

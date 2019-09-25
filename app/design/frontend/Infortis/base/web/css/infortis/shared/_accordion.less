@@ -1,0 +1,147 @@
+//
+//  Accordion
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+.uaccordion {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+.uaccordion ul {
+    display:block; /*display:none;*/
+    float:left;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+.uaccordion li {
+    float:left;
+    display:block;
+    width:100% !important;
+    padding:0 !important;
+    margin:0;
+    list-style-type:none;
+    cursor:pointer;
+    position:relative;
+}
+
+.uaccordion li a {
+    display:block;
+    padding:15px 10px;
+    font-size: 1.1666em; /*14px*/
+    line-height: 1.2857em; /*18px*/
+}
+.uaccordion li li a { padding-left:20px; }
+.uaccordion li li li a { padding-left:40px; }
+.uaccordion li li li li a { padding-left:60px; }
+
+/* Space for openner if item has children.
+   Space has to be a few pixels wider than openner */
+.uaccordion li.parent > a { padding-right:54px; }
+
+//
+// Opener
+//  ---------------------------------------------
+
+.uaccordion .opener {
+    position:absolute;
+    right:0;
+    top:0;
+    display:block;
+    cursor:pointer;
+    text-align:center;
+    
+    width:49px;
+    height:49px;
+    line-height:49px;
+}
+.uaccordion .opener:hover {
+    background-color:rgba(0,0,0, 0.05);
+}
+//.uaccordion li.item-active > .opener {}
+
+//
+//  Accordion - Style 1
+//  _____________________________________________
+
+//  Padding
+
+.uaccordion-style1 li a { padding: 0px 10px; }
+.uaccordion-style1 li li a { padding-left: 20px; }
+.uaccordion-style1 li li li a { padding-left: 35px; }
+.uaccordion-style1 li li li li a { padding-left: 50px; }
+
+/* Space for openner if item has children.
+   Space has to be a few pixels wider than openner */
+.uaccordion-style1 li.parent > a { padding-right:33px; }
+
+//  Misc
+
+.uaccordion-style1 li a {
+    border-bottom-color:#eee;
+    border-bottom:1px solid rgba(0,0,0,0.06);
+    font-size:1em; /*12px*/
+    line-height:1.5em; /*18px*/
+}
+.uaccordion-style1 li a:hover {
+    background-color:rgba(0,0,0, 0.03);
+}
+
+//
+//  Opener
+//  ---------------------------------------------
+
+.uaccordion-style1 .opener {
+    width:28px;
+    height:28px;
+    line-height:28px;
+    background-color:rgba(0,0,0, 0.03) !important;
+}
+.uaccordion-style1 .opener:hover {
+    background-color:rgba(0,0,0, 0.10);
+}
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .uaccordion-style1 li a {
+        padding: 15px 10px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    // Space for openner if item has children. It has to be a few pixels wider than openner.
+    .uaccordion-style1 li.parent > a {
+        padding-right: 53px;
+    }
+    .uaccordion-style1 .opener {
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+    }
+
+}
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+// }

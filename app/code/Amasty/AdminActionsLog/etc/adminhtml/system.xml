@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="amaudit" translate="label" type="text" sortOrder="10401" showInDefault="1" showInWebsite="1" showInStore="1">
+
+            <label>Admin Actions Log</label>
+            <tab>amasty</tab>
+            <resource>Amasty_AdminActionsLog::amaudit_settings</resource>
+
+            <group id="log" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Log Settings</label>
+                <field id="log_enable_visit_history" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Page Visit History</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="log_all_admins" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Log Actions For All Admin Users</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="log_admin_users" translate="label comment" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Users To Log Actions For</label>
+                    <source_model>Amasty\AdminActionsLog\Model\Source\Users</source_model>
+                    <depends>
+                        <field id="log_all_admins">0</field>
+                    </depends>
+                </field>
+                <field id="log_delete_logs_after_days" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatically Clear Action Logs After, Days</label>
+                </field>
+                <field id="log_delete_login_attempts_after_days" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatically Clear Login Attempts After, Days</label>
+                    <comment><![CDATA[Set 0 for unlimited]]></comment>
+                </field>
+                <field id="log_delete_pages_history_after_days" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatically Clear Page History Log, Days</label>
+                    <comment><![CDATA[Set 0 for unlimited]]></comment>
+                </field>
+            </group>
+
+            <group id="geolocation" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Geolocation</label>
+                <field id="geolocation_enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Geo IP</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_model>Amasty\AdminActionsLog\Block\Adminhtml\Settings\Geolocation</frontend_model>
+                </field>
+            </group>
+
+            <group id="restore" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Restore Settings</label>
+                <field id="restore_popup_message" translate="label comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Warning Text</label>
+                </field>
+            </group>
+
+            <group id="successful_log_mailing" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Successful Logins To Admin</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="template" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="send_to_mail" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send to Email</label>
+                    <frontend_class>validate-email</frontend_class>
+                </field>
+            </group>
+
+            <group id="suspicious_log_mailing" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Suspicious Logins To Admin</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="template" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="send_to_mail" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send to Email</label>
+                    <frontend_class>validate-email</frontend_class>
+                </field>
+            </group>
+
+            <group id="unsuccessful_log_mailing" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Unsuccessful Logins To Admin</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="template" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="send_to_mail" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send to Email</label>
+                    <frontend_class>validate-email</frontend_class>
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>

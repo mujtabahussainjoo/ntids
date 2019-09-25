@@ -1,0 +1,296 @@
+<?php
+/**
+ * Main menu bar
+ *
+ * @var Infortis_UltraMegamenu_Block_Mainmenu $this
+ */
+?>
+<?php
+    $helper = $block->getHelperData();
+    $isHomepage = $helper->isHomePage();
+?>
+<?php if ($helper->getCfg('mainmenu/enable') && ($isHomepage && $helper->getCfg('mainmenu/remove_on_home')) == false): ?>
+<?php
+    $connectorTheme = $this->getHelperConnectorBaseTheme();
+
+    //-1 = only mobile menu
+    // 0 = both
+    // 1 = only standard desktop dropdown menu
+    $mode = $helper->getCfg('mainmenu/mode');
+
+    //Display categories inside the menu
+    $showCategories = $helper->getCfg('mainmenu/categories');
+
+    //Check if vertical menu type is enabled. 
+    //Vertical menu inside a drop-down box which will be visible when user clicks special button (vertical menu trigger) in the menu bar.
+    //Default menu type is standard horizontal menu (regular menu) with dropdowns displayed at the bottom of the menu.
+    $isTypeVerticalDropdown = $helper->getCfg('mainmenu/vertnav');
+
+    // Check if vertical drop-down menu is initially collapsed (home page has separate option)
+    if ($isHomepage)
+    {
+        $isVertnavCollapsed = ($helper->getCfg('mainmenu/vertnav_collapsed_on_home')) ? true : false;
+    }
+    else
+    {
+        $isVertnavCollapsed = ($helper->getCfg('mainmenu/vertnav_collapsed')) ? true : false;
+    }
+
+    //Additional custom inline links
+    $linksHtml = $this->getChildHtml('block_nav_links');
+
+    //Set variable indicating that the top menu (categories, custom links, or both) exists and is rendered
+    if ($isTypeVerticalDropdown)
+    {
+        if ($showCategories)
+        {
+            $this->getRegistry()->register('umm_top_menu_exists', true);
+        }
+    }
+    else
+    {
+        if ($showCategories || $linksHtml)
+        {
+            $this->getRegistry()->register('umm_top_menu_exists', true);
+        }
+    }
+
+    //CSS classes. By default add regular menu class.
+    $naviClasses = 'navi nav-regular opt-fx-fade-inout ' . $helper->getBlocksVisibilityClassOnMobile();
+
+    if ($isTypeVerticalDropdown)
+    {
+        $naviClasses .= ' nav-vert nav-vert-triggerable';
+    }
+
+    if ($helper->getCfg('mainmenu/centered'))
+    {
+        $naviClasses .= ' centered';
+    }
+
+    if ($helper->getCfg('mainmenu/show_bullets'))
+    {
+        $naviClasses .= ' with-bullets';
+    }
+
+    //Get blocks that can be displayed inside the menu bar
+    //--------------------------------------------------------------
+    $searchHtml = '';
+    $cartHtml = '';
+    $compareHtml = '';
+    $isDisplayedInMenu = $connectorTheme->getIsDisplayedInMenu();
+
+    if ($isDisplayedInMenu !== NULL)
+    {
+        if ($isDisplayedInMenu['search'])
+        {
+            $searchHtml = '<div id="search-marker-regular"></div>';
+        }
+        if ($isDisplayedInMenu['cart'])
+        {
+            $cartHtml = '<div id="mini-cart-marker-regular"></div>';
+        }
+        if ($isDisplayedInMenu['compare'])
+        {
+            $compareHtml = '<div id="mini-compare-marker-regular"></div>';
+        }
+    }
+?>
+<div class="navi-wrapper">
+
+    <?php //Holder for additional elements inside the menu bar ************************************************************** ?>
+    <ul class="nav-holders-wrapper right-column">
+        <li id="nav-holder1" class="nav-item level0 level-top nav-holder"><?php echo $searchHtml; ?></li>
+        <li id="nav-holder2" class="nav-item level0 level-top nav-holder"><?php echo $cartHtml; ?></li>
+        <li id="nav-holder3" class="nav-item level0 level-top nav-holder"><?php echo $compareHtml; ?></li>
+    </ul>
+
+    <?php //Mobile menu trigger ************************************************************** ?>
+    <?php //Show mobile menu trigger (to toggle mobile menu) ?>
+    <?php if ($mode <= 0): //Mode: mobile or both ?>
+
+        <div id="mobnav-trigger" class="mobnav-trigger menu-trigger">
+            <div class="menu-trigger-inner">
+                <span class="trigger-icon"><span class="line"></span><span class="line"></span><span class="line"></span></span>
+                <span class="label"><?php echo __('Menu'); ?></span>
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+    <?php //Vertical menu trigger ************************************************************** ?>
+    <?php if ($isTypeVerticalDropdown): ?>
+
+        <div id="vertnav-trigger" class="vertnav-trigger menu-trigger">
+            <div class="menu-trigger-inner">
+                <span class="trigger-icon"><span class="line"></span><span class="line"></span><span class="line"></span></span>
+                <span class="label"><?php echo __('Menu'); ?></span>
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+    <?php //Additional links for vertical menu ************************************************************** ?>
+    <?php
+    //Display custom links as inline links only if vertical menu type enabled.
+    //Otherwise custom links are displayed inside block of categories.
+    ?>
+    <?php if ($isTypeVerticalDropdown && $linksHtml): ?>
+        <ul class="nav-inline-links navi nav-regular">
+            <?php echo $linksHtml; ?>
+        </ul>
+    <?php endif; ?>
+
+    <?php //Menu ************************************************************** ?>
+    <div id="nav-marker-regular"></div>
+    <nav id="mainmenu" class="<?php echo $naviClasses; ?>">
+        <ul>
+
+            <?php //Optional sticky logo (Note: block is being added by the base theme) ?>
+            <?php echo $this->getChildHtml('stickylogo'); ?>
+
+            <?php //Home link
+                $isHomeLink = false;
+                $homeLinkWrapperClass = '';
+                $homeLinkIcon = '';
+                $homeLinkText = '';
+
+                //If it's home page
+                if ($isHomepage)
+                {
+                    $homeLinkWrapperClass .= ' active';
+                }
+
+                //Display: home link, single icon
+                if ($helper->getCfg('mainmenu/home_link_icon'))
+                {
+                    $isHomeLink = true;
+                    $homeLinkWrapperClass .= ' nav-item--homeicon'; //Special class, indicates item with single icon
+                    $homeLinkIcon = '<span class="ic ic-home"></span>';
+                }
+
+                //Display: home link (text/icon or both) inside standard menu item
+                if ($isHomeLink === false) //Display it only if single home link was not yet enabled
+                {
+                    if ($helper->getCfg('mainmenu/home') || $helper->getCfg('mainmenu/home_img'))
+                    {
+                        $isHomeLink = true;
+
+                        //If home link with text
+                        if ($helper->getCfg('mainmenu/home'))
+                        {
+                            $homeLinkText = '<span>' . __('Home') . '</span>';
+                        }
+
+                        //If home link with icon
+                        if ($helper->getCfg('mainmenu/home_img'))
+                        {
+                            $homeLinkIcon = '<span class="ic ic-home"></span>';
+                        }
+                    }
+                }
+            ?>
+
+            <?php if ($isHomeLink): ?>
+                <li class="nav-item nav-item--home level0 level-top<?php echo $homeLinkWrapperClass; ?>">
+                    <a class="level-top" href="<?php echo $this->getBaseUrl(); ?>"><?php echo $homeLinkIcon, $homeLinkText; ?></a>
+                </li>
+            <?php endif; ?>
+            <?php //end: home link ?>
+
+            <?php //Categories ?>
+            <?php if ($showCategories): ?>
+                <?php echo $this->getChildHtml('catalog.topnav.navigation'); ?>
+            <?php endif; ?>
+        
+            <?php //Static block as a dropdown ?>
+            <?php if ($tmpHtml = $this->getChildHtml('block_nav_dropdown')): ?>
+                <li class="nav-item nav-item--parent nav-item--only-blocks level0 level-top parent nav-custom-link<?php if ($helper->getCfg('mainmenu/custom_block_floating')) echo ' right'; ?>">
+                    <?php //Get the block title, and display it as menu item
+                        $staticBlockTitle = $this->getStaticBlockTitle('block_nav_dropdown');
+                    ?>
+                    <a class="level-top no-click" href="#"><span><?php echo $staticBlockTitle; ?></span><span class="caret"></span></a>
+                    <span class="opener"></span>
+                    <div class="nav-panel nav-panel--dropdown full-width">
+                        <div class="nav-panel-inner">
+                            <div class="header-nav-dropdown-wrapper nav-block std grid-full clearer"><?php echo $tmpHtml; ?></div>
+                        </div>
+                    </div>
+                </li>
+            <?php endif; ?>
+            
+            <?php //Display custom links inside block of categories only if vertical menu type not enabled ?>
+            <?php if ($isTypeVerticalDropdown == false): ?>
+                <?php echo $linksHtml; ?>
+            <?php endif; ?>
+            
+        </ul>
+    </nav>
+
+    <div class="nav-border-bottom"></div>
+
+</div> <!-- end: navi-wrapper -->
+<script type="text/javascript">
+//<![CDATA[
+
+requirejs(['jquery', 'ultramegamenu'], function(jQuery, ultramegamenu) {
+
+    var topMenuContainer = jQuery('#mainmenu');
+    var topMenuSettings = {
+        mobileMenuThreshold: <?php echo intval($helper->getCfg('mobilemenu/threshold')); ?>
+        , isVerticalLayout: <?php echo ($isTypeVerticalDropdown) ? 'true' : 'false'; ?>
+        , vertnavTriggerSelector: '#vertnav-trigger'
+        , mode: <?php echo $mode; ?>
+        <?php /* , initMobileMenuCollapsed: <?php echo ($helper->getCfg('mobilemenu/collapsed')) ? 'true' : 'false'; ?> */?>
+        , initVerticalMenuCollapsed: <?php echo ($isVertnavCollapsed) ? 'true' : 'false'; ?>
+        , outermostContainer: <?php echo $helper->getOutermostContainer(); ?>
+        , fullWidthDdContainer: <?php echo $helper->getFullwidthDropdownContainer(); ?>
+    };
+    var theTopMenu = topMenuContainer.ultramegamenu(topMenuSettings).data("infortis-ultramegamenu");
+    theTopMenu.enableDropdowns();
+
+    <?php //Mode: regular or both ?>
+    <?php if ($mode >= 0): ?>
+
+        jQuery(function($) {
+
+            var itemsList = topMenuContainer.children('ul'); // itemsList.css('background-color', 'yellow'); ///
+
+            // Non-clickable links
+            itemsList.on('click', '.no-click', function(e) {
+                e.preventDefault();
+            });
+
+        }); //end: on document ready
+
+        jQuery(window).on("load", function() {
+
+            var menubar = topMenuContainer;
+            var isTouchDevice = ('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0);
+            if (isTouchDevice)
+            {
+                menubar.on('click', 'a', function(e) {
+
+                    var link = jQuery(this);
+                    if (!menubar.hasClass('nav-mobile') && link.parent().hasClass('nav-item--parent'))
+                    {
+                        if (!link.hasClass('ready'))
+                        {
+                            e.preventDefault();
+                            menubar.find('.ready').removeClass('ready');
+                            link.parents('li').children('a').addClass('ready');
+                        }
+                    }
+
+                }); //end: on click
+            } //end: if isTouchDevice
+
+        }); //end: on load
+
+    <?php endif; //end: regular or both ?>
+
+}); //end: requirejs
+
+//]]>
+</script>
+<?php endif; //end: if 'mainmenu/enable' ?>

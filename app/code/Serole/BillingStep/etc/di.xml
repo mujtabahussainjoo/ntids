@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Serole\BillingStep\Api\Data\DeliveryemailInterface" type="Serole\BillingStep\Model\Data\Deliveryemail" />
+    <preference for="Serole\BillingStep\Api\DeliveryemailRepositoryInterface" type="Serole\BillingStep\Model\DeliveryemailRepository" />
+    <preference for="Serole\BillingStep\Api\DeliveryemailGuestRepositoryInterface" type="Serole\BillingStep\Model\DeliveryemailGuestRepository" />
+
+    <preference for="Serole\BillingStep\Api\Data\BillingemailInterface" type="Serole\BillingStep\Model\Data\Billingemail" />
+    <preference for="Serole\BillingStep\Api\BillingemailRepositoryInterface" type="Serole\BillingStep\Model\BillingemailRepository" />
+    <preference for="Serole\BillingStep\Api\BillingemailGuestRepositoryInterface" type="Serole\BillingStep\Model\BillingemailGuestRepository" />
+    <preference for="Magento\Sales\Controller\Adminhtml\Order\Create\Save" type="Serole\BillingStep\Controller\Adminhtml\Order\Create\Save" />
+    <preference for="Magento\Checkout\Block\Checkout\LayoutProcessor" type="Serole\BillingStep\Block\Checkout\LayoutProcessor" />
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="deliveryemail_shipping_step" type="Serole\BillingStep\Plugin\Checkout\Model\ShippingInformationManagement" sortOrder="1"/>
+    </type>
+</config>

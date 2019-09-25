@@ -1,0 +1,93 @@
+& when (@media-common = true) {
+    .hdmx__status {
+        background: #BFBFBF;
+        border-radius: 2px;
+        padding: 0.3rem 1rem;
+        font-size: 14px;
+        font-weight: @font-weight__light;
+        color: #fff;
+
+        &.hdmx-aqua {
+            background: #2EC5B9;
+        }
+        &.hdmx-grey {
+            background: #868686;
+        }
+        &.hdmx-navy {
+            background: #4C7EB4;
+        }
+        &.hdmx-silver {
+            background: #8B8B8B;
+        }
+        &.hdmx-black {
+            background: #424242;
+        }
+        &.hdmx-green {
+            background: #59E05B;
+        }
+        &.hdmx-olive {
+            background: #668121;
+        }
+        &.hdmx-teal {
+            background: #3298B1;
+        }
+        &.hdmx-blue {
+            background: #5E6BFF;
+        }
+        &.hdmx-lime {
+            background: #68CF70;
+        }
+        &.hdmx-hdmx-purple {
+            background: #C007BF;
+        }
+        &.hdmx-fuchsia {
+            background: #D55BD5;
+        }
+        &.hdmx-maroon {
+            background: #AF5959;
+        }
+        &.hdmx-red {
+            background: #ff2525;
+        }
+        &.hdmx-orange {
+            background: #FF8C00;
+        }
+        &.hdmx-yellow {
+            background: #f0b700;
+        }
+    }
+
+    .hdmx__tickets {
+        margin-bottom: 3rem;
+    }
+    .hdmx__tickets-table {
+        .col {
+            &.department,
+            &.activity,
+            &.status {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .hdmx-green.create-button, .create-button {
+        white-space: nowrap;
+        float: right;
+        margin-top: -40px;
+        z-index: 1000;
+        position: relative;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .empty .hdmx-green.create-button, .empty .create-button {
+        white-space: nowrap;
+        float: right;
+        margin-top: 45px;
+        z-index: 1000;
+        position: relative;
+        color: #fff;
+        cursor: pointer;
+    }
+}

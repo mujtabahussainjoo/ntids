@@ -1,0 +1,91 @@
+/*----------------------------newmont---------------------------*/
+.main-container {
+     background-color:transparent!important;
+}
+
+.block-search .block.block-content {
+    margin-left: 39%;
+    margin-right: 0px;
+    padding: 1%;
+}
+.navi-wrapper, .nav-regular {
+	font-family: "open_sansbold",sans-serif;
+	background-color: #fff!important;
+}
+.nav-regular li.level0 > a > span {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.8px;
+}
+
+.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{
+	background-image: none !important;
+    background-color: #43697D !important;
+    border: 1px solid;
+    border-radius: 5px!important;
+    box-shadow: none;
+    color: white;
+    overflow: hidden;
+	}
+.primary .register-submit {
+	background-image: none !important;
+    background-color: #43697D !important;
+    border: 1px solid;
+    border-radius: 5px!important;
+    box-shadow: none;
+    color: white;
+    overflow: hidden;
+	}
+	
+@font-face {
+    font-family: "open_sanslight";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+}
+@font-face {
+    font-family: "open_sansregular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Regular-webfont.svg#open_sanslight") format("svg");
+}
+@font-face {
+    font-family: "open_sanssemibold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/OpenSans-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold-webfont.woff") format("woff"), url("../fonts/OpenSans-Semibold-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Semibold-webfont.svg#open_sanslight") format("svg");
+}
+@font-face {
+    font-family: "open_sansbold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold-webfont.woff") format("woff"), url("../fonts/OpenSans-Bold-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Bold-webfont.svg#open_sanslight") format("svg");
+}
+
+.header > li > a,.mini-cart-heading{font-family: "open_sanssemibold",sans-serif;font-size: 12px;}
+body {
+	background-color: #ffffff;
+	font-family: "open_sanslight",sans-serif!important;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+	font-family: "open_sansbold",sans-serif!important;
+}
+.nav-container a{
+	font-family: "open_sansbold",sans-serif!important;
+	font-size: 14px!important;
+}
+@media (min-width: 768px){
+	.block-search.size-s .input-text{height: 36px!important;}
+	.block-search.size-s .action.search .icon{height:0px!important;}
+	.nav-item--parent.parent{border-right: 1px solid #E5E6E6;}
+	.footer-top .item.item-left ul > li > a:hover{font-size: 13px!important;color: #fff;}
+	.footer-top .item.item-left ul > li > a{font-size: 13px!important;color: #999999;}
+	.block_footer_payment{font-size: 13px!important;color: #999999;}
+	.customer-account-create .page-title .base{font-size: 25px!important;}
+	.customer-account-create .legend{font-family: "open_sansbold",sans-serif;font-size: 21px!important;   }
+	.product-view .action.primary, .action.primary.checkout,.products-list-ext .product-item-actions .action.primary{background:#43697D!important;}
+	
+	
+	
+	
+}

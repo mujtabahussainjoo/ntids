@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
+    <type name="Membership" label="Membership" modelInstance="Magedelight\MembershipSubscription\Model\Product\Type\CustomType" indexPriority="100" sortOrder="100" isQty="true">
+        <customAttributes>
+            <attribute name="refundable" value="true"/>
+            <attribute name="taxable" value="true"/>
+        </customAttributes>
+    </type>
+    <composableTypes>
+        <type name="Membership" />
+    </composableTypes>
+</config>

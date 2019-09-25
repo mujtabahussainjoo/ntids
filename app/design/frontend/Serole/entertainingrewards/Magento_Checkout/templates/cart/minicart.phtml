@@ -1,0 +1,133 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/**
+ * @var $block \Magento\Checkout\Block\Cart\Sidebar
+ */
+?>
+<?php
+    $theme = $this->helper('Infortis\Base\Helper\Data');
+    $helperHeader = $this->helper('Infortis\Base\Helper\Template\Theme\Html\Header');
+
+    //
+    // Counter classes
+    // ----------------------------------------------
+    $counterClasses = ' ic ic-char ib';
+
+    // Counter size
+    $counterSize = $theme->getCfgDesign('dropdowns/cart_counter_size');
+    $counterClasses .= ' ib-size-' . $counterSize;
+
+    // Counter shape
+    $counterClasses .= ' ib-' . $theme->getCfgDesign('dropdowns/cart_counter_shape');
+    
+    //
+    // Icon classes
+    // ----------------------------------------------
+    $iconClasses = ' ic';
+
+    // Icon name
+    $iconName = $theme->getCfgDesign('dropdowns/cart_icon');
+    $iconName = ' ic-' . $iconName;
+
+    // Icon size
+    $iconSize = $theme->getCfgDesign('dropdowns/cart_icon_size');
+
+    // Iconbox classes
+    $iconboxClasses = '';
+    $iconboxSize = $theme->getCfgDesign('dropdowns/cart_iconbox_size');
+    if ($iconboxSize !== '0')
+    {
+        // Iconbox size
+        $iconboxClasses .= ' ib ib-size-' . $iconboxSize;
+
+        // Iconbox shape
+        $iconboxClasses .= ' ib-' . $theme->getCfgDesign('dropdowns/cart_iconbox_shape');
+    }
+
+    // Merge icon and iconbox classes
+    $iconClasses .= $iconName . $iconboxClasses;
+
+    //
+    // Wrapper classes
+    // ----------------------------------------------
+    $headingClasses = '';
+
+    // Counter position
+    $headingClasses .= ' counter-over-' . $theme->getCfgDesign('dropdowns/cart_counter_position');
+
+    //
+    // Block classes
+    // ----------------------------------------------
+    $blockClasses = $helperHeader->getDropdownsClasses();
+
+?>
+<div data-block="minicart" class="minicart-wrapper mini-cart dropdown-block<?php echo $blockClasses; ?>" id="minicart">
+    <?php /* <a class="action showcart" href="<?php echo $block->getShoppingCartUrl(); ?>" */ ?>
+    <div data-skiptarget="#header-cart" class="mini-cart-heading dropdown-heading skip-link skip-cart action showcart<?php echo $headingClasses; ?>" data-bind="scope: 'minicart_content'">
+        <span class="inner-heading">
+            <span class="icon<?php echo $iconClasses; ?>" <?php if ($iconSize) echo 'style="font-size: '.$iconSize.'px;"'; ?>></span>
+            <span class="counter qty empty<?php echo $counterClasses; ?>"
+                  data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+                <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+                <span class="counter-label">
+                <!-- ko if: getCartParam('summary_count') -->
+                    <!-- ko text: getCartParam('summary_count') --><!-- /ko -->
+                    <!-- ko i18n: 'items' --><!-- /ko -->
+                <!-- /ko -->
+                </span>
+            </span>
+            <span class="label<?php if (!$theme->getCfgDesign('dropdowns/cart_label')) echo ' hide'; ?>"><?php /* @escapeNotVerified */ echo __('Cart'); ?></span>
+            <span class="caret"></span>
+        </span>
+    </div>
+    <?php if ($block->getIsNeedToDisplaySideBar()): ?>
+        <div id="header-cart" class="mini-cart-content dropdown-content skip-content skip-content--style block-cart block block-minicart empty"
+            data-role="dropdownDialog"
+            data-mage-init='{"dropdownDialog":{
+                "triggerEvent": "click mouseenter",
+                "appendTo": "[data-block=minicart]",
+                "triggerTarget": ".showcart",
+                "timeout": "200",
+                "closeOnMouseLeave": true,
+                "closeOnEscape": true,
+                "parentClass": "active open",
+                "buttons": []}}'>
+            <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            </div>
+            <?php echo $block->getChildHtml('minicart.addons'); ?>
+        </div>
+    <?php endif ?>
+    <script>
+        window.checkout = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($block->getConfig()); ?>;
+    </script>
+    <script type="text/x-magento-init">
+    {
+        "[data-block='minicart']": {
+            "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+        },
+        "*": {
+            "Magento_Ui/js/block-loader": "<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+        }
+    }
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        requirejs(['jquery'], function(jQuery) {
+            jQuery(function($) {
+                // If header is in mobile mode, remove "display: block". See #10.
+                $(document).on('dropdowndialogcreate', function(event) {
+                    if ($('#header-container').hasClass('header-mobile'))
+                    {
+                        $('#header-cart').css('display', '');
+                    }
+                });
+                $(document).on('dropdowndialogbeforeclose', function(event) {
+                    $('#header-cart').data('mage-dropdownDialog').opener = $(document.body); // See #5
+                });
+            });
+        }); //end: requirejs
+        //]]>
+    </script>
+</div>

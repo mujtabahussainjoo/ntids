@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/carts/mine/set-order-deliveryemail" method="PUT">
+        <service class="Serole\BillingStep\Api\DeliveryemailRepositoryInterface" method="saveDeliveryemail"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/guest-carts/:cartId/set-order-deliveryemail" method="PUT">
+        <service class="Serole\BillingStep\Api\DeliveryemailGuestRepositoryInterface" method="saveDeliveryemail"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+
+    <route url="/V1/carts/mine/set-order-billingemail" method="PUT">
+        <service class="Serole\BillingStep\Api\BillingemailRepositoryInterface" method="saveBillingemail"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/guest-carts/:cartId/set-order-billingemail" method="PUT">
+        <service class="Serole\BillingStep\Api\BillingemailGuestRepositoryInterface" method="saveBillingemail"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+</routes>

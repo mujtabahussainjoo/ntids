@@ -1,0 +1,24 @@
+<?php
+$helper                     = $block->getGroupSwitcherHelper();
+$isGroupEditable            = $helper->getConfigHelper()->isGroupSelectionEditable();
+$isValidCustomerForEdit     = $helper->isValidCustomerForEdit();
+if ($block->getIsEditPage() && ! $isValidCustomerForEdit) return '';
+$customerId = $block->getObject()->getId();
+$groupCode = $customerId
+    ? $helper->loadCustomer($customerId)->getCustomAttribute('mp_group_code')
+        ? $helper->loadCustomer($customerId)->getCustomAttribute('mp_group_code')->getValue()
+        : ''
+    : $block->getObject()->getMpGroupCode();
+?>
+<div class="field mp_group_code<?php if ($block->isRequired()) echo ' required'; ?>">
+    <label class="label" for="<?php /* @escapeNotVerified */ echo $block->getFieldId('mp_group_code')?>"><span><?php /* @escapeNotVerified */ echo $block->getGroupLabel() ?></span></label>
+    <div class="control">
+
+        <?php if ($block->getIsEditPage() && ! $isGroupEditable) : ?>
+            <?php echo $groupCode; ?>
+        <?php else: ?>
+            <input type="text" id="<?php /* @escapeNotVerified */ echo $block->getFieldId('mp_group_code')?>" name="<?php /* @escapeNotVerified */ echo $block->getFieldName('mp_group_code')?>" value="<?php echo $block->escapeHtml($groupCode) ?>" title="<?php /* @escapeNotVerified */ echo $block->escapeHtml($block->getGroupLabel()) ?>" class="input-text" <?php /* @escapeNotVerified */ echo $block->getFieldParams() ?> <?php if ($block->isRequired()) echo ' data-validate="{required:true}"' ?>>
+        <?php endif; ?>
+
+    </div>
+</div>

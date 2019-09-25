@@ -1,0 +1,136 @@
+Department,Département
+"Create New Ticket","Créer un nouveau ticket"
+Status,Statut
+Priority,Priorité
+Replies,Réponses
+View,Vue
+"Help Desk","Bureau d&#39;aide"
+"Thank you","Je vous remercie"
+"Create Ticket","Créer un ticket"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Votre demande a bien été envoyée. Vous devriez recevoir un email de confirmation sous peu."
+Telephone,Téléphone
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Votre demande a été soumise et sera traitée le plus rapidement possible. Merci de nous contacter."
+"Unable to submit your request. Please, try again later","Impossible de soumettre votre demande. Veuillez réessayer plus tard"
+"Page not found.","Page non trouvée."
+"Your message was successfuly posted","Votre message a été posté avec succès"
+"Your ticket was successfuly posted","Votre billet a été posté avec succès"
+"Ticket was successfuly closed","Le billet a été fermé avec succès"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Impossible de télécharger le fichier %1. La taille de téléchargement maximale autorisée est de 2 Mo."
+"Allows only this file types: %1","Autorise uniquement les types de fichiers suivants: %1"
+"Message added","Message ajouté"
+"Internal note added","Note interne ajoutée"
+"Third party message added","Message de tiers ajouté"
+"Private third party message added","Message d&#39;un tiers privé ajouté"
+"-- Please Select --","- Veuillez sélectionner -"
+"Contact Tab","Onglet Contact"
+"Contact Form","Formulaire de contact"
+" at %1 (%2) - %3","à %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Vous n&#39;êtes pas autorisé à lire ce ticket. S&#39;il vous plaît, contactez votre administrateur."
+"Invalid Customer Email","Email client non valide"
+"not set","pas encore défini"
+"Unknown time","Temps inconnu"
+ago,depuis
+"from now","à partir de maintenant"
+"1 sec ago","Il y a 1 sec"
+"Open Ticket","Ticket ouvert"
+"Open Tickets","Billets ouverts"
+"! Blocked file - ","! Fichier bloqué -"
+Disabled,Désactivé
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","Système de fichiers"
+Database,"Base de données"
+Aqua,Aqua
+Grey,Gris
+Navy,Marine
+Silver,Argent
+Black,Noir
+Green,Vert
+Olive,Olive
+Teal,Sarcelle
+Blue,Bleu
+Lime,"Citron vert"
+Purple,Violet
+Fuchsia,Fuchsia
+Maroon,Bordeaux
+Red,Rouge
+Orange,Orange
+Yellow,Jaune
+Text,Texte
+Date,"Rendez-vous amoureux"
+Checkbox,"Case à cocher"
+"Drop-down list","La liste déroulante"
+"In minutes...","En quelques minutes ..."
+"In hours...","En heures ..."
+"In days...","En jours..."
+"In weeks...","En semaines ..."
+"In months...","En mois ..."
+Custom,Douane
+"--Please Select--","--Veuillez sélectionner--"
+"New ticket created","Nouveau ticket créé"
+Success,Succès
+Customer,Client
+Staff,Personnel
+"Third party","Tierce personne"
+Closed,Fermé
+"Opened 24hr","Ouvert 24 heures"
+"Helpdesk Tickets","Helpdesk Billets"
+"Cannot delete ticket with id %1","Impossible de supprimer le ticket avec l&#39;ID %1"
+Edit,Modifier
+"All Departments","Tous les départements"
+Back,Arrière
+"24 hrs x 7 days","24 heures x 7 jours"
+"Select working days/hours","Sélectionnez les jours / heures de travail"
+"Satisfaction survey","Enquête de satisfaction"
+"to %1 (third party)","à %1 (tiers)"
+"%1 (third party)","%1 (tiers)"
+"added %1 (%2)","ajouté %1 (%2)"
+"Ticket Summary","Résumé du billet"
+"Ticket ID","ID de billets"
+Assignee,Cessionnaire
+"Additional Info","Information additionnelle"
+"Ticket History","Historique des tickets"
+"Done by","Fait par"
+Changes,Changements
+Name,Prénom
+"Attach files","Joindre des fichiers"
+Submit,Soumettre
+"Submit Ticket","Envoyer le ticket"
+"What is your question?","Quelle est ta question?"
+"We found the following topics that might be helpful:","Nous avons trouvé les sujets suivants qui pourraient être utiles:"
+"None of these are helpful - get in touch","Aucun d&#39;entre eux n&#39;est utile - contactez-nous"
+"We have not found topics that can be helpful.","Nous n&#39;avons pas trouvé de sujets pouvant être utiles."
+"Contact Information","Informations de contact"
+Comment,Commentaire
+"We are open 24 x 7","Nous sommes ouverts 24 x 7"
+"We are closed","Nous sommes fermés"
+"Timezone: %1","Fuseau horaire: %1"
+"Please take a second to rate my reply...","S&#39;il vous plaît prenez une seconde pour évaluer ma réponse ..."
+Great,Génial
+Awesome,Impressionnant
+"Fast, friendly, helpful, pleasant. Great job!","Rapide, amical, serviable, agréable. Bon travail!"
+"Just Okay","Juste correct"
+"Fine, but definitely could have been better.","Bien, mais certainement aurait pu être mieux."
+"Not good","Pas bon"
+"Unfortunately, I wasn't happy with it at all.","Malheureusement, je n&#39;étais pas content du tout."
+"Thank you for participating in our survey!","Merci pour votre participation à notre sondage!"
+"If you would like to provide additional comments, please do so below:","Si vous souhaitez ajouter des commentaires, veuillez le faire ci-dessous:"
+Message,Message
+"Submit Message","Soumettre un message"
+"Thank you for your feedback!","Merci pour votre avis!"
+Attachments,"Pièces jointes"
+Order,Commande
+"-- Select an Order --","- Sélectionnez une commande -"
+"Create ticket","Créer un ticket"
+"You don't have open tickets","Vous n&#39;avez pas de tickets ouverts"
+"Post a Reply","Poster une réponse"
+"Reopen Ticket","Billet de réouverture"
+"Close Ticket","Fermer le ticket"
+History,Histoire
+"Back to My Tickets","Retour à mes billets"
+"Help Desk MX","Bureau d&#39;assistance MX"
+"Contact Us","Contactez nous"
+Open,Ouvrir
+Subject,Assujettir
+"Last Activity","Dernière Activité"
+"Request ID","ID de demande"

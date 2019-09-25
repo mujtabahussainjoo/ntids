@@ -1,0 +1,64 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 1;
+  z-index:99;
+}
+.overlay{
+  visibility: hidden;
+  opacity: 1;
+}
+.loader-img{padding: 42%;}
+.popup {
+  top: 25%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 150px;
+  background: #EFEFEF;
+  border-radius: 5px;
+  width: 35%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+/* @media screen and (max-width: 700px){ */
+  /* .box{ */
+    /* width: 70%; */
+  /* } */
+  /* .popup{ */
+    /* width: 70%; */
+  /* } */
+/* } */
+@media screen and (max-width: 500px){
+  .loader-img img{margin: -28px 0 0 0;}
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 15%;
+	padding: 140px;
+	height: 90px;
+  }
+  h3{
+    font-size: 22px;
+    width: 234px;
+    margin: 2px 0 0 -64px;
+  } 
+  .popup .content {
+    max-height: max-content;
+    overflow: auto;
+    width: 230px;
+    margin: 12px 0 1px -65px;
+  }
+}

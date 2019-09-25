@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="serole" sortOrder="999" translate="label">
+			<label>serole</label>
+		</tab>
+		<section id="description" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Footer Invoice ABN</label>
+			<tab>serole</tab>
+			<resource>Serole_DescriptionChanger::config_serole_descriptionchanger</resource>
+			<group id="description" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Description</label>
+				<field id="description" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="textarea">
+					<label>Description</label>
+					<comment>add descriptions</comment>
+					<!-- <backend_model>Description</backend_model> -->
+				</field>
+				<field id="sku" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="11" translate="label" type="textarea">
+					<label>SKU</label>
+					<comment>add Special Skus</comment>
+				</field>
+				<field id="sku_description" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="12" translate="label" type="textarea">
+					<label>Sku Based Description</label>
+					<comment>add descriptions for specific skus</comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

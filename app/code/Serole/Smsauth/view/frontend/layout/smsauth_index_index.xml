@@ -1,0 +1,25 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Second Level Authentication</title>
+        <!-- 
+		demo
+		<css src="Serole_Smsauth::css/css.css"/>
+		<script src="Serole_Smsauth::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+    </head> 
+
+    <body>
+
+        <referenceContainer name="content">
+            <block class="Serole\Smsauth\Block\Index\Index" name="smsauth_index_index" template="Serole_Smsauth::smsauth_index_index.phtml"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

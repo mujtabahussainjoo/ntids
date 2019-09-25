@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page_types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_types.xsd">
+    <type id="kbase_article_s" label="Knowledge Base Search Result"/>
+    <type id="kbase_article_view" label="Knowledge Base Article"/>
+    <type id="kbase_category_view" label="Knowledge Base Category"/>
+    <type id="kbase_category_view_type_with_children" label="Knowledge Base Category With Children"/>
+    <type id="kbase_category_view_mode_extended" label="Knowledge Base Category Extended Mode"/>
+    <type id="kbase_tag_index" label="Knowledge Base Tag Index"/>
+    <type id="kbase_tag_view" label="Knowledge Base Tag View"/>
+</page_types>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+		<add id="Serole_Productattachment::productattachment" title="Manage Product Templates" module="Serole_Productattachment" sortOrder="20" parent="Magento_Catalog::catalog" action="productattachment/productattachment" resource="Serole_Productattachment::productattachment"/>
+
+    </menu>
+</config>

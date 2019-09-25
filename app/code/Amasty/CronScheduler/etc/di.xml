@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2019 Amasty (https://www.amasty.com)
+ * @package Amasty_CronScheduler
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Amasty\CronScheduler\Api\Data\JobsInterface" type="Amasty\CronScheduler\Model\Jobs" />
+    <preference for="Amasty\CronScheduler\Api\JobsRepositoryInterface" type="Amasty\CronScheduler\Model\Repository\JobsRepository" />
+</config>

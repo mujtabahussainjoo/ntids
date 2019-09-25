@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root" label="Root">
+        <block class="Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Attributes" name="amrolepermissions.attributes.tab">
+            <block class="Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Attributes\Grid" name="amrolepermissions.product_attributes.grid" as="grid" />
+        </block>
+        <block class="Magento\Backend\Block\Widget\Grid\Serializer" name="amrolepermissions_grid_attributes_serializer">
+            <arguments>
+                <argument name="grid_block" xsi:type="string">amrolepermissions.product_attributes.grid</argument>
+                <argument name="callback" xsi:type="string">getSelectedRuleAttributes</argument>
+                <argument name="input_element_name" xsi:type="string">amrolepermissions[attributes]</argument>
+                <argument name="reload_param_name" xsi:type="string">amrolepermissions_attributes</argument>
+            </arguments>
+        </block>
+    </container>
+</layout>

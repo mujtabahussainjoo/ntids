@@ -1,0 +1,70 @@
+<?php
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Aheadworks\Rbslider\Block\Banner */
+$canShow = true;
+if (!$block->isAjax()): ?>
+    <?php $canShow = false; ?>
+    <div data-aw-rbslider-block-name="<?php /* @noEscape */ echo $block->getNameInLayout() ?>"></div>
+<?php endif; ?>
+
+<?php if ($canShow && $bannersBlock = $block->getBlocks()): ?>
+    <?php foreach ($bannersBlock as $bannerBlock) : ?>
+        <?php
+            $dotNavItems = '';
+            $bannerInitParam = '{
+                "autoplay": ' . ($bannerBlock->getBanner()->getPauseTimeBetweenTransitions() ? 'true' : 'false') . ',
+                "pauseTimeBetweenTransitions": ' . $bannerBlock->getBanner()->getPauseTimeBetweenTransitions() . ',
+                "slideTransitionSpeed": ' . $bannerBlock->getBanner()->getSlideTransitionSpeed(). ',
+                "isStopAnimationMouseOnBanner": ' . ($bannerBlock->getBanner()->getIsStopAnimationMouseOnBanner() ? 'true' : 'false') . ',
+                "animation": "' . $block->getAnimation($bannerBlock->getBanner()->getAnimationEffect()) . '"
+            }';
+        ?>
+        <div data-mage-init='{"awRbslider": <?php /* @noEscape */ echo $bannerInitParam ?> }'
+             class="aw-rbslider-container uk-slidenav-position" style="display: none;">
+            <ul class="uk-slideshow">
+                <?php foreach ($bannerBlock->getSlides() as $key => $slide) : ?>
+                    <li><div>
+                        <?php if ($slide->getUrl()): ?>
+                            <?php
+                                $target = $slide->getIsOpenUrlInNewWindow() ? 'target="_blank"' : '';
+                                $nofollow = $slide->getIsAddNofollowToUrl() ? 'rel="nofollow"' : '';
+                                $slideRedirectInitParam = '{
+                                    "link": "' . $block->getLinkUrl($slide->getId(), $bannerBlock->getBanner()->getId()) . '",
+                                    "openUrlInNewWindow": ' . ($slide->getIsOpenUrlInNewWindow() ? 'true' : 'false') . '
+                                }';
+                            ?>
+                            <a href="<?php /* @noEscape */ echo $slide->getUrl() ?>"
+                                data-mage-init='{"awRbsliderRedirect": <?php /* @noEscape */ echo $slideRedirectInitParam ?>}'
+                                <?php /* @noEscape */ echo $target ?>
+                                <?php /* @noEscape */ echo $nofollow ?>>
+                        <?php endif; ?>
+
+                        <img class="aw-rbslider__img" src="<?php /* @noEscape */ echo $block->getSlideImgUrl($slide) ?>"
+                            title="<?php echo $block->escapeHtml($slide->getImgTitle()) ?>"
+                            alt="<?php echo $block->escapeHtml($slide->getImgAlt()) ?>" />
+
+                        <?php if ($slide->getUrl()): ?>
+                            </a>
+                        <?php endif; ?>
+                    </div></li>
+                    <?php $dotNavItems .= '<li data-uk-slideshow-item="' . $key . '"><a href="#"></a></li>' ?>
+                <?php endforeach; ?>
+            </ul>
+            <?php if ($bannerBlock->getBanner()->getDisplayArrows()) : ?>
+                <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+            <?php endif; ?>
+            <?php if ($bannerBlock->getBanner()->getDisplayBullets()) : ?>
+                <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
+                    <?php /* @noEscape */ echo $dotNavItems ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>

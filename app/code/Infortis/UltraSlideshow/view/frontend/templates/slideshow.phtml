@@ -1,0 +1,246 @@
+<?php
+/**
+ * @var Infortis\UltraSlideshow\Block\Slideshow $this
+ */
+?>
+<?php $slides = $this->getSlideIds(); ?>
+<?php if (!empty($slides)): ?>
+
+    <?php
+    $h = $this->getHelperData(); //
+    $isHomeSlideshow = $this->isPredefined();
+    $sliderHash = $this->getFrontendHash();
+    $sliderId = "slideshow-{$sliderHash}";
+    $bannersId = "slideshow-banners-{$sliderHash}";
+    $sliderClasses = [];
+
+    // Basic slider parameters
+    // --------------------------------------------------------------
+    
+    // By default the slideshow works in the "singleItem" mode.
+    // If the breakpoints parameter is set, the slideshow works in the "carousel" mode.
+    $breakpoints = $this->getBreakpoints(); // Param: breakpoints
+    if ($breakpoints !== NULL)
+    {
+        $carouselMode = true;
+    }
+    else
+    {
+        $carouselMode = false;
+
+        // Slide transition effect
+        $fx = $this->getSlideTransition(); // Param: slide_transition
+        if ($fx === NULL) // Param not set
+        {
+            $fx = $h->getCfg('general/effect');
+        }
+    }
+
+    // Slider parameters for both modes
+    // --------------------------------------------------------------
+
+    // Slider timeout. Set to enable automatic scrolling.
+    $timeout = $this->getTimeout(); // Param: timeout
+    if ($timeout === NULL) // Param not set
+    {
+        $timeout = intval($h->getCfg('general/timeout'));
+    }
+    else
+    {
+        $timeout = intval($timeout);
+    }
+
+    // If set, slider will loop.
+    $loop = $this->getLoop(); // Param: loop
+    if ($loop === NULL) // Param not set
+    {
+        $loop = $h->getCfg('general/loop');
+    }
+
+    // Speed (arrows / touch swipe)
+    $speed = intval($h->getCfg('general/speed'));
+
+    // Speed (automatic scrolling / pagination)
+    $autoSpeed = intval($h->getCfg('general/auto_speed'));
+
+    // Pause slider on mouse hover
+    $pause = $h->getCfg('general/pause');
+
+    // Auto height
+    $smoothHeight = $h->getCfg('general/smooth_height');
+
+    // Additional side banners
+    // --------------------------------------------------------------
+
+    $banners = $this->getAdditionalBannerId();
+    if ($banners)
+    {
+        $banners = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($banners)->toHtml(); //
+
+        // Get slideshow layout classes: width (in grid units), position of slider (left or right), 
+        // gutter between slider and additional banners, show/hide banners on mobile devices.
+        $classes = $this->getSlideshowLayoutClasses();
+        $sliderClasses[] = $classes['sliderGrid']; // Grid class for slider
+        $sliderClasses[] = $classes['sliderPosition']; // Position class for slider
+        $bannersClasses[] = $classes['bannersGrid']; // Grid class for banners
+        $bannersClasses[] = $classes['hideBanners']; // Show/hide banners
+    }
+
+    // Navigation and other settings
+    // --------------------------------------------------------------
+
+    // Navigation buttons
+    $navButtons = false;
+    $navButtonsClasses = $this->getNavButtonsClasses();
+    if ($navButtonsClasses)
+    {
+        $navButtons = true;
+        $sliderClasses[] = $navButtonsClasses;
+    }
+
+    // Pagination
+    $pagination = false;
+    $paginationClasses = $this->getPaginationClasses();
+    if ($paginationClasses)
+    {
+        $pagination = true;
+        $sliderClasses[] = $paginationClasses;
+    }
+
+    // If this is predefined home page slideshow, optionally hide slides (not including side banners) on mobile devices
+    if ($isHomeSlideshow && $h->getCfg('general/hide'))
+    {
+        $sliderClasses[] = 'hidden-xs';
+    }
+
+    ?>
+
+    <?php if ($isHomeSlideshow): ?>
+        <div class="slideshow-wrapper-additional" <?php echo $this->getMarginStyles(); ?>>
+    <?php endif; ?>
+
+            <div class="slideshow-wrapper-outer">
+
+                <div class="slideshow-wrapper <?php echo implode(' ', $sliderClasses); ?>">
+                    <div id="<?php echo $sliderId; ?>" class="slideshow owl-carousel">
+                        <?php if ($this->isMultiBlock()): ?>
+                            <?php foreach ($slides as $sid): ?>
+                                <?php if (!empty($sid)): ?>
+                                    <div class="item">
+                                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($sid)->toHtml(); // ?>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($slides[0])->toHtml(); // ?>
+                        <?php endif; ?>
+                    </div>
+                </div> <?php // end: slideshow-wrapper ?>
+
+                <?php if ($banners): ?>
+                    <div id="<?php echo $bannersId; ?>" class="slideshow-banners <?php echo implode(' ', $bannersClasses); ?>"><?php echo $banners; ?></div>
+                <?php endif; ?>
+
+            </div> <?php // end: slideshow-wrapper-outer ?>
+
+    <?php if ($isHomeSlideshow): ?>
+        </div> <?php // end: slideshow-wrapper-additional ?>
+    <?php endif; ?>
+
+<script type="text/javascript">
+//<![CDATA[
+requirejs(['jquery','owlcarousel'], function(jQuery, owlcarousel){ //
+
+    jQuery(function($) {
+        
+        var owl = $('#<?php echo $sliderId; ?>');
+        owl.owlCarousel({
+
+            navigationText: false
+            , addClassActive: true
+
+        <?php if ($carouselMode): ?>
+            , itemsCustom: [ <?php echo $breakpoints; ?> ]
+            , responsiveRefreshRate: 50
+        <?php else: ?>
+            , singleItem: true
+
+            <?php if (!empty($fx)): // Check if the effect name is not empty ?>
+                , transitionStyle: '<?php echo $fx; ?>'
+            <?php endif; ?>
+
+        <?php endif; ?>
+
+        <?php if ($speed): ?>
+            , slideSpeed: <?php echo $speed; ?>
+        <?php endif; ?>
+
+        <?php if ($autoSpeed): ?>
+            , paginationSpeed: <?php echo $autoSpeed; ?>
+        <?php endif; ?>
+
+        <?php if ($timeout): ?>
+            , autoPlay: <?php echo $timeout; ?>
+        <?php endif; ?>
+
+        <?php if ($pause): ?>
+            , stopOnHover: true
+        <?php endif; ?>
+
+        <?php if ($loop): ?>
+            , rewindNav: true
+            , rewindSpeed: 600
+        <?php else: ?>
+            , rewindNav: false
+        <?php endif; ?>
+
+        <?php if ($pagination): ?>
+            , pagination: true
+        <?php else: ?>
+            , pagination: false
+        <?php endif; ?>
+
+        <?php if ($navButtons): ?>
+            , navigation: true
+        <?php else: ?>
+            , navigation: false
+        <?php endif; ?>
+
+        <?php if ($smoothHeight): ?>
+            , autoHeight: true
+        <?php endif; ?>
+
+            , beforeInit: function() {
+                var firstSlide = owl.find('.item:eq(0)');
+                firstSlide.find('[data-animate-in]').each(function() {
+                    $(this).addClass($(this).data('animate-in') + ' animated');
+                });
+            }
+
+            <?php // Based on examples from OwlCarousel website ?>
+            , afterMove: function() {
+                owl.find('.owl-item.active [data-animate-in]').each(function() {
+                    $(this).addClass($(this).data('animate-in') + ' animated');
+                });
+            }
+
+            , beforeMove: function() {
+                owl.find('.owl-item.active [data-animate-in]').each(function() {
+                    $(this).removeClass($(this).data('animate-in') + ' animated');
+                });
+            }
+
+        <?php if ($banners): ?>
+            , afterInit: function() {
+                owl.parent().parent().children('#<?php echo $bannersId; ?>').addClass('_show');
+            }
+        <?php endif; ?>
+
+        }); // end: owl
+
+    });
+
+});
+//]]>
+</script>
+<?php endif; // end: if slides ?>

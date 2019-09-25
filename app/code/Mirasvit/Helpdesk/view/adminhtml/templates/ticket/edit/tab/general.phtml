@@ -1,0 +1,150 @@
+<?php
+//@codingStandardsIgnoreFile
+/** @var \Mirasvit\Helpdesk\Block\Adminhtml\Ticket\Edit\Tab\General $block */
+/** @var \Mirasvit\Helpdesk\Model\Ticket $ticket */
+$ticket = $block->getTicket();
+?>
+<input type="hidden" name="ticket_id" value="<?= $ticket->getId() ?>">
+
+<input type="hidden" name="reply_type" value="">
+
+<div class="page-layout-admin-2columns-left" data-mage-init='{"ticketEditPage":{}}'>
+    <div data-role="spinner" class="admin__data-grid-loading-mask">
+        <div class="spinner">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <div class="page-columns">
+        <div class="side-col" id="page:left">
+
+            <?= $block->getCustomerSummaryHtml() ?>
+
+            <div class="clearfix"></div>
+            <div class="ticket-summary">
+                <div class="section">
+                    <div class="admin__fieldset-wrapper-title" tabindex="3">
+                        <strong class="title">
+                            <span><?= __('Ticket Summary') ?></span>
+                        </strong>
+                    </div>
+                    <?php if (!$ticket->getId()): ?>
+                        <div class="admin__field _required">
+                            <label class="admin__field-label" for="subject">
+                                <span><?= __('Subject') ?></span>
+                            </label>
+                            <div class="admin__field-control">
+                                <input type="text" name="subject" class="required" placeholder="enter subject of ticket"
+                                       value="<?php $ticket->getSubject() ?>">
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <div class="admin__field">
+                            <label class="admin__field-label" for="status">
+                                <span><?= __('Ticket ID') ?></span>
+                            </label>
+                            <div class="admin__field-control">
+                                <span><?= $ticket->getCode() ?></span>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="admin__field">
+                        <label class="admin__field-label" for="status">
+                            <span><?= __('Status') ?></span>
+                        </label>
+                        <div class="admin__field-control">
+                            <select class="admin__control-select" name="status_id">
+                                <?php foreach ($block->getStatusCollection() as $status): ?>
+                                    <option value="<?= $status->getId() ?>" <?= $status->getId() == $ticket->getStatusId() ? 'selected' : '' ?>>
+                                        <?= $status->getName() ?>
+                                    </option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="admin__field">
+                        <label class="admin__field-label" for="priority">
+                            <span><?= __('Priority') ?></span>
+                        </label>
+                        <div class="admin__field-control">
+                            <select class="admin__control-select" name="priority_id">
+                                <?php foreach ($block->getPriorityCollection() as $priority): ?>
+                                    <option value="<?= $priority->getId() ?>" <?= $priority->getId() == $ticket->getPriorityId() ? 'selected' : '' ?>>
+                                        <?= $priority->getName() ?>
+                                    </option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="admin__field">
+                        <label class="admin__field-label" for="owner">
+                            <span><?= __('Assignee') ?></span>
+                        </label>
+                        <div class="admin__field-control">
+                            <select class="admin__control-select" name="owner">
+                                <?php foreach ($block->getAdminOwnerOptionArray() as $id => $name): ?>
+                                    <option value="<?= $id ?>" <?= $id == $ticket->getOwner() ? 'selected' : '' ?>>
+                                        <?= $name; ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="admin__fieldset-wrapper-title" tabindex="3">
+                        <strong class="title">
+                            <span><?= __('Additional Info') ?></span>
+                        </strong>
+                    </div>
+                    <?php foreach ($block->getCustomFields() as $field): ?>
+                        <div class="admin__field">
+                            <?= $field->getLabelHtml(); ?>
+                            <?= $field->getElementHtml(); ?>
+                            <div class="note"><?= $field->getNote(); ?></div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-col">
+            <div data-bind="scope: 'replyArea'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <script type="text/x-magento-init">
+                    {
+                        "*": {
+                            "Magento_Ui/js/core/app": {
+                                "components": {
+                                    "replyArea": {
+                                        "component": "Mirasvit_Helpdesk/js/reply-area",
+                                        "config": {
+                                            "field_html": <?= $block->getEditField(); ?>
+                                        }
+                                    },
+                                    "replySwitcher": {
+                                        "component": "Mirasvit_Helpdesk/js/reply-switcher",
+                                        "config": <?= $block->getReplySwitcherJson(); ?>
+                                    },
+                                    "quickResponse": {
+                                        "component": "Mirasvit_Helpdesk/js/quick-response",
+                                        "config": <?= $block->getQuickRespoinsesJson(); ?>
+                                    }
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+            <?= $block->getChildHtml('helpdesk_messages'); ?>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var draftDelayPeriod = "<?php echo $block->getDraftInterval(); ?>";
+    var draftUpdateUrl   = "<?php echo $block->getDrafUpdateUrl(); ?>";
+    var draftTicketId    = "<?php echo $block->getTicket()->getId(); ?>";
+    var isAllowDraft     = "<?php echo $block->isAllowDraft(); ?>";
+    var draftText        = "<?php echo str_replace("\n", "\\\n", $block->getDraftText()); ?>";
+</script>

@@ -1,0 +1,54 @@
+<?php
+$collection = $block->getCollection();
+?>
+<!--div class="page-title competition-title">
+    <h1><?php //echo __('Competitions') ?></h1>
+</div-->
+
+<?php if ($collection->getSize() > 0): ?>
+
+<div class="competition-list-container">
+    <ol class="competition-list">
+        <?php foreach ($collection as $_competition) : ?>
+        <li class="item">
+            <?php if($this->helper('PL\Competition\Helper\Data')->isClosed($_competition->getDateTo())):?>
+                <div class="competition-ended-layer">
+                    <h2><?php echo __('Competition Ended'); ?></h2>
+                        <span>
+                            <?php echo __('Thanks for your entry. This competition is now closed and the winners have been announced and contacted by email. Keep checking back for more competitions.'); ?>
+                        </span>
+                </div>
+            <?php endif;?>
+            <div class="item-details">
+                <h2 class="item-name"><?php echo $_competition->getTitle();?></h2>
+                <div class="competition-content">
+                    <?php if($_competition->getData('image')):?>
+                        <img class="item-thumb" src="<?php echo $block->getImageUrl($_competition,'image')?>" alt="" width="130" height="130" />
+                    <?php endif;?>
+                    <div class="fix-content">
+                        <?php $short_description = $_competition->getShortDescription() !='' ? $_competition->getShortDescription() : $_competition->getDescription(); ?>
+                        <?php echo $short_description; ?>
+
+                        <div class="compet_date">
+                            <?php echo __("Start");?>: <?php echo date("M d, Y",strtotime($_competition->getDateFrom()));?>
+                            <?php echo __("End");?>: <?php echo date("M d, Y",strtotime($_competition->getDateTo()));?>
+                        </div>
+                        <div class="read-more">
+                            <a class="detail-link" href="<?php echo $this->helper('PL\Competition\Helper\Data')->getCompetitionUrl($_competition)?>">
+                                <span class="enter-btn">Enter the</span> <?php echo $_competition->getTitle();?> >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </li>
+        <?php endforeach;?>
+        </ol>
+    </div>
+<?php else:?>
+    <p><?php echo __('There are no competition at this moment');?></p>
+<?php endif;?>
+
+
+

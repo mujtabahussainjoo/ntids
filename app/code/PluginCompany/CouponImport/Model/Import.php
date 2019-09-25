@@ -1,0 +1,337 @@
+<?php
+/**
+ * Created by:  Milan Simek
+ * Company:     Plugin Company
+ *
+ * LICENSE: http://plugin.company/docs/magento-extensions/magento-extension-license-agreement
+ *
+ * YOU WILL ALSO FIND A PDF COPY OF THE LICENSE IN THE DOWNLOADED ZIP FILE
+ *
+ * FOR QUESTIONS AND SUPPORT
+ * PLEASE DON'T HESITATE TO CONTACT US AT:
+ *
+ * SUPPORT@PLUGIN.COMPANY
+ */
+namespace PluginCompany\CouponImport\Model;
+
+/**
+ * Class Import
+ * Used to import an array of coupons for a specific rule
+ *
+ * @package PluginCompany\CouponImport\Model
+ */
+class Import
+{
+    /**
+     * @var \Magento\SalesRule\Model\CouponFactory
+     */
+    private $couponFactory;
+    /**
+     * @var \Magento\SalesRule\Api\CouponRepositoryInterface
+     */
+    private $couponRepository;
+    /**
+     * @var \Magento\SalesRule\Model\Coupon
+     */
+    private $couponModel;
+    /**
+     * @var \Magento\SalesRule\Api\RuleRepositoryInterface
+     */
+    private $ruleRepository;
+    /**
+     * @var \Magento\Framework\Stdlib\DateTime\DateTime
+     */
+    private $date;
+    /**
+     * @var \Magento\Framework\Stdlib\DateTime
+     */
+    private $dateTime;
+    /**
+     * @var \Magento\SalesRule\Model\Rule\DataProvider
+     */
+    private $rule;
+    /**
+     * @var int
+     */
+    private $alreadyExists = 0;
+    /**
+     * @var int
+     */
+    private $successFullyImported = 0;
+    /**
+     * @var array
+     */
+    private $couponArray = [];
+
+    /**
+     * Import constructor.
+     *
+     * @param \Magento\SalesRule\Model\CouponFactory $couponFactory
+     */
+    public function __construct(
+        \Magento\SalesRule\Model\CouponFactory $couponFactory,
+        \Magento\SalesRule\Api\CouponRepositoryInterface $couponRepositoryInterface,
+        \Magento\SalesRule\Api\RuleRepositoryInterface $ruleRepositoryInterface,
+        \Magento\Framework\Stdlib\DateTime\DateTime $date,
+        \Magento\Framework\Stdlib\DateTime $dateTime
+    ) {
+        $this->couponFactory = $couponFactory;
+        $this->couponModel = $this->couponFactory->create();
+        $this->couponRepository = $couponRepositoryInterface;
+        $this->ruleRepository = $ruleRepositoryInterface;
+        $this->date = $date;
+        $this->dateTime = $dateTime;
+    }
+
+    /**
+     * executes import
+     *
+     * @param array $coupons
+     * @param $ruleId
+     */
+    public function importCoupons(array $coupons, $ruleId)
+    {
+        $this
+            ->loadRule($ruleId)
+            ->setCoupons($coupons)
+            ->runImport()
+        ;
+    }
+
+    /**
+     * load rule by rule ID
+     *
+     * @param $ruleId
+     * @return $this
+     */
+    public function loadRule($ruleId)
+    {
+        $this->rule = $this->ruleRepository->getById($ruleId);
+        return $this;
+    }
+
+    /**
+     * set couponArray with clean coupon array
+     *
+     * @param array $coupons
+     * @return $this
+     */
+    public function setCoupons(array $coupons)
+    {
+        $this->couponArray = $this->tidyUpCoupons($coupons);
+        return $this;
+    }
+
+    /**
+     * trims and remove empty array elements
+     *
+     * @param array $coupons
+     * @return array
+     */
+    private function tidyUpCoupons(array $coupons)
+    {
+        return array_filter(array_map('trim', $coupons));
+    }
+
+    /**
+     * Checks whether coupon is already used in system
+     *
+     * @param $coupon
+     * @return bool
+     */
+    private function isCouponAlreadyUsed($coupon)
+    {
+        $this
+            ->couponModel
+            ->unsetData()
+            ->loadByCode($coupon)
+        ;
+        if ($this->couponModel->getId()) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @return $this
+     */
+    private function increaseAlreadyExistsCount()
+    {
+        $this->alreadyExists++;
+        return $this;
+    }
+
+    /**
+     * runs the actual coupon import process
+     *
+     * @return $this
+     */
+    public function runImport()
+    {
+        foreach ($this->getUniqueCoupons() as $couponCode) {
+            if ($this->isCouponAlreadyUsed($couponCode)) {
+                $this->increaseAlreadyExistsCount();
+                continue;
+            }
+            $this
+                ->createNewCouponForCurrentRule($couponCode)
+                ->increaseSuccessfullyImportedCount();
+            ;
+        }
+        return $this;
+    }
+
+    /**
+     * Creates coupon and saves in DB
+     *
+     * @param $couponCode
+     * @return $this
+     */
+    private function createNewCouponForCurrentRule($couponCode)
+    {
+        $this->couponModel
+            ->setId(null)
+            ->setRuleId($this->rule->getRuleId())
+            ->setUsageLimit($this->rule->getUsesPerCoupon())
+            ->setUsagePerCustomer($this->rule->getUsesPerCustomer())
+            ->setCreatedAt($this->getNowTimeStamp())
+            ->setType(\Magento\SalesRule\Helper\Coupon::COUPON_TYPE_SPECIFIC_AUTOGENERATED)
+            ->setCode($couponCode);
+        
+        $this->saveCouponModel();
+        
+        return $this;
+    }
+
+    /**
+     * @return null|string
+     */
+    private function getNowTimeStamp()
+    {
+        return $this->dateTime->formatDate($this->date->gmtTimestamp());
+    }
+
+    /**
+     * @return $this
+     */
+    private function saveCouponModel()
+    {
+        $this->couponRepository
+            ->save($this->couponModel);
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    private function increaseSuccessfullyImportedCount()
+    {
+        $this->successFullyImported++;
+        return $this;
+    }
+
+    /**
+     * Checks whether couponArray has duplicates
+     *
+     * @return bool
+     */
+    public function hasDuplicateCoupons()
+    {
+        return (bool)$this->getDuplicateCouponCount();
+    }
+
+    /**
+     * gets couponArray duplicate count
+     *
+     * @return int
+     */
+    public function getDuplicateCouponCount()
+    {
+        return $this->getCouponCount() - $this->getUniqueCouponCount();
+    }
+
+    /**
+     * gets couponArray coupon count
+     *
+     * @return int
+     */
+    public function getCouponCount()
+    {
+        return count($this->getCoupons());
+    }
+
+    /**
+     * @return array
+     */
+    public function getCoupons()
+    {
+        return $this->couponArray;
+    }
+
+    /**
+     * Checks whether couponArray has unique coupons
+     *
+     * @return bool
+     */
+    public function hasUniqueCoupons()
+    {
+        return (bool)$this->getUniqueCouponCount();
+    }
+
+    /**
+     * gets couponArray unique coupon count
+     *
+     * @return int
+     */
+    public function getUniqueCouponCount()
+    {
+        return count($this->getUniqueCoupons());
+    }
+
+    /**
+     * returns unique coupons from couponArray
+     * @return array
+     */
+    public function getUniqueCoupons()
+    {
+        return array_unique($this->getCoupons());
+    }
+
+    /**
+     * Checks whether couponArray has already existing coupons
+     *
+     * @return bool
+     */
+    public function hasAlreadyExistingCoupons()
+    {
+        return (bool)$this->alreadyExists;
+    }
+
+    /**
+     * gets couponArray existing coupon count
+     *
+     * @return int
+     */
+    public function getAlreadyExistingCouponCount()
+    {
+        return $this->alreadyExists;
+    }
+
+    /**
+     * checks whether some coupons have been imported successfully
+     *
+     * @return bool
+     */
+    public function hasSuccessfullyImportedCoupons()
+    {
+        return (bool)$this->successFullyImported;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSuccessfullyImportedCouponCount()
+    {
+        return $this->successFullyImported;
+    }
+}

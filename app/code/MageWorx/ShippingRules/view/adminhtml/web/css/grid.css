@@ -1,0 +1,14 @@
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+.data-grid td .action-select-wrap {
+    position: relative !important;
+}
+
+/** Uncomment this line if you wish to display all grid (without scrolling)*/
+/**
+.admin__data-grid-wrap {
+    overflow-x: inherit !important;
+}
+*/

@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+
+<?php
+    /** @var \MageWorx\GeoIP\Block\Adminhtml\System\Config\Update $block */
+    $lastUpdateTime = $block->getLastUpdateTime();
+?>
+
+<?php echo __('Create backup'); ?> <input type="checkbox" id="geoip_update_backup" name="backup" value="1" checked="checked" />&nbsp;&nbsp;&nbsp; <?php echo $this->getButtonHtml(); ?>
+<br/>
+<?php echo __('Last update') . ": " ?>
+<span id="database_update_info"><?php echo $lastUpdateTime ? $lastUpdateTime : __('n/a')?></span>
+<span class="show-load-icon" style="display:none;"></span>
+
+<script type="text/javascript">
+    function startUpdate() {
+        var dbUpdInfo = jQuery("#database_update_info");
+        var spinner = jQuery(".show-load-icon");
+        var createBackup = jQuery('#geoip_update_backup').is(':checked');
+        var databaseType = jQuery('#mageworx_geoip_geoip_database_database_type').val();
+        dbUpdInfo.hide();
+        spinner.show();
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo $this->getFormUrl() ?>",
+            data: {form_key: "<?php echo $this->getFormKey() ?>", backup: createBackup, type: databaseType},
+            dataType: "json",
+            success: function(data) {
+                dbUpdInfo.text(data.last_update);
+                dbUpdInfo.show();
+                spinner.hide();
+            },
+            error: function(data) {
+                dbUpdInfo.show();
+                spinner.hide();
+            }
+        });
+    }
+</script>

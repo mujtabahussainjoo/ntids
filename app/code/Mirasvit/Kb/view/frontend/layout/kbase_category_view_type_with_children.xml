@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      layout="1column">
+    <body>
+        <attribute name="class" value="kbase"/>
+        <referenceContainer name="content">
+            <block name="kb.search.form" class="Mirasvit\Kb\Block\Search\Form" template="Mirasvit_Kb::search/form.phtml" before="-"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,951 @@
+//
+//  Icons and other styles related to icons.
+//  Part of the font icon styles based on Font Awesome - http://fontawesome.io
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+/* Icon %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.ic {
+    display: inline-block;
+    font: normal normal normal 14px/1 ThemeIcons;
+    font-size: inherit;
+    text-rendering: auto;
+    text-transform: none; /* For backward compatibility */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* If icon is applied to 'i' tag */
+i.ic,
+i:before {
+    font-style: normal;
+}
+
+/* Floating icons - with generic modifiers
+-------------------------------------------------------------- */
+.ic.left {
+    float: left;
+    margin-right: 0.3em;
+}
+.ic.right {
+    float: right;
+    margin-left: 0.3em;
+}
+
+/* Size
+-------------------------------------------------------------- */
+/* Makes the font 33% larger relative to the icon container */
+.ic-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+.ic-2x {
+    font-size: 2em;
+}
+.ic-3x {
+    font-size: 3em;
+}
+.ic-4x {
+    font-size: 4em;
+}
+.ic-5x {
+    font-size: 5em;
+}
+.ic-6x {
+    font-size: 6em;
+}
+.ic-7x {
+    font-size: 7em;
+}
+.ic-8x {
+    font-size: 8em;
+}
+.ic-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+/* Lists
+-------------------------------------------------------------- */
+.ic-ul {
+    padding-left: 0;
+    margin-left: 2.14285714em;
+    list-style-type: none;
+}
+.ic-ul > li {
+    position: relative;
+}
+.ic-li {
+    position: absolute;
+    left: -2.14285714em;
+    width: 2.14285714em;
+    top: 0.14285714em;
+    text-align: center;
+}
+.ic-li.ic-lg {
+    left: -1.85714286em;
+}
+.ic-border {
+    padding: .2em .25em .15em;
+    border: solid 0.08em #eeeeee;
+    border-radius: .1em;
+}
+
+/* Pulled Icons
+-------------------------------------------------------------- */
+.pull-right, /* Deprecated */
+.ic-pull-right {
+    float: right;
+}
+.pull-left, /* Deprecated */
+.ic-pull-left {
+    float: left;
+}
+.ic.pull-left, /* Deprecated */
+.ic-pull-left {
+    margin-right: .3em;
+}
+.ic.pull-right, /* Deprecated */
+.ic-pull-right {
+    margin-left: .3em;
+}
+
+/* Stacking
+-------------------------------------------------------------- */
+.ic-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+.ic-stack-1x,
+.ic-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.ic-stack-1x {
+    line-height: inherit;
+}
+.ic-stack-2x {
+    font-size: 2em;
+}
+.ic-inverse {
+    color: #ffffff;
+}
+
+/* Effects
+-------------------------------------------------------------- */
+.ic-spin {
+    -webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+@-moz-keyframes spin {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(359deg);
+    }
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+    }
+}
+@-o-keyframes spin {
+    0% {
+        -o-transform: rotate(0deg);
+    }
+    100% {
+        -o-transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+.ic-rotate-90 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.ic-rotate-180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.ic-rotate-270 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+.ic-flip-horizontal {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+    -webkit-transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+.ic-flip-vertical {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+    -webkit-transform: scale(1, -1);
+    -moz-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+
+/* Characters as icon (letters, numbers etc.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ic-char {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+
+/* Images as icons
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ic-img {
+    font-family: inherit; /* Remove icon font to fix vertical alignment */
+}
+
+/* Set max size for images displayed as icons */
+.ic-img img,
+.icon img /* For backward compatibility */
+{
+    vertical-align: middle;
+}
+
+
+
+/* Iconbox - an icon with background color %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.ib,
+.social-links a > span.icon /* For backward compatibility */
+{
+    display: inline-block;
+    text-align: center;
+    background-color: #e5e5e5;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition:     color 300ms ease-in-out, background-color 300ms ease-in-out;
+    -moz-transition:        color 300ms ease-in-out, background-color 300ms ease-in-out;    
+    -o-transition:          color 300ms ease-in-out, background-color 300ms ease-in-out;
+    transition:             color 300ms ease-in-out, background-color 300ms ease-in-out;
+}
+
+
+/* Size
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ib {
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.ib-size-xs {
+    line-height: 18px;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+}
+.ib-size-s {
+    line-height: 28px;
+    width: 28px;
+    height: 28px;
+}
+.ib-size-l {
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+}
+.ib-size-xl {
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+}
+.ib-size-xxl {
+    line-height: 80px;
+    width: 80px;
+    height: 80px;
+}
+.ib-size-xxxl {
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+}
+.ib-size-xxxxl {
+    line-height: 120px;
+    width: 120px;
+    height: 120px;
+}
+
+
+/* Labels
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Label which immediately follows the iconbox */
+.ib + .label {
+    display: inline-block;
+    line-height: 40px;
+}
+
+.ib-size-xs + .label {
+    line-height: 18px;
+}
+.ib-size-s + .label {
+    line-height: 28px;
+}
+.ib-size-l + .label {
+    line-height: 50px;
+}
+.ib-size-xl + .label {
+    line-height: 60px;
+}
+.ib-size-xxl + .label {
+    line-height: 80px;
+}
+.ib-size-xxxl + .label {
+    line-height: 100px;
+}
+.ib-size-xxxxl + .label {
+    line-height: 120px;
+}
+
+
+/* Hover state
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ib-hover:hover, /* Apply hover state color only when special class is present */
+.feature-icon-hover:hover .ib
+{
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Characters as icon - modify styles if inside iconbox
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ib.ic-char,
+.ib.i-char /* For backward compatibility */
+{
+    text-align: center;
+}
+
+
+/* Additional utility classes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Background
+-------------------------------------------------------------- */
+/* Icon without background color */
+.ib-no-bg,
+.ib.no-bg-color /* For backward compatibility */
+{
+    background-color: transparent !important;
+}
+
+/* Shapes
+-------------------------------------------------------------- */
+/* Default */
+.ib-circle,
+.ib.circle /* For backward compatibility */
+{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.ib-rounded,
+.ib.rounded /* For backward compatibility */
+{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.ib-rounded:after {
+    /* If iconbox has effects, effect element needs to have the same shape */
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;  
+}
+
+.ib-square,
+.ib.square /* For backward compatibility */
+{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.ib-square:after {
+    /* If iconbox has effects, effect element needs to have the same shape */
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Make all contained icons square */
+.ib-wrapper-square .ib,
+.ib-wrapper--square .ib, /* For backward compatibility */
+.icon-wrapper-square .ib /* For backward compatibility */
+{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+
+
+/* Iconbox effects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+[class*="ib-ef-"] {
+    position: relative; /* Important: required */
+    z-index: 1;
+}
+
+[class*="ib-ef-"]:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    content: '';
+    -webkit-box-sizing: content-box; 
+    -moz-box-sizing: content-box; 
+    box-sizing: content-box;
+}
+
+
+/* Effect 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ib-ef-1 {
+    -webkit-transition: background 0.2s, color 0.2s;
+    -moz-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+}
+
+.ib-ef-1:after {
+    top: -7px;
+    left: -7px;
+    padding: 7px;
+    box-shadow: 0 0 0 4px #000;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -webkit-transform: scale(.8);
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    transition: transform 0.2s, opacity 0.2s;
+    transform: scale(.8);
+    opacity: 0;
+}
+
+/* Effect 1a
+-------------------------------------------------------------- */
+.feature-icon-hover:hover .ib-ef-1a:after,
+.ib-ef-1a:hover:after {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Effect 1b
+-------------------------------------------------------------- */
+.ib-ef-1b:after {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.feature-icon-hover:hover .ib-ef-1b:after,
+.ib-ef-1b:hover:after {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+/* Effect 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ib-ef-2 {
+    background-color: transparent !important;
+    box-shadow: 0 0 0 4px #000;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.ib-ef-2:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Effect 2a
+-------------------------------------------------------------- */
+.feature-icon-hover:hover .ib-ef-2a:after,
+.ib-ef-2a:hover:after {
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    transform: scale(0.85);
+}
+
+/* Effect 2b
+-------------------------------------------------------------- */
+.feature-icon-hover:hover .ib-ef-2b:after,
+.ib-ef-2b:hover:after {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.4s, opacity 0.2s;
+    transition: transform 0.4s, opacity 0.2s;
+}
+
+
+/* Effect 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ib-ef-3 {
+    background-color: transparent !important;
+    box-shadow: 0 0 0 4px #000;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.ib-ef-3:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.3s;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+/* Effect 3a
+-------------------------------------------------------------- */
+.feature-icon-hover:hover .ib-ef-3a:after,
+.ib-ef-3a:hover:after {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 0;
+}
+
+/* Effect 3b
+-------------------------------------------------------------- */
+.ib-ef-3b:after {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 0;
+}
+
+.feature-icon-hover:hover .ib-ef-3b:after,
+.ib-ef-3b:hover:after {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+/* Feature - box with icons, images, text etc. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Basic styles */
+.feature {
+    margin: 0 0 10px;
+}
+.feature:before,
+.feature:after {
+    content: '';
+    display: table;
+}
+.feature:after {
+    clear: both;
+}
+.feature.first {
+    margin-top: 0;
+}
+.feature.last {
+    margin-bottom: 0;
+}
+
+/* Elements separated with border
+-------------------------------------------------------------- */
+.feature.border-separated {
+    border-top: 1px solid @global-border-color__light;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    &:extend(.abs-global-border-color-light all);
+}
+.feature.border-separated:first-child {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+.feature.top-border, /* For backward compatibility */
+.feature.border-top {
+    border-top: 1px solid @global-border-color__light !important;
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    &:extend(.abs-global-border-color-light all);
+}
+.feature.bottom-border, /* For backward compatibility */
+.feature.border-bottom {
+    border-bottom: 1px solid @global-border-color__light;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    &:extend(.abs-global-border-color-light all);
+}
+
+/* (deprecated) Wrapper with top/bottom line */
+.feature-wrapper.top-border {
+    border-top: 1px solid @global-border-color__light;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.feature-wrapper.bottom-border {
+    border-bottom: 1px solid @global-border-color__light;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* Feature text paragraph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.feature p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Feature headings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.feature .heading {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.feature .above-heading {
+    margin: 0 0 7px;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    color: #888;
+}
+.feature .below-heading {
+    font-size: 1em;
+    font-style: italic;
+    line-height: 1.8rem;
+    color: #bbb;
+}
+
+
+/* Feature and icons
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Floating icons - additional margin.
+   Important: styles only applied to direct children
+-------------------------------------------------------------- */
+
+/* IMPORTANT: for backward compatibility, apply also to an icon without "left" class if it's direct child and first child */
+.feature > .ic:first-child, /* For backward compatibility */
+.feature > .left {
+    float: left;
+    margin: 0 20px 16px 0;
+}
+
+.feature > .right {
+    float: right;
+    margin: 0 0 16px 20px;
+}
+
+/* For backward compatibility */
+.rtl .feature > .ic:first-child {
+    float: right;
+    margin: 0 0 16px 20px;
+}
+
+/* (deprecated) Vertically centered icon
+-------------------------------------------------------------- */
+.feature.v-centered-content .v-center .ic {
+    margin: 0 20px 0 0;
+}
+
+
+/* Indented feature
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* With indentation, icon doesn't need bottom margin, it pushes other elements down */
+.feature.indent > .ic:first-child, /* For backward compatibility */
+.feature.indent > .left,
+.feature.indent > .right {
+    margin-bottom: 0;
+}
+
+/* Size of indentation
+-------------------------------------------------------------- */
+/* Size of indentation = width of iconbox + right margin of the iconbox */
+
+/* Default */
+.feature.indent {
+    padding-left: 60px; /* 60 = 40 + 20 */
+}
+.rtl .feature.indent {
+    padding-right: 60px;
+    padding-left: 0;
+}
+
+.feature.indent > .ic:first-child, /* For backward compatibility */
+.feature.indent > .left {
+    margin-left: -60px;
+}
+.rtl .feature.indent > .ic:first-child, /* For backward compatibility */
+.feature.indent > .right {
+    margin-right: -60px;
+    margin-left: 0;
+}
+
+/* X Small should be defined here but was omitted - it shouldn't be used with indent */
+
+/* Small */
+.feature.indent-size-s {
+    padding-left: 48px;
+}
+.rtl .feature.indent-size-s {
+    padding-right: 48px;
+    padding-left: 0;
+}
+
+.feature.indent-size-s > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-s > .left {
+    margin-left: -48px;
+}
+.rtl .feature.indent-size-s > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-s > .right {
+    margin-right: -48px;
+    margin-left: 0;
+}
+
+/* Large */
+.feature.indent-size-l {
+    padding-left: 70px;
+}
+.rtl .feature.indent-size-l {
+    padding-right: 70px;
+    padding-left: 0;
+}
+
+.feature.indent-size-l > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-l > .left {
+    margin-left: -70px;
+}
+.rtl .feature.indent-size-l > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-l > .right {
+    margin-right: -70px;
+    margin-left: 0;
+}
+
+/* X Large */
+.feature.indent-size-xl {
+    padding-left: 80px;
+}
+.rtl .feature.indent-size-xl {
+    padding-right: 80px;
+    padding-left: 0;
+}
+
+.feature.indent-size-xl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xl > .left {
+    margin-left: -80px;
+}
+.rtl .feature.indent-size-xl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xl > .right {
+    margin-right: -80px;
+    margin-left: 0;
+}
+
+/* XX Large */
+.feature.indent-size-xxl {
+    padding-left: 100px;
+}
+.rtl .feature.indent-size-xxl {
+    padding-right: 100px;
+    padding-left: 0;
+}
+
+.feature.indent-size-xxl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xxl > .left {
+    margin-left: -100px;
+}
+.rtl .feature.indent-size-xxl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xxl > .right {
+    margin-right: -100px;
+    margin-left: 0;
+}
+
+/* XXX Large */
+.feature.indent-size-xxxl {
+    padding-left: 120px;
+}
+.rtl .feature.indent-size-xxxl {
+    padding-right: 120px;
+    padding-left: 0;
+}
+
+.feature.indent-size-xxxl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xxxl > .left {
+    margin-left: -120px;
+}
+.rtl .feature.indent-size-xxxl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xxxl > .right {
+    margin-right: -120px;
+    margin-left: 0;
+}
+
+/* XXXX Large */
+.feature.indent-size-xxxxl {
+    padding-left: 140px;
+}
+.rtl .feature.indent-size-xxxxl {
+    padding-right: 140px;
+    padding-left: 0;
+}
+
+.feature.indent-size-xxxxl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xxxxl > .left {
+    margin-left: -140px;
+}
+.rtl .feature.indent-size-xxxxl > .ic:first-child, /* For backward compatibility */
+.feature.indent-size-xxxxl > .right {
+    margin-right: -140px;
+    margin-left: 0;
+}
+
+
+/* Feature centered
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* IMPORTANT: these styles need to be placed after floating icon styles */
+.feature.centered {
+    text-align: center;
+}
+.feature.centered > .ic {
+    /* When feature is centered, the first level icons can't float */
+    float: none !important;
+    margin: 0 0 15px !important;
+}
+
+/* Additional styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* (deprecated) Auto-size: allow for big icons. IMPORTANT: don't use "span" tag together with "icon" in this selector! */
+.feature .ic.auto-size {
+    width: auto;
+    max-width: none;
+    height: auto;
+    max-height: none;
+}
+
+
+
+/* Integration with FontAwesome icons %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Here we make sure the "ic" class doesn't override 
+   the font-family property of the FontAwesome's "fa" class.
+   Thanks to that we can use the "ic" class in elements which already have the "fa" class. */
+.fa {
+    font-family: FontAwesome;
+}
+
+/* Here we make sure icons will have proper line-height and font-size to stack multiple icons */
+.fa-stack-1x {
+    line-height: inherit;
+}
+.fa-stack-2x {
+    font-size: 2em;
+}
+
+/* Block displayed if Font Awesome enabled. By default it is hidden. */
+.fontawesome-enabled {
+    display: none;
+}
+
+
+
+} /* end: media-common */

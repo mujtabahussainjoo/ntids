@@ -1,0 +1,11 @@
+<?php
+/** @var \Mirasvit\Helpdesk\Block\Ticket\Listing\Column\DefaultColumn $block */
+/** @var \Mirasvit\Helpdesk\Model\Ticket $ticket */
+$ticket = $block->getItem();
+$column = $block->getColumn();
+?>
+
+    <a href="<?= $ticket->getUrl(false) ?>"><?= $block->escapeHtml($ticket->getSubject()) ?></a>
+<?php if (!$ticket->getLastMessage()->getIsRead()): ?>
+    <span class="unread"></span>
+<?php endif ?>

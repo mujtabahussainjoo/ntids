@@ -1,0 +1,136 @@
+Department,部門
+"Create New Ticket",新しいチケットを作成する
+Status,状態
+Priority,優先
+Replies,返信
+View,ビュー
+"Help Desk",ヘルプデスク
+"Thank you",ありがとうございました
+"Create Ticket",チケットを作成する
+"Your request was successfully submitted. You should receive a confirmation email shortly.",あなたのリクエストは正常に提出されました。まもなく確認メールが届きます。
+Telephone,電話
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.",あなたのお問い合わせは提出され、できるだけ早く返答されます。お問い合わせいただきありがとうございます。
+"Unable to submit your request. Please, try again later",あなたの要求を提出できません。しばらくしてからやり直してください
+"Page not found.",ページが見つかりません。
+"Your message was successfuly posted",メッセージが正常に投稿されました
+"Your ticket was successfuly posted",チケットが正常に投稿されました
+"Ticket was successfuly closed",チケットは正常に終了しました
+"Can't upload file %1 . Max allowed upload size is %2 MB.",ファイル%1をアップロードできません。最大許容アップロードサイズは%2MBです。
+"Allows only this file types: %1",このファイルタイプのみを許可します：%1
+"Message added",メッセージを追加しました
+"Internal note added",内部メモが追加されました
+"Third party message added",サードパーティメッセージが追加されました
+"Private third party message added",プライベートサードパーティメッセージが追加されました
+"-- Please Select --","-  選んでください  -"
+"Contact Tab",連絡先タブ
+"Contact Form",お問い合わせフォーム
+" at %1 (%2) - %3","__1（%2） -  %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.",このチケットを読み取る権限がありません。管理者に連絡してください。
+"Invalid Customer Email",カスタマメールが無効です
+"not set",設定されていません
+"Unknown time",未知の時間
+ago,前
+"from now",今から
+"1 sec ago",1秒前
+"Open Ticket",チケットを開く
+"Open Tickets",チケットを開く
+"! Blocked file - ","！ブロックされたファイル -"
+Disabled,無効
+"AW Helpdesk",AWヘルプデスク
+"MW Helpdesk",MWヘルプデスク
+"File System",ファイルシステム
+Database,データベース
+Aqua,アクア
+Grey,グレー
+Navy,海軍
+Silver,銀
+Black,ブラック
+Green,緑
+Olive,オリーブ
+Teal,ティール
+Blue,青
+Lime,ライム
+Purple,紫の
+Fuchsia,フクシア
+Maroon,マルーン
+Red,赤
+Orange,オレンジ
+Yellow,黄
+Text,テキスト
+Date,日付
+Checkbox,チェックボックス
+"Drop-down list",ドロップダウンリスト
+"In minutes...",数分で...
+"In hours...",時間で...
+"In days...",日に...
+"In weeks...",数週間...
+"In months...",数ヶ月で...
+Custom,カスタム
+"--Please Select--","- 選んでください -"
+"New ticket created",新しいチケットが作成されました
+Success,成功
+Customer,顧客
+Staff,スタッフ
+"Third party",第三者
+Closed,閉まっている
+"Opened 24hr",24時間オープン
+"Helpdesk Tickets",ヘルプデスクチケット
+"Cannot delete ticket with id %1",IDが%1のチケットは削除できません
+Edit,編集
+"All Departments",すべての部署
+Back,バック
+"24 hrs x 7 days",24時間×7日間
+"Select working days/hours",営業日/時間の選択
+"Satisfaction survey",満足度調査
+"to %1 (third party)",%1（第三者）
+"%1 (third party)",%1（第三者）
+"added %1 (%2)",追加された%1（%2）
+"Ticket Summary",チケット概要
+"Ticket ID",チケットID
+Assignee,譲受人
+"Additional Info",追加情報
+"Ticket History",チケットの履歴
+"Done by",によって行われ
+Changes,変更点
+Name,名
+"Attach files",添付ファイル
+Submit,提出する
+"Submit Ticket",チケットを提出する
+"What is your question?",あなたの質問は何ですか？
+"We found the following topics that might be helpful:",私たちは役に立つかもしれない以下のトピックを見つけました：
+"None of these are helpful - get in touch",これらのどれも役に立ちません。
+"We have not found topics that can be helpful.",私たちは助けになるトピックは見つけていません。
+"Contact Information",連絡先
+Comment,コメント
+"We are open 24 x 7",我々は開いている24×7
+"We are closed",我々は閉鎖されている
+"Timezone: %1",タイムゾーン：%1
+"Please take a second to rate my reply...",私の返信を評価するのに、もう一度時間を取ってください...
+Great,すばらしいです
+Awesome,驚くばかり
+"Fast, friendly, helpful, pleasant. Great job!",速く、フレンドリーで、役に立つ、楽しい。よくやった！
+"Just Okay",ちょうどいい
+"Fine, but definitely could have been better.",良い、しかし間違いなく良いことができた。
+"Not good",良くない
+"Unfortunately, I wasn't happy with it at all.",残念ながら、私はそれに全く満足していませんでした。
+"Thank you for participating in our survey!",私たちの調査に参加していただきありがとうございます！
+"If you would like to provide additional comments, please do so below:",コメントを追加したい場合は、以下のようにしてください：
+Message,メッセージ
+"Submit Message",メッセージを送信
+"Thank you for your feedback!",ご意見ありがとうございます！
+Attachments,添付ファイル
+Order,注文
+"-- Select an Order --","- 注文を選択する -"
+"Create ticket",チケットを作成する
+"You don't have open tickets",あなたはオープンチケットを持っていません
+"Post a Reply",返信を投稿
+"Reopen Ticket",チケットを再開する
+"Close Ticket",チケットを閉じる
+History,歴史
+"Back to My Tickets",マイチケットに戻る
+"Help Desk MX",ヘルプデスクMX
+"Contact Us",お問い合わせ
+Open,開いた
+Subject,件名
+"Last Activity",最後の活動
+"Request ID",リクエストID

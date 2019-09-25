@@ -1,0 +1,157 @@
+<?php
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ * */
+$membershipData = $block->getMembershipData();
+
+if ($membershipData) {
+    if ($membershipData['plan_expiry_date']=="" || $membershipData['plan_expiry_date']=="0000-00-00 00:00:00") {
+        $expiryDate = "Not Available";
+    } else {
+        $expiryDate = date('Y-m-d', strtotime($membershipData['plan_expiry_date']));
+    }
+    
+    $beforeDay = $block->getBeforeDay();
+    
+    $shortDate = "+".$beforeDay." Day";
+    $newDate = strtotime($shortDate);
+    $increaseDate = date("Y-m-d", $newDate);
+    
+    
+    $customerGroupId = $membershipData['current_customer_group_id'];
+    $product = $block->getProduct($customerGroupId);
+
+    
+//    $block->getPaymentHistory();
+    
+    
+    
+    ?>
+
+
+
+    
+    
+    <div class="block block-dashboard-info">
+        <div class="block-title">
+            <strong><?php /* @escapeNotVerified */ echo __('Membership Information') ?></strong>            
+        </div>
+
+        <div class="block-content">
+            <div class="box-information">
+                <div class="box-content">
+                    <div class="box-membership">
+                        <div class="box-content">
+                            <p> <?php echo __("Package Name: "); ?> <strong><?php echo $block->getCustomerGroup(); ?></strong> </p>
+                            <p> <?php echo __("Expiry Date: "); ?> <strong><?php echo $expiryDate; ?></strong>  </p>
+                            
+                            <?php if (!empty($product->getDescription())) { ?>
+                                <p><?php echo __("Package Description: "); ?></p>
+                                    <?php echo $product->getDescription(); ?>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        
+        
+        <?php if ($product->getId()) { ?>
+        
+            <a href="<?php echo $block->getDiscountableProductsUrl($product->getId()); ?>" target="_blank" class="action primary" > <span>My Discountable Products</span> </a>
+            
+        <?php } else { ?>
+            
+            <div class="block block-dashboard-info">
+                <b><?php echo __('Currently you are not a member of any membership.') ?></b>
+            </div>
+            
+        <?php } ?>
+        
+            
+        <?php if ($increaseDate >= $expiryDate) { ?>
+                <a href="<?php echo $product->getProductUrl(); ?>" class="action primary" > <span>Renew Membership</span> </a>
+        <?php } ?>
+        
+    </div>
+<?php } else { ?>
+    
+<div class="block block-dashboard-info">
+    <b><?php echo __('Currently you are not a member of any membership.') ?></b>
+</div>
+<div class="block block-dashboard-info">
+    <a href="<?php echo $block->getHref(); ?>" class="action primary" > <span>Purchase New Membership</span></a>
+</div>
+<?php }?>
+
+
+    
+
+<?php
+        $paymentHistory = $block->getPaymentHistory();
+        $currencySymbol = $block->getCurrentCurrencySymbol();
+        
+if (count($paymentHistory)>0) {
+?>
+
+<div class="block block-dashboard-orders">
+<div class="block-title">
+<strong><?php /* @escapeNotVerified */ echo __('Plan History') ?></strong>
+</div>
+</div>
+
+<div class="table-wrapper orders-recent">
+<table class="data table table-order-items recent" id="my-orders-table">
+<thead>
+<tr>
+    <th scope="col" class="col id"><?php echo __("Plan Name"); ?></th>
+    <th scope="col" class="col date"><?php echo __("Order Date"); ?></th>
+    <th scope="col" class="col shipping"><?php echo __("Duration"); ?></th>
+    <th scope="col" class="col total"><?php echo __("Price"); ?></th>
+    <th scope="col" class="col status"><?php echo __("Order Status"); ?></th>
+    <th scope="col" class="col status"><?php echo __("Plan Status"); ?></th>
+</tr>
+</thead>
+            
+<?php
+foreach ($paymentHistory as $history) {
+    $customerPlan = unserialize($history['customer_plan']);
+    $duration = $customerPlan['duration']."&nbsp;".$customerPlan['duration_unit'];
+                
+    if ($history['order_status']!="pending") {
+        if ($history['plan_expiry_status']==0) {
+            $planStatus = "Active Plan";
+        } else {
+            $planStatus = "Expired Plan";
+        }
+    } else {
+        $planStatus = "Pending";
+    }
+?>
+    <tbody>
+        <tr>
+            <td data-th="Package Name" class="col id"><?php echo $history['product_name'] ?></td>
+            <td data-th="Order Date" class="col date"><?php echo date('Y-m-d', strtotime($history['created_at'])) ?></td>
+            <td data-th="Price" class="col shipping"><?php echo $duration ?></td>
+            <td data-th="Duration" class="col total"><span class="price"><?php echo $currencySymbol.$customerPlan['price']; ?></span></td>
+            <td data-th="Order Status" class="col status"><?php echo $history['order_status']; ?></td>
+            <td data-th="Plan Status" class="col status"><?php echo $planStatus; ?></td>
+        </tr>
+    </tbody>
+    <?php     } ?>
+            
+        </table>
+    </div>
+        <?php if ($block->getPagerHtml()) { ?>
+                <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+        <?php } ?>
+<?php         } ?>
+

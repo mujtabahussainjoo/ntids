@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- <columns name="products_sales_order_columns" class="Magento\Ui\Component\Listing\Columns\Date"> -->
+        <!-- <column name="created_at" class="Serole\Itemsales\Ui\Component\Listing\Columns\CreatedAt"> -->
+		<column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="filter" xsi:type="string">Created At</item>
+					<item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+					<item name="dataType" xsi:type="string">date</item>
+					<item name="dateFormat" xsi:type="string">YYYY-MM-dd hh:mm a</item>
+					<item name="label" xsi:type="string" translate="true">From Date</item>
+				</item>
+            </argument>
+        </column>
+    <!-- </columns> -->
+</listing>

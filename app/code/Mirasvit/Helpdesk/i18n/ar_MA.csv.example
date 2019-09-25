@@ -1,0 +1,136 @@
+Department," قسم، أقسام"
+"Create New Ticket","إنشاء تذكرة جديدة"
+Status,الحالة
+Priority,أفضلية
+Replies,الردود
+View,رأي
+"Help Desk","مكتب المساعدة"
+"Thank you","شكرا لكم"
+"Create Ticket","إنشاء تذكرة"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","تم إرسال طلبك بنجاح. يجب أن تتلقى رسالة تأكيد بالبريد الإلكتروني قريبا."
+Telephone,هاتف
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","تم إرسال استفسارك وسيتم الرد عليه في أقرب وقت ممكن. أشكركم على الاتصال بنا."
+"Unable to submit your request. Please, try again later","غير قادر على تقديم طلبك. الرجاء معاودة المحاولة في وقت لاحق"
+"Page not found.","الصفحة غير موجودة."
+"Your message was successfuly posted","تم نشر رسالتك بنجاح"
+"Your ticket was successfuly posted","تم نشر تذكرتك بنجاح"
+"Ticket was successfuly closed","تم إغلاق التذاكر بنجاح"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","لا يمكن تحميل الملف %1. الحد الأقصى المسموح به لحجم التحميل هو %2 ميغابايت."
+"Allows only this file types: %1","يسمح فقط لأنواع الملفات التالية: %1"
+"Message added","تمت إضافة الرسالة"
+"Internal note added","تمت إضافة ملاحظة داخلية"
+"Third party message added","تمت إضافة رسالة جهة خارجية"
+"Private third party message added","تمت إضافة رسالة خاصة تابعة لجهة خارجية"
+"-- Please Select --","- من فضلك اختر -"
+"Contact Tab","جهة الاتصال"
+"Contact Form","نموذج الاتصال"
+" at %1 (%2) - %3","في %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","ليس لديك أذونات لقراءة هذه التذكرة. من فضلك ، اتصل بالمسؤول."
+"Invalid Customer Email","البريد غير صالح للعميل"
+"not set","غير مضبوط"
+"Unknown time","وقت غير معروف"
+ago,منذ
+"from now","من الان"
+"1 sec ago","منذ 1 ثانية"
+"Open Ticket","تذكرة مفتوحة"
+"Open Tickets","افتح التذاكر"
+"! Blocked file - ","! ملف محظور -"
+Disabled,معاق
+"AW Helpdesk","AW مكتب المساعدة"
+"MW Helpdesk","MW مكتب المساعدة"
+"File System","نظام الملفات"
+Database,"قاعدة البيانات"
+Aqua,أكوا
+Grey,"اللون الرمادي"
+Navy,"القوات البحرية"
+Silver,فضة
+Black,أسود
+Green,أخضر
+Olive,زيتون
+Teal,"بط نهري صغير"
+Blue,أزرق
+Lime,جير
+Purple,أرجواني
+Fuchsia,"ضارب الى الحمرة"
+Maroon,كستنائي
+Red,أحمر
+Orange,البرتقالي
+Yellow,الأصفر
+Text,نص
+Date,تاريخ
+Checkbox,مربع
+"Drop-down list","قائمة منسدلة"
+"In minutes...","في دقائق..."
+"In hours...","في ساعات..."
+"In days...","في الايام..."
+"In weeks...","في اسابيع ..."
+"In months...","في الأشهر..."
+Custom,العادة
+"--Please Select--","--يرجى التحديد--"
+"New ticket created","تم إنشاء تذكرة جديدة"
+Success,نجاح
+Customer,زبون
+Staff,العاملين
+"Third party","الحفلة الثالثة"
+Closed,مغلق
+"Opened 24hr","افتتح 24hr"
+"Helpdesk Tickets","تذاكر مكتب المساعدة"
+"Cannot delete ticket with id %1","لا يمكن حذف التذكرة بالمعرف %1"
+Edit,تصحيح
+"All Departments","جميع الإدارات"
+Back,"الى الخلف"
+"24 hrs x 7 days","24 ساعة × 7 أيام"
+"Select working days/hours","حدد أيام / ساعات العمل"
+"Satisfaction survey","مسح الرضا"
+"to %1 (third party)","إلى %1 (طرف ثالث)"
+"%1 (third party)","%1 (طرف ثالث)"
+"added %1 (%2)","تمت إضافة %1 (%2)"
+"Ticket Summary","ملخص تذكرة"
+"Ticket ID","معرف تذكرة"
+Assignee,المحال
+"Additional Info","معلومات إضافية"
+"Ticket History","تاريخ التذاكر"
+"Done by","فعلت من قبل"
+Changes,التغييرات
+Name,اسم
+"Attach files","إرفاق ملفات"
+Submit,خضع
+"Submit Ticket","قدم التذكرة"
+"What is your question?","ما هو سؤالك؟"
+"We found the following topics that might be helpful:","لقد وجدنا الموضوعات التالية التي قد تكون مفيدة:"
+"None of these are helpful - get in touch","لا شيء من هذا مفيد - تواصل معنا"
+"We have not found topics that can be helpful.","لم نعثر على موضوعات يمكن أن تكون مفيدة."
+"Contact Information","معلومات الاتصال"
+Comment,تعليق
+"We are open 24 x 7","نحن مفتوحون 24 × 7"
+"We are closed","نحن مغلقة"
+"Timezone: %1","المنطقة الزمنية: %1"
+"Please take a second to rate my reply...","يرجى أخذ ثانية لتقييم رداتي ..."
+Great,عظيم
+Awesome,رائع
+"Fast, friendly, helpful, pleasant. Great job!","سريعة وودية ومفيدة وممتعة. عمل عظيم!"
+"Just Okay","بحالة جيدة"
+"Fine, but definitely could have been better.","بخير ، ولكن بالتأكيد يمكن أن يكون أفضل."
+"Not good","غير جيد"
+"Unfortunately, I wasn't happy with it at all.","لسوء الحظ ، لم أكن سعيدًا بذلك على الإطلاق."
+"Thank you for participating in our survey!","شكرا لك لمشاركتك في بحثنا!"
+"If you would like to provide additional comments, please do so below:","إذا كنت ترغب في تقديم تعليقات إضافية ، فالرجاء القيام بذلك أدناه:"
+Message,رسالة
+"Submit Message","تقديم رسالة"
+"Thank you for your feedback!","شكرا لك على ملاحظاتك!"
+Attachments,مرفقات
+Order,طلب
+"-- Select an Order --","- اختر طلب -"
+"Create ticket","إنشاء تذكرة"
+"You don't have open tickets","ليس لديك تذاكر مفتوحة"
+"Post a Reply","اكتب ردا"
+"Reopen Ticket","إعادة فتح تذكرة"
+"Close Ticket","إغلاق التذكرة"
+History,التاريخ
+"Back to My Tickets","العودة إلى التذاكر الخاصة بي"
+"Help Desk MX","مكتب المساعدة MX"
+"Contact Us","اتصل بنا"
+Open,افتح
+Subject,موضوع
+"Last Activity","النشاط الاخير"
+"Request ID","طلب معرف"

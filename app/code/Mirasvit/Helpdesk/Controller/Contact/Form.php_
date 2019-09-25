@@ -1,0 +1,21 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Contact;
+
+use Magento\Framework\Controller\ResultFactory;
+
+class Form extends \Mirasvit\Helpdesk\Controller\Contact
+{
+    /**
+     * @return \Magento\Backend\Model\View\Result\Page
+     */
+    public function execute()
+    {
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+
+        $this->registry->register('search_query', $this->getRequest()->getParam('s'));
+
+        return $resultPage;
+    }
+}

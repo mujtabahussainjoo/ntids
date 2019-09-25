@@ -1,0 +1,29 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Adminhtml\Spam;
+
+/**
+ * @magentoAppArea adminhtml
+ */
+class MassDeleteTest extends \Magento\TestFramework\TestCase\AbstractBackendController
+{
+    /**
+     * setUp.
+     */
+    public function setUp()
+    {
+        $this->resource = 'Mirasvit_Helpdesk::helpdesk_spam';
+        $this->uri = 'backend/helpdesk/spam/massdelete';
+        parent::setUp();
+    }
+
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Adminhtml\Spam\MassDelete::execute
+     */
+    public function testMassDeleteAction()
+    {
+        $this->dispatch('backend/helpdesk/spam/massdelete');
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertTrue($this->getResponse()->isRedirect());
+    }
+}

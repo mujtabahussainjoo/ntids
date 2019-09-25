@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Serole_Smsauth::parent" title="Smsauth" module="Serole_Smsauth" sortOrder="100" resource="Serole_Smsauth::parent"/>
+		<add id="Serole_Smsauth::smsauth" title="Smsauth Smsauth" module="Serole_Smsauth" sortOrder="20" parent="Serole_Smsauth::parent" action="smsauth/smsauth" resource="Serole_Smsauth::smsauth"/>
+
+    </menu>
+</config>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-right" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+			<block class="Magento\Cms\Block\Block" name="custmessage_thankyoutop" before="-">
+				<arguments>
+					<argument name="block_id" xsi:type="string">custmessage_thankyoutop</argument>
+				</arguments>
+			</block>
+			
+            <referenceBlock name="checkout.success">
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="string">Serole_Pdf::success.phtml</argument>
+                </action>
+				
+            </referenceBlock>
+
+        </referenceContainer>
+		<referenceContainer name="sidebar.main">
+			<block class="Magento\Cms\Block\Block" name="custmessage_thankyouside" before="-">
+				<arguments>
+					<argument name="block_id" xsi:type="string">custmessage_thankyouside</argument>
+				</arguments>
+			</block>
+        </referenceContainer>
+    </body>
+</page>

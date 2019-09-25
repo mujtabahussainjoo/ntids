@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Aheadworks_Rbslider::css/rbslider.css"/>
+    </head>
+    <body>
+        <referenceContainer name="page.main.actions">
+            <block class="Aheadworks\Rbslider\Block\Adminhtml\Page\Menu" name="aw_rbslider_menu">
+                <block class="Aheadworks\Rbslider\Block\Adminhtml\Page\Menu\Item" name="aw_rbslider_menu_item.slides">
+                    <arguments>
+                        <argument name="path" xsi:type="string">*/slide/index</argument>
+                        <argument name="label" xsi:type="string">Slides</argument>
+                        <argument name="resource" xsi:type="string">Aheadworks_Rbslider::slides</argument>
+                        <argument name="controller" xsi:type="string">slide</argument>
+                    </arguments>
+                </block>
+                <block class="Aheadworks\Rbslider\Block\Adminhtml\Page\Menu\Item" name="aw_rbslider_menu_item.banners">
+                    <arguments>
+                        <argument name="path" xsi:type="string">*/banner/index</argument>
+                        <argument name="label" xsi:type="string">Banners</argument>
+                        <argument name="resource" xsi:type="string">Aheadworks_Rbslider::banners</argument>
+                        <argument name="controller" xsi:type="string">banner</argument>
+                    </arguments>
+                </block>
+                <block class="Aheadworks\Rbslider\Block\Adminhtml\Page\Menu\Item" name="aw_rbslider_menu_item.statistics">
+                    <arguments>
+                        <argument name="path" xsi:type="string">*/statistic/index</argument>
+                        <argument name="label" xsi:type="string">Statistics</argument>
+                        <argument name="resource" xsi:type="string">Aheadworks_Rbslider::statistics</argument>
+                        <argument name="controller" xsi:type="string">statistic</argument>
+                    </arguments>
+                </block>
+                <block class="Aheadworks\Rbslider\Block\Adminhtml\Page\Menu\Item" name="aw_rbslider_menu_item.readme">
+                    <arguments>
+                        <argument name="label" xsi:type="string">Readme</argument>
+                        <argument name="link_attributes" xsi:type="array">
+                            <item name="href" xsi:type="string">http://confluence.aheadworks.com/display/EUDOC/Rich+Banner+Slider+-+Magento+2</item>
+                            <item name="target" xsi:type="string">_blank</item>
+                            <item name="class" xsi:type="string">separator</item>
+                        </argument>
+                    </arguments>
+                </block>
+                <block class="Aheadworks\Rbslider\Block\Adminhtml\Page\Menu\Item" name="aw_rbslider_menu_item.support">
+                    <arguments>
+                        <argument name="label" xsi:type="string">Get Support</argument>
+                        <argument name="link_attributes" xsi:type="array">
+                            <item name="href" xsi:type="string">http://ecommerce.aheadworks.com/contacts/</item>
+                            <item name="target" xsi:type="string">_blank</item>
+                        </argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

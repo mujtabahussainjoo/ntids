@@ -1,0 +1,45 @@
+<!--@subject Admin Panel Login Alert {{var store.getFrontendName()}} @-->
+
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650" style="border:1px solid #E0E0E0;">
+                    <tr>
+                        <td valign="top">
+                            <p>
+                                Hello,<br/>
+                            </p>
+
+                            <p>
+                                We noticed a login to your admin panel on {{var data.date_time}} which is under suspicion.<br/>
+                                Here are the details:<br/>
+                            </p>
+
+                            <p>
+                                Username: {{var data.username}}<br/>
+                                Full Name: {{var data.fullname}}<br/>
+                                IP: {{var data.ip}}<br/>
+                                Country: {{var data.country_id}}<br/>
+                            </p>
+
+
+                            <p>
+                                Was this login authorized? If so, please disregard this e-mail.<br/>
+                            </p>
+
+                            <p>
+                                If not, you may want to do the following:<br/>
+                                - Reset your password<br/>
+                                - Block suspicious user<br/>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>

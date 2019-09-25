@@ -1,0 +1,107 @@
+/************Westbenfits******/
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+body{
+	font-family: 'Open Sans', sans-serif!important;
+	color:#414042!important;
+}
+.header-container2,.header-primary-container{ 
+margin-bottom:0.5%;
+}
+.nav-regular li.level0 > a > span{font-weight:700!important;}
+.header-container {
+	width: 100%!important;
+    margin-left: 0%!important;
+}
+.dropdown-block .dropdown-heading .label{font-weight:bold!important;}
+.header-container .right-column .top-links ul{font-weight:bold;}
+.header .logo-wrapper .logo{
+    margin: -14px 4px 17px 15px!important;
+}
+.block-search form{
+    top: -14px!important;
+    margin: 0 0 0 -70px!important;
+}
+.footerwrap{
+    background-color: #353535;
+}
+footer .row .col-md-8{
+	margin: 20px 0px 0px 0;
+}
+footer .row .col-md-4{
+	margin: 20px 0px 0px 0;
+}
+footer .row .col-md-8 .menu li{
+	display: inline;
+}
+footer .row .col-md-8 .menu li a{
+	color:#fff!important;
+}
+footer .row .col-md-4 .top_info .email a{
+	text-decoration:underline!important;
+	color:#fff!important;
+}
+.homepage-icons {
+    margin-top: 28px;
+    margin-bottom: 30px;
+}
+.homepage-icons-four a.homepage-icon {
+    width: 25%;
+}
+a.homepage-icon-one {
+    margin-left: 0;
+}
+a.homepage-icon {
+    float: left;
+    display: block;
+    min-height: 120px;
+    text-align: center;
+}
+.homepage-icon > img {
+    height: 160px;
+}
+.homepage-icon > img {
+    display: block;
+    /* height: 100px; */
+    width: auto;
+    text-align: center;
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+	vertical-align: middle;
+}
+.homepage-icon-wrapper {
+    padding-top: 0%!important;
+}
+a.homepage-icon .h2 {
+    display: none;
+}
+.homepage-icon .h2 {
+    font-size: 14px;
+}
+.homepage-icon .h2, .homepage-icon .sub {
+    text-align: center;
+    display: block;
+    clear: both;
+    color: #444;
+}
+.homepage-icon .h2, .homepage-icon .sub {
+    text-align: center;
+    display: block;
+    clear: both;
+    color: #444;
+}
+.product-view .action.primary:hover, .action.primary.checkout:hover{
+	background-color:#3ec2df!important;
+	color:#fff!important;
+} 
+.product-view .action.primary, .action.primary.checkout{
+	background-color:#2b388f!important;
+	color:#fff!important;
+} 

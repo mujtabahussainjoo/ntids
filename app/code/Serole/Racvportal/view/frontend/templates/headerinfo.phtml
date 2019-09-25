@@ -1,0 +1,18 @@
+<?php
+$data = $block->getData();
+$headerData = $data['data'];
+?>
+
+<div class="clearfix">
+    <ul class="header-info">
+        <li><?php echo $this->getMemberNo() ?></li>
+        <li><?php echo $this->getCustomerName() ?></li>
+        <li><?php echo $this->getShopName() ?></li>
+        <li><a href="#" class="popup-pastorders">Past All Orders</a></li>
+        <li><a href="#" class="popup-past-shoporders">Past Shop Orders</a></li>
+        <li><a href="#" class="popup-customer-pastorders">Customer Past Orders</a></li>
+        <li><a href="#" class="popup-customer-lastorders">Customer Last Order</a></li>
+        <li><a href="<?php echo $block->getStoreUrl()."racvportal/report/index/"; ?>" class="salereport">Sale Report</a></li>
+        <li><a href="<?php echo $this->getLogoutUrl() ?>">Log Out</a></li>
+    </ul>
+</div>

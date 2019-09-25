@@ -1,0 +1,1384 @@
+<root>
+   <blocks>
+      <block>
+         <identifier>block_footer_column1</identifier>
+         <title>Footer primary - columns (demo 7)</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<br/>
+<div class="grid12-12" style="text-align: center;">
+
+	<div class="social-links" style="display: inline-block; float: none;">
+		<a class="first" href="http://twitter.com/infortis" title="Follow Infortis on Twitter">
+			<span class="ib ib-hover ic ic-lg ic-twitter"></span>
+		</a>
+		<a href="#" title="Join us on Facebook">
+			<span class="ib ib-hover ic ic-lg ic-facebook"></span>
+		</a>
+		<a href="#" title="Join us on Google Plus">
+			<span class="ib ib-hover ic ic-lg ic-googleplus"></span>
+		</a>
+		<a href="#" title="Youtube">
+			<span class="ib ib-hover ic ic-lg ic-youtube"></span>
+		</a>
+		<a href="#" title="Vimeo">
+			<span class="ib ib-hover ic ic-lg ic-vimeo"></span>
+		</a>
+		<a href="#" title="Instagram">
+			<span class="ib ib-hover ic ic-lg ic-instagram"></span>
+		</a>
+		<a href="#" title="Pinterest">
+			<span class="ib ib-hover ic ic-lg ic-pinterest"></span>
+		</a>
+		<a href="#" title="Linked in">
+			<span class="ib ib-hover ic ic-lg ic-linkedin"></span>
+		</a>
+		<a href="#" title="VKontakte">
+			<span class="ib ib-hover ic ic-lg ic-vk"></span>
+		</a>
+		<a href="#" title="Renren">
+			<span class="ib ib-hover ic ic-lg ic-renren"></span>
+		</a>
+		<a href="#" title="Flickr">
+			<span class="ib ib-hover ic ic-lg ic-flickr"></span>
+		</a>
+		<a href="#" title="Behance">
+			<span class="ib ib-hover ic ic-lg ic-behance"></span>
+		</a>
+		<a href="#" title="Xing">
+			<span class="ib ib-hover ic ic-lg ic-xing"></span>
+		</a>
+		<a href="#" title="Blogger">
+			<span class="ib ib-hover ic ic-lg ic-blogger"></span>
+		</a>
+	</div>
+
+</div>
+<div class="clearer"></div>
+<br/>
+
+
+<br/>
+<div class="grid12-3">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">About Ultimo</h6>
+		<div class="block-content">
+			<img src="{{media url="wysiwyg/infortis/ultimo/custom/logo-w.png"}}" alt="Ultimo Theme" />
+			<div class="feature first last">
+				<p>Ultimo is a premium Magento theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive.</p>
+				<h5><a class="go" href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis">Buy this theme</a></h5>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="grid12-2">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">Theme Features</h6>
+		<div class="block-content">
+			<ul class="disc">
+				<li><a href="{{store url='ultimo-responsive-magento-theme'}}">Theme Features</a></li>
+				<li><a href="{{store url='typography'}}">Typography</a></li>
+				<li><a href="#">Some Sample Link</a></li>
+				<li><a href="#">Meat Our Best Partners</a></li>
+				<li><a href="#">Latest Work Samples</a></li>
+				<li><a href="#">Our Other Projects</a></li>
+				<li><a href="#">One Click To Join Us</a></li>
+				<li><a href="#">Follow Us On Twitter</a></li>
+				<li><a href="http://infortis-themes.com/">Magento Themes</a></li>
+				<li><a href="#">Ecommerce</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="grid12-2">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">Sample Heading</h6>
+		<div class="block-content">
+			<ul class="disc">
+				<li><a href="#">Terms</a></li>
+				<li><a href="#">Conditions</a></li>
+				<li><a href="#">About us</a></li>
+				<li><a href="#">Example</a></li>
+				<li><a href="#">Some Sample Link</a></li>
+				<li><a href="#">Meat Our Best Partners</a></li>
+				<li><a href="#">Latest Work Samples</a></li>
+				<li><a href="#">Our Other Projects</a></li>
+				<li><a href="#">One Click To Join Us</a></li>
+				<li><a href="#">Follow Us On Twitter</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="grid12-2">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">Footer Block</h6>
+		<div class="block-content">
+			<ul class="disc">
+				<li><a href="#">Delivery</a></li>
+				<li><a href="#">Track your order</a></li>
+				<li><a href="#">Some Sample Link</a></li>
+				<li><a href="#">Meat Our Best Partners</a></li>
+				<li><a href="#">Latest Work Samples</a></li>
+				<li><a href="#">Our Other Projects</a></li>
+				<li><a href="#">One Click To Join Us</a></li>
+				<li><a href="#">Follow Us On Twitter</a></li>
+				<li><a href="#">Buy gift cards</a></li>
+				<li><a href="#">Returns</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="grid12-3">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">Key Features</h6>
+		<div class="block-content">
+			<div class="feature feature-icon-hover indent first">
+				<span class="ib ic ic-char">1</span>
+				<p class="no-margin">Unlimited colors, hundreds of customizable elements</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-char">2</span>
+				<p class="no-margin ">Customizable responsive layout based on fluid grid</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-char">3</span>
+				<p class="no-margin ">50+ placeholders to display custom content</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-char">4</span>
+				<p class="no-margin ">Create your custom sub-themes (variants)</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="clearer"></div>
+<br/>
+<br/>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_column2</identifier>
+         <title>Footer primary - column 2</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="collapsible mobile-collapsible">
+
+	<h6 class="block-title heading">Theme Features</h6>
+	<div class="block-content">
+	
+		<ul class="bullet">
+			<li><a href="{{store url='ultimo-responsive-magento-theme'}}">Theme Features</a></li>
+			<li><a href="{{store url='typography'}}">Typography</a></li>
+			<li><a href="#">Some Sample Link</a></li>
+			<li><a href="#">Meat Our Best Partners</a></li>
+			<li><a href="#">Latest Work Samples</a></li>
+			<li><a href="#">Our Other Projects</a></li>
+			<li><a href="#">One Click To Join Us</a></li>
+			<li><a href="#">Follow Us On Twitter</a></li>
+			<li><a href="http://infortis-themes.com/">Magento Themes</a></li>
+			<li><a href="#">Ecommerce</a></li>
+		</ul>
+
+	</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_column3</identifier>
+         <title>Footer primary - column 3</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="collapsible mobile-collapsible">
+
+	<h6 class="block-title heading">Key Features</h6>
+	<div class="block-content">
+		<div class="feature feature-icon-hover indent first">
+			<span class="ib ic ic-char">1</span>
+			<p class="no-margin">Unlimited colors, hundreds of customizable elements</p>
+		</div>
+		<div class="feature feature-icon-hover indent">
+			<span class="ib ic ic-char">2</span>
+			<p class="no-margin ">Customizable responsive layout based on fluid grid</p>
+		</div>
+		<div class="feature feature-icon-hover indent">
+			<span class="ib ic ic-char">3</span>
+			<p class="no-margin ">50+ placeholders to display custom content</p>
+		</div>
+		<div class="feature feature-icon-hover indent">
+			<span class="ib ic ic-char">4</span>
+			<p class="no-margin ">Create your custom sub-themes (variants)</p>
+		</div>
+	</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_column4</identifier>
+         <title>Footer primary - column 4</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="collapsible mobile-collapsible">
+
+		<h6 class="block-title heading">Company Info</h6>
+		<div class="block-content">
+			<div class="feature feature-icon-hover indent first">
+				<span class="ib ic ic-phone ic-lg"></span>
+				<p class="no-margin ">Call Us +001 555 801<br/>Fax +001 555 802</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-mobile ic-lg"></span>
+				<p class="no-margin ">+77 123 1234<br/>+42 98 9876</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-letter ic-lg"></span>
+				<p class="no-margin ">boss@example.com<br/>me@example.com</p>
+			</div>
+			<div class="feature feature-icon-hover indent last">
+				<span class="ib ic ic-skype ic-lg"></span>
+				<p class="no-margin ">Skype: samplelogin<br/>skype-support</p>
+			</div>
+		</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_column5</identifier>
+         <title>Footer primary - column 5</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="collapsible mobile-collapsible">
+	<h6 class="block-title heading">About Ultimo</h6>
+
+	<div class="block-content">
+
+		<div class="feature first last">
+			<img class="icon" src="{{media url="wysiwyg/infortis/ultimo/icons/info.png"}}" alt="About Ultimo Magento Theme" />
+			<p>Ultimo is a premium Magento theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive.</p>
+			<p>Suitable for every type of store. Great starting point for your custom projects.</p>
+			<h5><a class="go" href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis">Buy this theme</a></h5>
+		</div>
+
+	</div>
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_column6</identifier>
+         <title>Footer primary - column 6</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<h6 class="heading">Sample Column</h6>
+<ul>
+	<li><a href="#">Responsive Magento Theme</a></li>
+	<li><a href="#">Magento Extensions</a></li>
+	<li><a href="#">Store Overview</a></li>
+	<li><a href="#">Buy This</a></li>
+	<li><a href="#">Sample Link</a></li>
+	<li><a href="#">Some Other Link</a></li>
+	<li><a href="#">Link Example</a></li>
+</ul>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_links</identifier>
+         <title>Custom footer links</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[This block can replace Magento's default footer links.
+
+<ul class="links">
+
+    <li class="first">
+    	<a href="{{store url='about-magento-demo-store'}}" title="My custom link">Custom Link</a>
+    </li>
+    <li class=" last">
+    	<a href="{{store url='about-magento-demo-store'}}" title="My sample link">Sample Link</a>
+    </li>
+    
+</ul>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_links2</identifier>
+         <title>Custom footer links 2</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<ul class="links hide-below-768">
+
+	<li class="first">
+		<a href="{{store direct_url='about-magento-demo-store/'}}" title="You can add more custom links here">About Us</a>
+	</li>
+	<li class="last">
+		<a href="{{store direct_url='customer-service/'}}"  title="You can even replace these links with any other content">Customer Service</a>
+	</li>
+
+</ul>]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_payment</identifier>
+         <title>Footer payment</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<img src="{{media url="wysiwyg/infortis/ultimo/custom/payment.gif}}" alt="Payment methods" title="Sample image with payment methods" />]]></content>
+      </block>
+      <block>
+         <identifier>block_footer_primary_bottom_right</identifier>
+         <title>Footer primary - bottom right - newsletter</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[This static block can replace default newsletter form. This shortcode adds the newsletter form:
+{{block class="Magento\Newsletter\Block\Subscribe" template="subscribe.phtml"}} ]]></content>
+      </block>
+      <block>
+         <identifier>block_header_top_left</identifier>
+         <title>Header top left</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="hide-below-960" style="float: left; margin-right: 5px;"><span class="ic ic-lg ic-phone"></span> Call +001 555 801</div>
+
+<div class="links-wrapper-separators" style="float: left;">
+	<ul class="links">
+		<li>
+			<a href="http://ultimo.infortis-themes.com/demo/select-demo/" title="See more demos">All demos</a>
+		</li>
+		<li class="hide-below-768">
+			<a href="{{store url='ultimo-responsive-magento-theme'}}" title="See the list of all features">Features</a>
+		</li>
+		<li class="hide-below-480">
+			<a href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis" title="Click to buy this theme">Buy me!</a>
+		</li>
+	</ul>
+</div>
+]]></content>
+      </block>
+      <block>
+         <identifier>block_header_top_links</identifier>
+         <title>Addition to account links in the header</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<ul class="links">
+
+	<li class="first">
+		<a href="#" title="Sample">Sample</a>
+	</li>
+	<li class="">
+		<a href="#" title="Custom">Custom</a>
+	</li>
+	<li class="last">
+		<a href="#" title="Links">Links</a>
+	</li>
+
+</ul>]]></content>
+      </block>
+      <block>
+         <identifier>block_header_top_right</identifier>
+         <title>Header top right</title>
+         <is_active>0</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[Sample content of the top right static block]]></content>
+      </block>
+      <block>
+         <identifier>block_nav_dropdown</identifier>
+         <title>Custom</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="grid-container-spaced">
+	<div class="grid12-3">
+
+		<h2>Responsive Magento Theme</h2>
+		<p>Ultimo is a premium Magento theme with advanced admin module. It's extremely customizable and fully responsive. Can be used for every type of store.</p>
+		<h5><a class="go" href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis" style="color:red;">Buy this Magento theme</a></h5>
+
+	</div>
+	<div class="grid12-3">
+
+		<a href="{{store url='ultimo-responsive-magento-theme'}}">
+			<img src="{{media url='wysiwyg/infortis/ultimo/menu/custom/01.png'}}" class="fade-on-hover" alt="Magento CMS blocks" />
+		</a>
+		<h4 class="heading">50+ CMS blocks</h4>
+		<p>You can use CMS blocks as content placeholders to display custom content in almost every part of the store. Import sample CMS blocks from the demo.</p>
+		<a href="{{store url='ultimo-responsive-magento-theme'}}" class="go">See all features</a>
+
+	</div>
+	<div class="grid12-3">
+
+		<a href="{{store url='ultimo-responsive-magento-theme'}}">
+			<img src="{{media url='wysiwyg/infortis/ultimo/menu/custom/02.png'}}" class="fade-on-hover" alt="Magento theme documentation" />
+		</a>
+		<h4 class="heading">190-pages documentation</h4>
+		<p>The best Magento theme documentation on ThemeForest. It also describes selected Magento features which you need to know when starting to work with Magento.</p>
+		<a href="{{store url='ultimo-responsive-magento-theme'}}" class="go">See all features</a>
+
+	</div>
+	<div class="grid12-3">
+
+		<a href="{{store url='ultimo-responsive-magento-theme'}}">
+			<img src="{{media url='wysiwyg/infortis/ultimo/menu/custom/03.png'}}" class="fade-on-hover" alt="Create Magento sub-themes" />
+		</a>
+		<h4 class="heading">Easy to customize</h4>
+		<p>Use Ultimo as a starting point for your custom projects. Unlike many other themes, Ultimo lets you create multiple custom sub-themes (theme variants) for your clients.</p>
+		<a href="{{store url='ultimo-responsive-magento-theme'}}" class="go">See all features</a>
+
+	</div>
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>block_nav_links</identifier>
+         <title>Main menu - custom links</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[	<li class="nav-item level0 level-top right">
+		<a class="level-top" href="{{store direct_url='about-magento-demo-store'}}" title="About Us">
+			<span>About Us</span>
+		</a>
+	</li>]]></content>
+      </block>
+      <block>
+         <identifier>block_product_secondary_bottom</identifier>
+         <title>Product - secondary column bottom</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="feature feature-icon-hover indent first">
+	<span class="ib ic ic-plane"></span>
+	<p class="no-margin ">We will send this product in 2 days. <a href="#">Read more...</a></p>
+</div>
+<div class="feature feature-icon-hover indent">
+	<span class="ib ic ic-phone"></span>
+	<p class="no-margin ">Call us now for more info about our products.</p>
+</div>
+<div class="feature feature-icon-hover indent">
+	<span class="ib ic ic-reload"></span>
+	<p class="no-margin ">Return purchased items and get all your money back.</p>
+</div>
+<div class="feature feature-icon-hover indent last">
+	<span class="ib ic ic-star"></span>
+	<p class="no-margin ">Buy this product and earn 10 special loyalty points!</p>
+</div>
+
+
+
+<!-- Social bookmarks from http://www.addthis.com/get/sharing  -->
+<!-- AddThis Button BEGIN -->
+<div class="feature-wrapper top-border margin-bottom">
+	<div class="addthis_toolbox addthis_default_style ">
+	<a class="addthis_button_preferred_1"></a>
+	<a class="addthis_button_preferred_2"></a>
+	<a class="addthis_button_preferred_3"></a>
+	<a class="addthis_button_preferred_4"></a>
+	<a class="addthis_button_compact"></a>
+	<a class="addthis_counter addthis_bubble_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5054e6c6502d114f"></script>
+</div>
+<!-- AddThis Button END -->
+<br/>
+]]></content>
+      </block>
+      <block>
+         <identifier>block_product_tab1</identifier>
+         <title>Custom Tab 1</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<h2>Custom Static Block 1</h2>
+
+<p>Custom CMS block displayed as a tab. You can use it to display info about returns and refunds, latest promotions etc. You can put your own content here: text, HTML, images - whatever you like. There are <strong>many similar blocks</strong> accross the store. All CMS blocks are editable from the admin panel.</p>
+
+<div class="feature feature-icon-hover indent first">
+	<span class="ib ic ic-right ic-2x"></span>
+	<p class="no-margin"><strong>Magento Community Edition is the most powerful</strong> open source e-commerce software and can be downloaded 100% for free. Developers can modify the core code, add custom features and functionality by installing extensions from Magento Connect marketplace.</p>
+</div>
+<div class="feature feature-icon-hover indent">
+	<span class="ib ic ic-right ic-2x"></span>
+	<p class="no-margin"><strong>Manage the fully dynamic catalog</strong> with the intutive admistrative interface. The flexible catalog system includes various options for the display of items. Magento is also integrated with a variety of major payment gateways out of the box.</p>
+</div>
+<div class="feature feature-icon-hover indent last">
+	<span class="ib ic ic-right ic-2x"></span>
+	<p class="no-margin"><strong>Magento is a fully global platform</strong>, allowing for the expansion of business or simply offering multiple versions of your site to meet the needs of your customers.
+Translated into over 60 languages, supporting multiple currencies, payment methods and taxes, Magento allows for internationalization of your online stores.</p>
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>block_product_tab2</identifier>
+         <title>Custom Tab 2</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<p>Another custom CMS block displayed as a tab. You can use it to display info about returns and refunds, latest promotions etc. You can put your own content here: text, HTML, images - whatever you like. There are <strong>many similar blocks</strong> accross the store. All CMS blocks are editable from the admin panel.</p>
+
+<p>Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit sed scelerisque quis. Nullam ornare enim nec justo bibendum lobortis. In eget metus.</p>]]></content>
+      </block>
+      <block>
+         <identifier>sample_mobile_header_top</identifier>
+         <title>Sample block - mobile header - top</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="item item-left">
+
+	<div class="links-wrapper-separators">
+		<ul class="links">
+			<li>
+				<a href="#">Mobile</a>
+			</li>
+			<li>
+				<a href="#">Links</a>
+			</li>
+		</ul>
+	</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_0</identifier>
+         <title>Sample slideshow 0</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/0.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 2 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/0.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 3 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/0.jpg'}}" alt="Banner" />
+	</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_1</identifier>
+         <title>Sample slideshow 1</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<a href="{{store url='ultimo-responsive-magento-theme'}}" title="Click to see all features">
+
+		<div class="ban">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/a01.jpg'}}" alt="Customizable Magento Theme" />
+			<div class="cap cap-top-right cap-push-down-10 cap-push-left-10 cap-no-bg cap-text-bg cap-text-bg-light-1">
+				<h2 class="text" style="font-size: 36px;" data-animate-in="fadeInUp delay-0-5">Customizable Theme</h2>
+				<p class="text" style="font-size: 18px;" data-animate-in="fadeInUp delay-1">You can change colors of almost every element</p>
+				<p class="text" style="font-size: 18px;" data-animate-in="fadeInUp delay-1-5">You have never seen so many options</p>
+			</div>
+		</div>
+
+	</a>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item">
+
+	<a href="{{store url='ultimo-responsive-magento-theme'}}" title="Click to see all features">
+
+		<div class="ban ban-effect-1">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/a02.jpg'}}" alt="Responsive Magento Theme" />
+			<div class="cap cap-bottom-left cap-push-up-10 cap-push-right-10 cap-no-bg cap-text-bg cap-text-bg-dark-2">
+				<h2 class="text" style="font-size: 36px;" data-animate-in="fadeInRight">Responsive</h2>
+				<p class="text" style="font-size: 18px;" data-animate-in="fadeInRight delay-0-5">This theme can adapt to any mobile screen resolution</p>
+			</div>
+		</div>
+
+	</a>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 3 -->
+<div class="item">
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/a03.jpg'}}" alt="Sample Slide" />
+		<div class="cap cap-bottom cap-no-bg cap-push-up-10 cap-push-right-10">
+			<a href="{{store direct_url='dress7.html'}}" title="Click to see the product">
+				<div class="feature feature-icon-hover indent indent-size-xl">
+					<span class="ic ic-2x ic-heart-o ib ib-size-xl ib-ef-3 ib-ef-3a" data-animate-in="fadeInDown delay-1"></span>
+					<h3 class="no-margin" style="color: #fff; font-size: 35px; line-height: 80px;" data-animate-in="fadeInDown">Super Promo</h3>
+				</div>
+			</a>
+		</div>
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 4 -->
+<div class="item">
+
+	<a href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis" title="Go to ThemeForest marketplace to buy this theme">
+		<div class="ban ban-effect-fade-out">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/a04.png'}}" alt="Buy Ultimo theme" />
+		</div>
+	</a>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_2</identifier>
+         <title>Sample slideshow 2</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<a href="{{store url='ultimo-responsive-magento-theme'}}" title="Click to see all features">
+
+		<div class="ban">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/b01.jpg'}}" alt="Customizable Magento Theme" />
+		</div>
+
+	</a>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item">
+
+	<a href="{{store url='ultimo-responsive-magento-theme'}}" title="Click to see all features">
+
+		<div class="ban">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/b02.jpg'}}" alt="Responsive Magento Theme" />
+		</div>
+
+	</a>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_3</identifier>
+         <title>Sample slideshow 3</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<a href="{{store url='ultimo-responsive-magento-theme'}}">
+
+		<div class="ban">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/c01.jpg'}}" alt="Customizable Magento Theme" />
+			<div class="cap cap-push-up-10 cap-push-left-10 cap-no-bg cap-text-bg cap-text-bg-dark-3">
+				<h2 class="text" style="font-size: 42px;" data-animate-in="fadeInDown delay-1">Customizable Magento Theme</h2>
+				<p class="text" style="font-size: 20px;" data-animate-in="fadeInDown delay-0-5">You have never seen so many options</p>
+				<p class="text" style="font-size: 20px;" data-animate-in="fadeInDown">You can change color of almost every element of the design</p>
+			</div>
+		</div>
+
+	</a>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item">
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/c02.png'}}" alt="Responsive Theme" />
+	</div>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_4</identifier>
+         <title>Sample slideshow 4</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/d01.jpg'}}" alt="Customizable Magento Theme" />
+		<div class="cap cap-push-up-10 cap-push-left-10 cap-no-bg cap-text-bg cap-text-bg-dark-3">
+			<h2 class="text" style="font-size: 26px;" data-animate-in="fadeInDown delay-1">Customizable Theme</h2>
+			<p class="text" style="font-size: 14px;" data-animate-in="fadeInDown delay-1-5">Change color of almost every element of the design</p>
+			<p class="text" style="font-size: 14px;" data-animate-in="fadeInDown delay-2">You have never seen so many options</p>
+		</div>
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item" >
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/d02.jpg'}}" alt="Responsive Layout" />
+		<div class="cap cap-push-up-10 cap-push-right-5 cap-no-bg cap-text-bg cap-text-bg-dark-3">
+			<h2 class="text" style="font-size: 26px;" data-animate-in="fadeInDown delay-1">Responsive Layout</h2>
+			<p class="text" style="font-size: 14px;" data-animate-in="fadeInDown delay-1-5">This theme can adapt to any mobile screen resolution</p>
+			<p class="text" style="font-size: 14px;" data-animate-in="fadeInDown delay-2">It also supports wide screens</p>
+		</div>
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 3 -->
+<div class="item" >
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/d03.jpg'}}" alt="Configure Product Grid" />
+		<div class="cap cap-push-up-10 cap-push-left-10 cap-no-bg cap-text-bg cap-text-bg-light-1">
+			<h2 class="text" style="font-size: 26px;" data-animate-in="fadeInDown delay-1">Configure Product Grid</h2>
+			<p class="text" style="font-size: 14px;" data-animate-in="fadeInDown delay-1-5">Customize the display of category grid, show/hide elements</p>
+			<p class="text" style="font-size: 14px;" data-animate-in="fadeInDown delay-2">Adjust it to your needs</p>
+		</div>
+	</div>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_5</identifier>
+         <title>Sample slideshow 5</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/e01.jpg'}}" alt="Customizable Magento Theme" />
+		<div class="cap cap-push-up-15 cap-push-right-5 cap-no-bg cap-text-bg cap-text-bg-light-1">
+			<h2 class="text" style="font-size: 42px;" data-animate-in="fadeInRight delay-0-5">Customizable Magento Theme</h2>
+			<p class="text" style="font-size: 20px;" data-animate-in="fadeInRight delay-1">You have never seen so many options</p>
+			<p class="text" style="font-size: 20px;" data-animate-in="fadeInRight delay-1-5">You can change color of almost every element of the design</p>
+		</div>
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item">
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/e02.png'}}" alt="Responsive Magento Theme" />
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 5 -->
+<div class="item">
+
+	<a href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis" title="Go to ThemeForest marketplace to buy this theme">
+
+		<div class="ban">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/e03.png'}}" alt="Buy Ultimo Theme" />
+		</div>
+
+	</a>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_6</identifier>
+         <title>Sample slideshow 6</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/f01.jpg'}}" alt="Customizable Magento Theme" />
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item">
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/f02.png'}}" alt="Responsive Magento Theme" />
+	</div>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_7</identifier>
+         <title>Sample slideshow 7</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<a href="{{store url='ultimo-responsive-magento-theme'}}">
+
+		<div class="ban">
+			<img class="image" src="{{media url='wysiwyg/infortis/slideshow/g01.jpg'}}" alt="Customizable Magento Theme" />
+			<div class="cap cap-push-up-10 cap-push-right-5 cap-no-bg cap-text-bg cap-text-bg-dark-2">
+				<h2 class="text" style="font-size: 42px;" data-animate-in="fadeInDown">Customizable Magento Theme</h2>
+				<p class="text" style="font-size: 20px;" data-animate-in="fadeInDown delay-1">You have never seen so many options</p>
+				<p class="text" style="font-size: 20px;" data-animate-in="fadeInDown delay-2">You can change color of almost every element of the design</p>
+			</div>
+		</div>
+
+	</a>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item">
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/g02.png'}}" alt="Responsive Theme" />
+	</div>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_8</identifier>
+         <title>Sample slideshow 8</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/h01.jpg'}}" alt="Customizable Magento Theme" />
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 2 -->
+<div class="item">
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/h02.jpg'}}" alt="Customizable Magento Template" />
+	</div>
+
+</div> <!-- end: slide -->
+
+<!-- Slide 3 -->
+<div class="item">
+
+	<div class="ban">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow/h03.jpg'}}" alt="Responsive Theme" />
+	</div>
+
+</div> <!-- end: slide -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_A</identifier>
+         <title>Sample slideshow A</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/A.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 2 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/A.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 3 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/A.jpg'}}" alt="Banner" />
+	</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_1</identifier>
+         <title>Sample slideshow - side banners 1</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row row-bottom-gutter-half">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<a href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis" title="Go to ThemeForest marketplace to buy this theme">
+			<div class="ban ban-caption-hinge-down">
+				<img class="image" src="{{media url="wysiwyg/infortis/slideshow/banners/a01.jpg"}}" alt="Banner 1" />
+				<div class="cap" style="background-color: rgba(91, 210, 236, 0.85);">
+					<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+						<h3 class="text no-margin">Buy This Theme</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<a href="http://ultimo.infortis-themes.com/demo/select-demo/">
+			<div class="ban ban-caption-hinge-up">
+				<img class="image" src="{{media url="wysiwyg/infortis/slideshow/banners/a02.jpg"}}" alt="Banner 2" />
+				<div class="cap" style="background-color: rgba(245, 88, 86, 0.85);">
+					<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+						<h3 class="text no-margin">See All Demos</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow/banners/a03.jpg"}}" alt="Banner 3" />
+			<div class="cap" style="background-color: rgba(135, 195, 30, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Unlimited Design</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div> <!-- end: row -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_2</identifier>
+         <title>Sample slideshow - side banners 2</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row row-bottom-gutter-half">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<a href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis" title="Go to ThemeForest marketplace to buy this theme">
+			<div class="ban ban-effect-3">
+				<img class="image" src="{{media url="wysiwyg/infortis/slideshow/banners/a01.jpg"}}" alt="Banner" />
+				<div class="cap cap-bottom-right cap-no-bg cap-text-bg cap-text-bg-light-1 hidden-sm" style="background-color: rgba(91, 210, 236, 0.85);">
+					<h4 class="text">Buy This Theme</h4>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<a href="http://ultimo.infortis-themes.com/demo/select-demo/">
+			<div class="ban ban-effect-3">
+				<img class="image" src="{{media url="wysiwyg/infortis/slideshow/banners/a02.jpg"}}" alt="Banner" />
+				<div class="cap cap-bottom-right cap-no-bg cap-text-bg cap-text-bg-dark-1 hidden-sm" style="background-color: rgba(245, 88, 86, 0.85);">
+					<h4 class="text">See All Demos</h4>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-effect-3">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow/banners/a03.jpg"}}" alt="Banner" />
+			<div class="cap cap-bottom-right cap-no-bg cap-text-bg cap-text-bg-light-1 hidden-sm" style="background-color: rgba(135, 195, 30, 0.85);">
+				<h4 class="text">Fully Responsive</h4>
+			</div>
+		</div>
+	</div>
+
+</div> <!-- end: row -->
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_a</identifier>
+         <title>Sample slideshow - side banners A</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row row-bottom-gutter-half">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-a.jpg"}}" alt="Banner 1" />
+			<div class="cap" style="background-color: rgba(91, 210, 236, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Buy This Theme</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-up">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-a.jpg"}}" alt="Banner 2" />
+			<div class="cap" style="background-color: rgba(245, 88, 86, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">See All Demos</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-a.jpg"}}" alt="Banner 3" />
+			<div class="cap" style="background-color: rgba(135, 195, 30, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Unlimited Design</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_a2</identifier>
+         <title>Sample slideshow - side banners A2</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-a2.jpg"}}" alt="Banner 1" />
+			<div class="cap" style="background-color: rgba(91, 210, 236, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Buy This Theme</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-up">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-a2.jpg"}}" alt="Banner 2" />
+			<div class="cap" style="background-color: rgba(245, 88, 86, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">See All Demos</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-a2.jpg"}}" alt="Banner 3" />
+			<div class="cap" style="background-color: rgba(135, 195, 30, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Unlimited Design</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_b</identifier>
+         <title>Sample slideshow - side banners B</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row row-bottom-gutter-half">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-b.jpg"}}" alt="Banner 1" />
+			<div class="cap" style="background-color: rgba(91, 210, 236, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Buy This Theme</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-up">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-b.jpg"}}" alt="Banner 2" />
+			<div class="cap" style="background-color: rgba(245, 88, 86, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">See All Demos</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-b.jpg"}}" alt="Banner 3" />
+			<div class="cap" style="background-color: rgba(135, 195, 30, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Unlimited Design</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_b2</identifier>
+         <title>Sample slideshow - side banners B2</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-b2.jpg"}}" alt="Banner 1" />
+			<div class="cap" style="background-color: rgba(91, 210, 236, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Buy This Theme</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-up">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-b2.jpg"}}" alt="Banner 2" />
+			<div class="cap" style="background-color: rgba(245, 88, 86, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">See All Demos</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-b2.jpg"}}" alt="Banner 3" />
+			<div class="cap" style="background-color: rgba(135, 195, 30, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Unlimited Design</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_c</identifier>
+         <title>Sample slideshow - side banners C</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row row-bottom-gutter-half">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-c.jpg"}}" alt="Banner 1" />
+			<div class="cap" style="background-color: rgba(91, 210, 236, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Buy This Theme</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-up">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-c.jpg"}}" alt="Banner 2" />
+			<div class="cap" style="background-color: rgba(245, 88, 86, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">See All Demos</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-c.jpg"}}" alt="Banner 3" />
+			<div class="cap" style="background-color: rgba(135, 195, 30, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Unlimited Design</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_additional_banners_c2</identifier>
+         <title>Sample slideshow - side banners C2</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<div class="row">
+
+	<!-- Banner 1 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-c2.jpg"}}" alt="Banner 1" />
+			<div class="cap" style="background-color: rgba(91, 210, 236, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Buy This Theme</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 2 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-up">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-c2.jpg"}}" alt="Banner 2" />
+			<div class="cap" style="background-color: rgba(245, 88, 86, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">See All Demos</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner 3 -->
+	<div class="col-md-12 small-banner">
+		<div class="ban ban-caption-hinge-down">
+			<img class="image" src="{{media url="wysiwyg/infortis/slideshow-test/banners/ban-c2.jpg"}}" alt="Banner 3" />
+			<div class="cap" style="background-color: rgba(135, 195, 30, 0.85);">
+				<div class="cap cap-center-vertically cap-center-horizontally cap-no-bg">
+					<h3 class="text no-margin">Unlimited Design</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_B</identifier>
+         <title>Sample slideshow B</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/B.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 2 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/B.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 3 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/B.jpg'}}" alt="Banner" />
+	</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_C</identifier>
+         <title>Sample slideshow C</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/C.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 2 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/C.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 3 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/C.jpg'}}" alt="Banner" />
+	</div>
+
+</div>]]></content>
+      </block>
+      <block>
+         <identifier>sample_slideshow_full_width</identifier>
+         <title>Sample slideshow - full width</title>
+         <is_active>1</is_active>
+         <stores><item>0</item></stores>
+         <content><![CDATA[<!-- Slide 1 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/full-width.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 2 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/full-width.jpg'}}" alt="Banner" />
+	</div>
+
+</div>
+
+<!-- Slide 3 -->
+<div class="item" >
+
+	<div class="ban ban-effect-1">
+		<img class="image" src="{{media url='wysiwyg/infortis/slideshow-test/full-width.jpg'}}" alt="Banner" />
+	</div>
+
+</div>]]></content>
+      </block>
+   </blocks>
+</root>

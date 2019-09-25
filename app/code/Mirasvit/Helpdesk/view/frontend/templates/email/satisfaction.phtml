@@ -1,0 +1,39 @@
+<?php /** @var $block \Mirasvit\Helpdesk\Block\Email\Satisfaction */?>
+<?php if ($block->getTicket()) :?>
+    <div class="hdmx-email__satisfaction">
+        <p><strong><?= __('Please take a second to rate my reply...') ?></strong></p>
+
+        <div class="hdmx-email__satisfaction-rate great">
+            <a href="<?= $block->getRateUrl(3) ?>" target="_blank">
+                <img src="<?= $block->getViewFileUrl('Mirasvit_Helpdesk::images/smile/3.png', ['_area' => 'frontend']) ?>"
+                     width="50" height="50" alt="<?= __('Great') ?>" border="0">
+            </a>
+            <h2>
+                <a href="<?= $block->getRateUrl(3) ?>" target="_blank"><?= __('Awesome') ?></a>
+            </h2>
+            <p><?= __('Fast, friendly, helpful, pleasant. Great job!') ?></p>
+        </div>
+
+        <div class="hdmx-email__satisfaction-rate ok">
+            <a href="<?= $block->getRateUrl(2) ?>" target="_blank">
+                <img src="<?= $block->getViewFileUrl('Mirasvit_Helpdesk::images/smile/2.png', ['_area' => 'frontend']) ?>"
+                     width="50" height="50" alt="<?= __('OK') ?>" border="0">
+            </a>
+            <h2>
+                <a href="<?= $block->getRateUrl(2) ?>" target="_blank"><?= __('Just Okay') ?></a>
+            </h2>
+            <p><?= __('Fine, but definitely could have been better.') ?></p>
+        </div>
+
+        <div class="hdmx-email__satisfaction-rate bad">
+            <a href="<?= $block->getRateUrl(1) ?>" target="_blank">
+                <img src="<?= $block->getViewFileUrl('Mirasvit_Helpdesk::images/smile/1.png', ['_area' => 'frontend']) ?>"
+                     width="50" height="50" alt="<?= __('Bad') ?>" border="0">
+            </a>
+            <h2>
+                <a href="<?= $block->getRateUrl(1) ?>" target="_blank"><?= __('Not good') ?></a>
+            </h2>
+            <p><?= __('Unfortunately, I wasn\'t happy with it at all.') ?></p>
+        </div>
+    </div>
+<?php endif;?>

@@ -1,0 +1,7 @@
+<?php
+$tag = $block->getTag();
+?>
+<div class="kb-tag-view">
+    <h1>Articles by tag "<?= $tag->getName() ?>"</h1>
+    <?= $block->getChildHtml('kb.article_list'); ?>
+</div>

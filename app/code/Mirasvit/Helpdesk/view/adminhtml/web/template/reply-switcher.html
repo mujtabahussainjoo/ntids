@@ -1,0 +1,38 @@
+<input type="hidden" name="reply_type" data-field="reply_type" data-bind="value: current().id">
+<div class="admin__fieldset-wrapper-title hdmx__reply-switcher" tabindex="3">
+    <div class="col-xs-9 row">
+        <div class="admin__action-dropdown-wrap hdmx-reply-switcher__dropdown"
+             data-bind="css: {_active: opened, _disabled: !collapsible}, outerClick: close.bind($data)">
+            <button
+                    class="admin__action-dropdown"
+                    type="button"
+                    data-bind="click: toggleOpened"
+                    data-toggle="dropdown"
+                    aria-haspopup="true">
+                <span class="admin__action-dropdown-text" data-bind="text: current().label"></span>
+            </button>
+
+            <ul class="admin__action-dropdown-menu">
+                <!-- ko foreach: { data: stores, as: 'store' } -->
+                    <!-- ko ifnot: $parent.current() == store -->
+                    <li>
+                        <a href="#" data-bind="text: store.label, click: $parent.onChangeStore"></a>
+                    </li>
+                    <!-- /ko -->
+                <!-- /ko -->
+            </ul>
+        </div>
+
+        <div class="hdmx-reply-switcher__note" data-bind="text: current().note"></div>
+    </div>
+
+    <div data-bind="scope: 'quickResponse'" class="hdmx__reply-quick-response col-xs-3">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+</div>
+
+<div class="admin__field  third-party" data-bind="visible: isThirdParty(), css: {'_required': isThirdParty()}">
+    <div class="admin__field-control">
+        <input class="admin__control-text" type="email" placeholder="type third party email here" autocomplete="off" name="third_party_email"  data-bind="value: _thirdPartyEmail,  css: {'required': isThirdParty()}">
+    </div>
+</div>

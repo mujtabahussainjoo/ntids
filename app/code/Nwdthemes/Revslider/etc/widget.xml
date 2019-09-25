@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="nwdthemes_revslider_widget" class="Nwdthemes\Revslider\Block\Widget\Revslider" placeholder_image="Nwdthemes_Revslider::admin/assets/images/logo.png">
+        <label translate="true">NWDthemes Slider Revolution</label>
+        <description>Add Slider Revolution</description>
+        <parameters>
+            <parameter name="alias" xsi:type="select" required="true" visible="true" source_model="Nwdthemes\Revslider\Model\Config\Source\Revslider">
+                <label translate="true">Select Slider</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+            <block name="helpdesk.ticket.list" class="Mirasvit\Helpdesk\Block\Ticket\Listing"
+                   template="ticket/list.phtml" cacheable="false">
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\Listing\Column\DefaultColumn" name="subject"
+                       template="ticket/list/column/subject.phtml" group="column">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Subject</argument>
+                    </arguments>
+                </block>
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\Listing\Column\DefaultColumn" name="department"
+                       template="ticket/list/column/department.phtml" group="column">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Department</argument>
+                    </arguments>
+                </block>
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\Listing\Column\DefaultColumn" name="activity"
+                       template="ticket/list/column/activity.phtml" group="column">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Last Activity</argument>
+                    </arguments>
+                </block>
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\Listing\Column\DefaultColumn" name="status"
+                       template="ticket/list/column/status.phtml" group="column">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Status</argument>
+                    </arguments>
+                </block>
+
+                <block name="helpdesk_mytickets_schedule_status"
+                       class="Mirasvit\Helpdesk\Block\Contacts\Schedule\Status"
+                       template="contacts/schedule/status.phtml">
+                    <arguments>
+                        <argument name="page" xsi:type="string">my-tickets</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

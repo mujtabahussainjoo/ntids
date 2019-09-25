@@ -1,0 +1,65 @@
+.report__chart-wrap {
+     display: flex;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+
+     .report__chart {
+          width: 100%;
+     }
+
+     .report__chart-legend {
+          .lib-clearfix();
+          margin: 0 0 0 4rem;
+     }
+}
+
+.report-chart__type {
+     text-align: center;
+     margin-bottom: 4rem;
+}
+
+.report-chart-legend__columns {
+     list-style: none;
+
+     li {
+          position: relative;
+          cursor: pointer;
+          padding: 5px 25px 5px 15px;
+          font-size: 12px;
+          white-space: nowrap;
+
+          i {
+               display: block;
+               width: 8px;
+               height: 8px;
+               border-radius: 8px;
+               position: absolute;
+               top: 10px;
+               left: 0;
+          }
+
+          &._inactive {
+               i {
+                    background: #ddd !important;
+               }
+
+               span {
+                    color: #aaa;
+               }
+          }
+
+          &:hover {
+               span {
+                    color: #41362f;
+               }
+          }
+     }
+}
+
+.fa-geo-chart:before {
+     content: "\f278";
+}
+
+.fa-column-chart:before {
+     content: "\f080";
+}

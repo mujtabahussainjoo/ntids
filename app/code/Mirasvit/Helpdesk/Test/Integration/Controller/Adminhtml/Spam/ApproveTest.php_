@@ -1,0 +1,31 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Adminhtml\Spam;
+
+/**
+ * @magentoAppArea adminhtml
+ */
+class ApproveTest extends \Magento\TestFramework\TestCase\AbstractBackendController
+{
+    /**
+     * setUp.
+     */
+    public function setUp()
+    {
+        $this->resource = 'Mirasvit_Helpdesk::helpdesk_spam';
+        $this->uri = 'backend/helpdesk/spam/approve';
+        parent::setUp();
+    }
+
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Adminhtml\Spam\Approve::execute
+     */
+    public function testApproveAction()
+    {
+        $this->dispatch('backend/helpdesk/spam/approve');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

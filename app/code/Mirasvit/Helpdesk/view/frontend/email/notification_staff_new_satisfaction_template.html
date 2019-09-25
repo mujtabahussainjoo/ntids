@@ -1,0 +1,26 @@
+<!--@subject Satisfaction survey result for ticket #{{var ticket.code}} @-->
+{{var preheader_text | raw}}
+
+{{template config_path="design/email/header_template"}}
+{{var hidden_separator|raw}}
+<p>
+    Dear <strong>{{var user.firstname}} {{var user.lastname}}</strong>, <br><br>
+    {{var ticket.customer_name}} rated your help with smile<br><br>
+    <img src="{{var rate_image_url}}" width="100px" height="100px">
+</p>
+<p>
+{{if use_form_key }}
+<h1>{{var ticket.subject}}</h1>
+{{else}}
+<a href="{{var ticket.getBackendUrl()}}"><h1>{{var ticket.subject}}</h1></a>
+{{/if}}
+<br>
+------------------------------<br>
+Ticket ID: {{var ticket.code}}<br>
+Customer email: {{var ticket.customer_email}}<br>
+{{depend satisfaction.comment}}
+Comment: {{var satisfaction.comment}}<br>
+{{/depend}}
+</p>
+
+{{template config_path="design/email/footer_template"}}

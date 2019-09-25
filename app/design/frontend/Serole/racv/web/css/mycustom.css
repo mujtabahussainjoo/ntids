@@ -1,0 +1,103 @@
+/******************RACV**************/
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500|Open+Sans');
+body {
+	font-family: 'Open Sans', sans-serif!important;
+}
+h1,h2,h3,h4 {
+	font-family: 'Montserrat', sans-serif!important;
+	font-weight:500!important;
+}
+	@media (min-width: 768px){
+	.header-container2,.header-primary-container{ 
+	margin-bottom:0.5%;
+	}
+	.content h2{font-size:24px!important;}
+	.header .logo-wrapper .logo {
+	margin: -11px 90px 17px -5px!important;
+	}
+	.header-container {
+		margin-left: 0%!important;
+		width: 100%!important;
+	}
+	.block-search .block.block-content {
+		padding:7px 0px 17px 370px!important;
+			margin-top: -32px!important;
+	}
+	.block-search form{top:12px!important;}
+	.navi-wrapper, .nav-regular{
+		float:left!important;
+			margin: -22px 44px 0 22px!important;
+	}
+
+
+
+	.bigbutton>span {
+		overflow: hidden;
+		text-indent: -99999px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		background-position: top center;
+		background-repeat: no-repeat;
+	}
+
+
+	a.bigbutton {
+		border: 1px solid #aac4dd;
+		background: #ffffff;
+		background: linear-gradient(to bottom, #ffffff 30%,#aac4dd 100%);
+		box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+		text-align: center;
+		display: block;
+		width: 28%;
+		height: 130px;
+		float: left;
+		border-radius: 5px;
+		min-width: 220px;
+	}
+	a {
+		color: #0071bc;
+	}
+	 #cinema-hoyts>span {
+		width: 185px;
+		height: 89px;
+		background: url(../images/homepage-hoyts.png);
+		margin-top: 17px;
+	} 
+	#cinema-village>span {
+		width: 96px;
+		height: 91px;
+		background: url(../images/homepage-village.png);
+		margin-top: 20px;
+	} 
+	#cinema-palace>span {
+		width: 185px;
+		height: 89px;
+		background-image:url(../images/homepage-palace.png);
+		margin-top: 30px;
+	}
+	p {
+		margin: 0 0 10px;
+	}
+	.bigbutton>span {
+		overflow: hidden;
+		text-indent: -99999px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		background-position: top center;
+		background-repeat: no-repeat;
+	}
+	a.bigbutton {
+		margin: 28px;
+	}
+
+	.header-primary-container {
+		box-shadow: 0 3px 4px 0 rgba(0,0,0,0.16)!important;
+	}
+}	

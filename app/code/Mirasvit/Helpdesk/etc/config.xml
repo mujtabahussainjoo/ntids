@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <mirasvit>
+            <helpdesk>
+                <enabled>1</enabled>
+            </helpdesk>
+        </mirasvit>
+        <helpdesk>
+            <general>
+                <front_title>My Support Tickets</front_title>
+                <default_priority>3</default_priority>
+                <default_department>1</default_department>
+                <default_status>1</default_status>
+                <sign_ticket_by>user</sign_ticket_by>
+                <contact_us_is_active>1</contact_us_is_active>
+                <is_wysiwyg>0</is_wysiwyg>
+                <prev_next_buttons>0</prev_next_buttons>
+                <is_default_cron>1</is_default_cron>
+                <accept_foreign_tickets>disable</accept_foreign_tickets>
+                <attachment_storage>fs</attachment_storage>
+                <draft_update_period>10</draft_update_period>
+                <is_allow_external_urls>1</is_allow_external_urls>
+                <show_in_customer_menu>1</show_in_customer_menu>
+            </general>
+            <contact_form>
+                <is_active>1</is_active>
+                <default_department>1</default_department>
+                <color>red</color>
+                <title>Contact Us</title>
+                <position>left</position>
+                <form_title>How can we help you?</form_title>
+                <subject_title>Question</subject_title>
+                <subject_placeholder>Briefly describe your question</subject_placeholder>
+                <description_title>Details</description_title>
+                <description_placeholder>Fill in details here</description_placeholder>
+                <is_active_attachment>0</is_active_attachment>
+                <is_allow_priority>0</is_allow_priority>
+                <is_allow_department>0</is_allow_department>
+                <is_active_kb>0</is_active_kb>
+            </contact_form>
+            <notification>
+                <is_show_code>0</is_show_code>
+                <history_records_number>0</history_records_number>
+                <new_ticket_template>helpdesk_notification_new_ticket_template</new_ticket_template>
+                <staff_new_ticket_template>helpdesk_notification_staff_new_ticket_template</staff_new_ticket_template>
+                <staff_assign_ticket_template>helpdesk_notification_staff_assign_ticket_template</staff_assign_ticket_template>
+                <new_message_template>helpdesk_notification_new_message_template</new_message_template>
+                <staff_new_message_template>helpdesk_notification_staff_new_message_template</staff_new_message_template>
+                <third_new_message_template>helpdesk_notification_third_new_message_template</third_new_message_template>
+                <reminder_template>helpdesk_notification_reminder_template</reminder_template>
+                <rule_template>helpdesk_notification_rule_template</rule_template>
+                <staff_new_satisfaction_template>helpdesk_notification_staff_new_satisfaction_template</staff_new_satisfaction_template>
+            </notification>
+            <satisfaction>
+                <is_active>1</is_active>
+                <is_show_results_in_ticket>1</is_show_results_in_ticket>
+                <is_send_results_owner>1</is_send_results_owner>
+            </satisfaction>
+            <frontend>
+                <is_active>1</is_active>
+                <is_allow_priority>1</is_allow_priority>
+                <is_allow_department>1</is_allow_department>
+                <is_allow_order>1</is_allow_order>
+            </frontend>
+            <developer>
+                <is_active/>
+                <sandbox_email/>
+                <apply_styles>0</apply_styles>
+                <log_ticket_deletion>0</log_ticket_deletion>
+            </developer>
+            <desktop_notification>
+                <check_period>60</check_period>
+                <is_notification_allow_message>1</is_notification_allow_message>
+                <is_notification_allow_assign>1</is_notification_allow_assign>
+            </desktop_notification>
+            <schedule>
+                <is_show_status_on_contactus>1</is_show_status_on_contactus>
+                <is_show_status_on_feedbackpopup>1</is_show_status_on_feedbackpopup>
+                <is_show_status_on_mytickets>1</is_show_status_on_mytickets>
+                <default_open_message>We are online now. Please contact us.</default_open_message>
+                <default_close_message>We are offline now. We will be open in [time_left_to_open].</default_close_message>
+                <is_show_schedule_on_contactus>1</is_show_schedule_on_contactus>
+                <show_holiday_schedule_before_days>5</show_holiday_schedule_before_days>
+                <working_schedule_title>Our working schedule</working_schedule_title>
+                <upcoming_schedule_title>Upcoming working schedule</upcoming_schedule_title>
+            </schedule>
+        </helpdesk>
+    </default>
+</config>

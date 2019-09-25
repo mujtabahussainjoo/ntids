@@ -1,0 +1,39 @@
+.header-container{ 
+	margin-left:0% !important;
+	width: 100% !important;
+}
+.navi ul li.nav-1 {
+	   
+border-right: 1px solid #e7e7e7!important;
+border-left: 1px solid #e7e7e7!important;
+}.navi ul li.nav-2 {
+	   
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-3 {
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-4 {
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-5 {
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-6 {
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-7 {
+border-right: 1px solid #e7e7e7!important;
+}
+
+.footer-container {
+    border-top: 1px solid #999999!important;
+}
+
+
+.primary .register-submit {
+	border-radius:3px!important;
+	background:#005a36!important;
+	    color: white !important;
+		    background-color: #005a36  #005a36!important;
+}
+.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{ 
+    color: white !important;
+	    background-color: #005a36 #005a36 !important;
+		background:#005a36!important;
+}

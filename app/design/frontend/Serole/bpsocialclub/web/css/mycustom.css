@@ -1,0 +1,215 @@
+/******************BPsocail club****************/
+	.nav-container {
+		background-color: #05266b!important;
+	}
+	.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{ 
+		background-color: #0000b3 !important;
+		background-image: none;
+		border-color: #0000b3;
+		color: #FFF !important;
+		border-radius: 0px!important;
+	}
+	.footer-container {
+		border-top: 1px solid #999999;
+	}
+	.header-container2,.header-primary-container{ 
+		margin-bottom:0%!important;
+	}
+
+	@font-face {
+		font-family: "Univers 45 LT";
+		font-style: normal;
+		font-weight: normal;
+		src: url("../fonts/Univers-45-light-latin-extended.eot?#iefix") format("embedded-opentype"), url("../fonts/Univers-45-light-latin-extended.woff") format("woff"), url("../fonts/Univers-45-light-latin-extended.ttf") format("truetype"), url("../fonts/Univers-45-light-latin-extended.svg#Univers-45-light") format("svg");
+	}
+	@font-face {
+		font-family: "Univers 55 Roman";
+		font-style: normal;
+		font-weight: normal;
+		src: url("../fonts/Univers-55-roman-latin-extended.eot?#iefix") format("embedded-opentype"), url("../fonts/Univers-55-roman-latin-extended.woff") format("woff"), url("../fonts/Univers-55-roman-latin-extended.ttf") format("truetype"), url("../fonts/Univers-55-roman-latin-extended.svg#Univers-45-light") format("svg");
+	}
+	@font-face {
+		font-family: "Univers 65 Bold";
+		font-style: normal;
+		font-weight: normal;
+		src: url("../fonts/Univers-65-bold-latin-extended.eot?#iefix") format("embedded-opentype"), url("../fonts/Univers-65-bold-latin-extended.woff") format("woff"), url("../fonts/Univers-65-bold-latin-extended.ttf") format("truetype"), url("../fonts/Univers-65-bold-latin-extended.svg#Univers-45-light") format("svg");
+	}
+	#page-title-heading{font-family: "Univers 45 LT",Arial,Helvetica,sans-serif!important;font-size: 25px!important;}
+	h1, h2, h3,h4{
+		font-family: "Univers 45 LT",Arial,Helvetica,sans-serif!important;
+		font-weight: 400!important;
+	}
+	.block-title{
+		font-family: "Univers 45 LT",Arial,Helvetica,sans-serif!important;
+	}
+	.products-list .product-name{
+		font-family: "Univers 45 LT",Arial,Helvetica,sans-serif!important;
+	}
+	body {
+    font-family:Arial,​Helvetica,​sans-serif;
+	}
+	.container-nav {
+	font-family:"Univers 55 Roman",​Arial,​Helvetica,​sans-serif!important;
+	}
+	.new-user {
+    font-family:"Univers 45 LT",Arial,Helvetica,sans-serif!important;
+    font-weight:400!important;
+	}
+	.account-nav .item.current a, .account-nav .item.current strong {
+	font-family:"Univers 45 LT",Arial,Helvetica,sans-serif!important;
+	}
+	.filter .block-subtitle{
+		font-family:"Univers 45 LT",Arial,Helvetica,sans-serif!important;
+	}
+@media (min-width: 768px){
+	.header-primary-container{padding-bottom:0px!important;}
+	.new-user {font-size: 22px !important;}
+	.fieldset.login h4{font-size: 22px !important;}
+	.page-title-wrapper{border-bottom: 1px solid #eeeeee!important;margin-top: 2%;}
+	.btn-rgtr-cust {
+		margin-left: 66%;
+		margin-top: 18% !important;
+	}	
+	.footer .item .links li{
+		font-size: 12px !important;
+	}
+	.footer .footer-copyright {
+		font-size: 14px!important;
+		line-height: 25px!important;
+		margin: 10px 0 0 0!important;
+	}
+	.form-login .actions-toolbar.btn-rgtr {
+		margin: 18.3% 0px 0px 0px!important;
+	}
+	.navi-wrapper{float:left!important;}
+	.customer-account-login .page-title {
+		color: #05266b!important;
+		font-size: 36px!important;
+		margin-bottom: 10px!important;
+		padding-bottom: 20px!important;
+	}
+	.account .sidebar-main .content.account-nav-content .nav.items li:first-child {
+		background-color: #f5f5f5;
+		border-bottom: 1px solid transparent;
+		margin: -10px -16px 0px;
+		padding: 5px 0 0 0;
+		border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
+		border-color: #dddddd;
+		background-color: #05266B;
+		color: #fff;
+	}
+	.item.current strong {
+    border-color: transparent!important;
+    font-weight: 600!important;
+	}
+	.page-title-wrapper{
+		color: #05266b!important;
+	}
+	.product.data.items.style1.show-tabs {
+		background-color: #F5F5F5;
+		border: 1px solid transparent;
+		border-radius: 4px;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+		border-color: #dddddd;
+		padding:0px!important;
+	}
+	.product.data.items.show-tabs > .item.title > .switch{
+		border:none!important;
+	}
+	.nav-item{font-family: "Univers 55 Roman", ​Arial, ​Helvetica, ​sans-serif;}
+	.block-search .action.search .icon {
+		border-left: 0px solid #3333!important;
+		color: #000!important;
+	}
+	.block-search.size-s .input-text{height: 34px!important;}
+}
+.pages .current .page {
+    background-color: #05266b!important;
+    color: #ffff!important;
+}
+@media only screen and (min-width: 992px){
+	.products-list-ext .product-item-actions .action.primary {
+		width: 70%!important;
+	}
+}
+.catalog-product-view .action.primary {
+	    color: #fff!important;
+    background-color: #05266b!important;
+}
+.header-container {
+	width: 100%!important;
+    margin-left: 0%!important;
+}
+.navi ul li.nav-1 {
+	    border-left: 1px solid #e7e7e7!important;
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-2 {
+	    border-left: 1px solid #e7e7e7!important;
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-3 {
+	    border-left: 1px solid #e7e7e7!important;
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-4 {
+	    border-left: 1px solid #e7e7e7!important;
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-5 {
+	    border-left: 1px solid #e7e7e7!important;
+border-right: 1px solid #e7e7e7!important;
+}.navi ul li.nav-6 {
+	    border-left: 1px solid #e7e7e7!important;
+border-right: 1px solid #e7e7e7!important;
+}
+.navi ul li.nav-7 {
+	    border-left: 1px solid #e7e7e7!important;
+border-right: 1px solid #e7e7e7!important;
+}
+/* @media (min-width: 768px){ */
+/* .navi-wrapper{float:left!important;} */
+/* .customer-account-login .page-title { */
+	 /* color: #05266b!important; */
+    /* font-size: 36px!important; */
+	/* margin-bottom: 10px!important; */
+	/* padding-bottom: 20px!important; */
+	/* } */
+/* } */
+.customer-account-create .page-title-wrapper{
+	font-size:30px!important;
+    color: #05266b!important;
+}
+/* @media (min-width: 768px){ */
+	/* .form-login .actions-toolbar.btn-rgtr { */
+		/* margin: 18.3% 0px 0px 0px!important; */
+	/* } */
+/* } */
+.action.submit.primary.register-submit{
+	  background-color: #0000b3 !important;
+    background-image: none;
+    border-color: #0000b3;
+    color: #FFF !important;
+    border-radius: 0px!important;
+}
+a.action,a.edit{
+	color:#05266b!important;
+}
+.account-nav .item {
+    border-bottom: 1px solid #dddddd;
+    margin: -1px 0 0;
+}
+.account-nav .content {
+    background: transparent!important;
+    border-color: #05266b!important;
+    color: white!important;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.products-list-ext .product-item-actions .action.primary {
+	color:#fff!important;
+    background-color: #05266b!important;
+}
+.catalog-category-view .product-item-name{
+	color:#05266b!important;
+}

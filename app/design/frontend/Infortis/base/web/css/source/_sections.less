@@ -1,0 +1,353 @@
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //
+    //  Add brackets to counters inside tabs
+    //  ---------------------------------------------
+    .product.data.items {
+        > .item.title {
+            > .switch {
+                .counter {
+                    &:before {
+                        content: '(';
+                    }
+                    &:after {
+                        content: ')';
+                    }
+                }
+            }
+        }
+    }
+
+    //
+    //  Blank style
+    //  ---------------------------------------------
+    .product.data.items {
+        .lib-data-accordion();
+        margin-bottom: @indent__base;
+    }
+
+    //
+    //  Luma style
+    //  ---------------------------------------------
+    .data-tabs-accordion-style-luma() {
+        // Only bottom border
+        .lib-data-accordion(
+            @_accordion-control-font-family: false,
+            @_accordion-control-font-size: 1.6rem,
+            @_accordion-control-font-style: false,
+            @_accordion-control-font-weight: normal,
+            @_accordion-control-border-top: transparent,
+            @_accordion-control-border-right: transparent,
+            @_accordion-control-border-left: transparent,
+            @_accordion-control-background-color: transparent,
+            @_accordion-control-color: @primary__color,
+            @_accordion-control-background-color-hover: transparent,
+            @_accordion-control-color-hover: @primary__color,
+            @_accordion-control-background-color-active: transparent,
+            @_accordion-control-color-active: @primary__color,
+            @_accordion-control-color-visited: false,
+            @_accordion-control-text-decoration-visited: false,
+            @_accordion-control-margin-bottom: 0,
+            @_accordion-control-padding-right: 35px,
+            @_accordion-control-padding-left: @indent__s,
+            @_accordion-content-border: transparent,
+            @_accordion-content-margin: 0,
+            @_accordion-content-padding: @indent__s @indent__s @indent__l
+        );
+        // border-bottom: @tab-control__border-width solid @tab-control__border-color;
+        margin-bottom: @indent__base;
+        // margin-left: -@layout__width-xs-indent;
+        // margin-right: -@layout__width-xs-indent;
+        .item.title {
+            a {
+                position: relative;
+                .lib-icon-font(
+                    @_icon-font-content: @icon-down,
+                    @_icon-font-size: 36px,
+                    @_icon-font-line-height: @icon-font__line-height,
+                    @_icon-font-color: @icon-font__color,
+                    @_icon-font-color-hover: @icon-font__color-hover,
+                    @_icon-font-color-active: @icon-font__color-active,
+                    @_icon-font-margin: @icon-font__margin,
+                    @_icon-font-vertical-align: @icon-font__vertical-align,
+                    @_icon-font-position: after,
+                    @_icon-font-display: false
+                );
+                &:after {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                }
+            }
+            &.active a:after {
+                content: @icon-up;
+            }
+            > .switch {
+                //&:extend(.abs-global-border-color all);
+                strong {
+                    font-weight: normal;
+                }
+            }
+        }
+        > .item.content {
+            &:last-child {
+                // Add bottom border to the last panel
+                border-bottom: @tab-control__border-width solid @tab-control__border-color;
+                //&:extend(.abs-global-border-color all);
+            }
+        }
+        .value p:last-child {
+            margin-bottom: 0;
+        }
+        .table-wrapper {
+            margin: 0;
+        }
+    }
+
+    .product.data.items.style-luma {
+        .data-tabs-accordion-style-luma();
+    }
+
+    //
+    //  Style 1
+    //  ---------------------------------------------
+    .product.data.items.style1 {
+        .data-tabs-accordion-style-luma();
+    }
+
+    //
+    //  Style 1 small (modification of Style 1)
+    //  ---------------------------------------------
+    .product.data.items.style1.style1-small {
+        > .item.title {
+            > .switch {
+                font-size: 1.4rem;
+                height: auto; // Override parent style's height
+                line-height: 18px;
+                padding-top: 9px;
+                padding-right: 35px; // Additional space for icon
+                padding-bottom: 9px;
+            }
+            a {
+                &:after {
+                    right: 0;
+                    top: 9px; // The same value as top padding of an item
+                }
+            }
+            &:not(.disabled) > .switch:active,
+            &.active > .switch,
+            &.active > .switch:focus,
+            &.active > .switch:hover {
+                // Override default bottom padding (inherited from Style 1) for all types of switch
+                padding-bottom: 9px;
+            }
+        }
+    }
+
+    //
+    //  Tabs styled like vertically stacked blocks
+    //  ---------------------------------------------
+    .product.data.items.stacked-tabs {
+        > .item.title {
+            &:extend(.abs-sidebar-block-title all);
+
+            > .switch,
+            &:not(.disabled) > .switch:active,
+            &.active > .switch,
+            &.active > .switch:focus,
+            &.active > .switch:hover {
+                border: none;
+                height: inherit;
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        > .item.content {
+            border: none;
+            margin: 0 0 30px;
+            padding: 0;
+
+            &:last-child {
+                // Remove bottom border from the last panel
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .product.data.items.show-tabs {
+        .lib-data-tabs(
+            @_tab-content-border-top-status: true,
+            @_tab-control-color-visited: false,
+            @_tab-control-text-decoration-visited: false
+        );
+    }
+
+    //
+    //  Luma style
+    //  ---------------------------------------------
+    .product.data.items.style-luma.show-tabs {
+        // We need to insert tabs variables which Luma theme overrides.
+        // @_tab-content-margin-top = @_tab-control-height + @_tab-control-border-width + @_tab-control-padding-top + @_tab-control-padding-bottom
+        .lib-data-tabs(
+            @_tab-control-font-weight: @font-weight__regular,
+            @_tab-content-margin-top: 43px,
+            @_tab-control-height: 40px,
+            @_tab-control-line-height: 40px,
+            @_tab-control-margin-right: -1px,
+            @_tab-control-border-width: 1px,
+            @_tab-control-padding-top: 1px,
+            @_tab-control-padding-right: 35px,
+            @_tab-control-padding-bottom: 1px,
+            @_tab-control-padding-left: 35px,
+            @_tab-content-padding-top: 35px,
+            @_tab-content-padding-right: 35px,
+            @_tab-content-padding-bottom: 35px,
+            @_tab-content-padding-left: 35px,
+            @_tab-control-color-visited: false,
+            @_tab-control-text-decoration-visited: false
+        );
+        border-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        .item.title a:after {
+            display: none;
+        }
+        > .item.title {
+            &:not(.disabled) > .switch:active {
+                // It is required to override (and decrease) default bottom padding of pressed tab
+                padding-bottom: 1px;
+            }
+        }
+        > .item.content {
+            &:last-child {
+                // Remove bottom border from the last panel
+                border-bottom: none;
+            }
+        }
+    }
+
+    //
+    //  Style 1
+    //  ---------------------------------------------
+    .product.data.items.style1.show-tabs {
+        // @_tab-content-border-top-status set to "true" adds top border to the content panels
+        // @_tab-content-margin-top = @_tab-control-height + @_tab-control-border-width + @_tab-control-padding-top + @_tab-control-padding-bottom
+        // In this case tabs have transparent border so we need to increase @_tab-content-margin-top by one (despite that @_tab-control-border-width = 0)
+        .lib-data-tabs(
+            @_tab-content-border-top-status: true,
+            @_tab-control-font-weight: @font-weight__regular,
+            @_tab-control-font-size: 16px,
+            @_tab-content-margin-top: 51px,
+            @_tab-control-height: 50px,
+            @_tab-control-line-height: 50px,
+            @_tab-control-margin-right: 0,
+            @_tab-control-border-width: 0,
+            @_tab-control-padding-top: 0,
+            @_tab-control-padding-right: 10px,
+            @_tab-control-padding-bottom: 0,
+            @_tab-control-padding-left: 10px,
+            @_tab-content-padding-top: 15px,
+            @_tab-content-padding-right: 0,
+            @_tab-content-padding-bottom: 15px,
+            @_tab-content-padding-left: 0,
+            @_tab-control-color-visited: false,
+            @_tab-control-text-decoration-visited: false
+        );
+        .item.title a:after {
+            display: none;
+        }
+        > .item.title {
+            > .switch {
+                border: 1px solid transparent;
+                border-bottom: none;
+            }
+            &:not(.disabled) > .switch:active {
+                padding-bottom: 0px;
+            }
+            &.active > .switch,
+            &.active > .switch:focus,
+            &.active > .switch:hover {
+                // Border of the active item has the same color as border of panels. Bottom border is transparent.
+                border-color: @tab-control__border-color;
+                border-bottom: 1px solid transparent;
+                // Make it a little bit taller than other tabs
+                padding-top: 4px;
+                margin-top: -4px;
+            }
+        }
+        > .item.content {
+            &:last-child {
+                // Remove bottom border from the last panel
+                border-bottom: none;
+            }
+        }
+    }
+
+    //
+    //  Style 1 small (modification of Style 1)
+    //  ---------------------------------------------
+    .product.data.items.style1.style1-small.show-tabs {
+        > .item.title {
+            > .switch {
+                font-size: 14px;
+                height: 32px;
+                line-height: 32px;
+                padding-top: 0;
+                padding-left: 7px;
+                padding-right: 7px;
+                padding-bottom: 0;
+            }
+            &:not(.disabled) > .switch:active {
+                padding-bottom: 0px;
+            }
+            &.active > .switch,
+            &.active > .switch:focus,
+            &.active > .switch:hover {
+                // Make it a little bit taller than other tabs
+                padding-top: 4px;
+                margin-top: -4px;
+
+                // Override bottom padding of mobile version
+                padding-bottom: 0;
+            }
+        }
+        > .item.content {
+            margin-top: 33px;
+        }
+    }
+
+    //
+    //  Tabs styled like vertically stacked blocks
+    //  ---------------------------------------------
+    .product.data.items.stacked-tabs {
+        > .item.title {
+            > .switch {
+                cursor: default;
+            }
+        }
+
+        > .item.content {
+            display: block !important; // IMPORTANT: force display of each block (to override "tabs" widget's behavior)
+        }
+    }
+}

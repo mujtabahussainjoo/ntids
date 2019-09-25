@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+
+    <default>
+        <carriers>
+            <shippingperitem>
+                <active>0</active>
+                <title>Shipping Per Product</title>
+                <name>Items</name>
+                <default_rate>0</default_rate>
+                <use_default_rate>0</use_default_rate>
+                <base_rate>0</base_rate>
+                <calc_separately>0</calc_separately>
+                <use_max>0</use_max>
+                <min>0</min>
+                <max>0</max>
+                <individual_rate_only>0</individual_rate_only>
+                <sort_order>100</sort_order>
+                <sallowspecific>0</sallowspecific>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+                <model>PL\Shippingperitem\Model\Carrier\Shippingperitem</model>
+            </shippingperitem>
+        </carriers>
+    </default>
+
+</config>

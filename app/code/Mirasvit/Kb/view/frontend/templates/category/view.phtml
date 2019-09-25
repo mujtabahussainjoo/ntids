@@ -1,0 +1,72 @@
+<?php
+/** @var \Mirasvit\Kb\Block\Category\View $block */
+// @codingStandardsIgnoreFile
+
+$rootCategory = $block->getCategory();
+$children = $this->getCategoryChildren($rootCategory);
+?>
+
+<?= $block->getChildHtml('kb.search.form'); ?>
+<?= $block->getKbPageTitle() ?>
+
+<?php if ($rootCategory->getDescription()): ?>
+    <div class="kb__category-description">
+        <?= $rootCategory->getDescriptionHtml() ?>
+    </div>
+<?php endif ?>
+
+<?php if ($children->count()): ?>
+    <div class="kb-category__grid">
+        <?php foreach ($children as $child): ?>
+            <?php $categories = $block->getCategoryChildren($child, null, true) ?>
+
+            <section class="kb__category">
+                <div class="kb__category-title">
+                    <h2><?= $child->getName() ?></h2>
+                </div>
+
+                <?php if ($categories->count()): ?>
+                    <ol>
+                        <?php foreach ($categories as $category): ?>
+                            <li>
+                                <a href="<?= $category->getUrl() ?>">
+                                    <i class="fa fa-fw fa-folder-open-o"></i> <?php
+                                    echo $category->getName() . $block->getArticleAmount($category);
+                                    ?>
+                                </a>
+                            </li>
+                        <?php endforeach ?>
+                    </ol>
+                    <?php if ($categories->getSize() > $block->getPageLimit()): ?>
+                        <div class="kb__category-view">
+                            <a href="<?= $child->getUrl() ?>">
+                                <?= __('View All %1 categories', $categories->getSize()) ?>
+                            </a>
+                        </div>
+                    <?php endif ?>
+                <?php else: ?>
+                    <ol>
+                        <?php /** @var \Mirasvit\Kb\Model\ResourceModel\Article\Collection $articles */ ?>
+                        <?php $articles = $block->getArticleCollection($child) ?>
+                        <?php foreach ($articles as $article): ?>
+                            <li>
+                                <a href="<?= $article->getUrl() ?>">
+                                    <i class="fa fa-fw fa-file-text-o"></i> <?= $article->getName() ?>
+                                </a>
+                            </li>
+                        <?php endforeach ?>
+                    </ol>
+                    <?php if ($articles->getSize() > $block->getPageLimit()): ?>
+                        <div class="kb__category-view">
+                            <a href="<?= $child->getUrl() ?>">
+                                <?= __('View All %1 articles', $articles->getSize()) ?>
+                            </a>
+                        </div>
+                    <?php endif ?>
+                <?php endif ?>
+            </section>
+        <?php endforeach ?>
+    </div>
+<?php else: ?>
+    <?= $block->getChildBlock('kb.category.articles')->setCategory($rootCategory)->toHtml(); ?>
+<?php endif ?>

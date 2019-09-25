@@ -1,0 +1,136 @@
+Department,Τμήμα
+"Create New Ticket","Δημιουργία νέου εισιτηρίου"
+Status,Κατάσταση
+Priority,Προτεραιότητα
+Replies,Απαντήσεις
+View,Θέα
+"Help Desk","Βοήθεια γραφείου"
+"Thank you",Ευχαριστώ
+"Create Ticket","Δημιουργία εισιτηρίου"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Το αίτημά σας υποβλήθηκε με επιτυχία. Θα λάβετε σύντομα ένα μήνυμα επιβεβαίωσης."
+Telephone,Τηλέφωνο
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Η ερώτησή σας υποβλήθηκε και θα σας απαντηθεί το συντομότερο δυνατό. Σας ευχαριστούμε που επικοινωνήσατε μαζί μας."
+"Unable to submit your request. Please, try again later","Δεν είναι δυνατή η υποβολή του αιτήματός σας. Παρακαλώ δοκιμάστε ξανά αργότερα"
+"Page not found.","Η σελίδα δεν βρέθηκε."
+"Your message was successfuly posted","Το μήνυμά σας δημοσιεύτηκε με επιτυχία"
+"Your ticket was successfuly posted","Το εισιτήριό σας δημοσιεύτηκε με επιτυχία"
+"Ticket was successfuly closed","Το εισιτήριο ολοκληρώθηκε με επιτυχία"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Δεν είναι δυνατή η μεταφόρτωση του αρχείου %1. Το μέγιστο επιτρεπόμενο μέγεθος μεταφόρτωσης είναι %2 MB."
+"Allows only this file types: %1","Επιτρέπει μόνο αυτούς τους τύπους αρχείων: %1"
+"Message added","Μήνυμα προστέθηκε"
+"Internal note added","Προστέθηκε εσωτερική σημείωση"
+"Third party message added","Έχει προστεθεί μήνυμα τρίτου μέρους"
+"Private third party message added","Έχει προστεθεί ιδιωτικό μήνυμα τρίτου μέρους"
+"-- Please Select --","-- Παρακαλώ επιλέξτε --"
+"Contact Tab","Καρτέλα επαφών"
+"Contact Form","Φόρμα Επικοινωνίας"
+" at %1 (%2) - %3","σε %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Δεν έχετε δικαιώματα για να διαβάσετε αυτό το εισιτήριο. Παρακαλούμε επικοινωνήστε με τον διαχειριστή σας."
+"Invalid Customer Email","Μη έγκυρο μήνυμα ηλεκτρονικού ταχυδρομείου πελατών"
+"not set","δεν ρυθμίστηκε"
+"Unknown time","Άγνωστη ώρα"
+ago,πριν
+"from now","από τώρα"
+"1 sec ago","1 δευτ. Πριν"
+"Open Ticket","Ανοιχτό εισιτήριο"
+"Open Tickets","Ανοιχτά εισιτήρια"
+"! Blocked file - ","! Αποκλεισμένο αρχείο -"
+Disabled,"Άτομα με ειδικές ανάγκες"
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","Σύστημα αρχείων"
+Database,"Βάση δεδομένων"
+Aqua,Aqua
+Grey,Γκρί
+Navy,"ΠΟΛΕΜΙΚΟ ΝΑΥΤΙΚΟ"
+Silver,Ασήμι
+Black,Μαύρος
+Green,Πράσινος
+Olive,Ελιά
+Teal,Βάσκας
+Blue,Μπλε
+Lime,Ασβεστος
+Purple,Μωβ
+Fuchsia,Φουξία
+Maroon,Μαρόν
+Red,"Το κόκκινο"
+Orange,Πορτοκάλι
+Yellow,Κίτρινος
+Text,Κείμενο
+Date,Ημερομηνία
+Checkbox,"Πλαίσιο ελέγχου"
+"Drop-down list","Δροσιστική λίστα"
+"In minutes...","Σε λίγα λεπτά ..."
+"In hours...","Σε ώρες ..."
+"In days...","Τις μέρες ..."
+"In weeks...","Τις εβδομάδες ..."
+"In months...","Σε μήνες ..."
+Custom,Εθιμο
+"--Please Select--","--Παρακαλώ επιλέξτε--"
+"New ticket created","Δημιουργήθηκε νέο εισιτήριο"
+Success,Επιτυχία
+Customer,Πελάτης
+Staff,Προσωπικό
+"Third party","Τρίτο μέρος"
+Closed,Κλειστό
+"Opened 24hr","Άνοιξε 24 ώρες"
+"Helpdesk Tickets","Helpdesk Εισιτήρια"
+"Cannot delete ticket with id %1","Δεν είναι δυνατή η διαγραφή του εισιτηρίου με id %1"
+Edit,Επεξεργασία
+"All Departments","Όλα τα Τμήματα"
+Back,Πίσω
+"24 hrs x 7 days","24 ώρες x 7 ημέρες"
+"Select working days/hours","Επιλέξτε εργάσιμες ημέρες / ώρες"
+"Satisfaction survey","Ερευνα ικανοποίησης"
+"to %1 (third party)","σε %1 (τρίτο μέρος)"
+"%1 (third party)","%1 (τρίτο μέρος)"
+"added %1 (%2)","προστέθηκε %1 (%2)"
+"Ticket Summary","Συνοπτική παρουσίαση εισιτηρίων"
+"Ticket ID","ID εισιτηρίου"
+Assignee,Εντολοδόχος
+"Additional Info","Πρόσθετες πληροφορίες"
+"Ticket History","Ιστορικό εισιτηρίων"
+"Done by","Γίνεται από"
+Changes,Αλλαγές
+Name,Ονομα
+"Attach files","Επισύναψη αρχείων"
+Submit,Υποβάλλουν
+"Submit Ticket","Υποβολή εισιτηρίου"
+"What is your question?","Ποια είναι η ερώτησή σας?"
+"We found the following topics that might be helpful:","Εντοπίσαμε τα ακόλουθα θέματα που θα μπορούσαν να είναι χρήσιμα:"
+"None of these are helpful - get in touch","Κανένα από αυτά δεν είναι χρήσιμο - έρθετε σε επαφή"
+"We have not found topics that can be helpful.","Δεν βρήκαμε θέματα που μπορούν να βοηθήσουν."
+"Contact Information","Στοιχεία επικοινωνίας"
+Comment,Σχόλιο
+"We are open 24 x 7","Είμαστε ανοιχτά 24 x 7"
+"We are closed","Είμαστε κλειστά"
+"Timezone: %1","Χρονική ζώνη: %1"
+"Please take a second to rate my reply...","Παρακαλώ πάρτε ένα δευτερόλεπτο για να αξιολογήσετε την απάντησή μου ..."
+Great,Εξαιρετική
+Awesome,Φοβερός
+"Fast, friendly, helpful, pleasant. Great job!","Γρήγορο, φιλικό, εξυπηρετικό, ευχάριστο. Καλή δουλειά!"
+"Just Okay",Εντάξει
+"Fine, but definitely could have been better.","Ωραία, αλλά σίγουρα θα μπορούσε να ήταν καλύτερη."
+"Not good","ΟΧΙ καλα"
+"Unfortunately, I wasn't happy with it at all.","Δυστυχώς, δεν ήμουν ευχαριστημένος με αυτό καθόλου."
+"Thank you for participating in our survey!","Σας ευχαριστούμε που συμμετείχατε στην έρευνα μας!"
+"If you would like to provide additional comments, please do so below:","Εάν επιθυμείτε να δώσετε συμπληρωματικά σχόλια, κάντε τα παρακάτω:"
+Message,Μήνυμα
+"Submit Message","Υποβολή μηνύματος"
+"Thank you for your feedback!","Ευχαριστούμε για την ανταπόκρισή σας!"
+Attachments,Συνημμένα
+Order,Σειρά
+"-- Select an Order --","- Επιλέξτε μια παραγγελία -"
+"Create ticket","Δημιουργήστε εισιτήριο"
+"You don't have open tickets","Δεν έχετε ανοιχτά εισιτήρια"
+"Post a Reply","Δημοσίευση απάντησης"
+"Reopen Ticket","Ανοίξτε ξανά το εισιτήριο"
+"Close Ticket","Κλείσιμο εισιτηρίου"
+History,Ιστορία
+"Back to My Tickets","Πίσω στα Εισιτήρια Μου"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Επικοινωνήστε μαζί μας"
+Open,Ανοιξε
+Subject,Θέμα
+"Last Activity","Τελευταία δραστηριότητα"
+"Request ID","Αναγνωριστικό αίτησης"

@@ -1,0 +1,73 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+?>
+<?php use Amasty\AdminActionsLog\lib\Ganon; ?>
+<?php use Amasty\AdminActionsLog\lib\FineDiff; ?>
+
+<?php
+/**
+ * @var $block \Amasty\AdminActionsLog\Block\Adminhtml\ActionsLog\Edit\Tab\View\Details
+ */
+$logRows = $block->getLogRows();
+?>
+
+<?php if (count($logRows)): ?>
+    <div class="grid">
+        <div class="admin__table-wrapper">
+            <table cellspacing="0" class="data-grid">
+                <thead>
+                <tr class="headings">
+                    <th class="data-grid-th"><?php echo __('Name') ?></th>
+                    <th class="data-grid-th"><?php echo __('Old Value') ?></th>
+                    <th class="data-grid-th"><?php echo __('New Value') ?></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php $i = 0;
+                $model = ''; ?>
+                <?php $numberOfElement = 0; ?>
+                <?php foreach ($logRows as $value): ?>
+                    <?php $numberOfElement++ ?>
+                    <?php if ($i == 0 || $model != $value->getModel()): ?>
+                        <tr class="data-grid-controls-row data-row <?php echo ($i++ % 2 != 0) ? '_odd-row' : ''; ?>">
+                            <td align="center" colspan="3" class="data-grid-checkbox-cell ammodel"><?php echo $value->getModel(); ?></td>
+                        </tr>
+                        <?php $model = $value->getModel(); ?>
+                    <?php endif; ?>
+                    <tr class="data-grid-controls-row data-row <?php echo ($i++ % 2 != 0) ? '_odd-row' : ''; ?>">
+                        <td><?php echo $value->getName(); ?></td>
+                        <?php
+                        //formating
+                        $noFormatOld = Ganon::str_get_dom($value->getOldValue());
+                        Ganon::dom_format($noFormatOld, array('attributes_case' => CASE_LOWER));
+                        $noFormatNew = Ganon::str_get_dom($value->getNewValue());
+                        Ganon::dom_format($noFormatNew, array('attributes_case' => CASE_LOWER));
+                        //difference
+                        //                        $opcodes = FineDiff::getDiffOpcodes($noFormatOld, $noFormatNew, FineDiff::$wordGranularity);
+                        $opcodes = FineDiff::getDiffOpcodes($noFormatOld, $noFormatNew);
+                        $noFormatDiff = FineDiff::renderDiffToHTMLFromOpcodes($noFormatOld, $opcodes);
+                        ?>
+                        <td class="onlyDeletions">
+                            <pre><?php echo $noFormatDiff; ?></pre>
+                        </td>
+                        <td class="onlyInsertions">
+                            <pre><?php echo $noFormatDiff; ?></pre>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<?php else: ?>
+    <div class="entry-edit">
+        <div class="entry-edit-head"><h4
+                class="icon-head head-audit-log-statistics"><?php echo __('Not found') ?></h4>
+        </div>
+    </div>
+<?php endif; ?>
+

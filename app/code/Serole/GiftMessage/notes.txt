@@ -1,0 +1,13 @@
+1) created attribute in product configuration with tab (attribute name 'is_gift_message')
+2) Created 'gift_message' table
+3) adminhtml file loading from Pdf module layout (sales_order_view.xml)
+4) we create two talbe's 'giftmessage_image' & 'giftmessage'
+   giftmessage_image => admin Gift Email Template Grid
+   giftmessage       => saving gift message data in this talbe ofter order places by using observer & and using this
+                        data in PDF generation concpet, we are sending PDF to Gift message sender if data exist other wise
+                        we are sedning to customer.
+
+
+**************************************************
+1) need to compress the code in Serole\GiftMessage\Block\Cart.php (i created lot of object manager and i am't able to
+   use constructor because it's inheried class)

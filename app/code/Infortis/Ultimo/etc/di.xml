@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="infortis_ultimo_command_testing" xsi:type="object">Infortis\Ultimo\Command\Testing</item>
+            </argument>
+        </arguments>
+    </type>
+	<!-- <type name="Magento\Framework\View\Layout">
+		<plugin name="infortis_ultimo_magento_framework_view_layout" type="Infortis\Ultimo\Plugin\Magento\Framework\View\Layout"/>
+	</type> -->
+</config>

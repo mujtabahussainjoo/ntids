@@ -1,0 +1,28 @@
+/**
+ * Created by:  Milan Simek
+ * Company:     Plugin Company
+ *
+ * LICENSE: http://plugin.company/docs/magento-extensions/magento-extension-license-agreement
+ *
+ * YOU WILL ALSO FIND A PDF COPY OF THE LICENSE IN THE DOWNLOADED ZIP FILE
+ *
+ * FOR QUESTIONS AND SUPPORT
+ * PLEASE DON'T HESITATE TO CONTACT US AT:
+ *
+ * SUPPORT@PLUGIN.COMPANY
+ */
+.fieldset-small legend {
+    width: calc(100% - 40px)!important;
+    margin-left: 20px!important;
+}
+.fieldset-small legend span {
+    font-size: 1.45rem!important;
+}
+
+#coupons_information_fieldset {
+    padding-top:0px;
+}
+
+.no-padding-bottom {
+    padding-bottom:0px!important;
+}

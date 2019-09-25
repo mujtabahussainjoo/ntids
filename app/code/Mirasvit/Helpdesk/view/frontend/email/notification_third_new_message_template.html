@@ -1,0 +1,12 @@
+<!--@subject {{var ticket.getEmailSubject()}} @-->
+{{var preheader_text | raw}}
+
+{{template config_path="design/email/header_template"}}
+
+{{var hidden_separator | raw}}
+
+{{var ticket.getLastMessageHtmlText() | raw}}<br><br>
+
+{{var ticket.getHiddenCodeHtml() | raw}}
+
+{{template config_path="design/email/footer_template"}}

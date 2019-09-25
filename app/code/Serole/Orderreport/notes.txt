@@ -1,0 +1,11 @@
+1) Created three tables which are
+    1)orderreport
+    2)subsidy_data
+    3)price_history
+
+2) And we have to create product attributes
+   1) subsidy_vip
+   2) subsidy
+
+3)Cron jon for Price_histroy table (Nightly Maintaince)
+

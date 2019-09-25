@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="surcharge_manage_listing_data_source" xsi:type="string">Fooman\Surcharge\Model\ResourceModel\Surcharge\CollectionGrid</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Fooman\Surcharge\Model\ResourceModel\Surcharge\CollectionGrid" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">fooman_surcharge</argument>
+            <argument name="resourceModel" xsi:type="string">Fooman\Surcharge\Model\ResourceModel\Surcharge</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SurchargeGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Fooman\Surcharge\Model\ResourceModel\Surcharge\Collection</argument>
+        </arguments>
+    </virtualType>
+    <preference for="Fooman\Surcharge\Api\SurchargeInterface" type="Fooman\Surcharge\Model\Surcharge" />
+    <type name="\Magento\Tax\Helper\Data">
+        <plugin name="fooman_surcharge_applied_taxes" type="Fooman\Surcharge\Plugin\AppliedTaxes"/>
+    </type>
+    <type name="Magento\Quote\Model\Cart\TotalsConverter">
+        <plugin name="add_fooman_surcharge_details" type="Fooman\Surcharge\Plugin\ListIndividualSurchargesPlugin"/>
+    </type>
+</config>

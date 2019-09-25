@@ -1,0 +1,136 @@
+Department,विभाग
+"Create New Ticket","नया टिकट बनाएं"
+Status,स्थिति
+Priority,प्राथमिकता
+Replies,जवाब
+View,राय
+"Help Desk","सहायता केंद्र"
+"Thank you",धन्यवाद
+"Create Ticket","टिकट बनाएं"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","आपका अनुरोध सफलतापूर्वक सबमिट किया गया था। आपको जल्द ही एक पुष्टिकरण ईमेल प्राप्त करना चाहिए।"
+Telephone,टेलीफोन
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","आपकी पूछताछ जमा कर दी गई थी और जल्द से जल्द जवाब दिया जाएगा। हमसे संपर्क करने के लिए धन्यवाद।"
+"Unable to submit your request. Please, try again later","आपका अनुरोध जमा करने में असमर्थ बाद में पुन: प्रयास करें"
+"Page not found.","पृष्ठ नहीं मिला।"
+"Your message was successfuly posted","आपका संदेश सफलतापूर्वक पोस्ट किया गया था"
+"Your ticket was successfuly posted","आपका टिकट सफलतापूर्वक पोस्ट किया गया था"
+"Ticket was successfuly closed","टिकट सफलतापूर्वक बंद कर दिया गया था"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","फ़ाइल %1 अपलोड नहीं कर सकता। अधिकतम अनुमत अपलोड आकार %2 एमबी है।"
+"Allows only this file types: %1","केवल इस फ़ाइल प्रकार की अनुमति देता है: %1"
+"Message added","संदेश जोड़ा गया"
+"Internal note added","आंतरिक नोट जोड़ा गया"
+"Third party message added","तीसरे पक्ष के संदेश जोड़े गए"
+"Private third party message added","निजी तृतीय पक्ष संदेश जोड़ा गया"
+"-- Please Select --","-- कृपया चुने --"
+"Contact Tab","टैब से संपर्क करें"
+"Contact Form","संपर्क करें प्रपत्र"
+" at %1 (%2) - %3","%1 (%2) पर - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","आपको इस टिकट को पढ़ने की अनुमति नहीं है। कृपया, अपने व्यवस्थापक से संपर्क करें।"
+"Invalid Customer Email","अमान्य ग्राहक ईमेल"
+"not set","सेट नहीं"
+"Unknown time","अज्ञात समय"
+ago,पूर्व
+"from now","अब से"
+"1 sec ago","1 सेकंड पहले"
+"Open Ticket","खुली टिकट"
+"Open Tickets","खुले टिकट"
+"! Blocked file - ","! अवरुद्ध फाइल -"
+Disabled,विकलांग
+"AW Helpdesk","एडब्ल्यू हेल्पडेस्क"
+"MW Helpdesk","मेगावाट हेल्पडेस्क"
+"File System","फाइल सिस्टम"
+Database,डेटाबेस
+Aqua,पानी
+Grey,धूसर
+Navy,नौसेना
+Silver,चांदी
+Black,काली
+Green,हरा
+Olive,जैतून
+Teal,टील
+Blue,नीला
+Lime,चूना
+Purple,बैंगनी
+Fuchsia,फ्यूशिया
+Maroon,"लाल रंग"
+Red,लाल
+Orange,नारंगी
+Yellow,पीला
+Text,टेक्स्ट
+Date,तारीख
+Checkbox,चेकबॉक्स
+"Drop-down list","ड्राॅप डाउन लिस्ट"
+"In minutes...","मिनटों में..."
+"In hours...","घंटों में ..."
+"In days...","दिनों में..."
+"In weeks...","हफ्तों में ..."
+"In months...","महीनों में ..."
+Custom,रिवाज
+"--Please Select--","--कृपया चुने--"
+"New ticket created","नया टिकट बनाया गया"
+Success,सफलता
+Customer,ग्राहक
+Staff,कर्मचारी
+"Third party","तृतीय पक्ष"
+Closed,"बन्द है"
+"Opened 24hr","24 घंटे खुला"
+"Helpdesk Tickets","हेल्पडेस्क टिकट"
+"Cannot delete ticket with id %1","आईडी %1 के साथ टिकट हटा नहीं सकता"
+Edit,"संपादित करें"
+"All Departments","सभी विभाग"
+Back,वापस
+"24 hrs x 7 days","24 घंटे x 7 दिन"
+"Select working days/hours","कार्य दिवस / घंटे का चयन करें"
+"Satisfaction survey","संतुष्टि परिक्षण"
+"to %1 (third party)","%1 (तृतीय पक्ष) तक"
+"%1 (third party)","%1 (तृतीय पक्ष)"
+"added %1 (%2)","जोड़ा %1 (%2)"
+"Ticket Summary","टिकट सारांश"
+"Ticket ID","टिकट आईडी"
+Assignee,संपत्ति-भागी
+"Additional Info","अतिरिक्त जानकारी"
+"Ticket History","टिकट इतिहास"
+"Done by",कृत
+Changes,परिवर्तन
+Name,नाम
+"Attach files","फ़ाइल संलग्न करें"
+Submit,"जमा करें"
+"Submit Ticket","टिकट सबमिट करें"
+"What is your question?","क्या पूछते हैं?"
+"We found the following topics that might be helpful:","हमें निम्नलिखित विषय मिलते हैं जो उपयोगी हो सकते हैं:"
+"None of these are helpful - get in touch","इनमें से कोई भी सहायक नहीं है - संपर्क में रहें"
+"We have not found topics that can be helpful.","हमें उन विषयों को नहीं मिला है जो सहायक हो सकते हैं।"
+"Contact Information","संपर्क जानकारी"
+Comment,टिप्पणी
+"We are open 24 x 7","हम 24 x 7 खुले हैं"
+"We are closed","हम बंद हैं"
+"Timezone: %1","टाइमज़ोन: %1"
+"Please take a second to rate my reply...","कृपया मेरे उत्तर को रेट करने के लिए एक सेकंड लें ..."
+Great,महान
+Awesome,"बहुत बढ़िया"
+"Fast, friendly, helpful, pleasant. Great job!","तेज़, दोस्ताना, सहायक, सुखद। अच्छा काम!"
+"Just Okay","बस ठीक है"
+"Fine, but definitely could have been better.","ठीक है, लेकिन निश्चित रूप से बेहतर हो सकता था।"
+"Not good","अच्छा नही"
+"Unfortunately, I wasn't happy with it at all.","दुर्भाग्य से, मैं इसके साथ खुश नहीं था।"
+"Thank you for participating in our survey!","हमारे सर्वेक्षण में भाग लेने के लिए धन्यवाद!"
+"If you would like to provide additional comments, please do so below:","यदि आप अतिरिक्त टिप्पणियां प्रदान करना चाहते हैं, तो कृपया नीचे ऐसा करें:"
+Message,संदेश
+"Submit Message","सन्देश प्रस्तुत करें"
+"Thank you for your feedback!","आपकी प्रतिक्रिया के लिए आपका धन्यवाद!"
+Attachments,संलग्नक
+Order,क्रम
+"-- Select an Order --","- एक ऑर्डर का चयन करें -"
+"Create ticket","टिकट बनाएं"
+"You don't have open tickets","आपके पास खुले टिकट नहीं हैं"
+"Post a Reply","एक उत्तर पोस्ट करें"
+"Reopen Ticket","टिकट फिर से खोलें"
+"Close Ticket","टिकट बंद करें"
+History,इतिहास
+"Back to My Tickets","मेरे टिकट पर वापस"
+"Help Desk MX","सहायता डेस्क एमएक्स"
+"Contact Us","हमसे संपर्क करें"
+Open,खुला
+Subject,विषय
+"Last Activity","आख़िरी गतिविधि"
+"Request ID","अनुरोध आईडी"

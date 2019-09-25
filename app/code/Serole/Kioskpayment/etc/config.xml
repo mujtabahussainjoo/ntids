@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+                <kioskpayment>
+                <active>1</active>
+                <title>Kioskpayment</title>
+                <order_status>complete</order_status>
+                <payment_action>authorize</payment_action>
+                <model>Serole\Kioskpayment\Model\Kioskpayment</model>
+            </kioskpayment>
+            <!-- payment-config -->
+        </payment>
+    </default>
+</config>

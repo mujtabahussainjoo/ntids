@@ -1,0 +1,246 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-success container">
+    <?php if ($block->getOrderId()):?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= __('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php  else :?>
+            <p><?= __('Your order # is: <span>%1</span>.', $block->escapeHtml($block->getOrderId())) ?></p>
+        <?php endif;?>
+        <p><?= /* @escapeNotVerified */ __('We\'ll email you an order confirmation with details.') ?></p>
+    <?php endif;?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <div class="actions-toolbarw continue-toolbar row">
+        <div class="primary col-sm" style="float:left;margin:0 50px 0px 0px;">
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $block->getContinueUrl() ?>"><span><?= /* @escapeNotVerified */ __('Continue Shopping') ?></span></a>
+        </div>   
+	<?php
+		$orderId = $block->getOrderId();
+		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+		$orderObj = $objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($orderId);
+		$invoiceCount = count($orderObj->getInvoiceCollection());
+		$connection = $objectManager->get('\Magento\Framework\App\ResourceConnection')->getConnection();
+		$sql = " select * from order_item_serialcode where status = 1 and OrderID = ".$orderId;
+		$result = $connection->fetchAll($sql);
+		if($invoiceCount){
+		$serialCodeItems = $result;
+		$pdfHelper = $objectManager->create('\Serole\Pdf\Helper\Pdf');
+		$fileBasepath = $pdfHelper->getRootBaseDir()."/neatideafiles/";
+		$fileBaseUrl = $pdfHelper->getDefaultBaseUrl()."/neatideafiles/";
+		$filePath = $fileBasepath."pdf/".$block->getOrderId().".pdf";
+		$fileUrl = $fileBaseUrl."pdf/".$block->getOrderId().".pdf";
+	?>
+	<?php if(file_exists($filePath)) { ?>		
+		<div class="primary eVoucherdwn col-sm">
+			<a class="action primary continue eVoucherdwn" href="<?php echo $this->getUrl('pdf/index/Pdfdownload/id/' . $block->getOrderId()); ?>"><span><?= /* @escapeNotVerified */ __('Download eVoucher') ?></span></a>
+		</div>
+	<?php }} ?>		
+		
+		
+    </div>
+</div>
+
+<?php
+// $orderId = $block->getOrderId();
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+// $orderObj = $objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($orderId);
+// $invoiceCount = count($orderObj->getInvoiceCollection());
+// $connection = $objectManager->get('\Magento\Framework\App\ResourceConnection')->getConnection();
+// $sql = " select * from order_item_serialcode where status = 1 and OrderID = ".$orderId;
+// $result = $connection->fetchAll($sql);
+
+if($invoiceCount):
+    $serialCodeItems = $result;
+    $pdfHelper = $objectManager->create('\Serole\Pdf\Helper\Pdf');
+    $fileBasepath = $pdfHelper->getRootBaseDir()."/neatideafiles/";
+    //$fileBaseUrl = $pdfHelper->getBaseStoreUrl()."/neatideafiles/";
+    $fileBaseUrl = $pdfHelper->getDefaultBaseUrl()."/neatideafiles/";
+    $filePath = $fileBasepath."pdf/".$block->getOrderId().".pdf";
+    $fileUrl = $fileBaseUrl."pdf/".$block->getOrderId().".pdf";
+    ?>
+     <?php if(file_exists($filePath)) { ?>
+    <div class="success-info">
+        <p>
+			<strong>
+				Your evoucher barcode(s) are shown below. They can be redeemed immediately at venues that have scanning capabilities.
+				Alternatively, you can download the evoucher(s) here. They have also been emailed to your nominated email address.
+			</strong>
+		</p>
+    </div>
+
+    <?php if (!empty($result)): ?>
+
+        <table style="width:65%">
+            <tr>
+                <th style="width:40%;text-align: left">Product Name</th>
+                <th class="pro-sku" style="width:20%;text-align: left">SKU</th>
+            </tr>
+
+            <?php
+            foreach ($orderObj->getAllItems() as $orderItem) {
+                $name = $orderItem->getName();
+                $orderItemid = $orderItem->getItemId();
+                $isVirtul = $orderItem->getIsVirtual();
+                $sku = $orderItem->getSku();
+                $productType = $orderItem->getProductType();
+                $productId = $orderItem->getProductId();
+                $orderQty = $orderItem->getQtyOrdered();
+
+                if ($orderItem->getProductType() == 'bundle') {
+                    $orderItemid = $orderItem->getData('item_id');
+                    $bundleSku = $orderItem->getSku();
+                    $bundleSerialCodes = $pdfHelper->checkBundleSerialData($serialCodeItems, $bundleSku);
+                    if (!empty($bundleSerialCodes)) {
+                        $bundleItemscollection = $objectManager->create('Magento\Sales\Model\Order\Item')->getCollection();
+                        $bundleItemscollection->addAttributeToFilter('order_id', $orderObj->getEntityId());
+                        $bundleItemscollection->addAttributeToFilter('parent_item_id', $orderItem->getData('item_id'));
+                        $bundleItemscollection->addAttributeToFilter('product_type', 'virtual');
+
+                        ?>
+                        <tr class="product-detail">
+                            <td class="virtual-barcode virtual"><?php echo $name ?></td>
+                            <td class="virtual-barcode virtual"><?php echo $sku; ?></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table style="width: 160%;">
+                                    <tr>
+                                        <th class="table-tr-serialcode-txt">Serial Code</th>
+                                        <th>Pin</th>
+                                        <th>Bar Code</th>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <?php
+                        foreach ($bundleItemscollection as $bundleItem) {
+                            $childItemSku = $bundleItem->getSku();
+                            $childItemSerialCodes = $pdfHelper->getChildItemSerialCodes($bundleSerialCodes, $childItemSku);
+                            foreach ($childItemSerialCodes as $childItem) {
+                                $imagePath = $fileBasepath . 'barcodeimages/barcode-' . $orderId . '-item-' . $childItem['SerialNumber'] . '.png';
+                                $imageUrl = $fileBaseUrl . 'barcodeimages/barcode-' . $orderId . '-item-' . $childItem['SerialNumber'] . '.png';
+                                ?>
+                                <tr>
+                                    <td>
+                                        <table style="width: 160%;">
+                                            <tr>
+                                                <td class="virtual-serial virtual"
+                                                    style="text-align: left"><?php echo $childItem['SerialNumber']; ?>
+												</td>
+											
+												<td class="virtual-serial virtual" style="text-align: right;padding: 10px 0 0 35px;">
+													<?php echo $childItem['PIN']; ?>
+												</td>
+												
+												<?php if (file_exists($imagePath)) { ?>
+												<td class="virtual-barcode virtual" style="text-align: left">
+													<img src="<?php echo $imageUrl ?>"/>
+												</td>
+                                                <?php } ?>
+												
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            <?php }
+                        } ?>
+
+                    <?php }
+                } elseif (($orderItem->getProductType() == 'virtual' || $orderItem->getProductType() == 'grouped') && $orderItem->getParentItemId() == '') {
+                    $filterArray = $pdfHelper->getSerialCodesByFilter($serialCodeItems, $sku, $parentsku = '');
+                    ?>
+
+                    <?php if (!empty($filterArray)) { ?>
+                        <tr class="product-detail">
+                            <td class="virtual-barcode virtual"><?php echo $name ?></td>
+                            <td class="virtual-barcode virtual"><?php echo $sku; ?></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table style="width: 160%;max-width: 160%;">
+                                    <tr>
+                                        <th class="table-tr-serialcode-txt">Serial Code</th>
+                                        <th>Pin</th>
+                                        <th>Bar Code</th>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <?php foreach ($filterArray as $serialCodeItem) { ?>
+                            <tr>
+                                <td>
+                                    <table style="width: 160%;max-width: 160%;">
+                                        <tr>
+                                            <td class="virtual-serial virtual" style="text-align: left">
+                                                <?php echo $serialCodeItem['SerialNumber']; ?>
+                                            </td> 
+											
+											<td class="virtual-serial virtual" style="text-align: right;padding: 10px 0 0 35px;">
+                                                <?php echo $serialCodeItem['PIN']; ?>
+                                            </td>
+											
+                                            <td class="virtual-barcode virtual" style="text-align: left">
+                                                <?php
+                                                $imagePath = $fileBasepath . 'barcodeimages/barcode-' . $orderId . '-item-' . $serialCodeItem['SerialNumber'] . '.png';
+                                                $imageUrl = $fileBaseUrl . 'barcodeimages/barcode-' . $orderId . '-item-' . $serialCodeItem['SerialNumber'] . '.png';
+                                                if (file_exists($imagePath)) { ?>
+                                                    <img style="vertical-align: 81%; margin-left: 15%;height: 69%;margin-top: -2%;"
+                                                         src="<?php echo $imageUrl ?>"/>
+                                                <?php } ?>
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td></td>
+                            </tr>
+                        <?php } ?>
+
+                    <?php } ?>
+                    <?php
+                }
+
+            } ?>
+        </table>
+    <?php
+    endif;
+  }
+endif;
+?>
+
+<style>
+    .product-detail{
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+    }
+   /* .continue-toolbar{
+        float: left;
+    }*/
+  .success-info{
+      padding-top: 20px;
+  }
+
+  .continue-toolbar .continue{
+      background-color: #2b388f;
+      color: #fff;
+  }
+
+  .order-number{
+      color: #2b388f;
+  }
+
+</style>
+
+

@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_RedirectPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <tab id="magepsycho" translate="label" sortOrder="200">
+            <label>MagePsycho</label>
+        </tab>
+        <section id="magepsycho_redirectpro" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>magepsycho</tab>
+            <label>Custom Redirect Pro</label>
+            <resource>MagePsycho_RedirectPro::config</resource>
+
+            <group id="support" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Fieldset\Support</frontend_model>
+            </group>
+
+            <group id="general" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                <label>General Settings</label>
+                <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Version</label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\Version</frontend_model>
+                </field>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="license_header_start" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[&nbsp;]]></label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>
+                <field id="domain" translate="label" type="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Domain Name</label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\Domain</frontend_model>
+                </field>
+                <field id="domain_type" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Type</label>
+                    <source_model>MagePsycho\RedirectPro\Model\System\Config\Source\DomainType</source_model>
+                </field>
+                <field id="dev_license" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Key (Development)*</label>
+                    <validate>required-entry</validate>
+                    <tooltip><![CDATA[License Key is mandatory for the proper functioning of the module. <br /> Note: You need to enter the License Key as per 'License Type']]></tooltip>
+                    <depends>
+                        <field id="domain_type">2</field>
+                    </depends>
+                </field>
+                <field id="prod_license" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Key (Production)*</label>
+                    <validate>required-entry</validate>
+                    <tooltip><![CDATA[License Key is mandatory for the proper functioning of the module. <br /> Note: You need to enter the License Key as per 'License Type']]></tooltip>
+                    <depends>
+                        <field id="domain_type">1</field>
+                    </depends>
+                </field>
+                <field id="license_header_end" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[&nbsp;]]></label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>
+
+                <field id="debug" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Debug Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip><![CDATA[This will log the redirection url and other variables, useful for debugging purposes.]]></tooltip>
+                </field>
+                <field id="manual" translate="label" type="label" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Manual</label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\ManualLink</frontend_model>
+                </field>
+            </group>
+
+            <group id="login_settings" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                <label>Login Redirect Settings</label>
+                <field id="default_login_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default Login Redirection Url</label>
+                    <tooltip><![CDATA[If left empty then customer will be redirected to <strong>Account Dashboard</strong> page after login.<br />This value will be overridden by group wise value if configured.]]></tooltip>
+                </field>    
+                 <field id="group_login_url" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Group Wise Redirection Url</label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\FieldArray\LoginRedirect</frontend_model>
+                    <backend_model>MagePsycho\RedirectPro\Model\System\Config\Backend\FieldArray\LoginRedirect</backend_model>
+                </field>                            
+            </group>
+
+            <group id="logout_settings" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+                <label>Logout Redirect Settings</label>
+                <field id="default_logout_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default Logout Redirection Url</label>
+                    <tooltip><![CDATA[If left empty then customer will be redirected to <strong>Homepage</strong> after logout.]]></tooltip>
+                </field>
+                 <field id="group_logout_url" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Group Wise Redirection Url</label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\FieldArray\LogoutRedirect</frontend_model>
+                    <backend_model>MagePsycho\RedirectPro\Model\System\Config\Backend\FieldArray\LogoutRedirect</backend_model>
+                </field>                 
+                 <field id="remove_logout_intermediate" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Remove Logout Intermediate Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                     <tooltip><![CDATA[If enabled, will remove the logout intermediate page that says "You have logged out and will be redirected to our homepage in 5 seconds." and redirect user directly to the configured page.]]></tooltip>
+                </field>   
+                <field id="logout_custom_message" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Logout Custom Message</label>
+                    <tooltip><![CDATA[This custom message will be displayed during logout redirection.<br/><strong>%d</strong> will be replaced by logout delay time.]]></tooltip>
+                    <depends>
+                         <field id="remove_logout_intermediate">0</field>
+                    </depends>
+                </field>
+                <field id="logout_delay_time" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Logout Delay Time</label>
+                    <source_model>MagePsycho\RedirectPro\Model\System\Config\Source\LogoutDelayTime</source_model>
+                    <tooltip><![CDATA[This time will be used for delaying logout redirection.]]></tooltip>
+                    <depends>
+                         <field id="remove_logout_intermediate">0</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="account_settings" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
+                <label>New Account Redirect Settings</label>
+                <field id="default_account_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default New Account Redirection Url</label>
+                    <tooltip><![CDATA[If left empty then customer will be redirected to <strong>Account Dashboard</strong> after registration.]]></tooltip>
+                </field>
+                <field id="group_account_url" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1" >
+                    <label>Group Wise Redirection Url</label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\FieldArray\NewAccountRedirect</frontend_model>
+                    <backend_model>MagePsycho\RedirectPro\Model\System\Config\Backend\FieldArray\NewAccountRedirect</backend_model>
+                </field>
+                <field id="default_account_message" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default New Account Success Message</label>
+                   <tooltip><![CDATA[If left empty then system's default message will be shown.<br />Note: <strong>%s</strong> will be replaced by frontend store name.]]></tooltip>
+                </field>
+                <field id="group_account_message" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1" >
+                   <label>Group Wise Success Message</label>
+                   <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\FieldArray\NewAccountSuccessMessage</frontend_model>
+                   <backend_model>MagePsycho\RedirectPro\Model\System\Config\Backend\FieldArray\NewAccountSuccessMessage</backend_model>
+                </field>
+                <field id="group_selector_header" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong>Group Selection [Bonus]</strong>]]></label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>
+                <field id="group_selector_info" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Group Selection [Bonus]]]></label>
+                    <frontend_model>MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\GroupSelectorInfo</frontend_model>
+                </field>
+            </group>
+
+            <group id="misc_settings" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="50" >
+                <label>Misc Settings</label>
+                <field id="newsletter_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Newsletter Subscription Redirection Url</label>
+                    <tooltip><![CDATA[If left empty then user will be redirected to referrer page after newsletter subscription.]]></tooltip>
+                </field>
+               <field id="redirect_to_param" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Redirect To Param</label>
+                   <tooltip><![CDATA[This is a query string param that holds redirection url for variable {{redirect_to}}]]></tooltip>
+               </field> 
+
+            </group>
+        </section>
+
+    </system>
+</config>

@@ -1,0 +1,26 @@
+MIME-Version: 1.0
+Received: by 10.70.118.229 with HTTP; Wed, 25 Dec 2013 03:33:09 -0800 (PST)
+Date: Wed, 25 Dec 2013 13:33:09 +0200
+Delivered-To: dva@mirasvit.com.ua
+Message-ID: <CAE6S9wg3NBx=3nPNr0PbgHEAR4GuqxC6UKdBJX=Yt9ChaXzdGg@mail.gmail.com>
+Subject: Test Email
+From: Terry Bib <terry@mirasvit.com.ua>
+To: John Doe <john@mirasvit.com.ua>
+Content-Type: multipart/alternative; boundary=001a11c32924b6765a04ee5a39d2
+
+--001a11c32924b6765a04ee5a39d2
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Test Email Body<div class=3D"gmail_default" style=3D"font-=
+family:&#39;arial narrow&#39;,sans-serif;display:inline"></div><div><br></d=
+iv><div><b>bold text<div class=3D"gmail_default" style=3D"font-family:&#39;=
+arial narrow&#39;,sans-serif;display:inline">
+</div></b></div><div><br></div><div><div class=3D"gmail_default" style=3D"d=
+isplay:inline"><font face=3D"arial black, sans-serif" color=3D"#ff0000"><u>=
+<i>werwerwerwerwer</i></u></font></div></div><ul><li>aaaa<br></li><li>bbbb<=
+br>
+</li><li>ccc<div class=3D"gmail_default" style=3D"font-family:&#39;arial na=
+rrow&#39;,sans-serif;display:inline">c</div><br></li></ul></div>
+
+--001a11c32924b6765a04ee5a39d2--

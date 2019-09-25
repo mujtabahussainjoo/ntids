@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+	<event name="controller_action_postdispatch_adminhtml_system_config_save">
+		<observer name="cgen" instance="Infortis\Cgen\Observer\HookToControllerActionPostdispatchAdminhtmlSystemConfigSave"/>
+	</event>
+	<event name="dataporter_cfgporter_import_after">
+		<observer name="cgen" instance="Infortis\Cgen\Observer\HookToDataporterCfgporterImportAfter"/>
+	</event>
+</config>

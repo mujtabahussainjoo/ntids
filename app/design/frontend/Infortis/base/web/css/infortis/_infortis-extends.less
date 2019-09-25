@@ -1,0 +1,119 @@
+
+//
+//  Flex column
+//  _____________________________________________
+
+@abs-flex-container-column: {
+    .lib-flex-container-column();
+};
+
+.abs-flex-container-column {
+    @abs-flex-container-column();
+}
+
+//  Mobile
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .abs-flex-container-column-mobile {
+        @abs-flex-container-column();
+    }
+}
+
+//
+//  Sidebar blocks
+//  _____________________________________________
+
+//
+//  Abstract block title
+//  ---------------------------------------------
+
+.abs-sidebar-block-title {
+    .lib-sidebar-block-title();
+
+    strong {
+        .lib-sidebar-block-title-text();
+    }
+
+    &:extend(.abs-global-border-color all);
+}
+
+//
+//  TODO: Override Blank theme's abstract block
+//  ---------------------------------------------
+
+// .abs-block-title {
+//     .lib-sidebar-block-title();
+//     > strong {
+//         //.lib-heading(h3);
+//         .lib-sidebar-block-title-text();
+//     }
+// }
+
+// .abs-account-blocks {
+//     .block-title {
+//         &:extend(.abs-block-title all);
+//         > .action {
+//             margin-left: 15px;
+//         }
+//     }
+//     .box-title {
+//         > span {
+//             .lib-heading(h4);
+//         }
+//         display: inline-block;
+//         margin: 0 0 @indent__xs;
+//         > .action {
+//             font-weight: 400;
+//             margin-left: @indent__s;
+//         }
+//     }
+//     .block-content {
+//         p:last-child {
+//             margin-bottom: 0;
+//         }
+//         .box {
+//             margin-bottom: @indent__base;
+//         }
+//     }
+// }
+
+//
+//  Add to Actions (from Luma)
+//  _____________________________________________
+
+.abs-actions-addto {
+    .lib-css(color, @addto-color);
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: @font-weight__semibold;
+    letter-spacing: .05em;
+
+    .lib-icon-font(
+        @_icon-font-content: '',
+        @_icon-font-size: 16px,
+        @_icon-font-line-height: 16px,
+        @_icon-font-margin: -2px 5px 0 0,
+        @_icon-font-vertical-align: middle
+    );
+
+    &:hover {
+        .lib-css(color, @addto-hover-color);
+        text-decoration: none;
+    }
+}
+
+//
+//  Borders
+//  _____________________________________________
+
+.abs-global-border-color {
+    .lib-global-border-color();
+}
+
+.abs-global-border-color-light {
+    .lib-global-border-color-light();
+}
+
+.abs-global-border-color-dark {
+    .lib-global-border-color-dark()
+}

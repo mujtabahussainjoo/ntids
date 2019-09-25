@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Serole_Productprice::productprice" title="Product Price" module="Serole_Productprice" sortOrder="15" parent="Magento_Sales::sales_operation" action="productprice/price/index" resource="Magento_Sales::sales_order"/>
+    </menu>
+</config>

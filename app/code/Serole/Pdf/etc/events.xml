@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_invoice_save_after">
+        <observer name="order_place_after_pdf" instance="Serole\Pdf\Observer\Orderpdf"/>
+    </event>
+    <event name="sales_order_creditmemo_save_after">
+        <observer name="creditmemo_place_after" instance="Serole\Pdf\Observer\Creditmemo"/>
+    </event>
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="checkout_sucess_contoller" instance="Serole\Pdf\Observer\OrderSuccess"/>
+    </event>
+</config>
+
+

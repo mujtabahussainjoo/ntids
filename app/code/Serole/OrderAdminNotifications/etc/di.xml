@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Sales\Controller\Adminhtml\Order\Email" type="Serole\OrderAdminNotifications\Controller\Magento\Sales\Adminhtml\Order\Email" />
+	<preference for="Magento\Sales\Model\Order\Email\Sender\InvoiceSender" type="Serole\OrderAdminNotifications\Model\Magento\Sales\Order\Email\Sender\InvoiceSender" />	
+	<preference for="Magento\Sales\Model\Order\Email\Sender\CreditmemoSender" type="Serole\OrderAdminNotifications\Model\Magento\Sales\Order\Email\Sender\CreditmemoSender" />
+</config>

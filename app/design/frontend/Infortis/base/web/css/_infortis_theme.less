@@ -1,0 +1,52 @@
+//
+//  Extends and utilities
+//  ---------------------------------------------
+
+@import 'infortis/_infortis-utilities.less';
+@import 'infortis/_infortis-extends.less';
+
+//
+//  Integrations (low priority - loaded before components)
+//  ---------------------------------------------
+
+@import 'infortis/_font-awesome.less'; // Have to be loaded before (to be overridden) built-in icons
+
+//
+//  Generic components
+//  ---------------------------------------------
+
+@import 'infortis/_shared.less'; // Legacy styles. TODO: rewrite/refactor
+@import 'infortis/_components.less';
+
+//
+//  Basic styles
+//  ---------------------------------------------
+
+@import 'infortis/_base.less';
+@import 'infortis/_utility-classes.less';
+@import 'infortis/_minor-components.less';
+@import 'infortis/_elements.less';
+// @import 'infortis/_minor-elements.less';
+@import 'infortis/_page-sections.less';
+// @import 'infortis/_pages.less';
+@import 'infortis/_override-magento.less';
+
+//
+//  Integrations
+//  ---------------------------------------------
+
+@import 'infortis/_bootstrap.less'; // Bootstrap elements - have to be loaded before _grid12.less and other built-in responsive layout styles
+
+//
+//  Other legacy styles. TODO: rewrite/refactor
+//  ---------------------------------------------
+
+@import 'infortis/_styles-infortis.less';
+@import 'infortis/_common.less';
+@import 'infortis/_grid12.less';
+
+//
+//  User's custom styles - have to be loaded last
+//  ---------------------------------------------
+
+@import '_custom.less';

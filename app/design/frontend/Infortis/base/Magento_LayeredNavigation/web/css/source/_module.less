@@ -1,0 +1,639 @@
+//
+//  Styles copied from Magento/luma/Magento_LayeredNavigation/web/css/source/_module.less 
+//
+
+
+
+//
+//  Variables
+//  _____________________________________________
+
+//  Additional variables copied (and modified) from Magento/luma/Magento_Theme/web/css/source/_module.less
+
+@filter-title-background-color: rgba(0, 0, 0, 0.04);
+@filter-link: @color-gray-darken4;
+@filter-link-hover: darken(@filter-link, 30%);
+@filter-quantity: @color-gray52;
+
+//  Additional variables copied from Magento/luma/Magento_Catalog/web/css/source/module/_toolbar.less
+
+@toolbar-background: transparent;
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .filter {
+        &-title {
+            strong {
+                // @_shadow: inset 0 1px 0 0 @color-white, inset 0 -1px 0 0 fade(@border-color__base, 30);
+
+                // .lib-css(background-color, @toolbar-element-background);
+                // .lib-css(box-shadow, @_shadow);
+                // border-radius: 3px;
+                // border: 1px solid @border-color__base;
+                // font-weight: 400;
+                // left: 0;
+                // line-height: 16px;
+                // padding: 7px @indent__s;
+                // position: absolute;
+                // text-align: center;
+                // top: 0;
+                // z-index: 2;
+
+                // New:
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                .lib-button();
+
+                &[data-count]:after {
+                    .lib-css(color, @color-white);
+                    background: @color-orange-red4;
+                    border-radius: 2px;
+                    content: attr(data-count);
+                    display: inline-block;
+                    font-size: 1.4rem; // New
+                    line-height: 1;
+                    margin: 0 @indent__xs;
+                    min-width: 1em;
+                    padding: 2px;
+                }
+                &.disabled {
+                    opacity: .5;
+                }
+            }
+        }
+        .block-subtitle {
+            // border-bottom: @border-width__base solid @border-color__base;
+            // font-size: @font-size__base;
+            // font-weight: @font-weight__semibold;
+            // line-height: 1em;
+            // padding: @indent__s @indent__s @indent__base;
+
+            // New:
+            .lib-sidebar-block-title();
+            .lib-sidebar-block-title-text();
+            padding: @sidebar-block__title__vert-padding 0;
+            margin-bottom: 0; // Override margin of abstract block title rules
+            &:extend(.abs-global-border-color all);
+        }
+        &-subtitle {
+            display: none;
+        }
+        &-current {
+            margin: 0;
+            .items {
+                padding: @indent__xs @indent__s;
+            }
+            .item {
+                padding-left: 20px; // New
+                position: relative;
+                z-index: 1;
+            }
+            .filter &-subtitle {
+                // border: none;
+                display: block;
+                // padding-bottom: @indent__s;
+            }
+            .action.remove {
+                &:extend(.abs-remove-button-for-blocks all);
+                left: -8px; // New
+                position: absolute;
+                top: -1px; // New
+
+                // New:
+                &:before {
+                    font-size: ;
+                }
+            }
+        }
+        &-actions {
+            margin-bottom: @indent__m;
+            padding: 0 @indent__s;
+        }
+        &-label {
+            font-weight: @font-weight__bold;
+            &:after {
+                content: ': ';
+            }
+        }
+        &-value {
+            .lib-css(color, @filter-quantity);
+        }
+        &-options {
+            display: none;
+            margin: 0;
+            &-item {
+                border-bottom: @border-width__base solid @border-color__base;
+                padding-bottom: @indent__s;
+
+                // New:
+                &:extend(.abs-global-border-color all);
+            }
+            &-title {
+                cursor: pointer;
+                font-weight: @font-weight__semibold;
+                margin: 0;
+                overflow: hidden;
+                //padding: @indent__s 30px+@indent__s 0 @indent__s;
+                padding: @indent__s 25px 0 0;
+                position: relative;
+                text-transform: uppercase;
+                word-break: break-all;
+                z-index: 1;
+
+                // New: new size of icon and line height
+                .lib-icon-font(
+                @_icon-font-content: @icon-down,
+                @_icon-font-position: after,
+                @_icon-font-display: block,
+                @_icon-font-size: 36px,
+                @_icon-font-line-height: 20px
+                );
+
+                &:after {
+                    position: absolute;
+                    // right: 13px;
+                    right: -11px; // New
+                    top: 10px;
+                }
+                &:hover {
+                    .lib-css(color, @filter-link-hover);
+                }
+                .active > & {
+                    .lib-icon-font-symbol(
+                        @_icon-font-content: @icon-up,
+                        @_icon-font-position: after
+                    );
+                }
+            }
+            &-content {
+                margin: 0;
+                padding: @indent__s;
+
+                // NEW: all filters collapsed
+                .filters-collapsed & {
+                    display: none; 
+                }
+
+                .item {
+                    margin: @indent__s 0;
+                    line-height: 1.3em;
+                }
+                a {
+                    .lib-css(color, @filter-link);
+                    margin-left: -10px;
+                    margin-right: -10px;
+                    padding: 5px 10px;
+                    // padding-left: 5px;
+                    // padding-right: 7px;
+
+                    // New:
+                    display: block;
+
+                    &:hover {
+                        // New:
+                        color: inherit;
+                        background-color: @filter-title-background-color;
+                        // background-color: @color-gray91;
+                        text-decoration: none;
+                        & + .count {
+                            background-color: @color-gray91;
+                        }
+                    }
+                }
+                .count {
+                    .lib-css(color, @filter-quantity);
+                    padding-right: 5px;
+                    &:before {
+                        content: '(';
+                    }
+                    &:after {
+                        content: ')';
+                    }
+                }
+                .filter-count-label {
+                    &:extend(.abs-visually-hidden all);
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+// New: replaced @screen__s with @screen__m
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    body {
+        &.filter-active {
+            .page-wrapper {
+                height: 0;
+                margin-top: -999999em;
+                visibility: hidden;
+            }
+            .columns {
+                z-index: 999;
+            }
+        }
+    }
+
+    .filter {
+        &.active {
+            position: relative;
+            visibility: visible;
+            z-index: 99;
+            .filter-options-item:last-child {
+                margin-bottom: @indent__xl;
+            }
+            .filter-title {
+                // New: TODO: set background, the same as for filters list?
+                //.lib-css(background, @color-white);
+                border-bottom: 1px solid @border-color__base;
+                height: 48px;
+                left: 0;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 2;
+                strong {
+                    .lib-css(box-shadow, none);
+                    background: none;
+                    border: 0;
+                    color: transparent;
+                    left: auto;
+                    right: 3px; // New
+                    top: 12px; // New
+                    // New: changed icon font size
+                    .lib-icon-font(
+                    @icon-remove,
+                    @_icon-font-color: @text__color__muted,
+                    @_icon-font-size: 44px,
+                    @_icon-font-position: after
+                    );
+                    &:after {
+                        background-color: transparent;
+                    }
+                }
+            }
+            .filter-subtitle {
+                // .lib-css(background, @toolbar-background);
+                display: block;
+                // height: 50px;
+                left: 0;
+                // line-height: 32px;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 1;
+
+                // New: when filter is active, reset some of the desktop styles
+                height: 60px; // Important: has to match top offset of: .filter.active .filter-subtitle
+                line-height: 60px;
+                padding: 0 @indent__s 0;
+                
+                // Set non-transparent background, the same as for filter options list (to cover page background color)
+                .lib-css(background, @color-white);
+            }
+            .filter-options {
+                .lib-css(background, @color-white);
+                bottom: 0;
+                display: block;
+                left: 0;
+                overflow: scroll;
+                position: fixed;
+                right: 0;
+                top: 60px; // New: increased offset
+                z-index: 10;
+                // New: side padding for filter options container on mobile
+                padding-left: @indent__s;
+                padding-right: @indent__s;
+            }
+        }
+    }
+
+    .filter {
+        & &-subtitle {
+            font-size: 20px;
+            font-weight: @font-weight__light;
+        }
+        &-actions {
+            // margin: -35px -@indent__s @indent__m;
+            // New:
+            // Important: 15px to properly position "toolbar-amount" block which is displayed below this element.
+            margin: -35px 0 15px;
+        }
+        &-options-content {
+            padding: @indent__xs @indent__s;
+        }
+
+        .block-subtitle {
+            // New: here we can decrease font size for "Now Shopping by" subtitle on mobile
+        }
+    }
+
+    // New:
+    // Reset some of the block title's styles.
+    // Below this breakpoint the "block-title" (its inner "strong" element) serves as
+    // "Shop By" button. And when the filter block is active, it serves as "X" button.
+    // Important: added "block" and "block-title" classes to make the selector more specific.
+    .block.filter {
+        margin-bottom: 0 !important; // Note: add "!important"
+        .block-title.filter-title {
+            border: none;
+            padding: 0;
+            margin: 0;
+            //height: 50px; // Important: has to match height of: .filter.active .filter-subtitle
+
+            // Remove icon, in case it's displayed for the block title
+            &:after {
+                display: none !important;
+            }
+
+            // Override sidebar block title's styles
+            strong {
+                font-weight: 600;
+                font-size: 1.6rem;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .filter .filter-current {
+        border: solid @border-color__base;
+        border-width: 1px 0;
+        // margin: @indent__xs -@indent__s 0;
+
+        // New:
+        &:extend(.abs-global-border-color all);
+
+        .items {
+            display: none;
+        }
+        &-subtitle {
+            position: relative;
+            // text-transform: uppercase;
+            z-index: 1;
+            border: none; // New: remove border in mobile view
+            // New: changed icon size
+            .lib-icon-font(
+                @_icon-font-content: @icon-down,
+                @_icon-font-size: 36px,
+                @_icon-font-position: before,
+                @_icon-font-display: block
+            );
+            &:before {
+                position: absolute;
+                right: 10px;
+                top: 15px; // New
+            }
+
+            &:after {
+                .lib-css(color, @text__color__muted);
+                content: ' (' attr(data-count) ')';
+                font-size: .9em;
+            }
+        }
+        &.active {
+            padding-bottom: 30px;
+            .block-subtitle {
+                .lib-icon-font-symbol(
+                    @_icon-font-content: @icon-up,
+                    @_icon-font-position: before
+                );
+            }
+            .items {
+                display: block;
+            }
+            & + .block-actions {
+                display: block;
+            }
+        }
+        & + .block-actions {
+            display: none;
+        }
+    }
+    .filter-no-options {
+        .filter-title {
+            &:before {
+                background: rgba(255,255,255,.5);
+                content: '';
+                display: block;
+                height: 40px;
+                // New: these changes required because of changes in "block-title"
+                // left: -15px;
+                // margin-top: -60px;
+                position: relative;
+                width: 100px;
+                z-index: 99;
+            }
+        }
+        .filter-content {
+            margin-bottom: @indent__base;
+        }
+    }
+    .page-with-filter {
+        .columns {
+            .sidebar-main {
+                .lib-vendor-prefix-order(0);
+            }
+        }
+    }
+}
+
+// New: replaced @screen__s with @screen__m
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .filter {
+        &.block {
+            margin-bottom: @sidebar-block__margin-bottom; //@indent__xl
+        }
+        &-title {
+            display: none;
+        }
+        &-content {
+            .item {
+                //margin: @indent__s 0;
+                margin: 0;
+            }
+        }
+        &-actions {
+            margin-bottom: @indent__l;
+        }
+        &.active &-options,
+        &-options {
+            background: transparent;
+            clear: both;
+            display: block;
+            overflow: initial;
+            position: static;
+        }
+        &-subtitle {
+            position: static;
+            display: block;
+        }
+    }
+    .page-layout-1column {
+        // .toolbar-products {
+        //     position: absolute;
+        //     top: 0;
+        //     width: 100%;
+        // }
+        // .products ~ .toolbar-products {
+        //     position: static;
+        // }
+        // &.page-with-filter .column.main {
+        //     padding-top: 45px;
+        //     position: relative;
+        //     z-index: 1;
+        // }
+
+        // New: this part replaces default styles. We aply them only on pages with filters.
+        &.page-with-filter {
+            .toolbar-products {
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+            .products ~ .toolbar-products {
+                position: static;
+            }
+            .column.main {
+                padding-top: 50px;
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        .filter {
+            &.block {
+                border-top: 1px solid @border-color__base;
+            }
+            &-content {
+                margin-top: @indent__s;
+            }
+            &-subtitle {
+                display: none;
+            }
+            &-options {
+                &-item {
+                    border: 0;
+                    display: inline-block;
+                    margin-right: @indent__m;
+                    &.active {
+                        position: relative;
+                        // New: increase to display above product grid items when items are on hover
+                        //z-index: 2;
+                        z-index: 3;
+                        &:hover {
+                            z-index: 3;
+                        }
+                        &:after,
+                        &:before {
+                            .lib-arrow(up, 8px, @color-black);
+                            bottom: -1px;
+                            content: '';
+                            display: block;
+                            left: 50%;
+                            margin-left: -@indent__base;
+                            position: absolute;
+                            z-index: 3;
+                        }
+                        &:after {
+                            .lib-css(border-bottom-color, @color-white);
+                            margin-top:2px;
+                            z-index: 4;
+                        }
+                    }
+                }
+                &-title {
+                    padding: 0 @indent__base 0 0;
+                    // &:after {
+                    //     right: 2px;
+                    //     top: 3px;
+                    //     z-index: 3;
+                    // }
+                    // New:
+                    &:after {
+                        right: -10px;
+                        top: -1px;
+                        z-index: 3;
+                    }
+                }
+                &-content {
+                    @_shadow: 0 3px 5px 0 rgba(50, 50, 50, .75);
+
+                    .lib-css(background, @color-white);
+                    .lib-css(box-shadow, @_shadow, 1);
+                    border: 1px solid @border-color__base;
+                    //padding: @indent__xs 0;
+                    padding: 10px 0;
+                    position: absolute;
+                    top: 100%;
+                    //width: 180px;
+                    width: 195px;
+                    z-index: 2;
+                    .item {
+                        //padding: @indent__xs;
+                        padding: 0 10px;
+                        margin:0;
+                        a {
+                            margin-left: 0;
+                            margin-right: 0; // New: override negative margin when filter inside a dropdown
+                            // New:
+                            padding: 5px;
+                        }
+                        &:hover {
+                            // New: remove background color, link tag already has hover background color
+                            //background-color: @color-gray91;
+                        }
+                    }
+                }
+
+                .swatch-attribute-options {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    margin-top: 5px;
+                }
+            }
+            &-current {
+                display: inline;
+                line-height: 35px;
+                &-subtitle {
+                    .lib-css(color, @text__color__muted);
+                    display: inline;
+                    font-size: @font-size__base;
+                    font-weight: normal;
+                    padding: 0;
+                    &:after {
+                        content: ':';
+                    }
+                }
+                .item,
+                .items {
+                    display: inline;
+                }
+                .item {
+                    margin-right: @indent__m;
+                }
+                .action.remove {
+                    line-height: normal;
+                }
+            }
+            &-actions {
+                display: inline;
+                & ~ .filter-options {
+                    margin-top: @indent__m;
+                }
+            }
+        }
+    }
+}

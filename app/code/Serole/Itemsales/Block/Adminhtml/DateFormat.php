@@ -1,0 +1,26 @@
+<?php
+namespace Serole\Itemsales\Block\Adminhtml;
+
+class DateFormat extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer 
+{
+	protected $backendSession;
+
+    protected $store;
+
+    public function __construct(
+    	\Magento\Backend\Block\Context $context,
+    	\Magento\Backend\Model\Session $backendSession,
+    	\Magento\Store\Model\Store $store,
+    	array $data = []
+    ) {
+        $this->backendSession = $backendSession;
+        $this->store = $store;
+        parent::__construct($context, $data);
+    }
+
+    public function render(\Magento\Framework\DataObject $row) 
+    {
+        $value = $row->getData($this->getColumn()->getIndex());
+        return date("d/m/Y H:i", strtotime($value));
+    }
+}

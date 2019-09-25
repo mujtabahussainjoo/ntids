@@ -1,0 +1,82 @@
+<?php /** @var $block \Mirasvit\Helpdesk\Block\Adminhtml\ToolbarTickets */ ?>
+<?php
+$newTickets = $block->getNewTickets();
+$userTickets = $block->getUserTickets();
+$class = '';
+$counter = strlen((int)$newTickets);
+$counter += strlen((int)$userTickets);
+if ($counter > 3 && $counter < 5) {
+    $class = 'medium';
+} elseif ($counter > 4) {
+    $class = 'large';
+}
+?>
+<div
+    data-mage-init='{"toolbarTickets": {}}'
+    class="notifications-wrapper admin__action-dropdown-wrap"
+    data-notification-count="<?= $newTickets; ?>/<?= $userTickets; ?>">
+    <?php if ($userTickets > 0 || $newTickets) : ?>
+        <a
+            href="<?= $block->getUrl('helpdesk/ticket/index'); ?>"
+            class="notifications-action admin__action-dropdown helpdesk-tickets <?= $class ?>"
+            data-mage-init='{"dropdown":{}}'
+            title="<?= __('Tickets'); ?>"
+            data-toggle="dropdown">
+            <span class="notifications-counter">
+                <?= $newTickets; ?>/<?= $userTickets; ?>
+            </span>
+        </a>
+        <ul
+            class="admin__action-dropdown-menu">
+            <?php foreach ($block->getLatestNewTickets() as $ticket) : ?>
+                <?php /** @var $ticket \Mirasvit\Helpdesk\Model\Ticket */ ?>
+                <li class="notifications-entry"
+                    data-notification-id="<?= $ticket->getId(); ?>"
+                    >
+                    <?php
+                    $ticketDescription = $block->escapeHtml($ticket->getDescription());
+                    $ticketDescriptionLength = $block->getNotificationDescriptionLength();
+                    ?>
+                    <a href="<?= $block->getUrl('helpdesk/ticket/edit', ['id' => $ticket->getId()]); ?>">
+                        <strong class="notifications-entry-title">
+                            <?php echo $block->escapeHtml($ticket->getSubject()); ?>
+                        </strong>
+                    </a>
+                    <?php if (strlen($ticketDescription) > $ticketDescriptionLength) : ?>
+                        <p class="notifications-entry-description _cutted">
+                        <span class="notifications-entry-description-start">
+                            <?= substr($ticketDescription, 0, $ticketDescriptionLength); ?>
+                        </span>
+                            <span class="notifications-entry-description-end">
+                            <?= substr($ticketDescription, $ticketDescriptionLength); ?>
+                        </span>
+                        </p>
+                    <?php else : ?>
+                        <p class="notifications-entry-description">
+                            <?= $ticketDescription; ?>
+                        </p>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+            <li class="notifications-entry notifications-entry-last">
+                <a
+                    href="<?= $block->getUrl('helpdesk/ticket/index'); ?>"
+                    class="action-tertiary action-more helpdesk-tickets">
+                    <?= __('See All Tickets'); ?>
+                </a>
+            </li>
+        </ul>
+    <?php else : ?>
+        <a
+            class="notifications-action admin__action-dropdown helpdesk-tickets"
+            href="<?= $block->getUrl('helpdesk/ticket/index'); ?>"
+            title="<?= __('Tickets'); ?>">
+        </a>
+    <?php endif; ?>
+</div>
+
+<script>
+    var notificationInterval = "<?php echo $block->getNotificationInterval()*1000; ?>";
+    var notificationCheckUrl = "<?php echo $block->getCheckNotificationUrl(); ?>";
+    var notificationIcon = "<?php echo $block->getViewFileUrl("Mirasvit_Helpdesk::images/notification_icon.png"); ?>";
+</script>

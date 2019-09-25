@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Serole_SideBarCart::css/css.css"/>
+	</head> 
+	<body>
+		<referenceContainer name="sidebar.main">
+            <block class="Serole\SideBarCart\Block\Index\Index" name="sidebarcart" before="block_product_secondary_bottom_2" template="Serole_SideBarCart::sidebarcart.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sales>
+            <totals_sort>
+                <fooman_surcharge>38</fooman_surcharge>
+                <fooman_surcharge_tax>39</fooman_surcharge_tax>
+            </totals_sort>
+        </sales>
+        <tax>
+            <cart_display>
+                <fooman_surcharge>1</fooman_surcharge>
+                <fooman_surcharge_zero>0</fooman_surcharge_zero>
+            </cart_display>
+            <sales_display>
+                <fooman_surcharge>1</fooman_surcharge>
+                <fooman_surcharge_zero>0</fooman_surcharge_zero>
+            </sales_display>
+        </tax>
+    </default>
+</config>

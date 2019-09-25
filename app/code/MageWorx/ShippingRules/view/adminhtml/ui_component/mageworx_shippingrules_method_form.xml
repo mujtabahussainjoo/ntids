@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mageworx_shippingrules_method_form.mageworx_shippingrules_method_form_data_source</item>
+            <item name="deps" xsi:type="string">mageworx_shippingrules_method_form.mageworx_shippingrules_method_form_data_source</item>
+            <item name="namespace" xsi:type="string">mageworx_shippingrules_method_form</item>
+            <item name="component" xsi:type="string">MageWorx_ShippingRules/js/method_form</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Method\Edit\Button\Back</item>
+            <item name="save" xsi:type="string">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Method\Edit\Button\Save</item>
+            <item name="save_and_continue" xsi:type="string">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Method\Edit\Button\SaveAndContinue</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">mageworx_shippingrules_method_form</item>
+        </item>
+        <item name="childrenFromMeta" xsi:type="boolean">true</item>
+    </argument>
+    <dataSource name="mageworx_shippingrules_method_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Method\Form\MethodDataProvider</argument>
+            <argument name="name" xsi:type="string">mageworx_shippingrules_method_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Method Information</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">10</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="entity_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">hidden</item>
+                    <item name="dataScope" xsi:type="string">entity_id</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                </item>
+            </argument>
+        </field>
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">title</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Will be displayed on checkout if a Store-specific label was not set.
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="code">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Code</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">code</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-code" xsi:type="boolean">true</item>
+                        <item name="min_text_len‌​gth" xsi:type="number">1</item>
+                        <item name="max_text_length" xsi:type="number">19</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        The value should be unique. This code is visible in the back-end only.
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="active">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="default" xsi:type="number">1</item>
+                    <item name="label" xsi:type="string" translate="true">Active</item>
+                    <item name="dataScope" xsi:type="string">active</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                </item>
+            </argument>
+        </field>
+        <field name="store_ids">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magento\Cms\Ui\Component\Listing\Column\Cms\Options</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Store View</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="dataScope" xsi:type="string">store_ids</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="disabled_without_valid_rates">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="label" xsi:type="string" translate="true">This setting hides the method if there are no valid rates for it</item>
+                    <item name="dataScope" xsi:type="string">disabled_without_valid_rates</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Hides that method if there is no one valid rate was applied.
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="replaceable_title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">1</item>
+                    <item name="dataScope" xsi:type="string">replaceable_title</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="label" xsi:type="string" translate="true">Replace method's title</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        This setting replaces the method's title by the applicable rate's title with the highest priority
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="price">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Price</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">price</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Base price of the method (in base currency). Used for methods without rates.
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="min_price_threshold">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Min Price Threshold</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">min_price_threshold</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                        <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Used only in rates price calculation, does not overwrite own method price if there are no valid
+                        rates
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="max_price_threshold">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Max Price Threshold</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">max_price_threshold</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                        <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Used only in rates price calculation, does not overwrite own method price if there are no valid
+                        rates
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="cost">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Cost</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">cost</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                </item>
+            </argument>
+        </field>
+        <field name="multiple_rates_price">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">MageWorx\ShippingRules\Model\Config\Source\MultipleRatesPrice</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Multiple rates price calculation</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">multiple_rates_price</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Allows to configure the price-calculation method when more than one rate is valid.
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="allow_free_shipping">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="label" xsi:type="string" translate="true">Free Shipping Allowed</item>
+                    <item name="dataScope" xsi:type="string">allow_free_shipping</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_method_form</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Triggered by a third party extension. Allows to set a free shipping (for a whole cart) in the
+                        modules like the Sales Rules.
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="show_estimated_delivery_time">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="label" xsi:type="string" translate="true">Display the Estimated Delivery Time on front-end</item>
+                    <item name="dataScope" xsi:type="string">show_estimated_delivery_time</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        In case when is enabled the Estimated Delivery Time message with a corresponding values would be
+                        displayed for the customer on the front-end (in a method title) - if enabled,
+                        the Estimated Delivery Time message with the corresponding values will be displayed
+                        on the front-end (in the method's title)
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="replaceable_estimated_delivery_time">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="label" xsi:type="string" translate="true">Allow to replace Estimated Delivery Time</item>
+                    <item name="dataScope" xsi:type="string">replaceable_estimated_delivery_time</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Allows to replace the Estimated Delivery Time values by the corresponding values
+                        from the valid rates
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="estimated_delivery_time_min">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Estimated delivery time min</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">estimated_delivery_time_min</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="estimated_delivery_time_max">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Estimated delivery time max</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">estimated_delivery_time_max</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="estimated_delivery_time_display_type">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">MageWorx\ShippingRules\Model\Config\Source\EstimatedDeliveryTimeDisplayType</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Estimated Delivery Time Display Type</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">estimated_delivery_time_display_type</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        Display min and max time as days, hours or days with hours.
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="estimated_delivery_time_message">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Estimated Delivery Time Message</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="dataScope" xsi:type="string">estimated_delivery_time_message</item>
+                    <item name="notice" xsi:type="string" translate="true">
+                        This message will be displayed with the method title. You can use the following variables
+                        that will be replaced with the corresponding values:
+                        {{min_days}} {{max_days}} {{min_hours}} {{max_hours}}
+
+                        Examples:
+                        1) "Estimated Delivery Time Display Type" is set to "Days only (rounded)"
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+
+                        If the min or max value is set as the decimal value (5.6), then it will be rounded according to the math rules.
+
+                        2) "Estimated Delivery Time Display Type" is set to "Hours"
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output nothing {{max_days}} will output nothing {{min_hours}} will output 5 {{max_hours}} will output 6
+
+                        If the min or max value is set as the decimal value (5.6), then it will be rounded according to the math rules.
+
+                        3) "Estimated Delivery Time Display Type" is set to "Days with Hours"
+                        Estimated delivery time min = 5
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+
+                        Estimated delivery time min = 5.4
+                        Estimated delivery time max = 6
+
+                        {{min_days}} will output 5 hours 10 minutes {{max_days}} will output 6 {{min_hours}} will output nothing {{max_hours}} will output nothing
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <fieldset name="labels">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Labels</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="string">40</item>
+                <item name="imports" xsi:type="array">
+                    <item name="visible" xsi:type="string">!${ $.provider }:data.single_store</item>
+                </item>
+            </item>
+        </argument>
+        <container name="store_view_labels" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+            <htmlContent name="html_content">
+                <argument name="block" xsi:type="object">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Method\Edit\Tab\Labels</argument>
+            </htmlContent>
+        </container>
+    </fieldset>
+    <fieldset name="edt_store_specific_messages_fieldset">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Estimated Delivery Time Messages</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="string">50</item>
+                <item name="imports" xsi:type="array">
+                    <item name="visible" xsi:type="string">!${ $.provider }:data.single_store</item>
+                </item>
+            </item>
+        </argument>
+        <container name="store_view_edt_store_specific_messages" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+            <htmlContent name="html_content">
+                <argument name="block" xsi:type="object">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Method\Edit\Tab\EdtMessages</argument>
+            </htmlContent>
+        </container>
+    </fieldset>
+</form>

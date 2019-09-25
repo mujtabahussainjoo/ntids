@@ -1,0 +1,6 @@
+<?php
+$files = $this->getPdfFile();
+  if(file_exists($files['filePath'])){ ?>
+         <a href="<?php echo $this->getUrl('pdf/index/Pdfdownload/id/'.$files['incrementid']); ?>" target="_blank">PDF Download</a>
+        <!--<a href="<?php /*echo $files['fileUrl']; */?>">PDF Download</a>-->
+ <?php } ?>

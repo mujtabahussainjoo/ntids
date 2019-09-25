@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Aheadworks\Rbslider\Api\BannerRepositoryInterface" type="Aheadworks\Rbslider\Model\ResourceModel\BannerRepository" />
+    <preference for="Aheadworks\Rbslider\Api\SlideRepositoryInterface" type="Aheadworks\Rbslider\Model\ResourceModel\SlideRepository" />
+    <preference for="Aheadworks\Rbslider\Api\StatisticRepositoryInterface" type="Aheadworks\Rbslider\Model\ResourceModel\StatisticRepository" />
+    <preference for="Aheadworks\Rbslider\Api\BlockRepositoryInterface" type="Aheadworks\Rbslider\Model\ResourceModel\BlockRepository" />
+    <preference for="Aheadworks\Rbslider\Api\Data\BannerInterface" type="Aheadworks\Rbslider\Model\Data\Banner" />
+    <preference for="Aheadworks\Rbslider\Api\Data\SlideInterface" type="Aheadworks\Rbslider\Model\Data\Slide" />
+    <preference for="Aheadworks\Rbslider\Api\Data\StatisticInterface" type="Aheadworks\Rbslider\Model\Data\Statistic" />
+    <preference for="Aheadworks\Rbslider\Api\Data\ConditionInterface" type="Aheadworks\Rbslider\Model\Data\Condition" />
+    <preference for="Aheadworks\Rbslider\Api\Data\BlockInterface" type="Aheadworks\Rbslider\Model\Data\Block" />
+    <preference for="Aheadworks\Rbslider\Api\Data\SlideSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Aheadworks\Rbslider\Api\Data\BannerSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Aheadworks\Rbslider\Api\Data\StatisticSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Aheadworks\Rbslider\Api\Data\BlockSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Aheadworks\Rbslider\Api\Data\BannerInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">aw_rbslider_banner</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+                <item name="Aheadworks\Rbslider\Api\Data\SlideInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">aw_rbslider_slide</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+                <item name="Aheadworks\Rbslider\Api\Data\StatisticInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">aw_rbslider_statistic</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\Operation\ExtensionPool">
+        <arguments>
+            <argument name="extensionActions" xsi:type="array">
+                <item name="Aheadworks\Rbslider\Api\Data\BannerInterface" xsi:type="array">
+                    <item name="read" xsi:type="array">
+                        <item name="slideReader" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Banner\Relation\Slide\ReadHandler</item>
+                    </item>
+                    <item name="create" xsi:type="array">
+                        <item name="slideCreator" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Banner\Relation\Slide\SaveHandler</item>
+                    </item>
+                    <item name="update" xsi:type="array">
+                        <item name="slideUpdater" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Banner\Relation\Slide\SaveHandler</item>
+                    </item>
+                </item>
+                <item name="Aheadworks\Rbslider\Api\Data\SlideInterface" xsi:type="array">
+                    <item name="read" xsi:type="array">
+                        <item name="storeReader" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\Store\ReadHandler</item>
+                        <item name="customerGroupReader" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\CustomerGroup\ReadHandler</item>
+                        <item name="bannerReader" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\Banner\ReadHandler</item>
+                    </item>
+                    <item name="create" xsi:type="array">
+                        <item name="storeCreator" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\Store\SaveHandler</item>
+                        <item name="customerGroupCreator" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\CustomerGroup\SaveHandler</item>
+                        <item name="bannerCreator" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\Banner\SaveHandler</item>
+                    </item>
+                    <item name="update" xsi:type="array">
+                        <item name="storeUpdater" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\Store\SaveHandler</item>
+                        <item name="customerGroupUpdater" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\CustomerGroup\SaveHandler</item>
+                        <item name="bannerUpdater" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Relation\Banner\SaveHandler</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="aw_rbslider_banner_grid_data_source" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Banner\Grid\Collection</item>
+                <item name="aw_rbslider_slide_grid_data_source" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide\Grid\Collection</item>
+                <item name="aw_rbslider_statistic_grid_data_source" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Statistic\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Aheadworks\Rbslider\Model\ResourceModel\Banner\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">aw_rbslider_banner</argument>
+            <argument name="eventPrefix" xsi:type="string">aw_rbslider_banner_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">banner_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Banner</argument>
+        </arguments>
+    </type>
+    <type name="Aheadworks\Rbslider\Model\ResourceModel\Slide\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">aw_rbslider_slide</argument>
+            <argument name="eventPrefix" xsi:type="string">aw_rbslider_slide_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">slide_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Slide</argument>
+        </arguments>
+    </type>
+    <type name="Aheadworks\Rbslider\Model\ResourceModel\Statistic\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">aw_rbslider_statistic</argument>
+            <argument name="eventPrefix" xsi:type="string">aw_rbslider_statistic_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">statistic_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Statistic</argument>
+        </arguments>
+    </type>
+    <virtualType name="Aheadworks\Rbslider\Model\CustomerStatistic\Session" type="Magento\Framework\Session\SessionManager">
+        <arguments>
+            <argument name="storage" xsi:type="object">Aheadworks\Rbslider\Model\CustomerStatistic\Session\Storage</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Aheadworks\Rbslider\Model\CustomerStatistic\Session\Storage" type="Magento\Framework\Session\Storage">
+        <arguments>
+            <argument name="namespace" xsi:type="string">aw_rbslider</argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_AdminActionsLog::css/amaudit.css"/>
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Amasty\AdminActionsLog\Block\Adminhtml\ActionsLog\Edit\Tabs" name="amaudit_actionslog_edit_tabs">
+                <block class="Amasty\AdminActionsLog\Block\Adminhtml\ActionsLog\Edit\Tab\View" name="amaudit_actionslog_edit_tab_view" template="tab/view/view.phtml"/>
+                <block class="Amasty\AdminActionsLog\Block\Adminhtml\ActionsLog\Edit\Tab\View\Details" name="amaudit_actionslog_edit_tab_view_details" template="tab/view/details.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">view_section</argument>
+                    <argument name="block" xsi:type="string">amaudit_actionslog_edit_tab_view</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">view_section_details</argument>
+                    <argument name="block" xsi:type="string">amaudit_actionslog_edit_tab_view_details</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php
+    $_helper    = $this->helper('Magento\Catalog\Helper\Output');
+    $_category  = $block->getCurrentCategory();
+    $_imgHtml   = '';
+	$_imgUrl    =$_category->getImageUrl();
+?>
+<?php 
+	if ($_category->getIncludeInMobileMenu()==1 && $_category->getDescription()!='' && $_category->getImageUrl()){ 
+
+		echo"";
+
+	}else{
+				$_imgHtml = '<div class="category-image"><img src="' . $_imgUrl . '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '" class="image" /></div>';
+				$_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+				/* @escapeNotVerified */ echo $_imgHtml;
+    }
+?>

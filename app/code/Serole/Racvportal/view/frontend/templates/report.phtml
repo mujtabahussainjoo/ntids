@@ -1,0 +1,366 @@
+<div class="container container-header1"  style="margin-left: -23px!important;">
+    <header role="banner">
+        <a style="position: absolute;" href="<?php echo $block->getStoreUrl();?>" title="RACV Ticket Portal" class="logo">
+            <img style="margin-top:0px!important;"z src="<?php echo $this->getStoreLogoUrl(); ?>" alt="RACV Ticket Portal"></a>
+        <div class="quick-access">
+            <div class="clearfix">
+                <ul class="header-info">
+                    <li class="customer-memberno"><?php echo $this->getMemberNo() ?></li>
+                    <li class="customer-name"><?php echo $this->getCustomerName() ?></li>
+                    <li class="shop-name"><?php echo $this->getShopName() ?></li>
+                    <li><a href="#" class="popup-pastorders">Past All Orders</a></li>
+                    <li><a href="#" class="popup-past-shoporders">Past Shop Orders</a></li>
+                    <li><a href="#" class="popup-customer-pastorders">Customer Past Orders</a></li>
+                    <li><a href="#" class="popup-customer-lastorders">Customer Last Order</a></li>
+                    <li><a href="<?php echo $block->getStoreUrl()."racvportal/report/index/"; ?>" class="salereport">Sale Report</a></li>
+                    <li><a href="<?php echo $this->getLogoutUrl() ?>">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>
+<div>
+<input type="button" value="Return to Home" onclick="window.location.href='<?php echo $this->getStoreUrl()?>'" />
+</div>
+<div role="main" style="background-color:#fff!important;">
+    <div class="columns ">
+        <div id="page:left" class="side-col">
+            <h3>Sales Extract</h3>
+            <ul id="sales_order_view_tabs" class="tabs"></ul>
+        </div>
+        <div id="content" class="main-col">
+            <div style="clear: both;">
+                <form method="post" name="order-report" id="order-report"  action="<?php echo $this->getUrl('racvportal/report/generatereport')?>">
+                    <div class="box-left">
+                        <div class="entry-edit">
+                            <td class="fieldset">
+                              <table cellpadding="5" cellspacing="5">
+                                 <tbody>
+                                    <tr>
+                                        <td class="label"><label for="sales_report_from">From <span class="required">*</span></label>
+                                        <td>
+                                            <div class="field required">
+                                                <div class="control fromdate">		
+                                                 <span class="fa fa-calendar-o"></span>												
+												 <input type="text" name="from" id="fromdate" value="" title="fromdate" class="input-text" data-validate="{required:true, 'validate-date':true}">												
+											   </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="label"><label for="sales_report_from">To <span class="required">*</span></label></td>
+                                        <td>
+                                            <div class="field required">
+                                                <div class="control todate">
+												<span class="fa fa-calendar-o"></span>
+                                                    <input type="text" name="to" id="todate" value="" title="todate" class="input-text" data-validate="{required:true, 'validate-date':true}">
+		                                          </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+									
+                                   <tr>
+                                        <td class="shop">Shop</td>
+                                        <td>
+                                            <?php $shops = $this->getAllShops(); ?>
+                                            <select id="shop" name="shop" class="required">
+                                                <?php foreach ($shops as $shopItem): ?>
+                                                    <option value="<?php echo $shopItem['entity_id']?>"><?php echo $shopItem['name']?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="report">Report For</td>
+                                        <td>
+                                            <select id="report_for" name="report_for" class="required">
+                                                <option value="0">Sales By Member</option>
+                                                <option value="1">All Sales</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr style="display:none;">
+                                        <td>Report Type</td>
+                                        <td>
+                                            <select id="report_timerange" name="report_timerange">
+                                                <option value="">Midnight to midnight</option>
+                                                <option value="invoice">Match Invoice Time Range</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr style="display:none;">
+                                        <td>Date/Times to include</td>
+                                        <td>
+                                            <select id="report_datetype" name="report_datetype">
+                                                <option value="created">Created date only</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr style="display:none;">
+                                        <td>Include Order Row?</td>
+                                        <td>
+                                            <select id="report_skiporderrow" name="report_skiporderrow">
+                                                <!--option value="0">Include order row</option-->
+                                                <option value="1">Omit order row</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr style="display:none;">
+                                        <td>Websites</td>
+                                        <td>
+                                            <select id="select_website" name="website">
+                                                <option value="racvportal">RACV Portal </option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr style="display:none;">
+                                        <td>Report Type</td>
+                                        <td>
+                                            <select id="report_type" name="report_type">
+                                                <option value="">Sales Extract</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                           <button style="float: right;">Submit</button>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="txtfrmaitypr" id="txtfrmaitypr" value="2">
+                    <input name="form_key" type="hidden" value="oknfPcITJTSLEtRb">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="popup">
+        <span class="closee">X</span>
+    <div class="html-content">
+        <div class="loader">
+            <img class="cart-ajax-loader" src="<?php echo $this->getViewFileUrl('Serole_Racvportal::images/loader.gif');?>" alt="Loading....." style="position: absolute" />
+        </div>
+    </div>
+</div>
+
+
+    <style>
+        td, th {
+            padding: 16px;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+    <script type="text/x-magento-init">
+    {
+        "#order-report": {
+            "validation": {}
+        }
+    }
+   </script>
+	<script>
+	//getElementbyId("#fromdate")
+	</script>
+   <script type="text/javascript">
+       require(['jquery', 'jquery/ui',], function($){
+        
+           $("#fromdate").datepicker();
+		   
+		   $(".fromdate .fa-calendar-o").click(function(){
+			   $( "#fromdate").focus();
+		   });
+		   
+		   $(".todate .fa-calendar-o").click(function(){
+			   $( "#todate").focus();
+		   });
+		   
+		   $( "#todate").datepicker();
+		   
+
+           var addhtml = "<div class='loader'>";
+                addhtml += "<img class='cart-ajax-loader' src='<?php echo $this->getViewFileUrl('Serole_Racvportal::images/loader.gif');?>' alt='Loading.....' style='position: absolute' />";
+                addhtml += "</div>";
+
+           jQuery('.modal').css('display','none');
+
+           headerInfo();
+
+           function headerInfo(){
+               $.ajax({
+                   url  : '<?php echo $this->getBaseUrl().'racvportal/cart/headerinfo'; ?>',
+                   type : 'POST',
+                   data : {},
+                   dataType:'json',
+                   async:true,
+                   success : function(data) {
+                       if (data['customersession'] == 'yes'){
+                           /*if(data['html']){
+                               jQuery('.quick-access').html(data['html']);
+                           }*/
+                           if(data['memberno']){
+                               jQuery('.header-info .customer-memberno').text(data['memberno']);
+                           }
+                           if(data['customername']){
+                               jQuery('.header-info .customer-name').text(data['customername']);
+                           }
+                           if(data['shopname']){
+                               jQuery('.header-info .shop-name').text(data['shopname']);
+                           }
+                       }else{
+                           $.notify({message: "Please Login"},{type: 'danger'});
+                       }
+                   },
+                   error : function(request,error){
+                       console.log(error);
+                       $.notify({message: "Something went wrong "+error},{type: 'danger'});
+                   }
+               });
+           }
+
+           jQuery('.popup-pastorders').click(function () {
+               jQuery('.modal').css('display','block');
+               $.ajax({
+                   url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                   type : 'POST',
+                   data : {customer:"no",shop:"no",order:"all"},
+                   dataType:'json',
+                   async:true,
+                   success : function(data) {
+                       console.log(data);
+                       if(data['customersession'] == 'yes') {
+                           if (data["status"] == 'sucess') {
+                               jQuery('.modal .html-content').html(data["html"]);
+                               /*jQuery('.modal').css('display','block')*/
+                           }
+                       }else {
+                           $.notify({message: "Please Login"},{type: 'danger'});
+                           location.reload();
+                       }
+
+                   },
+                   error : function(data,request,error){
+                       console.log(data);
+                       console.log(request);
+                       console.log(error);
+                       $.notify({message: "Something went wrong"},{type: 'danger'});
+                   }
+               });
+           });
+
+           jQuery('.popup-past-shoporders').click(function () {
+               jQuery('.modal').css('display','block');
+               $.ajax({
+                   url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                   type : 'POST',
+                   data : {customer:"no",shop:"yes",order:"all"},
+                   dataType:'json',
+                   async:true,
+                   success : function(data) {
+                       console.log(data);
+                       if(data['customersession'] == 'yes') {
+                           if (data["status"] == 'sucess') {
+                               jQuery('.modal .html-content').html(data["html"]);
+                               jQuery('.modal').css('display','block')
+                           }
+                       }else {
+                           $.notify({message: "Please Login"},{type: 'danger'});
+                           location.reload();
+                       }
+
+                   },
+                   error : function(request,error){
+                       console.log(error);
+                       $.notify({message: "Something went wrong"},{type: 'danger'});
+                   }
+               });
+           });
+
+           jQuery('.popup-customer-pastorders').click(function () {
+               jQuery('.modal').css('display','block');
+               $.ajax({
+                   url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                   type : 'POST',
+                   data : {customer:"yes",shop:"no",order:"all"},
+                   dataType:'json',
+                   async:true,
+                   success : function(data) {
+                       console.log(data);
+                       if(data['customersession'] == 'yes') {
+                           if (data["status"] == 'sucess') {
+                               jQuery('.modal .html-content').html(data["html"]);
+                               jQuery('.modal').css('display','block')
+                           }
+                       }else {
+                           $.notify({message: "Please Login"},{type: 'danger'});
+                           location.reload();
+                       }
+
+                   },
+                   error : function(request,error){
+                       console.log(error);
+                       $.notify({message: "Something went wrong"},{type: 'danger'});
+                   }
+               });
+           });
+
+           jQuery('.popup-customer-lastorders').click(function () {
+               jQuery('.modal').css('display','block');
+               $.ajax({
+                   url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                   type : 'POST',
+                   data : {customer:"yes",shop:"no",order:"no"},
+                   dataType:'json',
+                   async:true,
+                   success : function(data) {
+                       console.log(data);
+                       if(data['customersession'] == 'yes') {
+                           if (data["status"] == 'sucess') {
+                               jQuery('.modal .html-content').html(data["html"]);
+                               jQuery('.modal').css('display','block')
+                           }
+                       }else {
+                           $.notify({message: "Please Login"},{type: 'danger'});
+                           location.reload();
+                       }
+
+                   },
+                   error : function(request,error){
+                       console.log(error);
+                       $.notify({message: "Something went wrong"},{type: 'danger'});
+                   }
+               });
+           });
+
+
+           jQuery('.modal .closee').click(function () {
+               jQuery('.modal').css('display','none')
+               jQuery('.modal .html-content').html(addhtml);
+           });
+       });
+   </script>

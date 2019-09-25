@@ -1,0 +1,50 @@
+<?php 
+    $helper = $this->getHelperData(); 
+?>
+<?php if ($helper->getCfg('product_view/enable')): ?>
+    <?php 
+        $_product = $this->getRegistry()->registry('current_product');
+        $brandAttrId = $this->getBrandAttributeId();
+    ?>
+    <?php if ($_product->getData($brandAttrId)): ?>
+        <?php
+            $brand = $this->getCurrentBrand();
+            $brandAttrLabel = $this->getBrandAttributeTitle();
+            $brandPageUrl = $this->getBrandPageUrl($brand);
+            $brandImageUrl = $this->getBrandImageUrl($brand);
+            $brandDetailsHtml = '';
+
+            if (!$helper->isShowImage())
+            {
+                $brandDetailsHtml = '<div class="brand-name attribute"><span class="label">' . $brandAttrLabel . ':</span>' . $brand . '</div>';
+            }
+            else
+            {
+                if ($brandImageUrl)
+                {
+                    $brandPageUrl ? $imgTitle = '' : $imgTitle = "title=\"{$brandAttrLabel}: {$brand}\"";
+                    $brandDetailsHtml = "<img src=\"{$brandImageUrl}\" alt=\"{$brand}\" {$imgTitle}/>";
+                }
+                else
+                {
+                    if ($helper->isShowImageFallbackToText())
+                    {
+                        $brandDetailsHtml = '<div class="brand-name attribute"><span class="label">' . $brandAttrLabel . ':</span>' . $brand . '</div>';
+                    }
+                }
+            }
+        ?>
+        <?php if ($brandDetailsHtml): ?>
+            <div class="box-brand">
+                <?php if ($brandPageUrl): ?>
+                    <a class="fade-on-hover" href="<?php echo $brandPageUrl; ?>" title="<?php echo __('Click to see more products from %1', $brand); ?>">
+                        <?php echo $brandDetailsHtml; ?>
+                    </a>
+                <?php else: ?>
+                    <?php echo $brandDetailsHtml; ?>
+                <?php endif; ?>
+                <meta itemprop="brand" content="<?php echo $brand; ?>" />
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>

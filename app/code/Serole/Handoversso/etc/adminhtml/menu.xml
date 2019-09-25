@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Serole_Handoversso::parent" title="Handoversso" module="Serole_Handoversso" sortOrder="100" resource="Serole_Handoversso::parent"/>
+		<add id="Serole_Handoversso::token" title="Handoversso Token" module="Serole_Handoversso" sortOrder="20" parent="Serole_Handoversso::parent" action="handoversso/token" resource="Serole_Handoversso::token"/>
+<add id="Serole_Handoversso::signature" title="Handoversso Signature" module="Serole_Handoversso" sortOrder="30" parent="Serole_Handoversso::parent" action="handoversso/signature" resource="Serole_Handoversso::signature"/>
+
+    </menu>
+</config>

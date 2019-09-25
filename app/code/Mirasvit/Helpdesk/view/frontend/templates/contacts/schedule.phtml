@@ -1,0 +1,37 @@
+<?php
+//@codingStandardsIgnoreFile
+/** @var \Mirasvit\Helpdesk\Model\Schedule $schedule */
+/** @var \Mirasvit\Helpdesk\Model\Schedule\WorkingHours $day */
+/** @var \Mirasvit\Helpdesk\Block\Contacts\Schedule $block */
+$schedule = $block->getCurrentSchedule();
+$schedules = $block->getUpcomingScheduleCollection();
+?>
+<div class="hdmx__schedule">
+    <?= $block->getChildHtml("schedule_status") ?>
+
+    <?php if($this->getScheduleIsShowScheduleOnContactUs()): ?>
+    <div class="col-md-6 col-sm-6 hdmx__schedule-working">
+        <h3><?= $block->getWorkingScheduleTitle() ?></h3>
+        <?= $block->getScheduleHtml($schedule) ?>
+    </div>
+
+    <div class="col-md-6 col-sm-6 hdmx__schedule-upcoming">
+        <?php if ($schedules->count()): ?>
+            <h3><?= $block->getUpcomingScheduleTitle() ?></h3>
+            <?php foreach ($schedules as $schedule): ?>
+                <?= $block->getScheduleHtml($schedule) ?>
+            <?php endforeach ?>
+        <?php endif ?>
+    </div>
+    <?php endif ?>
+</div>
+<script type="text/javascript">
+    var scheduleStatusUrl = "<?php echo $block->getUrl(
+                'helpdesk/schedule/status/',
+                [
+                    '_current' => true,
+                    '_secure'  => $block->getTemplateContext()->getRequest()->isSecure()
+                ]
+            ) ?>";
+    var scheduleStatusData = {rand: (new Date()).getMinutes()};
+</script>

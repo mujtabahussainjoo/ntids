@@ -1,0 +1,670 @@
+"Help Desk Tickets (%1)","Билеты на службу поддержки (%1)"
+Departments,ведомства
+"Add New Department","Добавить новый отдел"
+"Custom Fields","Настраиваемые поля"
+"Add New Field","Добавить новое поле"
+Gateways,шлюзы
+"Add New Gateway","Добавить новый шлюз"
+Tickets,Билеты
+Priorities,приоритеты
+Statuses,Статусы
+"Quick Responses","Быстрые ответы"
+"SPAM patterns",СПАМ
+Permissions,"права доступа"
+"Workflow Rules","Правила рабочего процесса"
+"Satisfaction Survey Results","Результаты опроса удовлетворенности"
+"Working Hours","Рабочее время"
+Reports,Отчеты
+"Refresh Statistics","Обновить статистику"
+Settings,настройки
+"Spam Filter Patterns","Шаблоны спам-фильтра"
+"Add New Pattern","Добавить новый шаблон"
+"Add New Permission","Добавить новое разрешение"
+"Add New Priority","Добавить новый приоритет"
+"Add New Rule","Добавить новое правило"
+"Apply the rule only if the following conditions are met.","Примените правило только в том случае, если выполнены следующие условия."
+"Help Desk Tickets","Билеты в службу поддержки"
+"Create ticket for this order","Создать билет для этого заказа"
+"Satisfaction Survey","Исследование удовлетворенности"
+Schedule,График
+"Add New Schedule","Добавить новое расписание"
+"General Information","Главная Информация"
+"Working days/hours","Рабочие дни / часы"
+"Spam Folder","Папка для спама"
+"Add New Status","Добавить новый статус"
+"Add New Template","Добавить новый шаблон"
+"Create New Ticket","Создать новый билет"
+"Previous Ticket","Предыдущий билет"
+"Next Ticket","Следующий билет"
+"Convert to RMA","Конвертировать в RMA"
+Save,Сохранить
+"Save & Edit","Сохранить и изменить"
+"To Archive","В архив"
+"To Spam",Спам
+Delete,Удалить
+"Are you sure you want to do this?","Вы уверены, что хотите это сделать?"
+"To Inbox",Входящие
+"Additional Information","Дополнительная информация"
+Subject,Предмет
+"Store View","Просмотр магазина"
+Channel,канал
+"open page","открыть страницу"
+"External Link","внешняя ссылка"
+Tags,Теги
+"comma-separated list","список, разделенный запятыми"
+"Follow Up","Следовать за"
+Period,период
+"Period Value","Значение периода"
+"Execute At","Выполнить в"
+"Send Remind","Отправить напоминание"
+"Set Status To","Установить статус в"
+"Set Priority To","Установите приоритет для"
+"Set Owner To","Установить владельца в"
+Unassigned,Не указан
+Template,шаблон
+"Select the store","Выберите магазин"
+Store,хранить
+General,Генеральная
+Additional,дополнительный
+"Other Tickets (%1)","Другие билеты (%1)"
+ID,"ID"
+"Customer Name","Имя Клиента"
+"Last Replier","Последняя папка"
+Owner,владелец
+Department,отдел
+Status,"Положение дел"
+Priority,приоритет
+Replies,Ответы
+"Email was send","Электронная почта была отправлена"
+"Created At","Создан в"
+"Updated At","Обновлено на"
+"Last Reply At","Последний ответ"
+"Last Activity","Последняя активность"
+Action,действие
+View,Посмотреть
+"Change Status","Изменить статус"
+"Change Owner","Изменить владельца"
+Merge,сливаться
+"Are you sure? This action is not reversible.","Ты уверен? Это действие не обратимо."
+Archive,Архив
+"Are you sure?","Ты уверен?"
+"Mark as spam","Отметить как спам"
+"Add Ticket to the Customer","Добавить билет покупателю"
+"Add Ticket to the Order","Добавить билет в заказ"
+"Help Desk","Служба поддержки"
+"Help Desk Settings","Настройки справочной службы"
+"Signature for Emails","Подпись для писем"
+"Thank you",спасибо
+"Create Ticket","Создать билет"
+"'[' . . '] ' .","&#39;[&#39;. , &#39;]&#39;."
+"New Department","Новый отдел"
+"Department  Manager","Менеджер отдела"
+"Department Manager","Менеджер отдела"
+"Add Department ","Добавить отдел"
+"Add Department","Добавить отдел"
+"You can not delete this department, because there are gateways using it.
+                         Please, change gateways settings","Вы не можете удалить этот отдел, потому что есть его шлюзы. Пожалуйста, измените настройки шлюзов"
+"Department was successfully deleted","Департамент был успешно удален"
+"Edit Department '%1'","Редактировать отдел «%1»"
+"Edit Department ","Редактировать отдел"
+"The Department does not exist.","Департамента не существует."
+"Department was successfully saved","Отдел успешно сэкономлен"
+"Unable to find Department to save","Не удалось найти Департамент для сохранения"
+"New Field","Новое поле"
+"Field  Manager","Менеджер поля"
+"Field Manager","Менеджер поля"
+"Add Field ","Добавить поле"
+"Add Field","Добавить поле"
+"Field was successfully deleted","Поле успешно удалено"
+"Edit Field '%1'","Изменить поле &#39;%1&#39;"
+"Edit Field ","Изменить поле"
+"The Field does not exist.","Поле не существует."
+"Field with the same code already exists","Поле с тем же кодом уже существует"
+"Field was successfully saved","Поле успешно сохранено"
+"Unable to find Field to save","Не удалось найти поле для сохранения"
+"Please, ask your hosting provider to enable IMAP extension in PHP configuration of your server. Otherwise, helpdesk will not be able to fetch emails.","Пожалуйста, попросите своего хостинг-провайдера включить расширение IMAP в настройках PHP вашего сервера. В противном случае служба справки не сможет получать электронные письма."
+"New Gateway","Новый шлюз"
+"Gateway  Manager","Менеджер шлюзов"
+"Gateway Manager","Менеджер шлюзов"
+"Add Gateway ","Добавить шлюз"
+"Add Gateway","Добавить шлюз"
+"Gateway was successfully deleted","Шлюз успешно удален"
+"Edit Gateway '%1'","Изменить шлюз «%1»"
+"Edit Gateway ","Изменить шлюз"
+"The Gateway does not exist.","Шлюз не существует."
+"Gateway was successfully saved. Connection is established.","Шлюз был успешно сохранен. Соединение установлено."
+"Unable to find Gateway to save","Не удалось найти шлюз для сохранения"
+"A total of %1 record(s) have been updated.","Обновлено в общей сложности%1 записи."
+"A total of %1 record(s) have been deleted.","В общей сложности%1 записей (ов) были удалены."
+"New Pattern","Новый шаблон"
+"Pattern  Manager","Менеджер шаблонов"
+"Pattern Manager","Менеджер шаблонов"
+"Add Pattern ","Добавить шаблон"
+"Add Pattern","Добавить шаблон"
+"Pattern was successfully deleted","Шаблон успешно удален"
+"Edit Pattern '%1'","Изменить шаблон «%1»"
+"Edit Pattern ","Изменить шаблон"
+"The Pattern does not exist.","Шаблон не существует."
+"Pattern was successfully saved","Шаблон успешно сохранен"
+"Incorrect pattern: %1","Неверный шаблон:%1"
+"Unable to find Pattern to save","Не удалось найти шаблон для сохранения"
+"New Permission","Новое разрешение"
+"Permission  Manager","Менеджер разрешений"
+"Permission Manager","Менеджер разрешений"
+"Add Permission ","Добавить разрешение"
+"Add Permission","Добавить разрешение"
+"Permission was successfully deleted","Разрешение было успешно удалено"
+"Edit Permission","Изменить разрешение"
+"Edit Permission ","Изменить разрешение"
+"The Permission does not exist.","Разрешение не существует."
+"Permission was successfully saved","Разрешение было успешно сохранено"
+"Unable to find Permission to save","Не удалось найти разрешение на сохранение"
+"New Priority","Новый приоритет"
+"Priority  Manager","Приоритетный менеджер"
+"Priority Manager","Приоритетный менеджер"
+"Add Priority ","Добавить приоритет"
+"Add Priority","Добавить приоритет"
+"Priority was successfully deleted","Приоритет успешно удален"
+"Edit Priority '%1'","Изменить приоритет &#39;%1&#39;"
+"Edit Priority ","Изменить приоритет"
+"The Priority does not exist.","Приоритет не существует."
+"Priority was successfully saved","Приоритет был успешно сохранен"
+"Unable to find Priority to save","Не удалось найти приоритет для сохранения"
+"Statistics was successfully updated","Статистика была успешно обновлена"
+Helpdesk,"Служба поддержки"
+"New Rule","Новое правило"
+"Rule  Manager","Менеджер правил"
+"Rule Manager","Менеджер правил"
+"Add Rule ","Добавить правило"
+"Add Rule","Добавить правило"
+"Rule was successfully deleted","Правило успешно удалено"
+"Edit Rule '%1'","Изменить правило «%1»"
+"Edit Rule ","Изменить правило"
+"The Rule does not exist.","Правило не существует."
+"Rule was successfully saved","Правило успешно сохранено"
+"Unable to find Rule to save","Не удалось найти правило для сохранения"
+"New Satisfaction","Новое удовлетворение"
+"Satisfaction  Manager","Менеджер удовлетворенности"
+"Satisfaction Manager","Менеджер удовлетворенности"
+"Add Satisfaction ","Добавить Удовлетворение"
+"Add Satisfaction","Добавить Удовлетворение"
+"Satisfaction was successfully deleted","Удовлетворение успешно удалено"
+"Edit Satisfaction '%1'","Изменить удовлетворенность &#39;%1&#39;"
+"Edit Satisfaction ","Изменить удовлетворенность"
+"The Satisfaction does not exist.","Удовлетворения не существует."
+"Satisfaction was successfully saved","Удовлетворение было успешно сохранено"
+"Unable to find Satisfaction to save","Не удалось найти Удовлетворение для сохранения"
+"New Schedule","Новое расписание"
+"Schedule Manager","Менеджер расписания"
+"Add Schedule ","Добавить расписание"
+"Add Schedule","Добавить расписание"
+"You can not delete this schedule, because there are gateways using it.
+                         Please, change gateways settings","Вы не можете удалить это расписание, потому что там используются шлюзы. Пожалуйста, измените настройки шлюзов"
+"Schedule was successfully deleted","График успешно удален"
+"Edit Schedule '%1'","Изменить расписание «%1»"
+"Edit Schedule ","Редактировать расписание"
+"The Schedule does not exist.","Расписание не существует."
+Schedules,Расписание
+"Working days/hours is a required field.","Рабочие дни / часы - обязательное поле."
+"Schedule was successfully saved","Расписание было успешно сохранено"
+"Unable to find Schedule to save","Не удалось найти расписание для сохранения"
+"Ticket was successfully moved to the Tickets folder","Билет успешно перенесен в папку «Билеты»"
+"Edit Spam '%1'","Изменить спам &#39;%1&#39;"
+"Edit Spam ","Изменить спам"
+"The spam does not exist.","Спама не существует."
+"Please select spam(s)","Выберите спам (ы)"
+"Total of %1 record(s) were successfully moved to the Tickets folder","Всего %1 записей (ов) были успешно перенесены в папку «Билеты»"
+"Total of %1 record(s) were successfully deleted","Всего %1 записей (ов) были успешно удалены"
+"New Status","Новый статус"
+"Status  Manager","Менеджер статусов"
+"Status Manager","Менеджер статусов"
+"Add Status ","Добавить статус"
+"Add Status","Добавить статус"
+"Status was successfully deleted","Состояние успешно удалено"
+"Edit Status '%1'","Изменить статус &#39;%1&#39;"
+"Edit Status ","Изменить статус"
+"The Status does not exist.","Статус не существует."
+"Status was successfully saved","Состояние успешно сохранено"
+"Unable to find Status to save","Не удалось найти статус для сохранения"
+"New Template","Новый шаблон"
+"Template  Manager","Менеджер шаблонов"
+"Template Manager","Менеджер шаблонов"
+"Add Template ","Добавить шаблон"
+"Add Template","Добавить шаблон"
+"Template was successfully deleted","Шаблон успешно удален"
+"Edit Template '%1'","Изменить шаблон «%1»"
+"Edit Template ","Изменить шаблон"
+"The Template does not exist.","Шаблон не существует."
+"Template was successfully saved","Шаблон успешно сохранен"
+"Unable to find Template to save","Не удалось найти шаблон для сохранения"
+"New Ticket","Новый билет"
+"Ticket Manager","Менеджер по продаже билетов"
+"Add Ticket ","Добавить билет"
+"Add Ticket","Добавить билет"
+"Ticket was moved to archive","Билет был перенесен в архив"
+"Ticket was successfully deleted","Билет успешно удален"
+"Edit Ticket ","Изменить билет"
+"The ticket does not exist.","Билета не существует."
+"Total of %1 record(s) were moved to Archive.","Всего %1 записей (ов) были перемещены в архив."
+"Please select ticket(s)","Выберите билет (ы)"
+"Total of %1 record(s) were moved to the Spam folder","Всего %1 записей (ов) были перемещены в папку «Спам»"
+"Total of %1 record(s) were successfully updated","Всего %1 записей (ов) были успешно обновлены"
+"For total of %1 record(s) Assignee was changed.","Для всего %1 записи (-ов) Изменен."
+"You don't have permission for this operation.","У вас нет разрешения на эту операцию."
+"Total of %1 record(s) were moved to the Inbox folder.","Всего %1 записей были перемещены в папку «Входящие»."
+"Please select 2 or more tickets","Выберите 2 или более билетов"
+"Total of %1 record(s) were successfully merged","Всего %1 записи (ов) были успешно объединены"
+"Total of %1 record(s) were moved to the Spam folder.","Всего %1 записей были перемещены в папку «Спам»."
+"A total of %1 record(s) were updated.","Обновлено в общей сложности %1 записи."
+"Ticket was moved to Inbox","Билет переместился в папку «Входящие»"
+"Message was successfully sent","Сообщение успешно отправлено"
+"Ticket was successfully updated","Билет успешно обновлен"
+"Unable to find ticket to save","Не удалось найти билет для сохранения"
+"Ticket was moved to the Spam folder","Билет был перемещен в папку «Спам»"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Ваш запрос был успешно отправлен. Вскоре вы получите письмо с подтверждением."
+Telephone,телефон
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Ваш запрос был отправлен, и на него ответят как можно скорее. Благодарим Вас за обращение к нам."
+"Unable to submit your request. Please, try again later","Не удалось отправить запрос. Пожалуйста, повторите попытку позже"
+"Page not found.","Страница не найдена."
+"Your message was successfuly posted","Ваше сообщение успешно отправлено"
+"Your ticket was successfuly posted","Ваш билет был успешно отправлен"
+"Ticket was successfuly closed","Билет успешно закрылся"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Не удается загрузить файл %1. Максимальный допустимый размер загрузки составляет %2 МБ."
+"Allows only this file types: %1","Разрешает использовать только следующие типы файлов: %1"
+"%1 Help Desk","%1 Служба поддержки"
+"You have %1 unread notifications.","У вас есть %1 непрочитанных уведомлений."
+"Ticket ""%1"" was created.","Был создан билет «%1»."
+"New message was added to the ticket ""%1""","Новое сообщение было добавлено в билет «%1»"
+"Ticket ""%1"" was assigned to you.","Билет «%1» был присвоен вам."
+"%1 is editing now","%1 теперь редактируется"
+"%1 has opened this ticket %2","%1 открыл этот билет %2"
+"%1 have opened this ticket %2","%1 открыли этот билет %2"
+"please type your reply above this line","Пожалуйста, напечатайте ответ над этой линией"
+"Can't fetch.
+                Please, ask your hosting provider to enable IMAP extension in PHP configuration of your server.","Не удается получить. Пожалуйста, попросите своего хостинг-провайдера включить расширение IMAP в настройках PHP вашего сервера."
+Yes,да
+No,нет
+"Rule '%1'","Правило &#39;%1&#39;"
+"%1: %2 => %3","%1:%2 =&gt;%3"
+"%1: %2","%1: %2"
+"Ticket was merged to: %1","Билет был объединен с: %1"
+"Ticket was merged with: %1","Билет был объединен с: %1"
+"Message added","Сообщение добавлено"
+"Internal note added","Добавлена ​​внутренняя заметка"
+"Third party message added","Добавлено стороннее сообщение"
+"Private third party message added","Добавлено личное сообщение третьей стороны"
+"-- Please Select --","-- Пожалуйста выберите --"
+Inbox,входящие
+Spam,Спам
+Email,"Эл. адрес"
+Backend,Backend
+"Contact Tab","Контактная вкладка"
+"Contact Form","Форма обратной связи"
+"Customer Account","Счет клиента"
+"Public Reply","Общественный ответ"
+"Internal Note","Внутренняя заметка"
+"Message to Third Party","Сообщение третьей стороне"
+"Internal Note to Third Party","Внутренняя записка для третьей стороны"
+" at %1 (%2) - %3","при %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","У вас нет прав на чтение этого билета. Пожалуйста, свяжитесь с вашим администратором."
+"Invalid Customer Email","Недействительная электронная почта клиента"
+"Ticket was merged to %1","Билет был объединен с %1"
+"not set","не задано"
+Pattern,Шаблон
+"Attribute Value","Значение атрибута"
+Default,"По умолчанию"
+Integer,"целое число"
+Price,Цена
+"Strip Tags",Гастрономия
+"Ticket Attributes","Атрибуты билетов"
+"Unknown time","Неизвестное время"
+ago,"тому назад"
+"from now",отныне
+"1 sec ago","1 секунда назад"
+"Open Ticket","Открытый билет"
+"Open Tickets","Открытые билеты"
+"! Blocked file - ","! Заблокированный файл -"
+Disabled,Отключено
+"AW Helpdesk","Служба поддержки AW"
+"MW Helpdesk","MW Helpdesk"
+"File System","Файловая система"
+Database,"База данных"
+Aqua,вода
+Grey,Серый
+Navy,"военно-морской флот"
+Silver,Серебряный
+Black,черный
+Green,зеленый
+Olive,оливковый
+Teal,чирок
+Blue,синий
+Lime,Лайм
+Purple,Пурпурный
+Fuchsia,фуксия
+Maroon,каштановый
+Red,красный
+Orange,оранжевый
+Yellow,желтый
+NONE,НИКТО
+SSL,SSL
+Text,Текст
+"Multi-line text","Многострочный текст"
+Date,Дата
+Checkbox,флажок
+"Drop-down list","Выпадающий список"
+"In minutes...","Через несколько минут ..."
+"In hours...","В часах ..."
+"In days...","В днях ..."
+"In weeks...","Через несколько недель ..."
+"In months...","В месяцах ..."
+Custom,"изготовленный на заказ"
+"Move to Archive","Переместить в архив"
+"Move from Archive","Переместить из архива"
+"All users","Все пользователи"
+Left,Оставил
+Right,Правильно
+POP,POP
+IMAP,IMAP
+Great!,Большой!
+OK,ОК
+Bad,Плохо
+"--Please Select--","--Пожалуйста выберите--"
+"New ticket created","Создан новый билет"
+"New reply from customer","Новый ответ от клиента"
+"New reply from staff","Новый ответ от персонала"
+"New reply from third party","Новый ответ от третьей стороны"
+"Ticket assigned to staff","Билет, назначенный персоналу"
+"Ticket was changed","Билет был изменен"
+"Ticket was converted to RMA","Билет был преобразован в RMA"
+"Check every hour","Проверяйте каждый час"
+Headers,Заголовки
+Body,тело
+"Using Department Name (e.g. Sales)","Использование имени отдела (например, продажа)"
+"Using Staff Name (e.g. John Doe)","Использование имени сотрудника (например, John Doe)"
+"Last Reply","Последний ответ"
+"View link","Просмотреть ссылку"
+Success,успех
+"Pattern is invalid","Недопустимый шаблон."
+"Update the Ticket","Обновить билет"
+"Conditions Combination","Комбинация условий"
+"Ticket Attribute","Атрибут билета"
+"Last 7-days Clicks","Последние 7 дней кликов"
+"Last 7-days Orders","Последние 7-дневные заказы"
+"Last 7-days Revenue","Последние 7 дней Доход"
+"Last 7-days Conversation Rate (%)","Последняя 7-дневная скорость разговора (%)"
+"Attribute Set","Набор атрибутов"
+Category,категория
+Quantity,Количество
+"Product Type","Тип продукта"
+"Base Image","Базовый образ"
+Thumbnail,Thumbnail
+"Small Image","Маленькое изображение"
+"Base Image Size (bytes)","Размер базового изображения (байты)"
+"Thumbnail Size (bytes)","Размер миниатюр (байт)"
+"Small Image Size (bytes)","Маленький размер изображения (байты)"
+"PHP Condition","Состояние PHP"
+"Open Chooser","Открыть Chooser"
+"Last message body","Последнее сообщение"
+"Priority (before change)","Приоритет (до изменения)"
+"Status (before change)","Статус (до изменения)"
+"Department (before change)","Отдел (до изменения)"
+"Owner (before change)","Владелец (до изменения)"
+"Folder (before change)","Папка (до изменения)"
+Folder,скоросшиватель
+"Last Reply By","Последний ответ от"
+"Last Reply Type","Последний ответ Тип"
+"Hours since Created","Часы с момента создания"
+"Hours since Updated","Часы с момента обновления"
+"Hours since Last reply","Часы с момента последнего ответа"
+"Ticket Source (Channel)","Источник билета (канал)"
+"Customer Email","Электронная почта клиента"
+"%1 (before change)","%1 (до изменения)"
+Customer,Клиент
+Staff,Сотрудники
+"Third party","Третье лицо"
+Closed,Закрыто
+"Opened 24hr","Открыт 24 часа"
+"- Disable these emails -","- Отключить эти письма -"
+"Help Desk can't fetch new emails.
+                Please, try to run bin/magento mirasvit:helpdesk:run to find out what is going wrong.","Служба поддержки не может получать новые электронные письма. Пожалуйста, попробуйте запустить bin / magento mirasvit: helpdesk: запустите, чтобы узнать, что происходит не так."
+"Help desk can't fetch emails. ","Служба поддержки не может получать электронные письма."
+"<br> To temporary hide this message, disable all <a href=""%1"">help desk gateways</a>.","<br> Чтобы временно скрыть это сообщение, отключите все <a href=""%1"">шлюзы службы поддержки</a> ."
+"Help Desk can't fetch new emails.
+                 Please, check that you are running cron for bin/magento mirasvit:helpdesk:run.","Служба поддержки не может получать новые электронные письма. Убедитесь, что вы используете cron для bin / magento mirasvit: helpdesk: run."
+"Helpdesk Tickets",Помощь
+"Cannot delete ticket with id %1","Невозможно удалить билет с идентификатором %1"
+Edit,редактировать
+"All Departments","Все отделы"
+"All Roles","Все роли"
+Back,назад
+Reset,Сброс
+"Save and Continue Edit","Сохранить и продолжить редактирование"
+Debug,Отлаживать
+"24 hrs x 7 days","24 часа x 7 дней"
+"Select working days/hours","Выберите рабочие дни / часы"
+"Satisfaction survey","Исследование удовлетворенности"
+"show source","показать исходный код"
+"to %1 (third party)","до %1 (третье лицо)"
+"%1 (third party)","%1 (третье лицо)"
+"added %1 (%2)","добавлено %1 (%2)"
+"Ticket Summary","Краткое описание билета"
+"Ticket ID","Идентификатор билета"
+Assignee,правопреемник
+"Additional Info","Дополнительная информация"
+"Done by",Сделано
+Changes,изменения
+"See All Tickets","Просмотреть все билеты"
+Name,имя
+"Attach files","Прикрепить файлы"
+Submit,Отправить
+"Submit Ticket","Добавить билет"
+"What is your question?","Какой у Вас вопрос?"
+"We found the following topics that might be helpful:","Мы нашли следующие темы, которые могут быть полезны:"
+"None of these are helpful - get in touch","Ни одно из них не является полезным - свяжитесь с нами"
+"We have not found topics that can be helpful.","Мы не нашли темы, которые могут быть полезны."
+"Contact Information","Контактная информация"
+Comment,Комментарий
+"We are open 24 x 7","Мы открыты 24 x 7"
+"We are closed","Мы закрыты"
+"Timezone: %1","Часовой пояс: %1"
+"Ticket History","История билетов"
+"Please take a second to rate my reply...","Пожалуйста, возьмите секунду, чтобы оценить мой ответ ..."
+Great,большой
+Awesome,Потрясающие
+"Fast, friendly, helpful, pleasant. Great job!","Быстрый, дружелюбный, полезный, приятный. Отличная работа!"
+"Just Okay","Просто хорошо"
+"Fine, but definitely could have been better.","Прекрасно, но определенно, возможно, было лучше."
+"Not good",Нехорошо
+"Unfortunately, I wasn't happy with it at all.","К сожалению, меня это совсем не устраивало."
+"Thank you for participating in our survey!","Спасибо за участие в нашем опросе!"
+"If you would like to provide additional comments, please do so below:","Если вы хотите предоставить дополнительные комментарии, сделайте следующее:"
+Message,Сообщение
+"Submit Message","Отправить сообщение"
+"Thank you for your feedback!","Спасибо за ваш отзыв!"
+Attachments,Вложения
+Order,порядок
+"-- Select an Order --","- Выберите заказ -"
+"Create ticket","Создать билет"
+"You don't have open tickets","У вас нет открытых билетов"
+"Post a Reply","Отправить ответ"
+"Reopen Ticket","Повторно открыть билет"
+"Close Ticket","Закрыть билет"
+History,история
+"Back to My Tickets","Вернуться к моим билетам"
+To,к
+"Customer Summary","Резюме клиента"
+"Assigned To Customer","Назначено клиенту"
+Cc,Cc
+Bcc,Bcc
+"Assigned To Order","Назначено на заказ"
+"Customer does not have orders.","У клиента нет заказов."
+RMA,РМА
+"Dear %name,","Дорогое имя%"
+"Thank you for contacting us!","Благодарим Вас за обращение к нам!"
+"This is an automated response confirming the receipt of your ticket. One of our agents will get
+                back to you
+                as soon as possible.","Это автоматический ответ, подтверждающий получение вашего билета. Один из наших агентов вернется к вам как можно скорее."
+Details,Детали
+"You can check the status of reply to this ticket online at:","Вы можете проверить статус ответа на этот билет онлайн по адресу:"
+"Helpdesk title in the customer account","Название службы поддержки в учетной записи клиента"
+"Priority for new tickets","Приоритет для новых билетов"
+"Status for new tickets","Статус для новых билетов"
+"Sign staff replies","Подписывать ответы сотрудников"
+"Move Ticket to Archive if it has one of following statuses","Переместите билет в архив, если он имеет один из следующих статусов"
+"Create Tickets from Contact Us form","Создать форму заявки от контакта"
+"Send blind carbon copy (BCC) of all emails to","Отправить скрытую копию (BCC) всех электронных писем"
+"Use WYSIWYG Editor in backend","Использовать WYSIWYG Editor в бэкэнд"
+"Show previous/next button in backend ticket edit page","Показать предыдущую / следующую кнопку на странице редактирования бэкэнда"
+"Use default magento cron","Использовать magento cron по умолчанию"
+"Allow customer to open ticket by unique URL (without additional authentication)","Разрешить клиенту открывать билет по уникальному URL (без дополнительной аутентификации)"
+"Store attachments in","Храните прикрепленные файлы в"
+"Allow upload only attachments with extensions","Разрешить загрузку только вложений с расширениями"
+"Tickets autosave period, sec","Период автосохранения билетов, с."
+"Show Help Desk link in customer menu","Показать ссылку справочной службы в меню клиента"
+"Enable Feedback Tab","Включить вкладку обратной связи"
+"Assign to Department","Назначить отдел"
+"Tab Color","Цвет вкладок"
+"Tab Title","Заголовок вкладки"
+"Tab Position","Позиция вкладки"
+"Form Title","Название формы"
+"Subject Title","Название темы"
+"Subject Placeholder","Тема заполнитель"
+"Description Title","Описание Название"
+"Description Placeholder","Описание Заполнитель"
+"Allow customer to attach files","Разрешить клиенту прикреплять файлы"
+"Allow customer to select Priority","Разрешить клиенту выбирать приоритет"
+"Allow customer to select Department","Разрешить клиенту выбрать отдел"
+"Search Knowledge Base Topics first","Сначала поиск в базе знаний"
+"Show Ticket ID in the email title","Показать идентификатор билета в названии электронной почты"
+"Number of last replies to show in the ticket history","Количество последних ответов, отображаемых в истории билета"
+"Template of New Ticket Email for Customer","Шаблон нового электронного письма для клиента"
+"Template of New Ticket Email for Staff","Шаблон нового электронного письма для сотрудников"
+"Template of Ticket Email Assigned to Staff","Шаблон электронной почты, присвоенный персоналу"
+"Template of New Message Email for Customer","Шаблон нового сообщения для клиента"
+"Template of New Message Email for Staff","Шаблон нового сообщения для сотрудников"
+"Template of New Message Email for Third Party","Шаблон нового сообщения для третьей стороны"
+"Template of Ticket Reminder","Шаблон напоминания о билетах"
+"Template of Rule Notification","Шаблон уведомления о правилах"
+"Template of Survey Satisfaction Result","Шаблон результата удовлетворенности опроса"
+"Include a satisfaction survey in a reply email from staff","Включите опрос удовлетворенности в ответе от сотрудников"
+"Show survey results in the backend ticket history","Показать результаты опроса в истории бэкэнд-билета"
+"Send survey result to ticket owner","Отправить результат опроса владельцу билета"
+"Send survey result to emails","Отправить результаты опроса в электронные письма"
+"Show Help Desk section in Customer Account","Показать раздел справочной службы в учетной записи клиента"
+"Allow customer to select Order","Разрешить клиенту выбрать Заказ"
+"Activate Sandbox","Активировать песочницу"
+"Send All Outgoing emails to Email","Отправить все исходящие письма по электронной почте"
+"Solved Statuses","Решенные статусы"
+"Notifications check period, sec","Период проверки уведомлений, с."
+"Show notification about arriving of new tickets for","Показывать уведомление о поступлении новых билетов на"
+"Enable notification about arriving of new messages in tickets assigned for user","Включить уведомление о поступлении новых сообщений в билеты, назначенные для пользователя"
+"Enable notification about assigning a ticket to the user","Включить уведомление о назначении билета пользователю"
+"Show online/offline status on the Contact Us page","Показать статус онлайн / оффлайн на странице контактов"
+"Show online/offline status in the Feedback popup","Показать статус онлайн / оффлайн во всплывающем обращении"
+"Show online/offline status in the Customer Account > My Tickets","Показывать статус онлайн / оффлайн в учетной записи клиента&gt; Мои билеты"
+"Default message when we are open","Сообщение по умолчанию, когда мы открыты"
+"Default message when we are closed","Сообщение по умолчанию, когда мы закрыты"
+"Show working hours on the Contact Us page","Показать рабочее время на странице «Контакты»"
+"Show holiday schedule in X days before activation","Показать календарь праздников за X дней до активации"
+"Working schedule title","Название рабочего графика"
+"Upcoming working schedule title","Следующее название рабочего графика"
+"Helpdesk Contact Form","Контактная форма для справки"
+"All Store Views","Все виды магазинов"
+"Purchased From","Куплено у"
+User,пользователь
+"Replies #","Ответы #"
+"Mail was sent","Почта была отправлена"
+Created,созданный
+Modified,модифицированный
+"Status Sort Order","Статус сортировки"
+Title,заглавие
+Active,активный
+"Is Show on Frontend","Отображается на фронте"
+"Sort Order","Порядок сортировки"
+"Sender Email","Отправка электронной почты"
+"If ticket is unassigned, send notifications to all department members","Если билет не назначен, отправьте уведомления всем членам отдела"
+"If ticket is unassigned, send notifications to email","Если билет не назначен, отправьте уведомления по электронной почте"
+Code,Код
+Type,Тип
+Description,Описание
+"Options list","Список опций"
+"Show value in customer account","Показать стоимость в аккаунте клиента"
+"Show in create ticket form","Показать в форме создания билета"
+"Show in contact us form","Показать в контактной форме"
+"Required for customers","Требуется для клиентов"
+"Required for staff","Требуется для персонала"
+Login,Авторизоваться
+Password,пароль
+Host,хозяин
+Port,порт
+"Fetch Frequency (minutes)","Частота выборки (минуты)"
+"Fetch Max","Fetch Max"
+"Fetch Only X Last Emails","Получить только X последних писем"
+"Auto assign tickets to Store View","Автоматически назначать билеты в Store View"
+"Auto assign tickets to department","Автоматическое назначение билетов в отдел"
+Notes,Заметки
+"Create New Department","Создать новый отдел"
+"Change status","Изменить статус"
+Inactive,Неактивный
+"Delete items","Удалить элементы"
+"Are you sure you wan't to delete selected items?","Вы уверены, что не хотите удалять выбранные элементы?"
+"Is Active",Активен
+"Create New Field","Создать новое поле"
+"Create New Gateway","Создать новый шлюз"
+"Last Fetched At","Последний выбор"
+"Last Fetch Result","Последний результат получения"
+"Create New Pattern","Создать новый шаблон"
+"Create New Permission","Создать новое разрешение"
+Role,Роль
+"Has Access to Tickets of Departments","Имеет доступ к билетам департаментов"
+"Can Remove Tickets","Удалить билеты"
+"Create New Priority","Создать новый приоритет"
+Color,цвет
+"Create New Rule","Создать новое правило"
+"Is Stop Processing","Обработка останова"
+Rate,Ставка
+"View Ticket","Просмотр билетов"
+"Create New Schedule","Создать новое расписание"
+Holiday,"День отдыха"
+"Active From","Активен от"
+"Active To",Активный
+"Create New Status","Создать новый статус"
+"Create New Template","Создать новый шаблон"
+Select...,Выбрать...
+"Mark as Spam","Отметить как спам"
+"Mark as Archive","Отметить как архив"
+"Merge tickets","Слияние билетов"
+"Mark as Inbox","Отметить как Входящие"
+"Change Assignee","Изменить получателя"
+Requester,Запроса
+"Requester Email","Электронная почта отправителя"
+"Can Delete Tickets","Можно удалить билеты"
+"Rule Name","Название правила"
+"Stop Further Rules Processing","Остановить дальнейшие обработки правил"
+Event,Мероприятие
+"Set Status","Установить статус"
+"Set Priority","Установить приоритет"
+"Set Department","Набор департамента"
+"Set Owner","Установить владельца"
+"Add Tags","Добавить теги"
+"Remove Tags","Удалить теги"
+"Send email to ticket owner","Отправить письмо владельцу билета"
+"Send email to all department users","Отправить письмо всем пользователям отдела"
+"Send email to customer","Отправить письмо клиенту"
+"Send email to other email addresses","Отправить электронное письмо на другие адреса электронной почты"
+"Email subject","Тема письма"
+"Email Body","Тело письма"
+"Attach files which were attached to the last message","Прикрепить файлы, прикрепленные к последнему сообщению"
+Stores,магазины
+"Is Holiday",Праздник
+Timezone,"Часовой пояс"
+"Open message","Открыть сообщение"
+"Closed message","Закрытое сообщение"
+"Internal Title","Внутреннее название"
+"Help Desk MX","Поддержка"
+"Your message will be emailed to customer","Ваше сообщение будет отправлено клиенту"
+"Your message will be emailed to your college. Customer will not see it.","Ваше сообщение будет отправлено по электронной почте в ваш колледж. Клиент этого не увидит."
+"Your message will be emailed to the third party. Customer will see it in the ticket history.","Ваше сообщение будет отправлено по электронной почте третьей стороне. Клиент увидит это в истории билетов."
+"Internal Message to Third Party","Внутреннее сообщение третьей стороне"
+"Your message will be emailed to the third party. Customer will not see it.","Ваше сообщение будет отправлено по электронной почте третьей стороне. Клиент этого не увидит."
+"Request ID","ID запроса"

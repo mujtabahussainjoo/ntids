@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/sales.xsd">
+    <section name="quote">
+        <group name="totals">
+            <item name="fooman_surcharge" instance="Fooman\Surcharge\Model\Total\Quote\Surcharge" sort_order="440"/>
+            <item name="fooman_surcharge_tax" instance="Fooman\Surcharge\Model\Total\Quote\Surcharge\BeforeTaxCalc" sort_order="445"/>
+            <item name="fooman_surcharge_tax_after" instance="Fooman\Surcharge\Model\Total\Quote\Surcharge\AfterTaxCalc" sort_order="460"/>
+        </group>
+    </section>
+    <section name="order_invoice">
+        <group name="totals">
+            <item name="fooman_surcharge" instance="Fooman\Surcharge\Model\Total\Invoice\Surcharge" sort_order="190"/>
+            <item name="fooman_surcharge_tax_after" instance="Fooman\Surcharge\Model\Total\Invoice\AfterTaxCalc" sort_order="210"/>
+        </group>
+    </section>
+    <section name="order_creditmemo">
+        <group name="totals">
+            <item name="fooman_surcharge" instance="Fooman\Surcharge\Model\Total\Creditmemo\Surcharge" sort_order="240"/>
+            <item name="fooman_surcharge_after_tax" instance="Fooman\Surcharge\Model\Total\Creditmemo\AfterTaxCalc" sort_order="260"/>
+        </group>
+    </section>
+</config>

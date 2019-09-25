@@ -1,0 +1,18 @@
+<?php
+/**
+ * New Customer block template
+ *
+ * @var $block \Magento\Customer\Block\Form\Login\Info
+ */
+$storeRestrictionProHelper = $this->helper('MagePsycho\StoreRestrictionPro\Helper\Data');
+?>
+<div class="block block-new-customer">
+    <div class="block-title">
+        <strong id="block-new-customer-heading" role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo __('New Customers') ?></strong>
+    </div>
+    <div class="block-content" aria-labelledby="block-new-customer-heading">
+        <p>
+            <?php /* @escapeNotVerified */ echo $storeRestrictionProHelper->getConfigHelper()->getNewAcccountRegistrationDisabledMessage() ?>
+        </p>
+    </div>
+</div>

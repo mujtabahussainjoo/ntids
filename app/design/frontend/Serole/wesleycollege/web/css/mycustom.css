@@ -1,0 +1,46 @@
+/***********************WESLEY COLLEE**********/
+@font-face {
+	font-family: LeituraNewsRoman1;	
+	src: url("../fonts/LeituraNews-Roman 1Web.eot");
+}
+@font-face {
+	font-family: LeituraNewsRoman1;	
+	src: url("../fonts/LeituraNews-Roman 1Web.woff") format("woff");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Lato Light"), local("Lato-Light"), url("https://fonts.gstatic.com/s/lato/v11/IY9HZVvI1cMoAHxvl0w9LQLUuEpTyoUstqEm5AMlJo4.woff2") format("woff2"), url("https://fonts.gstatic.com/s/lato/v11/7YeX5qGGVrvjpqFsvxNSRALUuEpTyoUstqEm5AMlJo4.woff") format("woff");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Lato Regular"), local("Lato-Regular"), url("https://fonts.gstatic.com/s/lato/v11/8qcEw_nrk_5HEcCpYdJu8PesZW2xOQ-xsNqO47m55DA.woff2") format("woff2"), url("https://fonts.gstatic.com/s/lato/v11/2V_mouV5odI0UgtVODTOwvesZW2xOQ-xsNqO47m55DA.woff") format("woff");
+}
+
+body, p {
+	font-family: Lato,sans-serif!important;
+	font-weight: 300!important;
+}
+h1,h2,h3,h4,.h1,.h2,.h3,.h4 {
+	font-family:LeituraNewsRoman1, serif!important;
+}
+.header-container2,.header-primary-container{ 
+margin-bottom:0.5%;
+}
+.nav-container {
+    background-color: #ededed!important;
+}
+.header-container {
+	width: 100%!important;
+    margin-left: 0%!important;
+}
+.header .logo-wrapper .logo{
+margin: -12px -23px -6px -14px!important;
+}
+.block-search form {
+    top: -31px!important;
+    margin: 0 0 0 -72px!important;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="potato" translate="label" sortOrder="340">
+            <label>POTATOCOMMERCE</label>
+        </tab>
+        <section id="potato_checkout_newsletter" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Subscribe to Newsletter at Checkout</label>
+            <tab>potato</tab>
+            <resource>Potato_CheckoutNewsletter::potato_checkout_newsletter</resource>
+            <group id="general" translate="label,comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Settings</label>
+                <field id="is_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_display_checkbox" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Display the subscription checkbox at checkout</label>
+                    <source_model>Potato\CheckoutNewsletter\Model\Source\Config\DisplayCheckbox</source_model>
+                </field>
+                <field id="storefront_label" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Storefront label</label>
+                    <depends>
+                        <field id="is_display_checkbox">1</field>
+                    </depends>
+                </field>
+                <field id="is_checked" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Is Checked by Default</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="is_display_checkbox">1</field>
+                    </depends>
+                </field>
+                <field id="is_not_checked_for_unsubscribed" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Not Checked for Unsubscribed Customers</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="is_display_checkbox">1</field>
+                    </depends>
+                </field>
+                <field id="is_not_subscribed_for_unsubscribed" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Do not subscribe unsubscribed customers</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="is_display_checkbox">0</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

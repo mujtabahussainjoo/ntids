@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../module-report/src/ReportApi/etc/mst_report.xsd">
+    <table name="mst_helpdesk_ticket_aggregated_hour">
+        <fk name="user_id" table="admin_user"/>
+
+        <column name="created_at" fields="period" expr="%1" label="Period" type="date"/>
+
+        <column name="user" fields="user_id" expr="GROUP_CONCAT(%1)" label="User" type="select" options="Mirasvit\Helpdesk\Model\Config\Source\Users"/>
+
+        <column name="new_ticket_cnt" label="New Tickets #" type="number"/>
+
+        <column name="changed_ticket_cnt" label="Changed Tickets #" type="number"/>
+
+        <column name="solved_ticket_cnt" label="Solved Tickets #" type="number"/>
+
+        <column name="total_reply_cnt" label="Total Responses #" type="number"/>
+
+        <column name="first_reply_time" label="1st Reply Time, hours" type="qty"
+                expr="ROUND(AVG(IF(%1 > 0, %1, NULL))/60/60,1)"/>
+
+        <column name="first_resolution_time" label="1st Resolution Time, hours" type="qty"
+                expr="ROUND(AVG(IF(%1 > 0, %1, NULL))/60/60,1)"/>
+
+        <column name="full_resolution_time" label="Full Resolution Time, hours" type="qty"
+                expr="ROUND(AVG(IF(%1 > 0, %1, NULL))/60/60,1)"/>
+
+        <column name="satisfaction_rate_1_cnt" label="Satisfaction Great #" type="number"/>
+
+        <column name="satisfaction_rate_2_cnt" label="Satisfaction OK #" type="number"/>
+
+        <column name="satisfaction_rate_3_cnt" label="Satisfaction Bad #" type="number"/>
+
+        <column name="satisfaction_response_cnt" label="Total Satisfaction responses #" type="number"/>
+
+        <!--<column name="satisfaction_rate" label="Satisfaction Score, %" fields="satisfaction_rate" type="number"-->
+        <!--expr="AVG(satisfaction_rate_3_cnt/SUM(satisfaction_rate_1_cnt,satisfaction_rate_2_cnt,satisfaction_rate_3_cnt) - satisfaction_rate_1_cnt/SUM(satisfaction_rate_1_cnt,satisfaction_rate_2_cnt,satisfaction_rate_3_cnt)) "/>-->
+
+        <column name="satisfaction_response_rate" label="Satisfaction Response Rate, %"
+                type="qty" expr="ROUND(AVG(%1),1)"/>
+    </table>
+
+    <table name="admin_user">
+        <pk name="user_id"/>
+
+        <column name="name" label="User Name" fields="firstname,lastname" expr="CONCAT(%1, ' ', %2)"/>
+    </table>
+</config>

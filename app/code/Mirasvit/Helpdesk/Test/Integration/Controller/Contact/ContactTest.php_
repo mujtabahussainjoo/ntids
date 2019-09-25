@@ -1,0 +1,18 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Ticket;
+
+class ContactTest extends \Magento\TestFramework\TestCase\AbstractController
+{
+    /**
+     * @covers Mirasvit\Helpdesk\Controller\Contact\Form::execute
+     */
+    public function testFormExecuteAction()
+    {
+        $this->dispatch('helpdesk/contact/form');
+
+        $body = $this->getResponse()->getBody();
+        $this->assertContains('How can we help you?', $body);
+        $this->assertContains('Submit', $body);
+    }
+}

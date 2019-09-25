@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/wishlist/product/:customer_id" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="displayWishlist"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/wishlist/getusersetting/:customer_id" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="getUserSettings"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/wishlist/saveusersetting/:customer_id/:proximity_notification/:push_notification/:geo_location/:phone_number" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="saveUserSetting"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+	<route url="/V1/getconfirmpurchase/:customer_id/:websiteId/:store/:nonce_from_client/:amount/:save_my_card/:newsletter" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="getConfirmPurchase"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+	<route url="/V1/getgeneratetoken/:customer_id" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="getGenerateToken"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+	<route url="/V1/integration/getlogourl" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="getLogoUrl"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/changeorderstatus/:order_id" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="changeOrderStatusToComplete"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+	<route url="/V1/getcustompdfurl/:order_id" method="GET">
+        <service class="BtSuperApp\CustomModule\Api\HelloInterface" method="getCustomPdfUrl"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+</routes>

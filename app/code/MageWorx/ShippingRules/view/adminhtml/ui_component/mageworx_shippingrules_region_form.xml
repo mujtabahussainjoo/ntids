@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mageworx_shippingrules_region_form.mageworx_shippingrules_region_form_data_source</item>
+            <item name="deps" xsi:type="string">mageworx_shippingrules_region_form.mageworx_shippingrules_region_form_data_source</item>
+            <item name="namespace" xsi:type="string">mageworx_shippingrules_region_form</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Region\Edit\Button\Back</item>
+            <item name="save" xsi:type="string">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Region\Edit\Button\Save</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">mageworx_shippingrules_region_form</item>
+        </item>
+        <item name="childrenFromMeta" xsi:type="boolean">true</item>
+    </argument>
+    <dataSource name="mageworx_shippingrules_region_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Region\Form\RegionDataProvider</argument>
+            <argument name="name" xsi:type="string">mageworx_shippingrules_region_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">region_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Region Information</item>
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="sortOrder" xsi:type="number">10</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="region_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">hidden</item>
+                    <item name="dataScope" xsi:type="string">region_id</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_region_form</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </field>
+        <field name="country_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">MageWorx\ShippingRules\Model\Config\Source\Locale\Country</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Country</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">country_id</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_region_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </field>
+        <field name="code">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Code</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">code</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_region_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_active">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="default" xsi:type="number">1</item>
+                    <item name="label" xsi:type="string" translate="true">Is Active</item>
+                    <item name="dataScope" xsi:type="string">is_active</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_region_form</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_custom">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="default" xsi:type="number">1</item>
+                    <item name="label" xsi:type="string" translate="true">Is Custom</item>
+                    <item name="dataScope" xsi:type="string">is_custom</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_region_form</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </field>
+        <field name="default_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Default Name</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">default_name</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_region_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                </item>
+            </argument>
+        </field>
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                    <item name="source" xsi:type="string">mageworx_shippingrules_region_form</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

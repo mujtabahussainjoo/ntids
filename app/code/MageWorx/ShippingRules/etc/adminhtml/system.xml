@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="shipping" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>MageWorx Shipping</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Method Name</label>
+                </field>
+                <field id="price" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Price</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="handling_type" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Calculate Handling Fee</label>
+                    <source_model>Magento\Shipping\Model\Source\HandlingType</source_model>
+                </field>
+                <field id="handling_fee" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Handling Fee</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="91" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="92" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="specificerrmsg" translate="label" type="textarea" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Displayed Error Message</label>
+                </field>
+            </group>
+        </section>
+        <tab id="mageworx" sortOrder="2001">
+            <label>MageWorx</label>
+        </tab>
+        <section id="mageworx_shippingrules" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Shipping Suite</label>
+            <tab>mageworx</tab>
+            <resource>MageWorx_ShippingRules::config_shippingrules</resource>
+            <group id="main" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Shipping Suite Configuration</label>
+                <field id="multiple_rates_price" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label><![CDATA[Multiple rates price calculation]]></label>
+                    <source_model>MageWorx\ShippingRules\Model\Config\Source\MultipleRatesPrice</source_model>
+                </field>
+            </group>
+            <group id="validation" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Validation Settings</label>
+                <field id="advanced_postcode_validation_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label><![CDATA[Advanced Postcode Validation: Is Enabled]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="postcode_validation_excessive_valid" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label><![CDATA[Advanced Postcode Validation: excessive data means postcode is valid]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="single_address_zone_mode" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[One and only one zone can be set for the address in one time (most prioritized zone from available)]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="extended_country_select_enabled" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Enable extended country select in the rule conditions]]></label>
+                    <comment>These settings adds geo regions to the country selection options.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="uk_postcode_conditions" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Enable advanced conditions for United Kingdom postcodes validation]]></label>
+                    <comment>In the Shipping Rules and Locations Groups these settings add next new conditions: incode, outcode, area, district, sector, unit. It is compatible with other postcode validation settings and features (like % or ? and compare "part by part").</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="shipping_methods" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shipping Methods Settings</label>
+                <field id="renaming" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Rename Shipping Methods</label>
+                    <frontend_model>MageWorx\ShippingRules\Block\Adminhtml\Form\Field\MethodsTitle</frontend_model>
+                    <backend_model>MageWorx\ShippingRules\Model\System\Config\Backend\MethodsTitles</backend_model>
+                </field>
+                <field id="display_cheapest_rate_top" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Display the Cheapest Shipping Method at the Top. Other methods will be displayed next ascending by price from low to high.]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="popup" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Popup Configuration</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Display Shipping Zones Popup]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="only_address" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Display Only Country & Region Fields]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="import" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Import/Export Configuration</label>
+                <field id="use_id" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Use the ID field to bind fields during the import-export process]]></label>
+                    <comment><![CDATA[When disabled - only the code field will be used for binding for the all entities, except a rates, which will be created anew]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="countries" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Countries by Region Configuration</label>
+                <field id="country_002" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Africa]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_003" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[North America]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_005" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[South America]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_009" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Oceania]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_011" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Western Africa]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_013" translate="label" type="multiselect" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Central America]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_014" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Eastern Africa]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_015" translate="label" type="multiselect" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Northern Africa]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_017" translate="label" type="multiselect" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Middle Africa]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_018" translate="label" type="multiselect" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Southern Africa]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_019" translate="label" type="multiselect" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Americas]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_021" translate="label" type="multiselect" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Northern America]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_029" translate="label" type="multiselect" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Caribbean]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_030" translate="label" type="multiselect" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Eastern Asia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_034" translate="label" type="multiselect" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Southern Asia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_035" translate="label" type="multiselect" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Southeast Asia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_039" translate="label" type="multiselect" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Southern Europe]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_053" translate="label" type="multiselect" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Australasia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_054" translate="label" type="multiselect" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Melanesia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_057" translate="label" type="multiselect" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Micronesian Region]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_061" translate="label" type="multiselect" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Polynesia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_142" translate="label" type="multiselect" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Asia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_143" translate="label" type="multiselect" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Central Asia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_145" translate="label" type="multiselect" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Western Asia]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_150" translate="label" type="multiselect" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Europe]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_151" translate="label" type="multiselect" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Eastern Europe]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_154" translate="label" type="multiselect" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Northern Europe]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_155" translate="label" type="multiselect" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Western Europe]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="country_419" translate="label" type="multiselect" sortOrder="290" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label><![CDATA[Latin America]]></label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+            </group>
+            <group id="developer" translate="label comment" type="text" sortOrder="1990" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Developer Settings</label>
+                <comment>These settings are designed to make the search for the extension issues in your shop easier.
+                    Warning: please, do not change anything in these settings in case you are not sure what these settings are designed to.</comment>
+                <field id="resolve_parameters_from_api_request" type="select" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Resolve Address Parameters from API Request</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="logger_enabled" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable shipping rules logger</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Account\AuthorizationLink $block */
+
+$dataPostParam = '';
+if ($block->isLoggedIn()) {
+    $dataPostParam = sprintf(" data-post='%s'", $block->getPostParams());
+}
+?>
+
+<li class="authorization-link" data-label="<?= $block->escapeHtmlAttr(__('or')) ?>">
+    <a <?= /* @noEscape */ $block->getLinkAttributes() ?><?= /* @noEscape */ $dataPostParam ?>>
+        <?php if($block->getLabel()=='Sign In'){ ?>
+			
+        <?php }elseif($block->getLabel()=='Sign Out'){?>
+			<?= "Log Out"?>
+        <?php }else{?>
+		
+        <?php }?>
+    </a> 
+</li>
+<li>
+	<a class="top-link-checkout" href="https://www.alintaenergy.com.au/alintaenergyrewards-shop/checkout/">Checkout</a>
+</li>
+

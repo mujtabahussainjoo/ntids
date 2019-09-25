@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="left">
+			<block as="sidebar_tiles" class="Serole\CategoriesTiles\Block\Sidebar\Tiles" name="sidebar.tiles" template="Serole_CategoriesTiles::sidebar/tiles.phtml"/>
+		</referenceBlock>
+		<referenceContainer name="columns.top">
+            <container name="category.view.container" htmlTag="div" htmlClass="category-view" after="-">
+                <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Serole_CategoriesTiles::mobileapp/image.phtml"/>
+                <block class="Magento\Catalog\Block\Category\View" name="category.description" template="Serole_CategoriesTiles::mobileapp/description.phtml"/>
+            </container>
+        </referenceContainer>
+		<referenceContainer name="sidebar.main">
+			<block class="Serole\CategoriesTiles\Block\Sidebar\Tiles" name="sidebarcart" after="-" template="Serole_CategoriesTiles::sidebar/sidebarcart.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,32 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Adminhtml\Spam;
+
+/**
+ * @magentoAppArea adminhtml
+ */
+class EditTest extends \Magento\TestFramework\TestCase\AbstractBackendController
+{
+    /**
+     * setUp.
+     */
+    public function setUp()
+    {
+        $this->resource = 'Mirasvit_Helpdesk::helpdesk_spam';
+        $this->uri = 'backend/helpdesk/spam/edit';
+        parent::setUp();
+    }
+
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Adminhtml\Spam\Edit::execute
+     */
+    public function testEditAction()
+    {
+        $this->markTestIncomplete();
+        $this->dispatch('backend/helpdesk/spam/edit');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

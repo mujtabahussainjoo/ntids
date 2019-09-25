@@ -1,0 +1,42 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+?>
+<?php /** @var \Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Categories $block */ ?>
+<div id="role_info_tabs_amrolepermissions.categories_content" style=""
+     data-ui-id="adminhtml-user-editroles-tab-content-amrolepermissions-categories"
+     aria-labelledby="role_info_tabs_amrolepermissions.categories"
+     class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel"
+     aria-expanded="true" aria-hidden="false">
+    <div class="entry-edit form-inline">
+        <fieldset class="fieldset admin__fieldset "
+                  id="rule_amrolepermissions_categories_fieldset">
+            <legend class="admin__legend legend">
+                <span><?=__('Category Access')?></span>
+            </legend>
+            <br>
+            <div class="messages">
+            </div>
+            <?= $block->getForm()->getElement('category_access_mode')->toHtml() ?>
+            <div>
+                <div>
+                    <?= $block->getForm()->getElement('categories')->toHtml() ?>
+
+                    <label class="addafter" for="rule_allowed_categories">
+                        <?= $block->getTreeBlock()->toHtml() ?>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <?php echo $block->getChildHtml('form_after');?>
+</div>
+
+<script>
+    require(["jquery"], function($){
+        window.amrolepermissions_js_object = {updateElement: $("#rule_categories")[0]};
+    });
+</script>

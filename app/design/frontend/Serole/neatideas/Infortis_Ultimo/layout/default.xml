@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Infortis\Cgen\Block\AssetWrapper\Combined" name="head.additional.asset-wrapper" template="assets/wrapper/combined.phtml">
+                <arguments>
+                    <argument name="asset_name" xsi:type="string">cfg.css</argument>
+                    <argument name="asset_id" xsi:type="string">iult</argument>
+                </arguments>
+            </block>
+        </referenceBlock>    
+		<referenceBlock name="catalog.compare.list" remove="true"/>
+		<referenceBlock name="catalog.compare.link" remove="true"/>
+		<referenceBlock name="catalog.compare.sidebar" remove="true"/>
+		<referenceBlock name="product.social.links" remove="true"/>
+		<referenceBlock name="reviews.tab" remove="true"/>
+		<referenceBlock name="product.review.form" remove="true"/>
+		<referenceBlock name="product.info.review" remove="true" />
+		<referenceBlock name="product.attributes" remove="true" />
+		<referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+        <!-- <referenceBlock name="authorization-link" remove="flase" /> for Sign In Link  -->
+        <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
+        <referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/> 
+		<!-- Remove Account Dashboard-->
+		<referenceBlock name="customer-account-navigation-account-link" remove="false"/>
+		<!-- Remove Account Information-->
+		<referenceBlock name="customer-account-navigation-account-edit-link" remove="true"/>
+		<!-- Remove Address Book-->
+		<referenceBlock name="customer-account-navigation-address-link" remove="false"/>
+		<!-- Remove My Orders-->
+		<referenceBlock name="customer-account-navigation-orders-link" remove="false"/>
+		<!-- Remove My Downloadable Products-->
+		<referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
+		<!-- Remove Newsletter Subscriptions-->
+		<referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
+		<!-- Remove My Credit Cards-->
+		<referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+		<!-- Remove Billing Agreements-->
+		<referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
+		<!-- Remove My Product Reviews-->
+		<referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/>
+		<!-- Remove My Wish List-->
+		<referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
+		<!-- Reward points -->
+        <referenceBlock name="customer-account-navigation-reward-link" remove="true"/>
+    </body>
+</page>

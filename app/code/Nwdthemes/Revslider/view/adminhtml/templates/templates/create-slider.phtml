@@ -1,0 +1,43 @@
+<?php
+
+use \Nwdthemes\Revslider\Model\Revslider\RevSliderAdmin;
+
+/**
+ * @author    ThemePunch <info@themepunch.com>
+ * @link      http://www.themepunch.com/
+ * @copyright 2015 ThemePunch
+ */
+ 
+$is_edit = false;
+
+echo $this->getChildBlock('slider-main-options')
+    ->assign([
+        'block' => $block,
+        'framework' => $framework,
+        'query' => $query,
+        'curl' => $curl,
+        'filesystemHelper' => $filesystemHelper,
+        'registerHelper' => $registerHelper,
+        'images' => $images,
+        'resource' => $resource,
+        'googleFonts' => $googleFonts,
+        'postTypesWithCats' => $postTypesWithCats,
+        'sliderID' => $sliderID,
+        'arrFieldsParams' => $arrFieldsParams,
+        'uslider' => $uslider,
+        'is_edit' => $is_edit,
+        'customerGroups' => $customerGroups
+    ])
+    ->toHtml();
+?>
+
+<script type="text/javascript">
+	var g_jsonTaxWithCats = <?php echo $jsonTaxWithCats?>;
+
+	require(['jquery', 'revAdmin'], function(jQuery, RevSliderAdmin) {
+        jQuery(document).ready(function(){
+            RevSliderAdmin.initAddSliderView();
+        });
+    });
+</script>
+

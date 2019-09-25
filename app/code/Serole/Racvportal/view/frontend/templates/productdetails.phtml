@@ -1,0 +1,11 @@
+<?php $data = $block->getData(); ?>
+<?php if($data['data']):?>
+    <h2 class="pop-product-name"><?php echo $data['data']['productName']?></h2>
+    <?php if($data['data']['desscription']){ ?>
+        <div class="pop-product-desc">
+           <?php echo $data['data']['desscription']; ?>
+        </div>
+    <?php }else {?>
+        <p> No Details</p>
+    <?php } ?>
+<?php endif; ?>

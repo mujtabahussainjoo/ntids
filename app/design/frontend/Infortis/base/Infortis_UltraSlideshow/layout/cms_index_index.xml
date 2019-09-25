@@ -1,0 +1,29 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="base-main-top-container">
+            <block class="Infortis\UltraSlideshow\Block\Slideshow"
+                   name="ultraslideshow_top"
+                   as="ultraslideshow_top"
+                   template="Infortis_UltraSlideshow::slideshow.phtml"
+                   ifconfig="ultraslideshow/general/position1"
+                   >
+                <action method="setPredefined">
+                    <argument name="value" xsi:type="string">1</argument>
+                </action>
+            </block>
+        </referenceContainer>
+            
+        <referenceContainer name="columns.top"> <!-- Container above sidebars: columns.top (Before Main Columns). Container next to sidebars: content. -->
+            <block class="Infortis\UltraSlideshow\Block\Slideshow"
+                   name="ultraslideshow"
+                   as="ultraslideshow"
+                   template="Infortis_UltraSlideshow::slideshow.phtml"
+                   ifconfig="ultraslideshow/general/position2"
+                   >
+                <action method="setPredefined">
+                    <argument name="value" xsi:type="string">1</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

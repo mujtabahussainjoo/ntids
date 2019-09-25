@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">aw_rbslider_slide_form.aw_rbslider_slide_form_data_source</item>
+            <item name="deps" xsi:type="string">aw_rbslider_slide_form.aw_rbslider_slide_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">aw_rbslider_slide_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Aheadworks\Rbslider\Block\Adminhtml\Slide\Edit\Button\Back</item>
+            <item name="delete" xsi:type="string">Aheadworks\Rbslider\Block\Adminhtml\Slide\Edit\Button\Delete</item>
+            <item name="reset" xsi:type="string">Aheadworks\Rbslider\Block\Adminhtml\Slide\Edit\Button\Reset</item>
+            <item name="save" xsi:type="string">Aheadworks\Rbslider\Block\Adminhtml\Slide\Edit\Button\Save</item>
+            <item name="save_and_continue" xsi:type="string">Aheadworks\Rbslider\Block\Adminhtml\Slide\Edit\Button\SaveAndContinue</item>
+        </item>
+    </argument>
+    <dataSource name="aw_rbslider_slide_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Aheadworks\Rbslider\Ui\DataProvider\SlideDataProvider</argument>
+            <argument name="name" xsi:type="string">aw_rbslider_slide_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="aw_rbslider_admin/slide/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general_fieldset">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">General Information</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">10</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="dataScope" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </field>
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="banner_ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Assign to Banner(s)</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="dataScope" xsi:type="string">banner_ids</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+                <item name="options" xsi:type="object">Aheadworks\Rbslider\Model\ResourceModel\Banner\Collection</item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="label" xsi:type="string" translate="true">Enable Slide</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
+                    <item name="default" xsi:type="string">1</item>
+                </item>
+            </argument>
+        </field>
+        <field name="storeviews" class="Aheadworks\Rbslider\Ui\Component\Form\StoreViewField">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Aheadworks\Rbslider\Ui\Component\Listing\Columns\Store\Options</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Store View</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="dataScope" xsi:type="string">store_ids</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="customer_group_ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Customer Groups</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="dataScope" xsi:type="string">customer_group_ids</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+                <item name="options" xsi:type="object">Aheadworks\Rbslider\Model\Source\CustomerGroups</item>
+            </argument>
+        </field>
+        <field name="display_from">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Aheadworks_Rbslider/js/ui/form/element/date</item>
+                    <item name="label" xsi:type="string" translate="true">Display From</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-date" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="dataScope" xsi:type="string">display_from</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="options" xsi:type="array">
+                        <item name="showsTime" xsi:type="boolean">true</item>
+                        <item name="minDate" xsi:type="number">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="display_to">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Aheadworks_Rbslider/js/ui/form/element/date</item>
+                    <item name="label" xsi:type="string" translate="true">Display To</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="dataScope" xsi:type="string">display_to</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-date" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                    <item name="options" xsi:type="array">
+                        <item name="showsTime" xsi:type="boolean">true</item>
+                        <item name="minDate" xsi:type="number">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <fieldset name="background_image_fieldset">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Image</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+        <field name="img_type">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Aheadworks\Rbslider\Model\Source\ImageType</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="label" xsi:type="string" translate="true">Image Type</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataScope" xsi:type="string">img_type</item>
+                    <item name="switcherConfig" xsi:type="array">
+                        <item name="enabled" xsi:type="boolean">true</item>
+                        <item name="rules" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="value" xsi:type="number">1</item>
+                                <item name="actions" xsi:type="array">
+                                    <item name="0" xsi:type="array">
+                                        <item name="target" xsi:type="string">aw_rbslider_slide_form.aw_rbslider_slide_form.background_image_fieldset.img_file</item>
+                                        <item name="callback" xsi:type="string">show</item>
+                                    </item>
+                                    <item name="1" xsi:type="array">
+                                        <item name="target" xsi:type="string">aw_rbslider_slide_form.aw_rbslider_slide_form.background_image_fieldset.img_url</item>
+                                        <item name="callback" xsi:type="string">hide</item>
+                                    </item>
+                                </item>
+                            </item>
+                            <item name="1" xsi:type="array">
+                                <item name="value" xsi:type="number">2</item>
+                                <item name="actions" xsi:type="array">
+                                    <item name="0" xsi:type="array">
+                                        <item name="target" xsi:type="string">aw_rbslider_slide_form.aw_rbslider_slide_form.background_image_fieldset.img_file</item>
+                                        <item name="callback" xsi:type="string">hide</item>
+                                    </item>
+                                    <item name="1" xsi:type="array">
+                                        <item name="target" xsi:type="string">aw_rbslider_slide_form.aw_rbslider_slide_form.background_image_fieldset.img_url</item>
+                                        <item name="callback" xsi:type="string">show</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="img_file">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="label" xsi:type="string" translate="true">Image File</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Aheadworks_Rbslider/slide-image-preview</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="aw_rbslider_admin/slide/uploadImage"/>
+                    </item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="img_url">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Image Url</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="dataScope" xsi:type="string">img_url</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-url" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="img_title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Image Title</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="dataScope" xsi:type="string">img_title</item>
+                </item>
+            </argument>
+        </field>
+        <field name="img_alt">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Image Alt</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                    <item name="dataScope" xsi:type="string">img_alt</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <fieldset name="url_options_fieldset">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">URL Options</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">30</item>
+            </item>
+        </argument>
+        <field name="url">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">URL</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataScope" xsi:type="string">url</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-url" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_open_url_in_new_window">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
+                    <item name="default" xsi:type="string">1</item>
+                    <item name="label" xsi:type="string" translate="true">Open URL in New Window</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="dataScope" xsi:type="string">is_open_url_in_new_window</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_add_nofollow_to_url">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
+                    <item name="default" xsi:type="string">1</item>
+                    <item name="label" xsi:type="string" translate="true">Add 'No follow' to URL</item>
+                    <item name="source" xsi:type="string">slide</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="dataScope" xsi:type="string">is_add_nofollow_to_url</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Jake Sharp (http://www.jakesharp.co/) All rights reserved.
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" src_type="url" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Ibnab\OwlSlider\Block\FSlider" name="owlslider.content.top" before="-">
+                <action method="setSliderLocation">
+                    <argument name="location" xsi:type="string">content-top</argument>
+                </action>
+            </block>
+            <block class="Ibnab\OwlSlider\Block\FSlider" name="owlslider.content.bottom" after="-">
+                <action method="setSliderLocation">
+                    <argument name="location" xsi:type="string">content-bottom</argument>
+                </action>
+            </block>
+       	</referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Ibnab\OwlSlider\Block\FSlider" name="owlslider.sidebar.additional.top" before="-">
+                <action method="setSliderLocation">
+                    <argument name="location" xsi:type="string">sidebar-additional-top</argument>
+                </action>
+            </block>
+            <block class="Ibnab\OwlSlider\Block\FSlider" name="owlslider.sidebar.additional.bottom" after="-">
+                <action method="setSliderLocation">
+                    <argument name="location" xsi:type="string">sidebar-additional-bottom</argument>
+                </action>
+            </block>
+       	</referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,136 @@
+Department,מַחלָקָה
+"Create New Ticket","צור כרטיס חדש"
+Status,סטָטוּס
+Priority,עדיפות
+Replies,תגובות
+View,נוף
+"Help Desk","דלפק עזרה"
+"Thank you",תודה
+"Create Ticket","צור כרטיס"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","הבקשה שלך נשלחה בהצלחה. בקרוב תקבל דוא&quot;ל אישור."
+Telephone,טֵלֵפוֹן
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","שאלתך נשלחה ותוגש בהקדם האפשרי. תודה שפנית אלינו."
+"Unable to submit your request. Please, try again later","לא ניתן לשלוח את הבקשה שלך. בבקשה נסה שוב מאוחר יותר"
+"Page not found.","הדף לא נמצא."
+"Your message was successfuly posted","ההודעה שלך נשלחה בהצלחה"
+"Your ticket was successfuly posted","הכרטיס שלך פורסם בהצלחה"
+"Ticket was successfuly closed","הכרטיס נסגר בהצלחה"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","לא ניתן לטעון את הקובץ %1. הגודל המרבי המותר להעלאה הוא %2 MB."
+"Allows only this file types: %1","מאפשר רק את סוגי הקבצים הבאים: %1"
+"Message added","ההודעה נוספה"
+"Internal note added","הערה פנימית נוספה"
+"Third party message added","נוספה הודעת צד שלישי"
+"Private third party message added","הודעה פרטית של צד שלישי נוספה"
+"-- Please Select --","-- בבקשה תבחר --"
+"Contact Tab","לשונית אנשי קשר"
+"Contact Form","טופס יצירת קשר"
+" at %1 (%2) - %3","ב- %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","אין לך הרשאות לקרוא את הכרטיס הזה. אנא פנה למנהל המערכת שלך."
+"Invalid Customer Email","דוא&quot;ל לקוח לא חוקי"
+"not set","לא מוכן"
+"Unknown time","זמן לא ידוע"
+ago,לִפנֵי
+"from now",מעכשיו
+"1 sec ago","לפני 1 שנייה"
+"Open Ticket","כרטיס פתוח"
+"Open Tickets","כרטיסים פתוחים"
+"! Blocked file - ","! קובץ חסום -"
+Disabled,נָכֶה
+"AW Helpdesk","עזרה AW"
+"MW Helpdesk","MW Helpdesk"
+"File System","מערכת קבצים"
+Database,"מאגר מידע"
+Aqua,אקווה
+Grey,אפור
+Navy,"חיל הים"
+Silver,כסף
+Black,שָׁחוֹר
+Green,ירוק
+Olive,זית
+Teal,"ירוק כחלחל"
+Blue,כָּחוֹל
+Lime,ליים
+Purple,סָגוֹל
+Fuchsia,"ורוד פוקסיה"
+Maroon,"חוּם עֲרמוֹנִי"
+Red,אָדוֹם
+Orange,תפוז
+Yellow,צהוב
+Text,טֶקסט
+Date,תַאֲרִיך
+Checkbox,"תיבת סימון"
+"Drop-down list","רשימה נפתחת"
+"In minutes...",בדקות...
+"In hours...","בשעות ..."
+"In days...",בימים...
+"In weeks...","בשבועות ..."
+"In months...","בחודשים ..."
+Custom,"המותאם אישית"
+"--Please Select--","--בבקשה תבחר--"
+"New ticket created","כרטיס חדש נוצר"
+Success,הַצלָחָה
+Customer,צרכן
+Staff,צוות
+"Third party","צד שלישי"
+Closed,סָגוּר
+"Opened 24hr","נפתח 24 שעות"
+"Helpdesk Tickets","כרטיסי תמיכה"
+"Cannot delete ticket with id %1","לא ניתן למחוק כרטיס עם מזהה %1"
+Edit,לַעֲרוֹך
+"All Departments","כל המחלקות"
+Back,חזור
+"24 hrs x 7 days","24 שעות x 7 ימים"
+"Select working days/hours","בחר ימי עבודה / שעות"
+"Satisfaction survey","סקר שביעות רצון"
+"to %1 (third party)","אל %1 (צד שלישי)"
+"%1 (third party)","%1 (צד שלישי)"
+"added %1 (%2)","הוסיף %1 (%2)"
+"Ticket Summary","סיכום כרטיסים"
+"Ticket ID","מזהה כרטיס"
+Assignee,נִמחֶה
+"Additional Info","מידע נוסף"
+"Ticket History","היסטוריית כרטיסים"
+"Done by","בוצע ע&quot;י"
+Changes,שינויים
+Name,שֵׁם
+"Attach files","צרף קבצים"
+Submit,שלח
+"Submit Ticket","שלח כרטיס"
+"What is your question?","מה השאלה שלך?"
+"We found the following topics that might be helpful:","מצאנו את הנושאים הבאים שעשויים להיות שימושיים:"
+"None of these are helpful - get in touch","אף אחד מאלה לא עוזר - צור קשר"
+"We have not found topics that can be helpful.","לא מצאנו נושאים שיכולים לעזור."
+"Contact Information","פרטי התקשרות"
+Comment,תגובה
+"We are open 24 x 7","אנחנו פתוחים 24 x 7"
+"We are closed","אנחנו סגורים"
+"Timezone: %1","אזור זמן: %1"
+"Please take a second to rate my reply...","הקדש שנייה כדי לדרג את תשובתי ..."
+Great,גדול
+Awesome,מדהים
+"Fast, friendly, helpful, pleasant. Great job!","מהיר, ידידותי, מועיל, נעים. עבודה טובה!"
+"Just Okay","רק בסדר"
+"Fine, but definitely could have been better.","בסדר, אבל בהחלט יכול היה להיות טוב יותר."
+"Not good","לא טוב"
+"Unfortunately, I wasn't happy with it at all.","לרוע המזל, לא הייתי מרוצה ממנו כלל."
+"Thank you for participating in our survey!","תודה על השתתפותך בסקר שלנו!"
+"If you would like to provide additional comments, please do so below:","אם תרצה לספק הערות נוספות, אנא בצע את הפעולות הבאות:"
+Message,הוֹדָעָה
+"Submit Message","שלח הודעה"
+"Thank you for your feedback!","תודה על המשוב שלך!"
+Attachments,"קבצים מצורפים"
+Order,להזמין
+"-- Select an Order --","- בחר הזמנה -"
+"Create ticket","צור כרטיס"
+"You don't have open tickets","אין לך כרטיסים פתוחים"
+"Post a Reply","פרסם תגובה"
+"Reopen Ticket","פתיחה מחדש של כרטיס"
+"Close Ticket","סגור כרטיס"
+History,הִיסטוֹרִיָה
+"Back to My Tickets","חזרה אל הכרטיסים שלי"
+"Help Desk MX","Help Desk MX"
+"Contact Us","תיצור איתנו קשר"
+Open,לִפְתוֹחַ
+Subject,נושא
+"Last Activity","פעילות אחרונה"
+"Request ID","מזהה בקשה"

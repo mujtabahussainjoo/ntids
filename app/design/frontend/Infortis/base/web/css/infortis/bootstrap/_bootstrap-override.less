@@ -1,0 +1,155 @@
+//
+//  Override Bootstrap styles
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+//
+//  Required overrides
+//  _____________________________________________
+
+/**
+ * Remove side padding from grid containers 
+ * and override Bootstrap's default width values.
+ */
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+/* Set box sizing of all Bootstrap grid units */
+[class*="col-"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+//
+//  Additional optional features
+//  _____________________________________________
+
+//
+//  Column gutter
+//  ---------------------------------------------
+
+/**
+ * Remove gutter (gaps between column content created 
+ * via side padding) from selected grid units.
+ */
+
+.no-gutter {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-left-gutter {
+    padding-left: 0;
+}
+
+.no-right-gutter {
+    padding-right: 0;
+}
+
+/**
+ * Add bottom gutter to all grid units inside the row
+ */
+
+.row-bottom-gutter [class*="col-"] {
+    margin-bottom: 30px;
+}
+
+.row-bottom-gutter-half [class*="col-"] {
+    margin-bottom: 15px;
+}
+
+//
+//  Row outdent
+//  ---------------------------------------------
+
+/**
+ * Rows in Bootstrap grid are outdented (with negative margin). It's so that
+ * content within grid columns is lined up with non-grid content.
+ * But sometimes (e.g. on CMS pages) we may need a row with no outdent 
+ * so that edges of grid columns are lined up with non-grid content.
+ * We can force this behavior with additional class.
+ */
+
+.row.no-outdent, /* For backward compatibility */
+.row-no-outdent {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+//
+//  Checkered grid
+//  ---------------------------------------------
+
+/**
+ * Columns have a pattern of alternating rectangles of different 
+ * background, i.e. 1st column have a background (light gray), 
+ * 2nd column have no background, 3rd column have a background, 
+ * and so on.
+ * In even rows the 1st column starts with no background,
+ * 2nd column have a background, and so on.
+ */
+
+.row-checkered > *:nth-child(2n+1) {
+    background-color: #fafafa;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.row-checkered-even > *:nth-child(2n) {
+    background-color: #fafafa;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+//
+//  Vertically centered grid
+//  ---------------------------------------------
+
+.row-center-vertically > * {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+} // end: media-common
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    //
+    //  Vertically centered grid
+    //  ---------------------------------------------
+
+    .row-center-vertically {
+        display: table;
+        width: 100%;
+        text-align: center;
+    }
+
+    .row-center-vertically > * {
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+}

@@ -1,0 +1,88 @@
+"-- Next Slide --","-- Następny slajd --"
+"-- Not Chosen --","-- Nie wybrano --"
+"-- Previous Slide --","-- Poprzedni slajd --"
+Actions,Akcja
+Animation,Animacje
+Appearance,Wygląd
+"Background Image Url","Adres http://.... obrazu tła"
+"Background color","Kolor tła"
+Bottom,Dół
+Center,Wyśrodkowana
+"Choose the import file","Wybierz plik do importu"
+"Choose video type","Wybierz rodzaj wideo"
+Close,Zamknij
+Delay,Opóźnienie
+Delete,Usuń
+"Delete All Layers","Usuń wszystkie warstwy"
+"Delete Slider","Usuń suwak"
+Disable,Wyłącz
+Duplicate,Zduplikuj
+"Edit Slider","Edytuj suwak"
+"Edit Slides","Edytuj slajdy"
+Enable,Włącz
+"Enable Swipe Function on touch devices","Uruchom funkcje wstrząsania w urządzeniach dotykowych"
+"Export Slider","Export suwaka"
+"First Transition Active","Pierwsze przejście aktywne"
+"First slide transition type","Rodzaj przejścia pierwszego slajdu"
+"General Settings","Ustawienia ogólne"
+"Go To Slide","Idź do slajdu"
+Help,Pomoc
+"Import Slider","Import suwaka"
+Left,Lewa
+"Margin Bottom","Dolny Margines"
+"Margin Left","Lewy margines"
+"Margin Right","Prawy Margines"
+"Margin Top","Górny margines"
+Navigation,Nawigacja
+"New Slider","Nowy suwak"
+"New Window","Nowe okno"
+"Next Slide","Następny slajd"
+No,Nie
+"No Shadow","Bez cienia"
+"No Sliders Found","Nie znaleziono suwaków"
+None,Brak
+Off,Wyłącz
+On,Włącz
+"Pause Slider","Zatrzymaj suwak"
+Position,Pozycja
+"Position on the page","Pozycja na stornie"
+Preview,Podgląd
+"Preview Slider","Poprzedni suwak"
+"Previous Slide","Poprzedni slajd"
+Published,Opublikowany
+Regular,Normalny
+"Resume Slider","Wznów suwak"
+"Revolution Sliders","Revolution Slider"
+Right,Prawa
+Rotation,Obrót
+"Same Window","To samo okno"
+Settings,Ustawienia
+"Shadow Type","Rodzaj cienia"
+"Show Background Image","Pokaż obraz tła"
+"Slide Created","Utworzono slajd"
+"Slide Thumbnail. If not set - it will be taken from the slide image.","Miniatura slajdu. Jeśli nie jest ustawiony - zostanie wykonane z obrazu slajdu."
+"Slide Title","Tytuł slajdu"
+"Slide updated","Zaktualizowano slajd"
+"Slider updated","Zaktualizowano suwak"
+Source,Źródło
+Style,Styl
+"The bottom margin of the slider wrapper div","Dolny margines otoczki suwaka"
+"The left margin of the slider wrapper div","Lewy margines otoczki suwaka"
+"The right margin of the slider wrapper div","Prawy margines otoczki suwaka"
+"The state of the slide. The unpublished slide will be excluded from the slider.","Stan slajdu. Niepublikowane slajdy zostaną wykluczone z suwaka."
+"The title of the slide, will be shown in the slides list.","Tytuł slajdu, zostanie pokazany w liście slajdów."
+"The top margin of the slider wrapper div","Górny margines wrapper div suwaka"
+Thumbnail,Miniatura
+Thumbnails,Miniatury
+"To Slide","Do slajdu"
+Top,Góra
+"Touch Enabled","Dotknij aby aktywować"
+"Transition Duration","Czas przejścia"
+Troubleshooting,"Rozwiązywanie problemów"
+Unpublished,Niepublikowany
+Update,Uaktualnij
+Yes,Tak
+example,"Na przykład"
+px,pixeli
+updating...,Aktualizacja...
+use,użyj

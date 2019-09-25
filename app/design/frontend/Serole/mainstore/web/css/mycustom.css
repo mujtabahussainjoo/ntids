@@ -1,0 +1,15 @@
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.owl-item,.slideshow-banners,.related-articles,.owl-wrapper-outer{
+	display:none;
+}

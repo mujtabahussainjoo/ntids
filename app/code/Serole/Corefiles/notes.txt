@@ -1,0 +1,36 @@
+modified: vendor/magento/module-backend/App/Request/BackendValidator.php => Done
+modified: vendor/magento/module-braintree/view/frontend/web/js/view/payment/method-renderer/paypal.js => Done
+modified: vendor/magento/module-backend/view/adminhtml/templates/widget/form/renderer/fieldset/element.phtml => Done
+modified: vendor/magento/module-bundle/view/base/templates/product/price/final_price.phtml => No need this file to override
+
+modified: vendor/magento/module-checkout-agreements/Model/Checkout/Plugin/Validation.php => Code Done...Need to test ?
+
+modified: vendor/magento/module-checkout/view/frontend/templates/cart/form.phtml     => Done
+modified: vendor/magento/module-checkout/view/frontend/templates/onepage/link.phtml  => Done
+modified: vendor/magento/module-checkout/view/frontend/web/js/view/shipping.js       => Done
+
+modified: vendor/magento/module-customer/Controller/Account/ForgotPasswordPost.php   => No code change
+modified: vendor/magento/module-customer/Controller/Account/ResetPasswordPost.php    => ony exception message printing in error Message
+
+modified: vendor/magento/module-customer/Controller/Address/Delete.php  => no need
+
+modified: vendor/magento/module-sales-sequence/Model/Sequence.php  => Done
+
+
+modified: vendor/magento/module-sales/Controller/Adminhtml/Shipment/AbstractShipment/View.php  => Done Need to test
+
+modified: vendor/magento/module-sales/view/frontend/layout/customer_account_index.xml => Nothing changes
+
+modified: vendor/magento/module-sales/view/frontend/templates/order/history.phtml => Done
+
+modified: vendor/magento/module-sales/view/frontend/templates/order/recent.phtml  => No changes
+
+modified: vendor/magento/module-store/Model/WebsiteRepository.php => no need
+
+modified: vendor/magento/module-theme/view/frontend/templates/html/title.phtml => no need...override in theme (neatides and watercorp)
+
+
+modified: vendor/magento/module-checkout/Controller/Cart/UpdatePost.php => No update in code
+
+
+modified: vendor/magento/module-checkout/Model/PaymentInformationManagement.php  => no need

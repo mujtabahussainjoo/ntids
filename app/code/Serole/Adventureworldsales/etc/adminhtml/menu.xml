@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Serole_Adventureworldsales::adventureworldsales" title="Adventure World Sales" module="Serole_Adventureworldsales" sortOrder="20" parent="Magento_Sales::sales_operation" action="adventureworldsales/sales/index" resource="Magento_Sales::sales_order"/>
+    </menu>
+</config>

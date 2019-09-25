@@ -1,0 +1,100 @@
+<div id="messages_product_view"></div>
+<form data-mage-init='{"validation": {}}' action="handoversso/index/racmismatch" id="custom-form" method="post" class="membernumber-mismatch">
+	<input type="hidden" name="sendto" value="dhananjay.kumar@serole.com" />
+    <div class="fieldset">
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="reason" class="required"><em>*</em>Please select one of the following</label>
+                    <div class="input-box">
+                        <select name="reason" id="reason" title="Reason" class="input-text required-entry">
+                        	<option>I have changed my email address</option>
+                        	<option>My RAC number has changed</option>
+                        	<option>I am a new member</option>
+                        	<option>Other</option>
+                        </select> 
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="field">
+                    <label for="title" class="required"><em>*</em>Title</label>
+                    <div class="input-box">
+                        <select name="title" id="title" title="Title" class="input-text required-entry">
+                        	<option>Mr.</option>
+                        	<option>Mrs.</option>
+                        	<option>Miss.</option>
+                        	<option>Ms.</option>
+                        </select> 
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+			    <div class="field name required">
+            		<label class="label" for="field4"><span><em>*</em>First Name</span></label>
+            		<div class="control">
+                		<input name="name" id="name" value="" class="input-text required-entry" type="text" />
+            		</div>
+        	    </div>
+            </li>
+            <li class="fields">                
+                <div class="field">
+                    <label for="lastname" class="required"><em>*</em>Last Name</label>
+                    <div class="input-box">
+                        <input name="lastname" id="lastname"  value="" class="input-text required-entry" type="text" />
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="field">
+                    <label for="membernumber" class="required"><em>*</em>RAC Member Number</label>
+                    <div class="input-box">
+                        <input name="membernumber" id="membernumber"  value="" class="input-text required-entry" type="text" />
+                    </div>
+                </div>         
+                
+            </li>
+            <li class="fields">       
+                <div class="field">
+                    <label for="email" class="required"><em>*</em>New Email</label>
+                    <div class="input-box">
+                        <input name="email" id="email"  value="" class="input-text required-entry validate-email" type="text" />
+                    </div>
+                </div>
+            </li>
+            <li class="fields">       
+				<div class="field">
+                	<label for="telephone">Phone Number</label>
+					<div class="input-box">
+                    	<input name="telephone" id="telephone"  value="" class="input-text" type="text" />
+					</div>
+				</div>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <p class="required">* Required Fields</p>
+        <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+        <input type="text" name="comment" id="comment" value="N/A" style="display:none !important;" />
+        <input type="text" name="successurl" id="successurl" value="member-number-mismatch-success" style="display:none !important;" />
+        <button type="submit"  class="button"><span><span>Submit</span></span></button>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "#custom-form": {
+            "validation": {}
+        }
+    }
+</script>
+<script type="text/javascript">	
+require([
+    'jquery',
+    'mage/mage'
+], function($){
+
+   var dataForm = $('#custom-form');
+   dataForm.mage('validation', {});
+
+});
+</script>

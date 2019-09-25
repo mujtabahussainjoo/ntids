@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">   
+    
+    <fieldset name="membership_subscription">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true"/>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">false</item>
+                <item name="sortOrder" xsi:type="string">00</item>
+            </item>
+        </argument>
+        
+        
+        
+        <container name="membership_duration">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true"/>
+                    <item name="type" xsi:type="string">group</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/dynamic-rows</item>
+                    <!--<item name="template" xsi:type="string">Magento_Backend/dynamic-rows/grid</item>-->
+                    <item name="template" xsi:type="string">Magedelight_MembershipSubscription/dynamic-rows/grid</item>
+                    <item name="componentType" xsi:type="string">dynamicRows</item>
+                    <item name="recordTemplate" xsi:type="string">record</item>
+                    <item name="deleteButtonLabel" xsi:type="string">Remove</item>
+                    <item name="addButtonLabel" xsi:type="string">Add New </item>
+                    <item name="deleteProperty" xsi:type="boolean">false</item>
+                    <item name="dndConfig" xsi:type="array">
+                        <item name="enabled" xsi:type="boolean">false</item>
+                    </item>
+                </item>
+            </argument>
+            
+                
+            <container name="record">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true"/>
+                        <item name="component" xsi:type="string" translate="true">Magento_Ui/js/dynamic-rows/record</item>
+                        <item name="isTemplate" xsi:type="boolean">true</item>
+                        <item name="is_collection" xsi:type="boolean">true</item>
+                        <item name="showFallbackReset" xsi:type="boolean">false</item>
+                    </item>
+                </argument>
+
+                <field name="duration">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="dataType" xsi:type="string">text</item>
+                            <item name="label" xsi:type="string" translate="true">Duration</item>
+                            <item name="formElement" xsi:type="string">input</item>
+                            <item name="source" xsi:type="string">block</item>
+                            <item name="sortOrder" xsi:type="number">1</item>
+                            <item name="dataScope" xsi:type="string">duration</item>
+                            <item name="validation" xsi:type="array">
+                                <item name="required-entry" xsi:type="boolean">true</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+                                
+                <field name="duration_unit">
+                    <argument name="data" xsi:type="array">
+                        <item name="options" xsi:type="object">Magedelight\MembershipSubscription\Model\Config\Source\DurationUnitOptions</item>
+                        <item name="config" xsi:type="array">
+                            <item name="label" xsi:type="string" translate="true">Duration Unit</item>
+                            <item name="visible" xsi:type="boolean">true</item>
+                            <item name="dataType" xsi:type="string">text</item>
+                            <item name="formElement" xsi:type="string">select</item>
+                            <item name="sortOrder" xsi:type="number">2</item>
+                            <item name="validation" xsi:type="array">
+                                <item name="required-entry" xsi:type="boolean">true</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+                
+                <field name="price">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="dataType" xsi:type="string">number</item>
+                            <item name="label" xsi:type="string" translate="true">Price</item>
+                            <item name="formElement" xsi:type="string">input</item>
+                            <item name="source" xsi:type="string">block</item>
+                            <item name="sortOrder" xsi:type="number">3</item>
+                            <item name="dataScope" xsi:type="string">price</item>
+                            <item name="validation" xsi:type="array">
+                                <item name="required-entry" xsi:type="boolean">true</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+            
+                <field name="sort_order">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="dataType" xsi:type="string">number</item>
+                            <item name="label" xsi:type="string" translate="true">Sort Order</item>
+                            <item name="formElement" xsi:type="string">input</item>
+                            <item name="source" xsi:type="string">block</item>
+                            <item name="sortOrder" xsi:type="number">4</item>
+                            <item name="dataScope" xsi:type="string">sort_order</item>
+                            <item name="validation" xsi:type="array">
+                                <item name="required-entry" xsi:type="boolean">true</item>
+                            </item>
+                        </item>
+                    </argument>
+                </field>
+                
+                <actionDelete>
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="componentType" xsi:type="string">actionDelete</item>
+                            <item name="dataType" xsi:type="string">text</item>
+                            <item name="fit" xsi:type="boolean">false</item>
+                            <item name="label" xsi:type="string">Actions</item>
+                            <item name="sortOrder" xsi:type="string">5</item>
+                            <item name="additionalClasses" xsi:type="string">data-grid-actions-cell</item>
+                            <item name="template" xsi:type="string">Magento_Backend/dynamic-rows/cells/action-delete</item>
+                        </item>
+                    </argument>
+                </actionDelete>
+            </container>
+        </container>
+        
+        <field name="related_customer_group_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magedelight\MembershipSubscription\Model\Config\Source\CustomerGroups</item>
+                <item name="config" xsi:type="array">                    
+                    <item name="label" xsi:type="string" translate="true">Related Customer Group</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">select</item>
+<!--                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>-->
+                </item>
+            </argument>
+        </field>
+        
+        <field name="featured">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">11</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="label" xsi:type="string" translate="true">Featured</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        
+    </fieldset>
+</form>
+

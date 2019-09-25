@@ -1,0 +1,136 @@
+Department,Afdeling
+"Create New Ticket","Maak een nieuw ticket"
+Status,Staat
+Priority,Prioriteit
+Replies,Antwoorden
+View,Uitzicht
+"Help Desk",Helpdesk
+"Thank you","Dank je"
+"Create Ticket","Maak een ticket"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Uw aanvraag is met succes ingediend. U ontvangt binnenkort een bevestigingsmail."
+Telephone,Telefoon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Uw aanvraag is ingediend en zal zo snel mogelijk worden beantwoord. Bedankt dat je contact met ons hebt opgenomen."
+"Unable to submit your request. Please, try again later","Kan uw verzoek niet indienen. Probeer het later opnieuw"
+"Page not found.","Pagina niet gevonden."
+"Your message was successfuly posted","Je bericht is succesvol geplaatst"
+"Your ticket was successfuly posted","Uw ticket is succesvol geplaatst"
+"Ticket was successfuly closed","Ticket was succesvol gesloten"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Kan bestand %1 niet uploaden. De maximaal toegestane uploadgrootte is %2 MB."
+"Allows only this file types: %1","Staat alleen dit bestand toe: %1"
+"Message added","Bericht toegevoegd"
+"Internal note added","Interne opmerking toegevoegd"
+"Third party message added","Derde bericht toegevoegd"
+"Private third party message added","Bericht van externe derde partij toegevoegd"
+"-- Please Select --","-- Selecteer alstublieft --"
+"Contact Tab","Contact Tab"
+"Contact Form","Contact Formulier"
+" at %1 (%2) - %3","op %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","U hebt geen rechten om dit ticket te lezen. Neem contact op met uw beheerder."
+"Invalid Customer Email","Ongeldige klant e-mail"
+"not set","niet ingesteld"
+"Unknown time","Onbekende tijd"
+ago,geleden
+"from now","vanaf nu"
+"1 sec ago","1 sec geleden"
+"Open Ticket","Open ticket"
+"Open Tickets","Open kaartjes"
+"! Blocked file - ","! Geblokkeerd bestand -"
+Disabled,Invalide
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System",Bestandssysteem
+Database,Database
+Aqua,Aqua
+Grey,Grijs
+Navy,Marine
+Silver,Zilver
+Black,Zwart
+Green,Groen
+Olive,Olijf
+Teal,Taling
+Blue,Blauw
+Lime,Limoen
+Purple,Purper
+Fuchsia,Fuchsia
+Maroon,Kastanjebruin
+Red,Rood
+Orange,Oranje
+Yellow,Geel
+Text,Tekst
+Date,Datum
+Checkbox,Checkbox
+"Drop-down list",Keuzelijst
+"In minutes...","In minuten..."
+"In hours...","In uren ..."
+"In days...","In dagen..."
+"In weeks...","In weken ..."
+"In months...","In maanden..."
+Custom,Gewoonte
+"--Please Select--","--Selecteer alstublieft--"
+"New ticket created","Nieuw ticket aangemaakt"
+Success,Succes
+Customer,Klant
+Staff,Personeel
+"Third party","Derde partij"
+Closed,Gesloten
+"Opened 24hr","24 uur geopend"
+"Helpdesk Tickets",Helpdesk-kaartjes
+"Cannot delete ticket with id %1","Kan ticket niet verwijderen met id %1"
+Edit,Bewerk
+"All Departments","Alle afdelingen"
+Back,Terug
+"24 hrs x 7 days","24 uur x 7 dagen"
+"Select working days/hours","Selecteer werkdagen / uren"
+"Satisfaction survey",Tevredenheidsonderzoek
+"to %1 (third party)","naar %1 (derde partij)"
+"%1 (third party)","%1 (derde partij)"
+"added %1 (%2)","toegevoegd %1 (%2)"
+"Ticket Summary",Ticketoverzicht
+"Ticket ID","Ticket ID"
+Assignee,Cessionaris
+"Additional Info","Extra informatie"
+"Ticket History",Ticketgeschiedenis
+"Done by","Gedaan door"
+Changes,Veranderingen
+Name,Naam
+"Attach files","Voeg bestanden toe"
+Submit,Voorleggen
+"Submit Ticket","Ticket verzenden"
+"What is your question?","Wat is je vraag?"
+"We found the following topics that might be helpful:","We hebben de volgende onderwerpen gevonden die nuttig kunnen zijn:"
+"None of these are helpful - get in touch","Geen van deze is nuttig - neem contact op"
+"We have not found topics that can be helpful.","We hebben geen onderwerpen gevonden die nuttig kunnen zijn."
+"Contact Information",Contactgegevens
+Comment,Commentaar
+"We are open 24 x 7","We zijn open 24 x 7"
+"We are closed","We zijn gesloten"
+"Timezone: %1","Tijdzone: %1"
+"Please take a second to rate my reply...","Neem alstublieft een seconde om mijn antwoord te beoordelen ..."
+Great,"Super goed"
+Awesome,Geweldig
+"Fast, friendly, helpful, pleasant. Great job!","Snel, vriendelijk, behulpzaam, aangenaam. Goed werk!"
+"Just Okay","Gewoon oke"
+"Fine, but definitely could have been better.","Prima, maar kon zeker beter zijn geweest."
+"Not good","Niet goed"
+"Unfortunately, I wasn't happy with it at all.","Helaas was ik er helemaal niet blij mee."
+"Thank you for participating in our survey!","Bedankt voor uw deelname aan onze enquête!"
+"If you would like to provide additional comments, please do so below:","Als u aanvullende opmerkingen wilt geven, doet u dit hieronder:"
+Message,Bericht
+"Submit Message",Verzendbericht
+"Thank you for your feedback!","Bedankt voor je feedback!"
+Attachments,Bijlagen
+Order,Bestellen
+"-- Select an Order --","- Selecteer een bestelling -"
+"Create ticket","Maak een ticket"
+"You don't have open tickets","Je hebt geen open tickets"
+"Post a Reply","Post een antwoord"
+"Reopen Ticket","Ticket opnieuw openen"
+"Close Ticket","Ticket sluiten"
+History,Geschiedenis
+"Back to My Tickets","Terug naar mijn tickets"
+"Help Desk MX","Helpdesk MX"
+"Contact Us","Neem contact met ons op"
+Open,Open
+Subject,Onderwerpen
+"Last Activity","Laatste Activiteit"
+"Request ID","Aanvraag ID"

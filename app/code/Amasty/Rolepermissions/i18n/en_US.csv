@@ -1,0 +1,57 @@
+"Attributes Access","Attributes Access"
+"Allow Access To","Allow Access To"
+"All Attributes","All Attributes"
+"Selected Attributes","Selected Attributes"
+Scope,Scope
+"Store View","Store View"
+"Web Site","Web Site"
+Global,Global
+"Attribute Code","Attribute Code"
+"Default Label","Default Label"
+Required,Required
+System,System
+Yes,Yes
+No,No
+"Advanced: Categories","Advanced: Categories"
+"Category Access","Category Access"
+"All Categories","All Categories"
+"Selected Categories","Selected Categories"
+"Product Access","Product Access"
+"All Products","All Products"
+"Selected Products","Selected Products"
+"Own Created Products","Own Created Products"
+ID,ID
+Name,Name
+Type,Type
+"Attribute Set","Attribute Set"
+Status,Status
+Visibility,Visibility
+SKU,SKU
+Price,Price
+"Admin Role Access","Admin Role Access"
+"All User Roles","All User Roles"
+"Selected User Roles","Selected User Roles"
+Note,Note
+"This option allows creating admin users with the provided roles. Please make sure you enable the User management (All users) and disabled the Role management in the %1 tab.","This option allows creating admin users with the provided roles. Please make sure you enable the User management (All users) and disabled the Role management in the %1 tab."
+"Advanced: Scope","Advanced: Scope"
+"Choose Access Scope","Choose Access Scope"
+"Limit Access To","Limit Access To"
+"Allow All Stores","Allow All Stores"
+"Specified Websites","Specified Websites"
+"Specified Store Views","Specified Store Views"
+Websites,Websites
+"Store Views","Store Views"
+"Limit Access To Orders","Limit Access To Orders"
+"Limit Access To Invoices And Transactions","Limit Access To Invoices And Transactions"
+"Limit Access To Shipments","Limit Access To Shipments"
+"Limit Access To Credit Memos","Limit Access To Credit Memos"
+"Access Denied","Access Denied"
+"- Not Specified -","- Not Specified -"
+"There are attributes used in conditions which you don't have access to. Rule cannot be deleted or saved.","There are attributes used in conditions which you don't have access to. Rule cannot be deleted or saved."
+"Attributes required to create an attribute set are restricted","Attributes required to create an attribute set are restricted"
+"Attributes required to create a product are restricted","Attributes required to create a product are restricted"
+"Add Subcategory","Add Subcategory"
+"Advanced: Products","Advanced: Products"
+"Advanced: Product Attributes","Advanced: Product Attributes"
+"Advanced: Admin User Role","Advanced: Admin User Role"
+"Users in same role","Users in same role"

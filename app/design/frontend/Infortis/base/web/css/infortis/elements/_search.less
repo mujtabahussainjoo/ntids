@@ -1,0 +1,233 @@
+
+//
+//  Variables
+//  _____________________________________________
+
+@header-search__height__s: 28px;
+@header-search__height__m: 40px;
+@header-search__height__l: 50px;
+@header-search__height__xl: 60px;
+@header-search__border_width: 1px;
+@header-search__button__margin: @header-search__border_width;
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .block-search {
+        position: relative; // For z-index
+        z-index: 5; // One level above main menu elements (holders)
+        -moz-transition: all 300ms ease-in-out;
+        -webkit-transition: all 300ms ease-in-out;
+        -o-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+
+        // To align the block (and child elements) vertically
+        display: inline-block;
+        line-height: 1em;
+
+        form {
+            position: relative; // For search button
+            // border: 5px solid #f1f1f1;
+        }
+
+        .block.block-content {
+            padding: 0;
+        }
+
+        .input-text {
+            height: @header-search__height__m;
+            line-height: @header-search__height__m;
+            overflow: hidden;
+            padding-right: @header-search__height__m - (2 * @header-search__border_width);
+            text-overflow: ellipsis;
+        }
+
+        .action.search {
+            // // Deprecated. Remove to get rid of Magento's default icon.
+            // .lib-button-icon(
+            //     @_icon-font-line-height: @header-search__height__m - (2 * @header-search__button__margin),
+            //     @_icon-font-content: @icon-search,
+            //     @_icon-font-text-hide: true,
+            //     @_icon-font-color: @header-icons-color
+            // );
+            .lib-button-reset();
+
+            -moz-transition: opacity 300ms ease-in-out;
+            -webkit-transition: opacity 300ms ease-in-out;
+            -o-transition: opacity 300ms ease-in-out;
+            transition: opacity 300ms ease-in-out;
+
+            .icon {
+                font-size: 16px;
+                height: @header-search__height__m - (2 * @header-search__button__margin);
+                line-height: @header-search__height__m - (2 * @header-search__button__margin);
+                width: @header-search__height__m - (2 * @header-search__button__margin);
+            }
+        }
+
+        // Duplicated selector to override properties changed through button reset
+        .action.search {
+            display: inline-block;            
+            height: @header-search__height__m - (2 * @header-search__button__margin);
+            line-height: @header-search__height__m - (2 * @header-search__button__margin);
+            margin: @header-search__button__margin;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 0;
+            width: @header-search__height__m - (2 * @header-search__button__margin);
+            z-index: 1;
+        }
+
+        .search-autocomplete {
+            ul {
+                li {
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    // Expanding search block - only the button is visible, search input will slide out on mouse hover. Only for regular header.
+    .header-regular .block-search.expanding {
+        width: @header-search__height__m; // Default width is the same as default height (and the same as size of the button)
+
+        .input-text {
+            padding-left: 0;
+            box-shadow: none;
+        }
+
+        .action.search {
+            opacity: 1; // Override default transparency for disabled button
+        }
+
+        &.size-s {
+            width: @header-search__height__s;
+        }
+        &.size-l {
+            width: @header-search__height__l;
+        }
+        &.size-xl {
+            width: @header-search__height__xl;
+        }
+
+        &._active {
+            .input-text {
+                padding-left: 9px;
+            }
+        }
+
+        // Hide when expanding search block is not active
+        &:not(._active) {
+            .search-autocomplete {
+                display: none !important;
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+// }
+
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+// }
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-search {
+        &.size-s {
+            .input-text {
+                height: @header-search__height__s;
+                line-height: @header-search__height__s;
+                padding-right: @header-search__height__s - (2 * @header-search__border_width);
+            }
+
+            .action.search {
+                height: @header-search__height__s - (2 * @header-search__button__margin);
+                line-height: @header-search__height__s - (2 * @header-search__button__margin);
+                width: @header-search__height__s - (2 * @header-search__button__margin);
+
+                // // Size of Magento's default icon
+                // &:before {
+                //     font-size: 20px;
+                //     line-height: @header-search__height__s - (2 * @header-search__button__margin);
+                // }
+
+                .icon {
+                    font-size: 13px;
+                    height: @header-search__height__s - (2 * @header-search__button__margin);
+                    line-height: @header-search__height__s - (2 * @header-search__button__margin);
+                    width: @header-search__height__s - (2 * @header-search__button__margin);
+                }
+            }
+        }
+
+        &.size-l {
+            .input-text {
+                height: @header-search__height__l;
+                line-height: @header-search__height__l;
+                padding-right: @header-search__height__l - (2 * @header-search__border_width);
+            }
+
+            .action.search {
+                height: @header-search__height__l - (2 * @header-search__button__margin);
+                line-height: @header-search__height__l - (2 * @header-search__button__margin);
+                width: @header-search__height__l - (2 * @header-search__button__margin); // Note: add -5 if button uses default font icon
+
+                // // Size of Magento's default icon
+                // &:before {
+                //     font-size: 24px;
+                //     line-height: @header-search__height__l - (2 * @header-search__button__margin);
+                // }
+
+                .icon {
+                    font-size: 18px;
+                    height: @header-search__height__l - (2 * @header-search__button__margin);
+                    line-height: @header-search__height__l - (2 * @header-search__button__margin);
+                    width: @header-search__height__l - (2 * @header-search__button__margin);
+                }
+            }
+        }
+
+        &.size-xl {
+            .input-text {
+                font-size: 16px;
+                height: @header-search__height__xl;
+                line-height: @header-search__height__xl;
+                padding-right: @header-search__height__xl - (2 * @header-search__border_width);
+            }
+
+            .action.search {
+                height: @header-search__height__xl - (2 * @header-search__button__margin);
+                line-height: @header-search__height__xl - (2 * @header-search__button__margin);
+                width: @header-search__height__xl - (2 * @header-search__button__margin); // Note: add -10 if button uses default font icon
+
+                // // Size of Magento's default icon
+                // &:before {
+                //     font-size: 30px;
+                //     line-height: @header-search__height__xl - (2 * @header-search__button__margin);
+                // }
+
+                .icon {
+                    font-size: 22px;
+                    height: @header-search__height__xl - (2 * @header-search__button__margin);
+                    line-height: @header-search__height__xl - (2 * @header-search__button__margin);
+                    width: @header-search__height__xl - (2 * @header-search__button__margin);
+                }
+            }
+        }
+    }
+}

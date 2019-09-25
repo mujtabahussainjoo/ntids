@@ -1,0 +1,10 @@
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+
+    <!-- <referenceContainer name="container_product_secondary_1">
+        <block class="Infortis\Brands\Block\Logo" name="brand-info" template="brands.phtml" />
+    </referenceContainer> -->
+    <referenceBlock name="product-view-wrapper">
+        <block class="Infortis\Brands\Block\Logo" name="brand-info" template="brands.phtml" />
+    </referenceBlock>
+
+</layout>

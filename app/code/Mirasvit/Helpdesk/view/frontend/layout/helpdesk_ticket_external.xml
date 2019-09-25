@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"  layout="1column">
+    <head>
+        <script src="Mirasvit_Helpdesk::js/view/validation.js" />
+    </head>
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+            <block name="helpdesk.ticket.view" class="Mirasvit\Helpdesk\Block\Ticket\View"
+                   template="ticket/view.phtml" cacheable="false">
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\View\Summary\DefaultRow" name="code"
+                       template="ticket/view/summary/default.phtml" group="summary">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Request ID</argument>
+                    </arguments>
+                </block>
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\View\Summary\DefaultRow" name="department"
+                       template="ticket/view/summary/department.phtml" group="summary">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Department</argument>
+                    </arguments>
+                </block>
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\View\Summary\DefaultRow" name="priority"
+                       template="ticket/view/summary/priority.phtml" group="summary">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Priority</argument>
+                    </arguments>
+                </block>
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\View\Summary\DefaultRow" name="status"
+                       template="ticket/view/summary/status.phtml" group="summary">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Status</argument>
+                    </arguments>
+                </block>
+
+                <block class="Mirasvit\Helpdesk\Block\Ticket\View\Summary\Order" name="order"
+                       template="ticket/view/summary/order.phtml" group="summary">
+                    <arguments>
+                        <argument name="label" translate="true" xsi:type="string">Order</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

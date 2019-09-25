@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+         <add id="Serole_Partnerreport::partnerreport" title="Sales Extract" module="Serole_Partnerreport" sortOrder="60" action="partnerreport/salesorder/index" resource="Serole_Partnerreport::partnerreport" parent="Serole_Orderreport::orderreport"/>
+    </menu>
+</config>

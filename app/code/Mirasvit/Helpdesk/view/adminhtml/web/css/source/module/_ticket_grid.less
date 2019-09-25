@@ -1,0 +1,82 @@
+.helpdesk-ticket-index, .helpdesk-priority-index, .helpdesk-status-index,
+.helpdesk-priority-add, .helpdesk-status-add,
+.helpdesk-priority-edit, .helpdesk-status-edit {
+  .label(@from, @to) {
+    font-size: 11px;
+    background: @to;
+    border-radius: 2px;
+    padding: 1px 15px;
+    color: #fff;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .color {
+    display: table-cell;
+    vertical-align: inherit;
+    text-align: -webkit-center;
+    text-align: center;
+    .data-grid-cell-content {
+      width: inherit;
+    }
+    .aqua {
+      .label(#9FFDFD, #2EC5B9);
+    }
+    .grey {
+      .label(#868686, #424242);
+    }
+    .navy {
+      .label(#8D8DC7, #4C7EB4);
+    }
+    .silver {
+      .label(#c0c0c0, #8B8B8B);
+    }
+    .black {
+      .label(#000000, darken(#000000, 20%));
+    }
+    .green {
+      .label(#97e399, #47cd4a);
+    }
+    .olive {
+      .label(#B4B471, #668121);
+    }
+    .teal {
+      .label(#59AFAF, #3298B1);
+    }
+    .blue {
+      .label(#A9A9FF, #5E6BFF);
+    }
+    .lime {
+      .label(#67FF4A, #68CF70);
+    }
+    .purple {
+      .label(#DD61DD, #C007BF);
+    }
+    .fuchsia {
+      .label(#FFAEFF, #D55BD5);
+    }
+    .maroon {
+      .label(#B47171, #AF5959);
+    }
+    .red {
+      .label(#ff8b8b, #ff2525);
+    }
+    .orange {
+      .label(#FF8C00, #FF8C00);
+    }
+    .yellow {
+      .label(#ffd757, #f0b700);
+    }
+  }
+}
+
+.hdmx__status, .hdmx__priority {
+  text-align: center;
+  > div {
+    display: inline-table;
+  }
+}
+
+.customer-index-edit .admin__data-grid-outer-wrap {
+  display: none;
+}

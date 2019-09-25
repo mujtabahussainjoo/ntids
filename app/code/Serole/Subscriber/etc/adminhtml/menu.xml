@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Serole_Subscriber::parent" title="Subscriber" module="Serole_Subscriber" sortOrder="100" resource="Serole_Subscriber::parent"/>
+        <!--add id="Serole_Subscriber::index" title="Subscriber Index" module="Serole_Subscriber" sortOrder="10" action="subscriber/index" resource="Serole_Subscriber::index" parent="Serole_Subscriber::parent"/-->
+		<add id="Serole_Subscriber::subscriber" title="Subscriber List Grid" module="Serole_Subscriber" sortOrder="20" parent="Serole_Subscriber::parent" action="subscriber/subscriber" resource="Serole_Subscriber::subscriber"/>
+
+    </menu>
+</config>

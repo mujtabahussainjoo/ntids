@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magedelight_MembershipSubscription::membership" 
+             title="Membership" 
+             module="Magedelight_MembershipSubscription" 
+             sortOrder="40"
+             dependsOnConfig="membership/general/enable"
+             resource="Magedelight_MembershipSubscription::membership"/>
+        
+        <add id="Magedelight_MembershipSubscription::membership_products" 
+             title="Membership Products"
+             module="Magedelight_MembershipSubscription" 
+             sortOrder="20" 
+             parent="Magedelight_MembershipSubscription::membership"
+             action="md_membership/subscription/" 
+             resource="Magedelight_MembershipSubscription::membership_products"/>
+        
+        <add id="Magedelight_MembershipSubscription::membership_customers" 
+             title="Membership Customers"
+             module="Magedelight_MembershipSubscription" 
+             sortOrder="21" 
+             parent="Magedelight_MembershipSubscription::membership"
+             action="md_membership/subscription/customers" 
+             resource="Magedelight_MembershipSubscription::membership_customers"/>
+        
+        <add id="Magedelight_MembershipSubscription::settings" 
+             title="Configuration" 
+             module="Magedelight_MembershipSubscription" 
+             sortOrder="22"
+             parent="Magedelight_MembershipSubscription::membership" 
+             resource="Magedelight_MembershipSubscription::settings" 
+             action="adminhtml/system_config/edit/section/membership"/>
+        
+        <add id="Magedelight_MembershipSubscription::membership_report"
+             title="Membership Subscription"
+             module="Magedelight_MembershipSubscription" 
+             sortOrder="100" 
+             parent="Magento_Reports::report_salesroot" 
+             resource="Magedelight_MembershipSubscription::report"
+             action="md_membership/report/sales"/>
+    </menu>
+</config>

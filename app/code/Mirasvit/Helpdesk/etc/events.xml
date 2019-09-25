@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="adminhtml_block_html_before">
+        <observer name="m_helpdesk_observer" instance="\Mirasvit\Helpdesk\Observer\CheckCronStatusObserver"/>
+    </event>
+    <event name="admin_user_load_after">
+        <observer name="m_helpdesk_observer" instance="\Mirasvit\Helpdesk\Observer\LoadUserSignatureObserver"/>
+    </event>
+    <event name="admin_user_save_after">
+        <observer name="m_helpdesk_observer" instance="\Mirasvit\Helpdesk\Observer\SaveUserSignatureObserver"/>
+    </event>
+</config>

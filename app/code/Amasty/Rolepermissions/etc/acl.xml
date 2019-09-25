@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::system">
+                    <resource id="Amasty_Rolepermissions::permissions" title="Amasty Role Permissions">
+                        <resource id="Amasty_Rolepermissions::product_owner" title="Allow to View/Edit Product Owner" />
+                        <resource id="Amasty_Rolepermissions::delete_products" title="Allow to Delete Products" />
+                        <resource id="Amasty_Rolepermissions::delete_customers" title="Allow to Delete Customers" />
+                        <resource id="Amasty_Rolepermissions::save_products" title="Allow to Create And Edit Products" />
+                        <resource id="Amasty_Rolepermissions::save_customers" title="Allow to Save Customers" />
+                        <resource id="Amasty_Rolepermissions::create_categories" title="Allow to Create Categories" />
+                        <resource id="Amasty_Rolepermissions::delete_categories" title="Allow to Delete Categories" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,567 @@
+<?php
+/**
+ * Created by Serole(Dk) on 10/07/2018.
+ * Override the core customer registration for Member list stores.
+ */
+namespace Serole\MemberList\Controller\Magento\Customer\Account;
+
+use Magento\Customer\Model\Account\Redirect as AccountRedirect;
+use Magento\Customer\Api\Data\AddressInterface;
+use Magento\Framework\Api\DataObjectHelper;
+use Magento\Framework\App\Action\Context;
+use Magento\Customer\Model\Session;
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\App\ObjectManager;
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Store\Model\StoreManagerInterface;
+use Magento\Customer\Api\AccountManagementInterface;
+use Magento\Customer\Helper\Address;
+use Magento\Framework\UrlFactory;
+use Magento\Customer\Model\Metadata\FormFactory;
+use Magento\Newsletter\Model\SubscriberFactory;
+use Magento\Customer\Api\Data\RegionInterfaceFactory;
+use Magento\Customer\Api\Data\AddressInterfaceFactory;
+use Magento\Customer\Api\Data\CustomerInterfaceFactory;
+use Magento\Customer\Model\Url as CustomerUrl;
+use Magento\Customer\Model\Registration;
+use Magento\Framework\Escaper;
+use Magento\Customer\Model\CustomerExtractor;
+use Magento\Framework\Exception\StateException;
+use Magento\Framework\Exception\InputException;
+use Magento\Framework\Data\Form\FormKey\Validator;
+use Serole\MemberList\Model\MemberlistFactory;
+use Serole\MemberList\Helper\Data as MemberListHelper;
+
+class CreatePost extends \Magento\Customer\Controller\Account\CreatePost
+{
+	
+	
+    /**
+     * @var AccountRedirect
+     */
+    private $accountRedirect;
+
+    /**
+     * @var \Magento\Framework\Stdlib\Cookie\CookieMetadataFactory
+     */
+    private $cookieMetadataFactory;
+
+    /**
+     * @var \Magento\Framework\Stdlib\Cookie\PhpCookieManager
+     */
+    private $cookieMetadataManager;
+
+    /**
+     * @var Validator
+     */
+    private $formKeyValidator;
+	
+	
+	protected $_storeManager; 
+	
+	protected $_logger;
+	
+	protected $_memberlistFactory;
+	
+	Protected $_helper;
+
+    /**
+     * @param Context $context
+     * @param AccountRedirect $accountRedirect
+     * @param Validator $formKeyValidator
+     *
+     *
+     */
+    public function __construct(
+        Context $context,
+        Session $customerSession,
+        ScopeConfigInterface $scopeConfig,
+        StoreManagerInterface $storeManager,
+        AccountManagementInterface $accountManagement,
+        Address $addressHelper,
+        UrlFactory $urlFactory,
+        FormFactory $formFactory,
+        SubscriberFactory $subscriberFactory,
+        RegionInterfaceFactory $regionDataFactory,
+        AddressInterfaceFactory $addressDataFactory,
+        CustomerInterfaceFactory $customerDataFactory,
+        CustomerUrl $customerUrl,
+        Registration $registration,
+        Escaper $escaper,
+        CustomerExtractor $customerExtractor,
+        DataObjectHelper $dataObjectHelper,
+        AccountRedirect $accountRedirect,
+		MemberlistFactory $memberlistFactory,
+		MemberListHelper $memberListHelper,
+        Validator $formKeyValidator = null
+    ) {
+        $this->accountRedirect = $accountRedirect;
+        $this->formKeyValidator = $formKeyValidator ?: ObjectManager::getInstance()->get(Validator::class);
+		$this->_storeManager = $storeManager; 
+		$this->_memberlistFactory = $memberlistFactory;
+		$this->_helper = $memberListHelper;
+		
+		parent::__construct(
+				$context,
+				$customerSession,
+				$scopeConfig,
+				$storeManager,
+				$accountManagement,
+				$addressHelper,
+				$urlFactory,
+				$formFactory,
+				$subscriberFactory,
+				$regionDataFactory,
+				$addressDataFactory,
+				$customerDataFactory,
+				$customerUrl,
+				$registration,
+				$escaper,
+				$customerExtractor,
+				$dataObjectHelper,
+				$accountRedirect,
+				$formKeyValidator = null
+      );
+    }
+	/**
+     * Create customer account action
+     *
+     * @return void
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
+    public function execute()
+    {
+        
+        /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
+        $resultRedirect = $this->resultRedirectFactory->create();
+        if ($this->session->isLoggedIn() || !$this->registration->isAllowed()) {
+            $resultRedirect->setPath('*/*/');
+            return $resultRedirect;
+        }
+
+        if (!$this->getRequest()->isPost() || !$this->formKeyValidator->validate($this->getRequest())) {
+            $url = $this->urlModel->getUrl('*/*/create', ['_secure' => true]);
+            $resultRedirect->setUrl($this->_redirect->error($url));
+            return $resultRedirect;
+        }
+
+        $this->session->regenerateId();
+
+        try {
+			
+			//membership related code
+			
+			//helper to get config data
+			$memberListHelper = ObjectManager::getInstance()->create('Serole\MemberList\Helper\Data');
+			
+			$isEnabled = $memberListHelper->isEnabled();
+			$customerGroup = false;
+			if($isEnabled)
+			{
+				
+				$memberShipModel = $this->_memberlistFactory->create();
+				
+				$webcode = $this->_storeManager->getWebsite()->getCode();
+				
+				$memberno = $this->getRequest()->getParam('memberno');
+				$firstname= str_replace("'","''",$this->getRequest()->getParam('firstname'));
+				$lastname= str_replace("'","''",$this->getRequest()->getParam('lastname'));
+				$email = $this->getRequest()->getParam('email');
+				
+				
+				$isMemberNoRequired = $memberListHelper->isMemberNoRequired();
+				$isFirstNameRequired = $memberListHelper->isFirstNameRequired();
+				$isLastNameRequired = $memberListHelper->isLastNameRequired();
+				$isEmailRequired = $memberListHelper->isEmailRequired();
+				$requiredEmailFormat = $memberListHelper->getRequiredEmailFormat();
+				
+				
+                
+				
+				
+				$this->createLog('membership_signup.log');
+				
+				$this->_logger->info("Store code=".$webcode);
+				$this->_logger->info("memberno=".$memberno);
+				$this->_logger->info("firstname=".$firstname);
+				$this->_logger->info("lastname=".$lastname);
+				$this->_logger->info("email=".$email);
+				
+				$this->_logger->info("isMemberNoRequired=".$isMemberNoRequired);
+				$this->_logger->info("isFirstNameRequired=".$isFirstNameRequired);
+				$this->_logger->info("isLastNameRequired=".$isLastNameRequired);
+				$this->_logger->info("isEmailRequired=".$isEmailRequired);
+				$this->_logger->info("requiredEmailFormat=".$requiredEmailFormat);
+				
+				
+				//Stores required member no and last name
+				if($isMemberNoRequired && $isLastNameRequired && !$isFirstNameRequired && !$isEmailRequired)
+				{
+					
+					if($webcode == 'hbf') {
+						
+							$this->createLog('hbf_customer_signup.log');
+							
+							$result = $this->_checkHbfMember($memberno,$lastname);
+							
+							$resultCustomer = "Result = \n MemberNumber = ".$memberno." and LastName = ".$lastname."  and result = ".$result."\n\n";
+
+							$this->_logger->info(date().$resultCustomer);
+							
+							if($result == 'false') {
+								$message = 'Invalid information provided please check and try again';
+								throw new \Exception($message);
+							}
+						} else if($webcode == 'gmf'){
+							$this->createLog('gmf_sso.log');
+							
+							$validMember= $this->_checkGmfMember($memberno, $lastname);
+							
+							$this->_logger->info('Valid Member '.$validMember);
+							
+							if($validMember==false) {
+								$this->_logger->info('Failed');
+								$message = 'Invalid information provided please check and try again';
+								throw new \Exception($message);
+							}
+						} else {
+							
+							// Additional rule for charlies - ensure all digits and remove leading zero
+								if ($webcode == 'charlies'){
+									$memberno = preg_replace('~\D~', '', $memberno);
+									$memberno = ltrim($memberno, '0');
+									$memberno = str_pad($memberno, 10, '0', STR_PAD_LEFT);				
+								}	
+								
+								$memberCollection = $memberShipModel->getCollection();
+				                $memberCollection->addFieldToFilter('member_number', array('eq' => $memberno))
+												 ->addFieldToFilter('last_name',array('eq' => $lastname))
+												 ->addFieldToFilter('store',array('eq' => $webcode));
+								
+								if(count($memberCollection) == 0) {
+									$message = 'Invalid information provided please check and try again';
+									throw new \Exception($message);
+								} 
+								else{
+									foreach($memberCollection as $memberData)
+									{
+										$customerGrp = $memberData->getCustomerGroup();
+										if($customerGrp == "vip")
+										{
+											$customerGroup = 4;
+										}
+									}
+								}
+								
+						}
+				
+				}
+				elseif($isMemberNoRequired && $isLastNameRequired && $isFirstNameRequired && !$isEmailRequired)
+				{
+					$memberCollection = $memberShipModel->getCollection();
+					$memberCollection->addFieldToFilter('member_number', array('eq' => $memberno))
+					                 ->addFieldToFilter('first_name',array('eq' => $firstname))
+									 ->addFieldToFilter('last_name',array('eq' => $lastname))
+									 ->addFieldToFilter('store',array('eq' => $webcode));
+					
+					if(count($memberCollection) == 0) {
+						$message = 'Invalid information provided please check and try again';
+						throw new \Exception($message);
+					} 
+				}
+				elseif($isMemberNoRequired && !$isLastNameRequired && !$isFirstNameRequired && !$isEmailRequired)
+				{
+					$memberCollection = $memberShipModel->getCollection();
+					$memberCollection->addFieldToFilter('member_number', array('eq' => $memberno))
+									 ->addFieldToFilter('store',array('eq' => $webcode));
+					
+					if(count($memberCollection) == 0) {
+						$message = 'Invalid information provided please check and try again';
+						throw new \Exception($message);
+					}
+                    else{
+						foreach($memberCollection as $memberData)
+						{
+							$customerGrp = $memberData->getCustomerGroup();
+							if($customerGrp == "vip")
+							{
+								$customerGroup = 4;
+							}
+						}
+					}					
+				}
+				elseif(!$isMemberNoRequired && $isLastNameRequired && $isFirstNameRequired && !$isEmailRequired)
+				{
+					$memberCollection = $memberShipModel->getCollection();
+					$memberCollection->addFieldToFilter('first_name',array('eq' => $firstname))
+									 ->addFieldToFilter('last_name',array('eq' => $lastname))
+									 ->addFieldToFilter('store',array('eq' => $webcode));
+					
+					if(count($memberCollection) == 0) {
+						$message = 'Invalid information provided please check and try again';
+						throw new \Exception($message);
+					} 
+				}
+				elseif(!$isMemberNoRequired && $isLastNameRequired && !$isFirstNameRequired && $isEmailRequired)
+				{
+					$memberCollection = $memberShipModel->getCollection();
+					$memberCollection->addFieldToFilter('member_number',array('eq' => $email))
+									 ->addFieldToFilter('last_name',array('eq' => $lastname))
+									 ->addFieldToFilter('store',array('eq' => $webcode));
+					
+					if(count($memberCollection) == 0) {
+						$message = 'Invalid information provided please check and try again';
+						throw new \Exception($message);
+					} 
+				}
+				elseif($isEmailRequired && !empty($requiredEmailFormat) && $requiredEmailFormat !='' && $email != '')
+				{
+					$requiredEmails = explode(",",$requiredEmailFormat);
+					$emailDomain = explode("@",$email);
+					if(!in_array($emailDomain[1],$requiredEmails))
+					{
+						$message = 'The email address supplied is not permitted to access this store, please check and try again';
+						throw new \Exception($message);
+					} 
+				}
+				
+				
+			}
+			
+			
+            $address = $this->extractAddress();
+            $addresses = $address === null ? [] : [$address];
+
+            $customer = $this->customerExtractor->extract('customer_account_create', $this->_request);
+            $customer->setAddresses($addresses);
+			
+			if ($customerGroup != false){
+					$customer->setGroupId($customerGroup);	
+				}	
+
+            $password = $this->getRequest()->getParam('password');
+            $confirmation = $this->getRequest()->getParam('password_confirmation');
+            $redirectUrl = $this->session->getBeforeAuthUrl();
+
+            $this->checkPasswordConfirmation($password, $confirmation);
+
+            $customer = $this->accountManagement
+                ->createAccount($customer, $password, $redirectUrl);
+
+            if ($this->getRequest()->getParam('is_subscribed', false)) {
+                $this->subscriberFactory->create()->subscribeCustomerById($customer->getId());
+            }
+
+            $this->_eventManager->dispatch(
+                'customer_register_success',
+                ['account_controller' => $this, 'customer' => $customer]
+            );
+
+            $confirmationStatus = $this->accountManagement->getConfirmationStatus($customer->getId());
+            if ($confirmationStatus === AccountManagementInterface::ACCOUNT_CONFIRMATION_REQUIRED) {
+                $email = $this->customerUrl->getEmailConfirmationUrl($customer->getEmail());
+                // @codingStandardsIgnoreStart
+                $this->messageManager->addSuccess(
+                    __(
+                        'You must confirm your account. Please check your email for the confirmation link or <a href="%1">click here</a> for a new link.',
+                        $email
+                    )
+                );
+                // @codingStandardsIgnoreEnd
+                $url = $this->urlModel->getUrl('*/*/index', ['_secure' => true]);
+                $resultRedirect->setUrl($this->_redirect->success($url));
+            } else {
+                $this->session->setCustomerDataAsLoggedIn($customer);
+                $this->messageManager->addSuccess($this->getSuccessMessage());
+                $requestedRedirect = $this->accountRedirect->getRedirectCookie();
+                if (!$this->scopeConfig->getValue('customer/startup/redirect_dashboard') && $requestedRedirect) {
+                    $resultRedirect->setUrl($this->_redirect->success($requestedRedirect));
+                    $this->accountRedirect->clearRedirectCookie();
+                    return $resultRedirect;
+                }
+                $resultRedirect = $this->accountRedirect->getRedirect();
+            }
+            if ($this->getCookieManager()->getCookie('mage-cache-sessid')) {
+                $metadata = $this->getCookieMetadataFactory()->createCookieMetadata();
+                $metadata->setPath('/');
+                $this->getCookieManager()->deleteCookie('mage-cache-sessid', $metadata);
+            }
+
+            return $resultRedirect;
+        } catch (StateException $e) {
+            $url = $this->urlModel->getUrl('customer/account/forgotpassword');
+            // @codingStandardsIgnoreStart
+            $message = __(
+                'There is already an account with this email address. If you are sure that it is your email address, <a href="%1">click here</a> to get your password and access your account.',
+                $url
+            );
+            // @codingStandardsIgnoreEnd
+            $this->messageManager->addError($message);
+        } catch (InputException $e) {
+            $this->messageManager->addError($this->escaper->escapeHtml($e->getMessage()));
+            foreach ($e->getErrors() as $error) {
+                $this->messageManager->addError($this->escaper->escapeHtml($error->getMessage()));
+            }
+        } catch (LocalizedException $e) {
+            $this->messageManager->addError($this->escaper->escapeHtml($e->getMessage()));
+        } catch (\Exception $e) {
+            $this->messageManager->addError($this->escaper->escapeHtml($e->getMessage()));
+        }
+
+        $this->session->setCustomerFormData($this->getRequest()->getPostValue());
+        $defaultUrl = $this->urlModel->getUrl('*/*/create', ['_secure' => true]);
+        $resultRedirect->setUrl($this->_redirect->error($defaultUrl));
+        return $resultRedirect;
+    }
+	
+	/**
+     * Retrieve cookie manager
+     *
+     * @deprecated 100.1.0
+     * @return \Magento\Framework\Stdlib\Cookie\PhpCookieManager
+     */
+    private function getCookieManager()
+    {
+        if (!$this->cookieMetadataManager) {
+            $this->cookieMetadataManager = ObjectManager::getInstance()->get(
+                \Magento\Framework\Stdlib\Cookie\PhpCookieManager::class
+            );
+        }
+        return $this->cookieMetadataManager;
+    }
+	
+	
+	/**
+     * Retrieve cookie metadata factory
+     *
+     * @deprecated 100.1.0
+     * @return \Magento\Framework\Stdlib\Cookie\CookieMetadataFactory
+     */
+    private function getCookieMetadataFactory()
+    {
+        if (!$this->cookieMetadataFactory) {
+            $this->cookieMetadataFactory = ObjectManager::getInstance()->get(
+                \Magento\Framework\Stdlib\Cookie\CookieMetadataFactory::class
+            );
+        }
+        return $this->cookieMetadataFactory;
+    }
+	
+	protected function _checkHbfMember($memberno,$lastname)
+	{
+		$soapContent ='<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+		   <SOAP-ENV:Body>
+			  <ns0:VerifyContactRequest xmlns:ns0="http://www.hbf.com.au/webservice/wsiContact">
+					<ns0:Contact xmlns:ns1="http://www.hbf.com.au/webservice/wsContact">
+					  <ns1:MemberNumber>'.$memberno.'</ns1:MemberNumber>
+					  <ns1:LastName>'.$lastname.'</ns1:LastName>
+					</ns0:Contact>
+			  </ns0:VerifyContactRequest>
+		   </SOAP-ENV:Body>
+		</SOAP-ENV:Envelope>';
+		$action_URL = '/Services/Contact/VerifyContact';
+		$location_URL = 'https://lookup.hbf.com.au/Services/Contact/SOAPHTTPEndpoint';
+
+		$client = new SoapClient(null, array(
+		'location' => $location_URL,
+		'uri'      => $action_URL,
+		'trace'    => 1,
+		));
+		$order_return = $client->__doRequest($soapContent,$location_URL,$action_URL,1);
+		$xml = simplexml_load_string($order_return);
+		$xml->registerXPathNamespace("ns1","http://www.hbf.com.au/webservice/wsContact");
+		return $result = $xml->xpath("//ns1:IsVerified")[0];
+							
+	}
+	
+	protected function _checkGmfMember($member_no, $member_surname) {
+		$member_surname = str_replace("''", "'", $member_surname);
+		
+		Mage::log('Starting Check...'.$member_no.'/'.$member_surname, null, 'gmf_sso.log');		
+		$soap_message = 
+		'<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://schemas.hambs.com.au/external/membership/validatemembershipdetails/request/2015/09">'
+			.'<soap:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">'
+				.'<wsa:Action>'.
+					'http://services.hambs.com.au/external/membership/MembershipServices/ValidateMembershipDetails_201509Request'
+				.'</wsa:Action>'
+			.'</soap:Header>'
+			.'<soap:Body>'
+			.'<ns:ValidateMembershipDetailsRequestMessage>'
+				.'<ns:MembershipId>'.$member_no.'</ns:MembershipId>'
+				.'<ns:Surname>'.$member_surname.'</ns:Surname>'
+			.'</ns:ValidateMembershipDetailsRequestMessage>'
+			.'</soap:Body>'
+		.'</soap:Envelope>';
+
+		$contentType = 'application/soap+xml;'
+						.'charset=UTF-8;'
+						.'action="http://services.hambs.com.au/external/membership/MembershipServices/ValidateMembershipDetails_201509Request"';
+
+
+		/* CONFIGURATION */
+//		$url = 'https://betaservices.hambs.net.au:443/GMF/External/Membership/MembershipServices.svc';	
+//		$username = 'F2C5094F-1F51-438E-A01D-40881D7FE19A';
+//		$password = 'rejoice-ETLS6';
+//		$partyId  = '2fbf689230274435909d873d94f7b8f6';
+
+
+		$url = 'https://services.hambs.net.au:443/GMF/External/Membership/MembershipServices.svc';	
+		$username = '8D05D1FF-7CB5-40F6-B534-99270C7B6E52';
+		$password = 'dusters-+pk2YLC';
+		$partyId  = '2fbf689230274435909d873d94f7b8f6';
+
+
+		$soap_do = curl_init(); 
+		curl_setopt($soap_do, CURLOPT_URL,            	$url );   
+		curl_setopt($soap_do, CURLOPT_CONNECTTIMEOUT, 	30); 
+		curl_setopt($soap_do, CURLOPT_TIMEOUT,        	30); 
+		curl_setopt($soap_do, CURLOPT_RETURNTRANSFER, 	true );
+		curl_setopt($soap_do, CURLOPT_SSL_VERIFYPEER, 	false); 
+		curl_setopt($soap_do, CURLOPT_SSL_VERIFYHOST, 	false); 
+		curl_setopt($soap_do, CURLOPT_POST,           	true ); 
+		curl_setopt($soap_do, CURLOPT_POSTFIELDS,		$soap_message); 
+		curl_setopt($soap_do, CURLOPT_HTTPHEADER,     	array(	'Content-Type: '.$contentType, 
+																'Content-Length: '.strlen($soap_message), 
+																'Partyid: '.$partyId,
+																'Authorization: Basic '.base64_encode($username.":".$password),
+																'User-Agent: NeatIdeasGMFHarness/0.1 (Oct2015)'														 						)
+		); 
+
+		curl_setopt($soap_do, CURLOPT_HEADER, true);													
+	    curl_setopt($soap_do, CURLINFO_HEADER_OUT, true); // enable tracking
+		curl_setopt($soap_do, CURLOPT_HTTPAUTH, CURLAUTH_ANY);	
+		
+		$result = curl_exec($soap_do);
+		$err = curl_error($soap_do);  
+		$header = curl_getinfo($soap_do, CURLINFO_HEADER_OUT );
+	
+		Mage::log('REQUEST-HEADER:'.print_r($header,true), null, 'gmf_sso.log');
+		Mage::log('REQUEST-CONTENT:'.print_r($soap_message,true), null, 'gmf_sso.log');		
+		
+		$header_size 	= curl_getinfo($soap_do, CURLINFO_HEADER_SIZE);
+		$response_header 	= substr($result, 0, $header_size);
+		$response_body 	= substr($result, $header_size);		
+		
+		Mage::log('RESPONSE-HEADER:'.print_r($response_header,true), null, 'gmf_sso.log');
+		Mage::log('RESPONSE-CONTENT:'.print_r($response_body,true), null, 'gmf_sso.log');		
+		Mage::log('ERRORS:'.print_r($err,true), null, 'gmf_sso.log');
+				
+		if (strpos($response_body,'IsValid>true')!==false){
+			return true;
+		}		
+
+		return false;
+	}    
+	
+	public function createLog($file)
+	{
+		$writer = new \Zend\Log\Writer\Stream(BP . '/var/log/'.$file);
+		$this->_logger = new \Zend\Log\Logger();
+		$this->_logger->addWriter($writer);
+	}
+
+	
+}
+	
+	

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="serole">
+        <job instance="Serole\Pdf\Cron\Pdf" method="execute" name="order_pdf_pending_items">
+            <schedule>*/2 * * * *</schedule>
+        </job>
+    </group>
+</config>

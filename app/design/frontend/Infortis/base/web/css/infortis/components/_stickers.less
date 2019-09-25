@@ -1,0 +1,296 @@
+//
+//  Product labels (stickers)
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+//
+//  Product labels - rectangular
+//  _____________________________________________
+
+//
+//  Sticker wrapper
+//  ---------------------------------------------
+
+// 
+// Stickers are positioned relative to first container 
+// with "position:relative" which by default is ".product-item-img".
+//
+
+.sticker-wrapper {
+    position: absolute;
+    z-index: 1; // Can't be more than 1, it would cover surrounding grid item on hover
+
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+//  Positions
+
+.sticker-wrapper.top-right {
+    top: 0;
+    right: 0;
+}
+
+.sticker-wrapper.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.sticker-wrapper.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.sticker-wrapper.top-left {
+    top: 0;
+    left: 0;
+}
+
+//
+//  Sticker
+//  ---------------------------------------------
+
+.sticker {
+    padding: 8px 10px;
+    min-width: 40px;
+    /*margin-bottom: 1px;*/
+    font-size: 1.4rem;
+    line-height: 1em;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+
+    -webkit-transition: all 150ms ease-in-out 150ms;
+    -moz-transition: all 150ms ease-in-out 150ms;
+    -o-transition: all 150ms ease-in-out 150ms;
+    transition: all 150ms ease-in-out 150ms;
+}
+
+.sticker:last-child {
+    /*margin-bottom: 0;*/ /* Last label in a set of labels doesn't need a gap at the bottom */
+}
+
+//  Colors
+
+.sticker.new {
+    background-color: #5bd2ec; /* Test semi-transparent: rgba(91, 210, 236, 0.85) */
+    color: #fff;
+}
+
+.sticker.sale {
+    background-color: #f12b63; /* Test semi-transparent: rgba(241, 43, 99, 0.85) */
+    color: #fff;
+}
+
+.sticker.custom {
+    background-color: #92d213; /* Test semi-transparent: rgba(146, 210, 19, 0.85) */
+    color: #fff;
+}
+
+//
+//  Effects
+//  ---------------------------------------------
+
+//  Fade away
+
+.item:hover .sticker {
+    opacity: 0;
+
+    // Fading away on hover is immediate, but on mouse out it has a delay
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    -o-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+// Move sticker outside the container
+
+.item:hover .sticker-wrapper.top-right {
+    right: -60px;
+}
+
+.item:hover .sticker-wrapper.bottom-right {
+    right: -60px;
+}
+
+.item:hover .sticker-wrapper.bottom-left {
+    left: -60px;
+}
+
+.item:hover .sticker-wrapper.top-left {
+    left: -60px;
+}
+
+//
+//  In product view
+//  ---------------------------------------------
+
+.product-view .sticker-wrapper {
+    // z-index: 99; // On product page z-index greater than Cloud Zoom image (not needed in M2)
+}
+
+//
+//  Product labels - round
+//  _____________________________________________
+
+//
+//  Sticker wrapper
+//  ---------------------------------------------
+
+// //  Positions - slightly shifted toward the corner
+
+// .round-stickers .sticker-wrapper.top-right {
+//     top: -3px;
+//     right: -3px;
+// }
+
+// .round-stickers .sticker-wrapper.bottom-right {
+//     bottom: -3px;
+//     right: -3px;
+// }
+
+// .round-stickers .sticker-wrapper.bottom-left {
+//     bottom: -3px;
+//     left: -3px;
+// }
+
+// .round-stickers .sticker-wrapper.top-left {
+//     top: -3px;
+//     left: -3px;
+// }
+
+// // When position of sticker wrapper is shifted toward the corner
+// // the product image container can't have "overflow:hidden"
+// .round-stickers .product-item-img {
+//     overflow: visible !important;
+// }
+
+//
+//  Sticker
+//  ---------------------------------------------
+
+.round-stickers .sticker {
+    border-radius: 50%;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+//
+//  Stack stickers
+//  ---------------------------------------------
+
+.round-stickers .sticker-wrapper.top-right .sticker {
+    margin-left: -10px;
+}
+
+.round-stickers .sticker-wrapper.bottom-right .sticker {
+    margin-left: -10px;
+}
+
+.round-stickers .sticker-wrapper.bottom-left .sticker {
+    margin-right: -10px;
+}
+
+.round-stickers .sticker-wrapper.top-left .sticker {
+    margin-right: -10px;
+}
+
+//
+//  Sizes
+//  ---------------------------------------------
+
+.size-s.round-stickers .sticker {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    line-height: 45px;
+}
+
+.size-xs.round-stickers .sticker {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    line-height: 40px;
+}
+
+//
+//  In product view
+//  ---------------------------------------------
+
+.product-view .round-stickers .sticker {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+    line-height: 60px;
+}
+
+
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+// }
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .round-stickers .sticker {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        line-height: 45px;
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+    .round-stickers .sticker {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        line-height: 60px;
+    }
+
+    //
+    //  In product view
+    //  ---------------------------------------------
+
+    .product-view .round-stickers .sticker {
+        width: 80px;
+        height: 80px;
+        font-size: 1.6rem;
+        line-height: 80px;
+    }
+
+}

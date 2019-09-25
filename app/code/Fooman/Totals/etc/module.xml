@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author     Kristof Ringleff
+* @package    Fooman_Totals
+* @copyright  Copyright (c) 2016 Fooman Limited (http://www.fooman.co.nz)
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Fooman_Totals" setup_version="9.0.0">
+        <sequence>
+            <module name="Magento_Backend"/>
+            <module name="Magento_Sales"/>
+            <module name="Magento_Quote"/>
+        </sequence>
+    </module>
+</config>

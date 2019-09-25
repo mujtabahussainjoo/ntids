@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Infortis. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalog.topnav" remove="true" />
+        <referenceBlock name="store.menu">
+            <block class="Infortis\UltraMegamenu\Block\Mainmenu" name="catalog.topnav.menu" as="catalog.topnav.menu" template="mainmenu.phtml">
+                <block class="Infortis\UltraMegamenu\Block\Navigation" name="catalog.topnav.navigation" as="catalog.topnav.navigation" template="navigation.phtml" />
+            </block>
+        </referenceBlock>
+        <referenceBlock name="catalog.topnav.menu">
+            <block class="Magento\Cms\Block\Block" name="block_nav_links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_nav_links</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="block_nav_dropdown">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_nav_dropdown</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

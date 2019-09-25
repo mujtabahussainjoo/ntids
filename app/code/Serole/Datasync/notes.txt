@@ -1,0 +1,176 @@
+Customer tables List:
+mage_customer_entity                      => primary key (entity_id) (it has is_suspended extra field)
+mage_customer_entity_int                  => command field (entity_id)
+mage_customer_entity_varchar              => command field (entity_id)
+
+mage_customer_address_entity               => Primary Key (entity_id) and relation with customer (parent_id == entity_id)
+mage_customer_address_entity_int           => command field (entity_id)
+mage_customer_address_entity_text          => command field (entity_id)
+mage_customer_address_entity_varchar       => command field (entity_id)
+mage_customer_address_entity_text_safety   => command field (entity_id)
+---------------------------------------------------------------------------------------------------------------------------------------
+select customer_entity.entity_id as customerEntityId, customer_entity.entity_type_id as customerEntityTypeId, customer_entity.attribute_set_id as customerEntitySetId, customer_entity.website_id as customerWebsiteId,
+customer_entity.email as customerEntityEmail, customer_entity.group_id as customerEntitygroupId,
+customer_entity.increment_id as customerEntityIncrmentId, customer_entity.store_id as customerEntityStoreId, customer_entity.created_at as customerEntityCreatedAt,customer_entity.updated_at as customerEntityUpdatedAt,
+customer_entity.is_active customerEntityIsActive, customer_entity.disable_auto_group_change customerEntityDisableAutoGroupChange, customer_entity. is_suspended customerEntityIsSuspended,
+
+customer_int.value_id as customerIntValueId, customer_int.entity_type_id as customerIntEntityTypeId,
+customer_int.attribute_id as customerIntAttributeId, customer_int.value as customerIntValue,
+
+customer_varchar.value_id as customerVarcharValueId, customer_varchar.entity_type_id as customerVarcharEntityTypeId,
+customer_varchar.attribute_id as customerVarcharAttributeId, customer_varchar.value as customerVarcharValue
+
+FROM mage_customer_entity as customer_entity
+JOIN mage_customer_entity_int as customer_int ON customer_entity.entity_id = customer_int.entity_id
+JOIN mage_customer_entity_varchar as customer_varchar ON customer_entity.entity_id = customer_varchar.entity_id
+where customer_entity.entity_id = 750746
+__________________________________________________________________________________________________________________________
+
+
+select
+customer_int.value_id as customerIntValueId, customer_int.entity_type_id as customerIntEntityTypeId,
+customer_int.attribute_id as customerIntAttributeId, customer_int.value as customerIntValue,
+
+customer_varchar.value_id as customerVarcharValueId, customer_varchar.entity_type_id as customerVarcharEntityTypeId,
+customer_varchar.attribute_id as customerVarcharAttributeId, customer_varchar.value as customerVarcharValue
+
+FROM mage_customer_entity_int as customer_int
+JOIN mage_customer_entity_varchar as customer_varchar ON customer_varchar.entity_id = customer_int.entity_id
+where customer_int.entity_id = 750746
+_________________________________________________________________________________________________________________________
+
+
+select
+   customer_address_entity.entity_id  as  customerAddressEntityEntityId,
+   customer_address_entity.entity_type_id  as customerAddressEntityTypeId,
+   customer_address_entity.attribute_set_id as customerAddressEntityAttributeSetId,
+   customer_address_entity.increment_id as customerAddressEntityIncrementId,
+   customer_address_entity.parent_id  as customerAddressEntityParentId,
+   customer_address_entity.created_at as customerAddressEntityCreatedAt,
+   customer_address_entity.updated_at as customerAddressEntityUpdatedAt,
+   customer_address_entity.is_active  as customerAddressEntityIsActive,
+
+   customer_address_text.value_id as customerAddressTextValueId,
+   customer_address_text.entity_type_id as customerAddressTextEntityTypeId,
+   customer_address_text.attribute_id as customerAddressTextAttributeId,
+   customer_address_text.entity_id as customerAddressTextEntityId,
+   customer_address_text.value as customerAddressTextValue,
+
+
+   customer_address_int.value_id as customerAddressIntValueId,
+   customer_address_int.entity_type_id as customerAddressIntEntityTypeId,
+   customer_address_int.attribute_id as customerAddressIntAttributeId,
+   customer_address_int.entity_id as customerAddressIntEntityId,
+   customer_address_int.value as customerAddressIntValue,
+
+   customer_address_varchar.value_id as customerAddressVarcharValueId,
+   customer_address_varchar.entity_type_id as customerAddressVarcharEntityTypeId,
+   customer_address_varchar.attribute_id as customerAddressVarcharAttributeId,
+   customer_address_varchar.entity_id as customerAddressVarcharEntityId,
+   customer_address_varchar.value as customerAddressVarcharValue,
+
+   customer_address_text_safety.value_id as customerAddressTextSafteyValueId,
+   customer_address_text_safety.entity_type_id as customerAddressTextSafteyEntityTypeId,
+   customer_address_text_safety.attribute_id as customerAddressTextSafteyAttributeId,
+   customer_address_text_safety.entity_id as customerAddressTextSafteyEntityId,
+   customer_address_text_safety.value as customerAddressTextSafteyValue
+
+from mage_customer_address_entity as customer_address_entity
+LEFT JOIN  mage_customer_address_entity_int as customer_address_int ON customer_address_entity.entity_id = customer_address_int.entity_id
+
+LEFT JOIN  mage_customer_address_entity_text as customer_address_text ON customer_address_entity.entity_id = customer_address_text.entity_id
+
+LEFT JOIN  mage_customer_address_entity_varchar as customer_address_varchar ON customer_address_entity.entity_id = customer_address_varchar.entity_id
+
+
+LEFT JOIN  mage_customer_address_entity_text_safety as customer_address_text_safety ON customer_address_entity.entity_id = customer_address_text_safety.entity_id
+
+where customer_address_entity.parent_id =
+
+---------------------------------------------------------------------------------------------------------------------------
+
+select
+
+ sales_order_item.item_id as orderItemItemId, sales_order_item.order_id as orderItemOrdeId,
+ sales_order_item.sftpSentDate as orderItemSentDate, sales_order_item.parent_item_id as orderItemParentItem,
+ sales_order_item.quote_item_id as orderItemQuoteItemId, sales_order_item.store_id as orderItemStoreId,
+ sales_order_item.created_at as orderItemCreateAt,  sales_order_item.updated_at as orderItemupdatedAt,
+ sales_order_item.product_id as orderItemProductId,  sales_order_item.product_type as orderItemProductType,
+ sales_order_item.product_options as orderItemOptions,  sales_order_item.weight as orderItemWeight,
+ sales_order_item.is_virtual as orderItemIsVirtual,  sales_order_item.sku as orderItemSku,
+ sales_order_item.name as orderItemName,  sales_order_item.serial_code_type as orderItemSerialCodeType,
+ sales_order_item.serial_codes as orderItemSerialCodes,  sales_order_item.serial_code_ids as orderItemSerialCodeIds,
+ sales_order_item.serial_codes_issued as orderItemSerialcodeIssued,  sales_order_item.serial_code_pool as orderItemSerialCodePool,
+ sales_order_item.description as orderItemDesciption,  sales_order_item.applied_rule_ids as orderItemAppliedRuleIds,
+ sales_order_item.additional_data as orderItemAdditionalData, sales_order_item.free_shipping as orderItemFreeShipping,
+ sales_order_item.is_qty_decimal as orderItemIsQtyDecimal,  sales_order_item.no_discount as orderItemNoDiscount,
+ sales_order_item.qty_backordered as orderItemQtyBackOrdered,  sales_order_item.qty_canceled as orderItemQtyCanceled,
+ sales_order_item.qty_invoiced as orderItemQtyInvoiced,  sales_order_item.qty_ordered as orderItemQtyOrdered,
+ sales_order_item.qty_refunded as orderItemQtyRefunded, sales_order_item.qty_shipped as orderItemQtyShipped,
+ sales_order_item.base_cost as orderItemBaseCost,  sales_order_item.price as orderItemPrice,
+ sales_order_item.base_price as orderItemBasePrice,  sales_order_item.original_price as orderItemOrginalPrice,
+ sales_order_item.base_original_price as orderItemBaseOriginalPrice,  sales_order_item.tax_percent as orderItemTaxPercent,
+ sales_order_item.xero_rate as orderItemXeroRate, sales_order_item.tax_amount as orderItemTaxAmount,
+ sales_order_item.base_tax_amount as orderItemBaseTaxAmount,  sales_order_item.tax_invoiced as orderItemTaxInvoiced,
+ sales_order_item.base_tax_invoiced as orderItemBaseTaxInvoiced,  sales_order_item.discount_percent as orderItemDiscountPercent,
+ sales_order_item.discount_amount as orderItemDiscountAmount,  sales_order_item.base_discount_amount as orderItemBaseDiscountInvoiced,
+ sales_order_item.discount_invoiced as orderItemDiscountInvoiced,  sales_order_item.base_discount_invoiced as orderItemBaseDiscountInvoiced,
+ sales_order_item.amount_refunded as orderItemAmountRefunded,  sales_order_item.base_amount_refunded as orderItemBaseAmountRefunded,
+ sales_order_item.row_total as orderItemRowTotal, sales_order_item.base_row_total as orderItemBaseRowTotal,
+ sales_order_item.row_invoiced as orderItemRowInvoiced,  sales_order_item.base_row_invoiced as orderItemBaseRowInvoiced,
+ sales_order_item.row_weight as orderItemRowWeight, sales_order_item.base_tax_before_discount as orderItemBaseTaxBeforeDiscount,
+ sales_order_item.tax_before_discount as orderItemTaxBeforeDiscount,  sales_order_item.ext_order_item_id as orderItemExtOrderItemId,
+ sales_order_item.locked_do_invoice as orderItemLockedDoInvoice, sales_order_item.locked_do_ship as orderItemLokecDoship,
+ sales_order_item.price_incl_tax as orderItemPriceInclTax, sales_order_item.base_price_incl_tax as orderItemBasePriceInclTax,
+ sales_order_item.row_total_incl_tax as orderItemRowTotalInclTax,  sales_order_item.base_row_total_incl_tax as orderItemBaseRowToalInclTax,
+ sales_order_item.hidden_tax_amount as orderItemHiddenTaxAmount,  sales_order_item.base_hidden_tax_amount as orderItemBaseHiddenTaxAmount,
+ sales_order_item.hidden_tax_invoiced as orderItemHiddenTaxInvoiced,  sales_order_item.base_hidden_tax_invoiced as orderItemBaseHiddenTaxInvoiced,
+ sales_order_item.hidden_tax_refunded as orderItemHiddenTaxRefunded,  sales_order_item.base_hidden_tax_refunded as orderItemBaseHiddenTaxRefunded,
+ sales_order_item.is_nominal as orderItemIsNominal, sales_order_item.tax_canceled as orderItemTaxCancled,
+ sales_order_item.hidden_tax_canceled as orderItemHiddenTaxCancled,  sales_order_item.tax_refunded as orderItemTaxRefunded,
+ sales_order_item.gift_message_id as orderItemGiftMessageId,  sales_order_item.gift_message_available as orderItemGiftMessageAvialble,
+ sales_order_item.base_weee_tax_applied_amount as orderItemBaseWeeTaxAppliedAmount,  sales_order_item.base_weee_tax_applied_row_amnt as orderItemBaseWeeTaxApplied,
+ sales_order_item.weee_tax_applied_amount as orderItemWeeTaxAppliedAmount,  sales_order_item.weee_tax_applied_row_amount as orderItemWeeTaxAppliedRowAmount,
+ sales_order_item.weee_tax_applied as orderItemWeeTaxApplied, sales_order_item.weee_tax_disposition as orderItemWeeTaxDisposition,
+ sales_order_item.weee_tax_row_disposition as orderItemWeeTaxRowDisposition,  sales_order_item.base_weee_tax_disposition as orderItemWeeTaxDisposition,
+ sales_order_item.base_weee_tax_row_disposition as orderItemWeeTaxRowDisposition,  sales_order_item.base_tax_refunded as orderItemBaseTaxRefunded,
+ sales_order_item.base_discount_refunded as orderItemBaseDiscountRefunded,  sales_order_item.subsidy as orderItemSubsidy,
+ sales_order_item.subsidy_vip as orderItemSunsidyVIP, sales_order_item.member_profit as orderItemMemberProfit,
+ sales_order_history.entity_id as orderHistotyEntityid, sales_order_history.parent_id as orderHistotyParentid,
+ sales_order_history.is_customer_notified as orderHistotyIsCustomerNotified, sales_order_history.is_visible_on_front as orderHistotyIsVisibleOnFront,
+ sales_order_history.comment as orderHistoryComment, sales_order_history.status as orderHistoryStatus, sales_order_history.created_at as orderHistoryCreatedAt,
+ sales_order_history.entity_name as orderHistoryEnityName, sales_order_payment.entity_id as orderPaymentEntityId,
+sales_order_payment.parent_id as orderPaymentParentId, sales_order_payment.base_shipping_captured as orderPaymentShippingCaptured,
+sales_order_payment.base_amount_ordered as orderPaymentoBaseAmountOrdered, sales_order_payment.base_shipping_refunded as orderPaymentBaseShippingRefunded,
+sales_order_payment.shipping_refunded as orderPaymentShipingRefunded, sales_order_payment.base_amount_refunded as orderPaymentBaseAmountRefunded,
+sales_order_payment.amount_ordered as orderPaymentAmountOrdered, sales_order_payment.base_amount_canceled as orderPaymentBaseAmountCanceled,
+sales_order_payment.quote_payment_id as orderPaymentQuotepayment, sales_order_payment.additional_data as orderPaymentAdditionalData,
+sales_order_payment.cc_exp_month as orderPaymentCxExpMonth, sales_order_payment.cc_ss_start_year as orderPaymentCcSsStartYear,
+sales_order_payment.echeck_bank_name as orderPaymentEcheckBankName, sales_order_payment.method as orderPaymentMethod,
+sales_order_payment.cc_debug_request_body as orderPaymentCcDebugRequestBody, sales_order_payment.cc_secure_verify as orderPaymentCcSecureVerify,
+sales_order_payment.protection_eligibility as orderPaymentProtectionEligibiliy, sales_order_payment.cc_approval as orderPaymentCcApproval,
+sales_order_payment.cc_last4 as orderPaymentCcLast4, sales_order_payment.cc_status_description as orderPaymentCcStatusDescription,
+sales_order_payment.echeck_type as orderPaymentEcheckType, sales_order_payment.cc_debug_response_serialized as orderPaymentCcDebugResponseSerialized,
+sales_order_payment.cc_ss_start_month as orderPaymentCcSsStartMonth, sales_order_payment.echeck_account_type as orderPaymentEcheckAccountType,
+sales_order_payment.last_trans_id as orderPaymentLastTransId, sales_order_payment.cc_cid_status as orderPaymentCcCidStatus,
+sales_order_payment.cc_owner as orderPaymentCcOwner, sales_order_payment.cc_type as orderPaymentCcType,
+sales_order_payment.po_number as orderPaymentPoNumber, sales_order_payment.cc_exp_year	as orderPaymentCcExpyear,
+sales_order_payment.cc_status as orderPaymentCcStatus, sales_order_payment.echeck_routing_number as orderPaymentEcheckRoutingNumber,
+sales_order_payment.account_status as orderPaymentAccountStatus, sales_order_payment.anet_trans_method as orderPaymentAnetTransMethod,
+sales_order_payment.cc_debug_response_body as orderPaymentCcDebugResponseBody, sales_order_payment.cc_ss_issue as orderPaymentCcSsIssue,
+sales_order_payment.echeck_account_name as orderPaymentEcheckAccountName, sales_order_payment.cc_avs_status as orderPaymentCcAvsStatus,
+sales_order_payment.cc_number_enc as orderPaymentCcNumberEnc, sales_order_payment.cc_trans_id as orderPaymentCcTransId,
+sales_order_payment.paybox_request_number as orderPaymentPayboxRequestNumber, sales_order_payment.address_status as orderPaymentAddressStatus,
+sales_order_payment.additional_information as orderPaymentAdditionalInformation, sales_order_payment.appmerce_response_code as orderPaymentAppmerceResponseCode,
+sales_order_payment.appmerce_access_code as orderPaymentAppmerceAccessCode, sales_order_payment_trasc.transaction_id as orderPamenTrancTransactionId,
+sales_order_payment_trasc.parent_id as orderPamenTrancParentId, sales_order_payment_trasc.order_id as orderPamenTrancOrderId,
+sales_order_payment_trasc.payment_id as orderPamenTrancPaymentId, sales_order_payment_trasc.txn_id as orderPamenTrancTxnId,
+sales_order_payment_trasc.parent_txn_id as orderPamenTrancParentTxnId, sales_order_payment_trasc.txn_type as orderPamenTrancTxnType,
+sales_order_payment_trasc.is_closed as orderPamenTrancIsClosed, sales_order_payment_trasc.additional_information as orderPamenTrancAdditionalInformation,
+sales_order_payment_trasc.created_at as orderPamenTrancCreatedAt
+
+ from mage_sales_flat_order_item as sales_order_item
+ LEFT JOIN  mage_sales_flat_order_status_history as sales_order_history ON sales_order_item.order_id = sales_order_history.parent_id
+ LEFT JOIN mage_sales_flat_order_payment as sales_order_payment ON sales_order_item.order_id = sales_order_payment.parent_id
+ LEFT JOIN mage_sales_payment_transaction as sales_order_payment_trasc on  sales_order_item.order_id = sales_order_payment_trasc.order_id
+ where sales_order_item.order_id =

@@ -1,0 +1,306 @@
+//
+//  Product presentation elements
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+//
+//  Add-to links
+//  _____________________________________________
+
+.addto-links {
+    .action {
+        display: inline-block;
+        margin-right: @product__addto-icon__space-between;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    // .action + .action {
+    //     // When displayed in a group: add margin between icons
+    //     margin-left: @product__addto-icon__space-between;
+    // }
+}
+
+//
+//  Icon links, without text
+//  ---------------------------------------------
+
+.addto-links-icons {
+    .action {
+        display: block;
+        float: left;
+    }
+    .icon {
+        font-size: 16px;
+    }
+    .label {
+        display: none !important;
+    }
+
+    //
+    //  Icons displayed over the product image
+    //  ---------------------------------------------
+    //  Use bottom padding to cover the bottom part of the product image below icons
+    //  to avoid image flickering when there is an alternative image and user moves
+    //  the mouse over the image to click the icons.  
+
+    &.addto-onimage {
+        float: right;
+        // margin-top: -1 * (@product__interface-element__height + (2 * @product__addto-icon-onimage__padding));
+        margin-top: -1 * (@product__addto-icon__size + @product__addto-icon-onimage__padding);
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+        padding-bottom: @product__addto-icon-onimage__padding;
+        padding-right: @product__addto-icon-onimage__padding;
+        .icon {
+            border-radius: 0;
+        }
+        .label {
+            display: none;
+        }
+    }
+
+    // Alternative version
+    // .addto-links-icons.addto-onimage {
+    //      margin-top: 0; 
+    //      position: absolute; 
+    //      right: @product__addto-icon-onimage__padding; 
+    //      z-index: 1; 
+    //      padding-bottom: 0; 
+    //      padding-right: 0; 
+    //      bottom: 2 * @product__addto-icon-onimage__padding; 
+    // }
+}
+
+// In product listings icons are square
+.product-items .item .addto-links-icons .icon {
+    border-radius: 0;
+}
+
+//
+//  Text links, without icons
+//  ---------------------------------------------
+
+.addto-links-text {
+    .icon {
+        display: none !important;
+    }
+    .label {
+    }
+}
+
+//
+//  Remove blank theme's font icon from links
+//  ---------------------------------------------
+
+.product-social-links,
+.items-grid .item,
+.product-items .item {
+    .addto-links .action,
+    .action.feature {
+        &:before {
+            display: none;
+        }
+    }
+}
+
+//
+//  Override Magento blank theme styles
+//  Neutralize styles which hide spans inside links which can be placed in different containers
+//  ---------------------------------------------
+
+//  Icon links in different containers
+
+// .product-info-main,
+// .product-options-bottom,
+// .block-bundle-summary,
+.product-social-links, // Alternative for other containers in product view
+.product-items .item, // Alternative for ".product-item" which can be not present in product listings
+.table-comparison {
+    .addto-links-icons .action .icon {
+        clip: auto;
+        width: @product__addto-icon__size;
+        height: @product__addto-icon__size;
+        margin: 0;
+        overflow: visible;
+        position: static;
+    }
+}
+
+//  Text links in different containers
+
+// .product-info-main,
+// .product-options-bottom,
+// .block-bundle-summary,
+.product-social-links, // Alternative for other containers in product view
+.product-items .item, // Alternative for "product-item" class which can be not present in product listings
+.table-comparison {
+    .addto-links-text .action .label {
+        &:extend(.abs-visually-hidden-reset all);
+    }
+}
+
+//  Addto links and social links (i.e. "send to friend" link) in product view
+//  displayed with "feature" class
+
+.product-social-links {
+    .action.feature {
+        .icon {
+            clip: auto;
+            width: @product__addto-icon__size;
+            height: @product__addto-icon__size;
+            margin: 0;
+            overflow: visible;
+            position: static;
+        }
+        .label {
+            &:extend(.abs-visually-hidden-reset all);
+
+            margin-left: 4px;
+        }
+    }
+}
+
+//
+//  Availability - only X left
+//  _____________________________________________
+
+.availability.only {
+    .icon {
+        font-size: 20px;
+    }
+    strong {
+        font-weight: normal;
+    }
+    .caret {
+        margin-left: 8px;
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+}
+a.availability.only {
+    // In case it's a link (to toggle more details)
+    cursor: pointer;
+}
+
+//  Table with details
+
+.availability-only-details {
+    width: 100%;
+    margin: -10px auto 20px;
+    thead {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    th {
+        padding: 4px 12px;
+        font-weight: bold;
+    }
+    td {
+        padding: 1px 12px;
+        border-right: 1px solid #f5f5f5;
+    }
+    td.last {
+        border-right: none;
+    }
+}
+
+//
+//  Quantity control
+//  _____________________________________________
+
+//
+//  Quantity plus/minus
+//  ---------------------------------------------
+
+.qty-buttons-wrapper {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+}
+
+.qty-button {
+    margin: 0;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Courier New";
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.qty-button.increase {
+    margin-bottom: 2px;
+}
+
+// .qty-button.decrease {}
+
+
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+// }
+
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+// }
+
+// //TODO:
+// //.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @breakpoint__M) {
+// @media only screen and (max-width: 992px) {
+// }
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    //
+    //  Add to cart - quantity box at the right side
+    //  _____________________________________________
+
+    .box-tocart.right-side {
+        .field.qty {
+            float: left;
+            padding-right: 15px;
+            padding-left: 0;
+        }
+        .actions {
+            float: right;
+        }
+    }
+
+}
+
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+// }
+
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+// }

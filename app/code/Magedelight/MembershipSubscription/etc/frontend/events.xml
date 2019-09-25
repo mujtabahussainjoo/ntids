@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_cart_product_add_after">
+        <observer name="membership_duration_price" instance="Magedelight\MembershipSubscription\Observer\ProductAddCartAfter"/>
+    </event>
+    <event name="checkout_cart_product_update_after">
+        <observer name="membership_duration_price_test" instance="Magedelight\MembershipSubscription\Observer\ProductUpdateCartAfter"/>
+    </event>
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="membership_order_success" instance="Magedelight\MembershipSubscription\Observer\OrderPlaceAfter"/>
+    </event>
+</config>

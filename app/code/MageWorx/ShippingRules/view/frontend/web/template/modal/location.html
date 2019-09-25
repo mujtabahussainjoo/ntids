@@ -1,0 +1,87 @@
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+
+<aside
+        class="modal-slide <%= data.modalClass %>
+           <% if(data.innerScroll){ %><%= data.innerScrollClass %><% } %>"
+        data-role="modal"
+        data-type="<%= data.type %>"
+        tabindex="0">
+    <div data-role="focusable-start" tabindex="0"></div>
+    <div class="modal-inner-wrap"
+         data-role="focusable-scope">
+        <header class="modal-header">
+            <h1 class="modal-title"
+                data-role="title">
+                <% if(data.title){ %>
+                <%= data.title %>
+                <% } %>
+                <span data-role="subTitle">
+                    <% if(data.subTitle){ %>
+                        <%= data.subTitle %>
+                    <% } %>
+                </span>
+            </h1>
+            <button
+                    class="action-close"
+                    data-role="closeBtn"
+                    type="button">
+                <span><%= data.closeText %></span>
+            </button>
+        </header>
+        <div class="modal-content" data-role="content">
+            <div class="sz-left-content">
+                <!-- Zone selectors -->
+            </div>
+
+            <div class="sz-right-content"
+                 id="sz-fields"
+            <% if(!data.displayAddressOnly &&
+            typeof data.extended_zones != 'undefined' &&
+            Object.keys(data.extended_zones).length > 0)
+            { %>hidden="hidden"<% } %>
+            >
+            <!-- Select country and region & submit all info -->
+            <div class="sz-fields-container" id="sz-fields-container">
+                <fieldset class="fieldset" id="sz-fields-container-main-fieldset">
+                    <hr>
+                    <span id="sz-select-address-container">
+                            <!-- Select country and region goes here -->
+                        </span>
+                    <div class="field-wrapper">
+                        <div class="field">
+                            <label class="label">
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                    <% if(data.buttons.length > 0){ %>
+                    <div class="page-main-actions">
+                        <div class="page-actions">
+                            <div class="page-actions-buttons">
+                                <% _.each(data.buttons, function(button) { %>
+                                <button
+                                        class="<%= button.class %>"
+                                        type="button"
+                                        data-role="action"><span><%= button.text %></span>
+                                </button>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <footer class="modal-footer">
+
+    </footer>
+    </div><!-- DO NOT DELETE! It closes the div starts on line 15 @see lines 41-45 -->
+    <div data-role="focusable-end" tabindex="0"></div>
+</aside>

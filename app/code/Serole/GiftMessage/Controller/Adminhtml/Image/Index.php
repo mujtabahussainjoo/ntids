@@ -1,0 +1,55 @@
+<?php
+namespace Serole\GiftMessage\Controller\Adminhtml\Image;
+
+use Magento\Backend\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
+
+class Index extends \Magento\Backend\App\Action
+{
+
+    /**
+     * @var PageFactory
+     */
+    protected $resultPageFactory;
+
+    /**
+     * @param Context $context
+     * @param PageFactory $resultPageFactory
+     */
+    public function __construct(
+        Context $context,
+        PageFactory $resultPageFactory
+    ) {
+        parent::__construct($context);
+        $this->resultPageFactory = $resultPageFactory;
+    }
+
+    /**
+     * Index action
+     *
+     * @return \Magento\Backend\Model\View\Result\Page
+     */
+    public function execute()
+    {
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        $resultPage = $this->resultPageFactory->create();
+        $resultPage->setActiveMenu('Serole_GiftMessage::post');
+        $resultPage->addBreadcrumb(__('Gift Message'), __('Gift Message'));
+        $resultPage->addBreadcrumb(__('Manage Gift Message'), __('Manage Gift Message'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Gift Message'));
+
+        return $resultPage;
+    }
+
+    /**
+     * Is the user allowed to view the blog post grid.
+     *
+     * @return bool
+     */
+    protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('Serole_GiftMessage::post');
+    }
+
+
+}

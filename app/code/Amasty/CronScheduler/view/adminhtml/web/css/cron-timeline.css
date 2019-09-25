@@ -1,0 +1,106 @@
+.amcronsch-cron-timeline {
+    margin: 15px 0;
+}
+
+.amcronsch-cron-timeline .vis-tooltip {
+    font-family: inherit;
+    background: #fff;
+    border: 1px solid #1787e0;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 90, 161, 0.30);
+}
+
+.amcronsch-cron-timeline .amcronsch-controls {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.amcronsch-record-info {
+    padding: 5px;
+}
+
+.amcronsch-record-info .amcronsch-header {
+    font-size: 16px;
+    text-align: left;
+}
+
+.amcronsch-record-info .amcronsch-cell {
+    padding: 5px;
+}
+
+.amcronsch-record.vis-range {
+    border-width: 1px 2px;
+}
+
+.amcronsch-record.-pending {
+    border-color: #ccc;
+}
+
+.amcronsch-record.-pending .vis-item-overflow {
+    background: #ccc;
+}
+
+.amcronsch-record.-success {
+    border-color: #4ac139;
+}
+
+.amcronsch-record.-success .vis-item-overflow {
+    background: #4ac139;
+}
+
+.amcronsch-record.-error {
+    z-index: 2;
+    border-color: #ff0000;
+}
+
+.amcronsch-record.-error .vis-item-overflow {
+    background: #ff0000;
+}
+
+.amcronsch-record.-missed {
+    border-color: #ffbc9f;
+}
+
+.amcronsch-record.-missed .vis-item-overflow {
+    background: #ffbc9f;
+}
+
+.amcronsch-record.-running {
+    border-color: #b8ec7c;
+}
+
+.amcronsch-record.-running .vis-item-overflow {
+    background: #b8ec7c;
+}
+
+.amcronsch-label {
+    padding-right: 5px;
+    font-weight: 600;
+}
+
+.amcronsch-status .amcronsch-value {
+    padding: 0 5px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.amcronsch-value.-pending {
+    background: #ccc;
+}
+
+.amcronsch-value.-success {
+    background: #4ac139;
+}
+
+.amcronsch-value.-error {
+    background: #eb5757;
+}
+
+.amcronsch-value.-missed {
+    background: #ef7c4a;
+}
+
+.amcronsch-value.-running {
+    background: #b8ec7c;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="nwdthemes_revslider_common"/>
+    <update handle="nwdthemes_revslider_gallery"/>
+    <body>
+        <referenceContainer name="master-view">
+			<block class="Nwdthemes\Revslider\Block\Adminhtml\SlideEditor" name="view" template="Nwdthemes_Revslider::slide-editor.phtml">
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="slide-selector" template="Nwdthemes_Revslider::templates/slide-selector.phtml" />
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="slide-general-settings" template="Nwdthemes_Revslider::templates/slide-general-settings.phtml" />
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="template-selector" template="Nwdthemes_Revslider::templates/template-selector.phtml" />
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="slide-stage" template="Nwdthemes_Revslider::templates/slide-stage.phtml" />
+                <block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="dialog-copy-move" template="Nwdthemes_Revslider::system/dialog-copy-move.phtml" />
+			</block>
+        </referenceContainer>
+    </body>
+</page>

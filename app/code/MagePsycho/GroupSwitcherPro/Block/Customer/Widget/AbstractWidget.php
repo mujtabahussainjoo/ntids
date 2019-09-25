@@ -1,0 +1,123 @@
+<?php
+
+namespace MagePsycho\GroupSwitcherPro\Block\Customer\Widget;
+
+use Magento\Customer\Api\CustomerMetadataInterface;
+
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_GroupSwitcherPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+class AbstractWidget extends \Magento\Framework\View\Element\Template
+{
+    /**
+     * @var CustomerMetadataInterface
+     */
+    protected $customerMetadata;
+
+    /**
+     * @var \Magento\Customer\Helper\Address
+     */
+    protected $_addressHelper;
+
+    /**
+     * @var \MagePsycho\GroupSwitcherPro\Helper\Data
+     */
+    protected $groupSwitcherHelper;
+
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        \Magento\Customer\Helper\Address $addressHelper,
+        CustomerMetadataInterface $customerMetadata,
+        \MagePsycho\GroupSwitcherPro\Helper\Data $groupSwitcherHelper,
+        array $data = []
+    ) {
+        $this->_addressHelper      = $addressHelper;
+        $this->customerMetadata    = $customerMetadata;
+        $this->groupSwitcherHelper = $groupSwitcherHelper;
+        parent::__construct($context, $data);
+        $this->_isScopePrivate = true;
+    }
+
+    /**
+     * @param string $key
+     * @return null|string
+     */
+    public function getConfig($key)
+    {
+        return $this->_addressHelper->getConfig($key);
+    }
+
+    /**
+     * @return string
+     */
+    public function getFieldIdFormat()
+    {
+        if (!$this->hasData('field_id_format')) {
+            $this->setData('field_id_format', '%s');
+        }
+        return $this->getData('field_id_format');
+    }
+
+    /**
+     * @return string
+     */
+    public function getFieldNameFormat()
+    {
+        if (!$this->hasData('field_name_format')) {
+            $this->setData('field_name_format', '%s');
+        }
+        return $this->getData('field_name_format');
+    }
+
+    /**
+     * @param string $field
+     * @return string
+     */
+    public function getFieldId($field)
+    {
+        return sprintf($this->getFieldIdFormat(), $field);
+    }
+
+    /**
+     * @param string $field
+     * @return string
+     */
+    public function getFieldName($field)
+    {
+        return sprintf($this->getFieldNameFormat(), $field);
+    }
+
+    /**
+     * Retrieve customer attribute instance
+     *
+     * @param string $attributeCode
+     * @return \Magento\Customer\Api\Data\AttributeMetadataInterface|null
+     */
+    protected function _getAttribute($attributeCode)
+    {
+        try {
+            return $this->customerMetadata->getAttributeMetadata($attributeCode);
+        } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+            return null;
+        }
+    }
+
+    public function getGroupLabel()
+    {
+        return $this->groupSwitcherHelper->getConfigHelper()->getGroupSelectionLabel();
+    }
+
+    public function getGroupSwitcherHelper()
+    {
+        return $this->groupSwitcherHelper;
+    }
+
+    public function getConfigHelper()
+    {
+        return $this->groupSwitcherHelper->getConfigHelper();
+    }
+}

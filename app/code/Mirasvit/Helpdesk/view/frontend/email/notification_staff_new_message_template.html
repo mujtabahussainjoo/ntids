@@ -1,0 +1,38 @@
+<!--@subject {{var ticket.getEmailSubject()}} @-->
+{{var preheader_text | raw}}
+
+{{template config_path="design/email/header_template"}}
+
+{{var hidden_separator|raw}}
+<p>
+{{if use_form_key }}
+<h1>{{var ticket.subject}}</h1>
+{{else}}
+    <a href="{{var ticket.getBackendUrl()}}"><h1>{{var ticket.subject}}</h1></a>
+{{/if}}
+<br>
+------------------------------<br><br>
+
+Ticket ID: {{var ticket.code}}<br>
+Name: {{var customer.name}}<br>
+Email address: {{var customer.email}}<br>
+Store: {{var store.getFrontendName()}}<br>
+Department: {{var ticket.department}}<br>
+Staff (Owner): {{var ticket.user_name}}<br>
+Status: {{var ticket.status}}<br>
+Priority: {{var ticket.priority}}<br>
+Created: {{var ticket.getCreatedAtFormated()}}<br>
+Updated: {{var ticket.getUpdatedAtFormated()}}<br>
+<br>
+
+{{depend ticket.getLastMessage().isInternal()}}
+== INTERNAL NOTE ==
+{{/depend}}
+</p>
+
+{{var ticket.getLastMessageHtmlText()|raw}}
+{{block class='Mirasvit\\Helpdesk\\Block\\Email\\History' area='frontend'
+    template='Mirasvit_Helpdesk::email/history.phtml' ticket=$ticket}}
+{{var ticket.getHiddenCodeHtml()|raw}}
+
+{{template config_path="design/email/footer_template"}}

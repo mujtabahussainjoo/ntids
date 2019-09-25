@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="htmlelements" sortOrder="999" translate="label">
+			<label>Html Elements</label>
+		</tab>
+		<section id="htmlelements" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Html Elements Details</label>
+			<tab>htmlelements</tab>
+			<resource>Serole_DisableHtml::config_serole_disablehtml</resource>
+			<group id="htmlelements" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Html Elements Details</label>
+				<field id="adminhide" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="text">
+					<label>Admin Identifiers (Hide)</label>
+					<comment>paste the id of the div separated by ','</comment>
+				</field>
+				<field id="admindisable" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="text">
+					<label>Admin Identifiers (Disable)</label>
+					<comment>paste the id of the div separated by ','</comment>
+				</field>
+				<field id="frontendhide" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Frontend Identifiers (Hide)</label>
+					<comment>paste the id of the div separated by ','</comment>
+				</field>
+				<field id="frontenddisable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Frontend Identifiers (Disable)</label>
+					<comment>paste the id of the div separated by ','</comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

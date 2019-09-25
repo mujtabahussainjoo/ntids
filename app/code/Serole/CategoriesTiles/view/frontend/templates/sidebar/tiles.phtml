@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var $block \Serole\Sidetiles\Block\Sidebar\Tiles
+ */
+?>
+
+<?php  
+
+	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+	$blockTitle=$category->getSideTile();
+	$block_id=$category->getBlockId();
+	if($block_id){
+		$resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+		$connection = $resource->getConnection();
+		$tableName = $resource->getTableName('cms_block');
+		$sql = "Select * FROM $tableName Where block_id =$block_id";
+		$result = $connection->fetchAll($sql);
+		// echo "<pre>";
+		// print_r($result);
+		// echo "</pre>";
+		echo $blockTitle;
+		echo "<br/>";
+		echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($result[0]['identifier'])->toHtml();
+	}
+ ?>

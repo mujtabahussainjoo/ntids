@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mageworx" sortOrder="2001">
+            <label>MageWorx</label>
+        </tab>
+        <section id="mageworx_geoip">
+            <tab>mageworx</tab>
+            <resource>MageWorx_GeoLock::config_geo_lock</resource>
+            <group id="geo_lock_general" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Geo Lock</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="rule_type" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access Rule for Countries</label>
+                    <source_model>MageWorx\GeoLock\Model\Config\Source\RuleType</source_model>
+                </field>
+                <field id="countries" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Countries</label>
+                    <source_model>\Magento\Directory\Model\Config\Source\Country</source_model>
+                    <comment>Select countries to which Access Rule will be applied</comment>
+                </field>
+                <field id="ip_black_list" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>IP Black List</label>
+                    <comment><![CDATA[<b>Example:</b><br/>123.123.123.123<br/>123.123.*.*]]></comment>
+                </field>
+                <field id="ip_white_list" translate="label comment" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>IP White List</label>
+                    <comment><![CDATA[<b>Example:</b><br/>123.123.123.123<br/>123.123.*.*]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,136 @@
+Department,Osakond
+"Create New Ticket","Loo uus pilet"
+Status,Olek
+Priority,Prioriteet
+Replies,Vastused
+View,Vaade
+"Help Desk","Abi Desk"
+"Thank you",Aitäh
+"Create Ticket","Pileti loomine"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Teie taotlus edukalt edastatud. Te peate lühikese aja jooksul saama kinnituskirja."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Teie päring saadi ja vastatakse niipea kui võimalik. Tänan, et võtsite meiega ühendust."
+"Unable to submit your request. Please, try again later","Teie taotlust ei saa saata. Palun proovi hiljem uuesti"
+"Page not found.","Lehte ei leitud."
+"Your message was successfuly posted","Teie sõnum oli edukalt postitatud"
+"Your ticket was successfuly posted","Teie pilet oli edukalt postitatud"
+"Ticket was successfuly closed","Pilet oli edukalt suletud"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Faili %1 ei saa üles laadida. Maksimaalne lubatud üleslaadimise suurus on %2 MB."
+"Allows only this file types: %1","Lubab ainult neid failitüüpe: %1"
+"Message added","Sõnum lisatud"
+"Internal note added","Sisemine märkus lisatud"
+"Third party message added","Kolmanda osapoole sõnum on lisatud"
+"Private third party message added","Privaatne kolmanda osapoole sõnum on lisatud"
+"-- Please Select --","-- Palun vali --"
+"Contact Tab","Kontakti vahekaart"
+"Contact Form",Kontaktvorm
+" at %1 (%2) - %3","kell %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Teil pole õigusi selle pileti lugemiseks. Palun võtke ühendust oma administraatoriga."
+"Invalid Customer Email","Kehtetu klient e-post"
+"not set","pole seadistatud"
+"Unknown time","Tundmatu aeg"
+ago,tagasi
+"from now",nüüdsest
+"1 sec ago","1 sekund tagasi"
+"Open Ticket","Avatud pilet"
+"Open Tickets","Avatud piletid"
+"! Blocked file - ","! Blokeeritud fail -"
+Disabled,Keelatud
+"AW Helpdesk","AW kasutajatugi"
+"MW Helpdesk","MW kasutajatugi"
+"File System",Failisüsteem
+Database,Andmebaas
+Aqua,Aqua
+Grey,Hall
+Navy,Mereväe
+Silver,Hõbe
+Black,Must
+Green,Roheline
+Olive,Oliiv
+Teal,Teal
+Blue,Sinine
+Lime,Lime
+Purple,Lilla
+Fuchsia,Fuksia
+Maroon,Maroon
+Red,Punane
+Orange,Oranž
+Yellow,Kollane
+Text,Tekst
+Date,Kuupäev
+Checkbox,Märkeruut
+"Drop-down list",Rippmenüü
+"In minutes...","Mõne minuti pärast ..."
+"In hours...","Tundi ..."
+"In days...","Päeva jooksul ..."
+"In weeks...","Nädalatel ..."
+"In months...","Kuudes ..."
+Custom,Kohandatud
+"--Please Select--","--Palun vali--"
+"New ticket created","Uus pilet on loodud"
+Success,Edu
+Customer,Klient
+Staff,Töötajad
+"Third party","Kolmas osapool"
+Closed,Suletud
+"Opened 24hr","Avatud 24 tundi"
+"Helpdesk Tickets","Helpdeski piletid"
+"Cannot delete ticket with id %1","Ei saa kustutada pileti id -ga %1"
+Edit,Muuda
+"All Departments","Kõik osakonnad"
+Back,Tagasi
+"24 hrs x 7 days","24 tundi x 7 päeva"
+"Select working days/hours","Valige tööpäevad / tundid"
+"Satisfaction survey","Rahulolu küsitlus"
+"to %1 (third party)","%1-le (kolmas isik)"
+"%1 (third party)","%1 (kolmas isik)"
+"added %1 (%2)","lisas %1 (%2)"
+"Ticket Summary","Pileti kokkuvõte"
+"Ticket ID","Pileti ID"
+Assignee,Sihtasutus
+"Additional Info",Lisainfo
+"Ticket History","Pileti ajalugu"
+"Done by",Sõlmitud
+Changes,Muudatused
+Name,Nimi
+"Attach files","Lisage faile"
+Submit,Esita
+"Submit Ticket","Saada pilet"
+"What is your question?","Mis on teie küsimus?"
+"We found the following topics that might be helpful:","Leidsime järgmised teemad, mis võivad osutuda kasulikuks:"
+"None of these are helpful - get in touch","Ükski neist pole kasulik - võtke ühendust"
+"We have not found topics that can be helpful.","Me ei leidnud teemasid, mis võiksid olla kasulikud."
+"Contact Information",Kontaktinfo
+Comment,Kommentaar
+"We are open 24 x 7","Oleme avatud 24 x 7"
+"We are closed","Oleme suletud"
+"Timezone: %1","Ajavöönd: %1"
+"Please take a second to rate my reply...","Palun võtke teine ​​minu vastuse hindamiseks ..."
+Great,Suurepärane
+Awesome,Vinge
+"Fast, friendly, helpful, pleasant. Great job!","Kiire, sõbralik, abivalmis, meeldiv. Suurepärane töö!"
+"Just Okay","Lihtsalt okei"
+"Fine, but definitely could have been better.","Hea, kuid kindlasti oleks võinud olla parem."
+"Not good","Pole hea"
+"Unfortunately, I wasn't happy with it at all.","Kahjuks polnud ma seda üldse rahul."
+"Thank you for participating in our survey!","Täname teid uuringus osalemise eest!"
+"If you would like to provide additional comments, please do so below:","Kui soovite esitada täiendavaid kommentaare, tehke järgmist."
+Message,Sõnum
+"Submit Message","Saada sõnum"
+"Thank you for your feedback!","Aitäh tagasiside eest!"
+Attachments,Manused
+Order,Telli
+"-- Select an Order --","- Valige tellimus -"
+"Create ticket","Loo pilet"
+"You don't have open tickets","Teil pole avatud pileteid"
+"Post a Reply","Postita vastus"
+"Reopen Ticket","Pileti uuesti avamine"
+"Close Ticket","Sule pilet"
+History,Ajalugu
+"Back to My Tickets","Tagasi Minu piletitele"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Võta meiega ühendust"
+Open,Avatud
+Subject,Teema
+"Last Activity","Viimane tegevus"
+"Request ID","Taotluse ID"

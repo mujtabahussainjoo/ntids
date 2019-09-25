@@ -1,0 +1,8 @@
+<div class="kb__search-box">
+    <form action="<?= $block->getUrl('kbase/article/s')?>" method="GET" id="kb-s-form">
+        <input name='s' id='s' type="text" placeholder="<?= __('What can we help you with?') ?>" class="input-text required-entry" required value="<?= $block->getQuery() ?>">
+        <button class="action primary" title="Submit" type="submit">
+            <span><i class="fa fa-fw fa-search"></i></span>
+        </button>
+    </form>
+</div>

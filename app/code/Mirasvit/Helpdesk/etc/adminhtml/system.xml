@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <section id="helpdesk" showInDefault="1" showInWebsite="1" showInStore="1" type="text" translate="label" sortOrder="100">
+            <label>Help Desk</label>
+            <tab>mirasvit</tab>
+            <resource>Mirasvit_Helpdesk::config_helpdesk</resource>
+            <group id="general" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                <label>General Settings</label>
+                <field id="front_title" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Helpdesk title in the customer account</label>
+                </field> 
+                <field id="sender_email" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender Email</label>
+                </field> 
+				<field id="sender_name" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender Name</label>
+                </field>
+                <field id="default_priority" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Priority for new tickets</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Priority</source_model>
+                </field>
+                <field id="default_status" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Status for new tickets</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Status</source_model>
+                </field>
+                <field id="sign_ticket_by" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sign staff replies</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Config\Source\Sign\Ticket\By</source_model>
+                </field>
+                <field id="archived_status_list" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Move Ticket to Archive if it has one of following statuses</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Status</source_model>
+                </field>
+                <field id="contact_us_is_active" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Create Tickets from Contact Us form</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="bcc_email" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send blind carbon copy (BCC) of all emails to</label>
+                </field>
+                <field id="is_wysiwyg" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Use WYSIWYG Editor in backend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="prev_next_buttons" translate="label" type="select" sortOrder="85" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Show previous/next button in backend ticket edit page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_default_cron" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Use default magento cron</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_allow_external_urls" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow customer to open ticket by unique URL (without additional authentication)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <!--<field id="accept_foreign_tickets" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">-->
+                    <!--<label>Accept foreign tickets</label>-->
+                    <!--<source_model>\Mirasvit\Helpdesk\Model\Config\Source\Accept\Foreign\Tickets</source_model>-->
+                <!--</field>-->
+                <field id="attachment_storage" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Store attachments in</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Config\Source\Attachment\Storage</source_model>
+                </field>
+                <field id="allowed_attachements" translate="label" type="text" sortOrder="115" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow upload only attachments with extensions</label>
+                    <comment><![CDATA[comma separated list. e.g. jpg, jpeg, gif, png, bmp, pdf]]></comment>
+                </field>
+                <field id="draft_update_period" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Tickets autosave period, sec</label>
+                    <comment><![CDATA[leave empty to disable tickets auto-save and activity detection]]></comment>
+                </field>
+                <field id="show_in_customer_menu" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Help Desk link in customer menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="contact_form" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                <label>Feedback Tab</label>
+                <field id="is_active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Feedback Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="default_department" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Assign to Department</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Department</source_model>
+                </field>
+                <field id="color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tab Color</label>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tab Title</label>
+                </field>
+                <field id="position" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tab Position</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Config\Source\Position</source_model>
+                </field>
+                <field id="form_title" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Form Title</label>
+                </field>
+                <field id="subject_title" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subject Title</label>
+                </field>
+                <field id="subject_placeholder" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subject Placeholder</label>
+                </field>
+                <field id="description_title" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description Title</label>
+                </field>
+                <field id="description_placeholder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description Placeholder</label>
+                </field>
+                <field id="is_active_attachment" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow customer to attach files</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_allow_priority" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow customer to select Priority</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_allow_department" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow customer to select Department</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_active_kb" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search Knowledge Base Topics first</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="notification" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+                <label>Email Notification Settings</label>
+                <field id="is_show_code" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Ticket ID in the email title</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="history_records_number" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of last replies to show in the ticket history</label>
+                </field>
+                <field id="new_ticket_template" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of New Ticket Email for Customer</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="staff_new_ticket_template" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of New Ticket Email for Staff</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="staff_assign_ticket_template" translate="label" type="select" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of Ticket Email Assigned to Staff</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="new_message_template" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of New Message Email for Customer</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="staff_new_message_template" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of New Message Email for Staff</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="third_new_message_template" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of New Message Email for Third Party</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="reminder_template" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of Ticket Reminder</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="rule_template" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of Rule Notification</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="staff_new_satisfaction_template" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template of Survey Satisfaction Result</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\System\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+            <group id="satisfaction" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
+                <label>Customer Satisfaction Survey</label>
+                <field id="is_active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include a satisfaction survey in a reply email from staff</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_show_results_in_ticket" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show survey results in the backend ticket history</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_send_results_owner" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send survey result to ticket owner</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="results_email" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send survey result to emails</label>
+                </field>
+            </group>
+            <group id="frontend" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="50">
+                <label>Customer Account</label>
+                <field id="is_active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Help Desk section in Customer Account</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_allow_priority" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow customer to select Priority</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_allow_department" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow customer to select Department</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_allow_order" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow customer to select Order</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="developer" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
+                <label>Developer Settings</label>
+                <field id="is_active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Activate Sandbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sandbox_email" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Send All Outgoing emails to Email</label>
+                </field>
+                <field id="apply_styles" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Force to apply styles</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If theme overrides Magento way of including style this option will add Help Desk styles to page]]></comment>
+                </field>
+                <field id="log_ticket_deletion" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Log ticket deletion</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[This option logs ticket deletion in file /var/log/mirasvit/helpdesk.log]]></comment>
+                </field>
+            </group>
+            <group id="report" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="55">
+                <label>Reports</label>
+                <field id="solved_status" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Solved Statuses</label>
+                    <source_model>\Mirasvit\Helpdesk\Model\Status</source_model>
+                </field>
+            </group>
+            <group id="desktop_notification" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="70">
+                <label>Notification Settings</label>
+                <field id="check_period" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Notifications check period, sec</label>
+                    <comment><![CDATA[set 0 to disable notifications]]></comment>
+                </field>
+                <field id="is_notification_about_ticket_user_ids" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Show notification about arriving of new tickets for</label>
+                    <source_model>Mirasvit\Helpdesk\Model\Config\Source\Notification\Users</source_model>
+                </field>
+                <field id="is_notification_allow_message" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable notification about arriving of new messages in tickets assigned for user</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_notification_allow_assign" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable notification about assigning a ticket to the user</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="schedule" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="56">
+                <label>Working Hours</label>
+                <field id="is_show_status_on_contactus" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show online/offline status on the Contact Us page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_show_status_on_feedbackpopup" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show online/offline status in the Feedback popup</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_show_status_on_mytickets" translate="label" type="select" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show online/offline status in the Customer Account > My Tickets</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="default_open_message" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default message when we are open</label>
+                </field>
+                <field id="default_close_message" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default message when we are closed</label>
+
+                    <comment><![CDATA[You can use variable [time_left_to_open]]]></comment>
+                </field>
+                <field id="is_show_schedule_on_contactus" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show working hours on the Contact Us page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_holiday_schedule_before_days" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show holiday schedule in X days before activation</label>
+                </field>
+                <field id="working_schedule_title" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Working schedule title</label>
+                </field>
+                <field id="upcoming_schedule_title" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Upcoming working schedule title</label>
+                </field>
+            </group>
+            <group id="extended" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="80">
+                <label>Extended settings</label>
+                <field id="contactus_help_text" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Help Text</label>
+                    <comment>This text will be shown under title on "Contact Us" page and "Feedback" tab </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

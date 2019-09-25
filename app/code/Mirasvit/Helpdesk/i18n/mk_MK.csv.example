@@ -1,0 +1,136 @@
+Department,Оддел
+"Create New Ticket","Креирај нова билет"
+Status,Статус
+Priority,Приоритет
+Replies,Одговори
+View,Погледнете
+"Help Desk","Help Desk"
+"Thank you","Ви благодарам"
+"Create Ticket","Креирај билет"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Вашето барање беше успешно поднесено. Наскоро треба да добиете е-порака за потврда."
+Telephone,Телефон
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Вашето барање беше поднесено и ќе биде одговорено што е можно поскоро. Ви благодариме што не контактирате."
+"Unable to submit your request. Please, try again later","Не може да го поднесете вашето барање. Ве молиме, обидете се повторно подоцна"
+"Page not found.","Страната не е пронајдена."
+"Your message was successfuly posted","Вашата порака беше успешно објавена"
+"Your ticket was successfuly posted","Вашиот билет беше успешно објавен"
+"Ticket was successfuly closed","Битката беше успешно затворена"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Не може да се вчита датотеката %1. Максималната дозволена големина за поставување е %2 MB."
+"Allows only this file types: %1","Дозволува само типови на датотеки: %1"
+"Message added","Додадена е порака"
+"Internal note added","Додадена е внатрешна белешка"
+"Third party message added","Додадена е порака од трета страна"
+"Private third party message added","Додадена е приватна порака од трета страна"
+"-- Please Select --","- Изберете -"
+"Contact Tab","Контакт табот"
+"Contact Form","Контакт форма"
+" at %1 (%2) - %3","во %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Немате дозвола да го прочитате овој билет. Те молам контактирајте го администраторот."
+"Invalid Customer Email","Неважечка е-пошта на потрошувачот"
+"not set","не е поставено"
+"Unknown time","Непознато време"
+ago,пред
+"from now","Од сега"
+"1 sec ago","Пред 1 секунда"
+"Open Ticket","Отвори билет"
+"Open Tickets","Отвори билети"
+"! Blocked file - ","! Блокирана датотека -"
+Disabled,Исклучено
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","File System"
+Database,"База на податоци"
+Aqua,Aqua
+Grey,Сиво
+Navy,Морнарица
+Silver,Сребрена
+Black,Црно
+Green,Зелена
+Olive,Маслиново
+Teal,Теал
+Blue,Сина
+Lime,Вар
+Purple,Виолетова
+Fuchsia,Фуксија
+Maroon,Марун
+Red,Црвено
+Orange,Портокал
+Yellow,Жолта
+Text,Текст
+Date,Датум
+Checkbox,Штиклирај
+"Drop-down list","Паѓачката листа"
+"In minutes...","За неколку минути ..."
+"In hours...","Во часови ..."
+"In days...","Во денови ..."
+"In weeks...","Во недели ..."
+"In months...","Во месеци ..."
+Custom,Прилагодено
+"--Please Select--","- Ве молиме изберете -"
+"New ticket created","Создаден е нов билет"
+Success,Успех
+Customer,Клиент
+Staff,Персонал
+"Third party","Трето лице"
+Closed,Затворено
+"Opened 24hr","Отворен 24 часа"
+"Helpdesk Tickets","Билети за помош"
+"Cannot delete ticket with id %1","Не може да се избрише билет со ID %1"
+Edit,Уредување
+"All Departments","Сите одделенија"
+Back,Назад
+"24 hrs x 7 days","24 часа x 7 дена"
+"Select working days/hours","Изберете работни денови / часови"
+"Satisfaction survey","Анкета за задоволство"
+"to %1 (third party)","до %1 (трета страна)"
+"%1 (third party)","%1 (трето лице)"
+"added %1 (%2)","додадено %1 (%2)"
+"Ticket Summary","Резиме на билети"
+"Ticket ID","Билет ID"
+Assignee,Претставник
+"Additional Info","Додатни информации"
+"Ticket History","Историја на билети"
+"Done by","Направено од страна на"
+Changes,Промени
+Name,Име
+"Attach files",
+Submit,Поднесете
+"Submit Ticket","Поднесете билет"
+"What is your question?","Што е вашето прашање?"
+"We found the following topics that might be helpful:","Најдовме следниве теми кои би можеле да бидат корисни:"
+"None of these are helpful - get in touch","Ниту еден од овие не е корисен - стапи во контакт"
+"We have not found topics that can be helpful.","Не пронајдовме теми кои можат да бидат корисни."
+"Contact Information","Контакт информации"
+Comment,Коментар
+"We are open 24 x 7","Ние сме отворени 24 x 7"
+"We are closed","Ние сме затворени"
+"Timezone: %1","Временска зона: %1"
+"Please take a second to rate my reply...","Ве молам, земете секунда за да го оцените мојот одговор ..."
+Great,Одлично
+Awesome,Прекрасно
+"Fast, friendly, helpful, pleasant. Great job!","Брз, пријателски, корисен, пријатен. Одлична работа!"
+"Just Okay","Само во ред"
+"Fine, but definitely could have been better.","Добро, но дефинитивно можеше да биде подобро."
+"Not good","Не е добро"
+"Unfortunately, I wasn't happy with it at all.","За жал, воопшто не бев среќен со тоа."
+"Thank you for participating in our survey!","Ви благодариме за учеството во нашата анкета!"
+"If you would like to provide additional comments, please do so below:","Ако сакате да дадете дополнителни коментари, ве молиме да го сторите тоа подолу:"
+Message,Порака
+"Submit Message","Поднесете порака"
+"Thank you for your feedback!","Ви благодариме за вашиот коментар!"
+Attachments,Прилози
+Order,"Со цел"
+"-- Select an Order --","- Изберете ред -"
+"Create ticket","Креирај билет"
+"You don't have open tickets","Немате отворени билети"
+"Post a Reply","Испратете одговор"
+"Reopen Ticket","Отворете ја билет"
+"Close Ticket","Затвори билет"
+History,Историја
+"Back to My Tickets","Назад кон моите билети"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Контактирајте не"
+Open,Отвори
+Subject,Предмет
+"Last Activity","Последна активност"
+"Request ID","Барам проект"

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MageWorx_ShippingRules::shippingrules"
+             title="MageWorx Shipping Suite"
+             module="MageWorx_ShippingRules"
+             parent="Magento_Backend::stores"
+             sortOrder="90"
+             resource="MageWorx_ShippingRules::shippingrules"/>
+        <add id="MageWorx_ShippingRules::shippingrules_quote"
+             title="Shipping Rules &amp; Restrictions"
+             module="MageWorx_ShippingRules"
+             parent="MageWorx_ShippingRules::shippingrules"
+             sortOrder="30"
+             action="mageworx_shippingrules/shippingrules_quote/"
+             dependsOnModule="Magento_Sales"
+             resource="MageWorx_ShippingRules::quote"
+        />
+        <add id="MageWorx_ShippingRules::shippingrules_carrier"
+             title="Shipping Carriers"
+             module="MageWorx_ShippingRules"
+             parent="MageWorx_ShippingRules::shippingrules"
+             sortOrder="35"
+             action="mageworx_shippingrules/shippingrules_carrier/"
+             dependsOnModule="Magento_Sales"
+             resource="MageWorx_ShippingRules::carrier"
+                />
+        <add id="MageWorx_ShippingRules::shippingrules_method"
+             title="Shipping Methods"
+             module="MageWorx_ShippingRules"
+             parent="MageWorx_ShippingRules::shippingrules"
+             sortOrder="45"
+             action="mageworx_shippingrules/shippingrules_method/"
+             dependsOnModule="Magento_Sales"
+             resource="MageWorx_ShippingRules::carrier"
+                />
+        <add id="MageWorx_ShippingRules::shippingrules_rate"
+             title="Shipping Rates"
+             module="MageWorx_ShippingRules"
+             parent="MageWorx_ShippingRules::shippingrules"
+             sortOrder="50"
+             action="mageworx_shippingrules/shippingrules_rate/"
+             dependsOnModule="Magento_Sales"
+             resource="MageWorx_ShippingRules::carrier"
+                />
+        <add id="MageWorx_ShippingRules::shippingrules_zone"
+             title="Locations Groups (Shipping Zones)"
+             module="MageWorx_ShippingRules"
+             parent="MageWorx_ShippingRules::shippingrules"
+             sortOrder="55"
+             action="mageworx_shippingrules/shippingrules_zone/"
+             dependsOnModule="Magento_Sales"
+             resource="MageWorx_ShippingRules::zone"
+                />
+        <add id="MageWorx_ShippingRules::shippingrules_region"
+             title="Country Regions"
+             module="MageWorx_ShippingRules"
+             parent="MageWorx_ShippingRules::shippingrules"
+             sortOrder="60"
+             action="mageworx_shippingrules/shippingrules_region/"
+             dependsOnModule="Magento_Directory"
+             resource="MageWorx_ShippingRules::region"
+                />
+        <add id="MageWorx_ShippingRules::shippingrules_extendedzone"
+             title="Pop-up Zones"
+             module="MageWorx_ShippingRules"
+             parent="MageWorx_ShippingRules::shippingrules"
+             sortOrder="70"
+             action="mageworx_shippingrules/shippingrules_extendedzone/"
+             resource="MageWorx_ShippingRules::extended_zones"
+        />
+        <add id="MageWorx_ShippingRules::system_import_export"
+             title="Import/Export Carriers/Methods/Rates by MageWorx"
+             sortOrder="40"
+             module="MageWorx_ShippingRules"
+             parent="Magento_Backend::system_convert"
+             action="mageworx_shippingrules/importExport/index"
+             resource="MageWorx_ShippingRules::import_export"
+        />
+    </menu>
+</config>

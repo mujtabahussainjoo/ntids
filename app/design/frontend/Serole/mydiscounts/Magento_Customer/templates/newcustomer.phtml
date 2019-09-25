@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Form\Login\Info $block */
+?>
+<?php if ($block->getRegistration()->isAllowed()): ?>
+<div class="block block-new-customer">
+    <div class="block-title">
+        
+    </div>
+    <div class="block-content" aria-labelledby="block-new-customer-heading">
+		<strong id="block-new-customer-heading" class="new-user" role="heading" aria-level="2"><?= $block->escapeHtml(__('New Users')) ?></strong>
+        <p>
+		<?= $block->escapeHtml(__('To use the NeatIdeas Demo store, you will need to register a new account.
+		It only takes a minute and once you are registered you will have unlimited access to a huge collection of tickets and offers, you will be able to view and track your orders and more.')) ?></p>
+		<div class="block-title bottom-line-cust"></div>
+		<div class="actions-toolbar btn-rgtr-cust">
+			<div class="primary">
+				<a href="<?= $block->escapeUrl($block->getCreateAccountUrl()) ?>" class="action create primary"><span><?= $block->escapeHtml(__('Register a new Account')) ?></span></a>
+			</div>
+		</div>
+    </div>
+</div>
+<?php endif; ?>

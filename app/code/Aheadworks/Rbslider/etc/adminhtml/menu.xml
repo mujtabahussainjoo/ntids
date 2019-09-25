@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Aheadworks_Rbslider::main" title="Rich Banner Slider by aheadWorks" module="Aheadworks_Rbslider" sortOrder="999" dependsOnModule="Aheadworks_Rbslider" parent="Magento_Backend::content" resource="Aheadworks_Rbslider::main"/>
+        <add id="Aheadworks_Rbslider::slides" title="Slides" module="Aheadworks_Rbslider" sortOrder="1" parent="Aheadworks_Rbslider::main" action="aw_rbslider_admin/slide/index" resource="Aheadworks_Rbslider::slides"/>
+        <add id="Aheadworks_Rbslider::banners" title="Banners" module="Aheadworks_Rbslider" sortOrder="2" parent="Aheadworks_Rbslider::main" action="aw_rbslider_admin/banner/index" resource="Aheadworks_Rbslider::banners"/>
+        <add id="Aheadworks_Rbslider::statistics" title="Statistics" module="Aheadworks_Rbslider" sortOrder="3" parent="Aheadworks_Rbslider::main" action="aw_rbslider_admin/statistic/index" resource="Aheadworks_Rbslider::statistics"/>
+    </menu>
+</config>

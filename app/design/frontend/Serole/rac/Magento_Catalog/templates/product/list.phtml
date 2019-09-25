@@ -1,0 +1,409 @@
+<?php
+use Magento\Framework\App\Action\Action;
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product list template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ */
+?>
+<?php
+    $_productCollection = $block->getLoadedProductCollection();
+    $collectionSize = $_productCollection->count();
+?>
+<?php if (!$collectionSize): ?>
+    <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
+<?php else: ?>
+    <?php
+    // Hide toolbar
+    $hideToolbar = false;
+    if ($block->getData('hide_toolbar'))
+    {
+        $hideToolbar = true;
+    }
+    ?>
+    <?php if (!$hideToolbar): ?>
+        <?php echo $block->getToolbarHtml() ?>
+    <?php endif; ?>
+    <?php echo $block->getAdditionalHtml() ?>
+    <?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $theme = $this->helper('Infortis\Base\Helper\Data');
+    $helperLabels = $this->helper('Infortis\Base\Helper\Labels');
+    $helperImage = $this->helper('Infortis\Infortis\Helper\Image');
+    $helperAddToLinks = $this->helper('Infortis\Base\Helper\AddToLinks');
+
+    // Get mode
+    $mode = $block->getData('mode');
+    if ($mode === NULL)
+    {
+        $mode = $block->getMode();
+    }
+
+    // Variables for both modes
+    $gc = $theme->getCfgGroup('category_grid');
+
+    // Vars for only one mode - but because the HTML is shared by both modes
+    // the vars need to be declared no matter what mode it is.
+    $listMode = false;
+    $itemgridClasses = '';
+    $productNameClasses = '';
+    $actionsClasses = '';
+    $swatchesExist = null; // TODO: only for grid mode
+
+    // List mode
+    if ($mode == 'list')
+    {
+        $listMode = true;
+        $viewMode = 'list';
+        $imageTypeId = 'category_page_list';
+        $showDescription = true;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+        $wrapperClasses = " {$viewMode} products-list products-list-ext";
+
+        // List classes
+        if ($theme->getCfg('category_list/hover_effect'))
+        {
+            $wrapperClasses .= ' hover-effect';
+        }
+
+        // "Add to" links
+        $addtolinksPosition = false; //$theme->getCfg('category_list/addtolinks_position');
+        $displayAddtolinks = 1;
+    }
+    else // Grid mode
+    {
+        $viewMode = 'grid';
+        $imageTypeId = 'itemgrid_category_page_grid'; // Image dimensions declared in this entry (in view.xml) override Magento's default dimensions
+        
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+        $wrapperClasses = " {$viewMode} items-grid items-grid-partitioned category-products-grid";
+        $itemgridClasses = ' itemgrid';
+
+        // If "column count" param is set, add classes for adaptive grid: itemgrid-adaptive and itemgrid-(X)col
+        $gridColumnCount = $this->getData('grid_column_count');
+        if ($gridColumnCount !== null)
+        {
+            $gridColumnCount = intval($gridColumnCount);
+            $itemgridClasses .= " itemgrid-adaptive itemgrid-{$gridColumnCount}col";
+        }
+
+        // Grid classes
+        if ($gc['display_name'] == 1 && $gc['display_name_single_line'] == true)
+            $wrapperClasses .= ' single-line-name';
+        if ($gc['display_name'] == 2)
+            $productNameClasses .= ' display-onhover';
+        if ($gc['centered'])
+            $wrapperClasses .= ' centered';
+        if ($gc['hover_effect'])
+            $wrapperClasses .= ' hover-effect';
+        if ($gc['equal_height'])
+            $wrapperClasses .= ' equal-height';
+
+        // Size of item's elements
+        $size = $this->getData('size');
+        if ($size !== null)
+        {
+            $size = strtolower($size);
+            $wrapperClasses .= ' size-' . $size;
+        }
+        else
+        {
+            if ($gc['elements_size'])
+            {
+                $wrapperClasses .= ' size-' . $gc['elements_size'];
+            }
+        }
+
+        // If "Add to cart" button was set as "Display on hover", add proper class
+        if ($gc['display_addtocart'] == 2)
+        {
+            $actionsClasses = ' display-onhover';
+        }
+
+        // "Add to" links
+        $addtolinksPosition = $gc['addtolinks_position'];
+        $displayAddtolinks = $gc['display_addtolinks'];
+
+    } // end: grid mode
+
+    // Product image dimensions
+    $paramImgWidth = $this->getData('img_width');
+    $paramImgHeight = $this->getData('img_height');
+    if ($paramImgWidth || $paramImgHeight)
+    {
+        // Use values from params
+        $imgWidth = intval($paramImgWidth);
+        $imgHeight = intval($paramImgHeight);
+    }
+    else
+    {
+        // Get values from config
+        if ($mode == 'list') // List mode
+        {
+            $imgWidth = intval($theme->getCfg('category_list/image_width'));
+            $imgHeight = intval($theme->getCfg('category_list/image_height'));
+        }
+        else // Grid mode
+        {
+            $imgWidth = intval($theme->getCfg('category_grid/image_width'));
+            $imgHeight = intval($theme->getCfg('category_grid/image_height'));
+        }
+    }
+
+    // If value equals zero or not set, replace it with null
+    if (empty($imgWidth))
+    {
+        $imgWidth = null;
+    }
+    if (empty($imgHeight))
+    {
+        $imgHeight = null;
+    }
+
+    // Number of dimensions
+    $imageDimensions = 0;
+    if (empty($imgWidth) && empty($imgHeight)) // No dimensions specified
+    {
+        $imageDimensions = 0;
+    }
+    elseif (!empty($imgWidth) && !empty($imgHeight)) // Both dimensions specified
+    {
+        $imageDimensions = 2;
+    }
+    else // Only one dimension specified
+    {
+        $imageDimensions = 1;
+    }
+
+    // Alternative product image
+    $showAltImage = $theme->getCfg('category/alt_image');
+
+    // Product labels classes
+    $wrapperClasses .= ' ' . $helperLabels->getLabelsClasses();
+    ?>
+    <div class="products wrapper<?php if ($wrapperClasses) echo $wrapperClasses; ?>">
+        <ol class="products list items product-items<?php if ($itemgridClasses) echo $itemgridClasses; ?>">
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product): ?>
+            <li class="item product product-item">
+                <div class="product-item-info imgdim-<?php echo $imgWidth.'x'.$imgHeight; ?>" data-container="product-grid">
+                    <?php
+                        $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                        $actualImgWidth = '';
+                        
+                        if ($imageDimensions === 0) // No dimensions specified
+                        {
+                            $productImage = $block->getImage($_product, $imageTypeId);
+                            $actualImgWidth = $productImage->getWidth(); // Get actual image width, needed for "product-item-img" container
+                        }
+                        else
+                        {
+                            $actualImgWidth = $imgWidth;
+                        }
+                    ?>
+
+                    <?php // Product image container ?>
+                    <div class="product-item-img">
+
+                        <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1"<?php if (!empty($actualImgWidth)): ?> style="max-width:<?php echo $actualImgWidth; ?>px;"<?php endif; ?>>
+
+                            <?php // Main product image ?>
+                            <?php if ($imageDimensions === 0): // No dimensions specified ?>
+
+                                <?php echo $productImage->toHtml(); ?>
+
+                            <?php elseif ($imageDimensions === 2): // Both dimensions specified ?>
+
+                                <span class="product-image-container"
+                                      style="width:<?php echo $imgWidth; ?>px;">
+                                    <span class="product-image-wrapper"
+                                          style="padding-bottom: <?php echo (($imgHeight / $imgWidth) * 100); ?>%;">
+                                        <img class="product-image-photo"
+                                             src="<?php echo $helperImage->getImageUrl($_product, $imageTypeId, $imgWidth, $imgHeight); ?>"
+                                             width="<?php echo $imgWidth; ?>"
+                                             height="<?php echo $imgHeight; ?>"
+                                             alt="<?php /* @escapeNotVerified */ echo $_productNameStripped; ?>"/></span>
+                                </span>
+
+                            <?php else: // Only one dimension specified ?>
+
+                                <img class="product-image-photo" 
+                                    src="<?php echo $helperImage->getImageUrl($_product, $imageTypeId, $imgWidth, $imgHeight); ?>" />
+
+                            <?php endif; ?>
+
+                            <?php // Alternative product image ?>
+                            <?php if ($showAltImage): ?>
+                                <?php echo $theme->getAltImgHtml($_product, $imageTypeId, $imgWidth, $imgHeight ); ?>
+                            <?php endif; ?>
+
+                        </a>
+
+                        <?php // Product labels ?>
+                        <?php echo $helperLabels->getLabels($_product); ?>
+
+                        <?php // Add-to links
+                            $addtoLinksClasses = '';
+                            if ($addtolinksPosition == true && $displayAddtolinks != 0)
+                            {
+                                $addtoLinksClasses = ' addto-links addto-links-icons addto-onimage'; // Always display
+                                if ($displayAddtolinks == 2)
+                                    $addtoLinksClasses .= ' onhover'; // Display only on hover
+                            }
+                        ?>
+                        <?php if ($addtoLinksClasses): ?>
+                            <?php if ($linksHtml = $helperAddToLinks->getLinksIcons($_product)): ?>
+                                <div data-role="add-to-links" class="actions-secondary<?php echo $addtoLinksClasses; ?>"><?php echo $linksHtml; ?></div>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
+                    </div> <!-- end: product-item-img -->
+                    <div class="product details product-item-details">
+
+                        <?php if ($gc['display_name'] != 0): ?>
+                        <strong class="product name product-item-name product-name<?php echo $productNameClasses; ?>">
+                            <a class="product-item-link"
+                               href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>">
+                                <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                            </a>
+                        </strong>
+                        <?php endif; ?>
+
+                        <?php $gc['display_swatches'] = 1; // TODO: add to config ?>
+                        <?php $productDetailsHtml = $block->getProductDetailsHtml($_product); ?>
+                        <?php if ($productDetailsHtml): ?>
+                            <?php $swatchesExist = $_product->getId(); ?>
+                            <?php if ($gc['display_swatches'] == 2): // Display on hover ?>
+                                <div class="display-onhover product-swatches-wrapper"><?php echo $productDetailsHtml; ?></div>
+                            <?php elseif ($gc['display_swatches'] == 1): // Always display ?>
+                                <?php echo $productDetailsHtml; ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
+                        <?php $reviewsSummaryHtml = $block->getReviewsSummaryHtml($_product, $templateType); ?>
+                        <?php if ($reviewsSummaryHtml): ?>
+                            <?php if ($gc['display_rating'] == 2): // Display on hover ?>
+                                <div class="display-onhover product-reviews-wrapper"><?php echo $reviewsSummaryHtml; ?></div>
+                            <?php elseif ($gc['display_rating'] == 1): // Always display ?>
+                                <?php echo $reviewsSummaryHtml; ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
+                        <?php if ($listMode == false): // Price is displayed here only in grid mode ?>
+                            <?php if ($gc['display_price'] == 2): // Display on hover ?>
+                                <div class="display-onhover"><?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?></div>
+                            <?php elseif ($gc['display_price'] == 1): // Always display ?>
+                                <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <div class="price-box price-final_price data-product" data-product-id="<?php echo $_product->getId(); ?>"></div>
+                        <?php endif; ?>
+
+                        <?php if ($showDescription): ?>
+                            <div class="product description product-item-description">
+                                <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" title="<?php /* @escapeNotVerified */ echo $_productNameStripped ?>"
+                                   class="action more"><?php /* @escapeNotVerified */ echo __('Learn More') ?></a>
+                            </div>
+                        <?php endif; ?>
+
+                    <?php if ($listMode): ?>
+                    <?php // In list mode, close "product-item-details" element here (so that "product-item-inner" become a sibling of "product-item-details") ?>
+                    </div> <!-- end: product-item-details -->
+                    <?php endif; ?>
+
+                        <div class="product-item-inner">
+
+                            <?php if ($listMode): ?>
+                            <?php // In list mode, add another div ?>
+                            <div class="product-item-inner-content">
+                                <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product); // Price is displayed here only in list mode ?>
+                            <?php endif; ?>
+
+                            <div class="product actions product-item-actions <?php echo $actionsClasses; ?>">
+                                <?php if ($gc['display_addtocart'] != 0): ?>
+                                    <div class="actions-primary">
+                                        <?php if ($_product->isSaleable()): ?>
+                                            <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                            <form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
+                                                <input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
+                                                <input type="hidden" name="<?php /* @escapeNotVerified */ echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php /* @escapeNotVerified */ echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                                <?php echo $block->getBlockHtml('formkey')?>
+                                                <button type="submit"
+                                                        title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                        class="action tocart primary">
+                                                    <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                                </button>
+                                            </form>
+                                        <?php else: ?>
+                                            <?php if ($_product->getIsSalable()): ?>
+                                                <div class="stock available"><span><?php /* @escapeNotVerified */ echo __('In stock') ?></span></div>
+                                            <?php else: ?>
+                                                <div class="stock unavailable"><span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span></div>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php // Add-to links
+                                    $addtoLinksClasses = '';
+                                    if ($addtolinksPosition == false && $displayAddtolinks != 0)
+                                    {
+                                        $addtoLinksClasses = ' addto-links addto-links-icons'; // Always display
+                                        // if ($displayAddtolinks == 2)
+                                        //     $addtoLinksClasses .= ' display-onhover'; // Display only on hover
+                                    }
+                                ?>
+                                <?php if ($addtoLinksClasses): ?>
+                                    <?php if ($linksHtml = $helperAddToLinks->getLinksIcons($_product)): ?>
+                                        <div data-role="add-to-links" class="actions-secondary<?php echo $addtoLinksClasses; ?>"><?php echo $linksHtml; ?></div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div> <!-- end: product-item-actions -->
+
+                            <?php if ($listMode): ?>
+                            <?php // In list mode, close the additional div ?>
+                            </div> <!-- end: product-item-inner-content -->
+                            <?php endif; ?>
+
+                        </div> <!-- end: product-item-inner -->
+
+                    <?php if ($listMode == false): ?>
+                    <?php // If not in list mode, close "product-item-details" element here (so that "product-item-inner" is inside "product-item-details") ?>
+                    </div> <!-- end: product-item-details -->
+                    <?php endif; ?>
+
+                </div> <!-- end: product-item-info -->
+            </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+    <?php if (!$hideToolbar): ?>
+        <?php echo $block->getToolbarHtml() ?>
+    <?php endif; ?>
+    <?php if ($swatchesExist): ?>
+        <script type="text/javascript">
+            requirejs(['jquery'], function(jQuery) {
+                var checkSwatchExistInterval = setInterval(function() {
+                    if (jQuery('.swatch-opt-<?php echo $swatchesExist; ?> > .swatch-attribute').length)
+                    {
+                        jQuery(document).trigger('last-swatch-found');
+                        clearInterval(checkSwatchExistInterval);
+                    }
+                }, 200);
+            }); 
+        </script>
+    <?php endif; ?>
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+            }
+        }
+        </script>
+    <?php endif; ?>
+<?php endif; ?>

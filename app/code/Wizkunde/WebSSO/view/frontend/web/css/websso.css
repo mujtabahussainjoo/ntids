@@ -1,0 +1,8 @@
+.checkout-index-index .websso-button, .customer-account-create .websso-button {
+    float: right;
+    margin-top: 20px;
+}
+
+.checkout-index-index .websso-button a.action.primary, .customer-account-create .websso-button a.action.primary {
+    font-size: 24px;
+}

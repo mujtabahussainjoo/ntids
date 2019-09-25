@@ -1,0 +1,19 @@
+<div data-bind="scope: 'customer_summary'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer_summary": {
+                        "component": "Mirasvit_Helpdesk/js/customer-summary",
+                        "config": <?=$block->getConfigJson() ?>
+                    }
+                }
+            }
+        }
+    }
+</script>
+

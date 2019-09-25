@@ -1,0 +1,18 @@
+<div id="dialog_copy_move" data-textclose="<?php echo __("Close")?>" data-textupdate="<?php echo __("Do It!")?>" title="<?php echo __("Copy / move slide")?>" style="display:none">
+	
+	<br>
+	
+	<?php echo __("Choose Slider")?>:
+	<?php echo $selectSliders; ?>
+	
+	<br><br>
+	
+	<?php echo __("Choose Operation")?>:
+	
+	<input type="radio" id="radio_copy" value="copy" name="copy_move_operation" checked />
+	<label for="radio_copy" style="cursor:pointer;"><?php echo __("Copy")?></label>
+	&nbsp; &nbsp;
+	<input type="radio" id="radio_move" value="move" name="copy_move_operation" />
+	<label for="radio_move" style="cursor:pointer;"><?php echo __("Move")?></label>
+	
+</div>

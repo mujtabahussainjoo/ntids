@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ -->
+ <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <title>My Membership</title>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">My Membership</argument>
+            </action>
+         </referenceBlock>
+         
+         <referenceContainer name="page.main.title">
+             <block class="Magedelight\MembershipSubscription\Block\Membership\Plan" cacheable="false" name="my_membership" template="Magedelight_MembershipSubscription::Membership/plan.phtml">
+             </block>
+        </referenceContainer>
+    </body>
+</page>

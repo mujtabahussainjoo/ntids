@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <type name="Magento\Checkout\Model\Cart">
+        <plugin name="remove_membership_product" type="Magedelight\MembershipSubscription\Plugin\Model\Checkout\Cart\ManageCart" sortOrder="10"/>
+    </type>
+    
+    <type name="Magento\Framework\App\RouterList">
+        <arguments>
+            <argument name="routerList" xsi:type="array">
+                <item name="membership" xsi:type="array">
+                    <item name="class" xsi:type="string">Magedelight\MembershipSubscription\Controller\Router</item>
+                    <item name="disable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">60</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    
+    <type name="Magento\Catalog\Model\Layer\Resolver">
+        <arguments>
+            <argument name="layersPool" xsi:type="array">
+                <item name="category" xsi:type="string">Magento\Catalog\Model\Layer\Category</item>
+                <item name="search" xsi:type="string">Magento\Catalog\Model\Layer\Search</item>
+                <item name="mdlayer" xsi:type="string">Magedelight\MembershipSubscription\Model\Layer</item>
+            </argument>
+        </arguments>
+    </type>
+    
+    <virtualType name="mdFilterList" type="Magedelight\MembershipSubscription\Model\Layer\FilterList">
+        <arguments>
+            <argument name="filterableAttributes" xsi:type="object">Magedelight\MembershipSubscription\Model\Layer\FilterableAttributeList</argument>
+            <argument name="filters" xsi:type="array">
+                <item name="attribute" xsi:type="string">Magedelight\MembershipSubscription\Model\Layer\Filter\Attribute</item>
+                <item name="category" xsi:type="string">Magedelight\MembershipSubscription\Model\Layer\Filter\Category</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    
+    <virtualType name="Magedelight\MembershipSubscription\Block\Navigation\Mdnavigation" type="Magento\LayeredNavigation\Block\Navigation">
+        <arguments>
+            <argument name="filterList" xsi:type="object">mdFilterList</argument>
+        </arguments>
+    </virtualType>
+    
+    <virtualType name="Magedelight\MembershipSubscription\Model\Layer\Context" type="Magento\Catalog\Model\Layer\Context">
+        <arguments>
+            <argument name="collectionProvider" xsi:type="object">Magedelight\MembershipSubscription\Model\Layer\ItemCollectionProvider</argument>
+            <argument name="stateKey" xsi:type="object">Magedelight\MembershipSubscription\Model\Layer\StateKey</argument>
+            <argument name="collectionFilter" xsi:type="object">Magedelight\MembershipSubscription\Model\Layer\CollectionFilter</argument>
+        </arguments>
+    </virtualType>
+    
+    <type name="Magedelight\MembershipSubscription\Model\Layer">
+        <arguments>
+            <argument name="context" xsi:type="object">Magedelight\MembershipSubscription\Model\Layer\Context</argument>
+        </arguments>
+    </type>
+   
+</config>

@@ -1,0 +1,301 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$urlBuilder = $objectManager->create('\Magento\Framework\UrlInterface');
+if($this->getOrderIncrementId()){
+    $pdfUrl = "https://store.neatideas.com.au/var/orderPdf/".$this->getOrderIncrementId().".pdf";
+    $exists = $objectManager->create('\Serole\Pdf\Helper\Pdf')->remoteFileExists($pdfUrl);
+    if($exists){
+        $params = array('orderid',$this->getOrderIncrementId())
+        ?>
+        <a href=<?php echo $urlBuilder->getUrl('pdfattachment/pdf/filedownload/orderid/'.$this->getOrderIncrementId());?> style="float:right;">Dowload PDF</a>
+<?php
+     }
+ }
+?>
+<?php
+$isPdfProductAvilable = 0;
+$isSerializedProductAvilable = 0;
+$skipGeneratePdfandSendButton = 0;
+$pdfQtyCount = 0;
+$pdfSerialCodesCount = 0;
+$pdfBundleProduct = array();
+if($this->getOrderId()){
+    if($this->isInvoiceCreated()){
+        $incrementId = $this->getIncrementId();
+        $allProductsData = array();
+        $bundleProducts = array();
+        if(!empty($this->getOrderItems())){
+            //$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+            $productObj = $objectManager->create('\Magento\Catalog\Model\Product');
+            $orderItemsColl = $this->getOrderItems();
+            $serialcodesCollection = $this->getSerialCodeData();
+
+            $skipDownloadOptionByShortQty = 0;
+            
+            foreach ($orderItemsColl as $key => $orderItem) {
+                if(!$orderItem['parent_item_id']){
+                    $productData = $productObj->setStoreId($orderItem['store_id'])->load($orderItem['product_id']);                    
+                    if($productData->getIsserializeditem()){
+                        if($productData->getNiProductPdfRequired()) {
+                            $isPdfProductAvilable = 1;
+                        }
+                        $isSerializedProductAvilable = 1;
+                        if($orderItem['product_type'] == 'bundle'){
+                            if($productData->getNiProductPdfRequired()){
+                               array_push($pdfBundleProduct,$orderItem['item_id']);
+                            }
+                            $bundleProducts[$orderItem['item_id']]['sku'] = $orderItem['sku'];
+                            $bundleProducts[$orderItem['item_id']]['iserialized'] = $productData->getIsserializeditem();
+                        } else{
+                            $serialcodesList = $this->generateSerialcodeString($orderItem['sku'],$parentsku = '');
+                            $allProductsData[$orderItem['item_id']]['serialcodes'] = $serialcodesList['serialcode'];
+                            $allProductsData[$orderItem['item_id']]['count'] = $serialcodesList['count'];
+                            $allProductsData[$orderItem['item_id']]['parentsku'] = '';
+                            $allProductsData[$orderItem['item_id']]['parentid'] = '';
+                            $allProductsData[$orderItem['item_id']]['name'] = $orderItem['name'];
+                            $allProductsData[$orderItem['item_id']]['sku'] = $orderItem['sku'];
+                            $allProductsData[$orderItem['item_id']]['qty'] = $orderItem['qty_ordered'];
+
+                            if($productData->getNiProductPdfRequired()){
+                                if($orderItem['product_type'] == 'virtual') {
+                                    $pdfQtyCount += $orderItem['qty_ordered'];
+                                    $pdfSerialCodesCount += $serialcodesList['count'];
+                                }
+                            }
+
+                           /* if($orderItem['qty_ordered']  > $serialcodesList['count']){
+                               $skipDownloadOptionByShortQty = 1;
+                            }
+                            if((int)$serialcodesList['count'] < (int)$orderItem['qty_ordered']){
+                                $skipGeneratePdfandSendButton = 1;
+                            }*/
+                        }
+                    }
+
+                }else{
+                    if(isset($bundleProducts[$orderItem['parent_item_id']]['iserialized'])){
+
+                         $parentsku = $bundleProducts[$orderItem['parent_item_id']]['sku'];
+                         $serialcodesList = $this->generateSerialcodeString($orderItem['sku'],$parentsku);
+                         $allProductsData[$orderItem['item_id']]['serialcodes'] = $serialcodesList['serialcode'];
+                         $allProductsData[$orderItem['item_id']]['count'] = $serialcodesList['count'];
+                         $allProductsData[$orderItem['item_id']]['parentsku'] = $parentsku;
+                         $allProductsData[$orderItem['item_id']]['parentid'] = $orderItem['parent_item_id'];
+                         $allProductsData[$orderItem['item_id']]['name'] = $orderItem['name'];
+                         $allProductsData[$orderItem['item_id']]['sku'] = $orderItem['sku'];
+                         $allProductsData[$orderItem['item_id']]['qty'] = $orderItem['qty_ordered'];
+
+                        if(in_array($orderItem['parent_item_id'],$pdfBundleProduct)){
+                            if($orderItem['product_type'] == 'virtual') {
+                                $pdfQtyCount += $orderItem['qty_ordered'];
+                                $pdfSerialCodesCount += $serialcodesList['count'];
+                            }
+                        }
+
+                       /* if($orderItem['qty_ordered']  > $serialcodesList['count']){
+                            $skipDownloadOptionByShortQty = 1;
+                        }
+                        if((int)$serialcodesList['count'] < (int)$orderItem['qty_ordered']){
+                            $skipGeneratePdfandSendButton = 1;
+                        }*/
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+?>
+
+<?php if($isSerializedProductAvilable): ?>
+    <div class="admin__page-section-title">
+        <span class="title">SerialCode Detail</span>
+        <?php if($isPdfProductAvilable):
+                $pdfHelper = $objectManager->create('\Serole\Pdf\Helper\Pdf');
+                $fileBasepath = $pdfHelper->getRootBaseDir()."/neatideafiles/";
+                $fileBaseUrl = $pdfHelper->getBaseStoreUrl()."/neatideafiles/";
+                $filePath = $fileBasepath."pdf/".$this->getIncrementId().".pdf";
+                $fileUrl = $fileBaseUrl."pdf/".$this->getIncrementId().".pdf"; ?>
+          <?php if((int)$pdfQtyCount == (int)$pdfSerialCodesCount):?>
+                <div class="pdf-links">
+                 <?php //f($skipGeneratePdfandSendButton !=1){ ?>
+                    <div class="pdf-gensendpdf link">
+                        <a class="action reorder" href="<?php echo $block->generateUrl('pdfattachment/pdf/create', ['orderid' => $this->getIncrementId(),'email' => TRUE,'type' => 'backend']) ?>">
+                            <span><?php echo __('Generare PDF & Send') ?></span>
+                        </a>
+                    </div>
+                 <?php //} ?>
+
+                <?php if(file_exists($filePath)) {
+                    //if ($skipDownloadOptionByShortQty != 1) { ?>
+                        <div class="pdf-previewpdf link">
+                            <a href="<?php echo $fileUrl ?>" target="_blank">Preview PDF</a>
+                        </div>
+                        <div class="pdf-sendpdf link">
+                            <a class="action reorder"
+                               href="<?php echo $block->generateUrl('pdfattachment/pdf/send', ['orderid' => $this->getIncrementId()]) ?>">
+                                <span style="width: 50%"><?php echo __('Send PDF') ?></span>
+                            </a>
+                        </div>
+              <?php //}
+                }  ?>
+                </div>
+        <?php endif; ?>
+    <?php endif;?>
+    </div>
+
+    <table class="admin__table-secondary">
+        <tbody style="border-bottom: 1px solid #e3e3e3;">
+        <tr class="headings" style="line-height: 2.00">
+            <th style="width:20%;text-align: center;padding: 0px; background-color:#ffffff; font-weight:bold;" class="col-order">Qty</th>
+            <th style="width:60%;text-align: center;padding: 0px;  background-color:#ffffff; font-weight:bold;" class="col-product">Product</th>
+            <th style="width:40%;text-align: center;padding: 0px;  background-color:#ffffff; font-weight:bold;" class="col-serialcodes">Serial Codes</th>
+            <th style="width:10%;text-align: left;padding: 0px;  background-color:#ffffff; font-weight:bold;" class="col-serialcodes">&nbsp;</th>
+        </tr>
+        </tbody>
+        <tbody class="even" style="border-bottom: 1px solid #e3e3e3;">
+        <?php foreach ($allProductsData as $key => $productItem) { ?>
+
+            <tr class="odd" style="line-height: 2.00">
+                <td style="width:10%;text-align: center;"><?php echo $productItem['qty']?></td>
+
+                <?php if($productItem['parentsku'] != '') {?>
+                    <td style="width:40%;text-align: center;"><?php echo $productItem['name'].'('.$productItem['sku'].')'; ?></td>
+                <?php }else{?>
+                    <td style="width:40%;text-align: center;"><?php echo $productItem['name']; ?></td>
+                <?php } ?>
+
+                <?php if($productItem['count'] > 0 ){?>
+                    <td style="width:40%;text-align: center;"><?php echo $productItem['serialcodes']?></td>
+                <?php }else{?>
+                <td></td>
+            <?php } ?>
+                <?php if($productItem['count'] > 0 ){ ?>
+                    <?php if((int)$productItem['count'] > (int)$productItem['qty']){?>
+                        <td><p style="color: red; font-weight: bold">Has <?php echo (int)$productItem['count']- (int) $productItem['qty']; ?> Extra Serial Codes</p></td>
+                    <?php }else if((int)$productItem['count'] < (int)$productItem['qty']){?>
+                        <td><button id="editBtn" class="editBtn editbutton" missedSerialcodes="<?php echo (int)$productItem['qty']- (int) $productItem['count']?>" ishasparent="<?php if($productItem['parentid'] != ''){ echo true;}else{ echo '0';}?>" parentsku="<?php if($productItem['parentsku'] != ''){ echo $productItem['parentsku']; }else{ echo '0';}?>" sku="<?php echo $productItem['sku']?>">Edit</button></td>
+                    <?php }else{?>
+                        <td>&nbsp;</td>
+                    <?php } ?>
+                <?php }else{?>                    
+                    <td><button id="editBtn" class="editBtn editbutton" missedSerialcodes="<?php echo (int)$productItem['qty']- (int) $productItem['count']?>" ishasparent="<?php if($productItem['parentid'] != ''){ echo true;}else{ echo '0';}?>" parentsku="<?php if($productItem['parentsku'] != ''){ echo $productItem['parentsku']; }else{ echo '0';}?>" sku="<?php echo $productItem['sku']?>">Edit</button></td>
+                <?php } ?>
+            </tr>
+			   
+        <?php } ?>
+        </tbody>
+    </table>
+
+      <div class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form method="GET" action="<?php echo $block->generateUrl('pdfattachment/pdf/manualserialcodeupdate',$params=array());?>">
+                            <input name="form_key" type="hidden" value="<?php echo $block->getFormKey() ?>" />
+                            <input type="hidden" name="orderid"  class="orderid" value="<?php echo $incrementId?>"/>
+                            <input type="hidden" name="ishasparent" class="ishasparent" value=""/>
+                            <input type="hidden" name="sku" class="sku" value=""/>
+                            <input type="hidden" name="parentsku" class="parentsku" value=""/>
+                                <input type="hidden" name="quoteid" class="quoteid" value="<?php echo $this->getQuoteId();?>"/>
+                            <input type="hidden" name="missedSerialcodes" class="missedSerialcodes" value=""/>
+                            <label>Serial Codes </label><textarea rows="8" cols="60" name="newserialcodes" class="newserialcodes"></textarea><br/>
+                            <p style="color: red;display: none" class="error-serialcode">Serial Codes are not empty</p><br/>
+                            <button type="submit" class="form-submit">Submit</button>
+                        </form>
+                    </div>
+       </div>
+    
+
+<?php
+    //endif;
+endif; ?>
+       
+
+
+<script>
+    require(['jquery', 'jquery/ui'], function($){
+        jQuery(".modal").css("display","none");
+        jQuery(".editBtn").on("click", function(){
+            jQuery('.modal .error-serialcode').css("display","none");
+            var sku = jQuery(this).attr('sku');
+            var ishasparent = jQuery(this).attr('ishasparent');
+            var parentsku = jQuery(this).attr('parentsku');
+            var missedSerialcodes = jQuery(this).attr('missedSerialcodes');
+            jQuery('.modal .sku').val(sku);
+            jQuery('.modal .ishasparent').val(ishasparent);
+            jQuery('.modal .parentsku').val(parentsku);
+            jQuery('.modal .missedSerialcodes').val(missedSerialcodes);
+            jQuery(".modal").css("display","block");
+        });
+        jQuery(".close").on("click", function(){
+            jQuery(".modal").css("display","none");
+        });
+        jQuery('.modal .form-submit').on("click",function () {
+            var serialcodeData = jQuery('.modal .newserialcodes').val();
+            if(!serialcodeData){
+                jQuery('.modal .error-serialcode').css("display","block");
+                return false;
+            }
+        })
+    });
+</script>
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 36%;
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -15px;
+    margin-right: 0px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.pdf-links{
+    float: right;
+    width: 39%;
+}
+.pdf-gensendpdf{
+    float: left;
+    padding-right: 17px;
+    text-align: right;
+}
+.pdf-previewpdf{
+    float: left;
+    padding-right: 25px;
+}
+.pdf-sendpdf{
+
+}
+</style>

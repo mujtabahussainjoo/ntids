@@ -1,0 +1,33 @@
+<!--@subject {{var ticket.getEmailSubject()}} @-->
+{{var preheader_text | raw}}
+
+{{template config_path="design/email/header_template"}}
+
+{{var hidden_separator | raw}}
+<table>
+    <tr class="email-intro">
+        <td>
+            <p>{{var ticket.getLastMessageHtmlText() | raw}}</p>
+            <p></p>
+            <p>{{var user.getSignature() | raw}}</p>
+        </td>
+    </tr>
+    <tr class="email-summary">
+        <td>
+            <p>You can check the status of reply to this ticket online at:
+                <a href="{{var ticket.getExternalUrl() }}">{{var ticket.getExternalUrl()}}</a></p>
+
+            {{block class='Mirasvit\\Helpdesk\\Block\\Email\\Satisfaction' area='frontend'
+            template='Mirasvit_Helpdesk::email/satisfaction.phtml' ticket=$ticket}}
+        </td>
+    </tr>
+    <tr class="email-information">
+        <td>
+            {{block class='Mirasvit\\Helpdesk\\Block\\Email\\History' area='frontend'
+            template='Mirasvit_Helpdesk::email/history.phtml' ticket=$ticket}}
+        </td>
+    </tr>
+</table>
+{{var ticket.getHiddenCodeHtml() | raw}}
+
+{{template config_path="design/email/footer_template"}}

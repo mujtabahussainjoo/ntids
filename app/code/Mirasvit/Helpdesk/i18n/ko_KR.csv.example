@@ -1,0 +1,136 @@
+Department,학과
+"Create New Ticket","새 티켓 만들기"
+Status,지위
+Priority,"우선 순위"
+Replies,회신
+View,전망
+"Help Desk","안내 데스크"
+"Thank you",고맙습니다
+"Create Ticket","티켓 만들기"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","귀하의 요청이 성공적으로 제출되었습니다. 곧 확인 이메일이 전송됩니다."
+Telephone,전화
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","귀하의 질의가 제출되었으며 가능한 한 빨리 응답 할 것입니다. 저희에게 연락해 줘서 고마워요."
+"Unable to submit your request. Please, try again later","요청을 제출할 수 없습니다. 나중에 다시 시도 해주십시오"
+"Page not found.","페이지를 찾을 수 없습니다."
+"Your message was successfuly posted","메시지가 성공적으로 게시되었습니다."
+"Your ticket was successfuly posted","티켓이 성공적으로 게시되었습니다."
+"Ticket was successfuly closed","티켓이 정상적으로 닫혔습니다."
+"Can't upload file %1 . Max allowed upload size is %2 MB.","%1 파일을 업로드 할 수 없습니다. 최대 허용 업로드 크기는 %2MB입니다."
+"Allows only this file types: %1","이 파일 형식 만 허용합니다 : %1"
+"Message added","메시지 추가됨"
+"Internal note added","내부 메모 추가됨"
+"Third party message added","제 3 자 메시지가 추가되었습니다."
+"Private third party message added","개인 제 3 자 메시지가 추가되었습니다."
+"-- Please Select --","-- 선택 해주세요 --"
+"Contact Tab","연락처 탭"
+"Contact Form","문의 양식"
+" at %1 (%2) - %3","__1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","이 티켓을 읽을 수있는 권한이 없습니다. 관리자에게 문의하십시오."
+"Invalid Customer Email","잘못된 고객 이메일"
+"not set","설정되지 않은"
+"Unknown time","알 수없는 시간"
+ago,...전에
+"from now",지금부터
+"1 sec ago","1 초 전"
+"Open Ticket","티켓 열기"
+"Open Tickets","티켓 열기"
+"! Blocked file - ","! 차단 된 파일 -"
+Disabled,장애인
+"AW Helpdesk","AW 헬프 데스크"
+"MW Helpdesk","MW 헬프 데스크"
+"File System","파일 시스템"
+Database,"데이터 베이스"
+Aqua,아쿠아
+Grey,회색
+Navy,해군
+Silver,은
+Black,검은
+Green,녹색
+Olive,올리브
+Teal,물오리
+Blue,푸른
+Lime,라임
+Purple,자
+Fuchsia,푹샤
+Maroon,적갈색
+Red,빨간
+Orange,주황색
+Yellow,노랑
+Text,본문
+Date,날짜
+Checkbox,"체크 박스"
+"Drop-down list","드롭 다운 목록"
+"In minutes...","분 안에 ..."
+"In hours...","시간 만에 ..."
+"In days...","일 안에 ..."
+"In weeks...","몇 주 후에 ..."
+"In months...","몇 개월 ..."
+Custom,관습
+"--Please Select--","--선택 해주세요--"
+"New ticket created","새 티켓이 생성되었습니다."
+Success,성공
+Customer,고객
+Staff,직원
+"Third party","제 3 자"
+Closed,닫은
+"Opened 24hr","24 시간 영업"
+"Helpdesk Tickets","헬프 데스크 티켓"
+"Cannot delete ticket with id %1","%1 ID의 티켓을 삭제할 수 없습니다."
+Edit,편집하다
+"All Departments","모든 부서"
+Back,뒤로
+"24 hrs x 7 days","24 시간 x 7 일"
+"Select working days/hours","근무일 / 시간 선택"
+"Satisfaction survey","만족도 조사"
+"to %1 (third party)","%1 (제 3 자)"
+"%1 (third party)","%1 (제 3 자)"
+"added %1 (%2)","추가 %1 (%2)"
+"Ticket Summary","티켓 요약"
+"Ticket ID","티켓 ID"
+Assignee,양수인
+"Additional Info","추가 정보"
+"Ticket History","티켓 기록"
+"Done by",수행
+Changes,"변경 사항"
+Name,이름
+"Attach files","파일 첨부"
+Submit,제출
+"Submit Ticket","티켓 제출"
+"What is your question?","귀하의 질문은 무엇인가?"
+"We found the following topics that might be helpful:","도움이 될만한 다음 주제가 있습니다."
+"None of these are helpful - get in touch","이 중 아무 것도 도움이되지 않습니다. 연락하십시오."
+"We have not found topics that can be helpful.","도움이 될만한 주제를 찾지 못했습니다."
+"Contact Information","연락처 정보"
+Comment,논평
+"We are open 24 x 7","우리는 열려 있습니다 24 x 7"
+"We are closed","문 닫았습니다"
+"Timezone: %1","시간대 : %1"
+"Please take a second to rate my reply...","내 답장을 평가하기 위해 잠시만 기다려주십시오 ..."
+Great,큰
+Awesome,최고
+"Fast, friendly, helpful, pleasant. Great job!","빠르고, 친절하고, 도움이되고, 즐거운 시간. 잘 했어!"
+"Just Okay","그냥 괜찮아."
+"Fine, but definitely could have been better.","좋아,하지만 확실히 좋았을 텐데."
+"Not good",안좋다
+"Unfortunately, I wasn't happy with it at all.","불행하게도, 나는 그것에 전혀 만족하지 못했다."
+"Thank you for participating in our survey!","설문 조사에 참여해 주셔서 감사합니다."
+"If you would like to provide additional comments, please do so below:","추가 의견을 보내 시려면 다음과 같이하십시오."
+Message,메시지
+"Submit Message","메시지 제출"
+"Thank you for your feedback!","의견을 보내 주셔서 감사합니다!"
+Attachments,"첨부 파일"
+Order,주문
+"-- Select an Order --","- 주문 선택 -"
+"Create ticket","티켓 만들기"
+"You don't have open tickets","열려있는 티켓이 없습니다."
+"Post a Reply","답글 게시"
+"Reopen Ticket","티켓 다시 열기"
+"Close Ticket","티켓 닫기"
+History,역사
+"Back to My Tickets","나의 티켓으로 돌아 가기"
+"Help Desk MX","헬프 데스크 MX"
+"Contact Us",연락처
+Open,열다
+Subject,제목
+"Last Activity","마지막 활동"
+"Request ID","요청 ID"

@@ -1,0 +1,8 @@
+1) In this module dirteclty using custom sql quires like below
+$readresult1=$connection->query("SELECT value FROM ".$customerVarcharTable." WHERE entity_id = '".$customerId."' and attribute_id=213");
+
+2) Core Class is overrided in this module
+    <preference for="Magento\Framework\Filesystem\Io\Sftp" type="Serole\Generateordercsv\Filesystem\Io\Sftp" />
+
+3) We are sending mail with attachment of csv file and using zend mail system
+    -> we are provided admin panel settings for destination mail & name & sub,  admin will get the mail if settings are empty

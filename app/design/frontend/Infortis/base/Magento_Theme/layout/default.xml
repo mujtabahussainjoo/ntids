@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+
+
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Template" name="head.additional.fonts" template="Infortis_Base::html/header/fonts.phtml" after="head.additional.asset-wrapper" />
+        </referenceBlock>
+
+
+
+        <referenceContainer name="page.wrapper">
+
+
+
+            <!-- Header
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+            <block class="Infortis\Base\Block\Html\Header" name="base-header-container" before="-" template="html/header.phtml">
+
+                <!-- Logo -->
+                <block class="Infortis\Base\Block\Html\Header\Logo" name="site-logo" template="html/header/logo.phtml">
+                    <arguments>
+                        <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                    </arguments>
+                </block>
+
+                <!-- Mobile logo -->
+                <block class="Infortis\Base\Block\Html\Header\Logo" name="site-logo-mobile" template="html/header/logo_secondary.phtml">
+                    <arguments>
+                        <!-- Required the same image path as for the default site logo (see inside "site-logo" block) -->
+                        <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                    </arguments>
+                </block>
+
+                <!-- Account links: container for Top Links and additional (optional) custom links -->
+                <block class="Magento\Framework\View\Element\Template" name="account-links" template="Infortis_Base::html/header/account_links.phtml">
+
+                    <block class="Magento\Cms\Block\Block" name="block_header_top_links">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">block_header_top_links</argument>
+                        </arguments>
+                    </block>
+
+                </block>
+
+                <!-- TODO: -->
+                <!-- Account links: container for Top Links and additional (optional) custom links -->
+                <!-- <container name="account-links" htmlTag="div" htmlClass="account-links top-links links-wrapper-separators-left skip-content" /> -->
+
+                <!-- User menu -->
+                <block class="Magento\Framework\View\Element\Template" name="user-menu" template="Infortis_Base::html/header/user_menu.phtml" />
+
+                <!-- Language switcher - mobile -->
+                <block class="Magento\Store\Block\Switcher" name="store_language.mobile" template="switch/languages.phtml">
+                    <arguments>
+                        <argument name="id_modifier" xsi:type="string">mobile</argument>
+                    </arguments>
+                </block>
+
+                <!-- Currency switcher - mobile -->
+                <block class="Magento\Directory\Block\Currency" name="currency.mobile" template="currency.phtml">
+                    <arguments>
+                        <argument name="id_modifier" xsi:type="string">mobile</argument>
+                    </arguments>
+                </block>
+
+                <!-- Containers -->
+                <container name="container_mobile_header_top" label="Page Mobile Header, Top" />
+                <container name="container_header_top_central_1" label="Page Header, Top, Central" />
+                <container name="container_header_top_left_1" label="Page Header, Top, Left" />
+                <container name="container_header_top_right_1" label="Page Header, Top, Right" />
+                <container name="container_header_primary_left_1" label="Page Header, Primary, Left Column" />
+                <container name="container_header_primary_central_1" label="Page Header, Primary, Central Column" />
+                <container name="container_header_primary_right_1" label="Page Header, Primary, Right Column" />
+
+                <!-- Static blocks -->
+                <block class="Magento\Cms\Block\Block" name="block_header_top_left">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_header_top_left</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_header_top_right">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_header_top_right</argument>
+                    </arguments>
+                </block>
+
+            </block>
+
+
+
+            <!-- Footer
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+            <block class="Infortis\Base\Block\Html\Footer" name="base-footer-container" before="before.body.end" template="html/footer.phtml">
+
+                <!-- Static blocks -->
+                <block class="Magento\Cms\Block\Block" name="block_footer_links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_links</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_footer_links2">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_links2</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" name="block_footer_primary_bottom_left">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_primary_bottom_left</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_footer_primary_bottom_right">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_primary_bottom_right</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" name="block_footer_column1">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_column1</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_footer_column2">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_column2</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_footer_column3">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_column3</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_footer_column4">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_column4</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_footer_column5">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_column5</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="block_footer_column6">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_column6</argument>
+                    </arguments>
+                </block>
+
+                <!-- <block class="Magento\Cms\Block\Block" name="block_footer_bottom">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_bottom</argument>
+                    </arguments>
+                </block> -->
+                <block class="Magento\Cms\Block\Block" name="block_footer_payment">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_payment</argument>
+                    </arguments>
+                </block>
+
+            </block>
+
+
+
+        </referenceContainer> <!-- end: page.wrapper -->
+
+
+
+        <!-- Header
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+        <!-- Note: "header-wrapper" is a default container for default blocks: logo, top links, search, minicart.
+             All these blocks were moved to the new base header container. 
+             But we may still need to display "header-wrapper" in case custom code adds there some blocks. -->
+        <move element="header-wrapper"          destination="base-header-container" />
+        <move element="skip_to_content"         destination="base-header-container" />
+        <move element="logo"                    destination="base-header-container" />
+        <move element="minicart"                destination="base-header-container" />
+        <move element="top.search"              destination="base-header-container" />
+        <move element="store.menu"              destination="base-header-container" />
+        <move element="store.links"             destination="base-header-container" />
+        <move element="store_language"          destination="base-header-container" />
+        <move element="currency"                destination="base-header-container" />
+        <move element="catalog.compare.link"    destination="base-header-container" />
+        <move element="top.links"               destination="account-links" />
+
+        <referenceContainer name="header.panel"             remove="true" />
+        <referenceContainer name="header.panel.wrapper"     remove="true" />
+        <referenceBlock name="navigation.sections"          remove="true" />
+        <referenceBlock name="store.settings"               remove="true" />
+        <referenceBlock name="store.settings.currency"      remove="true" />
+        <referenceBlock name="advanced-search-link"         remove="true" />
+        <referenceBlock name="header"                       remove="true" /> <!-- Remove welcome message from top links -->
+
+        <!-- TODO: move toplinks inside account links container. Insert static block with custom links inside Top Links -->
+        <!-- Account links -->
+        <!-- <move element="top.links" destination="account-links" />
+        <referenceBlock name="top.links">
+            <block class="Magento\Cms\Block\Block" name="block_header_top_links" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_header_top_links</argument>
+                </arguments>
+            </block>
+        </referenceBlock> -->
+
+
+
+        <!-- Footer 
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+        <move element="footer"                      destination="base-footer-container" />
+        <!-- "footer-container" has the same alias ("footer") as "footer" container, so they can't be both inside one block -->
+        <!-- <move element="footer-container"       destination="base-footer-container" /> -->
+        <move element="store_switcher"              destination="base-footer-container" />
+        <move element="footer_links"                destination="base-footer-container" />
+        <move element="cms_footer_links_container"  destination="base-footer-container" />
+        <move element="form.subscribe"              destination="base-footer-container" />
+        <move element="copyright"                   destination="base-footer-container" />
+
+        <referenceBlock name="report.bugs"          remove="true" />
+        <referenceContainer name="footer-container" remove="true" />
+
+
+
+        <!-- Menu
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+        <referenceBlock name="catalog.topnav.menu">
+            <block class="Infortis\Base\Block\Html\Header\Logo" name="catalog.topnav.stickylogo" as="stickylogo" template="html/header/logo_sticky.phtml" 
+                ifconfig="theme_settings/header/sticky_logo">
+                <arguments>
+                    <!-- Required the same image path as for the default site logo (see inside "site-logo" block) -->
+                    <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+
+
+        <!-- Footer scripts
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="footer.theme.scripts" template="Infortis_Base::js/footer_theme_scripts.phtml" />
+        </referenceContainer>
+
+
+
+    </body>
+</page>

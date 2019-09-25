@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mageworx_shippingrules_carrier_form.mageworx_shippingrules_carrier_form_data_source</item>
+            <item name="deps" xsi:type="string">mageworx_shippingrules_carrier_form.mageworx_shippingrules_carrier_form_data_source</item>
+            <item name="namespace" xsi:type="string">mageworx_shippingrules_carrier_form</item>
+            <item name="component" xsi:type="string">MageWorx_ShippingRules/js/carrier_form</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Carrier\Edit\Button\Back</item>
+            <item name="save" xsi:type="string">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Carrier\Edit\Button\Save</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="childrenFromMeta" xsi:type="boolean">true</item>
+    </argument>
+    <dataSource name="mageworx_shippingrules_carrier_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Carrier\Form\CarrierDataProvider</argument>
+            <argument name="name" xsi:type="string">mageworx_shippingrules_carrier_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">carrier_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="carrier">
+        <field name="store_ids">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magento\Cms\Ui\Component\Listing\Column\Cms\Options</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Store View</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">carrier</item>
+                    <item name="dataScope" xsi:type="string">store_ids</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="sortOrder" xsi:type="string">100</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <fieldset name="labels">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Labels</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="string">40</item>
+                <item name="imports" xsi:type="array">
+                    <item name="visible" xsi:type="string">!${ $.provider }:data.carrier.single_store</item>
+                </item>
+            </item>
+        </argument>
+        <container name="store_view_labels" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+            <htmlContent name="html_content">
+                <argument name="block" xsi:type="object">MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Carrier\Edit\Tab\Labels</argument>
+            </htmlContent>
+        </container>
+    </fieldset>
+</form>

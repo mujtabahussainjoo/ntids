@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+* Created by:  Milan Simek
+* Company:     Plugin Company
+*
+* LICENSE: http://plugin.company/docs/magento-extensions/magento-extension-license-agreement
+*
+* YOU WILL ALSO FIND A PDF COPY OF THE LICENSE IN THE DOWNLOADED ZIP FILE
+*
+* FOR QUESTIONS AND SUPPORT
+* PLEASE DON'T HESITATE TO CONTACT US AT:
+*
+* SUPPORT@PLUGIN.COMPANY
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="PluginCompany_CouponImport" setup_version="0.1.0">
+        <pc_license>
+            <type>proprietary</type>
+            <name>Plugin Company Coupon Import</name>
+        </pc_license>
+        <sequence>
+            <module name="Magento_SalesRule"/>
+            <module name="PluginCompany_LicenseManager" />
+        </sequence>
+    </module>
+</config>

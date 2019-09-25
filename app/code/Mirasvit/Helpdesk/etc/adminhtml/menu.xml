@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <!--<add id="Mirasvit_Helpdesk::helpdesk" title="Help Desk" module="Mirasvit_Helpdesk" sortOrder="70" resource="Mirasvit_Helpdesk::helpdesk" />-->
+        <add id="Mirasvit_Helpdesk::helpdesk_ticket" title="Help Desk MX" translate="title" module="Mirasvit_Helpdesk" sortOrder="51" action="helpdesk/ticket" resource="Mirasvit_Helpdesk::helpdesk_ticket" parent="Magento_Customer::customer"/>
+        <!--&lt;!&ndash;<add id="Mirasvit_Helpdesk::helpdesk_archive" title="Archive" module="Mirasvit_Helpdesk" sortOrder="20" action="helpdesk/archive" resource="Mirasvit_Helpdesk::helpdesk_archive" parent="Mirasvit_Helpdesk::helpdesk"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<add id="Mirasvit_Helpdesk::helpdesk_spam" title="Spam" module="Mirasvit_Helpdesk" sortOrder="30" action="helpdesk/spam" resource="Mirasvit_Helpdesk::helpdesk_spam" parent="Mirasvit_Helpdesk::helpdesk"/>&ndash;&gt;-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_satisfaction" title="Customer Satisfaction Surveyl" module="Mirasvit_Helpdesk" sortOrder="40" action="helpdesk/satisfaction" resource="Mirasvit_Helpdesk::helpdesk_satisfaction" parent="Mirasvit_Helpdesk::helpdesk"/>-->
+        <!--&lt;!&ndash;<add id="Mirasvit_Helpdesk::helpdesk_report" title="Report" module="Mirasvit_Helpdesk" sortOrder="50" action="helpdesk/report_ticket" resource="Mirasvit_Helpdesk::helpdesk_report" parent="Mirasvit_Helpdesk::helpdesk"/>&ndash;&gt;-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_dictionary" title="Dictionaries" module="Mirasvit_Helpdesk" sortOrder="60" resource="Mirasvit_Helpdesk::helpdesk_dictionary" parent="Mirasvit_Helpdesk::helpdesk"/>-->
+        <!--&lt;!&ndash;<add id="Mirasvit_Helpdesk::helpdesk_dictionary_department" title="Departments" module="Mirasvit_Helpdesk" sortOrder="10" action="helpdesk/department" resource="Mirasvit_Helpdesk::helpdesk_dictionary_department" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>&ndash;&gt;-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_dictionary_gateway" title="Gateways" module="Mirasvit_Helpdesk" sortOrder="20" action="helpdesk/gateway" resource="Mirasvit_Helpdesk::helpdesk_dictionary_gateway" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>-->
+        <!--&lt;!&ndash;<add id="Mirasvit_Helpdesk::helpdesk_dictionary_status" title="Statuses" module="Mirasvit_Helpdesk" sortOrder="30" action="helpdesk/status" resource="Mirasvit_Helpdesk::helpdesk_dictionary_status" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>&ndash;&gt;-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_dictionary_priority" title="Priorities" module="Mirasvit_Helpdesk" sortOrder="40" action="helpdesk/priority" resource="Mirasvit_Helpdesk::helpdesk_dictionary_priority" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_dictionary_template" title="Quick Responses" module="Mirasvit_Helpdesk" sortOrder="50" action="helpdesk/template" resource="Mirasvit_Helpdesk::helpdesk_dictionary_template" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_dictionary_field" title="Custom Fields" module="Mirasvit_Helpdesk" sortOrder="60" action="helpdesk/field" resource="Mirasvit_Helpdesk::helpdesk_dictionary_field" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_dictionary_pattern" title="Spam Patterns" module="Mirasvit_Helpdesk" sortOrder="70" action="helpdesk/pattern" resource="Mirasvit_Helpdesk::helpdesk_dictionary_pattern" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_dictionary_permission" title="Permissions" module="Mirasvit_Helpdesk" sortOrder="80" action="helpdesk/permission" resource="Mirasvit_Helpdesk::helpdesk_dictionary_permission" parent="Mirasvit_Helpdesk::helpdesk_dictionary"/>-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_rule" title="Workflow Rules" module="Mirasvit_Helpdesk" sortOrder="70" action="helpdesk/rule" resource="Mirasvit_Helpdesk::helpdesk_rule" parent="Mirasvit_Helpdesk::helpdesk"/>-->
+        <!--<add id="Mirasvit_Helpdesk::helpdesk_settings" title="Settings" module="Mirasvit_Helpdesk" sortOrder="80" action="adminhtml/system_config/edit/section/helpdesk" resource="Mirasvit_Helpdesk::helpdesk_settings" parent="Mirasvit_Helpdesk::helpdesk"/>-->
+    </menu>
+</config>

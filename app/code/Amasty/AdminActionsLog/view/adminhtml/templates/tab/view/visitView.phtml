@@ -1,0 +1,48 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+?>
+<?php
+/**
+ * @var \Amasty\AdminActionsLog\Block\Adminhtml\VisitHistory\Edit\Tab\View $block
+ */
+$log = $block->getLog();
+?>
+
+<div class="fieldset-wrapper customer-information">
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php /* @escapeNotVerified */ echo __('Visit History') ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+        <?php echo $block->getChildHtml(); ?>
+        <tr>
+            <th><?php /* @escapeNotVerified */ echo __('Username') . ':' ?></th>
+            <td><?php /* @escapeNotVerified */ echo $log->getUsername() ?> </td>
+        </tr>
+        <tr>
+            <th><?php /* @escapeNotVerified */ echo __('Full Name') . ':' ?></th>
+            <td><?php /* @escapeNotVerified */ echo $log->getName() ?></td>
+        </tr>
+        <tr>
+            <th><?php /* @escapeNotVerified */ echo __('Session Start') . ':' ?></th>
+            <td><?php /* @escapeNotVerified */ echo $log->getSessionStart() ?></td>
+        </tr>
+        <tr>
+            <th><?php /* @escapeNotVerified */ echo __('Session End') . ':' ?></th>
+            <td><?php /* @escapeNotVerified */ echo $log->getSessionEnd() ?></td>
+        </tr>
+        <tr>
+            <th><?php /* @escapeNotVerified */ echo __('IP Address') . ':' ?></th>
+            <td><?php /* @escapeNotVerified */ echo $log->getIp() ?></td>
+        </tr>
+        <tr>
+            <th><?php /* @escapeNotVerified */ echo __('Location') . ':' ?></th>
+            <td><?php /* @escapeNotVerified */ echo $log->getLocation() ?></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

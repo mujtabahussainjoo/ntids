@@ -1,0 +1,369 @@
+//
+//  Infortis theme legacy styles. 
+//  TODO: refactor
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+/* Class: std %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Lists
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Unordered lists
+-------------------------------------------------------------- */
+
+/* Disc */
+ul.disc {
+    list-style: disc outside none;
+    margin: 0 0 1em;
+    padding: 0 0 0 20px;
+}
+ul.disc li {
+    background-image: none;
+    //padding-left: 0;
+}
+
+/* Nested unordered lists */
+ul.disc ul {
+    list-style: disc outside none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 20px;
+}
+
+/* Bullet */
+ul.bullet {
+    list-style: none outside none;
+    margin: 0 0 1em;
+    padding: 0;
+}
+ul.bullet li {
+    background:url(../images/infortis/_shared/cck/list/bullet.png) -5px 2px no-repeat;
+    padding-left:20px;
+    transition:         background-position 150ms ease-out;
+    -moz-transition:    background-position 150ms ease-out;
+    -webkit-transition: background-position 150ms ease-out;
+    -o-transition:      background-position 150ms ease-out;
+}
+ul.bullet li:hover {
+    background-position: -3px 2px;
+}
+
+/* Nested unordered lists */
+ul.bullet ul {
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Separator */
+ul .separator {
+    border-bottom:1px solid #fff;
+    margin:8px 1px;
+    overflow:hidden;
+}
+
+
+/* Lists inside ".std"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Unordered list without any bullets */
+.std ul.no-bullets { list-style:none outside none !important; padding-left:0 !important; }
+.std ul.no-bullets li { background-image:none !important; padding-left:0 !important; }
+
+/* Ordered lists */
+.std ol { list-style:decimal outside; margin:10px 0; padding:0 0 0 1.5em; }
+.std ol ol,
+.std ul ol,
+.std ol ul { margin:0.5em 0; }
+
+
+
+/* Minor components %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Caret
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.caret {
+    display:inline-block;
+    vertical-align:middle;
+    font-size:14px;
+    line-height: initial; /* Important: avoid caret exceeding height of the item */
+}
+.dropdown-block .caret {
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+.dropdown-block.open .caret {
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+
+
+
+/* CMS pages and custom content %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Video (embed)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* "videoWrapper" - depracated class, left for backward compatibility */
+.video-wrapper,
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.video-wrapper iframe,
+.video-wrapper object,
+.video-wrapper embed,
+.videoWrapper iframe,
+.videoWrapper object,
+.videoWrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Other
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Disable transitions, fade effect applied with JS */
+.fade-on-hover {
+    transition:         none;
+    -moz-transition:    none;
+    -webkit-transition: none;
+    -o-transition:      none;
+}
+/* Fade out on hover (deprecated) */
+/*.fade-on-hover {
+    opacity: 1;
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+}
+.fade-on-hover:hover {
+    opacity: 0.75;
+}*/
+
+
+
+/* Icons %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Icons
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* These icons needs to have the same basic styles as standard font icons.
+   Except line height - it would override individual size of each icon.
+*/
+
+.opc-estimated-wrapper .minicart-wrapper button.action.showcart:before,
+
+// Legacy selectors:
+
+.form-search .button:before,
+
+.buttons-set .back-link a:before,
+
+.btn-remove:before,
+.btn-remove2:before,
+.map-popup-close:before,
+.remember-me-popup-head .remember-me-popup-close:before,
+
+.btn-edit:before,
+
+.breadcrumbs .sep,
+
+.caret:before,
+
+#cboxPrevious:before,
+#cboxNext:before,
+#cboxClose:before,
+
+/* Styles common for all direction controls */
+.slider-arrows1 .owl-controls .owl-buttons div:before,
+.slider-arrows2 .owl-controls .owl-buttons div:before,
+.slider-arrows3 .owl-controls .owl-buttons div:before,
+
+/* Caret inside dropdowns - right side caret */
+.nav-regular .nav-panel a .caret:before,
+
+/* Bullets in menu */
+.nav-regular.with-bullets .nav-submenu--mega > li > ul > li > a:before,
+.nav-regular .nav-item.simple > ul > li > a:before,
+
+/* Caret in vertical menu, 1st-level item */
+.nav-vert li.level0 > a .caret:before,
+
+/* Accordion */
+.uaccordion .opener:before,
+.nav-acco .opener:before,
+
+/* Quantity buttons */
+.qty-button.increase:before,
+.qty-button.decrease:before,
+
+/* Collapsible block icon */
+.collapsible .block-title:after,
+.mobile-collapsible .block-title:after,
+.sidebar .block .block-title:after
+{
+    display: inline-block;
+    font-family: ThemeIcons;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    /*line-height: 1em;*/ /* Important: don't overrid line height, it depends on the size of the icon */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apply icon codes
+-------------------------------------------------------------- */
+.opc-estimated-wrapper .minicart-wrapper button.action.showcart:before {
+    content: "\e221";
+    font-size: 16px;
+}
+
+// Legacy styles:
+
+.form-search .button:before {
+    content: "\e235";
+}
+.buttons-set .back-link a:before {
+    content: "\e22a";
+}
+.btn-remove:before,
+.btn-remove2:before,
+.map-popup-close:before,
+.remember-me-popup-head .remember-me-popup-close:before {
+    content: "\e22d";
+}
+.btn-edit:before {
+    content: "\e22e";
+}
+.breadcrumbs .sep:before {
+    content: "\e228";
+    font-size: 8px;
+}
+.caret:before {
+    content: "\e261";
+}
+.owl-controls .owl-buttons .owl-prev:before {
+    content: "\e260";
+}
+.owl-controls .owl-buttons .owl-next:before {
+    content: "\e263";
+}
+#cboxPrevious:before {
+    content: "\e260";
+}
+#cboxNext:before {
+    content: "\e263";
+}
+#cboxClose:before {
+    content: "\e20f";
+}
+.nav-regular .nav-panel a .caret:before,
+.nav-vert li.level0 > a .caret:before {
+    content: "\e263";
+}
+.uaccordion .opener:before,
+.nav-acco .opener:before {
+    content: "\e23c";
+}
+/* Active opener */
+.uaccordion li.item-active > .opener:before,
+.nav-acco li.item-active > .opener:before {
+    content: "\e23d";
+}
+/* Quantity buttons */
+.qty-button.increase:before {
+    content: "\e262";
+}
+.qty-button.decrease:before {
+    content: "\e261";
+}
+.collapsible .block-title:after,
+.mobile-collapsible .block-title:after,
+.sidebar .block .block-title:after {
+    content: "\e261";
+}
+.collapsible.active .block-title:after,
+.mobile-collapsible.active .block-title:after,
+.sidebar .block.active .block-title:after {
+    content: "\e262";
+}
+
+
+
+/* Override CSS components %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Accordion/collapsible openers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.uaccordion .opener,
+.nav-acco .opener,
+.collapsible .opener
+{
+    /* Icon size */
+    font-size: 12px;
+}
+
+
+/* Colorbox
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+#cboxPrevious,
+#cboxNext,
+#cboxClose {
+    /* Override default background image */
+    background-image: none !important;
+
+    /* Icon size */
+    font-size: 20px;
+}
+#cboxClose {
+    font-size: 16px;
+}
+
+
+/* Generic-nav
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Styles common for all direction controls */
+.slider-arrows1 .owl-controls .owl-buttons div,
+.slider-arrows2 .owl-controls .owl-buttons div,
+.slider-arrows3 .owl-controls .owl-buttons div {
+    /* Override default background image and remove text indent */
+    background-image: none !important;
+    text-indent: 0;
+
+    /* Icon size */
+    font-size: 20px;
+}
+
+
+
+} // end: media-common

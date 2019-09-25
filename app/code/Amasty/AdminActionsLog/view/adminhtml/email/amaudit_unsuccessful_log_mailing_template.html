@@ -1,0 +1,37 @@
+<!--@subject {{var store.getFrontendName()}} Admin Panel Possible Break-In @-->
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650" style="border:1px solid #E0E0E0;">
+                    <tr>
+                        <td valign="top">
+                            <p>
+                                Hello,<br/>
+                            </p>
+
+                            <p>
+                                We noticed that during the last hour there were {{var data.unsuccessful_login_count}} unsuccessful login attempts<br/>
+                                into your admin panel.<br/>
+                            </p>
+
+                            <p>
+                                This may be either an incorrect passwords entered by known persons, or an attempt to<br/>
+                                suggest a password to your account by intruder.<br/>
+                            </p>
+
+                            <p>
+                                You may want to check login attempts log under<br/>
+                                System >> Configuration >> Admin Actions Log >> Login Attempts<br/>
+                                for additional details.<br/>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>

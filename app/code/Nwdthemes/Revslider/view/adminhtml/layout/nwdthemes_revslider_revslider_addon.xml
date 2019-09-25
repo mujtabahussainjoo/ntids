@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="nwdthemes_revslider_common"/>
+    <update handle="nwdthemes_revslider_gallery"/>
+	<head>
+        <css src="Nwdthemes_Revslider::admin/assets/css/rev_addon-admin.css" />
+	</head>
+    <body>
+        <referenceContainer name="master-view">
+			<block class="Nwdthemes\Revslider\Block\Adminhtml\Block\Template" name="view" template="Nwdthemes_Revslider::rev_addon-admin-display.phtml">
+			</block>
+        </referenceContainer>
+    </body>
+</page>

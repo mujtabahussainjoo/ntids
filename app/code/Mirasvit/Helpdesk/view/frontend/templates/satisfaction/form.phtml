@@ -1,0 +1,22 @@
+<form action="<?= $block->getPostUrl()?>" method="POST" enctype="multipart/form-data" data-mage-init='{"validation":{}}' class="form">
+<fieldset class='fieldset'>
+<p>
+<?= __('Thank you for participating in our survey!') ?><br><br>
+<?= __('If you would like to provide additional comments, please do so below:') ?>
+</p>
+    <div class="field required">
+        <label for="comment" class="label"><?= __('Message') ?></label>
+
+        <div class="control">
+            <textarea name='comment' id='comment' class="input-text"  data-validate="{required:true}"></textarea>
+        </div>
+    </div>
+</fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="<?= __('Submit Message') ?>" class="action submit primary">
+                <span><?= __('Submit Message') ?></span>
+            </button>
+        </div>
+    </div>
+</form>

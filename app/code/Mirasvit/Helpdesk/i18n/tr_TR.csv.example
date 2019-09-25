@@ -1,0 +1,136 @@
+Department,Bölüm
+"Create New Ticket","Yeni Bilet Oluştur"
+Status,Durum
+Priority,Öncelik
+Replies,Cevaplar
+View,Görünüm
+"Help Desk","Yardım Masası"
+"Thank you","Teşekkür ederim"
+"Create Ticket","Bilet Oluştur"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","İsteğiniz başarıyla gönderildi. Kısa süre içinde bir onay e-postası alacaksınız."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Sorgunuz gönderilmiştir ve en kısa zamanda yanıtlanacaktır. Bizimle iletişime geçtiğiniz için teşekkürler."
+"Unable to submit your request. Please, try again later","İsteğiniz gönderilemiyor. Lütfen daha sonra tekrar deneyiniz"
+"Page not found.","Sayfa bulunamadı."
+"Your message was successfuly posted","Mesajınız başarıyla gönderildi"
+"Your ticket was successfuly posted","Biletin başarılı bir şekilde gönderildi"
+"Ticket was successfuly closed","Bilet başarılı bir şekilde kapatıldı"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","%1 dosyası yüklenemiyor. İzin verilen maksimum yükleme boyutu, %2 MB&#39;dir."
+"Allows only this file types: %1","Sadece bu dosya türlerine izin verir: %1"
+"Message added","Mesaj eklendi"
+"Internal note added","Dahili not eklendi"
+"Third party message added","Üçüncü taraf mesajı eklendi"
+"Private third party message added","Özel üçüncü taraf mesajı eklendi"
+"-- Please Select --","-- Lütfen seçin --"
+"Contact Tab","İletişim Sekmesi"
+"Contact Form","İletişim Formu"
+" at %1 (%2) - %3","%1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Bu bileti okumak için izinleriniz yok. Lütfen yöneticinize başvurun."
+"Invalid Customer Email","Geçersiz Müşteri E-postası"
+"not set",ayarlanmadı
+"Unknown time","Bilinmeyen zaman"
+ago,önce
+"from now","şu andan itibaren"
+"1 sec ago","1 saniye önce"
+"Open Ticket","Açık bilet"
+"Open Tickets","Açık Bilet"
+"! Blocked file - ","! Engellenen dosya -"
+Disabled,Engelli
+"AW Helpdesk","AW Yardım Masası"
+"MW Helpdesk","MW Yardım Masası"
+"File System","Dosya sistemi"
+Database,Veritabanı
+Aqua,Su
+Grey,Gri
+Navy,Donanma
+Silver,Gümüş
+Black,Siyah
+Green,Yeşil
+Olive,Zeytin
+Teal,Çamurcun
+Blue,Mavi
+Lime,"Misket Limonu"
+Purple,Mor
+Fuchsia,"Küpe çiçeği"
+Maroon,"Kestane rengi"
+Red,Kırmızı
+Orange,Portakal
+Yellow,Sarı
+Text,Metin
+Date,Tarih
+Checkbox,"Onay Kutusu"
+"Drop-down list","Açılır liste"
+"In minutes...","Dakikalar içinde..."
+"In hours...",Saatlerde...
+"In days...",Günlerde...
+"In weeks...","Haftalar içinde ..."
+"In months...",Aylarca...
+Custom,Görenek
+"--Please Select--","--Lütfen seçin--"
+"New ticket created","Yeni bilet oluşturuldu"
+Success,Başarı
+Customer,Müşteri
+Staff,Personel
+"Third party","Üçüncü parti"
+Closed,Kapalı
+"Opened 24hr","24 saat açık"
+"Helpdesk Tickets","Helpdesk Biletleri"
+"Cannot delete ticket with id %1","Jeton %1 ile bilet silinemiyor"
+Edit,Düzenle
+"All Departments","Bütün bölümler"
+Back,Geri
+"24 hrs x 7 days","24 saat x 7 gün"
+"Select working days/hours","İş günlerini / saatleri seçin"
+"Satisfaction survey","Memnuniyet anketi"
+"to %1 (third party)","%1 (üçüncü taraf)"
+"%1 (third party)","%1 (üçüncü taraf)"
+"added %1 (%2)","Eklendi %1 (%2)"
+"Ticket Summary","Bilet Özeti"
+"Ticket ID","Bilet kimliği"
+Assignee,Vekil
+"Additional Info","İlave bilgi"
+"Ticket History","Bilet Tarihi"
+"Done by","Tarafından tamamlandı"
+Changes,Değişiklikler
+Name,Isim
+"Attach files","Dosyaları ekle"
+Submit,Gönder
+"Submit Ticket","Bilet Gönder"
+"What is your question?","Sorun nedir?"
+"We found the following topics that might be helpful:","Yararlı olabilecek aşağıdaki konuları bulduk:"
+"None of these are helpful - get in touch","Bunların hiçbiri yardımcı olmuyor - iletişim kurun"
+"We have not found topics that can be helpful.","Yardımcı olabilecek konuları bulamadık."
+"Contact Information","İletişim bilgileri"
+Comment,"Yorum Yap"
+"We are open 24 x 7","24 x 7 açıkız"
+"We are closed",Kapalıyız
+"Timezone: %1","Saat Dilimi: %1"
+"Please take a second to rate my reply...","Cevabımı değerlendirmek için lütfen bir saniye ..."
+Great,Harika
+Awesome,Müthiş
+"Fast, friendly, helpful, pleasant. Great job!","Hızlı, cana yakın, yardımsever, hoş. İyi iş!"
+"Just Okay","Sadece Tamam"
+"Fine, but definitely could have been better.","İyi ama kesinlikle daha iyi olabilirdi."
+"Not good","İyi değil"
+"Unfortunately, I wasn't happy with it at all.","Ne yazık ki hiç de memnun değildim."
+"Thank you for participating in our survey!","Anketimize katıldığınız için teşekkür ederiz!"
+"If you would like to provide additional comments, please do so below:","Ek yorum yapmak isterseniz, lütfen aşağıdakini yapın:"
+Message,Mesaj
+"Submit Message","Mesajı gönder"
+"Thank you for your feedback!","Geri bildiriminiz için teşekkür ederiz!"
+Attachments,Ekler
+Order,Sipariş
+"-- Select an Order --","- Bir Sipariş Seçin -"
+"Create ticket","Bilet oluştur"
+"You don't have open tickets","Açık biletin yok"
+"Post a Reply","Cevap Gönder"
+"Reopen Ticket","Yeniden Bilet Bileti"
+"Close Ticket","Bilet Kapat"
+History,Tarihçe
+"Back to My Tickets","Biletlerime Geri Dön"
+"Help Desk MX","Yardım Masası MX"
+"Contact Us","Bizimle iletişime geçin"
+Open,Açık
+Subject,Konu
+"Last Activity","Son Aktivite"
+"Request ID","İstek Kimliği"

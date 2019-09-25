@@ -1,0 +1,110 @@
+Attributes List:
+ PDF settings:
+1)ni_product_pdf_required
+2)product_json_format
+
+Json Format Example:
+[
+                  {
+                      "variable":"name",
+                      "type":"text",
+                      "source":"attribute"
+                  },
+                  {
+                      "variable":"short_description",
+                      "type":"text",
+                      "source":"attribute"
+                  },
+                  {
+                      "variable":"serialcode",
+                      "type":"text",
+                      "source":"serialCode"
+                  },
+                  {
+                      "variable":"pin",
+                      "type":"text",
+                      "source":"serialCode"
+                  },
+                  {
+                      "variable":"barcode",
+                      "type":"barcode",
+                      "source":"serialCode",
+                      "height":"",
+                      "width":""
+                  },
+                  {
+                      "variable":"ni_product_pdf_extratext",
+                      "type":"text",
+                      "source":"attribute"
+                  },
+                  {
+                      "variable":"ni_product_pdf_extraimage",
+                      "type":"image",
+                      "source":"attribute",
+                      "height":"",
+                      "width":"",
+                      "mediapath":""
+                  },
+                  {
+                      "variable":"date",
+                      "type":"cdate",
+                      "source":"other",
+                      "duration":""
+                  },
+                  {
+                      "variable":"expiry",
+                      "type":"date",
+                      "source":"other",
+                     "duration":"12_M"
+                  },
+                  {
+                      "variable":"test1",
+                      "type":"text",
+                      "source":"customOption"
+                  },
+                  {
+                      "variable":"test2",
+                      "type":"text",
+                      "source":"customOption"
+                  },
+                  {
+                      "variable":"test3",
+                      "type":"text",
+                      "source":"customOption"
+                  },
+                  {
+                      "variable":"test4",
+                      "type":"text",
+                      "source":"customOption"
+                  },
+                  {
+                      "variable":"test5",
+                      "type":"text",
+                      "source":"customOption"
+                  },
+                {
+                      "variable":"test6",
+                      "type":"image",
+                      "source":"customOption"
+                  }, {
+                      "variable":"image",
+                      "type":"image",
+                      "source":"logo",
+                      "height":"",
+                      "width":""
+                  }
+ ]
+
+ To compress the Pdf we need to use below lib:
+
+ sudo apt install ghostscript
+
+
+-dPDFSETTINGS=/screen (72 dpi images)
+-dPDFSETTINGS=/ebook (150 dpi images)
+-dPDFSETTINGS=/printer (300 dpi images)
+-dPDFSETTINGS=/prepress (300 dpi images, color preserving)
+-dPDFSETTINGS=/default
+
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite  -dPDFSETTINGS=/ebook -dAutoRotatePages=/None -sOutputFile=/var/www/html/devword/8000000108.pdf(newfiles)
+  /var/www/html/devword/test.pdf(existing File path)

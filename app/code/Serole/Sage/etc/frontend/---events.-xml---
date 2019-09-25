@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+   <event name="controller_action_predispatch_checkout_cart_add">
+       <observer name="serole_sage_observer_checkstock" instance="Serole\Sage\Observer\Checkstock" />
+   </event>
+   
+    <event name="controller_action_predispatch_checkout_index_index">
+       <observer name="serole_sage_observer_checkitemstock" instance="Serole\Sage\Observer\Checkitemstock" />
+   </event>
+   
+   <event name="sales_order_place_before">
+       <observer name="serole_sage_observer_checkstockbeforepayment" instance="Serole\Sage\Observer\Checkstockbeforepayment" />
+   </event>
+
+</config>

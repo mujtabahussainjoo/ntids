@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+        <title>Upload CSV</title>
+        <!-- 
+		demo
+		<css src="Serole_MemberList::css/css.css"/>
+		<script src="Serole_MemberList::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+		-->
+    </head> 
+	<body>
+	    <referenceContainer name="page.messages">
+          <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Serole\MemberList\Block\Adminhtml\Index\Index" name="memberlist_block_adminhtml_index_index"  template="Serole_MemberList::memberlist_index_index.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

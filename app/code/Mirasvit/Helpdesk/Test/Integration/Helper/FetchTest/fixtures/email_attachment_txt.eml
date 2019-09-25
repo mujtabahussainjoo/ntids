@@ -1,0 +1,228 @@
+Delivered-To: receiver@example.com
+Received: by 10.50.45.2 with SMTP id i2csp11630igm; Tue, 21 Oct 2014 07:07:42
+ -0700 (PDT)
+X-Received: by 10.42.96.137 with SMTP id j9mr2728849icn.88.1413900462685; Tue,
+ 21 Oct 2014 07:07:42 -0700 (PDT)
+Return-Path: <sender@example.com>
+Received: from mail-ie0-x229.google.com (mail-ie0-x229.google.com.
+ [2607:f8b0:4001:c03::229]) by mx.google.com with ESMTPS id
+ n76si16947332ioi.20.2014.10.21.07.07.42 for <receiver@example.com>
+ (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128); Tue, 21 Oct 2014
+ 07:07:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of sender@example.com designates
+ 2607:f8b0:4001:c03::229 as permitted sender)
+ client-ip=2607:f8b0:4001:c03::229;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of
+ sender@example.com designates 2607:f8b0:4001:c03::229 as permitted
+ sender) smtp.mail=sender@example.com; dkim=pass header.i=@gmail.com;
+ dmarc=pass (p=NONE dis=NONE) header.from=gmail.com
+Received: by mail-ie0-f169.google.com with SMTP id tp5so1266329ieb.14 for
+ <receiver@example.com>; Tue, 21 Oct 2014 07:07:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113;
+ h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+ :content-type; bh=uSK2RRFaVTwZVnwP6z8qGvInUoXZZE6rX7UMOxI5h+k=;
+ b=nXLuDl4+avlxcArhDcMjtTSXuYo6Kg92y2e7DpeSDg/ZwF9GDZ0za8mlHwdIGIua6f
+ gua7KYCV50UDooBiYWbYVW/0i3SxNzVaXW0THL1/BIWMtJYbnY19e3t/v5+o/4lpYHrc
+ ODpnVaGaPaaja18E4w+kv2HLizG+zVbDA1XDGWiWt0ZjGe9cXtUCzeVG+cbkxoZsAA3h
+ zmfc6vhMN2PV1Zphhi9S+VSM+shhIY+qdZWGXH/gjLqhEgeiKyzXWGg8oOZLXnSX1U8K
+ uVg6Bd6MtbwljSSia5+WnKevTGs5U+MQXHkvBUAP5+we1l9G5EWuq1vsgodQ/u1LoCYZ Wr9A==
+MIME-Version: 1.0
+X-Received: by 10.42.94.131 with SMTP id b3mr2729488icn.92.1413900462421; Tue,
+ 21 Oct 2014 07:07:42 -0700 (PDT)
+Received: by 10.64.239.144 with HTTP; Tue, 21 Oct 2014 07:07:42 -0700 (PDT)
+In-Reply-To: <CAPP_kyDGKqvn2zR9EsfLvNsysVTmSAWORhuu5_rCvYDAJbQ_tw@mail.gmail.com>
+References: <20141021135604.A8021320F957@dva-2.local>
+ <CAPP_kyDGKqvn2zR9EsfLvNsysVTmSAWORhuu5_rCvYDAJbQ_tw@mail.gmail.com>
+Date: Tue, 21 Oct 2014 17:07:42 +0300
+Message-ID: <CAPP_kyAmjNAx3CRPJCdQzVKjFm8h43S5=zbqiov6wFMXi2Crkg@mail.gmail.com>
+Subject: =?UTF-8?B?UmU6INGE0YvQstCw0YTRi9Cy0LA=?=
+From: Vladimir Drok <sender@example.com>
+To: Sales <receiver@example.com>
+Content-Type: multipart/object; boundary=485b397dd293d0a2c90505ef5a9f
+
+--485b397dd293d0a2c90505ef5a9f
+Content-Type: multipart/alternative; boundary=485b397dd293d0a2c60505ef5a9d
+
+--485b397dd293d0a2c60505ef5a9d
+Content-Type: text/plain; charset=UTF-8
+
+reply
+
+On Tue, Oct 21, 2014 at 5:01 PM, Vladimir Drok <sender@example.com>
+wrote:
+
+>
+>
+> On Tue, Oct 21, 2014 at 4:56 PM, Sales <receiver@example.com> wrote:
+>
+>> ##- please type your reply above this line -##
+>>    [image: Main Store] <http://helpdesk1810.dva/>    test
+>>
+>> You can check the status of reply to this ticket online at:
+>> http://helpdesk1810.dva/helpdesk/ticket/external/id/3ff155792d586f704a4b8de9a77f8f98/
+>>
+>> Thank you,
+>> *Main Store*
+>>
+>> *Please take a second to rate my reply...*
+>>  [image: Great]
+>> <http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/3/uid/9ecc491749a50b41fdf11e1c3e0d43ea/> Awesome
+>> <http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/3/uid/9ecc491749a50b41fdf11e1c3e0d43ea/>
+>>
+>> Fast, friendly, helpful, pleasant. Great job!
+>>   [image: OK]
+>> <http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/2/uid/9ecc491749a50b41fdf11e1c3e0d43ea/> Just Okay
+>> <http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/2/uid/9ecc491749a50b41fdf11e1c3e0d43ea/>
+>>
+>> Fine, but definitely could have been better.
+>>  [image: Bad]
+>> <http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/1/uid/9ecc491749a50b41fdf11e1c3e0d43ea/> Not good
+>> <http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/1/uid/9ecc491749a50b41fdf11e1c3e0d43ea/>
+>>
+>> Unfortunately, I wasn't happy with it at all.
+>>
+>>
+>> Message-Id:--#UVT-732-87873--
+>>
+>
+>
+>
+> --
+> regards,
+> Vladimir Drok
+>
+
+
+
+--
+regards,
+Vladimir Drok
+
+--485b397dd293d0a2c60505ef5a9d
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">reply<div class=3D"gmail_extra"><br><div class=3D"gmail_qu=
+ote">On Tue, Oct 21, 2014 at 5:01 PM, Vladimir Drok <span dir=3D"ltr">&lt;<=
+a href=3D"mailto:sender@example.com" target=3D"_blank">volodymyr.drok=
+@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=
+=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=
+=3D"ltr"><br></div><div class=3D"gmail_extra"><div><div class=3D"h5"><br><d=
+iv class=3D"gmail_quote">On Tue, Oct 21, 2014 at 4:56 PM, Sales <span dir=
+=3D"ltr">&lt;<a href=3D"mailto:receiver@example.com" target=3D"_blank">=
+receiver@example.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmai=
+l_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left=
+:1ex">
+
+
+
+<span style=3D"color:#ffffff;font-size:5px;margin:0px;padding:0px">##- plea=
+se type your reply above this line -##</span>
+<div style=3D"font:13px/1.45em Verdana,Arial,Helvetica,sans-serif">
+    <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"98%" s=
+tyle=3D"margin-top:10px;font:13px/1.45em Verdana,Arial,Helvetica,sans-serif=
+;margin-bottom:10px">
+        <tbody><tr>
+            <td align=3D"center" valign=3D"top">
+               =20
+                <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" wid=
+th=3D"650">
+                    <tbody><tr>
+                        <td valign=3D"top">
+                            <a href=3D"http://helpdesk1810.dva/" target=3D"=
+_blank"><img src=3D"http://helpdesk1810.dva/skin/frontend/default/default/i=
+mages/logo_email.gif" alt=3D"Main Store" style=3D"margin-bottom:10px" borde=
+r=3D"0"></a>
+                        </td>
+                    </tr>
+                </tbody></table>
+
+               =20
+                <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" wid=
+th=3D"650">
+                    <tbody><tr>
+                        <td valign=3D"top">
+                            test<br><br>
+
+                            You can check the status of reply to this ticke=
+t online at: <a href=3D"http://helpdesk1810.dva/helpdesk/ticket/external/id=
+/3ff155792d586f704a4b8de9a77f8f98/" target=3D"_blank">http://helpdesk1810.d=
+va/helpdesk/ticket/external/id/3ff155792d586f704a4b8de9a77f8f98/</a>
+                            <br><br>
+                            Thank you,<br>
+                            <strong>Main Store</strong>
+
+                            <div style=3D"color:#777;font-size:10px;margin:=
+0px 0px 15px 0px;overflow:hidden;width:500px">
+  <p style=3D"font-size:14px;color:#000"><strong>Please take a second to ra=
+te my reply...</strong></p>
+  <div style=3D"width:130px;float:left;text-align:center;margin-right:20px"=
+>
+    <a href=3D"http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/3/ui=
+d/9ecc491749a50b41fdf11e1c3e0d43ea/" target=3D"_blank"><img src=3D"http://h=
+elpdesk1810.dva/skin/frontend/base/default/images/mst_helpdesk/smile/3.png"=
+ width=3D"40" height=3D"40" alt=3D"Great" border=3D"0"></a>
+    <h2 style=3D"margin:0 0 5px 0">
+      <a href=3D"http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/3/=
+uid/9ecc491749a50b41fdf11e1c3e0d43ea/" style=3D"color:#690" target=3D"_blan=
+k">It was great</a>
+    </h2><p style=3D"line-height:normal;margin:0">Fast, friendly, helpful, =
+pleasant. Great job!</p>
+  </div>
+
+  <div style=3D"width:130px;float:left;text-align:center;margin-right:20px"=
+>
+    <a href=3D"http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/2/ui=
+d/9ecc491749a50b41fdf11e1c3e0d43ea/" target=3D"_blank">
+      <img src=3D"http://helpdesk1810.dva/skin/frontend/base/default/images=
+/mst_helpdesk/smile/2.png" width=3D"40" height=3D"40" alt=3D"OK" border=3D"=
+0">
+    </a>
+    <h2 style=3D"margin:0 0 5px 0">
+   <a href=3D"http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/2/uid=
+/9ecc491749a50b41fdf11e1c3e0d43ea/" target=3D"_blank">It was OK</a>
+    </h2>
+    <p style=3D"line-height:normal;margin:0">Fine, but definitely could hav=
+e been better.</p>
+  </div>
+
+  <div style=3D"width:130px;float:left;text-align:center">
+    <a href=3D"http://helpdesk1810.dva/helpdesk/satisfaction/rate/rate/1/ui=
+d/9ecc491749a50b41fdf11e1c3e0d43ea/" target=3D"_blank"><img src=3D"http://h=
+elpdesk1810.dva/skin/frontend/base/default/images/mst_helpdesk/smile/1.png"=
+ width=3D"40" height=3D"40" alt=3D"Bad" border=3D"0"></a>
+    <h2 style=3D"margin:0 0 5px 0"><a href=3D"http://helpdesk1810.dva/helpd=
+esk/satisfaction/rate/rate/1/uid/9ecc491749a50b41fdf11e1c3e0d43ea/" style=
+=3D"color:#c00" target=3D"_blank">It wasn&#39;t good</a>
+    </h2>
+    <p style=3D"line-height:normal;margin:0">Unfortunately, I wasn&#39;t ha=
+ppy with it at all.</p>
+  </div>
+</div>
+
+                           =20
+                            <br><br><span style=3D"color:#ffffff;font-size:=
+5px;margin:0px;padding:0px">Message-Id:--#UVT-732-87873--</span>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+</blockquote></div><br><br clear=3D"all"><div><br></div></div></div><span c=
+lass=3D"HOEnZb"><font color=3D"#888888">-- <br>regards,<br>Vladimir Drok
+</font></span></div>
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br>regards,<br>=
+Vladimir Drok
+</div></div>
+
+--485b397dd293d0a2c60505ef5a9d--
+--485b397dd293d0a2c90505ef5a9f
+Content-Type: text/plain; charset=US-ASCII; name="Today 10-18.txt"
+Content-Disposition: attachment; filename="Today 10-18.txt"
+Content-Transfer-Encoding: base64
+X-Attachment-Id: f_i1jbttq31
+
+YXNmYXNkZg==
+--485b397dd293d0a2c90505ef5a9f--

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+        <referenceBlock name="data">
+            <block class="Magento\Sales\Block\Adminhtml\Order\Create\Billing\Address" template="Serole_BillingStep::order/address.phtml" name="billing_address"/>
+            <block class="Magento\Sales\Block\Adminhtml\Order\Create\Shipping\Address" template="Serole_BillingStep::order/address.phtml" name="shipping_address"/>
+        </referenceBlock>
+    </body>
+</page>

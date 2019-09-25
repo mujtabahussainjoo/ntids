@@ -1,0 +1,72 @@
+<?php
+use \Mirasvit\Helpdesk\Model\Config as Config;
+
+/* @var \Mirasvit\Helpdesk\Block\Adminhtml\Ticket\Edit\Tab\Messages $block */
+?>
+<div class="hdmx__ticket-history">
+    <?php foreach ($block->getMessages(true) as $message): ?>
+
+        <?php if ($block->isShowSatisfactions()): ?>
+            <?php foreach ($block->getSatisfactions($message) as $satisfaction): ?>
+                <div class="hdmx__satisfaction-rate rate-<?=$satisfaction->getRate() ?>" title="<?=__('Satisfaction survey') ?>">
+                    <img src="<?=$block->getViewFileUrl('Mirasvit_Helpdesk::images/smile/'.$satisfaction->getRate().'.png', ['_area' => 'frontend']) ?>"
+                        width="40" height="40" border="0">
+                    <?php if ($satisfaction->getComment()) : ?>
+                        <div class="comment">
+                            <?=$block->escapeHtml($satisfaction->getComment()) ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="hdmx__satisfaction-rate-clear"></div>
+            <?php endforeach ?>
+        <?php endif ?>
+
+        <div class="hdmx__message">
+            <div class="hdmx-message__header">
+                <a target="_blank" class="hdmx-message__source" href="<?= $block->getSourceUrl($message) ?>">
+                    <?=__('show source') ?>
+                </a>
+
+                <?php if ($message->getTriggeredBy() == \Mirasvit\Helpdesk\Model\Config::CUSTOMER): ?>
+                    <?php if ($message->getCustomerName() != ''): ?>
+                        <strong><?= $block->escapeHtml($message->getCustomerName()) ?></strong>,
+                    <?php endif ?>
+                    <?=$message->getCustomerEmail() ?>
+                <?php elseif ($message->getTriggeredBy() == \Mirasvit\Helpdesk\Model\Config::USER): ?>
+                    <strong><?= $block->escapeHtml($message->getUserName()) ?></strong>
+                    <?php if ($message->isThirdParty()): ?>
+                        <?= __('to %1 (third party)', $message->getThirdPartyEmail()) ?>
+                    <?php endif ?>
+                <?php elseif ($message->getTriggeredBy() == Config::THIRD): ?>
+                    <?= __('%1 (third party)', $block->escapeHtml($message->getThirdPartyName())) ?>
+                <?php endif ?>
+
+                <span class="minor">
+                    <?= __('added %1 (%2)', $block->getNicetimeSpan($message->getCreatedAt()), $block->formatDateTime($message->getCreatedAt())) ?>
+                </span>
+            </div>
+            <div class="hdmx-message__body <?= $message->getType() ?> <?php if ($message->getCustomerEmail()): ?>user<?php else: ?>staff<?php endif ?> ">
+
+                <?php
+                    //DONT CHANGE THIS
+                    $message->setIsBackend(true);
+                    echo $block->escapeHtml($message->getUnsafeBodyHtml(), $message->getAllowedTags());
+                    //END DONT CHANGE THIS
+                ?>
+
+                <?php $_attachments = $message->getAttachments() ?>
+                <?php if (count($_attachments)): ?>
+                    <div class="hdmx-message__attachments">
+                        <?php foreach ($_attachments as $_attachment): ?>
+                            <?php if ($_attachment->getIsAllowed()): ?>
+                                <a href="<?= $_attachment->getBackendUrl() ?>"><?= $_attachment->getName() ?></a>
+                            <?php else: ?>
+                                <span><?= $_attachment->getName() ?></span>
+                            <?php endif; ?>
+                        <?php endforeach ?>
+                    </div>
+                <?php endif ?>
+            </div>
+        </div>
+    <?php endforeach ?>
+</div>

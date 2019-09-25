@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_RedirectPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <event name="controller_action_predispatch">
+        <observer name="magepsycho_redirectpro_controller_action_predispatch" 
+                  instance="MagePsycho\RedirectPro\Observer\Frontend\ControllerActionPredispatch" />
+    </event>
+
+    <event name="customer_data_object_login">
+        <observer name="magepsycho_redirectpro_customer_data_object_login"
+                  instance="MagePsycho\RedirectPro\Observer\Frontend\CustomerDataObjectLogin" />
+    </event>
+
+    <event name="customer_register_success">
+        <observer name="magepsycho_redirectpro_customer_register_success" 
+                  instance="MagePsycho\RedirectPro\Observer\Frontend\CustomerRegisterSuccess" />
+    </event>
+
+    <event name="controller_action_postdispatch_newsletter_subscriber_new">
+        <observer name="magepsycho_loginredirectpro_controller_action_postdispatch_newsletter_subscriber_new"
+                  instance="MagePsycho\RedirectPro\Observer\Frontend\ControllerActionPostdispatchNewsletterSubscriberNew" />
+    </event>
+
+    <event name="controller_action_postdispatch_newsletter_subscriber_confirm">
+        <observer name="magepsycho_loginredirectpro_controller_action_postdispatch_newsletter_subscriber_confirm" 
+                  instance="MagePsycho\RedirectPro\Observer\Frontend\ControllerActionPostdispatchNewsletterSubscriberConfirm" />
+    </event>
+
+    <event name="layout_generate_blocks_after">
+        <observer name="magepsycho_loginredirectpro_layout_generate_blocks_after"
+                  instance="MagePsycho\RedirectPro\Observer\Frontend\LayoutGenerateBlocksAfter" />
+    </event>
+
+    <event name="controller_action_postdispatch_customer_account_createpost">
+        <observer name="magepsycho_loginredirectpro_controller_action_postdispatch_customer_account_createpost"
+                  instance="MagePsycho\RedirectPro\Observer\Frontend\ControllerActionPostdispatchCustomerAccountCreatePost" />
+    </event>
+                             
+</config>

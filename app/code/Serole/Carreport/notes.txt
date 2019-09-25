@@ -1,0 +1,21 @@
+1) Added product attribute "iscarreport"
+2) Mainting table "car_report_status", once order completed getting product options from observer and inserting in custom table
+3) And Maintaining the cron job for reporting Purposer
+    1) Created Custom product attribute "coming_soon" for hide the product on particulat time.
+       Note:- Only disable product on wednesdays from 8:30pm
+    2) In cron job, we are sending curl request to third party API and we are getting some data & inserting into html file..
+       And converting that html into pdf file & sending mail
+
+ Note: we installed lib for HTMl to PDf converision
+
+   => sudo apt-get install wkhtmltopdf
+
+   => which wkhtmltopdf
+
+   => wkhtmltopdf
+
+   Converting HTML to PDF
+
+  => wkhtmltopdf htmlFileName.html pdfFileName.pdf
+
+     xvfb-run wkhtmltopdf htmlFileName.html pdfFileName.pdf

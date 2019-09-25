@@ -1,0 +1,295 @@
+<?php
+
+use Magento\Framework\App\Action\Action;
+?>
+<?php
+$model = $block->getSlider();
+$dataModel = $model->getData();
+$id = uniqid();
+$baseMediaUrl = $block->getBaseMediaUrl();
+$prams = $model->getAllParamsOwl();
+$sliderUrl = $block->sliderUrl();
+$imageType = 'product_thumbnail_image';
+?>
+<?php
+if ($model->getType() == $model::SLIDER_TYPE_BANNER):
+    $banners = $block->getBanners();
+    ?>
+    <div class="owl-ext-banner">
+        <div id="owl-slider<?php echo $id ?>" class="owl-carousel">
+            <?php foreach ($banners as $banner): ?>
+                <?php
+                $data = $banner->getData();
+                if ($banner->getUrl() != ''):
+                    ?>
+                    <div class="item"><a href="<?php echo $banner->getUrl() ?>" target="<?php echo $banner->getTarget() ?>" ><img src="<?php echo $baseMediaUrl . "/" . $banner->getImage() ?>" alt="<?php echo isset($data['imageAlt']) ? $data['imageAlt'] : '' ?>" /></a></div>
+                <?php else: ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <script>
+
+        require([
+            'jquery',
+            'ibnabowlsliders'
+        ], function ($, ibnabowlsliders) {
+            $(document).ready(function () {
+                // var widthBrowser = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                //$(".slider-new-home").css("width", widthBrowser + "px");
+                //$( window ).resize(function() {
+                //   var widthBrowser = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                // $(".slider-new-home").css("width", widthBrowser + "px");
+                //});
+                $('.owl-carousel').show();
+                $("#owl-slider<?php echo $id ?>").owlCarousel({
+    <?php echo $prams ?>
+                });
+            });
+        });</script>
+<?php else: ?>
+    <?php
+    ?>
+    <?php $_items = $block->getSliderProductsCollection($model->getType()) ?>
+    <?php if (count($_items) == 0) : ?>
+        <?php return ?>
+    <?php endif ?>
+
+    <?php $_helper = $this->helper('Magento\Catalog\Helper\Output') ?>
+    <?php $sliderId = $model->getId() ?>
+
+    <?php
+    $image = 'category_page_grid';
+    $_helperGallery = $this->helper('Ibnab\Common\Helper\Data');
+    ?>
+    <?php $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW ?>
+    <?php $viewMode = 'grid' ?>
+    <?php $class = $model->getType() ?>
+    <?php
+    $type = "";
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_helperGallery = $this->helper('Ibnab\Common\Helper\Data');
+    ?>
+
+    <?php $showWishlist = isset($dataModel['displayWishlist']) ? $dataModel['displayWishlist'] : 1 ?>
+    <?php $showCompare = isset($dataModel['displayCompare']) ? $dataModel['displayCompare'] : 1 ?>
+    <?php $showCart = isset($dataModel['displayCart']) ? $dataModel['displayCart'] : 1 ?>
+    <?php $showTitle = isset($dataModel['showTitle']) ? $dataModel['showTitle'] : 1 ?>
+    <?php $showPrice = isset($dataModel['displayPrice']) ? $dataModel['displayPrice'] : 1 ?>
+    <div class="carousel-container">
+        <?php if ($showTitle): ?>
+
+            <div class="block-title title">
+                <h2><strong id="block-<?php /* @escapeNotVerified */ echo $class ?>-heading" role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo $model->getTitle() ?></strong></h2>
+            </div>
+        <?php endif ?>
+        <?php if (!empty($_items)): ?>
+            <?php $iterator = 1; ?>
+
+            <div id="owl-slider<?php echo $id ?>" class=".owl-carousel products wrapper <?php /* @escapeNotVerified */ echo $viewMode; ?> products-<?php /* @escapeNotVerified */ echo $viewMode; ?>">
+
+
+                <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+                <?php foreach ($_items as $_item): ?>
+                    <li class="item product product-item carousel">
+                        <?php
+                        $_helperGallery->addGallery($_item);
+                        $images = $_helperGallery->getGalleryImages($_item);
+                        //echo count($images);
+                        ?>
+                        <ul class="cd-gallery <?php
+                        if (count($images) < 2) {
+                            echo 'without';
+                        }
+                        ?> <?php
+                        if ($sliderUrl) {
+                            echo $id;
+                        }
+                        ?>" data-container="product-grid">
+                                <?php // Product Image  ?>
+                            <li>
+                                <a href="<?= /* @escapeNotVerified */ $_item->getProductUrl() ?>" class="product photo product-item-photo">
+                                    <?php $image = $block->getImage($_item, $imageType); ?>
+                                    <img src="<?php echo $image->getImageUrl(); ?> " />
+                                </a>
+                                <?php
+                                $_productNameStripped = $block->stripTags($_item->getName(), null, true);
+                                ?>
+                                <div class="cd-item-info">
+                                    <b><a class="product-item-link"
+                                          href="<?php /* @escapeNotVerified */ echo $_item->getProductUrl() ?>">
+                                              <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_item, $_item->getName(), 'name'); ?>
+                                        </a></b>
+                                    <?php if ($showPrice): ?>
+                                        <em class="cd-price"> <?php
+                                            /* @escapeNotVerified */ if ($sliderUrl) {
+                                                echo $block->getProductPrice1($_item);
+                                            } else {
+                                                echo $block->getProductPrice($_item);
+                                            }
+                                            ?></em>
+                                    <?php endif ?>
+                                    <div class="product details product-item-details">
+                                        <?php if ($templateType): ?>
+                                            <?php echo $block->getReviewsSummaryHtml($_item, $templateType) ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($showWishlist || $showCompare || $showCart): ?>
+                                            <div class="product actions product-item-actions">
+                                                <?php if ($showCart): ?>
+
+                                                    <div class="actions-primary">
+                                                        <?php if ($_item->isSaleable()): ?>
+                                                            <?php $postParams = $block->getAddToCartPostParams($_item); ?>
+                                                            <form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
+                                                                <input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
+                                                                <input type="hidden" name="<?php /* @escapeNotVerified */ echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php /* @escapeNotVerified */ echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                                                <?php
+                                                                if ($sliderUrl) {
+                                                                    echo $block->getFormKey();
+                                                                } else {
+                                                                    echo $block->getBlockHtml('formkey');
+                                                                }
+                                                                ?>
+                                                                <button type="submit"
+                                                                        title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                                        class="action tocart primary">
+                                                                    <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                                                </button>
+                                                            </form>
+                                                        <?php else: ?>
+                                                            <?php if ($_item->getIsSalable()): ?>
+                                                                <div class="stock available"><span><?php /* @escapeNotVerified */ echo __('In stock') ?></span></div>
+                                                            <?php else: ?>
+                                                                <div class="stock unavailable"><span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span></div>
+                                                            <?php endif; ?>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                <?php endif; ?>
+
+                                                <?php if ($showWishlist || $showCompare): ?>
+                                                    <div class="secondary-addto-links actions-secondary" data-role="add-to-links">
+                                                        <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist): ?>
+                                                            <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_item); ?>'  class="action towishlist" data-action="add-to-wishlist" title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">
+                                                                <span><?php /* @escapeNotVerified */ echo __('Add to Wish List') ?></span>
+                                                            </a>
+                                                        <?php endif; ?>
+                                                        <?php if ($block->getAddToCompareUrl() && $showCompare): ?>
+                                                            <?php
+                                                            $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
+                                                            ?>
+                                                            <a href="#" class="action tocompare"
+                                                               data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_item); ?>'
+                                                               data-role="add-to-links"
+                                                               title="<?php /* @escapeNotVerified */ echo __('Add to Compare'); ?>">
+                                                                <span><?php /* @escapeNotVerified */ echo __('Add to Compare') ?></span>
+                                                            </a>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php if ($model->getType() == "hdeal") { ?>
+                                        <?php
+                                        $counterId = uniqid();
+                                        $date = date_create($_item->getHotDealTo());
+                                        $currentStartdate = date_format($date, "Y/m/d");
+                                        ?>
+                                        <div id="counter<?php echo $counterId ?>" >
+                                            <span id="daysLeft"></span>   Days
+                                            <span id="hours"></span>      Hours
+                                            <span id="minutes"></span>    Minutes
+                                            <span id="seconds"></span>    Seconds
+                                        </div>
+                                        <script>
+
+                                            require([
+                                                'jquery',
+                                                'countdown'
+                                            ], function ($, countdown) {
+                                                window.jQuery(document).ready(function () {
+                                                    window.jQuery('#<?php echo "counter" . $counterId ?>').countdown('<?php echo $currentStartdate ?>', function (event) {
+                                                        var $this = $(this);
+                                                        switch (event.type) {
+                                                            case "seconds":
+                                                                $this.find('span#' + event.type).html(event.value);
+                                                                break;
+                                                            case "minutes":
+                                                                $this.find('span#' + event.type).html(event.value);
+                                                                break;
+                                                            case "hours":
+                                                                $this.find('span#' + event.type).html(event.value);
+                                                                break;
+                                                            case "days":
+                                                            case "weeks":
+                                                            case "daysLeft":
+                                                                $this.find('span#' + event.type).html(event.value);
+                                                                break;
+                                                            case "finished":
+                                                                $this.hide();
+                                                                break;
+                                                        }
+                                                    });
+
+                                                });
+
+                                            });
+
+                                        </script>                                
+
+                                    <?php } ?>
+                                </div> <!-- cd-item-info -->
+
+                                <!-- other list items here -->
+
+
+                            </li>
+                        </ul>
+                    </li>
+                <?php endforeach; ?>
+                </ol>
+            </div>
+
+
+        </div>
+
+    <?php endif ?>
+
+
+    <?php if (!count($_items) == 0): ?>
+        <script>
+
+            require([
+                'jquery',
+                'ibnabowlsliders',
+                'mage/apply/main'
+            ], function ($, ibnabowlsliders, mage) {
+                $(document).ready(function () {
+
+                    $('.carousel-container').show();
+                    //var widthBrowser = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                    //$(".row.home-top-banners").css("width", widthBrowser + "px");
+                    //$( window ).resize(function() {
+                    // var widthBrowser = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                    // $(".row.home-top-banners").css("width", widthBrowser + "px");
+                    //});
+                    $("#owl-slider<?php echo $id ?>").owlCarousel({
+        <?php echo $prams ?>
+                    });
+                });
+
+            });
+
+        </script>
+        <?php if (!$block->isRedirectToCartEnabled() && !$sliderUrl) : ?>
+            <script type="text/x-magento-init">
+                {
+                "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+                }
+                }
+            </script>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>

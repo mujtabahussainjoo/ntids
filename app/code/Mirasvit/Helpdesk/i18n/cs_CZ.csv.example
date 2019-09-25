@@ -1,0 +1,136 @@
+Department,Oddělení
+"Create New Ticket","Vytvořte novou vstupenku"
+Status,Postavení
+Priority,Přednost
+Replies,Odpovědi
+View,Pohled
+"Help Desk",Podpora
+"Thank you",Děkuji
+"Create Ticket","Vytvoření lístku"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Vaše žádost byla úspěšně odeslána. Měli byste krátce obdržet potvrzovací e-mail."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Váš dotaz byl odeslán a bude na něj co možná nejdříve reagovat. Děkujeme, že jste nás kontaktovali."
+"Unable to submit your request. Please, try again later","Vaše žádost nelze odeslat. Prosím zkuste to znovu později"
+"Page not found.","Stránka nenalezena."
+"Your message was successfuly posted","Vaše zpráva byla úspěšně zveřejněna"
+"Your ticket was successfuly posted","Vaše jízdenka byla úspěšně zveřejněna"
+"Ticket was successfuly closed","Vstupenka byla úspěšně uzavřena"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Nelze nahrát soubor %1. Maximální povolená velikost nahrávání je %2 MB."
+"Allows only this file types: %1","Umožňuje pouze tyto typy souborů: %1"
+"Message added","Zpráva byla přidána"
+"Internal note added","Byla přidána interní poznámka"
+"Third party message added","Byla přidána zpráva třetí strany"
+"Private third party message added","Byla přidána zpráva soukromé třetí strany"
+"-- Please Select --","-- Prosím vyberte --"
+"Contact Tab","Kontaktní karta"
+"Contact Form","Kontaktní formulář"
+" at %1 (%2) - %3","v %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Nemáte oprávnění číst tento vstupenku. Obraťte se na správce."
+"Invalid Customer Email","Neplatná e-mailová adresa zákazníka"
+"not set",Nenastaveno
+"Unknown time","Neznámý čas"
+ago,před
+"from now","od teď"
+"1 sec ago","Před 1 sekundou"
+"Open Ticket","Open Ticket"
+"Open Tickets","Otevřené vstupenky"
+"! Blocked file - ","! Blokovaný soubor -"
+Disabled,Zakázáno
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","Souborový systém"
+Database,Databáze
+Aqua,Aqua
+Grey,Šedá
+Navy,Námořnictvo
+Silver,Stříbrný
+Black,Černá
+Green,Zelená
+Olive,Olivový
+Teal,Teal
+Blue,Modrý
+Lime,Limetka
+Purple,Nachový
+Fuchsia,Fuchsie
+Maroon,Maroon
+Red,Červené
+Orange,Oranžový
+Yellow,Žlutá
+Text,Text
+Date,Datum
+Checkbox,"Zaškrtávací pole"
+"Drop-down list","Rozbalovací seznam"
+"In minutes...","Během několika minut ..."
+"In hours...","V hodinách ..."
+"In days...","Ve dnech ..."
+"In weeks...","V týdnech ..."
+"In months...","V měsících ..."
+Custom,Zvyk
+"--Please Select--","--Prosím vyberte--"
+"New ticket created","Nová vstupenka byla vytvořena"
+Success,Úspěch
+Customer,Zákazník
+Staff,Personál
+"Third party","Třetí strana"
+Closed,Zavřeno
+"Opened 24hr","Otevřeno 24 hodin"
+"Helpdesk Tickets","Helpdesk Vstupenky"
+"Cannot delete ticket with id %1","Nelze smazat jízdenku s id %1"
+Edit,Upravit
+"All Departments","Všechny oddělení"
+Back,Zadní
+"24 hrs x 7 days","24 hodin x 7 dní"
+"Select working days/hours","Vyberte pracovní dny / hodiny"
+"Satisfaction survey","Průzkum spokojenosti"
+"to %1 (third party)","na %1 (třetí strana)"
+"%1 (third party)","%1 (třetí strana)"
+"added %1 (%2)","přidáno %1 (%2)"
+"Ticket Summary","Shrnutí vstupenek"
+"Ticket ID","ID jízdenky"
+Assignee,Nabyvatel
+"Additional Info","Doplňující informace"
+"Ticket History","Historie vstupenek"
+"Done by",Hotovo
+Changes,Změny
+Name,Název
+"Attach files","Připojit soubory"
+Submit,Předložit
+"Submit Ticket","Odeslat lístek"
+"What is your question?","Jaký je váš dotaz?"
+"We found the following topics that might be helpful:","Našli jsme následující témata, která by mohla být užitečná:"
+"None of these are helpful - get in touch","Žádný z nich není užitečný - kontaktujte"
+"We have not found topics that can be helpful.","Nenašli jsme témata, která by mohla být užitečná."
+"Contact Information","Kontaktní informace"
+Comment,Komentář
+"We are open 24 x 7","Jsme otevřeni 24 x 7"
+"We are closed","Máme zavřeno"
+"Timezone: %1","Časové pásmo: %1"
+"Please take a second to rate my reply...","Prosím ohodnoťte mi odpověď ..."
+Great,Skvělý
+Awesome,Skvělý
+"Fast, friendly, helpful, pleasant. Great job!","Rychlé, přátelské, užitečné, příjemné. Dobrá práce!"
+"Just Okay","Jen dobře"
+"Fine, but definitely could have been better.","Jistě, ale rozhodně by to mohlo být lepší."
+"Not good",Špatný
+"Unfortunately, I wasn't happy with it at all.","Bohužel jsem s ní vůbec nebyl spokojen."
+"Thank you for participating in our survey!","Děkujeme za účast na našem průzkumu!"
+"If you would like to provide additional comments, please do so below:","Pokud byste chtěli poskytnout další připomínky, postupujte takto:"
+Message,Zpráva
+"Submit Message","Odeslat zprávu"
+"Thank you for your feedback!","Děkujeme vám za vaši reakci!"
+Attachments,Přílohy
+Order,Objednat
+"-- Select an Order --","- Vyberte objednávku -"
+"Create ticket","Vytvořte jízdenku"
+"You don't have open tickets","Nemáte otevřené letenky"
+"Post a Reply","Odeslat odpověď"
+"Reopen Ticket","Znovu otevřete lístek"
+"Close Ticket","Zavřít vstupenku"
+History,Dějiny
+"Back to My Tickets","Zpět na Moje vstupenky"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Kontaktujte nás"
+Open,Otevřeno
+Subject,Předmět
+"Last Activity","Poslední aktivita"
+"Request ID","ID požadavku"

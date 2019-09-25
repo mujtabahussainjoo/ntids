@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <fieldset name="customer">
+        <field name="membership_expiry_date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="label" xsi:type="string" translate="true">Membership Expiry Date</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="sortOrder" xsi:type="number">1</item>
+                    <item name="dataScope" xsi:type="string">membership_expiry_date</item>
+                    <item name="options" xsi:type="array">
+                        <!--<item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>-->
+                        <item name="minDate" xsi:type="string">new Date()+ 1</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    
+</form>

@@ -1,0 +1,31 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Adminhtml\Rule;
+
+/**
+ * @magentoAppArea adminhtml
+ */
+class NewConditionHtmlTest extends \Magento\TestFramework\TestCase\AbstractBackendController
+{
+    /**
+     * setUp.
+     */
+    public function setUp()
+    {
+        $this->resource = 'Mirasvit_Helpdesk::helpdesk_rule';
+        $this->uri = 'backend/helpdesk/rule/newconditionhtml';
+        parent::setUp();
+    }
+
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Adminhtml\Rule\NewConditionHtml::execute
+     */
+    public function testNewConditionHtmlAction()
+    {
+        $this->dispatch('backend/helpdesk/rule/newconditionhtml');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

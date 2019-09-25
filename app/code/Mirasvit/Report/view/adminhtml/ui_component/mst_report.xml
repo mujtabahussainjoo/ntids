@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"
+         class="Mirasvit\Report\Ui\Component\Listing">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mst_report.mst_report_data_source</item>
+            <item name="deps" xsi:type="string">mst_report.mst_report_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">grid_columns</item>
+        <item name="template" xsi:type="string">templates/listing/report</item>
+    </argument>
+
+    <dataSource name="mst_report_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Mirasvit\Report\Ui\DataProvider</argument>
+            <argument name="name" xsi:type="string">mst_report_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Mirasvit_Report/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <container name="report_toolbar" class="Mirasvit\Report\Ui\Component\Toolbar">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Mirasvit_Report/js/toolbar</item>
+            </item>
+        </argument>
+    </container>
+
+    <container name="chart" class="Mirasvit\Report\Ui\Component\Chart">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Mirasvit_Report/js/chart</item>
+                <item name="columnsProvider" xsi:type="string">mst_report.mst_report.grid_columns</item>
+                <item name="storageConfig" xsi:type="array">
+                    <item name="provider" xsi:type="string">mst_report.mst_report.listing_top.chart</item>
+                    <item name="namespace" xsi:type="string">chart</item>
+                </item>
+            </item>
+        </argument>
+    </container>
+
+    <container name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="template" xsi:type="string">ui/grid/toolbar</item>
+            </item>
+        </argument>
+
+        <bookmark name="bookmarks" class="Mirasvit\Report\Ui\Component\Bookmark">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/bookmarks/bookmarks</item>
+                    <item name="displayArea" xsi:type="string">dataGridActions</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="saveUrl" xsi:type="url" path="mui/bookmark/save"/>
+                        <item name="deleteUrl" xsi:type="url" path="mui/bookmark/delete"/>
+                    </item>
+                </item>
+            </argument>
+        </bookmark>
+
+        <container name="columns_controls">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="columnsData" xsi:type="array">
+                        <item name="provider" xsi:type="string">mst_report.mst_report.grid_columns</item>
+                    </item>
+                    <item name="component" xsi:type="string">Mirasvit_Report/js/grid/controls/columns</item>
+                    <item name="displayArea" xsi:type="string">dataGridActions</item>
+                </item>
+            </argument>
+        </container>
+
+        <exportButton name="export_button">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Mirasvit_Report/js/grid/export</item>
+
+                    <item name="options" xsi:type="array">
+                        <item name="cvs" xsi:type="array">
+                            <item name="value" xsi:type="string">csv</item>
+                            <item name="label" xsi:type="string" translate="true">CSV</item>
+                            <item name="url" xsi:type="string">report/export/gridToCsv</item>
+                        </item>
+                        <item name="xml" xsi:type="array">
+                            <item name="value" xsi:type="string">xml</item>
+                            <item name="label" xsi:type="string" translate="true">Excel XML</item>
+                            <item name="url" xsi:type="string">report/export/gridToXml</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </exportButton>
+
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Mirasvit_Report/js/grid/filters/filters</item>
+                    <item name="columnsProvider" xsi:type="string">mst_report.mst_report.grid_columns</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">mst_report.mst_report.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.filters</item>
+                    </item>
+                </item>
+            </argument>
+        </filters>
+
+        <container name="settings">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="displayArea" xsi:type="string">dataGridActions</item>
+                    <item name="sortOrder" xsi:type="string">100</item>
+                    <item name="sort_order" xsi:type="string">100</item>
+                </item>
+            </argument>
+
+            <button name="settings">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="title" xsi:type="string" translate="true">Settings</item>
+                        <item name="elementTmpl" xsi:type="string">report/settings/button</item>
+                        <item name="actions" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="targetName" xsi:type="string">${ $.parentName }.modal.insert_form</item>
+                                <item name="actionName" xsi:type="string">destroyInserted</item>
+                            </item>
+                            <item name="1" xsi:type="array">
+                                <item name="targetName" xsi:type="string">${ $.parentName }.modal</item>
+                                <item name="actionName" xsi:type="string">toggleModal</item>
+                            </item>
+                            <item name="2" xsi:type="array">
+                                <item name="targetName" xsi:type="string">${ $.parentName }.modal.insert_form</item>
+                                <item name="actionName" xsi:type="string">render</item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </button>
+
+            <!-- Settings Modal -->
+            <modal name="modal">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="isTemplate" xsi:type="boolean">false</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="state" xsi:type="string">!index=insert_form:responseStatus</item>
+                        </item>
+                        <item name="options" xsi:type="array">
+                            <item name="type" xsi:type="string">slide</item>
+                            <item name="title" xsi:type="string">Report Columns Settings</item>
+                        </item>
+                    </item>
+                </argument>
+                <insertForm name="insert_form">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <!--<item name="formSubmitType" xsi:type="string">ajax</item>-->
+                            <item name="autoRender" xsi:type="boolean">false</item>
+                            <item name="component" xsi:type="string">Magento_Ui/js/form/components/insert-form</item>
+                            <item name="toolbarContainer" xsi:type="string">${ $.parentName }</item>
+                            <item name="ns" xsi:type="string">report_settings_form</item>
+                            <item name="externalProvider" xsi:type="string">${ $.ns }.${ $.ns }_data_source</item>
+                            <item name="render_url" xsi:type="url" path="mui/index/render_handle">
+                                <param name="handle">report_settings</param>
+                                <param name="buttons">1</param>
+                                <param name="_current">1</param>
+                            </item>
+                        </item>
+                    </argument>
+                </insertForm>
+            </modal>
+        </container>
+
+        <paging name="listing_paging" class="Mirasvit\Report\Ui\Component\Listing\Paging">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">mst_report.mst_report.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.paging</item>
+                    </item>
+                    <item name="selectProvider" xsi:type="string">mst_report.mst_report.grid_columns.ids</item>
+                    <item name="displayArea" xsi:type="string">bottom</item>
+                    <item name="options" xsi:type="array">
+                        <item name="20" xsi:type="array">
+                            <item name="value" xsi:type="number">20</item>
+                            <item name="label" xsi:type="string" translate="true">20</item>
+                        </item>
+                        <item name="30" xsi:type="array">
+                            <item name="value" xsi:type="number">30</item>
+                            <item name="label" xsi:type="string" translate="true">30</item>
+                        </item>
+                        <item name="50" xsi:type="array">
+                            <item name="value" xsi:type="number">50</item>
+                            <item name="label" xsi:type="string" translate="true">50</item>
+                        </item>
+                        <item name="100" xsi:type="array">
+                            <item name="value" xsi:type="number">100</item>
+                            <item name="label" xsi:type="string" translate="true">100</item>
+                        </item>
+                        <item name="200" xsi:type="array">
+                            <item name="value" xsi:type="number">200</item>
+                            <item name="label" xsi:type="string" translate="true">200</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </paging>
+    </container>
+
+    <columns name="grid_columns" class="Mirasvit\Report\Ui\Component\Listing\Columns">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Mirasvit_Report/js/grid/listing</item>
+                <item name="storageConfig" xsi:type="array">
+                    <item name="provider" xsi:type="string">mst_report.mst_report.listing_top.bookmarks</item>
+                    <item name="namespace" xsi:type="string">current</item>
+                </item>
+                <item name="childDefaults" xsi:type="array">
+                    <item name="controlVisibility" xsi:type="boolean">true</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">mst_report.mst_report.listing_top.bookmarks</item>
+                        <item name="root" xsi:type="string">columns.${ $.index }</item>
+                        <item name="namespace" xsi:type="string">current.${ $.storageConfig.root }</item>
+                    </item>
+                </item>
+            </item>
+        </argument>
+    </columns>
+</listing>

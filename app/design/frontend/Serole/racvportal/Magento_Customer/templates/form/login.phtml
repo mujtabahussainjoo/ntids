@@ -1,0 +1,82 @@
+
+<div class="container container-main">
+    <div class="layout layout-1-col">
+        <div role="main">
+            <div class="account-login">
+                <div class="login-text">
+                    <div class="logo1">
+                        <?php 
+                            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                            $helper = $objectManager->create('\Serole\Racvportal\Helper\Data');                            
+                         ?>
+                        <a href="<?php echo $helper->getStoreBaseUrl() ?>" title="RACV Ticket Portal" >
+                        <img class="logo" src="<?php echo $helper->getMediaBaseUrl()."logo/stores/".$helper->getStoreId()."/logo-white_racv.png"; ?>" alt="RACV Ticket Portal">
+                        </a>
+                    </div>
+                    To access this website you need a valid login.<br>
+                    This can only be assigned by a website administrator.<br>
+                    In order to request a login please contact your Regional Manager<br>
+                    to place a request with Neat Ideas.<br>
+                </div>
+
+
+        <form class="form form-login"
+              action="<?php echo $block->getUrl('racvportal/customer/loginpost'); ?>"
+              method="post"
+              id="login-form"
+              data-mage-init='{"validation":{}}'>
+            <?= $block->getBlockHtml('formkey') ?>
+            <div class="col1-set">
+                 <div class="col-1 registered-users">
+                    <div class="content">
+                        <ul class="form-list">                            
+                            <li>
+                                <div class="field email required">
+                                    <label class="label" for="email"><span><?= $block->escapeHtml(__('Username')) ?></span><span class="sym">*</span></label>
+                                    <div class="control">
+                                        <input name="login[username]" value="<?= $block->escapeHtmlAttr($block->getUsername()) ?>" <?php if ($block->isAutocompleteDisabled()): ?> autocomplete="off"<?php endif; ?> id="email" type="text" class="input-text" title="<?= $block->escapeHtmlAttr(__('Username')) ?>" data-validate="{required:true}">
+                                    </div>
+                                </div>
+                            </li>    
+                           
+                            <li>
+                                <div class="field password required">
+                                    <label for="pass" class="label"><span><?= $block->escapeHtml(__('Password')) ?></span></span><span class="sym">*</span></label>
+                                    <div class="control">
+                                        <input name="login[password]" type="password" <?php if ($block->isAutocompleteDisabled()): ?> autocomplete="off"<?php endif; ?> class="input-text" id="pass" title="<?= $block->escapeHtmlAttr(__('Password')) ?>" data-validate="{required:true}">
+                                    </div>
+                                </div>
+                            </li>    
+                            <li>
+                                <div class="field shop required">
+                                    <label for="shop" class="label"><span><?= $block->escapeHtml(__('Shop')) ?></span></span><span class="sym">*</span></label>
+                                    <div class="control">                                       
+                                       <?php 
+                                                $objManager = \Magento\Framework\App\ObjectManager::getInstance();
+                                                $racvStoreColl = $objManager->create('Serole\Racvportal\Model\Ravportal')->getCollection();
+                                                $racvStoreColl->setOrder('name','ASC');
+                                                $racvStores = $racvStoreColl->getData();
+                                        ?>
+                                       <select class="validate-select" name="login[shop]" id="shop">
+                                            <option value="">Select Shop...</option>
+                                            <?php foreach ($racvStores as $storeItem) { ?>
+                                                      <option value="<?php echo $storeItem['entity_id'] ?>"><?php echo $storeItem['name'];?></option>
+                                            <?php } ?>
+                                       </select>
+                                    </div>
+                                </div>
+                            </li>    
+                        </ul>              
+							<p class="required">* Required Fields</p>
+                        <div class="buttons-set">
+                                <button type="submit" class="button login-button" title="Submit"><span  style="text-align: center !important; margin-left: -15px;">Submit</span></button>
+                        </div>
+                     </div>    
+                  </div> 
+               </div>   
+            </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

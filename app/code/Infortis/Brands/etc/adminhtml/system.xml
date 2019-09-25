@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="infortis" translate="label" sortOrder="152">
+            <label>Infortis Extensions</label>
+        </tab>
+        <section id="brands" translate="label" sortOrder="300" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Brands</label>
+            <tab>infortis</tab>
+            <resource>Infortis_Brands::config</resource>
+            <group id="general" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="attr_id" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brand Attribute Code</label>
+                    <comment><![CDATA[Identifier of the attribute which contains the information about brands in your store. To find the attribute code of existing attribute, go to <em>Stores > Attributes > Products</em> and find the attribute on the list. The code can be found in the <em>Attribute Code</em> column.]]></comment>
+                </field>
+                <field id="image_extension" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brand Image File Extension</label>
+                    <comment>Without the leading dot.</comment>
+                </field>
+                <field id="show_image" translate="label" sortOrder="30" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Brand Image</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "No", brand image will be replaced with brand name (simple text).</comment>
+                </field>
+                <field id="show_image_fallback_to_text" translate="label" sortOrder="40" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Text If No Brand Image</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes": if brand image doesn't exist, it will be replaced with brand name (simple text).&lt;br/&gt;If set to "No": if brand image doesn't exist, there will bo no info about brand.</comment>
+                </field>
+                <field id="heading_link" translate="label" sortOrder="199" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="link_search_enabled" translate="label" sortOrder="200" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brand Logo is a Link to...</label>
+                    <source_model>Infortis\Brands\Model\System\Config\Source\Linktosearch</source_model>
+                    <comment>With this option, you can decide whether brand logo is a link, e.g., to search results page.&lt;br/&gt;Set to "Custom Page" if you want the logo to be a link to custom pages (e.g., category view pages, CMS pages, pages created by 3rd-party extensions etc.) - more options will be displayed below.</comment>
+                </field>
+                <field id="page_base_path" translate="label" sortOrder="310" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Base Path of Brand Pages</label>
+                    <comment>Path specified in this field will be appended with the brand name to create a link to the brand page.&lt;br/&gt;Leave empty if no base path is needed. Path is relative to the store base URL. Do not add leading or trailing slashes. For more details please refer to the user guide.</comment>
+                </field>
+                <field id="append_category_suffix" translate="label" sortOrder="320" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Append Category URL Suffix</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If <strong>Category URL Suffix</strong> was configured (under Stores > Configuration > Catalog), it can be appended at the end of the URL of a brand page. For example: www.example.com/brands/apple<strong style="color:red">.html</strong> (assuming that <strong style="color:red">.html</strong> was configured in the <strong>Category URL Suffix</strong>).]]></comment>
+                </field>
+                <field id="heading_seo" translate="label" sortOrder="800" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SEO Settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="url_key_separator" translate="label" sortOrder="810" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>URL Key Separator</label>
+                    <comment>Specify character which will be used as a word separator to generate links to custom brand pages. Brand name has to be simplified to be used in URL. Module will strip all whitespace characters and other non-letter and non-digit characters in brand name and replace them with separator. More information can be found in the user guide.&lt;br/&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;br/&gt;if brand name is &lt;em&gt;Marks &amp; Spencer&lt;/em&gt; and separator is hyphen (-), the brand name in URL will be the following: &lt;em&gt;marks-spencer&lt;/em&gt;&lt;br/&gt;&lt;strong style="color:red;"&gt;Important:&lt;/strong&gt;&lt;br/&gt;Hyphen (-) is the recommended separator. Other separators, such as underscores (_) or plus-signs (+) should be avoided. Source: &lt;a href="http://youtu.be/AQcSFsQyct8"&gt;link&lt;/a&gt;.</comment>
+                </field>
+                <field id="img_url_key_separator" translate="label" sortOrder="820" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image URL Key Separator</label>
+                    <comment>Specify character which will be used as a word separator in the names of brand image files.&lt;br/&gt;&lt;strong style="color:red;"&gt;Important:&lt;/strong&gt;&lt;br/&gt;The &lt;strong&gt;Image URL Key Separator&lt;/strong&gt; field was added for backward compatibility. In next versions this field will be removed and the character specified in the &lt;strong&gt;URL Key Separator&lt;/strong&gt; field will also be used in the names of brand image files.&lt;br/&gt;To prepare your store for this, we recommend to use hyphen (-) as the separator for images. In previous versions underscore (_) was the default separator for images. So what you need to do is to enter hyphen in the &lt;strong&gt;Image URL Key Separator&lt;/strong&gt; field and edit names of all your brand images: replace underscores with hyphens.&lt;br/&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;br/&gt;change file name &lt;em&gt;louis_vuitton.png&lt;/em&gt; to &lt;em&gt;louis-vuitton.png&lt;/em&gt;</comment>
+                </field>
+            </group>
+            <group id="product_view" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Brand on Product Page</label>
+                <field id="enable" translate="label" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brand on Product Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+            </group>
+            <group id="list" translate="label" sortOrder="30" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Brand List</label>
+                <field id="heading_collection" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Brands</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="all_brands" translate="label" sortOrder="20" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Brands</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", all existing brands will be displayed. If set to "No", you will be able to select brands in the field below.</comment>
+                </field>
+                <field id="brands" translate="label" sortOrder="30" type="multiselect" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Selected Brands</label>
+                    <source_model>Infortis\Brands\Model\System\Config\Source\Brands</source_model>
+                    <comment>Select brands which you want to display</comment>
+                </field>
+                <field id="heading_filters" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Filter Brands</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="assigned" translate="label" sortOrder="110" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brands Assigned To Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", display only those brands, which are currently assigned to products.</comment>
+                </field>
+                <field id="assigned_in_stock" translate="label" sortOrder="120" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brands Assigned To Products In Stock</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", display only those brands, which are currently assigned to products which are in stock.</comment>
+                </field>
+            </group>
+            <group id="slider" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Brand Slider</label>
+                <field id="timeout" translate="label" sortOrder="510" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Timeout</label>
+                    <comment>To enable automatic scrolling, specify time (in milliseconds) between slide transitions. Leave empty to disable automatic scrolling. Note that 1000 miliseconds = 1 second.</comment>
+                </field>
+                <field id="speed" translate="label" sortOrder="520" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Speed</label>
+                    <comment>Duration (in milliseconds) of scrolling animation. Applied to scrolling with arrows (and touch swipe).</comment>
+                </field>
+                <field id="auto_speed" translate="label" sortOrder="530" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatic Scrolling Speed</label>
+                    <comment>Duration (in milliseconds) of scrolling animation. Applied to automatic scrolling (if &lt;strong&gt;Timeout&lt;/strong&gt; was specified) and to scrolling with pagination.</comment>
+                </field>
+                <field id="pause" translate="label" sortOrder="540" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pause on Hover</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>If enabled, when the slider is mouseovered then the automatic transition functionality will pause.</comment>
+                </field>
+                <field id="loop" translate="label" sortOrder="550" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loop</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>If enabled, animation will loop.</comment>
+                </field>
+                <field id="lazy" translate="label" sortOrder="560" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Lazy Loading</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Delays loading of images to speed up page loading. Images outside of viewport will not be loaded before user scrolls to them.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

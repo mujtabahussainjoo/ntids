@@ -1,0 +1,4 @@
+<?php
+    $urls = $block->getAllUrls();
+?>
+<?php foreach($urls as $url): ?><link rel="stylesheet" type="text/css" media="all" href="<?php echo $url;?>" /><?php endforeach; ?>

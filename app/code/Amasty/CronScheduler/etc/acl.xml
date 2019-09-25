@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2019 Amasty (https://www.amasty.com)
+ * @package Amasty_CronScheduler
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::system">
+                    <resource id="Amasty_CronScheduleList::amasty_schedule">
+                        <resource id="Amasty_CronScheduler::jobs_scheduler" title="Cron Jobs List"/>
+                        <resource id="Amasty_CronScheduler::jobs_timeline" title="Cron Jobs Timeline"/>
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Amasty_CronScheduler::config" title="Amasty Cron Scheduler Settings" sortOrder="31819" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

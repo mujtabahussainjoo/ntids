@@ -1,0 +1,821 @@
+/*******************FLYBUYS*****************/
+
+@font-face {
+  font-family: 'StagSans-Book';
+  src: url('../fonts/StagSans-Book.eot');
+  src: url('../fonts/StagSans-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Book.woff') format('woff'), url('../fonts/StagSans-Book.ttf') format('truetype'), url('../fonts/StagSans-Book.svg#StagSans-Book') format('svg');
+}
+
+@font-face {
+  font-family: 'StagSans-Medium';
+  src: url('../fonts/StagSans-Medium.eot');
+  src: url('../fonts/StagSans-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Medium.woff') format('woff'), url('../fonts/StagSans-Medium.ttf') format('truetype'), url('../fonts/StagSans-Medium.svg#StagSans-Medium') format('svg');
+}
+
+@font-face {
+  font-family: 'StagSans-Semibold';
+  src: url('../fonts/StagSans-Semibold.eot');
+  src: url('../fonts/StagSans-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Semibold.woff') format('woff'), url('../fonts/StagSans-Semibold.ttf') format('truetype'), url('../fonts/StagSans-Semibold.svg#StagSans-Semibold') format('svg');
+}
+
+
+@font-face {
+  font-family: 'coleshaptirg-webfont';
+  src: url('../fonts/coleshaptirg-webfont.eot');
+  src: url('../fonts/coleshaptirg-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/coleshaptirg-webfont.woff') format('woff'), url('../fonts/coleshaptirg-webfont.ttf') format('truetype'), url('../fonts/coleshaptirg-webfont.svg#coleshaptirg-webfont') format('svg');
+}
+@font-face {
+  font-family: 'coleshapticbd-semibold';
+  src: url('../fonts/coleshapticbd-webfont.eot');
+  src: url('../fonts/coleshapticbd-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/coleshapticbd-webfont.woff') format('woff'), url('../fonts/coleshapticbd-webfont.ttf') format('truetype'), url('../fonts/coleshapticbd-webfont.svg#coleshapticbd-webfont') format('svg');
+}
+@font-face {
+  font-family: 'coleshaptirg-bold';
+  src: url('../fonts/coleshapticexbd-webfont.eot');
+  src: url('../fonts/coleshapticexbd-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/coleshapticexbd-webfont.woff') format('woff'), url('../fonts/coleshapticexbd-webfont.ttf') format('truetype'), url('../fonts/coleshapticexbd-webfont.svg#coleshaptirg-webfont') format('svg');
+}
+
+
+.link.helpdesk.wishlist{
+		font-family: 'coleshapticbd-semibold';
+		font-weight:bold;
+		font-size: 18px;
+}
+.sidebar.sidebar-additional{
+	display:none!important;
+}
+.product.description.product-item-description ul > li{
+	    margin-bottom: 0px!important; 
+}
+.products-list-ext .product-item-name {
+    width: 400% ;
+}
+.products-list-ext .product-item-description {
+    margin: 37px 0!important;
+}
+.product-primary-column.product-shop.grid12-5.product-info-main{
+    width: 64.67%!important;
+}
+.product-secondary-column.custom-sidebar-right.grid12-3.no-right-gutter{
+    margin-right: -223px!important;
+	margin-top:-110px!important;
+	}
+.product.attribute.overview ul > li{
+	margin-bottom:0px!important;
+}
+.hdmx__contact-button.hdmx__contact-button-left {
+display:none!important;
+}
+.items-grid .special-price .price-label {
+     display: inherit; 
+}
+.items-grid	.product-item-details{
+    width: 171px!important;
+}
+.items-grid .product-item-details {
+    margin-top: 50px;
+}
+.fotorama__caption{display:none!important;}
+ .main.container {
+    background: #fff !important;
+}
+.nav > li > a{
+	font-family: 'coleshapticbd-semibold';
+}
+h1{
+	font-family: 'coleshaptirg-bold';
+}
+h2, h3, h4, h5, h6{
+	font-family: 'coleshaptirg-webfont';
+}
+@media screen and (max-width: 500px){
+	.howitworks ul li .text {
+		float: inherit;
+		display: table-cell;
+		text-align: left;
+		vertical-align: middle;
+		padding-left: 20px;
+	}
+}
+@media screen and (max-width:1200px){
+	.howitworks ul li{
+		width: 33.333%;
+	}
+	.chooseexperience {
+		padding: 0;
+	}
+	.categorylist {
+		padding: 0;
+	}
+}
+.checkout-index-index .header-container-micro {
+    background-color: #fff!important;
+}
+@media screen and (min-width:768px) and (max-width:990px){
+	.h-banner{
+		min-height: 205px;
+		padding: 0;
+	}
+}
+@media screen and (min-width:991px) and (max-width:1024px){
+	.h-banner{
+		min-height: 275px;
+		padding: 0;
+	}
+}
+
+@media screen and (max-width:767px){
+	header[role="banner"] {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.quick-access ul.links li.top-link-cart a {
+		font-size: 0;
+	}
+	.ticketstext {
+		position: relative;
+		left: 0;
+		top: 0;
+		border: 0;
+		border-bottom: 2px solid #6f6f6f;
+		float: left;
+		width: 100%;
+		padding: 0 0 5px 0;
+		margin: 15px 0 0 0;
+	}
+	.topbottom {
+		min-height: 46px;
+	}
+	.main.container{
+		padding-top:0px!important;
+	}
+	.navbar {
+		margin-bottom: 0;
+		margin-top: 12px;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		border: none !important;
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 20px;
+	}
+	.navbar-nav {
+		margin: 0;
+	}
+	.topnav {
+		width: 100%;
+	}
+	
+	.navbar-nav > li {
+		margin-right: 0;
+		padding-right: 0;
+	}
+	.nav > li {
+		display: inline-block;
+		width: 100%;
+	}
+	.topsearch {
+		float: right;
+		width: 90%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	#search_mini_form{
+		width: 100%;
+	}
+	.chooseexperience .title{
+		margin-top: 35px;
+		font-size: 28px;
+	}
+	.category {
+		margin-bottom: 10px;
+	}
+	.categorylist .category{
+		margin-bottom: 10px;
+	}
+	.navbar-collapse{
+		max-height: 370px;
+	}
+	.data-table.cart-table td, .data-table.cart-table th{
+		padding: 2px;		
+	}
+	.data-table.cart-table td a, .data-table.cart-table th{
+		font-size: 12px;
+	}
+	.data-table.cart-table .btn-remove.btn-remove2{
+		font-size: 0;
+		padding:5px;
+	}
+	.cart-table .qty{
+		width:30px;
+	}
+	.h-banner {
+		background: url(../../images/flybuys-home-banner-small.png) #0569b1 no-repeat right top;
+	}
+	.dropdown-block .dropdown-heading .ic-cart{
+		    color: #0064AF!important;
+	}
+	.h-banner-text {
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 32px;
+		line-height: 34px;
+		max-width: 290px;
+		height: 170px;
+	}
+	.page-banner {
+		background: url(../../images/flybuys-home-banner-small.png) #0569b1 no-repeat right top !important;
+	}
+	.page-banner-text {
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 32px;
+		line-height: 34px;
+		max-width: 290px;
+		height: 170px;
+	}
+}
+
+@media screen and (max-width: 667px){
+	#shopping-cart-table tbody td:first-child, #shopping-cart-table thead th:first-child{
+		display: none;
+	}
+	#shopping-cart-table .product-name {
+		width:140px;
+	}
+	.cart .cart-collaterals{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.topbottom {
+		margin-top: 50px;
+	}
+	.quick-access ul.links li.top-username{
+		line-height: 34px;
+		position: absolute;
+		left: 0;
+		top: 70px;
+	}
+	.quick-access ul.links li.top-link-users{
+		position: absolute;
+		right: 0;
+		top: 70px;
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width:500px){
+	header[role="banner"] > .logo {
+		max-width: 200px;
+	}
+	.topsearch {
+		width: 87%;
+	}
+	.howitworks .title {
+		font-size: 28px;
+	}
+	.howitworks ul li {
+		width: 100%;
+		padding: 0;
+		display: table;
+	}
+	.howitworks ul li .counter{
+		width: 62px;
+		height: 62px;
+		line-height: 60px;
+		font-size: 28px;
+		float: inherit;
+		display: table-cell;
+	}
+	.howitworks ul li .text {
+		float: inherit;
+		display: table-cell;
+		text-align: left;
+		vertical-align: middle;
+		padding-left: 20px;
+	}
+	.footerlogo {
+		float: left;
+		width:100%;
+		margin-bottom: 15px;
+	}
+	.footerlogo span {
+		border: 0;
+		display: inline-block;
+		width: 100%;
+		padding: 0 0 0 140px;
+		margin: 0;
+	}
+	#catalog-filters {
+		display: none;
+	}
+}
+@media screen and (max-width:374px){
+	#shopping-cart-table .product-name {
+		width:110px;
+	}
+}
+.category span:hover{
+	text-decoration: underline;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.col-md-12 {
+    width: 100%;
+}
+.chooseexperience .title {
+    display: inline-block;
+    width: 100%;
+    font-family: 'coleshaptirg-bold';
+}
+.title {
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+.actions-toolbar .secondary {
+    float: unset!important;
+    margin: 0px 0% 0% 0%!important; 
+}
+.catalog-product-view .bundle-summary .subtitle {
+    margin-top: 37%!important;
+}
+.catalog-product-view .block-bundle-summary{
+width: 88.6%!important;
+}
+.header-top a {
+    color: #0468b1;
+    font-weight: 800;
+    font-family: 'coleshaptirg-bold';
+	font-size:17px!important;
+}
+
+@media (min-width: 768px){
+.authorization-link a {
+    display: block!important;
+}
+}
+.icon.ib.ib-hover.ic.ic-compare {display:none!important;}
+.category {
+    background-color: #FFFFFF;
+    float: left;
+    width: auto;
+    margin: 0 0 10% 0;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
+}
+.category a {
+    float: left;
+    width: auto%;
+    text-align: center;
+}
+.category img {
+    border-radius: 5px 5px 0 0;
+    margin: 0 auto;
+}
+img {
+    vertical-align: middle;
+}
+.howitworks .title span {
+    width: 100%;
+    max-width: 360px;
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    font-weight: normal;
+}
+.category span {
+    display: inline-block;
+    width: 100%;
+    color: rgb(57, 57, 58);
+    font-size: 22px;
+    line-height: 18px;
+    text-align: center;
+    font-family: coleshapticbd-semibold;
+    padding: 26px 0px;
+}
+.howitworks ul li .counter {
+    height: 105px;
+    width: 105px;
+    border: 2px solid #FFFFFF;
+    border-radius: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 100px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.howitworks {
+    float: left;
+    width: 100%;
+    background: #101010;
+    text-align: center;
+    background: url("https://store.neatideas.com.au/flybuys/skin/frontend/flybuys/default/images/howitworksbg.jpg")no-repeat center top;
+	background-position: no-repeat center top;
+    background-size: cover;
+    padding: 60px 0;
+    font-size: 0;
+	margin-top: 0%;
+}
+.howitworks .title {
+    float: left;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 60px;
+    text-align: center;
+    margin: 0;
+    font-family: 'coleshapticbd-semibold';
+}
+.howitworks ul li {
+    margin: 0 0 25px 0;
+    padding: 0 25px;
+    width: 27%;
+    display: inline-block;
+    vertical-align: top;
+}
+.howitworks ul li .text {
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    font-family: 'coleshapticbd-semibold';
+}
+.gap {background:#F2F2F5;}
+.h-banner {
+    float: left;
+    width: 100%;
+    background: url("https://store.neatideas.com.au/flybuys/skin/frontend/flybuys/default/images/flybuys-home-banner.png") #0569b1 no-repeat right top;
+	/* margin: -1.6% 0 0 0; */
+    padding: 0;
+}
+.h-banner-text {
+    color: #FFFFFF;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 77px;
+    max-width: 500px;
+    font-family: 'coleshapticbd-semibold';
+    display: table;
+    height: 351px;
+    vertical-align: middle;
+	/* margin-left: 7%; */
+}
+
+.helpdesk-ticket-view .hdmx__ticket-summary tr:nth-child(2) {
+    display: none;
+}
+.helpdesk-ticket-view .hdmx__ticket-summary tr:nth-child(3) {
+    display: none;
+}
+.products-list-ext .product-item-details {
+    padding-left: 30px !important; 
+}
+.bundle-options-container{
+margin-top: 40%;
+}
+.page-product-grouped .product-lower-primary-column{
+margin-top: 0%;
+}
+.page-product-grouped .item {
+    padding-left: 20px!important;
+}
+.page-product-grouped .box-tocart .fieldset .actions .action.primary.tocart {
+    padding: 13px!important;
+    margin: 67px 0px 86px -73px;
+}
+.helpdesk-ticket-index .hdmx__tickets .action.primary { margin-top: -65px;}
+
+.cms-home-page-default .row .col-md-12 .title {
+    font-size: 40px;
+}
+.block-bundle-summary{
+		    left: -150px;
+}
+.product.data.items.style1 .item.title > .switch strong {
+    margin-left: -85%;
+}
+.category-view{display:none!important;}
+.product-event-and-village-cinemas-10-gold-class-bar-evoucher-eve-mov-nd-cbv-004 .product-lower-primary-column{
+margin-top: 0%;
+}
+.catalog-category-view .filter-options-content{display:block!important;}
+.evoucher{
+	background-image: url(../images/eVoucher_200.png);
+	display: block;
+    position: absolute;
+    left: 15px;
+    top: 135px;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin-left: -15px;
+    margin-top: -2px;
+	z-index:10;
+}
+.mailout{
+	background-image: url(../images/Mailout_200.png);
+	display: block;
+    position: absolute;
+    left: 15px;
+    top: 135px;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+	    margin-left: -15px;
+
+    margin-top: -2px;
+	z-index:10;
+}
+.cms-flybuys-homepage .row .col-md-12 .title {
+    font-size: 40px;
+}
+.cms-home-page-default .main.container{background:#F2F2F5!important;}
+.cms-home-page-default .main-container{background:#F2F2F5!important;}
+@media (min-width: 768px){ 
+
+	.main.container{
+		padding-top:0px!important;
+		padding-left: 0px!important;
+		padding-right: 0px!important;
+	}
+	.chooseexperience {padding: 0 12%;}
+	.h-banner-text div{margin-top: 10%!important;}
+	.links-wrapper-separators-left .links > li:first-child > * {
+		background-image: none;
+		color: #0064AF;
+		font-weight:800!important;
+		font-size: 18px!important;
+		font-family: 'coleshapticbd-semibold'!important;
+	}
+	.dropdown-block .dropdown-heading .label{
+		background-image: none;
+		color: #0064AF;
+		font-size: 18px;
+		font-family: 'coleshapticbd-semibold';
+	}
+	.links-wrapper-separators-left .links > li {margin-left: 0px!important;}
+	.navi.nav-regular > ul > li > a {
+		font-family: 'coleshapticbd-semibold';
+	}
+	.nav-regular .nav-item.level0 > a{font-size: 20px!important;}
+	.footerwrap {
+		float: left;
+		width: 100%;
+		background: #5d5d5d;
+		color: #FFFFFF!important;
+		padding-top: 35px;
+		padding-bottom: 25px;
+		font-size: 15px;
+		line-height: 28px;
+	}
+	.footerlogo img{width: 195px!important;}	 
+	.ib {background-color: transparent!important;}	 
+	.menu > li >a{	 
+		 color: #FFFFFF;
+		text-decoration: none;
+		font-family: 'coleshapticbd-semibold';
+	}
+	.btn-rgtr-cust {
+		margin-left: 66%;
+		margin-top: 18% !important;
+	}
+	.col-sm-4 {width: 33.33333333%;}
+}
+@media(max-width: 768px){
+	.evoucher {
+		background-image: url(../images/evouchermobile.png);
+		display: block;
+		position: absolute;
+		left: 15px;
+		top: 68px;
+		height: 100%;
+		width: 100%;
+		background-repeat: no-repeat;
+		margin-left: -15px;
+		margin-top: 0px;
+		z-index: 10;
+	}
+		#billingemail{margin-bottom: 15px;}
+
+}
+@media(max-width: 768px){
+	.mailout {
+		background-image: url(../images/mailoutmobile.png);
+		display: block;
+		position: absolute;
+		left: 15px;
+		top: 68px;
+		height: 100%;
+		width: 100%;
+		background-repeat: no-repeat;
+		margin-left: -15px;
+		margin-top: 0px;
+		z-index: 10;
+	}
+	.price-box.price-final_price{
+    width: 60%;
+	}
+	.products-list-ext .product-item-name {
+	width:100%;
+	}
+	.bundle-options-container .block-bundle-summary{left:0px!important;}
+	.page-product-grouped .box-tocart .fieldset .actions .action.primary.tocart {
+	margin:0px 0px 0px 0px;
+	}
+}
+.dropdown-block .dropdown-heading .counter{
+	color: #fff!important;
+	background-color: #0064AF!important;
+
+}
+@media (min-width: 768px){
+	.gft_image {
+		width: 75%;
+	}
+	.gft_image_child {
+	margin: 5px 0px 75px 17px!important;
+    height: 85px !important;
+    float: left;
+	}
+	input[type=radio].gft-radio {
+	    cursor: pointer;
+    margin: 2px -18px 0 0 !important;
+	}
+	.gft_image input[type=radio]:checked + img {
+    outline: 2px solid #f00!important;
+	}
+	.gft-block{
+	margin-top:-35%!important;
+	}
+	.gft-banner{
+    width: 74%;
+	}
+	.checkout-cart-index .from-gift-message .fieldset.create.info {
+    width: 100%;
+	}
+	.cart-summary .block > .title{margin-top:0px!important;}
+	.fieldset.coupon .actions-toolbar .primary{float:left!important;}
+	.column.main .cart-summary .block > .title strong{
+    float: left;
+    margin-top: 10px;
+	}
+	.cart-summary .block > .title:after, .paypal-review-discount .block > .title:after {
+    position: absolute;
+    right: -5px;
+    top: 5px;
+	}
+	.opc-block-summary > .title{
+	margin-top:0px!important;
+	}
+	.opc-block-summary .items-in-cart > .title{
+	margin-top:0px!important;
+	}
+}
+@media (min-width: 768px){
+	input[name="deliveryemail"] {
+		width: 100% !important;
+	}
+}
+.checkout-index-index .header-container2{
+    margin-top: 40px;
+}
+.items-grid .product-item-img{ 
+    position: unset!important;
+}
+.helpdesk-ticket-index .department {
+    display: none;
+}
+.helpdesk-ticket-view .hdmx__ticket-summary tr:nth-child(2) {
+    display: none;
+}
+.helpdesk-ticket-view .hdmx__ticket-summary tr:nth-child(3) {
+    display: none;
+}
+
+
+.checkout-onepage-success .continue-toolbar .primary.continuebtn{
+    float: left;
+    margin-left: 0;
+    margin-right: 15px;
+}
+.helpdesk-ticket-external .hdmx__ticket-summary tr:nth-child(2) {
+    display: none;
+}
+.helpdesk-ticket-external .hdmx__ticket-summary tr:nth-child(3) {
+    display: none;
+}
+@media screen and (min-width: 280px){
+	.gft_image_child {
+		margin: 0px 0px 60px 10px!important;
+		height: 130px!important;
+		float: left;
+	}
+	input[type=radio].gft-radio {
+    cursor: pointer;
+    margin: 2px -18px 0 0 ;
+	}
+	.gft_image input[type=radio]:checked + img {
+    outline: 2px solid #f00!important;
+	}
+}
+@media (max-width: 768px){
+	.checkout-cart-index .qty-button {
+
+		margin-right: -12px;
+	}
+}
+@media (max-width: 767px){
+	.h-banner-text {
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 32px;
+		line-height: 34px;
+		max-width: 290px;
+		height: 170px;
+		font-family: 'coleshapticbd-semibold';
+		display: table;
+		vertical-align: middle;
+	}
+	.h-banner-text .nametxt{
+    margin-top: 30px;
+	}
+}
+@media  (max-width: 767px){
+	.h-banner {
+		background: url(../images/flybuys-home-banner-small.png) #0569b1 no-repeat right top;
+	}
+}
+@media (max-width: 767px){
+	.chooseexperience .row .col-md-12 .title {
+		margin-top: 35px;
+		font-size: 28px;
+	}
+}
+@media (max-width: 500px){
+	.howitworks .container .row .col-md-12 .title {
+		font-size: 28px;
+	}
+}
+@media (max-width: 500px){
+	.howitworks .container .row .col-md-12 ul li .counter {
+		width: 62px;
+		height: 62px;
+		line-height: 60px;
+		font-size: 28px;
+		float: inherit;
+		display: table-cell;
+	}
+}
+@media (max-width: 500px){
+	.howitworks .container .row .col-md-12 ul li .text {
+		float: inherit;
+		display: table-cell;
+		text-align: left;
+		vertical-align: middle;
+		padding-left: 20px;
+	}
+}
+@media (max-width: 500px){
+	.footerwrap {
+		float: left;
+		width: 99.5%;
+		background: #5d5d5d;
+		color: #FFFFFF!important;
+		padding-top: 35px;
+		padding-bottom: 25px;
+		font-size: 15px;
+		line-height: 28px;
+	}
+		.footerwrap a {
+			color: #fff;
+	}
+	.footerwrap .row{
+    margin-left: 0px;
+	}
+}
+@media (max-width: 500px){
+	.howitworks .container .row .col-md-12 ul li {
+		width: 100%;
+		padding: 0;
+		display: table;
+	}
+}

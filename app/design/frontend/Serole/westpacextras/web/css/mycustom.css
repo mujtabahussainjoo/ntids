@@ -1,0 +1,466 @@
+/*******************westpacextras*****************/
+
+@font-face {
+  font-family: 'StagSans-Book';
+  src: url('../fonts/StagSans-Book.eot');
+  src: url('../fonts/StagSans-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Book.woff') format('woff'), url('../fonts/StagSans-Book.ttf') format('truetype'), url('../fonts/StagSans-Book.svg#StagSans-Book') format('svg');
+}
+
+@font-face {
+  font-family: 'StagSans-Medium';
+  src: url('../fonts/StagSans-Medium.eot');
+  src: url('../fonts/StagSans-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Medium.woff') format('woff'), url('../fonts/StagSans-Medium.ttf') format('truetype'), url('../fonts/StagSans-Medium.svg#StagSans-Medium') format('svg');
+}
+
+@font-face {
+  font-family: 'StagSans-Semibold';
+  src: url('../fonts/StagSans-Semibold.eot');
+  src: url('../fonts/StagSans-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Semibold.woff') format('woff'), url('../fonts/StagSans-Semibold.ttf') format('truetype'), url('../fonts/StagSans-Semibold.svg#StagSans-Semibold') format('svg');
+}
+
+
+@font-face {
+  font-family: 'coleshaptirg-webfont';
+  src: url('../fonts/coleshaptirg-webfont.eot');
+  src: url('../fonts/coleshaptirg-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/coleshaptirg-webfont.woff') format('woff'), url('../fonts/coleshaptirg-webfont.ttf') format('truetype'), url('../fonts/coleshaptirg-webfont.svg#coleshaptirg-webfont') format('svg');
+}
+@font-face {
+  font-family: 'coleshapticbd-semibold';
+  src: url('../fonts/coleshapticbd-webfont.eot');
+  src: url('../fonts/coleshapticbd-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/coleshapticbd-webfont.woff') format('woff'), url('../fonts/coleshapticbd-webfont.ttf') format('truetype'), url('../fonts/coleshapticbd-webfont.svg#coleshapticbd-webfont') format('svg');
+}
+@font-face {
+  font-family: 'coleshaptirg-bold';
+  src: url('../fonts/coleshapticexbd-webfont.eot');
+  src: url('../fonts/coleshapticexbd-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/coleshapticexbd-webfont.woff') format('woff'), url('../fonts/coleshapticexbd-webfont.ttf') format('truetype'), url('../fonts/coleshapticexbd-webfont.svg#coleshaptirg-webfont') format('svg');
+}
+
+
+
+body{
+	font-family: 'coleshaptirg-webfont';
+	background: #f2f2f5;
+}
+.nav > li > a{
+	font-family: 'coleshapticbd-semibold';
+}
+h1{
+	font-family: 'coleshaptirg-bold';
+}
+h2, h3, h4, h5, h6{
+	font-family: 'coleshaptirg-webfont';
+}
+@media screen and (max-width: 500px){
+	.howitworks ul li .text {
+		float: inherit;
+		display: table-cell;
+		text-align: left;
+		vertical-align: middle;
+		padding-left: 20px;
+	}
+}
+@media screen and (max-width:1200px){
+	.howitworks ul li{
+		width: 33.333%;
+	}
+	.chooseexperience {
+		padding: 0;
+	}
+	.categorylist {
+		padding: 0;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width:990px){
+	.h-banner{
+		min-height: 205px;
+		padding: 0;
+	}
+
+}
+@media screen and (min-width:991px) and (max-width:1024px){
+	.h-banner{
+		min-height: 275px;
+		padding: 0;
+	}
+}
+
+@media screen and (max-width:767px){
+	header[role="banner"] {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.quick-access ul.links li.top-link-cart a {
+		font-size: 0;
+	}
+	.ticketstext {
+		position: relative;
+		left: 0;
+		top: 0;
+		border: 0;
+		border-bottom: 2px solid #6f6f6f;
+		float: left;
+		width: 100%;
+		padding: 0 0 5px 0;
+		margin: 15px 0 0 0;
+	}
+	.topbottom {
+		min-height: 46px;
+	}
+	.navbar {
+		margin-bottom: 0;
+		margin-top: 12px;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		border: none !important;
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 20px;
+	}
+	.navbar-nav {
+		margin: 0;
+	}
+	.topnav {
+		width: 100%;
+	}
+	.navbar-nav > li {
+		margin-right: 0;
+		padding-right: 0;
+	}
+	.nav > li {
+		display: inline-block;
+		width: 100%;
+	}
+	.topsearch {
+		float: right;
+		width: 90%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	#search_mini_form{
+		width: 100%;
+	}
+	.chooseexperience .title{
+		margin-top: 35px;
+		font-size: 28px;
+	}
+	.category {
+		margin-bottom: 10px;
+	}
+	.categorylist .category{
+		margin-bottom: 10px;
+	}
+	.navbar-collapse{
+		max-height: 370px;
+	}
+	.data-table.cart-table td, .data-table.cart-table th{
+		padding: 2px;		
+	}
+	.data-table.cart-table td a, .data-table.cart-table th{
+		font-size: 12px;
+	}
+	.data-table.cart-table .btn-remove.btn-remove2{
+		font-size: 0;
+		padding:5px;
+	}
+	.cart-table .qty{
+		width:30px;
+	}
+	.h-banner {
+		background: url(../../images/flybuys-home-banner-small.png) #0569b1 no-repeat right top;
+	}
+	.h-banner-text {
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 32px;
+		line-height: 34px;
+		max-width: 290px;
+		height: 170px;
+	}
+	.page-banner {
+		background: url(../../images/flybuys-home-banner-small.png) #0569b1 no-repeat right top !important;
+	}
+	.page-banner-text {
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 32px;
+		line-height: 34px;
+		max-width: 290px;
+		height: 170px;
+	}
+}
+
+@media screen and (max-width: 667px){
+	#shopping-cart-table tbody td:first-child, #shopping-cart-table thead th:first-child{
+		display: none;
+	}
+	#shopping-cart-table .product-name {
+		width:140px;
+	}
+	.cart .cart-collaterals{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.topbottom {
+		margin-top: 50px;
+	}
+	.quick-access ul.links li.top-username{
+		line-height: 34px;
+		position: absolute;
+		left: 0;
+		top: 70px;
+	}
+	.quick-access ul.links li.top-link-users{
+		position: absolute;
+		right: 0;
+		top: 70px;
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width:500px){
+	header[role="banner"] > .logo {
+		max-width: 200px;
+	}
+	.topsearch {
+		width: 87%;
+	}
+	.howitworks .title {
+		font-size: 28px;
+	}
+	.howitworks ul li {
+		width: 100%;
+		padding: 0;
+		display: table;
+	}
+	.howitworks ul li .counter{
+		width: 62px;
+		height: 62px;
+		line-height: 60px;
+		font-size: 28px;
+		float: inherit;
+		display: table-cell;
+	}
+	.howitworks ul li .text {
+		float: inherit;
+		display: table-cell;
+		text-align: left;
+		vertical-align: middle;
+		padding-left: 20px;
+	}
+	.footerlogo {
+		float: left;
+		margin-bottom: 15px;
+	}
+	.footerlogo span {
+		border: 0;
+		display: inline-block;
+		width: 100%;
+		padding: 0 0 0 140px;
+		margin: 0;
+	}
+	#catalog-filters {
+		display: none;
+	}
+}
+@media screen and (max-width:374px){
+	#shopping-cart-table .product-name {
+		width:110px;
+	}
+}
+.category span:hover{
+	text-decoration: underline;
+}
+.chooseexperience {
+    padding: 0 15%;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.col-md-12 {
+    width: 100%;
+}
+.chooseexperience .title {
+    display: inline-block;
+    width: 100%;
+    font-family: 'coleshaptirg-bold';
+}
+.title {
+    color: #4a4a4a;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    margin-top: 105px;
+}
+
+.col-sm-4 {
+
+    width: 33.33333333%;
+}
+.category {
+    background-color: #FFFFFF;
+    float: left;
+    width: auto;
+    margin: 0 0 15% 0%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
+}
+.category a {
+    float: left;
+    width: auto;
+    text-align: center;
+}
+.category img {
+    border-radius: 5px 5px 0 0;
+    margin: 0 auto;
+}
+img {
+    vertical-align: middle;
+}
+.howitworks .title span {
+    width: 100%;
+    max-width: 360px;
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    font-weight: normal;
+}
+.category span {
+    display: inline-block;
+    width: 100%;
+    color: rgb(57, 57, 58);
+    font-size: 22px;
+    line-height: 18px;
+    text-align: center;
+    font-family: coleshapticbd-semibold;
+    padding: 26px 0px;
+}
+.howitworks ul li .counter {
+    height: 105px;
+    width: 105px;
+    border: 2px solid #FFFFFF;
+    border-radius: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 100px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.howitworks {
+    float: left;
+    width: 100%;
+    background: #D5002C;
+    text-align: center;
+    /* background: url("https://store.neatideas.com.au/flybuys/skin/frontend/flybuys/default/images/howitworksbg.jpg"); */
+	background-position: no-repeat center top;
+    background-size: cover;
+    padding: 2% 0;
+    font-size: 0;
+}
+.howitworks .title {
+    float: left;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 60px;
+    text-align: center;
+    margin: 0;
+    font-family: 'coleshapticbd-semibold';
+}
+.howitworks ul li {
+    margin: 0 0 25px 0;
+    padding: 0 25px;
+    width: 27%;
+    display: inline-block;
+    vertical-align: top;
+}
+.howitworks ul li .text {
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    font-family: 'coleshapticbd-semibold';
+}
+.h-banner {
+    float: left;
+    width: 100%;
+    background: url("https://store.neatideas.com.au/flybuys/skin/frontend/flybuys/default/images/flybuys-home-banner.png") #0569b1 no-repeat right top;
+    margin: 0;
+    padding: 0;
+}
+.h-banner-text {
+    color: #FFFFFF;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 77px;
+    max-width: 500px;
+    font-family: 'coleshapticbd-semibold';
+    display: table;
+    height: 351px;
+    vertical-align: middle;
+}
+@media (min-width: 768px){
+	.footerwrap {
+		float: left;
+		width: 100%;
+		background: #5d5d5d;
+		color: #FFFFFF;
+		padding-top: 35px;
+		padding-bottom: 25px;
+		font-size: 15px;
+		line-height: 28px;
+	}
+	.col-md-4 ul.menu li a{color:#fff;}
+	.main-container,.main.container{background: #F2F2F5!important;}
+	.header-top .dropdown-block .dropdown-heading{line-height: 45px!important;}
+	.header-top .links > li > * {
+		line-height: 42px!important;
+	}
+	.header-primary {
+		padding-top: 20px!important;
+		padding-bottom: 40px!important;
+	}
+
+}
+
+.header.links > li > a:hover {
+    color: #333!important;
+}
+.header.links .authorization-link{display:none!important;}
+.links-wrapper-separators-left .links > li:first-child > * {
+    background-image: none;
+    color: #D5002C;
+    font-size: 18px;
+    font-family: 'coleshapticbd-semibold';
+}
+.customer-account-login .page-title-custom{font-family: 'coleshaptirg-bold'!important;}
+.new-user,.login h4 {
+    font-size: 22px !important;
+	font-family: 'coleshaptirg-webfont'!important;
+	font-weight: 500!important;
+}
+#maincontent {
+    background: #F2F2F5!important;
+}
+.footerlogo img{width:196px!important;}
+
+
+
+	/* .owl-item img { */
+		/* width: 89%!important; */
+		/* margin-left: 5%!important; */
+	/* } */

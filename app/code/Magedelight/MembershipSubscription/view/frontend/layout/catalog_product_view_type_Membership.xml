@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        
+    <referenceBlock name="product.info.social" remove="true"/>
+    
+    <referenceContainer name="product.info.form.content">
+        <block class="Magedelight\MembershipSubscription\Block\Product\View\DurationOptions" cacheable="false" before="-" name="product.duration.option.content" template="Magedelight_MembershipSubscription::product/view/duration_option.phtml"/>
+    </referenceContainer>
+    
+    <referenceContainer name="content.aside">
+        <block class="Magedelight\MembershipSubscription\Block\Product\ProductList\Related" name="membership.relatedproduct.product.related" template="Magedelight_MembershipSubscription::product/list/items.phtml">
+            <arguments>
+                <argument name="type" xsi:type="string">related</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+    
+    </body>
+</page>

@@ -1,0 +1,63 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+ $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+ $url=$category->getUrl();
+ $urleVoucher=$category->getUrl()."?".'ni_distribution_type=380';
+ $urlMailout=$category->getUrl()."?".'ni_distribution_type=381';
+ $urlAll=$category->getUrl()."?".'ni_distribution_type=0';
+ $storeID=$objectManager->get('\Magento\Store\Model\StoreManagerInterface')->getStore()->getId();
+ $currentUrl = $objectManager->get('Magento\Framework\UrlInterface')->getCurrentUrl();
+ $eVoucher='';
+ $mailout='';
+ $all='';
+ if($currentUrl==$urleVoucher){ 
+	$eVoucher="active-eVoucher";
+ }elseif($currentUrl==$urlMailout){ 
+	$mailout="active-mailout";
+ }elseif($currentUrl==$urlAll||$url){ 
+	$all="active-all";
+ }
+?>
+<?php if ($block->getCollection()->getSize()): ?>
+    <div class="toolbar toolbar-products" data-mage-init='<?= /* @escapeNotVerified */ $block->getWidgetOptionsJson() ?>'>
+        <?php if ($block->isExpanded()): ?>
+            <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode.phtml')) ?>
+        <?php endif; ?>
+
+        <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/amount.phtml')) ?>
+
+        <?= $block->getPagerHtml() ?>
+
+        <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/limiter.phtml')) ?>
+		<?php if ($storeID=80){ ?>
+			<a style="margin: 0 0 0 36%;border-radius: 20px;" href="<?php echo $urlAll;?>" class="action filter primary allbt  <?php echo $all; ?>" title="all">
+			All
+			</a>	
+			<a style="margin: 0 0 0 0%;border-radius: 20px;" href="<?php echo $urleVoucher;?>" class="action filter primary <?php echo $eVoucher; ?>" title="evoucher">
+			Evoucher
+			</a>
+			<a style="margin: 0 0 0 0%;border-radius: 20px;" href="<?php echo $urlMailout;?>" class="action filter primary <?php echo $mailout; ?>" title="mailout">Mailout</a>
+		<?php } ?>
+		<?php if ($block->isExpanded()): ?>
+            <?php include ($block->getTemplateFile('Serole_ExternalProduct::product/list/sorter.phtml')) ?>
+        <?php endif; ?>
+    </div>
+<?php endif ?>
+<style>
+.active-all,.active-mailout,.active-eVoucher{background: #eeeeee!important;color: inherit!important;}
+</style>

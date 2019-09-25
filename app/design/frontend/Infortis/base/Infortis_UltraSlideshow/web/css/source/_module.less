@@ -1,0 +1,149 @@
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+//
+//  Slideshow wrapper
+//  ---------------------------------------------
+
+.slideshow-wrapper-outer {
+    &:extend(.abs-add-clearfix all);
+}
+
+
+
+//
+//  Slideshow
+//  ---------------------------------------------
+
+.slideshow-wrapper {
+    margin: 0 auto;
+}
+
+/* Deprecated: default class .owl-carousel already has "display:none" */
+.slideshow {
+    display: none;
+}
+
+
+
+//
+//  Additional banners
+//  ---------------------------------------------
+
+.slideshow-banners {
+    -webkit-backface-visibility: hidden; /* Fix possible glitches during animation */
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    margin-bottom: 0.1%; /* Important: a little bit bigger than slideshow bottom margin to avoid jumping on slide transition */
+    opacity: 0;
+    /*-webkit-transition: opacity 300ms ease;
+    -moz-transition: opacity 300ms ease;
+    -o-transition: opacity 300ms ease;
+    transition: opacity 300ms ease;*/
+}
+
+.slideshow-banners._show {
+    opacity: 1;
+}
+
+.slideshow-banners .small-banner {
+
+}
+
+.slideshow-banners .small-banner:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+
+/* Deprecated: */
+.slideshow-banners .banner {
+    position: relative; /* Container for caption */
+}
+
+.slideshow-banners a.banner, /* For backward compatibility, link could have "banner" class */
+.slideshow-banners .banner a {
+    display: block;
+}
+
+
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .slideshow-wrapper-additional {
+        margin-top: 0 !important; /* Reset nagative top margin */
+    }
+
+    // Additional banners
+    .slideshow-banners {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    // Slideshow navigation: move buttons to the top right corner
+    .slideshow-wrapper-outer .slider-arrows2 .owl-controls .owl-buttons .owl-prev {
+        top: 10px;
+        right: 60px;
+        left: auto;
+    }
+    .slideshow-wrapper-outer .slider-arrows2 .owl-controls .owl-buttons .owl-next {
+        top: 10px;
+        right: 10px;
+        left: auto;
+    }
+
+    // Pagination
+    .slideshow-wrapper-outer .owl-pagination {
+        display: none;
+    }
+
+    // Deprecated
+    .slideshow-wrapper .direction-nav .prev {
+        top: 4%;
+        right: 63px;
+        left: auto;
+    }
+    .slideshow-wrapper .direction-nav .next {
+        top: 4%;
+        right: 2%;
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+
+    .slideshow-wrapper-outer .owl-buttons {
+        display: none;
+    }
+
+}
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    // When additional banners are on the left side, the slideshow needs to be on the right side
+    .slideshow-wrapper._right {
+        float: right !important;
+    }
+
+}

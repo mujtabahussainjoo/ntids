@@ -1,0 +1,1119 @@
+//
+//  Banners
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+/* Banners %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Banner
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ban {
+    position: relative;
+    overflow: hidden;
+}
+
+.ban .image {
+    width: 100%;
+}
+
+
+/* Banner hover effects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.ban .image {
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+}
+
+/* Zoom in */
+
+.ban-effect-1:hover .image {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/* Zoom out */
+
+.ban-effect-2 .image {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.ban-effect-2:hover .image {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+/* Zoom in rotate */
+
+.ban-effect-3:hover .image {
+    -webkit-transform: scale(1.3) rotate(8deg);
+    -moz-transform: scale(1.3) rotate(8deg);
+    -o-transform: scale(1.3) rotate(8deg);
+    -ms-transform: scale(1.3) rotate(8deg);
+    transform: scale(1.3) rotate(8deg);
+}
+
+/* Fade out */
+
+.ban-effect-fade-out .image {
+    opacity: 1;
+}
+
+.ban-effect-fade-out:hover .image {
+    opacity: 0.75;
+}
+
+/* Grayscale in */
+
+/*.ban-effect-grayscale-in .image {
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%);
+}*/
+
+.ban-effect-grayscale-in:hover .image {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/* Grayscale out */
+
+.ban-effect-grayscale-out .image {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.ban-effect-grayscale-out:hover .image {
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+/* Blur in */
+
+.ban-effect-blur-in:hover .image {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+/* Blur out */
+
+.ban-effect-blur-out .image {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.ban-effect-blur-out:hover .image {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+}
+
+
+
+/* Banner caption %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Caption
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.cap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 15px;
+    z-index: 1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+    background-color: rgba(91, 210, 236, 0.85); /* #5bd2ec */
+    color: #fff;
+}
+
+
+/* Caption helper classes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.cap-no-bg {
+    background: none !important;
+}
+
+
+/* Center
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.cap-center-horizontally {
+    text-align: center;
+}
+
+.cap-center-vertically {
+    top: auto !important;
+    bottom: 50% !important;
+    right: 0;
+    left: 0;
+    height: auto !important;
+    -webkit-transform: translateY(50%) !important;
+    -moz-transform: translateY(50%) !important;
+    -o-transform: translateY(50%) !important;
+    -ms-transform: translateY(50%) !important;
+    transform: translateY(50%) !important;
+}
+
+
+/* Caption positioning
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Position
+-------------------------------------------------------------- */
+.cap-top {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.cap-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: auto;
+}
+
+.cap-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+}
+
+.cap-left {
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+}
+
+.cap-right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: auto;
+    height: 100%;
+}
+
+.cap-bottom {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.cap-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+}
+
+.cap-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: auto;
+    height: auto;
+}
+
+/* Precise position
+-------------------------------------------------------------- */
+
+/* Push down */
+
+.cap-push-down-5 {
+    top: 5%;
+    height: auto;
+    bottom: auto;
+}
+
+.cap-push-down-10 {
+    top: 10%;
+    height: auto;
+    bottom: auto;
+}
+
+.cap-push-down-15 {
+    top: 15%;
+    height: auto;
+    bottom: auto;
+}
+
+.cap-push-down-20 {
+    top: 20%;
+    height: auto;
+    bottom: auto;
+}
+
+.cap-push-down-25 {
+    top: 25%;
+    height: auto;
+    bottom: auto;
+}
+
+.cap-push-down-30 {
+    top: 30%;
+    height: auto;
+    bottom: auto;
+}
+
+/* Push right */
+
+.cap-push-right-5 {
+    left: 5%;
+    width: auto;
+    right: auto;
+}
+
+.cap-push-right-10 {
+    left: 10%;
+    width: auto;
+    right: auto;
+}
+
+.cap-push-right-15 {
+    left: 15%;
+    width: auto;
+    right: auto;
+}
+
+.cap-push-right-20 {
+    left: 20%;
+    width: auto;
+    right: auto;
+}
+
+.cap-push-right-25 {
+    left: 25%;
+    width: auto;
+    right: auto;
+}
+
+.cap-push-right-30 {
+    left: 30%;
+    width: auto;
+    right: auto;
+}
+
+/* Push left */
+
+.cap-push-left-5 {
+    right: 5%;
+    width: auto;
+    left: auto;
+}
+
+.cap-push-left-10 {
+    right: 10%;
+    width: auto;
+    left: auto;
+}
+
+.cap-push-left-15 {
+    right: 15%;
+    width: auto;
+    left: auto;
+}
+
+.cap-push-left-20 {
+    right: 20%;
+    width: auto;
+    left: auto;
+}
+
+.cap-push-left-25 {
+    right: 25%;
+    width: auto;
+    left: auto;
+}
+
+.cap-push-left-30 {
+    right: 30%;
+    width: auto;
+    left: auto;
+}
+
+/* Push up */
+
+.cap-push-up-5 {
+    bottom: 5%;
+    height: auto;
+    top: auto;
+}
+
+.cap-push-up-10 {
+    bottom: 10%;
+    height: auto;
+    top: auto;
+}
+
+.cap-push-up-15 {
+    bottom: 15%;
+    height: auto;
+    top: auto;
+}
+
+.cap-push-up-20 {
+    bottom: 20%;
+    height: auto;
+    top: auto;
+}
+
+.cap-push-up-25 {
+    bottom: 25%;
+    height: auto;
+    top: auto;
+}
+
+.cap-push-up-30 {
+    bottom: 30%;
+    height: auto;
+    top: auto;
+}
+
+
+/* Text with background color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/*[class*="cap-text-bg-"] .text,*/
+.cap-text-bg .text {
+    padding: 3px 6px;
+    margin-bottom: 3px;
+
+    /* Make it look like an inline block (background not stretched to full width) */
+    clear: both;
+    float: left;
+    /*display: inline-block;*/
+}
+
+.rtl .cap-text-bg .text {
+    float: right;
+}
+
+/*.cap-text-bg.cap-center-vertically .text {
+    float: none;
+}*/
+
+.cap-text-bg .text:last-child {
+    margin-bottom: 0;
+}
+
+a .cap-text-bg .text {
+    transition:         color 400ms ease-in-out, background-color 400ms ease-in-out;
+    -moz-transition:    color 400ms ease-in-out, background-color 400ms ease-in-out;
+    -webkit-transition: color 400ms ease-in-out, background-color 400ms ease-in-out;
+    -o-transition:      color 400ms ease-in-out, background-color 400ms ease-in-out;
+}
+
+.cap-text-bg-dark-1 .text {
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+a:hover .cap-text-bg-dark-1 .text {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.cap-text-bg-dark-2 .text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+a:hover .cap-text-bg-dark-2 .text {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.cap-text-bg-dark-3 .text {
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fff;
+}
+a:hover .cap-text-bg-dark-3 .text {
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+}
+
+.cap-text-bg-light-1 .text {
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #000;
+}
+a:hover .cap-text-bg-light-1 .text {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000;
+}
+
+.cap-text-bg-light-2 .text {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #000;
+}
+a:hover .cap-text-bg-light-2 .text {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #000;
+}
+
+.cap-text-bg-light-3 .text {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+a:hover .cap-text-bg-light-3 .text {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+}
+
+
+/* Caption effects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Fade
+-------------------------------------------------------------- */
+.ban-caption-fade-in .cap {
+    opacity: 0;
+}
+
+.ban-caption-fade-in:hover .cap {
+    opacity: 1;
+}
+
+.ban-caption-fade-out .cap {
+    opacity: 1;
+}
+
+.ban-caption-fade-out:hover .cap {
+    opacity: 0;
+}
+
+/* Slide
+-------------------------------------------------------------- */
+[class*="ban-caption-slide-"] .cap {
+    width: 100%;
+    height: 100%;
+}
+
+.ban-caption-slide-up .cap {
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.ban-caption-slide-up:hover .cap {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.ban-caption-slide-down .cap {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.ban-caption-slide-down:hover .cap {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.ban-caption-slide-left .cap {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+.ban-caption-slide-left:hover .cap {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.ban-caption-slide-right .cap {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.ban-caption-slide-right:hover .cap {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+
+/* Push
+-------------------------------------------------------------- */
+
+/* Push up */
+.ban-caption-push-up:hover .image {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.ban-caption-push-up .cap {
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.ban-caption-push-up:hover .cap {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+/* Push down */
+.ban-caption-push-down:hover .image {
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.ban-caption-push-down .cap {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.ban-caption-push-down:hover .cap {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+/* Hinge
+-------------------------------------------------------------- */
+[class*="ban-caption-hinge-"] {
+    -webkit-perspective: 900px; 
+    perspective: 900px;
+}
+
+[class*="ban-caption-hinge-"] .image,
+[class*="ban-caption-hinge-"] .cap {
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+/* Hinge up */
+.ban-caption-hinge-up .image {
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+}
+
+.ban-caption-hinge-up:hover .image {
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    opacity: 0;
+}
+
+.ban-caption-hinge-up .cap {
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
+}
+
+.ban-caption-hinge-up:hover .cap {
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    -o-transform: rotateX(0);
+    -ms-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+/* Hinge down */
+.ban-caption-hinge-down .image {
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.ban-caption-hinge-down:hover .image {
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    opacity: 0;
+}
+
+.ban-caption-hinge-down .cap {
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% -50%;
+    -moz-transform-origin: 50% -50%;
+    -o-transform-origin: 50% -50%;
+    -ms-transform-origin: 50% -50%;
+    transform-origin: 50% -50%;
+    opacity: 0;
+}
+
+.ban-caption-hinge-down:hover .cap {
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    -o-transform: rotateX(0);
+    -ms-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+/* Hinge left */
+.ban-caption-hinge-left .image {
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    -o-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+}
+
+.ban-caption-hinge-left:hover .image {
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    opacity: 0;
+}
+
+.ban-caption-hinge-left .cap {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    -o-transform-origin: 100% 50%;
+    -ms-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    opacity: 0;
+}
+
+.ban-caption-hinge-left:hover .cap {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -o-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+}
+
+/* Hinge right */
+.ban-caption-hinge-right .image {
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    -o-transform-origin: 100% 50%;
+    -ms-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+}
+
+.ban-caption-hinge-right:hover .image {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    opacity: 0;
+}
+
+.ban-caption-hinge-right .cap {
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    -o-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    opacity: 0;
+}
+
+.ban-caption-hinge-right:hover .cap {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -o-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+}
+
+
+
+/* Deprecated styles, left for backward compatibility %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.banner-wrapper { position: relative; display: block; }
+.page-banners .banner a { display:block; }
+.page-banners .banner a img { display:block; margin:0 auto; }
+
+/* depracated styles, left for backward compatibility: */
+.page-banners .banner { margin-bottom:2%; }
+
+
+/* Caption
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.caption {
+    display:block;
+    position:absolute;
+    bottom:0;
+    width:80%;
+    margin:6%;
+    padding:0;
+}
+
+/* Caption position
+-------------------------------------------------------------- */
+.caption.top {
+    top:0;
+    bottom:auto;
+    width:80%;
+}
+.caption.top-right {
+    top:0;
+    bottom:auto;
+    right:0;
+    width:58%;
+}
+.caption.bottom-right {
+    right:0;
+    width:58%;
+}
+
+/* Caption elements
+-------------------------------------------------------------- */
+.caption > * {
+    float:left;
+    display:inline-block;
+    margin-bottom:1px;
+}
+.caption .heading {
+    padding:0.25em;
+    margin-bottom:0.2em;
+    font-size:2.8em;
+    line-height:1em;
+    font-weight:normal;
+}
+.caption p {
+    clear:left;
+    padding:0.25em 0.5em;
+    margin-bottom:1px;
+    font-size: 1.3333em;
+    line-height:1em;
+}
+.caption button {
+    clear:left;
+}
+
+/* Caption layout
+-------------------------------------------------------------- */
+.caption.centered {
+    text-align: center;
+}
+.caption.centered > * {
+    display:inline-block;
+    float: none;
+}
+
+/* Floating (text alignment) */
+.caption.right > * { text-align:right; float:right !important; }
+
+/* Caption additional styles
+-------------------------------------------------------------- */
+/* Width */
+.caption.full-width { width:88%; margin:6%; }
+.caption.narrow { width:38%; }
+
+/* Prevent from hiding elements of the caption on narrow screens */
+.caption .permanent { display:inline-block !important; }
+
+/* Skin
+-------------------------------------------------------------- */
+.caption .heading,
+.caption p {
+    transition:         color 450ms ease-in-out, background-color 450ms ease-in-out;
+    -moz-transition:    color 450ms ease-in-out, background-color 450ms ease-in-out;
+    -webkit-transition: color 450ms ease-in-out, background-color 450ms ease-in-out;
+    -o-transition:      color 450ms ease-in-out, background-color 450ms ease-in-out;
+}
+a:hover .caption .heading,
+a:hover .caption p {
+    transition:         color 200ms ease-in-out, background-color 200ms ease-in-out;
+    -moz-transition:    color 200ms ease-in-out, background-color 200ms ease-in-out;
+    -webkit-transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+    -o-transition:      color 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+
+/* Dark + white text */
+.caption.dark1 .heading,
+.caption.dark1 p { background-color:rgba(0,0,0, 0.35); color:#fff; }
+a:hover .caption.dark1 .heading,
+a:hover .caption.dark1 p { background-color:rgba(0,0,0, 0.7); color:#fff; }
+
+/* Dark + white text */
+.caption.dark2 .heading,
+.caption.dark2 p { background-color:rgba(0,0,0, 0.5); color:#fff; }
+a:hover .caption.dark2 .heading,
+a:hover .caption.dark2 p { background-color:rgba(0,0,0, 0.8); color:#fff; }
+
+/* Dark + white text */
+.caption.dark3 .heading,
+.caption.dark3 p { background-color:rgba(0,0,0, 0.65); color:#fff; }
+a:hover .caption.dark3 .heading,
+a:hover .caption.dark3 p { background-color:rgba(0,0,0, 1); color:#fff; }
+
+/* Light + black text */
+.caption.light1 .heading,
+.caption.light1 p { background-color:rgba(255,255,255, 0.35); color:#000; }
+a:hover .caption.light1 .heading,
+a:hover .caption.light1 p { background-color:rgba(255,255,255, 0.7); color:#000; }
+
+/* Light + black text */
+.caption.light2 .heading,
+.caption.light2 p { background-color:rgba(255,255,255, 0.6); color:#000; }
+a:hover .caption.light2 .heading,
+a:hover .caption.light2 p { background-color:rgba(255,255,255, 0.85); color:#000; }
+
+/* Light + black text */
+.caption.light3 .heading,
+.caption.light3 p { background-color:rgba(255,255,255, 0.8); color:#000; }
+a:hover .caption.light3 .heading,
+a:hover .caption.light3 p { background-color:rgba(255,255,255, 1); color:#000; }
+
+/* end: deprecated styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+
+    // Deprecated:
+    // Shrink font. Hide all elements, even with class "permanent" (except heading with "permanent")
+    .caption > *,
+    .caption .heading {
+        display: none !important;
+    }
+    .caption .permanent {
+        display: inline-block !important;
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
+    // Make the font size smaller on mobile.
+    // Added "ban" class to make the selector more specific.
+    .ban .cap p {
+        font-size: 1.2rem !important;
+    }
+
+    .ban .cap h1,
+    .ban .cap h2,
+    .ban .cap h3,
+    .ban .cap h4,
+    .ban .cap h5,
+    .ban .cap h6 {
+        font-size: 1.6rem !important;
+    }
+
+}
+
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+// }
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+
+    // Deprecated:
+    // Captions
+    .caption .heading {
+        font-size: 24px;
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+
+    // Make the font size smaller on mobile
+    .cap-text-bg .text {
+        padding: 2px 4px;
+    }
+
+    .cap p {
+        font-size: 1.4rem !important;
+    }
+
+    .cap h1,
+    .cap h2,
+    .cap h3,
+    .cap h4 {
+        font-size: 1.9rem !important;
+    }
+    .cap h5,
+    .cap h6 {
+        font-size: 1.6rem !important;
+    }
+
+}
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+// }
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+    // Deprecated:
+    // Captions
+    .caption .heading {
+        margin-bottom: 0.2em;
+        font-size: 32px;
+    }
+    .caption p {
+        clear: left;
+        font-size: 16px;
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+
+    // Deprecated:
+    // Captions
+    .caption .heading {
+        font-size: 40px;
+    }
+    .caption p {
+        font-size: 20px;
+    }
+
+}

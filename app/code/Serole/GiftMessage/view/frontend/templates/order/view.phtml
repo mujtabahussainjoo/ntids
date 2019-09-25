@@ -1,0 +1,63 @@
+<?php
+    $order = $block->getOrder();
+    $orderId = $order->getId();
+    $incrementId = $order->getIncrementId();
+    $isVirtual = $order->getIsVirtual();
+    $messageData = $block->getGiftMessage($incrementId);
+    //echo "<pre>"; print_r($messageData); exit;
+?>
+
+<?php if($messageData): ?>
+    <section class="admin__page-section">
+        <div class="admin__page-section-title">
+            <span class="title"><?php /* @escapeNotVerified */ echo __('Gift Message Details') ?></span>
+        </div>
+
+        <div class="admin__page-section-content">
+            <div class="order-information">
+                <div class="box">
+                    <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('To') ?></span></strong>
+                    <div class="box-content">
+                        <?php echo $this->escapeHtml($messageData['to']); ?>
+                    </div>
+                </div>
+                <div class="box">
+                    <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('From') ?></span></strong>
+                    <div class="box-content">
+                        <?php echo $this->escapeHtml($messageData['from']); ?>
+                    </div>
+                </div>
+                <div class="box">
+                    <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('email') ?></span></strong>
+                    <div class="box-content">
+                        <?php echo $this->escapeHtml($messageData['email']); ?>
+                    </div>
+                </div>
+                <div class="box">
+                    <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Gift Message') ?></span></strong>
+                    <div class="box-content">
+                        <?php echo nl2br($this->escapeHtml($messageData['message'])); ?>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+            $imageDetails = $block->getGiftImage($messageData['image']);
+            $giftMessageImageFolderName = 'giftimagestemplates';
+            $imageurl = $block->getImageUrl($giftMessageImageFolderName,$imageDetails['image']);
+            $imagePath = $block->getImagepath($giftMessageImageFolderName,$imageDetails['image']);
+            ?>
+            <?php if(file_exists($imagePath)): ?>
+                <div class="order-information">
+                    <div class="box">
+                        <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Template Image') ?></span></strong>
+                        <div class="box-content">
+                            <img src="<?php echo $imageurl; ?>" width="100" height="100"/>
+                        </div>
+                    </div>
+                </div>
+            <?php endif;?>
+        </div>
+    </section>
+<?php endif; ?>
+

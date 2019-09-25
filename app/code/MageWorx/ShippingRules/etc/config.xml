@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <shipping>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>MageWorx\ShippingRules\Model\Carrier\Shipping</model>
+                <name>MageWorx Shipping</name>
+                <price>15.00</price>
+                <title>Example</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </shipping>
+        </carriers>
+        <mageworx_shippingrules>
+            <main>
+                <multiple_rates_price>0</multiple_rates_price>
+            </main>
+            <validation>
+                <advanced_postcode_validation_enabled>0</advanced_postcode_validation_enabled>
+                <postcode_validation_excessive_valid>1</postcode_validation_excessive_valid>
+                <single_address_zone_mode>0</single_address_zone_mode>
+                <extended_country_select_enabled>0</extended_country_select_enabled>
+                <uk_postcode_conditions>0</uk_postcode_conditions>
+            </validation>
+            <shipping_methods>
+                <display_cheapest_rate_top>0</display_cheapest_rate_top>
+            </shipping_methods>
+            <popup>
+                <enabled>0</enabled>
+                <only_address>0</only_address>
+            </popup>
+            <import>
+                <use_id>1</use_id>
+            </import>
+            <countries>
+                <country_002><![CDATA[DZ,AO,BJ,BW,BF,BI,CM,CV,CF,TD,KM,CG,CD,CI,DJ,EG,GQ,ER,ET,GA,GM,GH,GN,GW,KE,LS,LR,LY,MG,MW,ML,MR,MU,YT,MA,MZ,NA,NE,NG,RE,RW,SH,ST,SN,SC,SL,SO,ZA,SS,SD,SZ,TZ,TG,TN,UG,EH,ZM,ZW]]></country_002>
+                <country_003><![CDATA[BM,CA,GL,PM,US]]></country_003>
+                <country_005><![CDATA[AR,BO,BR,CL,CO,EC,FK,GF,GY,PY,PE,SR,UY,VE]]></country_005>
+                <country_009><![CDATA[AS,AU,CK,FJ,PF,GU,KI,MH,FM,NR,NC,NZ,NU,NF,MP,PW,PG,PN,WS,SB,TK,TO,TV,VU,WF]]></country_009>
+                <country_011><![CDATA[BJ,BF,CV,CI,GM,GH,GN,GW,LR,ML,MR,NE,NG,SH,SN,SL,TG]]></country_011>
+                <country_013><![CDATA[BZ,CR,SV,GT,HN,MX,NI,PA]]></country_013>
+                <country_014><![CDATA[BI,KM,DJ,ER,ET,KE,MG,MW,MU,YT,MZ,RE,RW,SC,SO,SS,TZ,UG,ZM,ZW]]></country_014>
+                <country_015><![CDATA[DZ,EG,LY,MA,SD,TN,EH]]></country_015>
+                <country_017><![CDATA[AO,CM,CF,TD,CG,CD,GQ,GA,ST]]></country_017>
+                <country_018><![CDATA[BW,LS,NA,ZA,SZ]]></country_018>
+                <country_019><![CDATA[AI,AG,AR,AW,BS,BB,BZ,BM,BO,BQ,BR,CA,KY,CL,CO,CR,CU,CW,DM,DO,EC,SV,FK,GF,GL,GD,GP,GT,GY,HT,HN,JM,MQ,MX,MS,NI,PA,PY,PE,PR,BL,KN,LC,MF,PM,VC,SX,SR,TT,TC,US,UY,VE,VG,VI]]></country_019>
+                <country_021><![CDATA[BM,CA,GL,PM,US]]></country_021>
+                <country_029><![CDATA[AI,AG,AW,BS,BB,BQ,KY,CU,CW,DM,DO,GD,GP,HT,JM,MQ,MS,PR,BL,KN,LC,MF,VC,SX,TT,TC,VG,VI]]></country_029>
+                <country_030><![CDATA[CN,HK,JP,KP,KR,MO,MN,TW]]></country_030>
+                <country_034><![CDATA[AF,BD,BT,IN,IR,MV,NP,PK,LK]]></country_034>
+                <country_035><![CDATA[BN,KH,ID,LA,MY,MM,PH,SG,TH,TL,VN]]></country_035>
+                <country_039><![CDATA[AL,AD,BA,HR,GI,GR,VA,IT,MK,MT,ME,PT,SM,RS,SI,ES]]></country_039>
+                <country_053><![CDATA[AU,NZ,NF]]></country_053>
+                <country_054><![CDATA[FJ,NC,PG,SB,VU]]></country_054>
+                <country_057><![CDATA[GU,KI,MH,FM,NR,MP,PW]]></country_057>
+                <country_061><![CDATA[AS,CK,PF,NU,PN,WS,TK,TO,TV,WF]]></country_061>
+                <country_142><![CDATA[AF,AM,AZ,BH,BD,BT,BN,KH,CN,CY,GE,HK,IN,ID,IR,IQ,IL,JP,JO,KZ,KP,KR,KW,KG,LA,LB,MO,MY,MV,MN,MM,NP,OM,PK,PS,PH,QA,SA,SG,LK,SY,TW,TJ,TH,TL,TR,TM,AE,UZ,VN,YE]]></country_142>
+                <country_143><![CDATA[KZ,KG,TJ,TM,UZ]]></country_143>
+                <country_145><![CDATA[AM,AZ,BH,CY,GE,IQ,IL,JO,KW,LB,OM,PS,QA,SA,SY,TR,AE,YE]]></country_145>
+                <country_150><![CDATA[AX,AL,AD,AT,BY,BE,BA,BG,HR,CZ,DK,EE,FO,FI,FR,DE,GI,GR,GG,VA,HU,IS,IE,IM,IT,JE,LV,LI,LT,LU,MK,MT,MD,MC,ME,NL,NO,PL,PT,RO,RU,SM,RS,SK,SI,ES,SJ,SE,CH,UA,GB]]></country_150>
+                <country_151><![CDATA[BY,BG,CZ,HU,MD,PL,RO,RU,SK,UA]]></country_151>
+                <country_154><![CDATA[AX,DK,EE,FO,FI,GG,IS,IE,IM,JE,LV,LT,NO,SJ,SE,GB]]></country_154>
+                <country_155><![CDATA[AT,BE,FR,DE,LI,LU,MC,NL,CH]]></country_155>
+                <country_419><![CDATA[AR,BO,BR,CL,CO,CR,CU,DO,EC,SV,GF,GP,GT,HT,HN,MQ,MX,NI,PA,PY,PE,PR,BL,MF,UY,VE]]></country_419>
+            </countries>
+            <developer>
+                <resolve_parameters_from_api_request>0</resolve_parameters_from_api_request>
+                <logger_enabled>0</logger_enabled>
+            </developer>
+        </mageworx_shippingrules>
+    </default>
+</config>

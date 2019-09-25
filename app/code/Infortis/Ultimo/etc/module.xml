@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+  <module name="Infortis_Ultimo" setup_version="2.7.1">
+    <sequence>
+      <module name="Infortis_Infortis"/>
+      <module name="Infortis_Base"/>
+      <module name="Infortis_Cgen"/>
+      <module name="Infortis_Brands"/>
+      <module name="Infortis_Dataporter"/>
+      <module name="Infortis_UltraMegamenu"/>
+      <module name="Infortis_UltraSlideshow"/>
+    </sequence>
+  </module>
+</config>

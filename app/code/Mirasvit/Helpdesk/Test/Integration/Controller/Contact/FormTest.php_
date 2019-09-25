@@ -1,0 +1,18 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Contact;
+
+class FormTest extends \Magento\TestFramework\TestCase\AbstractController
+{
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Contact\Form::execute
+     */
+    public function testFormAction()
+    {
+        $this->dispatch('helpdesk/contact/form');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

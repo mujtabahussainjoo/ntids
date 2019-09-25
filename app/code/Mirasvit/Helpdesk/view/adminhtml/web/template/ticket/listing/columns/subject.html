@@ -1,0 +1,47 @@
+<div class="mst-helpdesk__ticket-listing-columns-subject">
+    <div class="data-grid-cell-content"
+         data-bind="event: { mouseover: onMouseOver.bind(this, $row()), mouseout: onMouseOut.bind(this, $row()) }, text: $col.getLabel($row())"
+    />
+
+    <div class="quick-view"
+         data-bind="visible: $col.isQuickView($row()),
+            css: {top: $row().quickViewPosition() == 'top', bottom: $row().quickViewPosition() == 'bottom'}">
+        <div class="subject">
+            <span class="status" data-bind="html: $row().status_id"/>
+            <span class="text" data-bind="text: $row().subject"/>
+        </div>
+
+        <!-- ko if: $row().lastMessage -->
+        <div class="hdmx__message">
+            <div class="hdmx-message__header">
+                <strong data-bind="text: $row().lastMessage.customer_name"/>
+                <strong data-bind="text: $row().lastMessage.user_name"/>
+
+                <span class="minor" data-bind="text: $row().lastMessage.created_at"/>
+            </div>
+
+            <div class="hdmx-message__body"
+                 data-bind="css: {user: $row().lastMessage.customer_email, staff: !$row().lastMessage.customer_email }">
+                <div data-bind="html: $row().lastMessage.body"/>
+            </div>
+        </div>
+        <hr>
+        <!-- /ko -->
+
+        <!-- ko if: $row().firstMessage -->
+        <div class="hdmx__message">
+            <div class="hdmx-message__header">
+                <strong data-bind="text: $row().firstMessage.customer_name"/>
+                <strong data-bind="text: $row().firstMessage.user_name"/>
+
+                <span class="minor" data-bind="text: $row().firstMessage.created_at"/>
+            </div>
+
+            <div class="hdmx-message__body"
+                 data-bind="css: {user: $row().firstMessage.customer_email, staff: !$row().firstMessage.customer_email }">
+                <div data-bind="html: $row().firstMessage.body"/>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

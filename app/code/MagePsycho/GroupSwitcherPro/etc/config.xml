@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_GroupSwitcherPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magepsycho_groupswitcherpro>
+
+            <general>
+                <enabled>0</enabled>
+                <debug>0</debug>
+            </general>
+
+             <group>
+                <customer_group_selection_type>1</customer_group_selection_type>
+                <allowed_customer_groups>1,2</allowed_customer_groups>
+                <group_selection_checkout>0</group_selection_checkout>
+                <group_selection_editable>0</group_selection_editable>
+                <group_selection_label>Group</group_selection_label>
+                <group_code_error_message>Please enter valid group code.</group_code_error_message>
+            </group>
+            
+        </magepsycho_groupswitcherpro>
+    </default>
+</config>

@@ -1,0 +1,114 @@
+//
+//  Infortis Base theme variables
+//
+
+//
+//  Layout grid
+//  _____________________________________________
+
+//  Variables for layout columns depending on layout used
+@layout-column-sidebar__width__layout-3columns: 4;
+@layout-column-main__width__layout-3columns: @layout-column__width - @layout-column-sidebar__width__layout-3columns - @layout-column-sidebar__width__layout-3columns;
+@layout-column-sidebar__offset: 2%;
+
+//
+//  Interface elements
+//  _____________________________________________
+
+@interface-element__height__base: 40px;
+
+//
+//  Sidebar
+//  _____________________________________________
+
+@sidebar-block__title__vert-padding: 15px;
+@sidebar-block__title__margin-bottom: 15px;
+@sidebar-block__title__line-height: 24px;
+@sidebar-block__title__font-size: 19px;
+@sidebar-block__margin-bottom: 30px;
+
+//
+//  Design
+//  _____________________________________________
+
+//
+//  Main colors
+//  ---------------------------------------------
+
+@theme-color__primary__light: #e4f7fc;
+@theme-color__primary__lighter: #b6ebf6;
+@theme-color__primary: #5bd2ec;
+@theme-color__primary__darker: #27b4d3;
+@theme-color__primary__dark: #12829b;
+@theme-color__primary__transparent: rgba(91, 210, 236, 0.85);
+
+@theme-color__secondary__light: #f55856;
+@theme-color__secondary__lighter: #f88887;
+@theme-color__secondary: #f55856;
+@theme-color__secondary__darker: #f4413e;
+@theme-color__secondary__dark: #d9100d;
+
+@theme-color__gray__light: #ddd;
+@theme-color__gray__lighter: #c5c5c5;
+@theme-color__gray: #aaa;
+@theme-color__gray__darker: #888;
+@theme-color__gray__dark: #666;
+
+@theme-color__bg-gray__light: #fafafa;
+@theme-color__bg-gray__lighter: #f5f5f5;
+@theme-color__bg-gray: #eee;
+
+@theme-color__sale: #f12b63;
+
+//
+//  Borders
+//  ---------------------------------------------
+
+@global-border-color__dark: #ccc;
+@global-border-color: #e5e5e5;
+@global-border-color__light: #f5f5f5;
+
+//
+//  Product
+//  _____________________________________________
+
+@product__interface-element__height: @interface-element__height__base;
+@product__addto-icon-onimage__padding: 4px;
+@product__addto-icon__space-between: 3px;
+@product__addto-icon__size: @product__interface-element__height;
+
+//
+//  Product listings
+//  _____________________________________________
+
+@product-listing__swatch__bottom-space: 5px;
+
+//
+//  Typography
+//  _____________________________________________
+
+@h2__font-size-desktop: ceil((@font-size__base * 2.14)); //30
+
+//
+//  Focus
+//  ---------------------------------------------
+
+@focus__border-color: #51a7e8;
+
+//
+//  Blank theme variables (copy from Blank theme)
+//  _____________________________________________
+
+//
+//  Typography
+//  ---------------------------------------------
+
+//  Fonts
+@font-family-name__base: 'Open Sans';
+@font-family__base: @font-family-name__base, @font-family__sans-serif;
+
+//
+//  Sidebar
+//  ---------------------------------------------
+
+@sidebar__background-color: @color-white-smoke;  // Used in cart sidebar, Checkout sidebar, Tier Prices, My account navigation, Rating block background

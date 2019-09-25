@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+       <!-- <tab id="serole" translate="label" sortOrder="200">
+            <label>Serole</label>
+        </tab>-->
+        <section id="forcedlogin" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>           
+            <label>Customer Forced Login</label>
+            <tab>neatideas</tab>
+            <resource>Serole_ForcedLogin::config_forcedlogin</resource>
+            <group id="parameters" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <hide_in_single_store_mode>1</hide_in_single_store_mode>
+                <field id="status" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Extension Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="access_to_website" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access to Website</label>
+                    <source_model>Serole\ForcedLogin\Model\Config\Source\Access</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

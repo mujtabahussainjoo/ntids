@@ -1,0 +1,129 @@
+//
+//  Minor components which don't need separate files
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+//
+//  Buttons
+//  _____________________________________________
+
+// .button {   
+//     transition:         color 300ms ease-in-out, background-color 300ms ease-in-out;
+//     -moz-transition:    color 300ms ease-in-out, background-color 300ms ease-in-out;
+//     -webkit-transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+//     -o-transition:      color 300ms ease-in-out, background-color 300ms ease-in-out;
+// }
+
+//
+//  Tables on CMS pages
+//  _____________________________________________
+
+.data-table thead tr:last-child {
+    border-bottom: #aaa solid 1px !important;
+}
+
+.data-table tr td,
+.data-table tr th {
+    border-right: 1px solid #f5f5f5;
+}
+.data-table tr td:last-child,
+.data-table tr th:last-child {
+    border-right: none;
+}
+
+.data-table tr:nth-of-type(2n+1):last-child {
+    border-bottom: #f5f5f5 solid 1px;
+}
+
+.data-table tr:nth-of-type(2n) {
+    background-color: #fbfbfb;
+}
+
+//
+//  Table with borders
+//  ---------------------------------------------
+
+.data-table-bordered tr td,
+.data-table-bordered tr th {
+    border-right: 1px solid #bbb;
+}
+
+.data-table-bordered tr {
+    border-bottom: #bbb solid 1px;
+}
+.data-table-bordered tr:nth-of-type(2n+1):last-child {
+    border-bottom: #bbb solid 1px;
+}
+.data-table-bordered tr:nth-of-type(2n) {
+    background-color: #fbfbfb;
+}
+
+//
+//  Scroll to top button
+//  _____________________________________________
+
+#scroll-to-top {
+    display: none;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 32px;
+    bottom: 56px;
+    right: 30px;
+    z-index: 9999;
+    border-radius: 50%;
+    &:hover {
+        background-color: #333;
+    }
+}
+
+
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+// }
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+//TODO:
+//.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @breakpoint__M) {
+@media only screen and (max-width: 992px) {
+
+    //  Scroll to top button
+    
+    #scroll-to-top {
+        width:40px;
+        height:40px;
+        line-height:40px;
+        font-size:28px;
+        bottom:81px;
+        right:0;
+        border-radius:0;
+    }
+
+}
+
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+// }

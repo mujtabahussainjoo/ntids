@@ -1,0 +1,10 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php $_product = $block->getProduct() ?>
+<?php if ($block->canEmailToFriend()): ?>
+    <a href="<?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Product')->getEmailToFriendUrl($_product) ?>" class="action mailto friend feature feature-icon-hover">
+        <span class="icon ib ib-hover ic ic-letter icon-color-productview"></span>
+        <span class="label"><?php /* @escapeNotVerified */ echo __('Email') ?></span>
+    </a>
+<?php endif; ?>

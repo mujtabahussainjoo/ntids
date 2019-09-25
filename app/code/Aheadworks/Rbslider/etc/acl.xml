@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Aheadworks_Rbslider::main" title="Rich Banner Slider by aheadWorks" sortOrder="200">
+                        <resource id="Aheadworks_Rbslider::slides" title="Slides" sortOrder="10"/>
+                        <resource id="Aheadworks_Rbslider::banners" title="Banners" sortOrder="20"/>
+                        <resource id="Aheadworks_Rbslider::statistics" title="Statistics" sortOrder="30"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

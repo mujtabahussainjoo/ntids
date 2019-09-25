@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Infortis\UltraMegamenu\Block\Navigation" 
+                   name="umm.sidemenu.catalog_product_view.main" 
+                   as="umm.sidemenu.catalog_product_view.main"                    
+                   template="Infortis_UltraMegamenu::categories.phtml" 
+                   before="-" 
+                   ifconfig="ultramegamenu/sidemenu/enable_product_main"
+                   /> 
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Infortis\UltraMegamenu\Block\Navigation" 
+                   name="umm.sidemenu.catalog_product_view.additional" 
+                   as="umm.sidemenu.catalog_product_view.additional" 
+                   template="Infortis_UltraMegamenu::categories.phtml" 
+                   before="-" 
+                   ifconfig="ultramegamenu/sidemenu/enable_product_additional"
+                   />
+        </referenceContainer>
+    </body>
+</page>

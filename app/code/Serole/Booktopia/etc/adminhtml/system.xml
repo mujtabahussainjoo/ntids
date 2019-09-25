@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="booktopia" sortOrder="999" translate="label">
+			<label>Booktopia</label>
+		</tab>
+		<section id="booktopia" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Booktopia Api Details</label>
+			<tab>booktopia</tab>
+			<resource>Serole_Booktopia::config_serole_booktopia</resource>
+			<group id="apidetails" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Api Details</label>
+				<field id="apiurl" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>API Url</label>
+					<comment/>
+				</field>
+				<field id="apiuser" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="11" translate="label" type="text">
+					<label>API Username</label>
+					<comment/>
+				</field>
+				<field id="apipassword" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="13" translate="label" type="text">
+					<label>API Password</label>
+					<comment/>
+				</field>
+				<field id="warningemail" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="14" translate="label" type="text">
+					<label>Warning Email</label>
+					<comment/>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

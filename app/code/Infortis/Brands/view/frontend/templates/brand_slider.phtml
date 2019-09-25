@@ -1,0 +1,187 @@
+<?php
+/** 
+ * Brands sldier 
+ */ 
+?>
+<?php if ($brands = $this->getLoadedBrands()): ?>
+<?php 
+    $helper = $this->getHelperData();
+    $sliderClasses = '';
+    $imgClasses = '';
+
+    // Slider parameters
+    $isResponsive = $this->getIsResponsive();
+    if ($isResponsive === NULL)
+    {
+        $isResponsive = true;
+    }
+
+    $breakpoints = $this->getBreakpoints();
+    if ($breakpoints === NULL)
+    {
+        $breakpoints = '[0, 1], [320, 2], [480, 2], [768, 3], [992, 4], [1200, 5]';
+    }
+
+    $showItems = $this->getShowItems();
+    if (!$showItems)
+    {
+        $showItems = 5;
+    }
+
+    $pagination = $this->getPagination();
+
+    $timeout = $this->getTimeout();
+    if ($timeout === NULL)
+    {
+        $timeout = intval($helper->getCfg('slider/timeout'));
+    }
+    else
+    {
+        $timeout = intval($timeout);
+    }
+
+    $move = $this->getMove();
+    if ($move === NULL)
+    {
+        $move = 0;
+    }
+    else
+    {
+        $move = intval($move);
+    }
+
+    $loop = $this->getLoop();
+    if ($loop === NULL)
+    {
+        $loop = $helper->getCfg('slider/loop');
+    }
+
+    $speed = intval($helper->getCfg('slider/speed'));
+    $autoSpeed = intval($helper->getCfg('slider/auto_speed'));
+    $pause = $helper->getCfg('slider/pause');
+    $lazy = $helper->getCfg('slider/lazy');
+
+    if ($isResponsive)
+    {
+        $sliderClasses.= ' itemslider-responsive';
+    }
+
+    $sliderId = "itemslider-brands-" . $this->getFrontendHash();
+
+    // Attr. name
+    $brandAttrLabel = $this->getBrandAttributeTitle();
+
+    // If lazy loading enabled
+    if ($lazy) 
+    {
+        $srcAttribute = 'data-src';
+        $imgClasses = 'class="lazyOwl"';
+    } 
+    else
+    {
+        $srcAttribute = 'src';
+        $imgClasses = '';
+    } 
+?>
+<div class="block itemslider brand-slider<?php if($sliderClasses) echo $sliderClasses; ?> slider-arrows1 slider-arrows1-pos-top-right slider-pagination1 slider-pagination1-centered">
+    <div class="block-title padding-right"><strong><?php echo $this->getBlockName(); ?></strong></div>
+    <div class="block-content">
+        <div id="<?php echo $sliderId; ?>">
+        <?php foreach ($brands as $brand): ?>
+            <?php 
+                $brandPageUrl = $this->getBrandPageUrl($brand); 
+                $brandImageUrl = $this->getBrandImageUrl($brand); 
+                $brandDetailsHtml = '';
+
+                if (!$helper->isShowImage()) 
+                { 
+                    $brandDetailsHtml = '<span class="brand-name-wrapper"><span class="brand-name">'. $brand .'</span></span>'; 
+                }
+                else
+                {
+                    if ($brandImageUrl)
+                    {
+                        // If brand is a link (URL exists), image's "title" tag has to be empty (otherwise it will override link's "title" tag)
+                        $brandPageUrl ? $imgTitle='' : $imgTitle="title=\"{$brandAttrLabel}: {$brand}\"";
+
+                        // Build image tag
+                        $brandDetailsHtml = "<img {$imgClasses} {$srcAttribute}=\"{$brandImageUrl}\" alt=\"{$brand}\" {$imgTitle}/>"; 
+                    }
+                    else
+                    {
+                        if ($helper->isShowImageFallbackToText())
+                        { 
+                            $brandDetailsHtml = '<span class="brand-name-wrapper"><span class="brand-name">'. $brand .'</span></span>'; 
+                        } 
+                    }
+                }
+            ?>
+            <?php if ($brandDetailsHtml): ?>
+                <div class="item">
+                    <?php if ($brandPageUrl): ?>
+                        <a class="fade-on-hover" href="<?php echo $brandPageUrl; ?>" title="<?php echo __('Click to see more products from %1', $brand); ?>">
+                            <?php echo $brandDetailsHtml; ?></a>
+                    <?php else: ?>
+                        <?php echo $brandDetailsHtml; ?>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </div> <!-- end: element with the itemslider ID -->
+    </div> <!-- end: block-content -->
+</div> <!-- end: itemslider -->
+<script type="text/javascript">
+    require(['jquery', 'owlcarousel'], function(){
+        jQuery(function(jQuery) {
+
+            var owl = jQuery('#<?php echo $sliderId; ?>');
+            owl.owlCarousel({
+
+            <?php if ($lazy): ?>
+                lazyLoad: true,
+            <?php endif; ?> 
+            <?php if (!$isResponsive): ?>
+                responsive: false,
+                items: <?php echo $showItems; ?>,
+            <?php else: ?>
+                itemsCustom: [ <?php echo $breakpoints; ?> ],
+                responsiveRefreshRate: 50,
+            <?php endif; ?> 
+            <?php if ($speed): ?>
+                slideSpeed: <?php echo $speed; ?>,
+            <?php endif; ?> 
+            <?php if ($autoSpeed): ?>
+                paginationSpeed: <?php echo $autoSpeed; ?>,
+            <?php endif; ?> 
+            <?php if ($move !== 1): ?>
+                scrollPerPage: true,
+            <?php endif; ?> 
+            <?php if ($timeout): ?>
+                autoPlay: <?php echo $timeout; ?>,
+            <?php endif; ?> 
+            <?php if ($pause): ?>
+                stopOnHover: true,
+            <?php endif; ?> 
+            <?php if ($loop): ?>
+                rewindNav: true,
+                rewindSpeed: 600,
+            <?php else: ?>
+                rewindNav: false,
+            <?php endif; ?> 
+            <?php if ($pagination): ?>
+                pagination: true,
+                paginationSpeed: 600,
+            <?php else: ?>
+                pagination: false,
+            <?php endif; ?> 
+
+                navigation: true,
+                navigationText: false
+
+            });
+
+        });
+    });
+//]]>
+</script>
+<?php endif; ?>

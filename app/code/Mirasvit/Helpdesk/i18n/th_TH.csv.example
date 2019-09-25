@@ -1,0 +1,136 @@
+Department,แผนก
+"Create New Ticket",สร้างตั๋วใหม่
+Status,สถานะ
+Priority,ลำดับความสำคัญ
+Replies,ตอบกลับ
+View,ดู
+"Help Desk",ฝ่ายช่วยเหลือ
+"Thank you",ขอขอบคุณ
+"Create Ticket",สร้างบัตร
+"Your request was successfully submitted. You should receive a confirmation email shortly.","ส่งคำขอของคุณเรียบร้อยแล้ว คุณควรได้รับอีเมลยืนยันในไม่ช้า"
+Telephone,โทรศัพท์
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","คำถามของคุณถูกส่งและจะได้รับการตอบกลับโดยเร็วที่สุด ขอบคุณที่ติดต่อเรา."
+"Unable to submit your request. Please, try again later","ไม่สามารถส่งคำขอของคุณได้ กรุณาลองใหม่อีกครั้งในภายหลัง"
+"Page not found.",ไม่พบหน้านี้.
+"Your message was successfuly posted",ข้อความของคุณได้รับการผ่านรายการเรียบร้อยแล้ว
+"Your ticket was successfuly posted",ตั๋วของคุณได้รับการผ่านรายการเรียบร้อยแล้ว
+"Ticket was successfuly closed",บัตรถูกปิดเรียบร้อยแล้ว
+"Can't upload file %1 . Max allowed upload size is %2 MB.","ไม่สามารถอัปโหลดไฟล์ %1 ขนาดอัปโหลดสูงสุดที่อนุญาตคือ %2 MB"
+"Allows only this file types: %1","อนุญาตเฉพาะไฟล์ประเภทนี้: %1"
+"Message added",เพิ่มข้อความแล้ว
+"Internal note added",บันทึกภายในเพิ่มแล้ว
+"Third party message added",เพิ่มข้อความของบุคคลที่สามแล้ว
+"Private third party message added",เพิ่มข้อความส่วนตัวของบุคคลที่สามแล้ว
+"-- Please Select --","-- โปรดเลือก --"
+"Contact Tab",แท็บติดต่อ
+"Contact Form",แบบฟอร์มติดต่อ
+" at %1 (%2) - %3","ที่ %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","คุณไม่มีสิทธิ์อ่านตั๋วนี้ โปรดติดต่อผู้ดูแลระบบของคุณ"
+"Invalid Customer Email",อีเมลลูกค้าไม่ถูกต้อง
+"not set",ไม่ได้ตั้งค่า
+"Unknown time",ไม่ทราบเวลา
+ago,มาแล้ว
+"from now",จากนี้
+"1 sec ago","1 วินาทีที่ผ่านมา"
+"Open Ticket",เปิดตั๋ว
+"Open Tickets",เปิดตั๋ว
+"! Blocked file - ","! ไฟล์ที่ถูกบล็อก -"
+Disabled,พิการ
+"AW Helpdesk","ฝ่ายช่วยเหลือ AW"
+"MW Helpdesk","MW Helpdesk"
+"File System",ระบบไฟล์
+Database,ฐานข้อมูล
+Aqua,น้ำ
+Grey,สีเทา
+Navy,กองทัพเรือ
+Silver,เงิน
+Black,สีดำ
+Green,สีเขียว
+Olive,มะกอก
+Teal,นกเป็ดน้ำ
+Blue,สีน้ำเงิน
+Lime,มะนาว
+Purple,สีม่วง
+Fuchsia,บานเย็น
+Maroon,สีน้ำตาลแดง
+Red,สีแดง
+Orange,ส้ม
+Yellow,สีเหลือง
+Text,ข้อความ
+Date,วันที่
+Checkbox,ช่องทำเครื่องหมาย
+"Drop-down list",รายการแบบหล่นลง
+"In minutes...","ภายในไม่กี่นาที ..."
+"In hours...","ในชั่วโมง ..."
+"In days...","ในหลายวัน ..."
+"In weeks...","ในอีกหลายสัปดาห์ ..."
+"In months...","ในอีกหลายเดือน ..."
+Custom,กำหนดเอง
+"--Please Select--",--โปรดเลือก--
+"New ticket created",สร้างตั๋วใหม่แล้ว
+Success,ความสำเร็จ
+Customer,ลูกค้า
+Staff,บุคลากร
+"Third party",บุคคลที่สาม
+Closed,ปิด
+"Opened 24hr","เปิดบริการ 24 ชั่วโมง"
+"Helpdesk Tickets","ตั๋ว Helpdesk"
+"Cannot delete ticket with id %1","ไม่สามารถลบตั๋วที่มี ID %1"
+Edit,แก้ไข
+"All Departments",แผนกทั้งหมด
+Back,กลับ
+"24 hrs x 7 days","24 ชม. x 7 วัน"
+"Select working days/hours","เลือกวัน / ชั่วโมงที่ทำงาน"
+"Satisfaction survey",การสำรวจความพึงพอใจ
+"to %1 (third party)","ถึง %1 (บุคคลที่สาม)"
+"%1 (third party)","%1 (บุคคลที่สาม)"
+"added %1 (%2)","เพิ่ม %1 (%2)"
+"Ticket Summary",สรุปตั๋ว
+"Ticket ID",รหัสบัตรโดยสาร
+Assignee,ผู้โอน
+"Additional Info",ข้อมูลเพิ่มเติม
+"Ticket History",ประวัติบัตรโดยสาร
+"Done by",ทำได้โดย
+Changes,การเปลี่ยนแปลง
+Name,ชื่อ
+"Attach files",แนบไฟล์
+Submit,เสนอ
+"Submit Ticket",ส่งตั๋ว
+"What is your question?",คำถามของคุณคืออะไร?
+"We found the following topics that might be helpful:",เราพบหัวข้อต่อไปนี้ที่อาจเป็นประโยชน์:
+"None of these are helpful - get in touch","ไม่มีสิ่งใดที่เป็นประโยชน์ - ติดต่อเรา"
+"We have not found topics that can be helpful.",เรายังไม่พบหัวข้อที่อาจมีประโยชน์
+"Contact Information",ข้อมูลติดต่อ
+Comment,คิดเห็น
+"We are open 24 x 7","เราเปิด 24 x 7"
+"We are closed",เราปิดแล้ว
+"Timezone: %1","เขตเวลา: %1"
+"Please take a second to rate my reply...","โปรดใช้เวลาสองเพื่อให้คะแนนการตอบกลับของฉัน ..."
+Great,ยิ่งใหญ่
+Awesome,น่ากลัว
+"Fast, friendly, helpful, pleasant. Great job!","รวดเร็วเป็นกันเองเป็นประโยชน์น่ารื่นรมย์ งานที่ยอดเยี่ยม!"
+"Just Okay",เพิ่งโอเค
+"Fine, but definitely could have been better.","ดี แต่แน่นอนจะได้รับดีกว่า"
+"Not good",ไม่ดี
+"Unfortunately, I wasn't happy with it at all.",แต่น่าเสียดายที่ฉันไม่ค่อยมีความสุขกับมันเลย
+"Thank you for participating in our survey!",ขอบคุณที่เข้าร่วมในการสำรวจของเรา!
+"If you would like to provide additional comments, please do so below:",หากคุณต้องการแสดงความคิดเห็นเพิ่มเติมโปรดดำเนินการดังนี้:
+Message,ข่าวสาร
+"Submit Message",ส่งข้อความ
+"Thank you for your feedback!",ขอบคุณสำหรับความคิดเห็นของคุณ!
+Attachments,สิ่งที่แนบมา
+Order,ใบสั่ง
+"-- Select an Order --","- เลือกคำสั่งซื้อ -"
+"Create ticket",สร้างตั๋ว
+"You don't have open tickets",คุณไม่มีตั๋วเปิด
+"Post a Reply",โพสต์คำตอบ
+"Reopen Ticket",เปิดตั๋วอีกครั้ง
+"Close Ticket",ปิดตั๋ว
+History,ประวัติศาสตร์
+"Back to My Tickets","กลับไปที่ My Tickets"
+"Help Desk MX","Help Desk MX"
+"Contact Us",ติดต่อเรา
+Open,เปิด
+Subject,เรื่อง
+"Last Activity",กิจกรรมล่าสุด
+"Request ID",ขอรหัส

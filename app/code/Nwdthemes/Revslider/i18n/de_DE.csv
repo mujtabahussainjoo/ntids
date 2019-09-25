@@ -1,0 +1,477 @@
+" due to action: ","durch Action:"
+" not found!<br>"," nicht gefunden!<br>"
+"-- Next Slide --","-- Nächste Slide --"
+"-- Not Chosen --","-- Nichts Gewählt --"
+"-- Previous Slide --","-- Vorige Slide --"
+"-- Scroll Below Slider --","-- Scrolle Unter Slider --"
+"-- wrong alias -- ","-- Falscher Alias --"
+"2 x 2 Black","2 x 2 Schwarz"
+"2 x 2 White","2 x 2 Weiss"
+"3 x 3 Black","3 x 3 Schwarz"
+"3 x 3 White","3 x 3 Weiss"
+"A new delay value for the Slide. If no delay defined per slide, the delay defined via Options (9000ms) will be used.","Ein neuer Verzögerungs Wert für den Slide. Falls keine Verzögerung per Slide definiert ist, wird die Verzögerung aus den Options (9000ms) genommen."
+"API Functions","API Funktionen"
+Actions,Aktionen
+Add,Hinzufügen
+"Add Bulk Slides","Bulk Slides hinzufügen"
+"Add New","Neu einfügen"
+"Add Slide","Neu Slide"
+"Add This Video","Dieses Video Hinzufügen"
+"Additional Custom Styling","Zusätzliches Custom Styling"
+"Advanced CSS","Fortgeschrittenes CSS"
+"Advanced Custom Styling","Fortgeschrittenes Custom Styling"
+"Advanced Embeding","Fortgeschrittens Einfügen"
+All,Alle
+Angle,Winkel
+"Animation already existing with given handle, please choose a different name.","Animation existiert bereits mit gegebenen Handle, bitte einen anderen Namen wählen."
+"Animation already exists, overwrite?","Animation existiert bereits, überschreiben?"
+"Animation deleted","Animation gelöscht"
+"Animation exists, override existing animation?","Animation existiert bereits, überschreiben?"
+"Animation saved","Animation gespeichert"
+"Animationname already existing","Animationsname existiert bereits"
+Appearance,Aussehen
+"Appended Inline to the Layer Markup","Inline zum Layer Markup hinzugefügt"
+"Appended in the Class:","Zur Klasse hinzugefügt:"
+"Are you sure to replace the urls?","Willst Du wirklich die URLs ersetzen?"
+Arguments,Argumente
+"Arguments Vimeo:","Argumente Vimeo:"
+"Arguments YouTube:","Argumente YouTube:"
+Arguments:,Argumente:
+Arrows,Pfeile
+"Aspect Ratio:",Bildformat:
+Autoplay:,Autostart:
+Background,Hintergrund
+"Background Image Url","Hintergrundbild URL"
+"Background Repeat:","Background Wiederholung:"
+"Background color",Hintergrundfarbe
+Blur,Verwischen
+Border,Rand
+"Border Radius","Rand Radius"
+Bottom,Unten
+"Bottom Left","Unten Links"
+"Bottom Right","Unten Rechts"
+Box-Shadow,Box-Schatten
+"By Favorit","Bei Favorit"
+"By ID","Bei ID"
+"By Name","Bei Name"
+"By Type","Bei Typ"
+"CSS Loaded:","CSS geladen:"
+"CSS Performance","CSS Leistung"
+"CSS classname already existing","CSS Classname existiert bereits"
+"CSS classname not found","CSS Klassenname nicht gefunden"
+"CSS could not be saved","CSS konnten nicht gespeichert werden"
+"CSS saved","CSS gespeichert"
+"Can not remove last transition!","Letzte Transition kann nicht gelöscht werden!"
+Center,Mitte
+"Change Video","Ändere Video:"
+"Choose Operation","Operation Wählen"
+"Choose Slider","Slider Wählen"
+"Choose the import file","Wählen Sie die Importdatei"
+"Choose video type","Videotyp auswählen"
+"Class already exists, overwrite?","Class existiert bereits, überschreiben?"
+"Class must be a valid CSS class name","Class muss einen validen CSS Klassennamen haben
+"
+"Class name renamed","Klassen Name umbenannt"
+"Class not found in database","Klasse nicht in Datenbank gefunden"
+Classes,Klassen
+"Cleared Albums","Alben geleert"
+"Cleared Photosets","Photosets geleert"
+Close,Schliessen
+"Color Value",Farbwert
+Content,Inhalt
+Copy,Kopieren
+"Copy / Move","Kopieren / Verschieben"
+"Copy / move slide","Slide Kopieren / Verschieben"
+"Copy hover styles to idle?","Kopiere Hover Styles zu Idle?"
+"Copy idle styles to hover?","Kopiere Idle Styles zu Hover?"
+"Could not fetch Facebook albums","Kann Facebook Alben nicht 
+einlesen"
+"Could not fetch YouTube playlists","Kann YouTube Playlists nicht einlesen"
+"Could not fetch flickr photosets","Kann Flickr Photosets nicht einlesen"
+"Could not remove Validation!","Kann Validation nicht entfernen!"
+"Could not save Slide as Template","Kann Slide nicht als Template speichern"
+"Cover Image need to be set for videos","Cover Bild für Videos muss gewählt werden"
+"Cover Image:","Cover Bild:"
+"Create Template","Template erstellen"
+"Custom Animations:","Eigene Animationen:"
+"Custom Navigations","Benutzerdefinierte Navigationen"
+"Date created",Erstellungsdatum
+Default,Standart
+"Default Navigations","Default Navigationen"
+"Default Settings for Advanced Responsive Grid Sizes:","Default Einstellungen für Fortgeschrittene Responsive Grid Größen:"
+"Define the default Grid Sizes for devices: Desktop, Tablet and Mobile","Definiere die Default Grid Größen für Geräte: Desktop, Tablet und Mobile"
+Delay,Verzögerung
+Delete,Löschen
+"Delete All Layers","Alle Ebenen Löschen"
+"Delete Slider","Slider Löschen"
+"Delete this Navigation?","Diese Navigation löschen?"
+"Delete this caption? This may affect other Slider","Diese Caption löschen? Es könnte andere Slider beeinflussen"
+"Delete this slide?","Diese Slide löschen?"
+"Desktop Grid Width","Desktop Grid Breite"
+Disable,Deaktivieren
+Distance,Distanz
+"Do It!","Mach es!"
+"Do you really want to delete","Willst Du wirklich löschen"
+"Do you really want to delete all the layers?","Wirklich alle Layer löschen?"
+"Dotted Overlay:","Gepunktete Überlagerung"
+Duplicate,Duplizieren
+"Duration (in ms):","Dauer (in ms):"
+"Dynamic Styles","Dynamische Styles"
+Edit,Editieren
+"Edit Layer End","Editiere Layer Ende"
+"Edit Layer Start","Editiere Layer Start"
+"Edit Slider","Slider Bearbeiten"
+"Edit Slides","Slides Bearbeiten"
+"Editable via Option Fields, Saved in the Class:","Editierbar via Optionen Feld, gespeichert in der Klasse:"
+Editing,Editieren
+Enable,Aktivieren
+"Enable Markup Export option:","Aktiviere Markup Export Option:"
+"Enable Swipe Function on touch devices","Swipe Funktion auf Tocuhgeräten aktivieren"
+"End At:","Ende bei:"
+"End at:","Ende bei:"
+"Enter a correct class name","Bitte richtigen Classnamen eingeben"
+"Exceeded filesize limit.","filesize limit überschritten."
+Excerpt,Auszug
+"Export Slider","Slider Exportieren"
+"Export with Dummy Images","Export mit Beispiel Bildern"
+"External Scroll","Externes Scrollen"
+"External URL","Externe URL"
+"Failed to load Stream","Fehler beim laden"
+Fast,Schnell
+"Favorite Count","Favorite Zahl"
+"Filter By:","Filtern bei:"
+"First Transition Active","Erster Übergang Aktiv"
+"First slide transition type","Erster Slide Übergangstyp"
+"Font Loading URL:","Font Laden URL:"
+"Fonts Loaded:","Schriften geladen:"
+"For Example: 00:17","z.B. 00:17"
+"For Example: 02:17","z. B.: 02:17"
+"For the","Für das"
+"Force Cover:","Erzwinge Cover:"
+From,Von
+"From Filename","Aus File Namen"
+"From Media Library","Aus Media Library"
+"From Stream","Von Stream"
+"From the",Von
+"Full Screen:",Vollbild:
+Gallery,Gallerie
+"General Settings","Generelle Einstellungen"
+"General settings updated","Generelle Einstellungen aktualisiert"
+"Get External","Hole Externe Daten"
+"Given animation name is a default animation. These can not be changed.","Animation mit diesem Namen ist eine Default Animation und kann nicht geändert werden."
+"Global Settings","Globale Einstellungen"
+"Go To Slide","Gehe Zu Slide"
+"Google Fonts Performance","Google Font Leistung:"
+"Handle has to be at least three character long","Handle muss mind. 3 Zeichen lang sein"
+Height,Höhe
+Height:,Höhe:
+Help,Hilfe
+"Hide Controls:","Verstecke Knöpfe:"
+"Hide Details","Verstecke Details"
+"Hide Slide Options","Verstecke Slide Optionen"
+High,Hoch
+"ID missing, something went wrong. Please try again!","ID nicht gefunden, etwas lief falsch. Bitte nochmal versuchen!"
+"If set, slide will be visible after the date is reached.","Wenn gesetzt, Slide wird sichtbar ab diesem Datum."
+"If set, slide will be visible till the date is reached.","Wenn gesetz, Slide wird bis zu diesem Datum sichtbar sein."
+"Image &lt;img /&gt;","Bild 
+&lt;img /&gt;"
+"Image Library","Bilder Bibliothek"
+"Image Performance","Bilder Leistung"
+"Image Source Size:","Bild Source Größe:"
+"Image URL","Bild URL"
+"Images Loaded:","Bilder geladen:"
+"Import Slider","Slider Importieren"
+"Include RevSlider libraries globally:","RevSlider Libraries global einbinden:"
+"Insert Meta","Meta einfügen"
+"Installed Version","Installierte Version"
+Large,Groß
+"Large Square","Großes Viereck"
+"Last Modify Date","Letzte Änderung"
+"Last Slide","Letzter Slide
+"
+"Layer Animation Editor","Layer Animationen Editor
+"
+"Layer is triggered by ","Layer ist ausgelöst von"
+Left,Links
+"Link & Seo","Link & SEO"
+"Live Preview - Hover & Click for test","Live Preview - Hover & Klick für Test"
+"Load Speed DSL:","Lade Geschwindigkeit DSL:"
+"Load Speed T1:","Lade Geschwindigkeit T1:"
+"Load Speed UMTS:","Lade Geschwindigkeit UMTS:"
+"Loading Error",Ladefehler
+"Loading Error: ",Ladefehler:
+"Loop Video:","Video Wiederholen:"
+"Loop, Slide does not stop","Loop, Slide stoppt nicht"
+"Loop, Slide is paused","Loop, Slide ist pausiert"
+"Low Resolution","Niedrige Auflösung"
+"Main / Background Image","Haupt / Hintergrund Bild"
+"Main Background","Haupt Hintergrund"
+"Making changes to these settings will probably overwrite advanced settings. Continue?","Änderungen and diesen Einstellungen überschreiben möglicherweise die Advanced Settings. Fortfahren?"
+"Margin Bottom","Abstand Unten"
+"Margin Left","Abstand Links"
+"Margin Right","Abstand Rechts"
+"Margin Top","Abstand Oben"
+"Max. Res.","Max. Aufl."
+Metadata,Metadaten
+"Missing redirect ID!","Weiterleitung ID fehlt!"
+"Missing values to add preset","Werte fehlen, um Preset hinzuzufügen"
+"Missing values to remove preset","Werte fehlen, um Preset zu entfernen"
+"Missing values to update preset","Werte fehlen, um Preset zu aktualisieren"
+"Mobile Grid Width","Mobile Grid Breite"
+Move,Verschieben
+"Must be greater than start time","Muss grösser als Start Zeit sein"
+"Mute Video:","Video Stumm:"
+Mute:,Stumm:
+"Name too short, at least 3 letters between a-zA-z needed","Name zu kurz, mind. 3 Buchstaben benötigt (a-z A-z)"
+"Navigation Bullets and Arrows are now set to none.","Navigation Bullets und Pfeile sind ausgeschaltet."
+"Navigation deleted","Navigation gelöscht"
+"Navigation name already exists, please choose a different name","Navigations Name existiert, bitte einen anderen Namen wählen"
+"Navigation name could not be updated","Navigations Name kann nicht aktualisiert werden"
+"Navigation saved/updated","Navigation gespeichert/aktualisiert"
+"Navigations updated","Navigationen aktualisiert"
+"Need Some Attention","Benötigt Aufmerksamkeit"
+"New Slider","Neuer Slider"
+"New Window","Neues Fenster"
+"Next Slide","Nächster Slide"
+"Next Slide On End:","Nächste Slide beim Ende:"
+No,Nein
+"No API KEY - Could not fetch flickr photosets","Kein API Key - Kann Photosets nicht einlesen"
+"No Corner","Keine Ecken"
+"No Data Received","Keine Daten empfangen"
+"No ID given","Keine ID gegeben"
+"No Parallax","Kein Parallax"
+"No Shadow","Kein Schatten"
+"No Sliders Found","Keine Slider Gefunden"
+"No User URL - Could not fetch flickr photosets","Keine User URL - Kann Flickr Photosets nicht einlesen"
+"No file sent.","Keine Datei gesendet."
+"No slides found, please add at least one Slide Template to the choosen language.","Keine Slides gefunden, bitte mindestens ein Slide Template zu der gewählten Sprache hinzufügen."
+"No slides found, please add some slides","Keine Slides gefunden, bitte Slides hinzufügen"
+"No valid Slide ID given","Keine valide Slide ID angegeben"
+"No valid title given","Kein valider Title angegeben"
+None,Keine
+"Not on 1st Time","Nicht bei erstem Durchlauf"
+"Note: styles templates will be updated if they exist!","Hinweis: Style Templates werden aktualisiert, falls existent!"
+"Notebook Grid Width","Notebook Grid Breite"
+"Number of Comments","Anzahl Kommentare"
+"Number of Likes","Anzahl Likes"
+"Number of Views","Anzahl Views"
+Off,Aus
+On,An
+"On 1st Time","Bei erstem Durchlauf"
+Opacity,Deckkraft
+"Order updated","Reihenfolge aktualisiert"
+"Original CSS classname not found","Original CSS Classname nicht gefunden"
+"Original Size","Original Größe"
+"Overall Slider Performance","Gesamte Slider Leistung"
+"Overwrite current animation?","Aktuelle Animation überschreiben?"
+"Overwrite current static styles?","Überschreibe derzeitige Statische Styles?"
+"Pages to include RevSlider libraries:","Einbinden RevSlider Libraries auf diesen Seiten:"
+"Parallax Feature in Slider Settings is deactivated, parallax will be ignored.","Parallax ist in den Slider Settings deaktiviert und wird ignoriert."
+"Parameter ",Parameter
+Parameters,Parameter
+"Pause Slider","Slider Pausieren"
+Perspective,Perspektive
+"Please Wait a Moment","Bitte warten"
+"Please Wait...","Bitte warten..."
+"Please enter a Slide title","Bitte Slide Titel eingeben"
+"Please select an existing Style Template","Bitte existierendes Style Template wählen"
+"Please select at least one device type","Bitte mindestens einen Device-Typ wählen"
+"Please select the correct zip file, checksum failed!","Bitte die korrekte zip Datei wählen. checksum fehlerhaft!"
+"Position on the page","Position auf der Seite"
+"Post Title","Beitrags Titel"
+"Post content","Beitrags Inhalt"
+"Post deleted","Beitrag gelöscht"
+"Poster Image Url","Beitrags Bild URL"
+"Preloaded Slides Size:","Vorgeladene Slide Größe:"
+"Preset Loaded","Preset geladen"
+"Preset created","Preset erstellt"
+"Preset deleted","Preset gelöscht"
+"Preset name already exists, please choose a different name","Preset Name existiert bereits, bitte anderen Namen wählen"
+"Preset not found","Preset nicht gefunden"
+Preview,Vorschau
+"Preview Slider","Slider Vorschau"
+"Previous Slide","Voriger Slide"
+Published,Publiziert
+"Pulbishing Date","Veröffentlichtungs Datum"
+"Purchase Code Successfully Activated","Purchase Code erfolgreich aktiviert"
+"Purchase Code is invalid","Purchase Code ist nicht valide"
+"Really change font settings?","Fonts Einstellungen wirklich ändern?"
+"Really delete Class","Class wirklich löschen"
+"Really delete animation:","Animation wirklich löschen:"
+"Really delete font?","Font wirklich löschen?"
+"Really delete this preset?","Diesen Preset wirklich löschen?"
+"Really overwrite Class?","Class wirklich überschreiben?"
+"Really overwrite animation?","Animation wirklich überschreiben?"
+"Really remove this action?","Diese Action wirklich entfernen?"
+"Really update global styles?","Global Styles wirklich aktualisieren?"
+"Redraw Slider","Slider Erneuern"
+Regular,Regulär
+Remove,Entfernen
+"Remove current element from Navigation?","Aktuelles Element aus Navigation entfernen?"
+"Rename Animation","Animation umbenennen"
+"Rename CSS","CSS umbennen"
+"Rename to:","Umbenennen zu:"
+Replacing...,Ersetze...
+"Resume Slider","Slider Fortsetzen"
+"Retweet Count","Retweet Zahl"
+"Revolution Slider Error","Revolution Slider Fehler"
+"Rewind at Slide Start:","Rückspulen beim Slide Start:"
+Right,Rechts
+"Same Window","Gleiches Fenster"
+"Save All Changes","Alle Änderungen speichern"
+"Save As","Speichern Unter"
+"Save As:","Speichern unter:"
+"Save Settings","Einstellungen Speichern"
+"Save Slide","Slide speichern"
+"Save Static Styles","Speicher Statische Styles"
+"Save Under","Speichern unter"
+"Save Under:","Speichern unter:"
+Scale,Maßstab
+"Scale: (in %):","Maßstab (in %):"
+"Select Image","Wähle Bild"
+"Select Layer Image","Wähle Layer Bild"
+"Select Slide Image","Slide Bild wählen"
+"Select Slide Video","Slide Video wählen"
+"Select Static Layer Image","Wähle statischen Layer"
+"Select the Navigation Category to Edit","Navigations Kategorie wählen"
+"Selected layer not set","Gewählter Layer nicht gesetzt"
+Set,Setzen
+"Set selected settings on all Slides of this Slider? (This will be saved immediately)","Einstellungen für alle Slides setzen (wird sofort gesetzt)?"
+"Setting Changed!","Einstellungen geändert!"
+Settings,Einstellungen
+"Settings in all Slides changed","Einstellungen in allen Slides geändert"
+"Shadow Type","Schatten Typ"
+Sharp,Scharf
+"Sharp Reversed","Scharf Umgekehrt"
+"Show Background Image","Zeige Hintergrundfarbe"
+"Show Cover at Pause:","Zeige Cover bei Pause:"
+"Show Details","Zeige Details"
+"Show Slide Options","Zeige Slide Optionen"
+"Simulate Click","Click simulieren"
+Sizing,Größe
+Skew,Schiefe
+"Slide ""Delay"":","Slide ""Verzögerung"":"
+"Slide Created","Slide Erstellt"
+"Slide Created, redirecting...","Slide Erstellt. Sie werden weitergeleitet..."
+"Slide Description","Slide Beschreibung"
+"Slide Thumbnail. If not set - it will be taken from the slide image.","Slide Thumbnail. Wenn nicht gesetzt, wird es von dem gewählten Bild der Slide genommen"
+"Slide Title","Slide Titel"
+"Slide added to Templates","Slide zu Templates hinzugefügt"
+"Slide changed","Slide geändert"
+"Slide copied to current Slider, redirecting...","Slide zu aktuellem Slider kopiert, Sie werden weitergeleitet..."
+"Slide could not be copied","Slider konnte nicht kopiert werden"
+"Slide could not be duplicated","Slider konnte nicht dupliziert werden"
+"Slide deleted","Slide gelöscht"
+"Slide duplicated","Slide dupliziert"
+"Slide is now the new active Hero Slide","Slide ist nun aktiver Hero Slide"
+"Slide updated","Slide aktualisiert"
+"Slider Settings","Slider Einstellungen"
+"Slider created","Slider erstellt"
+"Slider deleted","Slider gelöscht"
+"Slider not found","Slider nicht gefunden"
+"Slider setting could not be changed","Slider Einstellungen können nicht geändert werden"
+"Slider updated","Slider aktualisiert"
+"Slides Created","Slides Erstellt"
+Slow,Langsam
+Small,Klein
+"Small 320","Klein 320"
+"Sort By:","Sortieren bei:"
+"Sortby updated","Sortierung aktualisiert"
+Source,Quelle
+"Source Settings","Source Einstellungen"
+"Source Type",Quelle
+"Source must be from Stream","Quelle muss vom typ Stream sein"
+Square,Viereck
+Standard,Standart
+"Standard Embeding","Standard Einfügen"
+"Standard Resolution","Standart Auflösung"
+"Start At:","Start bei:"
+"Start at:","Start bei:"
+"Static Global Layers updated","Static Global Layers aktualisiert"
+"Stream Image","Stream Bild"
+"Stream Video + Image","Stream Video + Bild"
+"Style Helper","Style Hilfe"
+"Style deleted!","Style gelöscht!"
+Success!,Erfolgreich!
+"Success! Refreshing page...","Erfolgreich! Aktualisiere Seite..."
+"Successfully fetched Facebook albums","Facebook Alben erfolgreich eingelesen"
+"Successfully fetched YouTube playlists","YouTube Playlist erfolgreich eingelsen"
+"Successfully fetched flickr photosets","Flickr Photosets gelesen"
+"Successfully removed validation","Validation erfolgreich entfernt"
+"Suggested Height:","Vorgeschlagene Höhe:"
+"Suggested Width:","Vorgeschlagene Breite:"
+"Tablet Grid Width","Tablet Grid Breite"
+"Template can't be deleted, it is still being used by the following Sliders: ","Template kann nicht gelöscht werden, es wird von folgenden Slidern genutzt:"
+"Template will have the state of the last save, proceed?","Template wird auf den letzten Stand zurückgesetzt, fortfahren?"
+Text-Shadow,Text-Schatten
+"The bottom margin of the slider wrapper div","Der untere Abstand des umliegenden Div des Sliders"
+"The left margin of the slider wrapper div","Der linke Abstand des umliegenden Div des Sliders"
+"The link to the post","Der Link zu dem Beitrag"
+"The right margin of the slider wrapper div","Der rechte Abstand des umliegenden Div des Sliders"
+"The state of the slide. The unpublished slide will be excluded from the slider.","Der Status der Slide, eine unpublizierte Slide wird im Slider nicht angezeigt"
+"The title of the slide, will be shown in the slides list.","Der Titel der Slide, wird auf der Slides Liste angezeigt"
+"The top margin of the slider wrapper div","Der obere Abstand des umliegenden div des Slider"
+"This class does not exist.","Diese Class existiert nicht."
+"This navigation element does not exist, create one?","Dieses Navigations Element existiert nicht, anlegen?"
+"This will enable the option to export the Slider Markups to copy/paste it directly into websites.","Dies erlaubt den Export von Slider Markup, der per Copy/Paste direkt in Webseiten eingefügt werden kann."
+"This will reset the navigation, continue?","Dies wird die Navigation zurücksetzen, fortfahren?"
+"This will update the Class with the current set Style settings, this may affect other Sliders. Proceed?","Dies wird die Klasse mit den aktuellen Style Einstellung überschreiben und andere Slider beeinflussen. Fortfahren?"
+"This will update the preset with the current settings. Proceed?","Die Presets werden auf die aktuellen Einstellungen geändert. Fortfahren?"
+Title,Titel
+"Title updated","Titel aktualisiert"
+Title:,Titel:
+To,Zu
+"To Slide","Zur Slide"
+"Toggle Layer Animation","Layer Animation Umschalten"
+"Toogle Class","Klasse Umschalten"
+Top,Oben
+"Top Left","Oben Links"
+"Top Right","Oben Rechts"
+"Total Slider Size:","Gesamte Slider Größe:"
+"Touch Enabled","Berührung An"
+"Transition Duration",Übergangsdauer
+Transitions,Übergang
+Troubleshooting,Fehlerbehandlung
+Unknown,Unbekannt
+Unpublished,Unpubliziert
+Update,Aktualisieren
+"Update History","Udate Geschichte"
+"Update Video","Video Aktualisieren"
+"Use Cover","Benutze Cover"
+Username,Benutzername
+"Vertical Offsets:","Verticaler Offset:"
+"Video MP4 Url","Video MP4 URL"
+"Video Performance","Video Leistung"
+"Video Preload:","Video Vorladen:"
+"Video Settings","Video Einstellungen"
+"Video Speed:","Abspiel Tempo:"
+"Videos Loaded (max):","Videos geladen (max):"
+View,Ansehen
+Views,Ansichten
+"Vimeo ID or URL","Vimeo ID oder URL"
+Visibility,Sichtbarkeit
+"Visible from:","Sichtbar von:"
+"Visible until:","Sichtbar bis:"
+Width,Breite
+Width:,Breite:
+"Wrong ID given","Falsche ID angegeben"
+"Wrong Request","Falsche Anfrage"
+Yes,Ja
+"YouTube ID or URL","YouTube ID oder URL"
+append,anfügen
+"could not find correct Slide to copy, please try again.","Konnte Slide nicht zum kopieren finden, bitte erneut versuchen."
+example,Beispiel
+"example: 30300114","Beispiel: 
+30300114"
+"example: T8--OggjJKQ","z. B.: T
+8--OggjJKQ"
+"i.e.: 0:17","z.B.: 0:17"
+"i.e.: 2:41","z.B.: 2:41"
+"insert the shortcode:","Shortcode einfügen:"
+"jQuery Loaded:","jQuery geladen:"
+"jQuery Performance","jQuery Leistung"
+missing,fehlt
+none,keine
+overwrite,überschreiben
+updating...,aktualisiere...
+use,benutzen

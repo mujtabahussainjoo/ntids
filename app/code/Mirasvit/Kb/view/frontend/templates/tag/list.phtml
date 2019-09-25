@@ -1,0 +1,13 @@
+<?php
+$collection = $block->getTagCollection();
+?>
+<div class="kb-tag-list">
+    <h1><?= __('Tags') ?></h1>
+    <?php if ($collection->count()):?>
+    <?php foreach ($collection as $tag):?>
+        <a href="<?= $tag->getUrl()?>" style="font-size:<?= $tag->getRatio() * 70 + 75 ?>%;"><?= $tag->getName() ?></a>
+    <?php endforeach?>
+    <?php else: ?>
+        <p><?= __('The are no Tags') ?></p>
+    <?php endif ?>
+</div>

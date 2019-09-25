@@ -1,0 +1,24 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/** 
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+?>
+<?php
+    $helperAddToLinks = $this->helper('Infortis\Base\Helper\AddToLinks');
+    $_product = $block->getProduct();
+    $linksHtml = $helperAddToLinks->getLinksIcons($_product, 'feature feature-icon-hover', 'icon-color-productview');
+?>
+<?php if ($linksHtml): ?>
+    <div class="product-addto-links addto-links" data-role="add-to-links">
+        <?php echo $linksHtml; ?>
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "body": {
+                "addToWishlist": <?php /* @escapeNotVerified */ echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($block->getWishlistOptions())?>
+            }
+        }
+    </script>
+<?php endif; ?>

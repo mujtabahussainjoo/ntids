@@ -1,0 +1,19 @@
+<?php
+/**
+ $block->getKbTag()  \Mirasvit\Kb\Helper\Tag  $_kbTag
+ */
+?>
+<?php
+$collection = $block->getTagCollection();
+?>
+<?php if ($collection->count()):?>
+<div class="kb-tag-cloud">
+    <h1><?= __('Tags') ?></h1>
+    <?php foreach ($collection as $tag):?>
+        <a href="<?= $tag->getUrl()?>" style="font-size:<?= $tag->getRatio() * 70 + 75 ?>%;"><?= $tag->getName() ?></a>
+    <?php endforeach?>
+    <?php if ($block->getKbTag()): ?>
+        <a href="<?= $block->getKbTag()->getListUrl() ?>"><?= __('All Tags') ?></a>
+    <?php endif; ?>
+</div>
+<?php endif;?>

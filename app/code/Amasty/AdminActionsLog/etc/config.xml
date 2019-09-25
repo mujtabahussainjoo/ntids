@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <amaudit>
+            <log>
+                <log_delete_logs_after_days>90</log_delete_logs_after_days>
+                <log_delete_login_attempts_after_days>90</log_delete_login_attempts_after_days>
+                <log_delete_pages_history_after_days>90</log_delete_pages_history_after_days>
+                <log_enable_visit_history>1</log_enable_visit_history>
+                <log_all_admins>1</log_all_admins>
+            </log>
+            <restore>
+                <restore_popup_message>Please be careful when restoring changes. It's recommended to have a backup before running restore process.</restore_popup_message>
+            </restore>
+        </amaudit>
+    </default>
+</config>

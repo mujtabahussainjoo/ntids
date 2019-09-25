@@ -1,0 +1,32 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/**
+ * @var Infortis\Base\Block\Html\Header\Logo $block
+ */
+?>
+<?php
+    $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();
+    $logoSrc = '';
+    $suffix = $block->getLogoSuffix();
+    if (!empty($suffix))
+    {
+        $logoSrc = $block->getLogoSrcBySuffix($suffix);
+
+        // Fallback - get default logo if no logo with suffix
+        if ($logoSrc === false)
+        {
+            $logoSrc = $block->getLogoSrc();
+        }
+    }
+    else
+    {
+        $logoSrc = $block->getLogoSrc();
+    }
+?>
+<a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+    <strong><?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?></strong>
+    <img src="<?php /* @escapeNotVerified */ echo $logoSrc; ?>"
+         alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt(); ?>"
+    />
+</a>

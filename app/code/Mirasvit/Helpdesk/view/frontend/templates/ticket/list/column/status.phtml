@@ -1,0 +1,8 @@
+<?php
+/** @var \Mirasvit\Helpdesk\Block\Ticket\Listing\Column\DefaultColumn $block */
+$ticket = $block->getItem();
+$column = $block->getColumn();
+?>
+<span class="hdmx__status hdmx-<?= $ticket->getStatus()->getColor() ?>" style="white-space: nowrap">
+    <?= $ticket->getStatus() ?>
+</span>

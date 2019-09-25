@@ -1,0 +1,44 @@
+<?php
+/** @var Mirasvit\Helpdesk\Block\Contact\Kb $block */
+$collection = $block->getCollection();
+?>
+
+<?php if ($collection->getSize()): ?>
+    <p><strong><?= __('We found the following topics that might be helpful:') ?></strong></p>
+
+    <div class="hdmx__kb-result">
+        <?php foreach ($collection as $article): ?>
+            <div class="article-item">
+                <a class="name" href="<?= $article->getUrl() ?>" target='_blank'><?= $article->getName() ?></a>
+                <p class="detail"><?= $block->getFilterManager()->truncate(strip_tags($article->getTextHtml()), 90) ?></p>
+            </div>
+        <?php endforeach ?>
+    </div>
+    <div class="actions-toolbar">
+        <button class="action primary hdmx_contact_regular">
+            <span><?= __('None of these are helpful - get in touch') ?></span>
+        </button>
+    </div>
+<?php else: ?>
+    <p><strong><?= __('We have not found topics that can be helpful.') ?></strong></p>
+    <br>
+    <center>
+        <button class="action primary hdmx_contact_regular">
+            <span><?= __('None of these are helpful - get in touch') ?></span>
+        </button>
+    </center>
+<?php endif ?>
+<script type="text/javascript">
+    //<![CDATA[
+    require([
+        'jquery'
+    ], function ($) {
+        $('.hdmx_contact_regular').on('click', function (e) {
+            e.preventDefault();
+            $('.hdmx__kb-form').hide();
+            $('.helpdesk-contact-form,#helpdesk-contacts-form').show();
+            center($('#hdmx__contact-popup'))
+        });
+    });
+    //]]>
+</script>

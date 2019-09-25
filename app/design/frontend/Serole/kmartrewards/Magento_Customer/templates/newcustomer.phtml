@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Form\Login\Info $block */
+?>
+<?php if ($block->getRegistration()->isAllowed()): ?>
+<div class="block block-new-customer">
+    <div class="block-title">
+        <strong id="block-new-customer-heading" role="heading" aria-level="2"><?= $block->escapeHtml(__('Registration')) ?></strong>
+    </div>
+    <div class="block-content" aria-labelledby="block-new- customer-heading">
+        <p style="line-height: 25px;">To access this website you need a valid login. <br/>This can only be assigned by a website administrator.<br/> In order to request a login please contact Neat Ideas either: <br/> By Phone on <b>08 6389 0055</b><br/> or by email at <span style="color:#0071BC; cursor:pointer;">customersupport@neatideas.com.au</span></p>
+        <!---<div class="actions-toolbar">
+            <div class="primary">
+                <a href="<?php //$block->escapeUrl($block->getCreateAccountUrl()) ?>" class="action create primary"><span><?php //$block->escapeHtml(__('Create an Account')) ?></span></a>
+            </div>
+        </div>-->
+    </div>
+</div>
+<?php endif; ?>

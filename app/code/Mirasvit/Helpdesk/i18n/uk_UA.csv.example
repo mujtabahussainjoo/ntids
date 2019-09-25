@@ -1,0 +1,136 @@
+Department,Кафедра
+"Create New Ticket","Створити новий квиток"
+Status,Статус
+Priority,Пріоритет
+Replies,Відповіді
+View,Вид
+"Help Desk",Довідкова
+"Thank you",Дякую
+"Create Ticket","Створити квиток"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Ваш запит було успішно надіслано. Незабаром вам слід отримати електронний лист із підтвердженням."
+Telephone,Телефон
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Ваш запит був надісланий і буде відреагований якомога швидше. Дякуємо, що зв&#39;язалися з нами."
+"Unable to submit your request. Please, try again later","Не вдається надіслати ваш запит. Будь-ласка спробуйте пізніше"
+"Page not found.","Сторінку не знайдено."
+"Your message was successfuly posted","Ваше повідомлення успішно опубліковано"
+"Your ticket was successfuly posted","Ваш квиток успішно опубліковано"
+"Ticket was successfuly closed","Квиток був успішно закритий"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Не вдається завантажити файл %1. Макс. Дозволений розмір завантаження %2 Мб."
+"Allows only this file types: %1","Дозволяє використовувати лише ці типи файлів: %1"
+"Message added","Повідомлення додано"
+"Internal note added","Внутрішня примітка додається"
+"Third party message added","Додано стороннє повідомлення"
+"Private third party message added","Приватне стороннє повідомлення додано"
+"-- Please Select --","-- Виберіть будь ласка --"
+"Contact Tab","Tab Tab"
+"Contact Form","Контактний формуляр"
+" at %1 (%2) - %3","на %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Ви не маєте дозволу читати цей квиток. Будь ласка, зв&#39;яжіться зі своїм адміністратором."
+"Invalid Customer Email","Неправильний електронний лист клієнта"
+"not set","не встановлено"
+"Unknown time","Невідомий час"
+ago,"тому назад"
+"from now","від тепер"
+"1 sec ago","1 сек назад"
+"Open Ticket","Відкритий квиток"
+"Open Tickets","Відкриті квитки"
+"! Blocked file - ","! Заблокований файл -"
+Disabled,Вимкнено
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","Файлова система"
+Database,"База даних"
+Aqua,Аква
+Grey,Сірий
+Navy,Флот
+Silver,Срібло
+Black,Чорний
+Green,Зелений
+Olive,Оливкова
+Teal,Тілець
+Blue,Синій
+Lime,Лайм
+Purple,Фіолетовий
+Fuchsia,Фуксія
+Maroon,Марона
+Red,Червоний
+Orange,Апельсин
+Yellow,Жовтий
+Text,Текст
+Date,Дата
+Checkbox,Прапорець
+"Drop-down list","Випадаючий список"
+"In minutes...","Через кілька хвилин ..."
+"In hours...","Через години ..."
+"In days...","В дні ..."
+"In weeks...","У тижні ..."
+"In months...","В місяці ..."
+Custom,Користувальницький
+"--Please Select--","--Виберіть будь ласка--"
+"New ticket created","Створено новий квиток"
+Success,Успіх
+Customer,Замовник
+Staff,Персонал
+"Third party","Третя сторона"
+Closed,ЗАЧИНЕНО
+"Opened 24hr","Відкрито цілодобово"
+"Helpdesk Tickets","Служба квитків"
+"Cannot delete ticket with id %1","Неможливо видалити квиток з ідентифікатором %1"
+Edit,Редагувати
+"All Departments","Всі кафедри"
+Back,Назад
+"24 hrs x 7 days","24 години x 7 днів"
+"Select working days/hours","Виберіть робочі дні / години"
+"Satisfaction survey","Оцінка задоволеності"
+"to %1 (third party)","до %1 (третя сторона)"
+"%1 (third party)","%1 (третя сторона)"
+"added %1 (%2)","додано %1 (%2)"
+"Ticket Summary","Підсумок квитка"
+"Ticket ID","Ідентифікатор квитка"
+Assignee,Правонаступник
+"Additional Info","Додаткова інформація"
+"Ticket History","Історія квитків"
+"Done by",Зроблено
+Changes,Зміни
+Name,Ім&#39;я
+"Attach files","Приєднати файли"
+Submit,Відправити
+"Submit Ticket","Надіслати квиток"
+"What is your question?","Яке Ваше запитання?"
+"We found the following topics that might be helpful:","Ми знайшли такі теми, які можуть бути корисними:"
+"None of these are helpful - get in touch","Ніхто з них не є корисним - зв&#39;яжіться"
+"We have not found topics that can be helpful.","Ми не знайшли теми, які можуть бути корисними."
+"Contact Information","Контактна інформація"
+Comment,Коментар
+"We are open 24 x 7","Ми відкриті 24 х 7"
+"We are closed","Ми закриті"
+"Timezone: %1","Часовий пояс: %1"
+"Please take a second to rate my reply...","Зачекайте секунду, щоб оцінити мою відповідь ..."
+Great,Чудово
+Awesome,Чудово
+"Fast, friendly, helpful, pleasant. Great job!","Швидко, доброзичливо, корисно, приємно. Чудова робота!"
+"Just Okay","Просто добре"
+"Fine, but definitely could have been better.","Красивий, але точно міг би бути кращим."
+"Not good","Не добре"
+"Unfortunately, I wasn't happy with it at all.","На жаль, мене зовсім не влаштувало."
+"Thank you for participating in our survey!","Дякуємо за участь у нашому опитуванні!"
+"If you would like to provide additional comments, please do so below:","Якщо ви хочете надати додаткові коментарі, виконайте наведені нижче дії."
+Message,Повідомлення
+"Submit Message","Надіслати повідомлення"
+"Thank you for your feedback!","Спасибі за ваш відгук!"
+Attachments,Додатки
+Order,Замовлення
+"-- Select an Order --","- Виберіть замовлення -"
+"Create ticket","Створити квиток"
+"You don't have open tickets","У вас немає відкритих квитків"
+"Post a Reply","Опублікувати відповідь"
+"Reopen Ticket","Відновити квиток"
+"Close Ticket","Закрити квиток"
+History,Історія
+"Back to My Tickets","Повернутися до моїх квитків"
+"Help Desk MX","Довідковий центр MX"
+"Contact Us","Зв&#39;яжіться з нами"
+Open,ВІДЧИНЕНО
+Subject,Тема
+"Last Activity","Остання активність"
+"Request ID","Ідентифікатор запиту"

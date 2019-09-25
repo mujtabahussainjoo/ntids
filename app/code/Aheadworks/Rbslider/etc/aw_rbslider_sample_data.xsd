@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="config">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="banner" type="banner" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="banner">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="status" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="page_type" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="position" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="product_condition" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="category_ids" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="animation_effect" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="pause_time_between_transitions" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="slide_transition_speed" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="is_stop_animation_mouse_on_banner" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="display_arrows" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="display_bullets" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="is_random_order_image" type="xs:int" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

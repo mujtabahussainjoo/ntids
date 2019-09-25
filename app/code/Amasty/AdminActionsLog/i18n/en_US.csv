@@ -1,0 +1,112 @@
+"Are you sure?","Are you sure?"
+"Clear Log","Clear Log"
+"Restore Changes","Restore Changes"
+"Action Log","Action Log"
+"Item Information","Item Information"
+"Modifications Breakdown","Modifications Breakdown"
+"Action Log Details","Action Log Details"
+Date,Date
+Username,Username
+"Full Name","Full Name"
+"Action Type","Action Type"
+Object,Object
+"Store View","Store View"
+Item,Item
+"History of Changes","History of Changes"
+Actions,Actions
+CSV,CSV
+"Excel XML","Excel XML"
+view,view
+"Preview Changes","Preview Changes"
+"View Details","View Details"
+"Logged In At","Logged In At"
+"IP Address","IP Address"
+Location,Location
+"Recent Activity","Recent Activity"
+"Terminate Session","Terminate Session"
+"Just Now","Just Now"
+". "" minute(s) ago""",". "" minute(s) ago"""
+". "" hour(s) ago""",". "" hour(s) ago"""
+"User Agent","User Agent"
+Status,Status
+Failed,Failed
+Success,Success
+Logout,Logout
+"Visit History","Visit History"
+"Admin Data","Admin Data"
+"Visits History","Visits History"
+"Visit History Details","Visit History Details"
+"Session Start","Session Start"
+"Session End","Session End"
+"Ip Address","Ip Address"
+"Admin Actions Log","Admin Actions Log"
+"Actions Log","Actions Log"
+"Actions Log ","Actions Log "
+"Active Sessions","Active Sessions"
+"Login Attempts","Login Attempts"
+"Visit History ","Visit History "
+"CMS Manage Pages","CMS Manage Pages"
+"System Configuration","System Configuration"
+Product,Product
+Customer,Customer
+Store,Store
+Order,Order
+"Product Attribute","Product Attribute"
+"Customer Group","Customer Group"
+"New Order","New Order"
+User,User
+Invoice,Invoice
+Shipment,Shipment
+"Credit Memo","Credit Memo"
+"Newsletter Template","Newsletter Template"
+"Email Template","Email Template"
+"Tax Rule","Tax Rule"
+"Catalog Price Rule","Catalog Price Rule"
+"Cart Price Rule","Cart Price Rule"
+"Product Category","Product Category"
+"Search Term","Search Term"
+"Url Rewrite","Url Rewrite"
+"Product Review","Product Review"
+"Terms and Conditions","Terms and Conditions"
+"Order Status","Order Status"
+"Tax Rate","Tax Rate"
+"Currency Symbol","Currency Symbol"
+"Attribute Set","Attribute Set"
+Rating,Rating
+Integration,Integration
+"User Role","User Role"
+"Index Management","Index Management"
+"Invoice for Order","Invoice for Order"
+"Shipment for Order","Shipment for Order"
+"Credit Memo for Order","Credit Memo for Order"
+"Data was exported","Data was exported"
+Cache,Cache
+"Preview Details","Preview Details"
+Name,Name
+"Old Value","Old Value"
+"New Value","New Value"
+"Not found","Not found"
+Email,Email
+Object:,Object:
+Item:,Item:
+#,#
+"Page Name","Page Name"
+"Page Url","Page Url"
+"Stay Duration","Stay Duration"
+"Log Settings","Log Settings"
+"Enable Page Visit History","Enable Page Visit History"
+"Log Actions For All Admin Users","Log Actions For All Admin Users"
+"Admin Users To Log Actions For","Admin Users To Log Actions For"
+"Automatically Clear Action Logs After, Days","Automatically Clear Action Logs After, Days"
+"Automatically Clear Login Attempts After, Days","Automatically Clear Login Attempts After, Days"
+"Automatically Clear Page History Log, Days","Automatically Clear Page History Log, Days"
+Geolocation,Geolocation
+"Use Geo IP","Use Geo IP"
+"Restore Settings","Restore Settings"
+"Popup Warning Text","Popup Warning Text"
+"Email Successful Logins To Admin","Email Successful Logins To Admin"
+Enabled,Enabled
+"Select Email Template","Select Email Template"
+"Send to Email","Send to Email"
+"Email Suspicious Logins To Admin","Email Suspicious Logins To Admin"
+"Email Unsuccessful Logins To Admin","Email Unsuccessful Logins To Admin"

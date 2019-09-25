@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="customer_form">
+                <block class="Mirasvit\Helpdesk\Block\Adminhtml\Customer\Edit\Tabs\Tickets"
+                       name="customer_helpdesk_tickets.grid.container" template="tab/tickets.phtml" />
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">helpdesk_tickets</argument>
+                    <argument name="block" xsi:type="string">customer_helpdesk_tickets.grid.container</argument>
+                </action>
+            </referenceBlock>
+            <uiComponent name="customer_order_view_helpdesk_tickets_grid"/>
+        </referenceContainer>
+    </body>
+</page>

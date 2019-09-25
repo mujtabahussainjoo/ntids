@@ -1,0 +1,262 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-success" style="margin: 0 0 12px 0px;">
+    <?php if ($block->getOrderId()):?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= __('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php  else :?>
+            <p><?= __('Your order # is: <span>%1</span>.', $block->escapeHtml($block->getOrderId())) ?></p>
+        <?php endif;?>
+        <p><?= /* @escapeNotVerified */ __('We\'ll email you an order confirmation with details.') ?></p>
+    <?php endif;?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <div class="actions-toolbarw continue-toolbar">
+        <div class="primary continuebtn">
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $block->getContinueUrl() ?>"><span><?= /* @escapeNotVerified */ __('Continue Shopping') ?></span></a>
+        </div>   
+	<?php
+		$orderId = $block->getOrderId();
+		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+		$orderObj = $objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($orderId);
+		$invoiceCount = count($orderObj->getInvoiceCollection());
+		$connection = $objectManager->get('\Magento\Framework\App\ResourceConnection')->getConnection();
+		$sql = " select * from order_item_serialcode where status = 1 and OrderID = ".$orderId;
+		$result = $connection->fetchAll($sql);
+		if($invoiceCount){
+		$serialCodeItems = $result;
+		$pdfHelper = $objectManager->create('\Serole\Pdf\Helper\Pdf');
+		$fileBasepath = $pdfHelper->getRootBaseDir()."/neatideafiles/";
+		$fileBaseUrl = $pdfHelper->getDefaultBaseUrl()."/neatideafiles/";
+		$filePath = $fileBasepath."pdf/".$block->getOrderId().".pdf";
+		$fileUrl = $fileBaseUrl."pdf/".$block->getOrderId().".pdf";
+	?>
+	<?php if(file_exists($filePath)) { ?>		
+		<div class="primary eVoucherdwn">
+			<a class="action primary continue eVoucherdwn" href="<?php echo $this->getUrl('pdf/index/Pdfdownload/id/' . $block->getOrderId()); ?>"><span><?= /* @escapeNotVerified */ __('Download eVoucher') ?></span></a>
+		</div>
+	<?php }} ?>		
+		
+		
+    </div>
+</div>
+
+<?php
+// $orderId = $block->getOrderId();
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+// $orderObj = $objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($orderId);
+// $invoiceCount = count($orderObj->getInvoiceCollection());
+// $connection = $objectManager->get('\Magento\Framework\App\ResourceConnection')->getConnection();
+// $sql = " select * from order_item_serialcode where status = 1 and OrderID = ".$orderId;
+// $result = $connection->fetchAll($sql);
+
+if($invoiceCount):
+    $serialCodeItems = $result;
+    $pdfHelper = $objectManager->create('\Serole\Pdf\Helper\Pdf');
+    $fileBasepath = $pdfHelper->getRootBaseDir()."/neatideafiles/";
+    //$fileBaseUrl = $pdfHelper->getBaseStoreUrl()."/neatideafiles/";
+    $fileBaseUrl = $pdfHelper->getDefaultBaseUrl()."/neatideafiles/";
+    $filePath = $fileBasepath."pdf/".$block->getOrderId().".pdf";
+    $fileUrl = $fileBaseUrl."pdf/".$block->getOrderId().".pdf";
+    ?>
+     <?php if(file_exists($filePath)) { ?>
+    <div class="success-info">
+	  <?php if (!empty($result)) { ?>
+        <p>
+			<strong>
+				Your evoucher barcode(s) are shown below. They can be redeemed immediately at venues that have scanning capabilities.
+				Alternatively, you can download the evoucher(s) here. They have also been emailed to your nominated email address.
+			</strong>
+		</p>
+	  <?php } else { ?>
+	     <p>
+			<strong>
+				Download the evoucher(s) here. They have also been emailed to your nominated email address.
+			</strong>
+		</p>
+	  <?php } ?>
+    </div>
+
+    <?php if (!empty($result)): ?>
+
+        <div class="containercs">
+            <div class="rowcs">
+                <div class="pro-names columncs"><strong>Product Name</strong></div>
+                <div class="pro-skus columncs"><strong>SKU</strong></div>
+            </div>
+            <div class="separator"></div>
+
+            <?php
+            foreach ($orderObj->getAllItems() as $orderItem) {
+                $name = $orderItem->getName();
+                $orderItemid = $orderItem->getItemId();
+                $isVirtul = $orderItem->getIsVirtual();
+                $sku = $orderItem->getSku();
+                $productType = $orderItem->getProductType();
+                $productId = $orderItem->getProductId();
+                $orderQty = $orderItem->getQtyOrdered();
+
+                if ($orderItem->getProductType() == 'bundle') {
+                    $orderItemid = $orderItem->getData('item_id');
+                    $bundleSku = $orderItem->getSku();
+                    $bundleSerialCodes = $pdfHelper->checkBundleSerialData($serialCodeItems, $bundleSku);
+                    if (!empty($bundleSerialCodes)) {
+                        $bundleItemscollection = $objectManager->create('Magento\Sales\Model\Order\Item')->getCollection();
+                        $bundleItemscollection->addAttributeToFilter('order_id', $orderObj->getEntityId());
+                        $bundleItemscollection->addAttributeToFilter('parent_item_id', $orderItem->getData('item_id'));
+                        $bundleItemscollection->addAttributeToFilter('product_type', 'virtual');
+
+                        ?>
+                        <div class="rowcs">
+                            <div class="columncs pro-names"><?php echo $name ?></div>
+                            <div class="columncs"><?php echo $sku; ?></div>
+                        </div>
+						<div class="separator"></div>
+                        <div class="rowcs">
+							<div class="columncs"><strong>Serial Code</strong></div>
+							<div class="columncs pin"><strong>Pin</strong></div>
+							<div class="columncs"><strong>Bar Code</strong></div>
+                        </div>
+						<div class="separator"></div>
+                        <?php
+                        foreach ($bundleItemscollection as $bundleItem) {
+                            $childItemSku = $bundleItem->getSku();
+                            $childItemSerialCodes = $pdfHelper->getChildItemSerialCodes($bundleSerialCodes, $childItemSku);
+                            foreach ($childItemSerialCodes as $childItem) {
+                                $imagePath = $fileBasepath . 'barcodeimages/barcode-' . $orderId . '-item-' . $childItem['SerialNumber'] . '.png';
+                                $imageUrl = $fileBaseUrl . 'barcodeimages/barcode-' . $orderId . '-item-' . $childItem['SerialNumber'] . '.png';
+                                ?>
+									<div class="rowcs">
+										<div class="columncs"><?php echo $childItem['SerialNumber']; ?>
+										</div>
+									
+										<div class="columncs pin">
+											<?php echo $childItem['PIN']; ?>
+										</div>
+										
+										<?php if (file_exists($imagePath)) { ?>
+										<div class="columncs">
+											<img src="<?php echo $imageUrl ?>"/>
+										</div>
+										<?php } ?>
+										
+									</div>
+                            <?php }
+                        } ?>
+						<div class="separator"></div>	
+                    <?php }
+                } elseif (($orderItem->getProductType() == 'virtual' || $orderItem->getProductType() == 'grouped') && $orderItem->getParentItemId() == '') {
+                    $filterArray = $pdfHelper->getSerialCodesByFilter($serialCodeItems, $sku, $parentsku = '');
+                    ?>
+
+                    <?php if (!empty($filterArray)) { ?>
+                        <div class="rowcs">
+                            <div class="columncs pro-names"><?php echo $name ?></div>
+                            <div class="columncs"><?php echo $sku; ?></div>
+                        </div>
+						<div class="separator"></div>
+                        <div class="rowcs">
+							<div class="columncs"><strong>Serial Code</strong></div>
+							<div class="columncs pin"><strong>Pin</strong></div>
+							<div class="columncs"><strong>Bar Code</strong></div>
+                        </div>
+						<div class="separator"></div>
+                        <?php foreach ($filterArray as $serialCodeItem) { ?>
+
+                                        <div class="rowcs">
+                                            <div class="columncs">
+                                                <?php echo $serialCodeItem['SerialNumber']; ?>
+                                            </div> 
+											
+											<div class="columncs pin">
+                                                <?php echo $serialCodeItem['PIN']; ?>
+                                            </div>
+											
+                                            <div class="columncs">
+                                                <?php
+                                                $imagePath = $fileBasepath . 'barcodeimages/barcode-' . $orderId . '-item-' . $serialCodeItem['SerialNumber'] . '.png';
+                                                $imageUrl = $fileBaseUrl . 'barcodeimages/barcode-' . $orderId . '-item-' . $serialCodeItem['SerialNumber'] . '.png';
+                                                if (file_exists($imagePath)) { ?>
+                                                    <img src="<?php echo $imageUrl ?>"/>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                        <?php } ?>
+							<div class="separator"></div>
+                    <?php } ?>
+                    <?php
+                }
+
+            } ?>
+        </div>
+    <?php
+    endif;
+  }
+endif;
+?>
+<script>
+    localStorage.removeItem('giftEmail');
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.columncs {
+  float: left;
+  width: 30%;
+  padding: 8px;
+ }
+
+/* Clear floats after the columns */
+.rowcs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.pin{width:20%;}
+.rowcs{width:75%;}
+.separator{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+@media only screen and (min-width: 600px) { .pro-names{width:50%;} }
+@media only screen and (max-width: 600px) {  
+.columncs{width:50%;}
+.pin{display:none;}
+.rowcs{width:100%;}
+
+}
+</style>
+
+
+<!--div class="rowcs">
+  <div class="columncs" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="columncs" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="columncs" style="background-color:#ccc;">
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div>
+</div-->

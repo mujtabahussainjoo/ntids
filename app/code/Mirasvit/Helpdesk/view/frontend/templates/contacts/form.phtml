@@ -1,0 +1,152 @@
+<?php
+//@codingStandardsIgnoreFile
+/** @var \Mirasvit\Helpdesk\Block\Contact\Form $block */
+?>
+<?php
+$helpText = $block->getHelpText();
+?>
+<?php if ($block->isKbEnabled()): ?>
+    <?=$block->getKbBlock()->toHtml() ?>
+<?php endif ?>
+<form action="<?= $block->getUrl('helpdesk/form/post') ?>" class="hdmx__contact-form"
+      id="helpdesk-contacts-form" method="post"
+      enctype="multipart/form-data" data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><?= __('Contact Information') ?></legend>
+        <?php if ($helpText): ?>
+            <div>
+                <p class="cms-content-important"><?= $helpText; ?></p>
+            </div>
+        <?php endif; ?>
+
+        <div class="fields group-3">
+            <div class="field required">
+                <label for="name" class="label"><?= __('Name') ?></label>
+
+                <div class="control">
+                    <input name="name" data-id="name" title="<?= __('Name') ?>"
+                           value="<?= $block->escapeHtml($block->getCustomerName()) ?>" class="input-text" type="text"
+                           data-validate="{required:true}"/>
+                </div>
+            </div>
+            <div class="field required">
+                <label for="mail" class="label"><?= __('Email') ?></label>
+
+                <div class="control">
+                    <input name="email" title="Email" value="" type="text"
+                           class="helpdesk_email email" data-id="email"/>
+                    <style>
+                        .helpdesk_email {
+                            display: none !important;
+                        }
+                    </style>
+                    <input name="mail" id="mail" title="<?= __('Email') ?>"
+                           value="<?= $block->escapeHtml($block->getCustomerEmail()) ?>"
+                           class="input-text required-entry validate-email" type="text"
+                           data-validate="{required:true}"/>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="telephone" class="label"><?= __('Telephone') ?></label>
+
+                <div class="control">
+                    <input name="telephone" class="telephone" data-id="telephone"
+                           title="<?= __('Telephone') ?>" value="" type="text" class="input-text"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="field required">
+            <label for="subject" class="label"><?= __('Subject') ?></label>
+
+            <div class="control">
+                <input name="subject" title="<?= __('Subject') ?>" value="" class="input-text subject"
+                       data-id="subject" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="comment" class="label"><?= __('Comment') ?></label>
+
+            <div class="control">
+                <textarea name="comment" title="<?= __('Comment') ?>" class="input-text comment" cols="5"
+                          data-id="comment" rows="3" data-validate="{required:true}"></textarea>
+            </div>
+        </div>
+
+        <div class="fields group-2">
+            <?php if ($block->getIsAllowPriority()): ?>
+                <div class="field">
+                    <label for="priority_id" class="label"><?= __('Priority') ?></label>
+
+                    <div class="control">
+                        <select name="priority_id" data-id="priority_id" class="priority_id">
+                            <?php foreach ($block->getPriorityCollection() as $priority): ?>
+                                <option value="<?= $priority->getId() ?>"><?= $priority->getName() ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if ($block->getIsAllowDepartment()): ?>
+                <div class="field">
+                    <label for="department_id" class="label"><?= __('Department') ?></label>
+
+                    <div class="control">
+                        <select name="department_id" class='department_id' data-id="department_id">
+                            <?php foreach ($block->getDepartmentCollection() as $department): ?>
+                                <option
+                                    value="<?= $department->getId() ?>"><?= $department->getName() ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php foreach ($block->getCustomFields() as $field): ?>
+                <div
+                    class="field <?= $field->getType() ?> <?= $field->getIsRequiredCustomer() ? 'required' : '' ?>">
+                    <label for="<?= $field->getCode() ?>" class="label"><?= __($field->getName()) ?></label>
+
+                    <div class="control <?= $field->getType() ?>">
+                        <?= $block->getInputHtml($field) ?>
+                    </div>
+                    <p><?= $field->getDescription() ?></p>
+                </div>
+            <?php endforeach ?>
+        </div>
+
+        <div class="field attachment">
+            <label for="attachment" class="label"><?= __('Attach files') ?></label>
+
+            <div class="control">
+                <input type='file' class='multi' name='attachment[]' id='attachment'/>
+            </div>
+        </div>
+
+        <div class="actions-toolbar">
+            <input type="hidden" name="hideit" data-id="hideit" class="hideit" value="">
+            <button type="submit" title="<?= __('Submit') ?>" class="action primary">
+                <span><?= __('Submit') ?></span>
+            </button>
+        </div>
+    </fieldset>
+</form>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        'mage/validation'
+    ], function ($) {
+        var submitBtn = $('.action.primary', $('.hideit').parent());
+        $('form').on('invalid-form.validate', function(event, validation) {
+            $(submitBtn).show();
+        });
+        $(submitBtn).click(function() {
+            $(submitBtn).hide();
+        })
+    });
+</script>

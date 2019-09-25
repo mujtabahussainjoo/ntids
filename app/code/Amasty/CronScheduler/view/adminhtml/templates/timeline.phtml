@@ -1,0 +1,26 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2019 Amasty (https://www.amasty.com)
+ * @package Amasty_CronScheduler
+ */
+?>
+<?php /* @var \Amasty\CronScheduler\Block\Adminhtml\Timeline $block */ ?>
+<div class="amcronsch-cron-timeline">
+    <div class="amcronsch-controls">
+        <button data-amcronsch-js="timeline-zoom-in" title="<?= $block->escapeHtml(__('Zoom In'))?>"><?= $block->escapeHtml(__('Zoom In'))?></button>
+        <button data-amcronsch-js="timeline-zoom-out" title="<?= $block->escapeHtml(__('Zoom Out'))?>"><?= $block->escapeHtml(__('Zoom Out'))?></button>
+    </div>
+    <div id="cron-timeline" class="amcronsch-timeline"></div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#cron-timeline": {
+            "cronTimeline": {
+                "data": <?= $block->getJobsJson(); ?>,
+                "storeUtcOffset": "<?= $block->getServerTimeDifference(); ?>"
+            }
+        }
+    }
+</script>

@@ -1,0 +1,119 @@
+<?php
+    $theme = $this->helper('Infortis\Base\Helper\Data');
+    $helperHeader = $this->helper('Infortis\Base\Helper\Template\Theme\Html\Header');
+
+    //Get blocks that can be displayed inside the menu bar
+    //--------------------------------------------------------------
+    $searchHtml = '';
+    $cartHtml = '';
+    $compareHtml = '';
+    $accountLinksHtml = '';
+    $isDisplayedInUserMenu = $helperHeader->getIsDisplayedInUserMenu();
+
+    if ($isDisplayedInUserMenu['search'])
+    {
+        $searchHtml = '<div id="search-marker-regular"></div>';
+    }
+    if ($isDisplayedInUserMenu['cart'])
+    {
+        $cartHtml = '<div id="mini-cart-marker-regular"></div>';
+    }
+    if ($isDisplayedInUserMenu['compare'])
+    {
+        $compareHtml = '<div id="mini-compare-marker-regular"></div>';
+    }
+    if ($isDisplayedInUserMenu['account-links'])
+    {
+        $accountLinksHtml = '<div id="account-links-marker-regular"></div>';
+    }
+
+    //Search
+    //--------------------------------------------------------------
+    //Check if search box is displayed inside User Menu
+    if ($theme->getCfg('header/search_position') === 'userMenu')
+    {
+        if ($searchHtml)
+        {
+            switch ($theme->getCfg('header/search_in_user_menu_position'))
+            {
+                case '1':
+                    $p[0] = $searchHtml;
+                    break;
+                case '2':
+                    $p[1] = $searchHtml;
+                    break;
+                case '3':
+                    $p[2] = $searchHtml;
+                    break;
+                case '4':
+                    $p[3] = $searchHtml;
+                    break;
+            }
+        }
+    }
+
+    //Additional line break inside User Menu
+    //--------------------------------------------------------------
+    $lineBreakHtml = '<div class="line-break-after"></div>';
+    switch ($theme->getCfg('header/toplinks_break_position'))
+    {
+        case '0':
+            break;
+        case '30':
+            $lineBreak[0] = $lineBreakHtml;
+            break;
+        case '31':
+            $lineBreak[1] = $lineBreakHtml;
+            break;
+        case '32':
+            $lineBreak[2] = $lineBreakHtml;
+            break;
+        case '33':
+            $lineBreak[3] = $lineBreakHtml;
+            break;
+        case '34':
+            $lineBreak[4] = $lineBreakHtml;
+            break;
+        case '35':
+            $lineBreak[5] = $lineBreakHtml;
+            break;
+    }
+
+?>
+<div id="user-menu-wrapper-regular">
+    <div id="user-menu" class="user-menu">
+
+        <?php if (isset($p[0])) echo $p[0]; ?>
+
+        <?php if (isset($lineBreak[0])) echo $lineBreak[0]; ?>
+
+        <?php if ($cartHtml): //Mini cart ?>
+            <?php echo $cartHtml; ?>
+        <?php endif; ?>
+
+        <?php if (isset($lineBreak[1])) echo $lineBreak[1]; ?>
+
+        <?php if (isset($p[1])) echo $p[1]; ?>
+        
+        <?php if (isset($lineBreak[2])) echo $lineBreak[2]; ?>
+
+        <?php if ($compareHtml): //Mini compare ?>
+            <?php echo $compareHtml; ?>
+        <?php endif; ?>
+
+        <?php if (isset($lineBreak[3])) echo $lineBreak[3]; ?>
+
+        <?php if (isset($p[2])) echo $p[2]; ?>
+        
+        <?php if (isset($lineBreak[4])) echo $lineBreak[4]; ?>
+
+        <?php if ($accountLinksHtml): //Account links ?>
+            <?php echo $accountLinksHtml; ?>
+        <?php endif; ?>
+
+        <?php if (isset($lineBreak[5])) echo $lineBreak[5]; ?>
+
+        <?php if (isset($p[3])) echo $p[3]; ?>
+
+    </div> <!-- end: user-menu -->
+</div>

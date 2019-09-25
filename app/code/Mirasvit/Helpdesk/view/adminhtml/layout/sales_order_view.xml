@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="sales_order_tabs">
+            <block class="Mirasvit\Helpdesk\Block\Adminhtml\Order\View\Tab\Tickets" name="sales_helpdesk_tickets.grid.container"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">helpdesk_tickets</argument>
+                <argument name="block" xsi:type="string">sales_helpdesk_tickets.grid.container</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="sales_helpdesk_tickets.grid.container">
+            <uiComponent name="sales_order_view_helpdesk_tickets_grid"/>
+        </referenceBlock>
+    </body>
+</page>

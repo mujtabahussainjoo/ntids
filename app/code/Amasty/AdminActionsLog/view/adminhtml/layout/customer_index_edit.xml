@@ -1,0 +1,16 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="Amasty_AdminActionsLog::js/preview.js"/>
+        <css src="Amasty_AdminActionsLog::css/amaudit.css"/>
+    </head>
+    <body>
+        <referenceBlock name="customer_form">
+            <block class="Amasty\AdminActionsLog\Block\Adminhtml\ActionsLog\Tabs\Customer" name="customer_edit_tab_history">
+                <action method="setTabLabel">
+                    <argument name="label" xsi:type="string">History of Changes</argument>
+                </action>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="infortis" translate="label" sortOrder="152">
+            <label>Infortis Extensions</label>
+        </tab>
+        <section id="ultraslideshow" translate="label" sortOrder="90" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Slideshow</label>
+            <tab>infortis</tab>
+            <resource>Infortis_UltraSlideshow::config</resource>
+            <group id="general" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <comment><![CDATA[<div style="background-color: #fafafa; padding: 15px;"><h2>Slideshow on any page:</h2>Slideshows can be displayed on any CMS page (and inside any static block). To add a slideshow to a page, use the following block code:<br/><code style="background-color: #eaf5f8; color: #00a3db; padding: 1px 2px; display: inline-block;">{{block type="ultraslideshow/slideshow" template="infortis/ultraslideshow/slideshow.phtml" slides="sample_slideshow_1"}}</code><br/>Enter the code in the content field of a page, Magento will automatically replace the code with a slideshow during page rendering.<br/>The code is described in the <strong>User Guide</strong> (chapter 10).<br/><br/><h2>Home page slideshow:</h2>To quickly add a slideshow to the home page, configure options under the <em>"Main Slideshow on the Home Page"</em> tab.</div>]]></comment>
+                <field id="heading_home_slideshow" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Main Slideshow on the Home Page</label>
+                    <comment>These settings add a slideshow only to the home page.</comment>
+                    <frontend_model>Infortis\Infortis\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="blocks" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Slides</label>
+                    <comment><![CDATA[Enter an identifier of a static block which contains your slides. You can use the default static block: <code style="background-color: #eaf5f8; color: #00a3db; padding: 1px 2px; display: inline-block;">sample_slideshow_1</code><br/>The slides from that static block will be displayed in the main slideshow on the home page.<br/><strong style="color:#F00;">Important:</strong> Leave this field empty to remove the main slideshow from the home page.<br/><strong style="color: #1795ee;">Notice:</strong> Value of this field will be applied only to the main slideshow on home page. To display slideshows in other places use slideshow block code described in the user guide.]]></comment>
+                </field>
+                <field id="position2" translate="label" sortOrder="30" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position: Above Content Area (Boxed)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment><![CDATA[If enabled, the main slideshow will be displayed at the top of the main content area of the home page (just below the header).<br/><strong>Important:</strong> do not enable slideshow in both positions at the same time.]]></comment>
+                </field>
+                <field id="position1" translate="label" sortOrder="40" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position: Above Content Area (Full Width)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment><![CDATA[If enabled, the main slideshow will be displayed at the top of the main content area of the home page (just below the header). Slideshow will take full available width.<br/><strong>Important:</strong> do not enable slideshow in both positions at the same time.]]></comment>
+                </field>
+                <field id="hide" translate="label" sortOrder="50" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide Slides On Mobile Devices</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", slideshow will be hidden on narrow screens (if browser viewport width is less than 768 pixels). Important: additional banners can be hidden separately, see options below.</comment>
+                </field>
+                <field id="margin_top" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Margin</label>
+                    <comment>Additional top margin for the slideshow. You can set margin to add extra space above the slideshow. Enter negative value to pull the slideshow up.</comment>
+                </field>
+                <field id="margin_bottom" translate="label" sortOrder="110" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Bottom Margin</label>
+                    <comment>Additional bottom margin for the slideshow. You can set margin to add extra space below the slideshow.</comment>
+                </field>
+                <field id="heading_general" translate="label" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General Settings</label>
+                    <comment>These settings are applied to all slideshows.</comment>
+                    <frontend_model>Infortis\Infortis\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="effect" translate="label" sortOrder="510" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Transition Effect</label>
+                    <source_model>Infortis\UltraSlideshow\Model\Source\Effects</source_model>
+                    <comment><![CDATA[Leave empty to use simple horizontal scrolling animation.]]></comment>
+                </field>
+                <field id="timeout" translate="label" sortOrder="520" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Timeout</label>
+                    <comment>Time (in milliseconds) between slide transitions. Enter "0" to disable automatic transition. Note that 1000 miliseconds = 1 second.</comment>
+                </field>
+                <field id="speed" translate="label" sortOrder="530" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Scrolling Speed</label>
+                    <comment>Duration (in milliseconds) of horizontal scrolling animation. Applied to horizontal scrolling with arrows and touch swipe.</comment>
+                </field>
+                <field id="auto_speed" translate="label" sortOrder="540" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatic Scrolling Speed</label>
+                    <comment><![CDATA[Duration (in milliseconds) of horizontal scrolling animation. Applied to automatic horizontal scrolling (if <strong>Timeout</strong> was specified) and to horizontal scrolling with pagination.]]></comment>
+                </field>
+                <field id="smooth_height" translate="label" sortOrder="550" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Smooth Height</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable, if your slides do not have the same height. It will allow height of the slideshow to animate smoothly.</comment>
+                </field>
+                <field id="pause" translate="label" sortOrder="560" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pause on Hover</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>If enabled, when the mouse is over the slideshow the automatic transition functionality will pause.</comment>
+                </field>
+                <field id="loop" translate="label" sortOrder="570" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loop</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>If enabled, slideshow will automatically loop.</comment>
+                </field>
+            </group>
+            <group id="banners" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Additional Banners</label>
+                <comment><![CDATA[<div style="background-color: #fafafa; padding: 15px;">In this tab you can configure additional banners displayed at the side of the main slideshow on the home page.<br/>These settings are applied <strong>only</strong> to the main slideshow on the home page.</div>]]></comment>
+                <!-- <field id="heading_home_slideshow" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Additional Banners for the Main Slideshow on the Home Page</label>
+                    <comment>These settings are applied only to the main slideshow on the home page.</comment>
+                    <frontend_model>Infortis\Infortis\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+                </field> -->
+                <field id="banners" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Banners</label>
+                    <comment><![CDATA[Identifier of a single static block which contains additional banners for the slideshow. Banners will be displayed at the side of the slideshow. You can use the default static block: <code style="background-color: #eaf5f8; color: #00a3db; padding: 1px 2px; display: inline-block;">sample_slideshow_additional_banners_1</code><br/>The content of that static block will be added only to the main slideshow on the home page.<br/><strong style="color:#F00;">Important:</strong> Leave this field empty if you don't want to add side banners to the main slideshow on the home page.]]></comment>
+                </field>
+                <field id="position" translate="label" sortOrder="30" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position of Banners</label>
+                    <source_model>Infortis\UltraSlideshow\Model\Source\Banners\Position</source_model>
+                </field>
+                <field id="gutter" translate="label" sortOrder="40" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Gutter Between Slides and Banners</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", there will be space between the slides and the additional banners.</comment>
+                </field>
+                <field id="hide" translate="label" sortOrder="50" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide Banners On Mobile Devices</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", banners will be hidden on narrow screens (if browser viewport width is less than 768 pixels).</comment>
+                </field>
+            </group>
+            <group id="navigation" translate="label" sortOrder="30" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Navigation</label>
+                <comment><![CDATA[<div style="background-color: #fafafa; padding: 15px;">In this tab you can configure navigation elements.<br/>These settings are applied to all slideshows.</div>]]></comment>
+                <field id="nav_buttons" translate="label" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Navigation Buttons</label>
+                    <comment>Enable "next" and "previous" buttons.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="pagination" translate="label" sortOrder="110" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pagination</label>
+                    <comment>Enable pagination buttons.</comment>
+                    <source_model>Infortis\UltraSlideshow\Model\Source\Navigation\Pagination</source_model>
+                </field>
+                <field id="pagination_position" translate="label" sortOrder="120" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pagination Position</label>
+                    <source_model>Infortis\UltraSlideshow\Model\Source\Navigation\Pagination\Position</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

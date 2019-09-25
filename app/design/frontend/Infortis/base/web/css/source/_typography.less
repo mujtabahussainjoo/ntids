@@ -1,0 +1,73 @@
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/light/opensans-300',
+        @font-weight: 300,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/regular/opensans-400',
+        @font-weight: 400,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/semibold/opensans-600',
+        @font-weight: 600,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/opensans/bold/opensans-700',
+        @font-weight: 700,
+        @font-style: normal
+    );
+
+    //
+    //  Headings with bottom border
+    //  ---------------------------------------------
+
+    h1.border-bottom,
+    h2.border-bottom,
+    h3.border-bottom,
+    h4.border-bottom,
+    h5.border-bottom,
+    h6.border-bottom {
+        padding-bottom: 10px;
+        border-bottom: 1px solid @global-border-color;
+        &:extend(.abs-global-border-color all);
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    h1 {
+        .lib-css(font-size, @h1__font-size-desktop);
+        // .lib-css(margin-bottom, @h1__margin-bottom__desktop);
+    }
+    h2 {
+        .lib-css(font-size, @h2__font-size-desktop);
+    }
+}
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .items {
+        .lib-list-reset-styles();
+    }
+}

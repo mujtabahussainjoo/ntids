@@ -1,0 +1,136 @@
+Department,Afdeling
+"Create New Ticket","Opret ny billet"
+Status,Status
+Priority,Prioritet
+Replies,Svar
+View,Udsigt
+"Help Desk","Help desk"
+"Thank you","Tak skal du have"
+"Create Ticket","Opret billet"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Din anmodning blev sendt. Du skal snart modtage en bekræftelses e-mail."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Din forespørgsel blev indsendt og vil blive besvaret så hurtigt som muligt. Tak fordi du kontaktede os."
+"Unable to submit your request. Please, try again later","Kunne ikke indsende din anmodning. Prøv igen senere"
+"Page not found.","Siden blev ikke fundet."
+"Your message was successfuly posted","Din besked blev sendt korrekt"
+"Your ticket was successfuly posted","Din billet blev sendt til succes"
+"Ticket was successfuly closed","Billet blev succesfuldt lukket"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Kan ikke uploade filen %1. Maksimal uploadstørrelse er %2 MB."
+"Allows only this file types: %1","Tillader kun disse filtyper: %1"
+"Message added","Meddelelse tilføjet"
+"Internal note added","Intern notat tilføjet"
+"Third party message added","Tredjeparts besked tilføjet"
+"Private third party message added","Privat tredjepartsmeddelelse tilføjet"
+"-- Please Select --","-- Vælg venligst --"
+"Contact Tab","Kontakt faneblad"
+"Contact Form",Kontaktformular
+" at %1 (%2) - %3","ved %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Du har ikke tilladelser til at læse denne billet. Kontakt venligst din administrator."
+"Invalid Customer Email","Ugyldig kunde e-mail"
+"not set","ikke indstillet"
+"Unknown time","Ukendt tid"
+ago,siden
+"from now","fra nu"
+"1 sec ago","1 sek siden"
+"Open Ticket","Åben billet"
+"Open Tickets","Åbn billetter"
+"! Blocked file - ","! Blokeret fil -"
+Disabled,Handicappet
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System",Filsystem
+Database,Database
+Aqua,Aqua
+Grey,Grå
+Navy,Flåde
+Silver,Sølv
+Black,Sort
+Green,Grøn
+Olive,Oliven
+Teal,Teal
+Blue,Blå
+Lime,Citron
+Purple,Lilla
+Fuchsia,Fuchsia
+Maroon,Maroon
+Red,Rød
+Orange,Orange
+Yellow,Gul
+Text,Tekst
+Date,Dato
+Checkbox,Afkrydsningsfelt
+"Drop-down list","Drop-down liste"
+"In minutes...","Om få minutter ..."
+"In hours...","I timer ..."
+"In days...","Om dage"
+"In weeks...","Om uger"
+"In months...","I måneder ..."
+Custom,Brugerdefinerede
+"--Please Select--","--Vælg venligst--"
+"New ticket created","Ny billet oprettet"
+Success,Succes
+Customer,Kunde
+Staff,Personale
+"Third party","Tredje part"
+Closed,Lukket
+"Opened 24hr","Åbnet 24 timer"
+"Helpdesk Tickets","Helpdesk Billetter"
+"Cannot delete ticket with id %1","Kan ikke slette billet med id %1"
+Edit,Redigere
+"All Departments","Alle afdelinger"
+Back,Tilbage
+"24 hrs x 7 days","24 timer x 7 dage"
+"Select working days/hours","Vælg arbejdsdage / timer"
+"Satisfaction survey",Tilfredshedsundersøgelse
+"to %1 (third party)","til %1 (tredjepart)"
+"%1 (third party)","%1 (tredjepart)"
+"added %1 (%2)","tilføjet %1 (%2)"
+"Ticket Summary",Billetoversigt
+"Ticket ID",Billet-id
+Assignee,Rettighedserhverver
+"Additional Info","Yderligere information"
+"Ticket History","Billets historie"
+"Done by","Gøres ved"
+Changes,Ændringer
+Name,Navn
+"Attach files","Vedhæft filer"
+Submit,Indsend
+"Submit Ticket","Indsend billet"
+"What is your question?","Hvad er dit spørgsmål?"
+"We found the following topics that might be helpful:","Vi fandt følgende emner, der kan være nyttige:"
+"None of these are helpful - get in touch","Ingen af ​​disse er nyttige - komme i kontakt"
+"We have not found topics that can be helpful.","Vi har ikke fundet emner, som kan være nyttige."
+"Contact Information","Kontakt information"
+Comment,Kommentar
+"We are open 24 x 7","Vi er åbne 24 x 7"
+"We are closed","Vi er lukkede"
+"Timezone: %1","Tidszone: %1"
+"Please take a second to rate my reply...","Vær venlig at tage et sekund for at bedømme mit svar ..."
+Great,Store
+Awesome,Fantastisk
+"Fast, friendly, helpful, pleasant. Great job!","Hurtig, venlig, hjælpsom, behagelig. Godt arbejde!"
+"Just Okay","Bare okay"
+"Fine, but definitely could have been better.","Godt, men bestemt kunne have været bedre."
+"Not good","Ikke godt"
+"Unfortunately, I wasn't happy with it at all.","Desværre var jeg slet ikke tilfreds med det."
+"Thank you for participating in our survey!","Tak fordi du deltog i vores undersøgelse!"
+"If you would like to provide additional comments, please do so below:","Hvis du vil give yderligere kommentarer, bedes du gøre følgende:"
+Message,Besked
+"Submit Message","Indsend besked"
+"Thank you for your feedback!","Tak for din feedback!"
+Attachments,"Vedhæftede filer"
+Order,Bestille
+"-- Select an Order --","- Vælg en ordre -"
+"Create ticket","Opret billet"
+"You don't have open tickets","Du har ikke åbne billetter"
+"Post a Reply","Skriv et svar"
+"Reopen Ticket","Genåbne billet"
+"Close Ticket","Luk billet"
+History,Historie
+"Back to My Tickets","Tilbage til Mine billetter"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Kontakt os"
+Open,Åben
+Subject,Emne
+"Last Activity","Sidste aktivitet"
+"Request ID","Anmodning ID"

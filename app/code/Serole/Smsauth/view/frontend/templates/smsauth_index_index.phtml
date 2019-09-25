@@ -1,0 +1,45 @@
+<form data-mage-init='{"validation":{}}' style="width:50%; margin:0 auto;" class="form contact-inchoo" action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>" id="smsauth-form" method="post" data-hasrequired="* Required Fields">
+	<fieldset class="fieldset">
+		<div class="field name required">
+			<label class="label" for="mobile"><span>Mobile No(+64)</span></label>
+			<div class="control">
+                <input data-validate='{"required":true}' name="mobile" id="mobile" title="mobile" value="" class="input-text" type="text" />
+			</div>
+		</div>
+		<div class="actions-toolbar"  style="margin-top:10px;">
+	        <div class="primary">
+            		<button type="submit" title="Submit" id="send" class="action submit primary">
+                		<span>Send/Resend OTP</span>
+            		</button>
+        	</div>
+         </div>
+	</fieldset>	
+   </form>
+<form data-mage-init='{"validation":{}}' style="width:50%; margin:0 auto; display:none;" class="form contact-inchoo" action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>" id="smsauth-form-otp" method="post" data-hasrequired="* Required Fields">
+	<fieldset class="fieldset">
+	        <div class="field name required">
+			<label class="label" for="otp"><span>OTP</span></label>
+			<div class="control">
+                <input data-validate='{"required":true}' name="otp" id="otp" title="OTP" value="" class="input-text" type="text" />
+			</div>
+		</div>
+        <div class="actions-toolbar" style="margin-top:10px;">
+	        <div class="primary">
+            		<button type="submit" title="Submit" class="action submit primary">
+                		<span>Submit</span>
+            		</button>
+        	</div>
+         </div>      
+	</fieldset>
+	
+</form>
+
+<script type="text/javascript">
+require(['jquery', 'jquery/ui'], function($){
+  jQuery(document).ready( function() {
+     jQuery('#send').click( function() {
+        jQuery('#smsauth-form-otp').show(1000);
+     });
+  });
+});
+</script> 

@@ -1,0 +1,136 @@
+Department,Department
+"Create New Ticket","Create New Ticket"
+Status,Status
+Priority,Priority
+Replies,Replies
+View,View
+"Help Desk","Help Desk"
+"Thank you","Thank you"
+"Create Ticket","Create Ticket"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Your request was successfully submitted. You should receive a confirmation email shortly."
+Telephone,Telephone
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us."
+"Unable to submit your request. Please, try again later","Unable to submit your request. Please, try again later"
+"Page not found.","Page not found."
+"Your message was successfuly posted","Your message was successfuly posted"
+"Your ticket was successfuly posted","Your ticket was successfuly posted"
+"Ticket was successfuly closed","Ticket was successfuly closed"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Can't upload file %1 . Max allowed upload size is %2 MB."
+"Allows only this file types: %1","Allows only this file types: %1"
+"Message added","Message added"
+"Internal note added","Internal note added"
+"Third party message added","Third party message added"
+"Private third party message added","Private third party message added"
+"-- Please Select --","-- Please Select --"
+"Contact Tab","Contact Tab"
+"Contact Form","Contact Form"
+" at %1 (%2) - %3"," at %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","You don't have permissions to read this ticket. Please, contact your administrator."
+"Invalid Customer Email","Invalid Customer Email"
+"not set","not set"
+"Unknown time","Unknown time"
+ago,ago
+"from now","from now"
+"1 sec ago","1 sec ago"
+"Open Ticket","Open Ticket"
+"Open Tickets","Open Tickets"
+"! Blocked file - ","! Blocked file - "
+Disabled,Disabled
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","File System"
+Database,Database
+Aqua,Aqua
+Grey,Grey
+Navy,Navy
+Silver,Silver
+Black,Black
+Green,Green
+Olive,Olive
+Teal,Teal
+Blue,Blue
+Lime,Lime
+Purple,Purple
+Fuchsia,Fuchsia
+Maroon,Maroon
+Red,Red
+Orange,Orange
+Yellow,Yellow
+Text,Text
+Date,Date
+Checkbox,Checkbox
+"Drop-down list","Drop-down list"
+"In minutes...","In minutes..."
+"In hours...","In hours..."
+"In days...","In days..."
+"In weeks...","In weeks..."
+"In months...","In months..."
+Custom,Custom
+"--Please Select--","--Please Select--"
+"New ticket created","New ticket created"
+Success,Success
+Customer,Customer
+Staff,Staff
+"Third party","Third party"
+Closed,Closed
+"Opened 24hr","Opened 24hr"
+"Helpdesk Tickets","Helpdesk Tickets"
+"Cannot delete ticket with id %1","Cannot delete ticket with id %1"
+Edit,Edit
+"All Departments","All Departments"
+Back,Back
+"24 hrs x 7 days","24 hrs x 7 days"
+"Select working days/hours","Select working days/hours"
+"Satisfaction survey","Satisfaction survey"
+"to %1 (third party)","to %1 (third party)"
+"%1 (third party)","%1 (third party)"
+"added %1 (%2)","added %1 (%2)"
+"Ticket Summary","Ticket Summary"
+"Ticket ID","Ticket ID"
+Assignee,Assignee
+"Additional Info","Additional Info"
+"Ticket History","Ticket History"
+"Done by","Done by"
+Changes,Changes
+Name,Name
+"Attach files","Attach files"
+Submit,Submit
+"Submit Ticket","Submit Ticket"
+"What is your question?","What is your question?"
+"We found the following topics that might be helpful:","We found the following topics that might be helpful:"
+"None of these are helpful - get in touch","None of these are helpful - get in touch"
+"We have not found topics that can be helpful.","We have not found topics that can be helpful."
+"Contact Information","Contact Information"
+Comment,Comment
+"We are open 24 x 7","We are open 24 x 7"
+"We are closed","We are closed"
+"Timezone: %1","Timezone: %1"
+"Please take a second to rate my reply...","Please take a second to rate my reply..."
+Great,Great
+Awesome,Awesome
+"Fast, friendly, helpful, pleasant. Great job!","Fast, friendly, helpful, pleasant. Great job!"
+"Just Okay","Just Okay"
+"Fine, but definitely could have been better.","Fine, but definitely could have been better."
+"Not good","Not good"
+"Unfortunately, I wasn't happy with it at all.","Unfortunately, I wasn't happy with it at all."
+"Thank you for participating in our survey!","Thank you for participating in our survey!"
+"If you would like to provide additional comments, please do so below:","If you would like to provide additional comments, please do so below:"
+Message,Message
+"Submit Message","Submit Message"
+"Thank you for your feedback!","Thank you for your feedback!"
+Attachments,Attachments
+Order,Order
+"-- Select an Order --","-- Select an Order --"
+"Create ticket","Create ticket"
+"You don't have open tickets","You don't have open tickets"
+"Post a Reply","Post a Reply"
+"Reopen Ticket","Reopen Ticket"
+"Close Ticket","Close Ticket"
+History,History
+"Back to My Tickets","Back to My Tickets"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Contact Us"
+Open,Open
+Subject,Subject
+"Last Activity","Last Activity"
+"Request ID","Request ID"

@@ -1,0 +1,35 @@
+.kb-articles__list {
+    .lib-list-reset-styles();
+
+    > li {
+        margin-bottom: 4rem;
+
+        a {
+            font-weight: @font-weight__semibold;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.kb-articles__toolbar {
+    position: relative;
+
+    .pages {
+        display: none;
+    }
+}
+
+.kb-articles__list ~ .kb-articles__toolbar {
+    .pages {
+        display: block;
+        float: left;
+        margin-right: 1rem;
+    }
+    .field.limiter {
+        display: block;
+        float: left;
+    }
+    .toolbar-amount {
+        display: none;
+    }
+}

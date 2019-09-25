@@ -1,0 +1,11 @@
+<!--@subject {{var email_subject}} @-->
+
+{{template config_path="design/email/header_template"}}
+
+
+{{var hidden_separator|raw}}<br>
+
+{{var email_body|raw}}<br>
+{{var ticket.getHiddenCodeHtml()|raw}}
+
+{{template config_path="design/email/footer_template"}}

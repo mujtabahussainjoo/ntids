@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="aw_rbslider_sample_data.xsd">
+    <banner>
+        <name>Sample Banner</name>
+        <status>1</status>
+        <page_type>1</page_type>
+        <position>3</position>
+        <product_condition/>
+        <category_ids/>
+        <animation_effect>1</animation_effect>
+        <pause_time_between_transitions>3000</pause_time_between_transitions>
+        <slide_transition_speed>500</slide_transition_speed>
+        <is_stop_animation_mouse_on_banner>1</is_stop_animation_mouse_on_banner>
+        <display_arrows>1</display_arrows>
+        <display_bullets>1</display_bullets>
+        <is_random_order_image>0</is_random_order_image>
+    </banner>
+</config>

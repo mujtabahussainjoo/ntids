@@ -1,0 +1,401 @@
+// 
+// Drop-down block
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+.dropdown-block {
+    position: relative;
+}
+
+/* Lift dropdown above other dropdowns when it has mouse hover */
+.dropdown-block:hover {
+    z-index: 102; /* Important: higher than dropdown heading when heading is "filled" */
+}
+
+/* Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Inside left column
+--------------------------------------------------------------
+*/
+
+// // TODO: it's not needed, it's exactly the same as default style
+// .dropdown-block.left-hand .dropdown-content,
+// .left-column .dropdown-block .dropdown-content,
+// .item-left .dropdown-block .dropdown-content {
+//     left: 0;
+//     right: auto;
+// }
+
+/* In left column, add a space at the right side of a dropdown when dropdown heading is not "filled" */
+.left-column .dropdown-block:not(.filled-heading),
+.item-left .dropdown-block:not(.filled-heading) {
+    margin-right: 7px;
+}
+
+/* Inside right column
+--------------------------------------------------------------
+*/
+
+/* Force right-aligned edge of dropdowns */
+.dropdown-block.right-hand .dropdown-content,
+.right-column .dropdown-block .dropdown-content,
+.item-right .dropdown-block .dropdown-content {
+    left: auto;
+    right: 0;
+}
+
+/* Change the side on which the pointer is displayed  */
+
+.right-column .dropdown-block.show-pointer .dropdown-content:before,
+.item-right .dropdown-block.show-pointer .dropdown-content:before {
+    left: auto;
+    right: 26px;
+}
+
+.right-column .dropdown-block.show-border .dropdown-content:after,
+.item-right .dropdown-block.show-border .dropdown-content:after {
+    left: auto;
+    right: 25px;
+}
+
+/* In right column, add a space at the left side of a dropdown when dropdown heading is not "filled" */
+.right-column .dropdown-block:not(.filled-heading),
+.item-right .dropdown-block:not(.filled-heading) {
+    margin-left: 7px;
+}
+
+/* Dropdown heading
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+.dropdown-block .dropdown-heading {
+    display: inline-block;
+    line-height: 36px;
+
+    /* Set static height to improve layout of inline elements inisde the dropdown heading */
+    max-height: 36px;
+
+    /* Important: add pointer cursor to dropdown heading to make the dropdown a clickable element on touch screens (iOS) */
+    cursor: pointer;
+}
+
+/* Child elements of the heading have to be aligned vertically */
+.dropdown-block .dropdown-heading .inner-heading {
+    display: block;
+    vertical-align: baseline;
+}
+
+/* Elements inside inner wrapper need to be aligned vertically */
+.dropdown-block .dropdown-heading .inner-heading > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Dropdown heading - filled with background color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/**
+ * The inner div of the heading is filled with background color
+ * so that it covers the shadow of the dropdown content box when 
+ * dropdown is open.
+ */
+
+.dropdown-block.filled-heading .dropdown-heading .inner-heading {
+    padding: 0 10px;
+}
+
+.dropdown-block.filled-heading.open .dropdown-heading .inner-heading {
+    background-color: #fff; /* The same as for dropdown content */
+    position: relative;
+    z-index: 101; /* Important: higher than dropdown content */
+}
+
+// // FEATURE: When open, replace caret with "close" icon
+// .dropdown-block.open > .dropdown-heading.filled .caret:before {
+//     content: "\e20f";
+//     opacity: 0.6;
+// }
+
+/* Elements of the dropdown heading
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+.dropdown-block .dropdown-heading .label {
+    vertical-align: baseline !important; /* To get better alignment of text */
+    line-height: inherit; /* To override iconbox rule: .ib + .label */
+}
+
+.dropdown-block .dropdown-heading .label.hide {
+    display: none;
+}
+
+.dropdown-block .dropdown-heading .label + .label {
+    margin-left: 3px;
+}
+
+.rtl .dropdown-block .dropdown-heading .label + .label {
+    margin-left: 0;
+    margin-right: 3px;
+}
+
+.dropdown-block .dropdown-heading .caret {
+    margin-right: -3px;
+}
+
+/* Icon
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+.dropdown-block .dropdown-heading .icon {
+    font-size: 16px;
+}
+
+/* Icon with background image, e.g. for flags */
+.dropdown-block .dropdown-heading .dropdown-icon {
+    width: 18px;
+    text-indent: -9999px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+}
+
+/* Counter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+.dropdown-block .dropdown-heading .counter,
+.minicart-wrapper .action.showcart .counter:not(.ib) /* Magento's default selector for counter, e.g. needed for mini cart on checkout page */
+{
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+}
+
+/* When counter doesn't have "ib" class (so it's Magento's default counter) set basic sizes */
+.minicart-wrapper .action.showcart .counter:not(.ib) {
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+}
+
+/* Position
+--------------------------------------------------------------
+*/
+
+.dropdown-block .dropdown-heading.counter-over-top .counter {
+    margin-left: -11px;
+    margin-right: -7px;
+    margin-top: -22px;
+    position: relative;
+}
+
+.dropdown-block .dropdown-heading.counter-over-bottom .counter {
+    margin-left: -14px;
+    margin-right: -7px;
+    margin-bottom: -24px;
+    position: relative;
+}
+
+/* Dropdown content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+.dropdown-block .dropdown-content {
+    display: none; /* Display only when dropdown is open */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    margin: 0;
+    min-width: 130px;
+    line-height: 1.5em;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+}
+
+/* Opened dropdown
+-------------------------------------------------------------- 
+*/
+
+.dropdown-block.open .dropdown-content {
+    display: block; /* Display only when dropdown is open */
+    z-index: 100;
+}
+
+/* When dropdown content is an unordered list
+-------------------------------------------------------------- 
+*/
+
+/* Everything is inline-block, except links */
+.dropdown-block {
+    .dropdown-content > li {
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .dropdown-content > li * {
+        display: inline-block;
+    }
+
+    .dropdown-content > li > a {
+        display: block;
+    }
+
+    .dropdown-content > li .label {
+        margin-right: 8px;
+    }
+
+    .dropdown-content .dropdown-icon {
+        width: 18px;
+        text-indent: -9999px;
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Dropdown content - with border and pointer 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+.dropdown-block.show-pointer .dropdown-content:before,
+.dropdown-block.show-border .dropdown-content:after {
+    border-bottom-style: solid;
+    content: '';
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+
+/* Pointer
+-------------------------------------------------------------- 
+*/
+
+.dropdown-block.show-pointer .dropdown-content:before {
+    top: -12px;
+    left: 26px;
+    right: auto;
+    border: 6px solid;
+    border-color: #0000 #0000 #fff #0000;
+    z-index: 99;
+}
+
+/* Border
+-------------------------------------------------------------- 
+*/
+
+.dropdown-block.show-border .dropdown-content:after {
+    top: -14px;
+    left: 25px;
+    right: auto;
+    border: 7px solid;
+    border-color: #0000 #0000 #ccc #0000;
+    z-index: 98;
+}
+
+/* Add border to dropdown content */
+.dropdown-block.show-border .dropdown-content
+{
+    border: 1px solid #ccc;
+}
+
+/* Border when heading is "filled"
+-------------------------------------------------------------- 
+*/
+
+/* When heading is "filled" but dropdown is closed, it needs to have transparent border 
+   (to avoid jumping when dropdown will be opened and the border will finally appear) */
+.dropdown-block.show-border.filled-heading .dropdown-heading {
+    border: 1px solid transparent;
+}
+
+/* When heading is "filled" but dropdown is open, it needs to have the same border as dropdown content */
+.dropdown-block.show-border.filled-heading.open .dropdown-heading {
+    border: 1px solid #ccc;
+}
+
+/* Dropdown content needs to be pulled up to cover the border of the heading */
+.dropdown-block.show-border.filled-heading.open .dropdown-content {
+    margin-top: -2px;
+}
+
+
+
+} /* end: media-common */
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .dropdown-block {
+        .dropdown-content {
+            padding: 10px 20px;
+
+            > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+}
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .dropdown-block {
+        .dropdown-content {
+            padding: 15px 20px;
+
+            > li > a {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+}
+
+
+
+//
+//  Large desktop
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+    .dropdown-block {
+        .dropdown-content {
+            padding: 20px 25px;
+
+            > li > a {
+                padding-top: 0px;
+                padding-bottom: 1px;
+            }
+        }
+    }
+
+}

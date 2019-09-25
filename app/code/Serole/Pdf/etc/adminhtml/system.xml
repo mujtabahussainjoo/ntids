@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="neatideas" translate="label" sortOrder="110">
+            <label>Neatideas</label>
+        </tab>
+        <section id="pdfemailtemplate" translate="label" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>PDF Email Template Settings</label>
+            <tab>neatideas</tab>
+            <resource>Magento_Backend::content</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="emailtemplateId" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Email Template</label>
+                    <source_model>Serole\Pdf\Model\Config\Source\Emailtemplates</source_model>
+                </field>
+
+                <field id="erroremailtemplateId" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Error Report Email Template</label>
+                    <source_model>Serole\Pdf\Model\Config\Source\Emailtemplates</source_model>
+                </field>
+                
+            </group>
+        </section>
+    </system>
+</config>
+

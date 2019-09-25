@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+Copyright © 2017 MageWorx. All rights reserved.
+See LICENSE.txt for license details.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MageWorx_ShippingRules::style.css"/>
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Quote\Edit\Tabs" name="shippingrules_quote_edit_tabs">
+                <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Quote\Edit\Tab\Main" name="shippingrules_quote_edit_tab_main"/>
+                <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Quote\Edit\Tab\Conditions" name="shippingrules_quote_edit_tab_conditions"/>
+                <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Quote\Edit\Tab\Actions" name="shippingrules_quote_edit_tab_actions"/>
+                <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Quote\Edit\Tab\Items" name="shippingrules_quote_edit_tab_items"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">shippingrules_quote_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">conditions_section</argument>
+                    <argument name="block" xsi:type="string">shippingrules_quote_edit_tab_conditions</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">actions_section</argument>
+                    <argument name="block" xsi:type="string">shippingrules_quote_edit_tab_actions</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">items_section</argument>
+                    <argument name="block" xsi:type="string">shippingrules_quote_edit_tab_items</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Quote\Edit" name="shippingrules_quote_edit"/>
+        </referenceContainer>
+    </body>
+</page>

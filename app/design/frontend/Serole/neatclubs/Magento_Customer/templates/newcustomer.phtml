@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Form\Login\Info $block */
+?>
+<?php if ($block->getRegistration()->isAllowed()): ?>
+<div class="block block-new-customer">
+    <div class="block-title">
+        <strong id="block-new-customer-heading" role="heading" aria-level="2"><?= $block->escapeHtml(__('Registration')) ?></strong>
+    </div>
+    <div class="block-content" aria-labelledby="block-new- customer-heading">
+        <p style="line-height: 25px;">If you're looking to have your business or social club join <b>Neat Ideas Clubs</b> all you <br/>need to do is <a href="mailto:sales@neatideas.com.au" style="color:#0071BC; cursor:pointer;"><b>contact us</b></a> and we'll go through the registration process with you.</p>
+        <!---<div class="actions-toolbar">
+            <div class="primary">
+                <a href="<?php //$block->escapeUrl($block->getCreateAccountUrl()) ?>" class="action create primary"><span><?php //$block->escapeHtml(__('Create an Account')) ?></span></a>
+            </div>
+        </div>-->
+    </div>
+</div>
+<?php endif; ?>

@@ -1,0 +1,145 @@
+<?php
+/*
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$mediaUrl = $objectManager->get('Magento\Store\Model\StoreManagerInterface')
+                    ->getStore()
+                    ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+*/
+$custOrders = $this->getAllOrders(3); 
+$this->getOrdersGraph();
+?>
+<!--<img src="<?php //echo $mediaUrl;?>dashboard.png" />-->
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #33424D;
+  color: white;
+}
+</style>
+<table id="customers">
+  <tr>
+    <th colspan="2">Reward Summary</th>
+  </tr>
+</table>
+
+<table style="border: 1px solid #ddd;">
+  <tr>
+    <td>
+	   <table border="1" style="border: 1px solid #ddd;">
+		  <tr >
+			<td style="background-color:#EAF7FA">Reward Eligibility Period</td>
+			<td>15 Nov 2018 - 14 Dec 2019</td>
+		  </tr>
+		   <tr >
+			<td style="background-color:#EAF7FA">Total Orders</td>
+			<td><?php echo $this->getAllOrdersCount(); ?></td>
+		  </tr>
+		  <!--<tr>
+			<td style="background-color:#EAF7FA">Available Cashback</td>
+			<td>$<?php echo ($this->getTotalPoints()-$this->getUsedPoints())/10; ?> (10 Rewards = 1 Neat coins)</td>
+		  </tr>-->
+		   <tr style="background-color:#FFC000">
+			<td>Cashback Summary</td>
+			<td></td>
+		  </tr>
+		  
+		  <tr>
+			<td style="background-color:#FFF2CC">Total Cashback Earned</td>
+			<td>$<?php echo $this->getTotalCash(); ?> ( 10 Rewards = 1 Neat coins )</td>
+		  </tr>
+		  <tr>
+			<td style="background-color:#FFF2CC">Used Cashback</td>
+			<td>$<?php echo $this->getUsedPoints()/10; ?>
+			      <span style="margin-left:20px; text-decoration:underline"><a href="/rac_demo/cashback/customer/used/">View Details</a></span>
+			</td>
+		  </tr>
+		  <tr>
+			<td style="background-color:#FFF2CC">Total Available Points</td>
+			<td>$<?php echo ($this->getTotalPoints()-$this->getUsedPoints())/10; ?></td>
+		  </tr>
+		  <!--<tr style="background-color:#FFC000">
+			<td>Total Cashback</td>
+			<td>$<?php echo $this->getTotalCash(); ?></td>
+		  </tr>-->
+		  
+
+	   </table>
+	</td>
+    <td><div id="piechart"></div></td>
+  </tr>
+</table>
+<table id="customers">
+<tr>
+    <th colspan="8">
+	<span style="text-align:left; float:left;width:50%">Recent Orders</span>
+	<span style="text-align:right;float:right"><a style="color:#FFFFFF" href="/rac_demo/cashback/customer/orders/">View All</a></span></th>
+</tr>
+  <tr style="background-color:#EAF7FA; color:black">
+    <td>Merchant</td>
+    <td>Order Id</td>
+    <td>Ship To</td>
+	<td>Bill To</td>
+	<td>Products</td>
+	<td>Order Total</td>
+	<td>Erned Points</td>
+	<td>Date</td>
+  </tr>
+ <?php 
+    foreach($custOrders as $custOrder) { 
+	  $custOrderData = $custOrder->getData();
+	  $imgUrl = $this->getImgUrl($custOrderData['merchant_id']);
+?>
+  <tr>
+    <td><img src="<?php echo $imgUrl; ?>" /></td>
+    <td><?php echo $custOrderData['order_id']; ?></td>
+	<td><?php echo $custOrderData['ship_to']; ?></td>
+	<td><?php echo $custOrderData['bill_to']; ?></td>
+	<td><?php echo $custOrderData['products']; ?></td>
+	<td><?php echo $custOrderData['order_total']; ?></td>
+	<td><?php echo $custOrderData['rewards_points']; ?></th>
+	<td><?php echo date("Y-m-d", strtotime($custOrderData['created_at'])); ?></th>
+  </tr>
+<?php
+  }
+?>
+</table>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Points per month'],
+  <?php echo $this->getOrdersGraph(); ?>
+]);
+
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Rewards Points', 'width':400, 'height':300};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>

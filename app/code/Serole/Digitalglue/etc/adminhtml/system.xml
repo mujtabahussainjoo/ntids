@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="digitalglue" sortOrder="200" translate="label">
+			<label>Digital Glue</label>
+		</tab>
+		<section id="digitalglue" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Digital Glue Settings</label>
+			<tab>digitalglue</tab>
+			<resource>Serole_Sage::config_serole_digitalglue</resource>
+			<group id="apidetails" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>API Access Details</label>
+				<field id="apiurl" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0" translate="label" type="text">
+					<label>Api URL</label>
+					<comment/>
+				</field>
+				<field id="apiuser" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Api Username</label>
+					<comment/>
+				</field>
+				<field id="apipassword" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>API Password</label>
+					<comment/>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

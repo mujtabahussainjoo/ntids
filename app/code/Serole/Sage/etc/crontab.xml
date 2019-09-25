@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="serole">
+		<job instance="Serole\Sage\Cron\OrderExport" method="execute" name="serole_sage_orderexport">
+			<schedule>0 3 * * *</schedule>
+		</job>
+		<job instance="Serole\Sage\Cron\CreditmemoExport" method="execute" name="serole_sage_creditmemoexport">
+			<schedule>*/15 * * * *</schedule>
+		</job>
+		<job instance="Serole\Sage\Cron\ProcessingOrders" method="execute" name="serole_sage_processingorders">
+			<schedule>0 4 * * *</schedule>
+		</job>
+		<job instance="Serole\Sage\Cron\ProductImport" method="execute" name="serole_sage_productimport">
+			<schedule>0 22 * * *</schedule>
+		</job>
+		<job instance="Serole\Sage\Cron\BundleImport" method="execute" name="serole_sage_bundleimport">
+			<schedule>30 22 * * *</schedule>
+		</job>
+		<job instance="Serole\Sage\Cron\PriceImport" method="execute" name="serole_sage_priceimport">
+			<schedule>0 23 * * *</schedule>
+		</job>
+		<job instance="Serole\Sage\Cron\ItemUpdate" method="execute" name="serole_sage_itemupdate">
+			<schedule>0 23 * * *</schedule>
+		</job>
+	</group>
+</config>

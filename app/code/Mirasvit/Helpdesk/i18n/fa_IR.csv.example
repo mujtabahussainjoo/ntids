@@ -1,0 +1,136 @@
+Department,گروه
+"Create New Ticket","ایجاد یک بلیط جدید"
+Status,وضعیت
+Priority,اولویت
+Replies,"پاسخ ها"
+View,"چشم انداز"
+"Help Desk","میز راهنما"
+"Thank you",متشکرم
+"Create Ticket","ایجاد بلیط"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","درخواست شما با موفقیت ارسال شد شما بایستی یک ایمیل تاییدیه در مدت زمان کوتاهی دریافت کنید."
+Telephone,تلفن
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","درخواست شما ارسال شد و در اسرع وقت پاسخ داده خواهد شد. از اینکه با ما تماس گرفتید، متشکریم."
+"Unable to submit your request. Please, try again later","ارسال درخواست شما امکان پذیر نیست لطفا بعدا دوباره امتحان کنید"
+"Page not found.","صفحه یافت نشد."
+"Your message was successfuly posted","پیام شما موفقیت آمیز بوده است"
+"Your ticket was successfuly posted","بلیط شما موفقیت آمیز بود"
+"Ticket was successfuly closed","بلیط موفقیت آمیز بسته شد"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","نمیتوان فایل %1 را آپلود کرد. حداکثر آپلود حجم آپلود %2 مگابایت است"
+"Allows only this file types: %1","فقط این نوع فایلها را می دهد: %1"
+"Message added","پیام اضافه شد"
+"Internal note added","یادداشت داخلی اضافه شده است"
+"Third party message added","پیام شخص ثالث اضافه شد"
+"Private third party message added","پیام شخص ثالث خصوصی اضافه شد"
+"-- Please Select --","-- لطفا انتخاب کنید --"
+"Contact Tab","تماس با تب"
+"Contact Form","فرم تماس"
+" at %1 (%2) - %3","در %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","شما اجازه خواندن این بلیط را ندارید لطفا با مدیر خود تماس بگیرید"
+"Invalid Customer Email","ایمیل شخصی نامعتبر است"
+"not set","تنظیم نشده"
+"Unknown time","زمان نامعلوم"
+ago,پیش
+"from now","از حالا"
+"1 sec ago","1 ثانیه قبل"
+"Open Ticket","بلیط را باز کنید"
+"Open Tickets","بلیط های باز"
+"! Blocked file - ","! فایل مسدود شده -"
+Disabled,معلول
+"AW Helpdesk","راهنما AW"
+"MW Helpdesk","مرکز خدمات MW"
+"File System","سیستم فایل"
+Database,"بانک اطلاعاتی"
+Aqua,آبی
+Grey,خاکستری
+Navy,"نیروی دریایی"
+Silver,نقره
+Black,سیاه
+Green,سبز
+Olive,زیتون
+Teal,تیله
+Blue,آبی
+Lime,اهک
+Purple,"رنگ بنفش"
+Fuchsia,فوچیه
+Maroon,مارون
+Red,سرخ
+Orange,نارنجی
+Yellow,"رنگ زرد"
+Text,متن
+Date,تاریخ
+Checkbox,جعبه
+"Drop-down list","لیست کشویی"
+"In minutes...","در عرض چند دقیقه ..."
+"In hours...","ساعت ها ..."
+"In days...","در روزها ..."
+"In weeks...","در هفته ها ..."
+"In months...","در ماه ..."
+Custom,سفارشی
+"--Please Select--","--لطفا انتخاب کنید--"
+"New ticket created","بلیط جدید ایجاد شد"
+Success,موفقیت
+Customer,مشتری
+Staff,کارکنان
+"Third party","شخص ثالث"
+Closed,"بسته شده"
+"Opened 24hr","24 ساعته افتتاح شد"
+"Helpdesk Tickets","بلیط های Helpdesk"
+"Cannot delete ticket with id %1","می توانید بلیط را با id %1 حذف کنید"
+Edit,ویرایش
+"All Departments","همه گروه ها"
+Back,بازگشت
+"24 hrs x 7 days","24 ساعت و 7 روز"
+"Select working days/hours","روزهای کاری / ساعت را انتخاب کنید"
+"Satisfaction survey","بررسی رضایتمندی"
+"to %1 (third party)","به %1 (شخص ثالث)"
+"%1 (third party)","%1 (شخص ثالث)"
+"added %1 (%2)","%1 (%2) اضافه شد"
+"Ticket Summary","خلاصه بلیط"
+"Ticket ID","شناسه بلیط"
+Assignee,"امضا کننده"
+"Additional Info","اطلاعات اضافی"
+"Ticket History","تاریخچه بلیط"
+"Done by","انجام شده توسط"
+Changes,تغییرات
+Name,نام
+"Attach files","ضمیمه فایل ها"
+Submit,ارسال
+"Submit Ticket","ثبت درخواست"
+"What is your question?","سوالت چیست؟"
+"We found the following topics that might be helpful:","ما موضوعات زیر را پیدا کردیم که ممکن است مفید باشد:"
+"None of these are helpful - get in touch","هیچکدام از اینها مفید نیستند - در تماس باشید"
+"We have not found topics that can be helpful.","ما موضوعاتی را یافتیم که می تواند مفید باشد."
+"Contact Information","اطلاعات تماس"
+Comment,"اظهار نظر"
+"We are open 24 x 7","ما باز 24 ساعته 7 هستیم"
+"We are closed","ما بسته شده ایم"
+"Timezone: %1","منطقه زمانی: %1"
+"Please take a second to rate my reply...","لطفا پاسخ دوم را برای من بفرست"
+Great,عالی
+Awesome,عالی
+"Fast, friendly, helpful, pleasant. Great job!","سریع، دوستانه، مفید، دلپذیر. کارت عالی بود!"
+"Just Okay","فقط خوب"
+"Fine, but definitely could have been better.","خوب، اما قطعا می توانست بهتر باشد."
+"Not good","خوب نیست"
+"Unfortunately, I wasn't happy with it at all.","متاسفانه، من با آن همه راضی نبودم."
+"Thank you for participating in our survey!","با تشکر از شما برای شرکت در نظرسنجی ما!"
+"If you would like to provide additional comments, please do so below:","اگر می خواهید نظرات بیشتری ارائه دهید، لطفا این کار را در زیر انجام دهید:"
+Message,پیام
+"Submit Message","ارسال پیام"
+"Thank you for your feedback!","از نظرات شما متشکریم"
+Attachments,"پیوست ها"
+Order,سفارش
+"-- Select an Order --","- انتخاب یک سفارش -"
+"Create ticket","ایجاد بلیط"
+"You don't have open tickets","شما بلیط های باز ندارید"
+"Post a Reply","ارسال پاسخ"
+"Reopen Ticket","بازگشایی بلیط"
+"Close Ticket","بستن بلیط"
+History,تاریخ
+"Back to My Tickets","بازگشت به بلیط من"
+"Help Desk MX","میز کمک MX"
+"Contact Us","تماس با ما"
+Open,"باز کن"
+Subject,موضوع
+"Last Activity","آخرین فعالیت"
+"Request ID","شناسه درخواست"

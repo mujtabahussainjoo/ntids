@@ -1,0 +1,154 @@
+//
+//  Product view
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+.product-img-column {
+    position:relative; // Stickers (product labels) are positioned relative to this container
+}
+
+//
+//  Product collateral data
+//  _____________________________________________
+
+.collateral-container {
+    margin-bottom: 30px;
+}
+
+.collateral-container {
+
+    // Reviews
+    .review-list {
+
+        // Hide default heading of reviews block
+        > .block-title {
+            display: none;
+        }
+
+        .review-item {
+            //border-bottom-style: dashed;
+            &:extend(.abs-global-border-color-light all);
+        }
+
+        .review-toolbar {
+            &:extend(.abs-global-border-color all);
+        }
+    }
+}
+
+//
+//  Collateral data blocks stacked vertically
+//  ---------------------------------------------
+
+// Deprecated. Left for backward compatibility.
+.collateral-block {
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    > .block-title {
+        &:extend(.abs-sidebar-block-title all);
+
+        .counter {
+            &:before {
+                content: '(';
+            }
+            &:after {
+                content: ')';
+            }
+        }
+    }
+}
+
+//
+//  Unordered list in product description - add bullets
+//  _____________________________________________
+
+.product-view .product.attibute.overview ul:not(.ic-ul):not(.disc):not(.bullet),
+.product-view .product.attibute.description ul:not(.ic-ul):not(.disc):not(.bullet)
+{
+    list-style: disc outside none;
+    margin: 0 0 1em;
+    padding: 0 0 0 20px;
+}
+.product-view .product.attibute.overview ul:not(.ic-ul):not(.disc):not(.bullet) li,
+.product-view .product.attibute.description ul:not(.ic-ul):not(.disc):not(.bullet) li {
+    margin-bottom: 5px;
+}
+
+} // end: media-common
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .product-columns-wrapper {
+
+        // Make this element a flex container
+        &:extend(.abs-flex-container-column-mobile all);
+
+        // And move to the top inside existing flex container
+        .lib-vendor-prefix-order(-1);
+
+    }
+
+    // //  Custom sidebars
+
+    // .custom-sidebar-right .inner {
+    //     padding-left: 0;
+    //     border-left: none;
+    // }
+    // .custom-sidebar-left .inner {
+    //     padding-right: 0;
+    //     border-right: none;
+    // }
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .product-columns-wrapper {
+        &:extend(.abs-add-clearfix-desktop all);
+    }
+
+    //
+    //  Custom sidebars
+    //  _____________________________________________
+
+    .custom-sidebar-right {
+        float: right !important;
+    }
+    .custom-sidebar-right .inner {
+        padding-left: 20px;
+        border-left: 1px solid @global-border-color;
+        &:extend(.abs-global-border-color all);
+        &:extend(.abs-add-clearfix all);
+    }
+    .custom-sidebar-left {
+        float: left !important;
+    }
+    .custom-sidebar-left .inner {
+        padding-right: 10px;
+        border-right: 1px solid @global-border-color;
+        &:extend(.abs-global-border-color all);
+        &:extend(.abs-add-clearfix all);
+    }
+
+}

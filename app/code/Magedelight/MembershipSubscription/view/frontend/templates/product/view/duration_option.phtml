@@ -1,0 +1,86 @@
+<?php
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+?>
+
+<?php
+$durationOption = $block->getDurationOption();
+
+if (count($durationOption)>0) {
+    ?>
+    <div class="box-tocart">
+        <div class="fieldset">
+            <div class="field">
+                <label class="label" for="qty"><span>Select membership duration option.</span></label>
+                
+                <div class="control">
+                    <select name="duration_option" data-validate="{required:true}" id="durationoption">
+                        <?php foreach ($durationOption as $key => $value) { ?>
+
+                            <option value='<?php echo $value['value'] ?>'><?php echo $value['label'] ?></option>
+
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<?php
+$price = $durationOption[0]['price'];
+
+?>
+
+<script type = 'text/javascript'>
+require([
+        'jquery',
+        'jquery/ui',
+    ], function ($) {
+
+        jQuery(document).ready(function () {
+            
+            jQuery('.product-info-price .price-box .price').text("<?php echo $price; ?>");
+            jQuery('.product-add-form .qty').hide();
+            
+            jQuery("#durationoption").change(function() {
+                    
+                    var value = jQuery( "#durationoption option:selected" ).text();
+                    var res = value.split("-");
+                    var price = jQuery.trim(res[1]);
+                    jQuery('.product-info-price .price-box .price').text(price);
+            });
+            
+            var session = "<?php echo $block->getCustomerSession() ?>";
+            
+            if(!session)
+            {
+                jQuery("#product-addtocart-button").prop("type", "button");
+                jQuery("#product-addtocart-button span").text("Sign In");
+                jQuery("#product-addtocart-button").prop("title", "Sign In");
+                
+                jQuery("#product-addtocart-button").click(function() {
+                    window.location.href = "<?php echo $block->getCustomerLoginUrl(); ?>";
+                });
+            }
+            
+    });
+});
+
+</script>
+
+<?php } else { ?>
+    <style>
+        #product-addtocart-button{display: none;}
+    </style>
+<?php } ?>
+

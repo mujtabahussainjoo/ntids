@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Serole_Sage::parent" title="Sage" module="Serole_Sage" sortOrder="100" resource="Serole_Sage::parent"/>
+		<add id="Serole_Sage::sageintegration" title="Sage Magento Integration" module="Serole_Sage" sortOrder="20" parent="Serole_Sage::parent" action="sage/sageintegration" resource="Serole_Sage::sageintegration"/>
+
+    </menu>
+</config>

@@ -1,0 +1,28 @@
+@media (min-width: 768px){
+	.main.container {
+		width: 86.2% !important;
+	}	
+	.main{
+		border-radius: none !important;
+	}
+}
+
+.primary .register-submit {
+	
+    transition: all 200ms ease-in-out 0s !important;
+    background-color: #67a2b9 !important;
+    background-image: none !important;
+    border-color: #67a2b9 !important;
+    color: white !important;
+    border-radius: 2px;
+}
+
+.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{
+	
+    transition: all 200ms ease-in-out 0s !important;
+    background-color: #67a2b9 !important;
+    background-image: none !important;
+    border-color: #67a2b9 !important;
+    color: white !important;
+    border-radius: 2px;
+}

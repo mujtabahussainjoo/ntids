@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="serole"> 
+	
+        <job name="serole_memberlist_cronjob_memberlistcleanup" instance="Serole\MemberList\Cron\Memberlistcleanup" method="execute">
+            <schedule>0 23 * * *</schedule>
+        </job>
+		 
+    </group>
+</config>

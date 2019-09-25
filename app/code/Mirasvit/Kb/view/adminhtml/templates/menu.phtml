@@ -1,0 +1,35 @@
+<?php
+/** @var Mirasvit\Kb\Block\Adminhtml\Menu $block */
+?>
+<style>
+
+.page-title-wrapper .page-title {
+    display: none;
+}
+</style>
+<div class="admin__action-dropdown-wrap kb__menu">
+    <button
+        type="button"
+        class="admin__action-dropdown"
+        data-mage-init='{"dropdown":{}}'
+        data-toggle="dropdown"
+        aria-haspopup="true">
+        <span class="admin__action-dropdown-text" ><?php /* @escapeNotVerified */ echo $block->getCurrentSelectionTitle() ?></span>
+    </button>
+
+    <ul class="admin__action-dropdown-menu">
+            <?php foreach ($block->getItems() as $item): ?>
+                <?php if ($item == \Mirasvit\Kb\Block\Adminhtml\Menu::SEPARATOR): ?>
+                    <li class="separator"></li>
+                <?php
+                continue;
+                endif;?>
+            <li class="<?php if ($item->getIsActive()) {
+    echo 'current';
+} ?>">
+                    <a href="<?= $item->getUrl() ?>">
+                        <?= $block->escapeHtml($item->getTitle()) ?>
+                    </a>
+            <?php endforeach; ?>
+    </ul>
+</div>

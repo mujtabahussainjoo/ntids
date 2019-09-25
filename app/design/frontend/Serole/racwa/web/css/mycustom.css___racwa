@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'StagSans-Book';
+  src: url('../fonts/StagSans-Book.eot');
+  src: url('../fonts/StagSans-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Book.woff') format('woff'), url('../fonts/StagSans-Book.ttf') format('truetype'), url('../fonts/StagSans-Book.svg#StagSans-Book') format('svg');
+}
+
+
+@font-face {
+  font-family: 'StagSans-Medium';
+  src: url('../fonts/StagSans-Medium.eot');
+  src: url('../fonts/StagSans-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Medium.woff') format('woff'), url('../fonts/StagSans-Medium.ttf') format('truetype'), url('../fonts/StagSans-Medium.svg#StagSans-Medium') format('svg');
+}
+
+
+@font-face {
+  font-family: 'StagSans-Semibold';
+  src: url('../fonts/StagSans-Semibold.eot');
+  src: url('../fonts/StagSans-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/StagSans-Semibold.woff') format('woff'), url('../fonts/StagSans-Semibold.ttf') format('truetype'), url('../fonts/StagSans-Semibold.svg#StagSans-Semibold') format('svg');
+}
+
+body{
+	font-family: 'StagSans-Book' !important;
+}
+.nav > li > a{
+	font-family: 'StagSans-Medium' !important;
+}
+h1{
+	font-family: 'StagSans-Semibold'  !important;
+}
+h2, h3, h4, h5, h6{
+	font-family: 'StagSans-Book';
+}
+.block .block-title strong{
+	/*font-family: 'StagSans-Semibold'  !important;*/
+}
+.product-shop .product-name > a{
+	font-family: 'StagSans-Medium' ;
+	text-decoration:underline;
+	line-height: 30px;
+}
+
+.header-container {
+    margin-left: 0% !important;
+    width: 100% !important;
+	background-image:url('../images/header.png');
+	background-position: center 49%;
+}
+.right-column .item.item-right.item-interface{ 
+	background-color:#33424D;
+	/* border-bottom-left-radius:5px; */
+	/* border-bottom-right-radius:0px; */
+	margin-right: -11px;
+	color:#fff;
+}
+ .header.links a{color:#fff !important; }
+ 
+  .btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{
+	background-color: #ffd100 !important;
+    background-image: none;
+    border: 2px solid #f2a900;
+    border-radius: 7px !important;
+    box-shadow: none;
+    color: #495662 !important;
+    cursor: pointer;
+    font-family: "StagSemiBold",Arial,Helvetica,"Lucinda Grande";
+    font-size: 14px;
+    font-weight: normal;
+    height: auto;
+    letter-spacing: 0.072em;
+    line-height: 15px;
+    padding: 10px 15px;
+    pointer-events: auto;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: auto;
+	 
+ }
+ .primary .register-submit {
+	background-color: #ffd100 !important;
+    background-image: none;
+    border: 2px solid #f2a900;
+    border-radius: 7px !important;
+    box-shadow: none;
+    color: #495662 !important;
+    cursor: pointer;
+    font-family: "StagSemiBold",Arial,Helvetica,"Lucinda Grande";
+    font-size: 14px;
+    font-weight: normal;
+    height: auto;
+    letter-spacing: 0.072em;
+    line-height: 15px;
+    padding: 10px 15px;
+    pointer-events: auto;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: auto;
+ }
+.block-search .action.search .icon{border-left: 0px solid #3333!important;}
+ @media (min-width: 768px){ 
+	.header-container .right-column .dropdown-block {
+		margin-top: 0px!important;
+	}
+	 .logo > a > img{margin: -4% 0% 17% 30%!important;}
+	 a.logo > img{margin: -10% 0% 17% 30%!important;}
+	 .header-top .dropdown-block .dropdown-heading{max-height: 29px!important;line-height: 30px!important;}
+	 .header-top .links > li > *{line-height: 31px!important;}
+	 .right-column:first-child {border-bottom-right-radius:5px;}
+	 .right-column:nth-child(2) {border-bottom-left-radius:5px;}
+	 .block-search.size-s .action.search{
+		border: 0px!important;
+		height: 27px!important;
+		line-height: 0px!important;
+		width: 13px!important;
+		margin: 0px 6% 0px 0px!important;
+	 }
+	 .block-search .input-text{
+			height: 30px;
+			overflow: hidden;
+			padding-right: 20%;
+			text-overflow: ellipsis;
+	}
+	.field.search{width: 300px!important;;}
+	.block-search .action.search{margin: 0 0 0 0;height: 30px;width: 40px;background: #FFCC1B;border-bottom-right-radius:5px;border-top-right-radius:5px;}
+	.block-search .action.search:hover{background: #FFCC1B;}
+	.block-search .action.search .icon{font-size: 13px;height: 30px;line-height: 0px;width: 30px;}
+	.btn-rgtr-cust .primary{width: 130%; margin-top: 10%;}
+	#block-new-customer-heading ,#block-customer-login-heading h4{font-family: 'StagSans-Book'!important;font-size: 22px !important;font-weight: 500!important;}
+	.footer .footer-copyright{font-size: 14px !important;}
+ }

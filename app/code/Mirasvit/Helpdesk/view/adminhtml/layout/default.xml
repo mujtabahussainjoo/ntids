@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Mirasvit_Helpdesk::js/desktop_notification.js" />
+    </head>
+    <body>
+        <referenceContainer name="header.inner.right">
+            <block class="Mirasvit\Helpdesk\Block\Adminhtml\ToolbarTickets" name="user.tickets"
+                   template="tickets.phtml"/>
+        </referenceContainer>
+        <move element="user.tickets" after="user" destination="header.inner.right" />
+    </body>
+</page>

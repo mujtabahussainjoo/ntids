@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2019 Amasty (https://www.amasty.com)
+ * @package Amasty_CronScheduler
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="amasty_cronscheduler" translate="label" type="text" sortOrder="31819" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Cron Scheduler</label>
+            <tab>amasty</tab>
+            <resource>Amasty_CronScheduler::config</resource>
+            <group id="email_notification" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Notification</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send email notification on a task failure</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sender_email" translate="label" type="select" sortOrder="20" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="send_to" translate="label comment" type="textarea" sortOrder="40" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Send notification to</label>
+                    <comment>Please input any new email address on a new line</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="email_subject" translate="label comment" type="text" sortOrder="50" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Email Subject</label>
+                    <comment><![CDATA[You can use any of these variables to configure an email subject:<br/>
+                    - {{job_code}}: code of the schedule job<br/>
+                    - {{executed_at}}: execution datetime<br/>
+                    - {{message}}: error message]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="email_content" translate="label comment" type="textarea" sortOrder="60" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Email content</label>
+                    <comment><![CDATA[You can use any of these variables to configure an email content:<br/>
+                    - {{job_code}}: code of the schedule job<br/>
+                    - {{executed_at}}: execution datetime<br/>
+                    - {{message}}: error message]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="notification_interval" translate="label comment tooltip" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notifications Time Filter</label>
+                    <comment>Please enter the value in minutes. Enter 0 to receive notifications without filtering</comment>
+                    <validate>validate-digits</validate>
+                    <tooltip><![CDATA[The setting is used to avoid 'spamming' from a frequently executed jobs. If there is a multifunctional job that runs every 5 minutes, then it would disturb you with emails every 5 minutes as well. Using the field you can specify the time period when a single job will not disturb you with the same failure email after the first message was sent. It does not affect notifications from other jobs.<br/>
+e.g. If the setting value is 60, then any multifunctional job will be able to send you notification not more than once per hour.]]></tooltip>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

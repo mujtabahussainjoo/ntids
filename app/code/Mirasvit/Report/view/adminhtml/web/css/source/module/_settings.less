@@ -1,0 +1,34 @@
+.report-settings__table {
+    .lib-table();
+    .lib-table-hover();
+    .lib-table-bordered(
+        @_table_type: light;
+    );
+
+    .report-settings__column {
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.active {
+            background-color: #e3f9e3;
+        }
+
+        type {
+            background: #FFFBBB;
+            padding: .1rem .5rem;
+        }
+
+        aggregator {
+            background: #FFC7AB;
+            padding: .1rem .5rem;
+        }
+
+        .column-label {
+            .fa {
+                margin-right: 0.5rem;
+                color: #007bdb;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var \MagePsycho\RedirectPro\Block\Customer\Logout $block
+ */
+?>
+<p><?php /* @escapeNotVerified */ echo $block->getCustomMessage() ?></p>
+<script>
+require([
+        "jquery",
+        "mage/mage"
+    ],
+    function($){
+
+        $($.mage.redirect("<?php echo $block->getRedirectionUrl() ?>",
+            "assign",
+            <?php echo $block->getDelayTime(true) ?>
+        ));
+
+    }
+);
+</script>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="2columns-right">
+    <body>
+        <attribute name="class" value="kbase"/>
+        <referenceBlock name="sidebar.additional" remove="true" />
+        <referenceContainer name="root"/>
+        <referenceContainer name="content">
+            <block name="kb.search.form" class="Mirasvit\Kb\Block\Search\Form" template="Mirasvit_Kb::search/form.phtml"/>
+            <block name="kb.tag.list" class="Mirasvit\Kb\Block\Tag\Listing" template="Mirasvit_Kb::tag/list.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.main" htmlTag="div" htmlClass="widget kb-sidebar__categories" >
+            <block name="kb.category.sidebar" class="Mirasvit\Kb\Block\Category\Sidebar" template="Mirasvit_Kb::category/sidebar.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

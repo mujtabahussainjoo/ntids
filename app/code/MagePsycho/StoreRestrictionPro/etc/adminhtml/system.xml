@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_StoreRestrictionPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <tab id="magepsycho" translate="label" sortOrder="200">
+            <label>MagePsycho</label>
+        </tab>
+        <section id="magepsycho_storerestrictionpro" sortOrder="200" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>magepsycho</tab>
+            <label>Store Restriction Pro</label>
+            <resource>MagePsycho_StoreRestrictionPro::config</resource>
+
+            <group id="support" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Fieldset\Support</frontend_model>
+            </group>
+
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Version</label>
+                    <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Version</frontend_model>
+                </field>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="license_header_start" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[&nbsp;]]></label>
+                    <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>
+                <field id="domain" translate="label" type="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Domain Name</label>
+                    <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Domain</frontend_model>
+                </field>
+                <field id="domain_type" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Type</label>
+                    <source_model>MagePsycho\StoreRestrictionPro\Model\System\Config\Source\DomainType</source_model>
+                </field>
+                <field id="dev_license" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Key (Development)*</label>
+                    <validate>required-entry</validate>
+                    <tooltip><![CDATA[License Key is mandatory for the proper functioning of the module. <br /> Note: You need to enter the License Key as per 'License Type']]></tooltip>
+                    <depends>
+                        <field id="domain_type">2</field>
+                    </depends>
+                </field>
+                <field id="prod_license" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>License Key (Production)*</label>
+                    <validate>required-entry</validate>
+                    <tooltip><![CDATA[License Key is mandatory for the proper functioning of the module. <br /> Note: You need to enter the License Key as per 'License Type']]></tooltip>
+                    <depends>
+                        <field id="domain_type">1</field>
+                    </depends>
+                </field>
+                <field id="license_header_end" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[&nbsp;]]></label>
+                    <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>
+
+                <field id="debug" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Debug Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+
+            <group id="new_account_settings" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Registration Settings</label>
+                <!--<field id="new_account_settings_general_heading" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong>General</strong>]]></label>
+                    <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                </field>-->
+                <field id="new_account_registration_option" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Registration Option</label>
+                    <source_model>MagePsycho\StoreRestrictionPro\Model\System\Config\Source\RegistrationOption</source_model>
+                    <tooltip><![CDATA[<strong>Enabled:</strong> Customer can register.<br /><strong>Disabled:</strong> Customer won't be able to register.]]></tooltip>
+                </field>
+                <field id="new_account_registration_enable_disabled_message" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Disabled Message</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="new_account_registration_option">0</field>
+                    </depends>
+                </field>
+                <field id="new_account_registration_disabled_message" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disabled Message</label>
+                    <tooltip><![CDATA[The specified message will be shown if registration option is disabled.]]></tooltip>
+                    <depends>
+                        <field id="new_account_registration_enable_disabled_message">1</field>
+                        <field id="new_account_registration_option">0</field>
+                    </depends>
+                </field>
+
+                <field id="group_selector_header" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong>Group Selector [Bonus]</strong>]]></label>
+                    <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                    <depends>
+                        <field id="new_account_registration_option">1</field>
+                    </depends>
+                </field>
+                <field id="group_selector_info" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Group Selector [Bonus]]]></label>
+                    <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\GroupSelectorInfo</frontend_model>
+                    <depends>
+                        <field id="new_account_registration_option">1</field>
+                    </depends>
+                </field>
+
+            </group>
+
+            <group id="restricted_settings" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Restriction Settings</label>
+                <field id="restriction_type" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restriction Type</label>
+                    <source_model>MagePsycho\StoreRestrictionPro\Model\System\Config\Source\RestrictionType</source_model>
+                    <tooltip><![CDATA[<strong>Non Restricted:</strong> The store is accessible without any restrictions.<br />
+                        <strong>Restricted (Only Configured Pages Accessible):</strong> The store is restricted i.e. requires login to be accessible. However you can allow guest users to access some pages(see 'Allowed Pages' section below).]]></tooltip>
+                </field>
+
+                <!-- Restricted / Accessible Type -->
+                <group id="restricted_accessible" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restricted (Only Configured Pages Accessible)</label>
+                    <depends>
+                        <field id="restriction_type">2</field>
+                    </depends>
+                    <field id="general_heading" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[<strong>General Settings</strong>]]></label>
+                        <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                    </field>
+                    <field id="allowed_customer_groups" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Allowed Customer Groups</label>
+                        <source_model>MagePsycho\StoreRestrictionPro\Model\System\Config\Source\CustomerGroup</source_model>
+                        <tooltip><![CDATA[The selected customer group(s) customer can only access the restricted store.<br />For multiple selection, please hold 'Ctrl' key and select.]]></tooltip>
+                    </field>
+                    <field id="redirection_type" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Redirect Non Logged-In User To</label>
+                        <source_model>MagePsycho\StoreRestrictionPro\Model\System\Config\Source\RedirectionType</source_model>
+                        <tooltip><![CDATA[Non logged in user will be redirected to this page if they try to browse the restricted pages.<br /><strong>Login Page:</strong> /customer/account/login <br /><strong>CMS Page:</strong> Any CMS page configured below <br /><strong>Custom Page:</strong> Any page configured below. Format: /route/controller/action]]></tooltip>
+                    </field>
+                    <field id="redirection_type_cms" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Redirect to CMS Page</label>
+                        <!--<source_model>MagePsycho\StoreRestrictionPro\Model\System\Config\Source\CmsPage</source_model>-->
+                        <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                        <depends>
+                            <field id="redirection_type">2</field>
+                        </depends>
+                    </field>
+                    <field id="redirection_type_custom" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Redirect to Custom Page</label>
+                        <tooltip><![CDATA[Custom Page can be any page.<br /><strong>Format:</strong> /route/controller/action.]]></tooltip>
+                        <depends>
+                            <field id="redirection_type">3</field>
+                        </depends>
+                    </field>
+                    <field id="store_error_message" translate="label" type="textarea" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Restricted Store Error Message</label>
+                        <tooltip><![CDATA[Message to be displayed if guest user tries to access the restricted store.]]></tooltip>
+                    </field>
+                    <field id="customer_group_error_message" translate="label" type="textarea" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Restricted Customer Group Error Message</label>
+                        <tooltip><![CDATA[The specified message will be displayed if non-allowed group customer tries to login/access the restricted store.]]></tooltip>
+                    </field>
+
+
+                    <field id="allowed_pages_heading" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label><![CDATA[<strong>Allowed Pages For Guest Users</strong>]]></label>
+                        <frontend_model>MagePsycho\StoreRestrictionPro\Block\Adminhtml\System\Config\Form\Field\Header</frontend_model>
+                    </field>
+                    <field id="allowed_cms_pages" translate="label" type="multiselect" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Allowed CMS</label>
+                        <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                        <tooltip><![CDATA[Selected CMS page(s) can be accessed by the guest users.<br />For multiple selection, please hold 'Ctrl' key and select.]]></tooltip>
+                    </field>
+                    <field id="allowed_category_pages" translate="label" type="multiselect" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Allowed Categories</label>
+                        <source_model>MagePsycho\StoreRestrictionPro\Model\System\Config\Source\Category</source_model>
+                        <tooltip><![CDATA[Selected Category page(s) can be accessed by the guest users. <br />For multiple selection, please hold 'Ctrl' key and select.]]></tooltip>
+                    </field>
+                    <field id="allowed_product_pages" translate="label" type="textarea" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Allowed Products</label>
+                        <tooltip><![CDATA[Selected Product page(s) can be accessed by the guest users.<br />Please enter the comma separated SKUs. <br />For example: sku1,sku2]]></tooltip>
+                    </field>
+                    <field id="allowed_module_pages" translate="label" type="textarea" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Allowed Modules</label>
+                        <tooltip><![CDATA[Pages other than category, product & CMS pages will be configured here.<br /><strong>Format:</strong> /route/controller/action, /route/controller/* & /route/*/*.<br />For example, in order to allow contacts page: /contacts/index/index or /contacts/index/* or /contacts/*/* ]]></tooltip>
+                    </field>
+                </group>
+                <!-- //Restricted / Accessible Type -->
+
+            </group>
+
+        </section>
+
+    </system>
+</config>

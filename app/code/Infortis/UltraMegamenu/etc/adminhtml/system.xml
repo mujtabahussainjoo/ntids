@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <tab id="infortis" translate="label" sortOrder="152">
+      <label>Infortis Extensions</label>
+    </tab>
+    <section id="ultramegamenu" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+      <label>Menu</label>
+      <tab>infortis</tab>
+      <resource>Infortis_UltraMegamenu::config</resource>
+      <group id="mainmenu" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Top Menu</label>
+        <comment>Configuration of the top menu displayed in the header of the page.&lt;br/&gt;Style of the drop-down can be configured individually for each category in category settings.&lt;/br&gt;More info can be found in the &lt;strong&gt;User Guide&lt;/strong&gt; (chapter 12).&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</comment>
+        <field id="enable" translate="label" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Top Menu</label>
+          <comment>Enable the horizontal drop-down menu.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="remove_on_home" translate="label" sortOrder="20" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Remove Top Menu On Home Page</label>
+          <comment>Remove the top menu on the home page. This option may be useful when you use the sidebar menu on your home page.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="mode" translate="label" sortOrder="30" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Mode</label>
+          <comment>- &lt;strong&gt;Drop-down&lt;/strong&gt; - standard drop-down menu&lt;br/&gt;
+								- &lt;strong&gt;Mobile&lt;/strong&gt; - collapsible accordion, dedicated for mobile websites&lt;br/&gt;
+								- &lt;strong&gt;Drop-down/Mobile&lt;/strong&gt; - combination of both modes, dedicated for responsive websites&lt;br/&gt;</comment>
+          <source_model>Infortis\UltraMegamenu\Model\System\Config\Source\Mainmenu\Mode</source_model>
+        </field>
+        <field id="categories" translate="label" sortOrder="40" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Display Categories</label>
+          <comment>Display categories in the top menu.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="heading_vertical_dropdown_menu" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Vertical Layout</label>
+          <comment>The top menu displayed inside a drop-down box.</comment>
+          <frontend_model>Infortis\Infortis\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="vertnav" translate="label" sortOrder="110" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Vertical Drop-down Menu</label>
+          <comment>Enable vertical drop-down menu. The menu (categories stacked vertically) will be placed inside a drop-down box which will be shown when user clicks a button inside the menu bar.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="vertnav_collapsed" translate="label" sortOrder="120" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Collapsed</label>
+          <comment>If set to "Yes", the drop-down box with the menu will be collapsed. If set to "No", the drop-down box with the menu will not be collapsed and all the top-level items will be visible.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <depends>
+            <field id="vertnav">1</field>
+          </depends>
+        </field>
+        <field id="vertnav_collapsed_on_home" translate="label" sortOrder="130" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Collapsed On Home Page</label>
+          <comment>If set to "Yes", the drop-down box with the menu will be collapsed on home page.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <depends>
+            <field id="vertnav">1</field>
+          </depends>
+        </field>
+        <field id="heading_home_link" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Home Link</label>
+          <comment>An icon and text "Home", displayed as a standard menu item.</comment>
+          <frontend_model>Infortis\Infortis\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="home" translate="label" sortOrder="210" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Home Link: Text</label>
+          <comment>If enabled, will display menu item with text "Home" as a link to the home page. This link will be displayed with the same colors as other menu items.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="home_img" translate="label" sortOrder="220" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Home Link: Icon</label>
+          <comment>If enabled, will display menu item with icon as a link to the home page. This link will be displayed with the same colors as other menu items.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="home_link_icon" translate="label" sortOrder="230" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Single Icon as Home Link</label>
+          <comment>Alternatively, you can enable this option to show single icon as a link to the home page. The icon will be displayed without any additional background color. If it's enabled, options &lt;em&gt;Home Link: Text&lt;/em&gt; and &lt;em&gt;Home Link: Icon&lt;/em&gt; will be &lt;span style="color:red;"&gt;ignored&lt;/span&gt;.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="heading_additional_settings" translate="label" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Additional Settings</label>
+          <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="centered" translate="label" sortOrder="305" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Centered</label>
+          <comment>If set to "Yes", menu items will be centered within the menu bar.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="outermost_container" translate="label" sortOrder="310" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Align Drop-down With...</label>
+          <comment>The drop-down box (of top-level category) will be aligned with the right edge of the selected container if the right edge of the drop-down box sticks out further to the right than the selected container.&lt;br/&gt;
+								- &lt;strong&gt;Viewport&lt;/strong&gt; - drop-down box will be aligned with the user's visible area of the page.&lt;br/&gt;
+								- &lt;strong&gt;Menu bar&lt;/strong&gt; - drop-down box will be aligned with the right edge of the menu bar.&lt;br/&gt;
+								- &lt;strong&gt;Primary header, inner container&lt;/strong&gt; - drop-down box will be aligned with the inner container of the primary header section.&lt;br/&gt;</comment>
+          <source_model>Infortis\UltraMegamenu\Model\System\Config\Source\Mainmenu\Aligndropdown</source_model>
+        </field>
+        <field id="fullwidth_dd_container" translate="label" sortOrder="320" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Full-width Drop-down As Wide As...</label>
+          <comment>If a drop-down box of a top-level category was set as full-width ("Submenu Type" field was set to "Mega drop-down" and "Drop-down Width" field was left empty), it will be as wide as the selected container.&lt;br/&gt;&lt;strong&gt;Note&lt;/strong&gt;: width of drop-down box can be configured individually for each category in category settings.</comment>
+          <source_model>Infortis\UltraMegamenu\Model\System\Config\Source\Mainmenu\Aligndropdown</source_model>
+        </field>
+        <field id="custom_block_floating" translate="label" sortOrder="390" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Custom Static Block - Align Right</label>
+          <comment>Align custom static block to the right side of the menu bar. To add custom static block to the menu you need to create a static block with ID &lt;em&gt;block_header_nav_dropdown&lt;/em&gt; in &lt;em&gt;CMS &gt; Static Blocks&lt;/em&gt;. Content of that static block will be displayed as a drop-down box.&lt;br/&gt;&lt;strong&gt;Note:&lt;/strong&gt; to add a custom drop-down block to the menu you can also do the following: create a new category and add your content to the "Top Block" field which can be found in the "Menu" tab in category settings. This way you can add multiple custom drop-down blocks to the menu. More info can be found in the user guide.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="show_bullets" translate="label" sortOrder="510" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Show Bullets Inside Mega Drop-down</label>
+          <comment><![CDATA[If set to "Yes", 3rd-level subcategories inside mega drop-downs will be marked with bullets (small "<em>&gt;</em>" marks).]]></comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+      </group>
+      <group id="mobilemenu" translate="label" sortOrder="40" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Mobile Menu</label>
+        <field id="threshold" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Threshold</label>
+          <comment>Width of the browser viewport (in pixels), below which the drop-down menu turns into a mobile menu (an accordion) dedicated for mobile devices. The threshold is needed only if the top menu is in &lt;em&gt;Drop-down/Mobile&lt;/em&gt; mode.
+							&lt;br/&gt;&lt;strong&gt;Horizontal menu&lt;/strong&gt;: it's recommended to leave the default value of the treshold: 992. Values below 992 are not recommended - horizontal drop-down menus usually don't look good on narrow screens.
+							&lt;br/&gt;&lt;strong&gt;Vertical menu&lt;/strong&gt;: if the &lt;em&gt;Vertical Drop-down Menu&lt;/em&gt; is enabled, it's recommended to set the treshold to 770.</comment>
+          <validate>validate-number validate-number-range number-range-480-9999</validate>
+        </field>
+        <field id="show_blocks" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Show Category Blocks From X Levels of Categories</label>
+          <comment>Specify number of levels of categories (counting from the top level) for which category blocks will be displayed in the mobile menu. E.g. enter &lt;em&gt;1&lt;/em&gt; to display blocks of 1st-level categories, enter &lt;em&gt;2&lt;/em&gt; to display blocks of 1st-level and 2nd-level categories etc. The allowed range is from &lt;em&gt;0&lt;/em&gt; to &lt;em&gt;5&lt;/em&gt;. Enter &lt;em&gt;0&lt;/em&gt; to hide blocks of all categories on all levels.</comment>
+          <validate>validate-number validate-number-range number-range-0-5</validate>
+        </field>
+        <field id="hide_blocks_below" translate="label" sortOrder="110" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Hide Category Blocks Below 480px</label>
+          <comment>Category blocks will be hidden in mobile menu on small mobile devices (if width of the browser viewport is below 480px).</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="show_items_only_blocks" translate="label" sortOrder="120" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Show Categories With Category Blocks Only</label>
+          <comment><![CDATA[Top-level categories, which have no subcategories but have category blocks, will be displayed in mobile menu. A category can have category blocks inside the dropdown if the <em>Submenu Type</em> field of that category (in category settings) was set to "Mega drop-down" and if any content was added to one of the content fields (e.g. to the <em>Top Block</em> field).]]></comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+      </group>
+      <group id="sidemenu" translate="label" sortOrder="90" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Sidebar Menu</label>
+        <comment>Configuration of the sidebar menu which can be displayed in sidebars on selected pages (if the page has any sidebars).&lt;br/&gt;&lt;strong style="color:red;"&gt;Important:&lt;/strong&gt; you can also use block shortcode to display the sidebar menu inside any custom static block.&lt;br/&gt;More info can be found in the &lt;strong&gt;User Guide&lt;/strong&gt; (chapter 12).&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</comment>
+        <field id="heading_enable" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Enable Sidebar Menu</label>
+          <comment>Enable the sidebar menu for different types of pages.</comment>
+          <frontend_model>Infortis\Infortis\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="enable_category_main" translate="label" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Category View (Main Sidebar)</label>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="enable_category_additional" translate="label" sortOrder="20" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Category View (Additional Sidebar)</label>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="enable_home_main" translate="label" sortOrder="30" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Home Page (Main Sidebar)</label>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="enable_home_additional" translate="label" sortOrder="40" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Home Page (Additional Sidebar)</label>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="enable_cms_main" translate="label" sortOrder="50" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>CMS Pages (Main Sidebar)</label>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="enable_cms_additional" translate="label" sortOrder="60" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>CMS Pages (Additional Sidebar)</label>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="enable_product_main" translate="label" sortOrder="70" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Page (Main Sidebar)</label>
+            <comment><![CDATA[By default a product page have no sidebars, so you need to change the layout of a product page to display the sidebar menu. You can change the layout in product's settings.]]></comment>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="enable_product_additional" translate="label" sortOrder="80" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Page (Additional Sidebar)</label>
+            <comment><![CDATA[By default a product page have no sidebars, so you need to change the layout of a product page to display the sidebar menu. You can change the layout in product's settings.]]></comment>
+            <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="heading_sidebar_mega" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Sidebar Mega Menu</label>
+          <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="is_megamenu" translate="label" sortOrder="110" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Sidebar Mega Menu</label>
+          <comment>Enable sidebar mega menu. If not enabled, the sidebar menu will be displayed as a simple accordion. Additional settings for accordion can be found below.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+        </field>
+        <field id="is_main" translate="label" sortOrder="120" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Use Sidebar Mega Menu As Mobile Menu</label>
+          <comment>When the sidebar menu exists on the page, it will be used as mobile menu (when mobile menu is displayed).</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="heading_block_settings" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Block Settings</label>
+          <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="block_name" translate="label" sortOrder="210" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Block Title</label>
+          <comment>Additionally you can use variable &lt;em&gt;[current_category]&lt;/em&gt; inside the title to create dynamic name of the block. Variable will be replaced with the name of the current category.</comment>
+        </field>
+        <field id="heading_accordion_settings" translate="label" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Accordion Settings</label>
+          <comment>If the "Sidebar Mega Menu" is not enabled, the sidebar menu will be displayed as a simple accordion.</comment>
+          <frontend_model>Infortis\Infortis\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="parent" translate="label" sortOrder="320" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Parent Category</label>
+          <comment>The menu will only contain children (subcategories) of the selected parent category.</comment>
+          <source_model>Infortis\UltraMegamenu\Model\System\Config\Source\Sidemenu\SidemenuParent</source_model>
+        </field>
+        <field id="depth" translate="label" sortOrder="330" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Maximum Depth</label>
+          <comment>This parameter controls how many levels in the hierarchy of Categories (starting from the parent category) are to be included in the menu. Menu with a Maximum Depth of 1 will just be an un-nested list of categories from a single level (with none of the subcategories displayed). The default value is 0, it will display all subcategories.</comment>
+        </field>
+        <field id="fallback" translate="label" sortOrder="340" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Fallback To Root Category</label>
+          <comment>If current category doesn't exist, go back to root category. This option is useful if sidebar menu should be displayed on pages with no current category (on pages other than category view). If set to “Yes” and if current category doesn't exist, menu will behave like &lt;strong&gt;Parent Category&lt;/strong&gt; field was set to “Root” (it will display top-level categories).&lt;br/&gt;&lt;strong&gt;Important:&lt;/strong&gt; if set to "No", menu will not be displayed at all if there's no current category.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="block_name_fallback" translate="label" sortOrder="350" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Fallback Block Title</label>
+          <comment>This block title will be used if current category doesn't exist.</comment>
+        </field>
+        <field id="num_of_products" translate="label" sortOrder="360" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Show Number of Products</label>
+          <comment>Important: this option can affect performance. Use only if needed.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="heading_additional_settings" translate="label" sortOrder="600" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Additional Settings</label>
+          <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+        </field>
+        <field id="hide_on_mobile" translate="label" sortOrder="610" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Hide Sidebar Menu on Mobile Devices</label>
+          <comment>Sidebar menu can be hidden on mobile devices (if browser viewport is narrower than 768 pixels). By default all categories are displayed in the top menu so with this option you can save some space on mobile devices.</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+      </group>
+      <group id="category_labels" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Category Labels</label>
+        <field id="label1" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Label 1</label>
+          <comment>Define the text of the category label 1. Labels can be assigned to every category in Catalog &gt; Manage Categories.</comment>
+        </field>
+        <field id="label2" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Label 2</label>
+          <comment>Define the text of the category label 2. Labels can be assigned to every category in Catalog &gt; Manage Categories.</comment>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>

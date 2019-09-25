@@ -1,0 +1,62 @@
+/******************************neatix*****************/
+.header-container{ 
+	margin-left:0% !important;
+	width: 100% !important;
+}
+ .nav-regular {
+    background-color: none; 
+}
+.nav.container{
+       background: linear-gradient(to bottom, rgba(112,176,224,1) 0%,rgba(19,119,186,1) 100%)!important;
+}
+ .navi-wrapper {
+       background: linear-gradient(to bottom, rgba(112,176,224,1) 0%,rgba(19,119,186,1) 100%)!important;
+}
+.nav-container {
+	width: 100%;
+	float: left;
+	margin: 0 0 0em 0;
+	padding: 0;
+	    background: linear-gradient(to bottom, rgba(112,176,224,1) 0%,rgba(19,119,186,1) 100%);
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);	
+}
+
+.header-container2,.header-primary-container{ 
+margin-bottom:-1.5%!important;
+}
+
+.header.links > li  {
+	background: linear-gradient(to bottom, rgba(202,227,247,1) 0%,rgba(78,154,216,1) 100%);
+	color:#fff!important;
+	border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.footer-bottom-container {
+     background-color: transparent; 
+}
+
+.main-container{
+	    /* background-position: left top; */
+    background: url(https://store.neatideas.com.au/neatix/media/wysiwyg/Neatix/Signup_background.jpg) 50% 50% no-repeat fixed rgb(255, 255, 255);
+	    background-size: cover !important;
+}
+.mian.container{
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%)!important;
+
+}
+.footer-bottom-container {
+     background-color: transparent!important; 
+}
+
+.footer-bottom {
+    background-color:transparent!important;
+   
+   padding-top: 0px!important; 
+    padding-bottom: 20px!important;
+}
+.footer {
+    background-color:transparent!important;
+   
+}

@@ -1,0 +1,86 @@
+<?php 	
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->create("\Magento\Store\Model\StoreManagerInterface");
+$scopeConfig = $objectManager->create("\Magento\Framework\App\Config\ScopeConfigInterface");
+$stores = $storeManager->getStores(true, false); 
+$websites = $storeManager->getWebsites(true, false); 
+$allowedIPS = array('183.82.96.131','192.168.0.155','49.255.143.46','124.188.222.141');
+if(in_array($_SERVER["REMOTE_ADDR"],$allowedIPS))
+{
+?>
+
+<div class="row">
+	<?php
+	//$oldToNewStores=array(20=>60,70=>5,66=>6,76=>7,16=>8,65=>9,4=>10,7=>11,54=>12,5=>13,12=>4,36=>15,63=>16,27=>17,58=>18,32=>19,25=>20,69=>21,31=>22,6=>23,3=>26,23=>27,71=>28,22=>30,34=>31,62=>32,2=> 33,51=>34,42=>36,21=>2,41=>37,40=>38,80=>70,49=>39,53=>41,35=>42,14=>43,47=>44,8=>45,10=>47,64=>48,48=>49,46=>50,19=>52,17=>46,81=>71,56=>54,61=>55,68=>57,55=>58,29=>59,13=>61,45=>62,59=>63,11=>67,52=>64,38=>65,44=>66,72=>68,26=>69);
+	foreach($stores as $store){ 
+	        if($store->getId() == 0 || $store->getIsActive() == 0)
+				continue;
+			$logo = $scopeConfig->getValue("design/header/logo_src", \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $store->getId());
+			if($logo == '')
+				$logo = "no.png";
+			$logoUrl = "/pub/media/logo/".$logo;
+			//echo $_storeName=$store->getCode();
+			//echo "<br/>";
+		?>
+		
+		<div class="column" style="float: left; width: 15%; height: 200px; padding: 20px; margin:5px; border-style: solid; border-color: grey; border-width:2px;">
+            <a href="<?php echo $store->getBaseUrl(); ?>" target="_blank">
+			 <p>
+			   <img width="200" height="200" src="<?php echo $logoUrl; ?>" /><br />
+			   <b><?php echo $store->getName(); ?></b>
+			 </p>
+			</a>
+		</div>
+	<?php }?>	
+</div>
+<?php
+}
+else
+{
+?>
+<link  rel="stylesheet" type="text/css"  media="all" href="https://prod.neatideas.com.au/pub/static/adminhtml/TCT/joy/en_AU/css/styles.css" />
+<style>
+body{
+background-color: #204788!important;
+}
+.main.container {
+	background-color: #204788!important;
+}
+.header-container
+{
+	background-color: #204788!important;
+}
+.main-container
+{
+	background-color: #204788!important;
+}
+.page-wrapper
+{
+	background-color: #204788;
+}
+</style>
+<div class="adminhtml-auth-login page-layout-admin-login">
+<section class="page-wrapper">
+
+<header class="login-header"><a href="https://prod.neatideas.com.au/" data-edition="Community Edition" class="logo">
+            <img class="logo-img" src="https://prod.neatideas.com.au/pub/static/adminhtml/TCT/joy/en_AU/images/admin-login-logo.png" alt="Magento Admin Panel" title="Magento Admin Panel">
+        </a>
+    </header><div class="login-content">
+<form method="post" action="" id="login-form" autocomplete="off" novalidate="novalidate">
+    <fieldset style="text-align: center; margin-top:70px;" class="admin__fieldset">
+        <legend class="admin__legend">
+            <span><b>Access Restricted!</b></span>
+        </legend><br>
+    </fieldset>
+</form>
+</div>
+</section> 
+</div>
+<?php
+}
+?>
+<style>
+.header-container2{
+	display:none;
+}
+</style>

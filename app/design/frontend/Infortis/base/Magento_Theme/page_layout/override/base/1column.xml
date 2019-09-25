@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+
+    <update handle="empty"/>
+    <referenceContainer name="page.wrapper">
+        <container name="header.container" as="header_container" label="Page Header Container" htmlTag="header" htmlClass="page-header" before="main.content"/>
+
+        <!-- New base main container -->
+        <container name="base-main-container" htmlTag="div" htmlClass="main-container">
+            <container name="base-main-top-container" label="Preface, Full Width" htmlTag="div" htmlClass="main-top-container" />
+            <container name="base-main-container.main" htmlTag="div" htmlClass="main container">
+                <container name="base-main-container.main.inner" htmlTag="div" htmlClass="inner-container">
+                    <container name="page.top" as="page_top" label="After Page Header" before="-" />
+                </container>
+            </container>
+            <container name="base-main-bottom-container" label="Postscript, Full Width" htmlTag="div" htmlClass="main-bottom-container" />
+        </container>
+
+        <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer" />
+    </referenceContainer>
+
+    <!-- Move main.content to main container -->
+    <move element="main.content" destination="base-main-container.main.inner" after="page.top" />
+
+    <!-- Move page.bottom.container just after main container -->
+    <move element="page.bottom.container" destination="base-main-container.main.inner" after="main.content" />
+
+</layout>

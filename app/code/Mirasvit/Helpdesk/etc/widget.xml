@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Widget/etc/widget.xsd">
+    <widget id="mst_helpdesk_contact_form" class="Mirasvit\Helpdesk\Block\Widget\Contacts">
+        <label translate="true">Helpdesk Contact Form</label>
+        <description></description>
+    </widget>
+</widgets>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!-- 
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"> 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Catalog\Block\Navigation" name="catalog.leftnav" before="-" template="Magento_Catalog::navigation/left.phtml"/>
+        </referenceContainer>
+		<referenceContainer name="sidebar.additional">
+		   <block class="Magento\Cms\Block\Block" name="resturant_info">
+			   <arguments>
+					<argument name="block_id" xsi:type="string">resturant_info</argument>
+			   </arguments>
+		   </block>
+		</referenceContainer>
+		<referenceContainer name="sidebar.additional">
+		   <block class="Magento\Cms\Block\Block" name="resturant_slides">
+			   <arguments>
+					<argument name="block_id" xsi:type="string">resturant_slides</argument>
+			   </arguments>
+		   </block>
+		</referenceContainer>
+    </body>
+</page>

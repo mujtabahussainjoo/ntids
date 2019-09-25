@@ -1,0 +1,102 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php
+	  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	  $productData = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getId());
+	  $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+	  $baseUrl = $storeManager->getStore()->getBaseUrl(); 
+	  $referralLink = $productData->getReferralLink();
+	  $referralLinkTextDetail = $productData->getReferralLinkTextDetail();
+	  if($referralLink)
+		  echo "<style>.price{display:none !important;} .price-box{display:none !important;}</style>";
+?>
+<?php 	  
+	$commingsoon_status = $_product->getComingSoon();
+	$commingsoon_text = $_product->getComingSoonText();
+	if($commingsoon_status==1 && $commingsoon_text!=''){
+		$class_status='display:none';
+		$commingsoon_text;
+	}else{
+		$class_status='';
+		$commingsoon_text='';
+	}
+?>
+<?php if ($_product->isSaleable()): ?>
+<div class="box-tocart" style="<?php echo $class_status;?>">
+    <div class="fieldset">
+        <?php if ($block->shouldRenderQuantity() && !$referralLink): ?>
+        <div class="field qty">
+            <label class="label" for="qty"><span><?= /* @escapeNotVerified */ __('Qty') ?></span></label>
+            <div class="control">
+                <input style="width:40px;" type="number"
+                       name="qty"
+                       id="qty"
+                       value="<?= /* @escapeNotVerified */ $block->getProductDefaultQty() * 1 ?>"
+                       title="<?= /* @escapeNotVerified */ __('Qty') ?>"
+                       class="input-text qty"
+                       data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                       />
+            </div>
+        </div>
+        <?php endif; ?>
+     	<div class="actions">
+				     <?php if($referralLink) { ?>
+						 <!--<div type="submit" class="action primary tocart" id="product-addtocart-button">
+							<span><a target="_blank" href = "<?php echo $baseUrl; ?>externalproduct/?productId=<?php echo $_product->getId(); ?>"><?= /* @escapeNotVerified */ $referralLinkTextDetail ?></a></span>
+						</div>-->
+						<a target="_blank" href = "<?php echo $baseUrl; ?>externalproduct/?productId=<?php echo $_product->getId(); ?>">
+						<button type="button"
+								title="<?= /* @escapeNotVerified */ $referralLinkTextDetail ?>"
+								class="action primary tocart"
+								id="product-addtocart-button">
+							<span><?= /* @escapeNotVerified */ $referralLinkTextDetail ?></span>
+						</button>
+						</a>
+					 <?php } else { ?> 
+					   <button type="submit"
+								title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
+								class="action primary tocart"
+								id="product-addtocart-button">
+							<span><?= /* @escapeNotVerified */ $buttonTitle ?></span>
+							<div class="glyphicon glyphicon-plus"></div>
+						</button>
+					 <?php } ?>
+					<?= $block->getChildHtml('', true) ?>
+				</div>
+    </div>
+</div>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/js/validate-product": {}
+        }
+    }
+</script>
+<script>
+/*
+require(['jquery'],function(){
+		
+		jQuery(document).ajaxStop(function() {
+		   if(jQuery(".message-error"))
+		   {
+				jQuery('html, body').animate({
+					scrollTop: jQuery(".main-container").offset().top
+				}, 500);
+		   }
+		});
+		
+    });
+*/
+</script>
+

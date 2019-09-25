@@ -1,0 +1,677 @@
+"Help Desk Tickets (%1)","Help Desk Tickets (%1)"
+Departments,Departments
+"Add New Department","Add New Department"
+"Custom Fields","Custom Fields"
+"Add New Field","Add New Field"
+Gateways,Gateways
+"Add New Gateway","Add New Gateway"
+Tickets,Tickets
+Priorities,Priorities
+Statuses,Statuses
+"Quick Responses","Quick Responses"
+"SPAM patterns","SPAM patterns"
+Permissions,Permissions
+"Workflow Rules","Workflow Rules"
+"Satisfaction Survey Results","Satisfaction Survey Results"
+"Working Hours","Working Hours"
+Reports,Reports
+"Refresh Statistics","Refresh Statistics"
+Settings,Settings
+"Spam Filter Patterns","Spam Filter Patterns"
+"Add New Pattern","Add New Pattern"
+"Add New Permission","Add New Permission"
+"Add New Priority","Add New Priority"
+"Add New Rule","Add New Rule"
+"Apply the rule only if the following conditions are met.","Apply the rule only if the following conditions are met."
+"Help Desk Tickets","Help Desk Tickets"
+"Create ticket for this order","Create ticket for this order"
+"Satisfaction Survey","Satisfaction Survey"
+Schedule,Schedule
+"Add New Schedule","Add New Schedule"
+"General Information","General Information"
+"Working days/hours","Working days/hours"
+"Spam Folder","Spam Folder"
+"Add New Status","Add New Status"
+"Add New Template","Add New Template"
+"Create New Ticket","Create New Ticket"
+"Previous Ticket","Previous Ticket"
+"Next Ticket","Next Ticket"
+"Convert to RMA","Convert to RMA"
+Save,Save
+"Save & Edit","Save & Edit"
+"To Archive","To Archive"
+"To Spam","To Spam"
+Delete,Delete
+"Are you sure you want to do this?","Are you sure you want to do this?"
+"To Inbox","To Inbox"
+"Additional Information","Additional Information"
+Subject,Subject
+"Store View","Store View"
+Channel,Channel
+"open page","open page"
+"External Link","External Link"
+Tags,Tags
+"comma-separated list","comma-separated list"
+"Follow Up","Follow Up"
+Period,Period
+"Period Value","Period Value"
+"Execute At","Execute At"
+"Send Remind","Send Remind"
+"Set Status To","Set Status To"
+"Set Priority To","Set Priority To"
+"Set Owner To","Set Owner To"
+Unassigned,Unassigned
+Template,Template
+"Select the store","Select the store"
+Store,Store
+General,General
+Additional,Additional
+"Other Tickets (%1)","Other Tickets (%1)"
+ID,ID
+"Customer Name","Customer Name"
+"Last Replier","Last Replier"
+Owner,Owner
+Department,Department
+Status,Status
+Priority,Priority
+Replies,Replies
+"Email was send","Email was send"
+"Created At","Created At"
+"Updated At","Updated At"
+"Last Reply At","Last Reply At"
+"Last Activity","Last Activity"
+Action,Action
+View,View
+"Change Status","Change Status"
+"Change Owner","Change Owner"
+Merge,Merge
+"Are you sure? This action is not reversible.","Are you sure? This action is not reversible."
+Archive,Archive
+"Are you sure?","Are you sure?"
+"Mark as spam","Mark as spam"
+"Add Ticket to the Customer","Add Ticket to the Customer"
+"Add Ticket to the Order","Add Ticket to the Order"
+"Help Desk","Help Desk"
+"Help Desk Settings","Help Desk Settings"
+"Signature for Emails","Signature for Emails"
+"Thank you","Thank you"
+"Create Ticket","Create Ticket"
+"'[' . . '] ' .","'[' . . '] ' ."
+"New Department","New Department"
+"Department  Manager","Department  Manager"
+"Department Manager","Department Manager"
+"Add Department ","Add Department "
+"Add Department","Add Department"
+"You can not delete this department, because there are gateways using it.
+                         Please, change gateways settings","You can not delete this department, because there are gateways using it.
+                         Please, change gateways settings"
+"Department was successfully deleted","Department was successfully deleted"
+"Edit Department '%1'","Edit Department '%1'"
+"Edit Department ","Edit Department "
+"The Department does not exist.","The Department does not exist."
+"Department was successfully saved","Department was successfully saved"
+"Unable to find Department to save","Unable to find Department to save"
+"New Field","New Field"
+"Field  Manager","Field  Manager"
+"Field Manager","Field Manager"
+"Add Field ","Add Field "
+"Add Field","Add Field"
+"Field was successfully deleted","Field was successfully deleted"
+"Edit Field '%1'","Edit Field '%1'"
+"Edit Field ","Edit Field "
+"The Field does not exist.","The Field does not exist."
+"Field with the same code already exists","Field with the same code already exists"
+"Field was successfully saved","Field was successfully saved"
+"Unable to find Field to save","Unable to find Field to save"
+"Please, ask your hosting provider to enable IMAP extension in PHP configuration of your server. Otherwise, helpdesk will not be able to fetch emails.","Please, ask your hosting provider to enable IMAP extension in PHP configuration of your server. Otherwise, helpdesk will not be able to fetch emails."
+"New Gateway","New Gateway"
+"Gateway  Manager","Gateway  Manager"
+"Gateway Manager","Gateway Manager"
+"Add Gateway ","Add Gateway "
+"Add Gateway","Add Gateway"
+"Gateway was successfully deleted","Gateway was successfully deleted"
+"Edit Gateway '%1'","Edit Gateway '%1'"
+"Edit Gateway ","Edit Gateway "
+"The Gateway does not exist.","The Gateway does not exist."
+"Gateway was successfully saved. Connection is established.","Gateway was successfully saved. Connection is established."
+"Unable to find Gateway to save","Unable to find Gateway to save"
+"A total of %1 record(s) have been updated.","A total of %1 record(s) have been updated."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"New Pattern","New Pattern"
+"Pattern  Manager","Pattern  Manager"
+"Pattern Manager","Pattern Manager"
+"Add Pattern ","Add Pattern "
+"Add Pattern","Add Pattern"
+"Pattern was successfully deleted","Pattern was successfully deleted"
+"Edit Pattern '%1'","Edit Pattern '%1'"
+"Edit Pattern ","Edit Pattern "
+"The Pattern does not exist.","The Pattern does not exist."
+"Pattern was successfully saved","Pattern was successfully saved"
+"Incorrect pattern: %1","Incorrect pattern: %1"
+"Unable to find Pattern to save","Unable to find Pattern to save"
+"New Permission","New Permission"
+"Permission  Manager","Permission  Manager"
+"Permission Manager","Permission Manager"
+"Add Permission ","Add Permission "
+"Add Permission","Add Permission"
+"Permission was successfully deleted","Permission was successfully deleted"
+"Edit Permission","Edit Permission"
+"Edit Permission ","Edit Permission "
+"The Permission does not exist.","The Permission does not exist."
+"Permission was successfully saved","Permission was successfully saved"
+"Unable to find Permission to save","Unable to find Permission to save"
+"New Priority","New Priority"
+"Priority  Manager","Priority  Manager"
+"Priority Manager","Priority Manager"
+"Add Priority ","Add Priority "
+"Add Priority","Add Priority"
+"Priority was successfully deleted","Priority was successfully deleted"
+"Edit Priority '%1'","Edit Priority '%1'"
+"Edit Priority ","Edit Priority "
+"The Priority does not exist.","The Priority does not exist."
+"Priority was successfully saved","Priority was successfully saved"
+"Unable to find Priority to save","Unable to find Priority to save"
+"Statistics was successfully updated","Statistics was successfully updated"
+Helpdesk,Helpdesk
+"New Rule","New Rule"
+"Rule  Manager","Rule  Manager"
+"Rule Manager","Rule Manager"
+"Add Rule ","Add Rule "
+"Add Rule","Add Rule"
+"Rule was successfully deleted","Rule was successfully deleted"
+"Edit Rule '%1'","Edit Rule '%1'"
+"Edit Rule ","Edit Rule "
+"The Rule does not exist.","The Rule does not exist."
+"Rule was successfully saved","Rule was successfully saved"
+"Unable to find Rule to save","Unable to find Rule to save"
+"New Satisfaction","New Satisfaction"
+"Satisfaction  Manager","Satisfaction  Manager"
+"Satisfaction Manager","Satisfaction Manager"
+"Add Satisfaction ","Add Satisfaction "
+"Add Satisfaction","Add Satisfaction"
+"Satisfaction was successfully deleted","Satisfaction was successfully deleted"
+"Edit Satisfaction '%1'","Edit Satisfaction '%1'"
+"Edit Satisfaction ","Edit Satisfaction "
+"The Satisfaction does not exist.","The Satisfaction does not exist."
+"Satisfaction was successfully saved","Satisfaction was successfully saved"
+"Unable to find Satisfaction to save","Unable to find Satisfaction to save"
+"New Schedule","New Schedule"
+"Schedule Manager","Schedule Manager"
+"Add Schedule ","Add Schedule "
+"Add Schedule","Add Schedule"
+"You can not delete this schedule, because there are gateways using it.
+                         Please, change gateways settings","You can not delete this schedule, because there are gateways using it.
+                         Please, change gateways settings"
+"Schedule was successfully deleted","Schedule was successfully deleted"
+"Edit Schedule '%1'","Edit Schedule '%1'"
+"Edit Schedule ","Edit Schedule "
+"The Schedule does not exist.","The Schedule does not exist."
+Schedules,Schedules
+"Working days/hours is a required field.","Working days/hours is a required field."
+"Schedule was successfully saved","Schedule was successfully saved"
+"Unable to find Schedule to save","Unable to find Schedule to save"
+"Ticket was successfully moved to the Tickets folder","Ticket was successfully moved to the Tickets folder"
+"Edit Spam '%1'","Edit Spam '%1'"
+"Edit Spam ","Edit Spam "
+"The spam does not exist.","The spam does not exist."
+"Please select spam(s)","Please select spam(s)"
+"Total of %1 record(s) were successfully moved to the Tickets folder","Total of %1 record(s) were successfully moved to the Tickets folder"
+"Total of %1 record(s) were successfully deleted","Total of %1 record(s) were successfully deleted"
+"New Status","New Status"
+"Status  Manager","Status  Manager"
+"Status Manager","Status Manager"
+"Add Status ","Add Status "
+"Add Status","Add Status"
+"Status was successfully deleted","Status was successfully deleted"
+"Edit Status '%1'","Edit Status '%1'"
+"Edit Status ","Edit Status "
+"The Status does not exist.","The Status does not exist."
+"Status was successfully saved","Status was successfully saved"
+"Unable to find Status to save","Unable to find Status to save"
+"New Template","New Template"
+"Template  Manager","Template  Manager"
+"Template Manager","Template Manager"
+"Add Template ","Add Template "
+"Add Template","Add Template"
+"Template was successfully deleted","Template was successfully deleted"
+"Edit Template '%1'","Edit Template '%1'"
+"Edit Template ","Edit Template "
+"The Template does not exist.","The Template does not exist."
+"Template was successfully saved","Template was successfully saved"
+"Unable to find Template to save","Unable to find Template to save"
+"New Ticket","New Ticket"
+"Ticket Manager","Ticket Manager"
+"Add Ticket ","Add Ticket "
+"Add Ticket","Add Ticket"
+"Ticket was moved to archive","Ticket was moved to archive"
+"Ticket was successfully deleted","Ticket was successfully deleted"
+"Edit Ticket ","Edit Ticket "
+"The ticket does not exist.","The ticket does not exist."
+"Total of %1 record(s) were moved to Archive.","Total of %1 record(s) were moved to Archive."
+"Please select ticket(s)","Please select ticket(s)"
+"Total of %1 record(s) were moved to the Spam folder","Total of %1 record(s) were moved to the Spam folder"
+"Total of %1 record(s) were successfully updated","Total of %1 record(s) were successfully updated"
+"For total of %1 record(s) Assignee was changed.","For total of %1 record(s) Assignee was changed."
+"You don't have permission for this operation.","You don't have permission for this operation."
+"Total of %1 record(s) were moved to the Inbox folder.","Total of %1 record(s) were moved to the Inbox folder."
+"Please select 2 or more tickets","Please select 2 or more tickets"
+"Total of %1 record(s) were successfully merged","Total of %1 record(s) were successfully merged"
+"Total of %1 record(s) were moved to the Spam folder.","Total of %1 record(s) were moved to the Spam folder."
+"A total of %1 record(s) were updated.","A total of %1 record(s) were updated."
+"Ticket was moved to Inbox","Ticket was moved to Inbox"
+"Message was successfully sent","Message was successfully sent"
+"Ticket was successfully updated","Ticket was successfully updated"
+"Unable to find ticket to save","Unable to find ticket to save"
+"Ticket was moved to the Spam folder","Ticket was moved to the Spam folder"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Your request was successfully submitted. You should receive a confirmation email shortly."
+Telephone,Telephone
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us."
+"Unable to submit your request. Please, try again later","Unable to submit your request. Please, try again later"
+"Page not found.","Page not found."
+"Your message was successfuly posted","Your message was successfuly posted"
+"Your ticket was successfuly posted","Your ticket was successfuly posted"
+"Ticket was successfuly closed","Ticket was successfuly closed"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Can't upload file %1 . Max allowed upload size is %2 MB."
+"Allows only this file types: %1","Allows only this file types: %1"
+"%1 Help Desk","%1 Help Desk"
+"You have %1 unread notifications.","You have %1 unread notifications."
+"Ticket ""%1"" was created.","Ticket ""%1"" was created."
+"New message was added to the ticket ""%1""","New message was added to the ticket ""%1"""
+"Ticket ""%1"" was assigned to you.","Ticket ""%1"" was assigned to you."
+"%1 is editing now","%1 is editing now"
+"%1 has opened this ticket %2","%1 has opened this ticket %2"
+"%1 have opened this ticket %2","%1 have opened this ticket %2"
+"please type your reply above this line","please type your reply above this line"
+"Can't fetch.
+                Please, ask your hosting provider to enable IMAP extension in PHP configuration of your server.","Can't fetch.
+                Please, ask your hosting provider to enable IMAP extension in PHP configuration of your server."
+Yes,Yes
+No,No
+"Rule '%1'","Rule '%1'"
+"%1: %2 => %3","%1: %2 => %3"
+"%1: %2","%1: %2"
+"Ticket was merged to: %1","Ticket was merged to: %1"
+"Ticket was merged with: %1","Ticket was merged with: %1"
+"Message added","Message added"
+"Internal note added","Internal note added"
+"Third party message added","Third party message added"
+"Private third party message added","Private third party message added"
+"-- Please Select --","-- Please Select --"
+Inbox,Inbox
+Spam,Spam
+Email,Email
+Backend,Backend
+"Contact Tab","Contact Tab"
+"Contact Form","Contact Form"
+"Customer Account","Customer Account"
+"Public Reply","Public Reply"
+"Internal Note","Internal Note"
+"Message to Third Party","Message to Third Party"
+"Internal Note to Third Party","Internal Note to Third Party"
+" at %1 (%2) - %3"," at %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","You don't have permissions to read this ticket. Please, contact your administrator."
+"Invalid Customer Email","Invalid Customer Email"
+"Ticket was merged to %1","Ticket was merged to %1"
+"not set","not set"
+Pattern,Pattern
+"Attribute Value","Attribute Value"
+Default,Default
+Integer,Integer
+Price,Price
+"Strip Tags","Strip Tags"
+"Ticket Attributes","Ticket Attributes"
+"Unknown time","Unknown time"
+ago,ago
+"from now","from now"
+"1 sec ago","1 sec ago"
+"Open Ticket","Open Ticket"
+"Open Tickets","Open Tickets"
+"! Blocked file - ","! Blocked file - "
+Disabled,Disabled
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System","File System"
+Database,Database
+Aqua,Aqua
+Grey,Grey
+Navy,Navy
+Silver,Silver
+Black,Black
+Green,Green
+Olive,Olive
+Teal,Teal
+Blue,Blue
+Lime,Lime
+Purple,Purple
+Fuchsia,Fuchsia
+Maroon,Maroon
+Red,Red
+Orange,Orange
+Yellow,Yellow
+NONE,NONE
+SSL,SSL
+Text,Text
+"Multi-line text","Multi-line text"
+Date,Date
+Checkbox,Checkbox
+"Drop-down list","Drop-down list"
+"In minutes...","In minutes..."
+"In hours...","In hours..."
+"In days...","In days..."
+"In weeks...","In weeks..."
+"In months...","In months..."
+Custom,Custom
+"Move to Archive","Move to Archive"
+"Move from Archive","Move from Archive"
+"All users","All users"
+Left,Left
+Right,Right
+POP,POP
+IMAP,IMAP
+Great!,Great!
+OK,OK
+Bad,Bad
+"--Please Select--","--Please Select--"
+"New ticket created","New ticket created"
+"New reply from customer","New reply from customer"
+"New reply from staff","New reply from staff"
+"New reply from third party","New reply from third party"
+"Ticket assigned to staff","Ticket assigned to staff"
+"Ticket was changed","Ticket was changed"
+"Ticket was converted to RMA","Ticket was converted to RMA"
+"Check every hour","Check every hour"
+Headers,Headers
+Body,Body
+"Using Department Name (e.g. Sales)","Using Department Name (e.g. Sales)"
+"Using Staff Name (e.g. John Doe)","Using Staff Name (e.g. John Doe)"
+"Last Reply","Last Reply"
+"View link","View link"
+Success,Success
+"Pattern is invalid","Pattern is invalid"
+"Update the Ticket","Update the Ticket"
+"Conditions Combination","Conditions Combination"
+"Ticket Attribute","Ticket Attribute"
+"Last 7-days Clicks","Last 7-days Clicks"
+"Last 7-days Orders","Last 7-days Orders"
+"Last 7-days Revenue","Last 7-days Revenue"
+"Last 7-days Conversation Rate (%)","Last 7-days Conversation Rate (%)"
+"Attribute Set","Attribute Set"
+Category,Category
+Quantity,Quantity
+"Product Type","Product Type"
+"Base Image","Base Image"
+Thumbnail,Thumbnail
+"Small Image","Small Image"
+"Base Image Size (bytes)","Base Image Size (bytes)"
+"Thumbnail Size (bytes)","Thumbnail Size (bytes)"
+"Small Image Size (bytes)","Small Image Size (bytes)"
+"PHP Condition","PHP Condition"
+"Open Chooser","Open Chooser"
+"Last message body","Last message body"
+"Priority (before change)","Priority (before change)"
+"Status (before change)","Status (before change)"
+"Department (before change)","Department (before change)"
+"Owner (before change)","Owner (before change)"
+"Folder (before change)","Folder (before change)"
+Folder,Folder
+"Last Reply By","Last Reply By"
+"Last Reply Type","Last Reply Type"
+"Hours since Created","Hours since Created"
+"Hours since Updated","Hours since Updated"
+"Hours since Last reply","Hours since Last reply"
+"Ticket Source (Channel)","Ticket Source (Channel)"
+"Customer Email","Customer Email"
+"%1 (before change)","%1 (before change)"
+Customer,Customer
+Staff,Staff
+"Third party","Third party"
+Closed,Closed
+"Opened 24hr","Opened 24hr"
+"- Disable these emails -","- Disable these emails -"
+"Help Desk can't fetch new emails.
+                Please, try to run bin/magento mirasvit:helpdesk:run to find out what is going wrong.","Help Desk can't fetch new emails.
+                Please, try to run bin/magento mirasvit:helpdesk:run to find out what is going wrong."
+"Help desk can't fetch emails. ","Help desk can't fetch emails. "
+"<br> To temporary hide this message, disable all <a href=""%1"">help desk gateways</a>.","<br> To temporary hide this message, disable all <a href=""%1"">help desk gateways</a>."
+"Help Desk can't fetch new emails.
+                 Please, check that you are running cron for bin/magento mirasvit:helpdesk:run.","Help Desk can't fetch new emails.
+                 Please, check that you are running cron for bin/magento mirasvit:helpdesk:run."
+"Helpdesk Tickets","Helpdesk Tickets"
+"Cannot delete ticket with id %1","Cannot delete ticket with id %1"
+Edit,Edit
+"All Departments","All Departments"
+"All Roles","All Roles"
+Back,Back
+Reset,Reset
+"Save and Continue Edit","Save and Continue Edit"
+Debug,Debug
+"24 hrs x 7 days","24 hrs x 7 days"
+"Select working days/hours","Select working days/hours"
+"Satisfaction survey","Satisfaction survey"
+"show source","show source"
+"to %1 (third party)","to %1 (third party)"
+"%1 (third party)","%1 (third party)"
+"added %1 (%2)","added %1 (%2)"
+"Ticket Summary","Ticket Summary"
+"Ticket ID","Ticket ID"
+Assignee,Assignee
+"Additional Info","Additional Info"
+"Ticket History","Ticket History"
+"Done by","Done by"
+Changes,Changes
+"See All Tickets","See All Tickets"
+Name,Name
+"Attach files","Attach files"
+Submit,Submit
+"Submit Ticket","Submit Ticket"
+"What is your question?","What is your question?"
+"We found the following topics that might be helpful:","We found the following topics that might be helpful:"
+"None of these are helpful - get in touch","None of these are helpful - get in touch"
+"We have not found topics that can be helpful.","We have not found topics that can be helpful."
+"Contact Information","Contact Information"
+Comment,Comment
+"We are open 24 x 7","We are open 24 x 7"
+"We are closed","We are closed"
+"Timezone: %1","Timezone: %1"
+"Please take a second to rate my reply...","Please take a second to rate my reply..."
+Great,Great
+Awesome,Awesome
+"Fast, friendly, helpful, pleasant. Great job!","Fast, friendly, helpful, pleasant. Great job!"
+"Just Okay","Just Okay"
+"Fine, but definitely could have been better.","Fine, but definitely could have been better."
+"Not good","Not good"
+"Unfortunately, I wasn't happy with it at all.","Unfortunately, I wasn't happy with it at all."
+"Thank you for participating in our survey!","Thank you for participating in our survey!"
+"If you would like to provide additional comments, please do so below:","If you would like to provide additional comments, please do so below:"
+Message,Message
+"Submit Message","Submit Message"
+"Thank you for your feedback!","Thank you for your feedback!"
+Attachments,Attachments
+Order,Order
+"-- Select an Order --","-- Select an Order --"
+"Create ticket","Create ticket"
+"You don't have open tickets","You don't have open tickets"
+"Post a Reply","Post a Reply"
+"Reopen Ticket","Reopen Ticket"
+"Close Ticket","Close Ticket"
+History,History
+"Back to My Tickets","Back to My Tickets"
+To,To
+"Customer Summary","Customer Summary"
+"Assigned To Customer","Assigned To Customer"
+Cc,Cc
+Bcc,Bcc
+"Assigned To Order","Assigned To Order"
+"Customer does not have orders.","Customer does not have orders."
+RMA,RMA
+"Dear %name,","Dear %name,"
+"Thank you for contacting us!","Thank you for contacting us!"
+"This is an automated response confirming the receipt of your ticket. One of our agents will get
+                back to you
+                as soon as possible.","This is an automated response confirming the receipt of your ticket. One of our agents will get
+                back to you
+                as soon as possible."
+Details,Details
+"You can check the status of reply to this ticket online at:","You can check the status of reply to this ticket online at:"
+"Your message will be emailed to customer","Your message will be emailed to customer"
+"Your message will be emailed to your college. Customer will not see it.","Your message will be emailed to your college. Customer will not see it."
+"Your message will be emailed to the third party. Customer will see it in the ticket history.","Your message will be emailed to the third party. Customer will see it in the ticket history."
+"Internal Message to Third Party","Internal Message to Third Party"
+"Your message will be emailed to the third party. Customer will not see it.","Your message will be emailed to the third party. Customer will not see it."
+"Help Desk MX","Help Desk MX"
+"Helpdesk title in the customer account","Helpdesk title in the customer account"
+"Priority for new tickets","Priority for new tickets"
+"Status for new tickets","Status for new tickets"
+"Sign staff replies","Sign staff replies"
+"Move Ticket to Archive if it has one of following statuses","Move Ticket to Archive if it has one of following statuses"
+"Create Tickets from Contact Us form","Create Tickets from Contact Us form"
+"Send blind carbon copy (BCC) of all emails to","Send blind carbon copy (BCC) of all emails to"
+"Use WYSIWYG Editor in backend","Use WYSIWYG Editor in backend"
+"Show previous/next button in backend ticket edit page","Show previous/next button in backend ticket edit page"
+"Use default magento cron","Use default magento cron"
+"Allow customer to open ticket by unique URL (without additional authentication)","Allow customer to open ticket by unique URL (without additional authentication)"
+"Store attachments in","Store attachments in"
+"Allow upload only attachments with extensions","Allow upload only attachments with extensions"
+"Tickets autosave period, sec","Tickets autosave period, sec"
+"Show Help Desk link in customer menu","Show Help Desk link in customer menu"
+"Enable Feedback Tab","Enable Feedback Tab"
+"Assign to Department","Assign to Department"
+"Tab Color","Tab Color"
+"Tab Title","Tab Title"
+"Tab Position","Tab Position"
+"Form Title","Form Title"
+"Subject Title","Subject Title"
+"Subject Placeholder","Subject Placeholder"
+"Description Title","Description Title"
+"Description Placeholder","Description Placeholder"
+"Allow customer to attach files","Allow customer to attach files"
+"Allow customer to select Priority","Allow customer to select Priority"
+"Allow customer to select Department","Allow customer to select Department"
+"Search Knowledge Base Topics first","Search Knowledge Base Topics first"
+"Show Ticket ID in the email title","Show Ticket ID in the email title"
+"Number of last replies to show in the ticket history","Number of last replies to show in the ticket history"
+"Template of New Ticket Email for Customer","Template of New Ticket Email for Customer"
+"Template of New Ticket Email for Staff","Template of New Ticket Email for Staff"
+"Template of Ticket Email Assigned to Staff","Template of Ticket Email Assigned to Staff"
+"Template of New Message Email for Customer","Template of New Message Email for Customer"
+"Template of New Message Email for Staff","Template of New Message Email for Staff"
+"Template of New Message Email for Third Party","Template of New Message Email for Third Party"
+"Template of Ticket Reminder","Template of Ticket Reminder"
+"Template of Rule Notification","Template of Rule Notification"
+"Template of Survey Satisfaction Result","Template of Survey Satisfaction Result"
+"Include a satisfaction survey in a reply email from staff","Include a satisfaction survey in a reply email from staff"
+"Show survey results in the backend ticket history","Show survey results in the backend ticket history"
+"Send survey result to ticket owner","Send survey result to ticket owner"
+"Send survey result to emails","Send survey result to emails"
+"Show Help Desk section in Customer Account","Show Help Desk section in Customer Account"
+"Allow customer to select Order","Allow customer to select Order"
+"Activate Sandbox","Activate Sandbox"
+"Send All Outgoing emails to Email","Send All Outgoing emails to Email"
+"Solved Statuses","Solved Statuses"
+"Notifications check period, sec","Notifications check period, sec"
+"Show notification about arriving of new tickets for","Show notification about arriving of new tickets for"
+"Enable notification about arriving of new messages in tickets assigned for user","Enable notification about arriving of new messages in tickets assigned for user"
+"Enable notification about assigning a ticket to the user","Enable notification about assigning a ticket to the user"
+"Show online/offline status on the Contact Us page","Show online/offline status on the Contact Us page"
+"Show online/offline status in the Feedback popup","Show online/offline status in the Feedback popup"
+"Show online/offline status in the Customer Account > My Tickets","Show online/offline status in the Customer Account > My Tickets"
+"Default message when we are open","Default message when we are open"
+"Default message when we are closed","Default message when we are closed"
+"Show working hours on the Contact Us page","Show working hours on the Contact Us page"
+"Show holiday schedule in X days before activation","Show holiday schedule in X days before activation"
+"Working schedule title","Working schedule title"
+"Upcoming working schedule title","Upcoming working schedule title"
+"Helpdesk Contact Form","Helpdesk Contact Form"
+"All Store Views","All Store Views"
+"Purchased From","Purchased From"
+User,User
+"Replies #","Replies #"
+"Mail was sent","Mail was sent"
+Created,Created
+Modified,Modified
+"Status Sort Order","Status Sort Order"
+Title,Title
+Active,Active
+"Is Show on Frontend","Is Show on Frontend"
+"Sort Order","Sort Order"
+"Sender Email","Sender Email"
+"If ticket is unassigned, send notifications to all department members","If ticket is unassigned, send notifications to all department members"
+"If ticket is unassigned, send notifications to email","If ticket is unassigned, send notifications to email"
+Code,Code
+Type,Type
+Description,Description
+"Options list","Options list"
+"Show value in customer account","Show value in customer account"
+"Show in create ticket form","Show in create ticket form"
+"Show in contact us form","Show in contact us form"
+"Required for customers","Required for customers"
+"Required for staff","Required for staff"
+Login,Login
+Password,Password
+Host,Host
+Port,Port
+"Fetch Frequency (minutes)","Fetch Frequency (minutes)"
+"Fetch Max","Fetch Max"
+"Fetch Only X Last Emails","Fetch Only X Last Emails"
+"Auto assign tickets to Store View","Auto assign tickets to Store View"
+"Auto assign tickets to department","Auto assign tickets to department"
+Notes,Notes
+"Create New Department","Create New Department"
+"Change status","Change status"
+Inactive,Inactive
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+"Is Active","Is Active"
+"Create New Field","Create New Field"
+"Create New Gateway","Create New Gateway"
+"Last Fetched At","Last Fetched At"
+"Last Fetch Result","Last Fetch Result"
+"Create New Pattern","Create New Pattern"
+"Create New Permission","Create New Permission"
+Role,Role
+"Has Access to Tickets of Departments","Has Access to Tickets of Departments"
+"Can Remove Tickets","Can Remove Tickets"
+"Create New Priority","Create New Priority"
+Color,Color
+"Create New Rule","Create New Rule"
+"Is Stop Processing","Is Stop Processing"
+Rate,Rate
+"View Ticket","View Ticket"
+"Create New Schedule","Create New Schedule"
+Holiday,Holiday
+"Active From","Active From"
+"Active To","Active To"
+"Create New Status","Create New Status"
+"Create New Template","Create New Template"
+Select...,Select...
+"Mark as Spam","Mark as Spam"
+"Mark as Archive","Mark as Archive"
+"Merge tickets","Merge tickets"
+"Mark as Inbox","Mark as Inbox"
+"Change Assignee","Change Assignee"
+Requester,Requester
+"Requester Email","Requester Email"
+"Can Delete Tickets","Can Delete Tickets"
+"Rule Name","Rule Name"
+"Stop Further Rules Processing","Stop Further Rules Processing"
+Event,Event
+"Set Status","Set Status"
+"Set Priority","Set Priority"
+"Set Department","Set Department"
+"Set Owner","Set Owner"
+"Add Tags","Add Tags"
+"Remove Tags","Remove Tags"
+"Send email to ticket owner","Send email to ticket owner"
+"Send email to all department users","Send email to all department users"
+"Send email to customer","Send email to customer"
+"Send email to other email addresses","Send email to other email addresses"
+"Email subject","Email subject"
+"Email Body","Email Body"
+"Attach files which were attached to the last message","Attach files which were attached to the last message"
+Stores,Stores
+"Is Holiday","Is Holiday"
+Timezone,Timezone
+"Open message","Open message"
+"Closed message","Closed message"
+"Internal Title","Internal Title"
+"Request ID","Request ID"

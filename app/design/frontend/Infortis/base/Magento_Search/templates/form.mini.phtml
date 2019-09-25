@@ -1,0 +1,74 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+    /** @var $block \Magento\Framework\View\Element\Template */
+    /** @var $helper \Magento\Search\Helper\Data */
+    $helper = $this->helper('Magento\Search\Helper\Data');
+    $theme = $this->helper('Infortis\Base\Helper\Data');
+
+    $searchClasses = '';
+    $mode = $theme->getCfgDesign('search/mode');
+    if ($mode === 'e')
+    {
+        $searchClasses .= ' expanding';
+    }
+
+    $searchSize = $theme->getCfgDesign('search/size');
+    if (!empty($searchSize))
+    {
+        $searchClasses .= ' size-' . $searchSize;
+    }
+?>
+<div id="header-search" class="skip-content skip-content--style">
+<div id="block-search" class="block block-search search-wrapper<?php echo $searchClasses; ?>"> <?php /* @deprecated class "search-wrapper" */ ?>
+    <div class="block block-title"><strong><?php /* @escapeNotVerified */ echo __('Search'); ?></strong></div>
+    <div class="block block-content">
+        <form class="form minisearch" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
+            <div class="field search">
+                <?php /* <label class="label" for="search" data-role="minisearch-label">
+                    <span><?php echo __('Search'); ?></span>
+                </label> */ ?>
+                <div class="control">
+                    <input id="search"
+                           data-mage-init='{"quickSearch":{
+                                "formSelector":"#search_mini_form",
+                                "url":"<?php /* @escapeNotVerified */ echo $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]); ?>",
+                                "destinationSelector":"#search_autocomplete"}
+                           }'
+                           type="text"
+                           name="<?php /* @escapeNotVerified */ echo $helper->getQueryParamName() ?>"
+                           value="<?php /* @escapeNotVerified */ echo $helper->getEscapedQueryText() ?>"
+                           placeholder="<?php /* @escapeNotVerified */ echo __('Search entire store here...'); ?>"
+                           class="input-text"
+                           maxlength="<?php /* @escapeNotVerified */ echo $helper->getMaxQueryLength();?>"
+                           role="combobox"
+                           aria-haspopup="false"
+                           aria-autocomplete="both"
+                           autocomplete="off"/>
+                    <div id="search_autocomplete" class="search-autocomplete"></div>
+                    <?php echo $block->getChildHtml() ?>
+                </div>
+            </div>
+            <div class="actions">
+                <button id="action-search" type="submit"
+                        title="<?php echo $block->escapeHtml(__('Search')) ?>"
+                        class="action search">
+                    <span class="icon ic ic-search ib ib-square ib-hover"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div> <!-- end: block-search -->
+<?php if ($mode === 'e'): ?>
+<script type="text/javascript">
+    //<![CDATA[
+    requirejs(['jquery', 'expandingsearch'], function(jQuery, expandingsearch) {
+        jQuery(function($) {
+            $('#block-search').expandingsearch();
+        });
+    }); //end: requirejs
+    //]]>
+</script>
+<?php endif; ?>
+</div>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../Backend/etc/system_file.xsd">
+    <system>
+
+        <section id="competition" translate="label" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Competition</label>
+            <tab>customer</tab>
+            <resource>PL_Competition::competition</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>General Settings</label>
+                <field id="is_disclaimer" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disclaimer Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Additional field in frontend</comment>
+                </field>
+                <field id="is_dob" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Date of Birth</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Additional field in frontend</comment>
+                </field>
+                <field id="url_prefix" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Route Name</label>
+                    <comment><![CDATA[Enter <i>compeittion</i>, it will be <i>http://example.com/compeittion</i>. Must NOT contain any slashes. Leave blank for default value]]></comment>
+                </field>
+                <field id="breadcrumbs" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="meta_title" translate="label comment" type="text" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Title</label>
+                </field>
+                <field id="meta_keywords" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Keywords</label>
+                </field>
+                <field id="meta_description" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Description</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

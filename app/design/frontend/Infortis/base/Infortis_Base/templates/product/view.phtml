@@ -1,0 +1,159 @@
+<?php
+/**
+ * @var \Infortis\Base\Block\Catalog\Product\View $block
+ */
+?>
+<?php
+    $theme = $block->getHelperTheme();
+    $helperProductView = $block->getHelperProductView();
+    $helperLabels = $this->helper('Infortis\Base\Helper\Labels');
+    $helperAddToLinks = $this->helper('Infortis\Base\Helper\AddToLinks');
+
+    // Get grid classes for product page sections
+    $grid = $helperProductView->getGridClasses();
+
+    // Get positions of blocks
+    $position = $helperProductView->getPositions();
+
+    // Brand info
+    $brandHtml = $block->getChildHtml('brand-info');
+    if (!empty($brandHtml)) {
+        if (isset($p[$position['brand']])) {
+            $p[$position['brand']] = $p[$position['brand']] . $brandHtml;
+        } else {
+            $p[$position['brand']] = $brandHtml;
+        }
+    }
+
+    // Product collateral data
+    $collateralHtml = $block->getChildHtml('product.info.details');
+    if (!empty($collateralHtml)) {
+        if (isset($p[$position['collateral']])) {
+            $p[$position['collateral']] = $p[$position['collateral']] . $collateralHtml;
+        } else {
+            $p[$position['collateral']] = $collateralHtml;
+        }
+    }
+
+    // Related products
+    $relatedProductsHtml = $block->getChildHtml('catalog.product.related');
+    if (!empty($relatedProductsHtml)) {
+        if (isset($p[$position['related']])) {
+            $p[$position['related']] = $p[$position['related']] . $relatedProductsHtml;
+        } else {
+            $p[$position['related']] = $relatedProductsHtml;
+        }
+    }
+
+    // Up-sell products
+    $upsellProductsHtml = $block->getChildHtml('product.info.upsell');
+    if (!empty($upsellProductsHtml)) {
+        if (isset($p[$position['upsell']])) {
+            $p[$position['upsell']] = $p[$position['upsell']] . $upsellProductsHtml;
+        } else {
+            $p[$position['upsell']] = $upsellProductsHtml;
+        }
+    }
+?>
+<div class="product-view product-columns-wrapper">
+
+    <div class="product-img-column <?php echo $grid['imgCol']; ?> no-left-gutter product media <?php echo $helperLabels->getLabelsClasses(); ?>">
+
+        <?php echo $block->getChildHtml('product.info.media'); ?>
+        <?php echo $helperLabels->getLabels($block->getProduct()); ?>
+        <?php if (isset($p['imgCol_1'])) echo $p['imgCol_1']; ?>
+
+        <?php // Container at the bottom ?>
+        <?php echo $block->getChildHtml('container_product_image_1'); ?>
+
+        <div class="non-collapsing-column-placeholder"></div>
+
+    </div>
+
+    <?php // TODO: remove old classes such as "product-shop" ?>
+    <div class="product-primary-column product-shop <?php echo $grid['primCol']; ?> product-info-main">
+
+        <?php echo $block->getChildHtml('page.main.title'); ?>
+        <?php echo $block->getChildHtml('product.info.review'); ?>
+
+        <?php if (isset($p['primCol_1'])) echo $p['primCol_1']; ?>
+        <?php echo $block->getChildHtml('product.info.main'); ?>
+        <?php if (isset($p['primCol_2'])) echo $p['primCol_2']; ?>
+
+        <?php // Container at the bottom ?>
+        <?php echo $block->getChildHtml('container_product_primary_2'); ?>
+
+    </div>
+    
+    <?php if (isset($grid['secCol'])): ?>
+
+        <div class="product-secondary-column custom-sidebar-right <?php echo $grid['secCol']; ?> no-right-gutter">
+            <div class="inner">
+
+                <?php // Container at the top ?>
+                <?php echo $block->getChildHtml('container_product_secondary_1'); ?>
+
+                <?php if (isset($p['secCol_1'])) echo $p['secCol_1']; ?>
+                <?php echo $block->getChildHtml('block_product_secondary_bottom'); ?>
+                <?php if (isset($p['secCol_2'])) echo $p['secCol_2']; ?>
+
+                <?php // Container at the bottom ?>
+                <?php echo $block->getChildHtml('container_product_secondary_2'); ?>
+
+                <?php //if (isset($p['secCol_3'])) echo $p['secCol_3']; ?>
+
+                <?php // TODO: ?>
+                <?php if ($tmpHtml = $block->getChildHtml('product_secondary_top_placeholder')): ?>
+                    <div class="feature-wrapper bottom-border"><?php echo $tmpHtml; ?></div>
+                <?php endif; ?>
+
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+    <div class="product-lower-primary-column <?php echo $grid['lowerPrimCol']; ?>">
+
+        <?php echo $block->getChildHtml('bundle.options.container'); ?>
+        <?php echo $block->getChildHtml('moved.downloadable.product-info'); ?>
+
+        <?php // Container at the top. Important: required AFTER the bundle and downloadable blocks. ?>
+        <?php echo $block->getChildHtml('container_product_lower_primary_1'); ?>
+
+        <?php if (isset($p['lowerPrimCol_1'])) echo $p['lowerPrimCol_1']; ?>
+
+        <?php // Container at the bottom ?>
+        <?php echo $block->getChildHtml('container_product_lower_primary_2'); ?>
+
+    </div>
+
+    <?php if (isset($grid['lowerSecCol'])): ?>
+
+        <div class="product-lower-secondary-column custom-sidebar-right <?php echo $grid['lowerSecCol']; ?>">
+            <div class="inner">
+
+                <?php // Container at the top ?>
+                <?php echo $block->getChildHtml('container_product_lower_secondary_1'); ?>
+
+                <?php if (isset($p['lowerSecCol_1'])) echo $p['lowerSecCol_1']; ?>
+
+                <?php // Container at the bottom ?>
+                <?php echo $block->getChildHtml('container_product_lower_secondary_2'); ?>
+
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+    requirejs(['jquery','qtycontrol'], function(jQuery, qtycontrol) {
+        jQuery(function($) {
+            $('input.qty').qtycontrol();
+        }); //end: on document ready
+    });
+
+//]]>
+</script>

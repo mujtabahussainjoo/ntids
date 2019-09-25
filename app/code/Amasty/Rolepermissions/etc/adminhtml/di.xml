@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="amasty_advanced_permissions" xsi:type="array">
+                    <item name="class" xsi:type="string">Amasty\Rolepermissions\Ui\DataProvider\Product\Form\Modifier\Owner</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Catalog\Ui\Component\ColumnFactory">
+        <plugin name="Amasty_Rolepermissions::Catalog_Ui_Component_ColumnFactory" type="Amasty\Rolepermissions\Plugin\Catalog\Ui\Component\ColumnFactory" />
+    </type>
+    <type name="Magento\Customer\Block\Adminhtml\Edit\GenericButton">
+        <plugin name="Amasty_Rolepermissions::CustomerButtons" type="Amasty\Rolepermissions\Plugin\Customer\Block\Adminhtml\Edit\GenericButton" />
+    </type>
+    <type name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\General">
+        <plugin name="Amasty_Rolepermissions::ProductAttributesMeta" type="Amasty\Rolepermissions\Plugin\Catalog\Ui\DataProvider\Product\Form\Modifier\General" />
+    </type>
+    <type name="Magento\Catalog\Ui\Component\Listing\Columns">
+        <plugin name="Amasty_Rolepermissions::ProductAttributesMeta" type="Amasty\Rolepermissions\Plugin\Catalog\Ui\Component\Listing\Columns" />
+    </type>
+    <type name="Magento\CatalogRule\Block\Adminhtml\Edit\GenericButton">
+        <plugin name="Amasty_Rolepermissions::CatalogRuleButtons" type="Amasty\Rolepermissions\Plugin\CatalogRule\Block\Adminhtml\Edit\GenericButton" />
+    </type>
+    <type name="Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\GenericButton">
+        <plugin name="Amasty_Rolepermissions::CartRuleButtons" type="Amasty\Rolepermissions\Plugin\SalesRule\Block\Adminhtml\Promo\Quote\Edit\GenericButton" />
+    </type>
+    <type name="Magento\Rule\Model\Condition\Combine">
+        <plugin name="Amasty_Rolepermissions::CatalogRuleCombine" type="Amasty\Rolepermissions\Plugin\Rule\Model\Condition\Combine" />
+    </type><type name="Magento\Eav\Model\Entity\AbstractEntity">
+        <plugin name="Amasty_Rolepermissions::EavAbstractEntity" type="Amasty\Rolepermissions\Plugin\Eav\Model\Entity\AbstractEntity" />
+    </type>
+    <type name="Magento\Framework\Data\Collection\AbstractDb">
+        <plugin name="Amasty_Rolepermissions::AbstractDb" type="Amasty\Rolepermissions\Plugin\Framework\Data\Collection\AbstractDb" />
+    </type>
+    <type name="Magento\CatalogInventory\Ui\DataProvider\Product\Form\Modifier\AdvancedInventory">
+        <plugin name="Amasty_Rolepermissions::AdvancedInventory" type="Amasty\Rolepermissions\Plugin\CatalogInventory\Ui\DataProvider\Product\Form\Modifier\AdvancedInventory" />
+    </type>
+    <!-- for fixing fatal Call to undefined method Magento\Customer\Model\Indexer\Source::addAttributeToSelect() -->
+    <type name="Magento\Framework\Indexer\Handler\AttributeHandler">
+        <plugin name="Amasty_Rolepermissions::CustomerAttributeValidation" type="Amasty\Rolepermissions\Plugin\Framework\Indexer\Handler\AttributeHandler"/>
+    </type>
+    <type name="Magento\Store\Model\Website">
+        <plugin name="Amasty_Rolepernissions::DefaultStore" type="Amasty\Rolepermissions\Plugin\Store\Model\Website" />
+    </type>
+    <type name="Magento\Store\Model\StoreManager">
+        <plugin name="Amasty_Rolepermissions::Store_Manager" type="Amasty\Rolepermissions\Plugin\StoreManager" />
+    </type>
+    <type name="Magento\Store\Model\WebsiteRepository">
+        <plugin name="Amasty_Rolepermissions::WebsiteRepository" type="Amasty\Rolepermissions\Plugin\Store\Model\WebsiteRepository" />
+    </type>
+    <type name="Magento\Authorization\Model\ResourceModel\Role\Collection">
+        <plugin name="amastyRolepermissionsCollection" type="Amasty\Rolepermissions\Plugin\Autorization\Model\ResourceModel\Role\CollectionPlugin"/>
+    </type>
+    <type name="Magento\User\Model\ResourceModel\User\Collection">
+        <plugin name="amastyRolepermissionsCollection" type="Amasty\Rolepermissions\Plugin\User\Model\ResourceModel\User\CollectionPlugin"/>
+    </type>
+    <type name="Magento\User\Controller\Adminhtml\User\Edit">
+        <plugin name="amastyRolepermissionsEdit" type="Amasty\Rolepermissions\Plugin\User\Controller\Adminhtml\User\EditPlugin"/>
+    </type>
+    <type name="Magento\User\Model\ResourceModel\User">
+        <plugin name="amastyRolepermissionsUser" type="Amasty\Rolepermissions\Plugin\User\Model\ResourceModel\UserPlugin"/>
+    </type>
+    <type name="Magento\Framework\App\CacheInterface">
+        <plugin name="Amasty_Rolepermissions::Cache" type="Amasty\Rolepermissions\Plugin\Framework\App\Cache" />
+    </type>
+    <type name="Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Button\Save">
+        <plugin name="Amasty_Rolepermissions::ButtonSave" type="Amasty\Rolepermissions\Plugin\ConfigurableProduct\Block\Adminhtml\Product\Edit\Button\Save" />
+    </type>
+    <!-- compatibility with magento EE AdminGws module -->
+    <type name="Magento\AdminGws\Model\Collections">
+        <plugin name="Amasty_Rolepermissions::addStoreFilter" type="Amasty\Rolepermissions\Plugin\AdminGws\Model\Collections\AddFilter" />
+    </type>
+</config>

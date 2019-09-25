@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Api preferences -->
+    <preference for="MageWorx\ShippingRules\Api\ExtendedZoneInterface" type="MageWorx\ShippingRules\Model\ExtendedZone" />
+    <preference for="MageWorx\ShippingRules\Api\Data\ExtendedZoneDataInterface" type="MageWorx\ShippingRules\Model\ExtendedZone" />
+    <preference for="MageWorx\ShippingRules\Api\AddressResolverInterface" type="MageWorx\ShippingRules\Model\AddressResolver" />
+    <preference for="MageWorx\ShippingRules\Api\Data\RegionInterface" type="MageWorx\ShippingRules\Model\Region" />
+    <preference for="MageWorx\ShippingRules\Api\Data\RuleInterface" type="MageWorx\ShippingRules\Model\Rule" />
+    <preference for="MageWorx\ShippingRules\Api\Data\CarrierInterface" type="MageWorx\ShippingRules\Model\Carrier" />
+    <preference for="MageWorx\ShippingRules\Api\Data\MethodInterface" type="MageWorx\ShippingRules\Model\Carrier\Method" />
+    <preference for="MageWorx\ShippingRules\Api\Data\ZoneInterface" type="MageWorx\ShippingRules\Model\Zone" />
+    <preference for="MageWorx\ShippingRules\Api\Data\RateInterface" type="MageWorx\ShippingRules\Model\Carrier\Method\Rate" />
+    <preference for="MageWorx\ShippingRules\Api\RegionRepositoryInterface" type="MageWorx\ShippingRules\Model\RegionRepository" />
+    <preference for="MageWorx\ShippingRules\Api\RuleRepositoryInterface" type="MageWorx\ShippingRules\Model\RuleRepository" />
+    <preference for="MageWorx\ShippingRules\Api\CarrierRepositoryInterface" type="MageWorx\ShippingRules\Model\CarrierRepository" />
+    <preference for="MageWorx\ShippingRules\Api\MethodRepositoryInterface" type="MageWorx\ShippingRules\Model\Carrier\MethodRepository" />
+    <preference for="MageWorx\ShippingRules\Api\ZoneRepositoryInterface" type="MageWorx\ShippingRules\Model\ZoneRepository" />
+    <preference for="MageWorx\ShippingRules\Api\ExtendedZoneRepositoryInterface" type="MageWorx\ShippingRules\Model\ExtendedZoneRepository" />
+    <preference for="MageWorx\ShippingRules\Api\RateRepositoryInterface" type="MageWorx\ShippingRules\Model\Carrier\Method\RateRepository" />
+    <preference for="MageWorx\ShippingRules\Api\MethodEntityInterface" type="MageWorx\ShippingRules\Model\Carrier\Method" />
+    <preference for="MageWorx\ShippingRules\Api\ExportHandlerInterface" type="MageWorx\ShippingRules\Model\ImportExport\ExportHandler" />
+    <preference for="MageWorx\ShippingRules\Api\ImportHandlerInterface" type="MageWorx\ShippingRules\Model\ImportExport\ImportHandler" />
+    <type name="MageWorx\ShippingRules\Model\ImportExport\AbstractImportExport">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="carrier" xsi:type="string">MageWorx\ShippingRules\Api\Data\CarrierInterface</item>
+                <item name="method" xsi:type="string">MageWorx\ShippingRules\Api\Data\MethodInterface</item>
+                <item name="rate" xsi:type="string">MageWorx\ShippingRules\Api\Data\RateInterface</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="MageWorx\ShippingRules\Api\Data\RuleInterface" xsi:type="string">MageWorx\ShippingRules\Api\RuleRepositoryInterface</item>
+                <item name="MageWorx\ShippingRules\Api\Data\ZoneInterface" xsi:type="string">MageWorx\ShippingRules\Api\ZoneRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="MageWorx\ShippingRules\Api\Data\RuleInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">mageworx_shippingrules</item>
+                    <item name="identifierField" xsi:type="string">rule_id</item>
+                </item>
+                <item name="MageWorx\ShippingRules\Api\Data\ZoneInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">mageworx_shippingrules_zone</item>
+                    <item name="identifierField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Plugins -->
+    <type name="Magento\Shipping\Model\Rate\Result">
+        <plugin name="mageworx_shippingrules_update_rate_result"
+                type="MageWorx\ShippingRules\Model\Plugin\Shipping\Rate\Result\Append"
+                sortOrder="10"
+                disabled="false"/>
+        <plugin name="mageworx_shippingrules_update_disabled_or_enabled_rates"
+                type="MageWorx\ShippingRules\Model\Plugin\Shipping\Rate\Result\GetAllRates"
+                sortOrder="11"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Framework\App\Config">
+        <plugin name="mageworx_shippingrules_add_shipping_methods"
+                type="MageWorx\ShippingRules\Model\Plugin\AddMethods"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Shipping\Model\Config">
+        <plugin name="mageworx_shippingrules_add_validation_rules"
+                type="MageWorx\ShippingRules\Model\Plugin\AddValidationRules"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="MageWorx\ShippingRules\Model\Rule\Action\RateFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="amount" xsi:type="string">MageWorx\ShippingRules\Model\Rule\Action\Rate\Amount</item>
+                <item name="item" xsi:type="string">MageWorx\ShippingRules\Model\Rule\Action\Rate\PerItem</item>
+                <item name="product" xsi:type="string">MageWorx\ShippingRules\Model\Rule\Action\Rate\PerProduct</item>
+                <item name="weight" xsi:type="string">MageWorx\ShippingRules\Model\Rule\Action\Rate\PerUnitOfWeight</item>
+                <item name="selected" xsi:type="string">MageWorx\ShippingRules\Model\Rule\Action\Rate\PerSelectedItem</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Listing start -->
+    <virtualType name="MageWorx\ShippingRules\Ui\Component\Listing\Columns\Store"
+                 type="Magento\Store\Ui\Component\Listing\Column\Store">
+        <arguments>
+            <argument name="storeKey" xsi:type="string">store_ids</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesCarrierGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\Carrier\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesCarrierGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesCarrierGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\Carrier\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageworx_shippingrules_carrier</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_carrier_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">carrier_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Carrier</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mageworx_shippingrules_carrier_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Carrier\Grid\Collection</item>
+                <item name="mageworx_shippingrules_method_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Method\Grid\Collection</item>
+                <item name="mageworx_shippingrules_quote_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Rule\Grid\Collection</item>
+                <item name="mageworx_shippingrules_zone_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Zone\Grid\Collection</item>
+                <item name="mageworx_shippingrules_rates_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Rate\Grid\Collection</item>
+                <item name="mageworx_shippingrules_rates_regular_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Rate\Grid\RegularCollection</item>
+                <item name="mageworx_shippingrules_region_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Region\Grid\Collection</item>
+                <item name="mageworx_shippingrules_extendedzone_listing_data_source" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\ExtendedZone\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Methods listing -->
+    <virtualType name="MageWorxShippingRulesMethodGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\Method\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesMethodGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesMethodGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\Method\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageworx_shippingrules_methods</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_method_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">method_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Method</argument>
+        </arguments>
+    </type>
+    <!-- Rates listing -->
+    <virtualType name="MageWorxShippingRulesRateGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\Rate\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesRateGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesRateGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\Rate\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageworx_shippingrules_rates</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_rate_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">rate_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Rate</argument>
+        </arguments>
+    </type>
+    <!-- Rates regular listing -->
+    <virtualType name="MageWorxShippingRulesRateRegularGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\Rate\Grid\RegularCollection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesRateRegularGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesRateRegularGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\Rate\Grid\RegularCollection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageworx_shippingrules_rates</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_rate_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">rate_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Rate</argument>
+        </arguments>
+    </type>
+    <!-- Rules listing -->
+    <virtualType name="MageWorxShippingRulesRuleGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\Rule\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesRuleGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesRuleGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\Rule\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageworx_shippingrules</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_rule_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">rule_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </type>
+    <!-- Zones listing -->
+    <virtualType name="MageWorxShippingRulesZoneGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\Zone\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesZoneGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesZoneGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\Zone\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageworx_shippingrules_zone</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_zone_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">zone_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Zone</argument>
+        </arguments>
+    </type>
+    <!-- Region listing -->
+    <virtualType name="MageWorxShippingRulesRegionGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\Region\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesRegionGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesRegionGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\Region\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_country_region</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_region_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">region_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\Region</argument>
+        </arguments>
+    </type>
+    <!-- Pop-up Zones listing -->
+    <virtualType name="MageWorxShippingRulesExtendedZoneGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MageWorx\ShippingRules\Model\ResourceModel\ExtendedZone\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MageWorxShippingRulesExtendedZoneGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorxShippingRulesExtendedZoneGridFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Model\ResourceModel\ExtendedZone\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageworx_shippingrules_extended_zone</argument>
+            <argument name="eventPrefix" xsi:type="string">mageworx_shippingrules_extended_zone_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">extended_zone_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">MageWorx\ShippingRules\Model\ResourceModel\ExtendedZone</argument>
+        </arguments>
+    </type>
+    <!-- Mass Action virtual controllers -->
+    <!-- Mass Change Status (is active): -->
+    <type name="MageWorx\ShippingRules\Controller\Adminhtml\Shippingrules\Carrier\MassChangeStatus">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">MageWorx\ShippingRules\Model\ResourceModel\Carrier\CollectionFactory</argument>
+            <argument name="entityFactory" xsi:type="object">MageWorx\ShippingRules\Model\CarrierFactory</argument>
+            <argument name="aclResourceName" xsi:type="string">MageWorx_ShippingRules::carrier</argument>
+            <argument name="activeFieldName" xsi:type="string">active</argument>
+            <argument name="activeRequestParamName" xsi:type="string">active</argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\ShippingRules\Controller\Adminhtml\Shippingrules\ExtendedZone\MassChangeStatus">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">MageWorx\ShippingRules\Model\ResourceModel\ExtendedZone\CollectionFactory</argument>
+            <argument name="entityFactory" xsi:type="object">MageWorx\ShippingRules\Model\ExtendedZoneFactory</argument>
+            <argument name="aclResourceName" xsi:type="string">MageWorx_ShippingRules::extended_zones</argument>
+            <argument name="activeFieldName" xsi:type="string">is_active</argument>
+            <argument name="activeRequestParamName" xsi:type="string">is_active</argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\ShippingRules\Controller\Adminhtml\Shippingrules\Method\MassChangeStatus">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">MageWorx\ShippingRules\Model\ResourceModel\Method\CollectionFactory</argument>
+            <argument name="entityFactory" xsi:type="object">MageWorx\ShippingRules\Model\Carrier\MethodFactory</argument>
+            <argument name="aclResourceName" xsi:type="string">MageWorx_ShippingRules::carrier</argument>
+            <argument name="activeFieldName" xsi:type="string">active</argument>
+            <argument name="activeRequestParamName" xsi:type="string">active</argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\ShippingRules\Controller\Adminhtml\Shippingrules\Quote\MassChangeStatus">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">MageWorx\ShippingRules\Model\ResourceModel\Rule\CollectionFactory</argument>
+            <argument name="entityFactory" xsi:type="object">MageWorx\ShippingRules\Model\RuleFactory</argument>
+            <argument name="aclResourceName" xsi:type="string">MageWorx_ShippingRules::quote</argument>
+            <argument name="activeFieldName" xsi:type="string">is_active</argument>
+            <argument name="activeRequestParamName" xsi:type="string">is_active</argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\ShippingRules\Controller\Adminhtml\Shippingrules\Region\MassChangeStatus">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">MageWorx\ShippingRules\Model\ResourceModel\Region\Filter\CollectionFactory</argument>
+            <argument name="entityFactory" xsi:type="object">MageWorx\ShippingRules\Model\RegionFactory</argument>
+            <argument name="aclResourceName" xsi:type="string">MageWorx_ShippingRules::carrier</argument>
+            <argument name="activeFieldName" xsi:type="string">is_active</argument>
+            <argument name="activeRequestParamName" xsi:type="string">active</argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\ShippingRules\Controller\Adminhtml\Shippingrules\Zone\MassChangeStatus">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">MageWorx\ShippingRules\Model\ResourceModel\Zone\CollectionFactory</argument>
+            <argument name="entityFactory" xsi:type="object">MageWorx\ShippingRules\Model\ZoneFactory</argument>
+            <argument name="aclResourceName" xsi:type="string">MageWorx_ShippingRules::zone</argument>
+            <argument name="activeFieldName" xsi:type="string">is_active</argument>
+            <argument name="activeRequestParamName" xsi:type="string">is_active</argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\ShippingRules\Controller\Adminhtml\Shippingrules\Rate\MassChangeStatus">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">MageWorx\ShippingRules\Model\ResourceModel\Rate\CollectionFactory</argument>
+            <argument name="entityFactory" xsi:type="object">MageWorx\ShippingRules\Model\Carrier\Method\RateFactory</argument>
+            <argument name="aclResourceName" xsi:type="string">MageWorx_ShippingRules::carrier</argument>
+            <argument name="activeFieldName" xsi:type="string">active</argument>
+            <argument name="activeRequestParamName" xsi:type="string">active</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Quote\Model\Quote\Address\RateResult\Method">
+        <plugin name="mageworx_shippingrules_change_method_name"
+                type="MageWorx\ShippingRules\Model\Plugin\Address\RateResult\Method"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+</config>

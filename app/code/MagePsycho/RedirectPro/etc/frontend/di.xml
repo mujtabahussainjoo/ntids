@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_RedirectPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Customer\Controller\Account\Logout">
+        <plugin name="magepsycho_redirectpro_customer_logout" type="MagePsycho\RedirectPro\Plugin\Customer\Controller\Account\Logout" />
+    </type>
+
+</config>

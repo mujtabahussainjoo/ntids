@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mirasvit>
+            <kb>
+                <enabled>1</enabled>
+            </kb>
+        </mirasvit>
+        <kb>
+            <general>
+                <base_url>knowledge-base</base_url>
+                <is_rating_enabled>1</is_rating_enabled>
+                <is_url_rewrite_enabled>1</is_url_rewrite_enabled>
+                <article_links_limit>5</article_links_limit>
+                <article_hide_author>0</article_hide_author>
+                <article_hide_date>0</article_hide_date>
+                <category_article_amount>0</category_article_amount>
+                <category_url_exclude>0</category_url_exclude>
+            </general>
+
+            <comments>
+                <provider>disqus</provider>
+                <disqus_shortname>m2kb</disqus_shortname>
+            </comments>
+        </kb>
+    </default>
+</config>

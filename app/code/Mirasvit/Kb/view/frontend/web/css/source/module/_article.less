@@ -1,0 +1,124 @@
+& when (@media-common = true) {
+  .kb-article__metadata {
+    .lib-clearfix();
+
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+
+    .author {
+      color: @color-gray64;
+      float: left;
+      font-size: 1.2rem;
+      font-weight: @font-weight__semibold;
+      line-height: 24px;
+      margin-right: 2rem;
+    }
+
+    .rating {
+      float: left;
+      color: @color-gray64;
+      font-size: 1.2rem;
+      font-weight: @font-weight__semibold;
+      line-height: 24px;
+
+      .fa {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &.kb-article__metadata-list {
+      margin: .5rem 0;
+    }
+  }
+
+  .kb-article__body {
+    margin-bottom: 2rem;
+  }
+
+  .kb-article__categories, .kb-article__tags {
+    margin-bottom: 2rem;
+
+    span {
+      &:after {
+        content: '·';
+        color: @color-gray82;
+        margin: 0 1rem;
+      }
+
+      &:first-child {
+        margin-left: 1rem;
+      }
+
+      &:last-child {
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+
+  .kb-article__helpful {
+    > a {
+      display: block;
+      border: 1px solid @color-gray76;
+      color: @color-gray76;
+      width: 35px;
+      height: 35px;
+      border-radius: 3px;
+      margin-left: 1rem;
+      float: left;
+      font-size: 20px;
+
+      i {
+        padding: 8px;
+      }
+
+      &:hover {
+        border-color: @color-gray68;
+        color: @color-gray68;
+      }
+    }
+
+    .metadata {
+      float: left;
+
+      strong {
+        font-weight: @font-weight__light;
+        display: block;
+      }
+      .count {
+        color: @color-gray64;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+//
+//    Desktop
+//--------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .kb-article__body-info-left {
+    float: left;
+    width: 60%;
+  }
+  .kb-article__body-info-right {
+    float: right;
+    width: 30%;
+    min-width: 250px;
+  }
+}
+
+//
+//    Mobile
+//--------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+  .kb-article__body-info-left {
+    .lib-clearfix();
+  }
+
+  .kb-article__body-info-right {
+    .lib-clearfix();
+    margin-bottom: 2rem;
+  }
+}

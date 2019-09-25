@@ -1,0 +1,13 @@
+<?php $totalsInfo = $block->getFoomanTotalsInfo(); ?>
+<?php foreach ($totalsInfo as $totalInfo): ?>
+<tr>
+    <td class="label"><?php echo $totalInfo['label']; ?><div id="surcharge"></div></td>
+    <td>
+        <input type="text"
+               name="creditmemo[fooman_surcharge][<?php echo $totalInfo['type_id']; ?>]"
+               value="<?php echo $totalInfo['value']; ?>"
+               class="input-text admin__control-text"
+               id="fooman_surcharge" />
+    </td>
+</tr>
+<?php endforeach; ?>

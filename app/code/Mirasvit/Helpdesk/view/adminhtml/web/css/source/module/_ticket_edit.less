@@ -1,0 +1,525 @@
+@message-internal-background: #FDEEEE;
+@message-internal-color: #CB4B4B;
+
+@message-customer-background: #ECFAFF;
+@message-customer-color: #4B8DCB;
+
+@message-staff-background: #F7FFEC;
+@message-staff-color: #98CB4B;
+@hint-color: #adadad;
+
+#hdmx__ticket-tabs {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin-top: -1px;
+
+    .admin__page-nav-items {
+        .lib-clearfix();
+        padding: 0;
+
+        .admin__page-nav-item {
+            .admin__page-nav-link {
+                display: block;
+                float: left;
+                padding: 1.5rem 2rem;
+                border: 0;
+                border-top: 4px solid transparent;
+            }
+
+            &.ui-state-active {
+                .admin__page-nav-link {
+                    border: 0;
+                    border-top: 4px solid #EB5202;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
+
+.helpdesk-ticket-add, .helpdesk-ticket-edit {
+    .page-main-actions {
+        margin-bottom: 0;
+    }
+    //#ticket_tabs {
+    //    ul {
+    //        padding-bottom: 0px;
+    //    }
+    //    .admin__page-nav-items {
+    //        .clearfix();
+    //
+    //        .admin__page-nav-item {
+    //            .admin__page-nav-link {
+    //                display: block;
+    //                float: left;
+    //                padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+    //            }
+    //            &.ui-state-active {
+    //                .admin__page-nav-link {
+    //                    border: 1px solid #e3e3e3;
+    //                    border-top: 3px solid #EB5202;
+    //                    border-bottom: 0;
+    //                }
+    //            }
+    //        }
+    //    }
+    //}
+
+    .side-col {
+        margin-left: 10px;
+    }
+    .ui-tabs-panel {
+        padding: 1.2rem 0 2rem 0;
+        .legend {
+            border-bottom: 1px solid #cccccc;
+            font-size: 1.7rem;
+            padding: 2rem 0 1rem 0;
+            width: 100%;
+
+        }
+    }
+
+
+    .ticket-summary, .customer-summary {
+        .section {
+            padding: 3.6rem 0 0rem;
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+        .admin__field {
+            textarea, select, input[type="text"] {
+                width: 100%;
+            }
+            input[type="text"] {
+                padding: 0.6rem 1rem 0.6rem;
+                border: 1px solid #adadad;
+            }
+            position:relative;
+
+            .note {
+                font-size: 12px;
+                font-weight: 400;
+                margin: 5px 0;
+            }
+        }
+        .admin__fieldset-wrapper-title {
+            padding:0 0 1rem 0;
+            margin-bottom: 1.7rem;
+        }
+    }
+
+    .customer-summary {
+        margin-top: 2.34rem;
+        .admin__field:first-child {
+            padding-top: 0;
+        }
+        .admin__field {
+            //padding-top: 2.6rem;
+            &:first-child {
+                padding-top: 0;
+            }
+            .admin__field-label {
+                line-height: 1.3rem;
+            }
+            .edit-block {
+                margin-top: 1rem;
+            }
+            .link {
+                margin-top: 2px;
+                width: 100%;
+            }
+            .mage-suggest {
+                width: 100%;
+                input[type="text"] {
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    border: 1px solid #adadad;
+                }
+            }
+        }
+        .edit-block {
+            position: relative;
+        }
+        //  Icon actions
+        .action-edit {
+            position: absolute;
+            right: 0;
+            .action-reset();
+            vertical-align: top;
+            &:before {
+                &:extend(.abs-icon all);
+                font-size: @action-dropdown-menu-item-actions__size;
+            }
+            > span {
+                .hidden();
+            }
+            padding-top: 0.2rem;;
+            padding-right: 0px;
+            &:before {
+                content: @icon-edit__content;
+            }
+            &:active {
+                .scale();
+            }
+        }
+        .mage-suggest-dropdown ul {
+            border: 1px solid @action-dropdown__active__border-color;
+            border-top-color: transparent;
+            box-shadow: @component__box-shadow__base;
+            left: 0;
+            margin-top: -2px;
+            padding: 0;
+            right: 0;
+            top: 100%;
+            z-index: 2;
+            &:after {
+                background-color: @action-dropdown__background-color;
+                content: '';
+                height: @component__shadow-size__base;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: -@component__shadow-size__base;
+            }
+            > li {
+                background-color: @action-dropdown__background-color;
+                border-top: 1px solid @action-dropdown__border-color;
+                display: block;
+                font-size: @font-size__s;
+                padding: @search-global-input__padding-top @search-global-input__padding-side @search-global-input__padding-bottom;
+                &._active {
+                    background-color: @color-blue-clear-sky;
+                }
+            }
+            .title {
+                display: block;
+                font-size: @search-global-input__font-size;
+            }
+            .type {
+                color: darken(@text__color, 10%);
+                display: block;
+            }
+            .mage-suggest-no-records {
+                display: inline-block;
+                padding: 10px;
+            }
+        }
+    }
+    .ticket-summary {
+        margin-top: 3.8rem;
+    }
+
+//    .helpdesk-messages {
+//        margin-top: 40px;
+//
+//        .helpdesk-message {
+//            .clearfix();
+//            position: relative;
+//            border: 1px solid #d8d8d8;
+//            margin: 50px 0px;
+//            .border-radius(0px 5px 5px 0px);
+//            padding: 10px;
+//
+//            .message-header {
+//                position: absolute;
+//                top: -30px;
+//                font-weight: bold;
+//                margin-left: -15px;
+//                width: 100%;
+//                .source {
+//                    margin-right: 0px;
+//                    float: right;
+//                    a {
+//                        text-decoration: none;
+//                        font-weight: normal;
+//                        color: #666;
+//                    }
+//                }
+//                .minor {
+//                    color: #aaaaaa;
+//                    margin-left: 2px;
+//                    font-weight: normal;
+//                }
+//            }
+//
+//            &:after {
+//                width: 0;
+//                height: 0;
+//                border-left: 8px solid transparent;
+//                border-right: 8px solid transparent;
+//                border-bottom: 8px solid #d8d8d8;
+//                position: absolute;
+//                top: -9px;
+//                left: 10px;
+//                content: '';
+//            }
+//
+//            &.staff {
+//                border: 1px solid @message-staff-color;
+//                border-left: 5px solid @message-staff-color;
+//                background: @message-staff-background;
+//
+//                &:after {
+//                    border-bottom-color: @message-staff-color;
+//                }
+//            }
+//
+//            &.user {
+//                border: 1px solid @userColor;
+//                border-left: 5px solid @userColor;
+//                background: @userBg;
+//
+//                &:after {
+//                    border-bottom-color: @userColor;
+//                }
+//            }
+//
+//            &.internal, &.internal_third {
+//                border: 1px solid @internalColor;
+//                border-left: 5px solid @internalColor;
+//                background: @internalBg;
+//                margin-left: 40px;
+//
+//                &:after {
+//                    border-bottom-color: @internalColor;
+//                }
+//            }
+//
+//            a {
+//                color: #1e0fbe;
+//            }
+//
+//            .attachment {
+//                margin: 8px 0px 1px 0px;
+//
+//                a {
+//                    margin-right: 5px;
+//                    color: #ea7601;
+//                }
+//            }
+//        }
+//    }
+}
+
+.hdmx__reply-switcher {
+    padding-bottom: 0;
+    margin-bottom: 1.7rem;
+
+    .hdmx-reply-switcher__note {
+        color: #adadad;
+        padding-left: 1.5rem;
+        font-size: 1.2rem;
+        max-width: 30rem;
+        height: 36px;
+        line-height: 1.5rem;
+        vertical-align: middle;
+        display: table-cell;
+        overflow: hidden;
+        padding-top: 6px;
+        position: relative;
+
+        &:before {
+            content: '';
+            background: #E3E3E3;
+            height: 30px;
+            width: 1px;
+            position: absolute;
+            top: 6px;
+            left: 0;
+        }
+    }
+
+    .hdmx-reply-switcher__dropdown {
+        float: left;
+        margin-left: -17px;
+
+        > button {
+            padding: 0.9rem 3.3rem 0.9rem 1.5rem;
+
+            span {
+                font-size: 1.7rem;
+                font-weight: 600;
+
+                &:after {
+                    left: 0px;
+                    right: -6px;
+                }
+            }
+        }
+
+        .admin__action-dropdown-menu {
+            left: 0;
+            font-size: 1.4rem;
+            border-color: #adadad;
+
+            li {
+                &:hover {
+                    background: #efefef;
+                }
+                span {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+
+        &._active {
+            > button {
+                border-color: #adadad;
+            }
+        }
+    }
+}
+
+.hdmx__reply-quick-response {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.hdmx__reply {
+    .lib-clearfix();
+    margin-bottom: 3rem;
+
+    .hdmx__reply-area {
+        width: 100%;
+        height: 12rem;
+        background: #fff;
+        border: 1px solid #adadad;
+        padding: 1rem;
+        border-radius: 1px;
+        border-left: 3px solid #fff;
+
+        &.public {
+            border-left-color: @message-staff-color;
+        }
+        &.internal {
+            border-left-color: @message-internal-color;
+        }
+        &.public_third {
+            border-left-color: @message-staff-color;
+        }
+        &.internal_third {
+            border-left-color:  @message-internal-color;
+        }
+    }
+
+    .third-party {
+        margin-bottom: 10px;
+
+        input, label {
+            width: 250px;
+        }
+    }
+
+    .hdmx__reply-attachments {
+        float: right;
+        font-size: 12px;
+        background: #F5F5F5;
+        padding: 0.5rem;
+        border-radius: 1px;
+        width: 250px;
+        overflow: hidden;
+
+        .MultiFile-label {
+            white-space: nowrap;
+            padding: 0.3rem;
+
+            .MultiFile-remove {
+                color: transparent;
+
+                &:before {
+                    &:extend(.abs-icon all);
+                    .transition(color 0.2s);
+                    cursor: pointer;
+                    font-size: 12px;
+                    color: @hint-color;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-weight: 300;
+                    content: @icon-remove-small__content;
+                }
+            }
+        }
+    }
+}
+
+.hdmx__message {
+    margin-bottom: 3rem;
+    word-wrap: break-word;
+
+    .hdmx-message__header {
+        .lib-clearfix();
+        position: relative;
+        margin: 0 0 5px 3px;
+
+        strong {
+            font-weight: @font-weight__semibold;
+        }
+
+        span {
+            color: @hint-color;
+            margin-left: 1.5rem;
+        }
+    }
+
+    .hdmx-message__source {
+        .transition(opacity 0.2s);
+        float: right;
+        color: @hint-color;
+        opacity: 0;
+        position: absolute;
+        right: 0.5rem;
+        top: 2.5rem;
+    }
+
+    .hdmx-message__body {
+        background: @message-customer-background;
+        border-left: 3px solid @message-customer-color;
+        padding: 1rem 1.5rem;
+
+        &.staff {
+            background: @message-staff-background;
+            border-left-color: @message-staff-color;
+        }
+
+        &.internal, &.internal_third {
+            background: @message-internal-background;
+            border-left-color: @message-internal-color;
+        }
+    }
+
+    .hdmx-message__attachments {
+        margin-top: 2rem;
+
+        a {
+            font-size: 13px;
+            margin-right: 2rem;
+        }
+
+        span {
+            font-size: 13px;
+            margin-right: 2rem;
+            color: red;
+        }
+    }
+
+    &:hover {
+        .hdmx-message__source {
+            opacity: 1;
+        }
+    }
+}
+
+#hdmx__ticket-tabs_additional_section_content {
+    .admin__field {
+        .admin__field-control {
+            .control-value, a {
+                line-height: 3.2rem;
+            }
+        }
+    }
+}

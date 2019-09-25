@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+Copyright © 2017 MageWorx. All rights reserved.
+See LICENSE.txt for license details.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MageWorx_ShippingRules::style.css"/>
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Zone\Edit\Tabs" name="shippingrules_zone_edit_tabs">
+                <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Zone\Edit\Tab\Main" name="shippingrules_zone_edit_tab_main"/>
+                <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Zone\Edit\Tab\Conditions" name="shippingrules_zone_edit_tab_conditions"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">shippingrules_zone_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">conditions_section</argument>
+                    <argument name="block" xsi:type="string">shippingrules_zone_edit_tab_conditions</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="MageWorx\ShippingRules\Block\Adminhtml\Shippingrules\Zone\Edit" name="shippingrules_zone_edit"/>
+        </referenceContainer>
+    </body>
+</page>

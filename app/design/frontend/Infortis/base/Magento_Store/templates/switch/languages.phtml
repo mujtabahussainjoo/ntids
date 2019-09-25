@@ -1,0 +1,36 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * Language switcher template
+ */
+?>
+<?php if (count($block->getStores())>1): ?>
+<?php
+    $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : '';
+    $helperDesign = $this->helper('Infortis\Base\Helper\Design');
+    $currentFlagUrl = $helperDesign->getFlagUrl($block->getCurrentStoreCode());
+
+    $helperHeader = $this->helper('Infortis\Base\Helper\Template\Theme\Html\Header');
+    $blockClasses = $helperHeader->getDropdownsClasses();
+?>
+<div class="dropdown-block<?php echo $blockClasses; ?> dropdown-block-trigger lang-switcher<?php if ($id) echo ' lang-switcher' . $id; ?>" id="switcher-language<?php /* @escapeNotVerified */ echo $id?>">
+    <div class="dropdown-heading">
+        <span class="inner-heading view-<?php echo $block->escapeHtml($block->getCurrentStoreCode()) ?>" title="<?php /* @escapeNotVerified */ echo __('Language') ?>">
+            <span class="label dropdown-icon" style="background-image:url('<?php echo $currentFlagUrl; ?>');">&nbsp;</span>
+            <span class="label"><?php echo $block->escapeHtml($block->getStoreName()) ?></span>
+            <span class="caret"></span>
+        </span>
+    </div>
+    <ul class="dropdown-content">
+        <?php foreach ($block->getStores() as $_lang): ?>
+            <?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
+                <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+                    <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_lang); ?>'><span class="label dropdown-icon" style="background-image:url('<?php echo $helperDesign->getFlagUrl($_lang->getCode()); ?>');">&nbsp;</span><?php echo $block->escapeHtml($_lang->getName()) ?></a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

@@ -1,0 +1,42 @@
+<!-- ko if: isDisplayedBoth() -->
+    <!-- ko foreach: getSurcharges() -->
+        <!-- ko if: $parent.isDisplayed($data.amount) -->
+            <tr class="totals fooman-surcharge excl">
+                <th class="mark" scope="row" data-bind="text: label + ' ' + $parents[0].excludingTaxMessage"></th>
+                <td class="amount">
+                    <span class="price" data-bind="text: $parent.getAsCurrency($data.amount), attr:{'data-label': label + ' ' + $parents[0].excludingTaxMessage}"></span>
+                </td>
+            </tr>
+            <tr class="totals fooman-surcharge incl">
+                <th class="mark" scope="row" data-bind="text: label + ' ' + $parents[0].includingTaxMessage"></th>
+                <td class="amount">
+                    <span class="price" data-bind="text: $parent.getAsCurrency($data.amount+$data.tax_amount), attr:{'data-label': label + ' ' + $parents[0].includingTaxMessage}"></span>
+                </td>
+            </tr>
+        <!-- /ko -->
+    <!-- /ko -->
+<!-- /ko -->
+<!-- ko if: isDisplayedTaxInclusive() -->
+    <!-- ko foreach: getSurcharges() -->
+        <!-- ko if: $parent.isDisplayed($data.amount) -->
+            <tr class="totals fooman-surcharge incl">
+                <th class="mark" scope="row" data-bind="text: label"></th>
+                <td class="amount">
+                    <span class="price" data-bind="text: $parent.getAsCurrency($data.amount+$data.tax_amount), attr:{'data-label': label}"></span>
+                </td>
+            </tr>
+        <!-- /ko -->
+    <!-- /ko -->
+<!-- /ko -->
+<!-- ko if: isDisplayedTaxExclusive() -->
+    <!-- ko foreach: getSurcharges() -->
+        <!-- ko if: $parent.isDisplayed($data.amount) -->
+            <tr class="totals fooman-surcharge excl">
+                <th class="mark" scope="row" data-bind="text: label"></th>
+                <td class="amount">
+                    <span class="price" data-bind="text: $parent.getAsCurrency($data.amount), attr:{'data-label': label}"></span>
+                </td>
+            </tr>
+        <!-- /ko -->
+    <!-- /ko -->
+<!-- /ko -->

@@ -1,0 +1,227 @@
+
+//
+//  Variables
+//  _____________________________________________
+
+//  Variables from Blank theme.
+//  Both were replaced with custom variable @layout-column-sidebar__offset
+//  and they are not being used any more.
+
+// @layout-column-main__sidebar-offset: 2%;
+// @layout-column__additional-sidebar-offset: @layout-column-main__sidebar-offset;
+
+@layout-column-main__sidebar-offset: @layout-column-sidebar__offset;
+@layout-column__additional-sidebar-offset: @layout-column-sidebar__offset;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .columns {
+        #lib-layout-columns();
+
+        .column.main {
+            &:extend(.abs-add-box-sizing all);
+            .lib-css(padding-bottom, @indent__xl);
+            .lib-vendor-prefix-flex-basis(100%);
+            .lib-vendor-prefix-flex-grow(1);
+            .lib-vendor-prefix-order(1);
+        }
+
+        .sidebar-main {
+            &:extend(.abs-add-box-sizing all);
+            .lib-vendor-prefix-flex-grow(1);
+            .lib-vendor-prefix-flex-basis(100%);
+            .lib-vendor-prefix-order(1);
+        }
+
+        .sidebar-additional {
+            &:extend(.abs-add-box-sizing all);
+            .lib-vendor-prefix-flex-grow(1);
+            .lib-vendor-prefix-flex-basis(100%);
+            .lib-vendor-prefix-order(2);
+        }
+    }
+
+} // end: media-common
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    // .navigation,
+    // .breadcrumbs,
+    // .page-header .header.panel,
+    // .header.content,
+    // .footer.content,
+    // .page-main,
+    // .page-wrapper > .widget,
+    // .page-wrapper > .page-bottom,
+    // .block.category.event,
+    // .top-container {
+    //     padding-left: @layout__width-xs-indent;
+    //     padding-right: @layout__width-xs-indent;
+    // }
+
+    .page-main {
+        .account &,
+        .cms-privacy-policy & {
+            position: relative;
+            padding-top: 41px;
+        }
+    }
+
+    // New:
+    .columns {
+        .column.main {
+            max-width: 100%;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    // .navigation,
+    // .breadcrumbs,
+    // .page-header .header.panel,
+    // .header.content,
+    // .footer.content,
+    // .page-wrapper > .widget,
+    // .page-wrapper > .page-bottom,
+    // .block.category.event,
+    // .top-container,
+    // .page-main {
+    //     padding-left: @layout-indent__width;
+    //     padding-right: @layout-indent__width;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     width: auto;
+    //     max-width: @layout__max-width;
+    //     box-sizing: border-box;
+    // }
+
+    // New:
+    // ".page-main" is now wrapped inside ".main-container",
+    // it's not a sibling of the footer container any more,
+    // so its flexbox styles (like "flex-shrink: 0") don't take proper effect
+    // and don't push the footer down. This causes issue with 
+    // main content container overlapping footer on long pages.
+    // To fix this issue, ".main-container" needs to have the same 
+    // flexbox styles (instead of ".page-main") 
+    // as ".page-main" originally had.
+
+    // .page-main {
+    .main-container {
+        width: 100%;
+
+        .lib-vendor-prefix-flex-grow(1);
+        .lib-vendor-prefix-flex-shrink(0);
+        .lib-vendor-prefix-flex-basis(auto);
+
+        .ie9 & {
+            width: auto;
+        }
+    }
+
+    .columns {
+        display: block;
+    }
+
+    .column.main {
+        #lib-layout-columns > .main();
+        &:extend(.abs-add-box-sizing-desktop all);
+        min-height: 300px;
+    }
+
+    .sidebar-main {
+        #lib-layout-columns > .left();
+        padding-right: @layout-column-sidebar__offset;
+        &:extend(.abs-add-box-sizing-desktop all);
+    }
+
+    .page-layout-2columns-right .sidebar-main {
+        padding-left: @layout-column-sidebar__offset;
+        padding-right: 0;
+    }
+
+    .sidebar-additional {
+        #lib-layout-columns > .right();
+        clear: right;
+        padding-left: @layout-column__additional-sidebar-offset;
+        &:extend(.abs-add-box-sizing-desktop all);
+    }
+
+    .page-layout-2columns-left {
+        .sidebar-additional {
+            clear: left;
+            float: left;
+            padding-left: 0;
+            padding-right: @layout-column__additional-sidebar-offset;
+        }
+    }
+
+    // .panel.header {
+    //     padding: 10px 20px;
+    // }
+
+    //
+    //  Changes in 3-columns layout
+    //  ---------------------------------------------
+
+    .page-layout-3columns .column.main {
+        .lib-column-width(@layout-column-main__width__layout-3columns);
+    }
+
+    .page-layout-3columns .sidebar-main {
+        .lib-column-width(@layout-column-sidebar__width__layout-3columns);
+    }
+
+    .page-layout-3columns .sidebar-additional {
+        .lib-column-width(@layout-column-sidebar__width__layout-3columns);
+    }
+
+    //
+    //  Vertical menu trigger
+    //  ---------------------------------------------
+
+    // // Previous version of vertnav-trigger. Now it has the same styles as the menu.
+    // .vertnav-trigger {
+    //     &:extend(.abs-add-box-sizing-desktop all);
+    //     padding-right: @layout-column-sidebar__offset;
+        
+    //     .@{layout-class-3columns} & {
+    //         .lib-column-width(@layout-column-sidebar__width__layout-3columns);
+    //     }
+    //     .@{layout-class-2columns__left} & {
+    //         .lib-column-width(@layout-column__sidebar-width);
+    //     }
+    //     .@{layout-class-2columns__right} & {
+    //         .lib-column-width(@layout-column__sidebar-width);
+    //     }
+    // }
+
+    .vertnav-trigger,
+    .navi.nav-vert-triggerable {
+        &:extend(.abs-add-box-sizing-desktop all);
+
+        //  Widht has to be the same as the width of the sidebar, but decreased
+        //  by the value of @layout-column-sidebar__offset
+        .@{layout-class-3columns} & {
+            width: 100% * (@layout-column-sidebar__width__layout-3columns / @layout-column__width) - @layout-column-sidebar__offset;
+        }
+        .@{layout-class-2columns__left} & {
+            width: 100% * (@layout-column__sidebar-width / @layout-column__width) - @layout-column-sidebar__offset;
+        }
+        .@{layout-class-2columns__right} & {
+            width: 100% * (@layout-column__sidebar-width / @layout-column__width) - @layout-column-sidebar__offset;
+        }
+    }
+
+}

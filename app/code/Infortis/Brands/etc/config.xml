@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+  <default>
+    <brands>
+      <general>
+        <attr_id>manufacturer</attr_id>
+        <image_extension>png</image_extension>
+        <show_image>1</show_image>
+        <show_image_fallback_to_text>1</show_image_fallback_to_text>
+        <link_search_enabled>2</link_search_enabled>
+        <page_base_path/>
+        <append_category_suffix>0</append_category_suffix>
+        <url_key_separator>-</url_key_separator>
+        <img_url_key_separator>-</img_url_key_separator>
+      </general>
+      <product_view>
+        <enable>1</enable>
+      </product_view>
+      <list>
+        <all_brands>1</all_brands>
+        <brands>0</brands>
+        <assigned>0</assigned>
+        <assigned_in_stock>0</assigned_in_stock>
+      </list>
+      <slider>
+        <timeout/>
+        <speed>200</speed>
+        <auto_speed>500</auto_speed>
+        <pause>1</pause>
+        <loop>1</loop>
+        <lazy>1</lazy>
+      </slider>
+    </brands>
+  </default>
+</config>

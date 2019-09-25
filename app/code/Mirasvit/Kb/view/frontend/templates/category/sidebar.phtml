@@ -1,0 +1,75 @@
+<?php
+/** @var \Mirasvit\Kb\Block\Category\Sidebar $block */
+/** @var \Mirasvit\Kb\Model\Category $category */
+
+$tree = $block->getCategoryTree();
+$minLevel = $block->getMinCategoryLevel();
+$customerGroupId = $block->getCustomerGroupId();
+?>
+<?php if (count($tree) > 0): ?>
+    <div class="block block-collapsible-nav kb__category-sidebar">
+        <div class="title block-collapsible-nav-title"
+             data-mage-init='{"toggleAdvanced": {"toggleContainers": "#block-collapsible-nav-kb", "selectorsToggleClass": "active"}}'>
+            <strong><?= __('Categories') ?></strong>
+        </div>
+        <div class="block-collapsible-content content"  id="block-collapsible-nav-kb">
+            <ul class="nav items">
+                <?php foreach ($tree as $category): ?>
+                    <li class="item level-<?= $category->getLevel() - $minLevel + 1; ?>"
+                        data-parent="<?= $category->getParentId(); ?>"
+                        >
+                        <a href="<?= $category->getUrl() ?>" style="<?= $category->getSelectedCategory() ? 'font-weight: bold;' : ''; ?>"><?= $category->getName() ?>
+                            <?php if ($category->hasChildren()): ?>
+                                <span class="collapsible-control active"
+                                      data-id="<?= $category->getId() ?>"
+                                    ></span>
+                            <?php endif;?>
+                            <span class="count"><?= $category->getArticlesNumber($customerGroupId) ?></span>
+                        </a>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        require(['jquery'], function ($) {
+            $(function () {
+                $('#block-collapsible-nav-kb').on('click', '.collapsible-control.hidden', function() {
+                    var categoryId = $(this).data('id');
+                    $(this).removeClass('hidden').addClass('active');
+
+                    showCategory(categoryId);
+
+                    return false;
+                });
+
+                $('#block-collapsible-nav-kb').on('click', '.collapsible-control.active', function() {
+                    var categoryId = $(this).data('id');
+                    $(this).removeClass('active').addClass('hidden');
+
+                    hideCategory(categoryId);
+
+                    return false;
+                });
+
+                function hideCategory(categoryId) {
+                    $('[data-parent="'+categoryId+'"]').hide();
+                    $('[data-parent="'+categoryId+'"]').each(function(i, el) {
+                        if ($('span.collapsible-control', el).length) {
+                            hideCategory($('span.collapsible-control', el).data('id'));
+                        }
+                    });
+                }
+
+                function showCategory(categoryId) {
+                    $('[data-parent="'+categoryId+'"]').show();
+                    $('[data-parent="'+categoryId+'"]').each(function(i, el) {
+                        if ($('span.collapsible-control', el).length) {
+                            showCategory($('span.collapsible-control', el).data('id'));
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+<?php endif ?>

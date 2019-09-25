@@ -1,0 +1,75 @@
+eav:
+  customer:
+    - entity_id: 2
+      entity_type_id: 1
+      email: bob@example.com
+      firstname: 'John'
+      lastname: 'Doe'
+      created_at: 2013-10-01 00:00:00
+      store_id: 1
+      attribute_set_id: 0
+tables:
+  admin/user:
+    - user_id: 2
+      firstname: Mike
+      lastname: Peterson
+      email: mike@company.com
+      username: mike
+      is_active: 1
+  helpdesk/department:
+    -
+      department_id: 3
+      name: Customer Care Department
+      sender_email: sales
+      is_active: 1
+      signature: |
+        kind regards,
+        Customer Care Team
+      sort_order: 10
+      is_notification_enabled: 1
+      notification_email: test@mirasvit.com
+  helpdesk/ticket:
+    -
+      ticket_id: 2
+      name: Test Ticket
+      code: AAA-123-45678
+      external_id: abcdef
+      priority_id: 1
+      status_id: 1
+      department_id: 3
+      user_id: 1
+      store_id: 1
+      customer_id: 2
+      customer_name: 'John Doe'
+      customer_email: 'john@example.com'
+      user_id: 2
+      created_at: '2013-10-15 11:15:55'
+      updated_at: '2013-10-16 12:14:44'
+  helpdesk/message:
+    -
+      message_id: 2
+      ticket_id: 2
+      body: |
+        message 1
+      user_id: 0
+      customer_id: 2
+      customer_email: john_test@example.com
+      customer_name: John Doe
+      created_at: 2014-01-21 08:58:57
+      updated_at: 2014-01-21 08:58:57
+    - message_id: 3
+      ticket_id: 2
+      email_id: john_test@example.com
+      user_id: 2
+      body:  |
+        message 2
+      created_at: 2014-01-22 08:58:57
+      updated_at: 2014-01-22 08:58:57
+    - message_id: 4
+      ticket_id: 2
+      email_id: john_test@example.com
+      user_id: 2
+      body:  |
+        message 3
+      created_at: 2014-01-23 08:58:57
+      updated_at: 2014-01-23 08:58:57

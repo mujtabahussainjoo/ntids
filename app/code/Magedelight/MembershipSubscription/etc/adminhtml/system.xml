@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+   <system>
+      <tab id="magedelight" translate="label" sortOrder="300">
+         <label>MageDelight</label>
+      </tab>
+      <section id="membership" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+         <label>Membership Subscription</label>
+         <tab>magedelight</tab>
+         <resource>Magedelight_MembershipSubscription::config</resource>
+         <group id="license" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>License Configuration</label>
+            <field id="serial_key" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label>Serial Key</label>
+            </field>
+            <field id="activation_key" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label>Activation Key</label>
+            </field>
+         </group>
+         <group id="general" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>General Settings</label>
+            <field id="select_website" translate="label" type="multiselect" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="0">
+              <label>Select Website</label>
+              <source_model>Magedelight\MembershipSubscription\Model\Config\Source\Website</source_model>
+              <comment>Please save serial and activation keys to get the available options.</comment>
+            </field>
+            <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label>Enable Module</label>
+               <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="mail_before_days" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label>Send mail before days</label>
+               <comment><![CDATA[Enter number of day to inform customers to expire his plan]]></comment>
+            </field>
+         </group>
+         <group id="membership_settings" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Membership Settings</label>
+            <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Link Name</label>
+                <validate>required-entry</validate>
+            </field>
+            <field id="page_title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Page Title</label>
+                <validate>required-entry</validate>
+            </field>
+            <field id="identifier" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label>Url Identifier</label>
+               <comment>This is the key of membershp plans page url.</comment>
+               <validate>required-entry validate-identifier</validate>
+            </field>
+            <field id="meta_keywords" translate="label" type="textarea" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Meta Keywords</label>
+            </field>
+            <field id="meta_description" translate="label" type="textarea" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Meta Description</label>
+            </field>
+         </group>
+      </section>
+   </system>
+</config>

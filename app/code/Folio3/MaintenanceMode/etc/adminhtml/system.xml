@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="folio3_extensions_tab" translate="label" sortOrder="201" >
+            <label>Folio3 Extensions</label>
+        </tab>
+        <section id="MaintenanceMode" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <label>Maintenance Mode</label>
+            <tab>folio3_extensions_tab</tab>
+            <resource>Folio3_MaintenanceMode::folio3_maintenancemode</resource>
+            <group id="Configuration" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>Configuration</label>
+                <field id="isEnabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Maintenance Mode?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable Maintenance Mode?</comment>
+                </field>
+                <field id="adminAccess" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Admin Access</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Administrators bypass Maintenance Mode?</comment>
+                </field>
+                <field id="allowedIPs" translate="label comment" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Allowed IPs</label>
+                    <comment><![CDATA[List of Allowed IPs (One per line)]]></comment>
+                </field>
+                <field id="pageStaticBlock" translate="label comment" type="select" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Maintenance Page (Static Block)</label>
+                    <frontend_model>Folio3\MaintenanceMode\Block\Adminhtml\System\Config\Block</frontend_model>
+                    <source_model>Magento\Cms\Model\ResourceModel\Block\Collection</source_model>
+                    <comment>Select a static block for your maintenance page.</comment>
+                </field>
+                <field id="custom_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="6" showInDefault="1" showInWebsite="1" >
+                    <label>Background Image</label>
+                    <comment><![CDATA[Allowed file types: jpeg, gif, png.<br />Preferred Dimension: 1600px x 870px]]></comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system" scope_info="1">maintenance_mode</upload_dir>
+                </field>
+                <field id="showCountdown" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Enable Countdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable counter on the maintenance page</comment>
+                </field>
+                <field id="upDateTime" translate="label comment" type="text" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Expected Up Date/Time</label>
+                    <frontend_model>Folio3\MaintenanceMode\Block\Adminhtml\System\Config\Date</frontend_model>
+                    <!--<frontend_model>Folio3\MaintenanceMode\Block\Adminhtml\System\Config\Date</frontend_model>-->
+                </field>
+            </group>
+            <group id="header" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>Content</label>
+                <field id="headerType" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Header Type</label>
+                    <source_model>Folio3\MaintenanceMode\Model\Config\Source\Headertype</source_model>
+                </field>
+                <field id="useConfigStoreName" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Use Store Name</label>
+                    <source_model>Folio3\MaintenanceMode\Model\Config\Source\Store</source_model>
+                    <depends>
+                        <field id="headerType">1</field>
+                    </depends>
+                </field>
+                <field id="storeName" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Store Name</label>
+                    <depends>
+                        <field id="headerType">1</field>
+                        <field id="useConfigStoreName">custom</field>
+                    </depends>
+                </field>
+                <field id="useConfigStoreLogo" translate="label comment" type="select" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Use Store Logo</label>
+                    <source_model>Folio3\MaintenanceMode\Model\Config\Source\Storelogo</source_model>
+                    <depends>
+                        <field id="headerType">2</field>
+                    </depends>
+                </field>
+                <field id="storeLogo" translate="label comment" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Store Logo</label>
+                    <comment><![CDATA[Allowed file types: jpeg, gif, png.<br />Preferred Dimension: 1600px x 870px]]></comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system" scope_info="1">maintenance_mode</upload_dir>
+                    <depends>
+                        <field id="headerType">2</field>
+                        <field id="useConfigStoreLogo">custom</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="social_media" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>Social Media</label>
+                <field id="facebook" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook</label>
+                </field>
+                <field id="vimeo" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Vimeo</label>
+                </field>
+                <field id="twitter" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Twitter</label>
+                </field>
+                <field id="rss" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>RSS</label>
+                </field>
+                <field id="picasa" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Picasa</label>
+                </field>
+                <field id="linkedin" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>LinkedIn</label>
+                </field>
+                <field id="pinterest" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PInterest</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

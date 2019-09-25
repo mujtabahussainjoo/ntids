@@ -1,0 +1,134 @@
+
+.main-container {
+    background-color: #f2f2f5!important;
+}
+.main.container{    background-color: #f2f2f5!important;
+}
+.chooseexperience .title {
+    display: inline-block;
+    width: 100%;
+    font-family: 'coleshaptirg-bold';
+}
+
+.title {
+    color: #4a4a4a;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    margin-top: 105px;
+}
+	.chooseexperience {
+    padding: 0 120px;
+}
+.col-sm-4 {
+    width: 33.33333333%;
+}
+.category {
+    background-color: #FFFFFF;
+    float: left;
+    width: 100%;
+    margin: 0 0 85px 0;
+    border-radius: 5px;
+    box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
+}
+.category a {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    color: #415563;
+}
+.category img {
+    border-radius: 5px 5px 0 0;
+    margin: 0 auto;
+}
+img {
+    vertical-align: middle;
+}
+
+.category span {
+    display: inline-block;
+    width: 100%;
+    color: #39393A;
+    font-size: 22px;
+    line-height: 18px;
+    text-align: center;
+    padding: 26px 0;
+    font-family: 'coleshapticbd-semibold';
+}
+ .category span i, .category span em {
+    color: #39393A;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 5px;
+}
+em {
+    padding-right: 2px;
+}
+
+.howitworks {
+	float: left;
+	width: 100%;
+	background: #072A7C;
+	text-align: center;
+	background-size: cover;
+	padding: 60px 0;
+	font-size: 0;
+}
+.howitworks .title {
+	float: left;
+	width: 100%;
+	color: #FFFFFF;
+	font-size: 60px;
+	font-weight: 800;
+	line-height: 60px;
+	text-align: center;
+	margin: 0;
+	font-family: 'coleshapticbd-semibold';
+}
+.howitworks .title span{
+	width: 100%;
+	max-width: 360px;
+	display: inline-block;
+	color: #FFFFFF;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 45px;
+	font-weight: normal;
+}
+.howitworks ul {
+	margin: 0;
+	padding: 0;
+}
+.howitworks ul li{
+	margin: 0 0 25px 0;
+	padding: 0 25px;
+	width: 27%;
+	display: inline-block;
+	vertical-align: top;
+}
+.howitworks ul li .counter{
+	height: 105px;
+	width: 105px;
+	border: 2px solid #FFFFFF;
+	border-radius: 100%;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 100px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.howitworks ul li .text {
+	color: #FFFFFF;
+	font-size: 18px;
+	line-height: 20px;
+	text-align: center;
+	font-family:'coleshapticbd-semibold';
+}

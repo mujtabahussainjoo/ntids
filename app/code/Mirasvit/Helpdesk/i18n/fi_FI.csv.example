@@ -1,0 +1,136 @@
+Department,Osasto
+"Create New Ticket","Luo uusi lippu"
+Status,Status
+Priority,Prioriteetti
+Replies,Vastaukset
+View,Näkymä
+"Help Desk",Tukipalvelu
+"Thank you",Kiitos
+"Create Ticket","Luo lippu"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Pyyntösi lähetettiin onnistuneesti. Sinun pitäisi saada vahvistusviesti pian."
+Telephone,Puhelin
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Kyselysi lähetettiin ja siihen vastataan mahdollisimman pian. Kiitos yhteydenotostasi."
+"Unable to submit your request. Please, try again later","Pyyntöäsi ei voitu lähettää. Yritä uudelleen myöhemmin"
+"Page not found.","Sivua ei löydetty."
+"Your message was successfuly posted","Viestisi lähetettiin onnistuneesti"
+"Your ticket was successfuly posted","Sinun lipun onnistuneesti lähetetty"
+"Ticket was successfuly closed","Lippu oli onnistuneesti suljettu"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Tiedostoa ei voi ladata %1. Suurin sallittu lataustiedosto on %2 MB."
+"Allows only this file types: %1","Sallii vain tämän tiedostotyypin: %1"
+"Message added","Viesti lisätty"
+"Internal note added","Sisäinen huomautus lisättiin"
+"Third party message added","Kolmannen osapuolen viesti lisätty"
+"Private third party message added","Yksityinen kolmannen osapuolen viesti lisätty"
+"-- Please Select --","-- Ole hyvä ja valitse --"
+"Contact Tab",Yhteystiedot-välilehti
+"Contact Form",Yhteydenottolomake
+" at %1 (%2) - %3","%1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Sinulla ei ole lupaa lukea tätä lippua. Ota yhteyttä järjestelmänvalvojaan."
+"Invalid Customer Email","Virheellinen sähköpostiosoite"
+"not set","ei valittu"
+"Unknown time","Tuntematon aika"
+ago,sitten
+"from now","tästä lähtien"
+"1 sec ago","1 sekunti sitten"
+"Open Ticket","Avaa lippu"
+"Open Tickets","Avaa liput"
+"! Blocked file - ","! Estetty tiedosto -"
+Disabled,Liikuntarajoitteinen
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System",Tiedostojärjestelmä
+Database,Tietokanta
+Aqua,Aqua
+Grey,Harmaa
+Navy,Laivasto
+Silver,Hopea
+Black,Musta
+Green,Vihreä
+Olive,Oliivi
+Teal,Tavi
+Blue,Sininen
+Lime,Lime
+Purple,Violetti
+Fuchsia,Fuksia
+Maroon,Kastanjanruskea
+Red,Punainen
+Orange,Oranssi
+Yellow,Keltainen
+Text,Teksti
+Date,Treffi
+Checkbox,Valintaruutu
+"Drop-down list",Pudotusvalikosta
+"In minutes...","Minuutteina ..."
+"In hours...","Tunneina ..."
+"In days...","Päivinä ..."
+"In weeks...","Viikkoina ..."
+"In months...","Kuukausina ..."
+Custom,Asiakassuhde
+"--Please Select--","--Ole hyvä ja valitse--"
+"New ticket created","Uusi lippu luotiin"
+Success,Menestys
+Customer,Asiakas
+Staff,Henkilöstö
+"Third party","Kolmas osapuoli"
+Closed,Suljettu
+"Opened 24hr","Avattu 24h"
+"Helpdesk Tickets",Helpdesk-liput
+"Cannot delete ticket with id %1","Et voi poistaa lippua tunnuksella %1"
+Edit,Muokata
+"All Departments","Kaikki osastot"
+Back,Takaisin
+"24 hrs x 7 days","24 tuntia x 7 päivää"
+"Select working days/hours","Valitse työpäivät / tunnit"
+"Satisfaction survey",Tyytyväisyyskysely
+"to %1 (third party)","%1 (kolmas osapuoli)"
+"%1 (third party)","%1 (kolmas osapuoli)"
+"added %1 (%2)","lisätty %1 (%2)"
+"Ticket Summary","Lippujen yhteenveto"
+"Ticket ID","Lipun tunnus"
+Assignee,Siirronsaajalle
+"Additional Info",Lisätietoja
+"Ticket History","Lipun historia"
+"Done by",Tehnyt
+Changes,Muutokset
+Name,Nimi
+"Attach files","Liitä tiedostot"
+Submit,Lähetä
+"Submit Ticket","Lähetä liput"
+"What is your question?","Mikä on kysymyksesi?"
+"We found the following topics that might be helpful:","Löysimme seuraavat aiheet, jotka saattavat olla hyödyllisiä:"
+"None of these are helpful - get in touch","Mikään näistä ei ole hyötyä - ota yhteyttä"
+"We have not found topics that can be helpful.","Emme ole löytäneet aiheita, jotka voivat olla hyödyllisiä."
+"Contact Information",Yhteystiedot
+Comment,Kommentti
+"We are open 24 x 7","Olemme avoinna 24 x 7"
+"We are closed","Olemme suljettu"
+"Timezone: %1","Aikavyöhyke: %1"
+"Please take a second to rate my reply...","Arvioi vastaukseni toinen sekunti ..."
+Great,Loistava
+Awesome,Mahtava
+"Fast, friendly, helpful, pleasant. Great job!","Nopea, ystävällinen, avulias, miellyttävä. Hyvää työtä!"
+"Just Okay","Vain okei"
+"Fine, but definitely could have been better.","Hyvä, mutta varmasti olisi voinut olla parempi."
+"Not good","Ei hyvä"
+"Unfortunately, I wasn't happy with it at all.","Valitettavasti en ollut ollenkaan tyytyväinen siihen."
+"Thank you for participating in our survey!","Kiitos osallistumisestamme kyselyyn!"
+"If you would like to provide additional comments, please do so below:","Jos haluat antaa lisäkommentteja, toimi seuraavasti:"
+Message,Viesti
+"Submit Message","Lähetä viesti"
+"Thank you for your feedback!","Kiitos palautteesta!"
+Attachments,Liitteet
+Order,Tilata
+"-- Select an Order --","- Valitse tilaus -"
+"Create ticket","Luo lippu"
+"You don't have open tickets","Sinulla ei ole avoimia lippuja"
+"Post a Reply","Lähetä vastaus"
+"Reopen Ticket","Avaa lippu uudelleen"
+"Close Ticket","Sulje lippu"
+History,Historia
+"Back to My Tickets","Takaisin Omat liput"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Ota meihin yhteyttä"
+Open,Avata
+Subject,Aihe
+"Last Activity","Viimeinen toiminta"
+"Request ID","Pyydä tunnus"

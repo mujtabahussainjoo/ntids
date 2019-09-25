@@ -1,0 +1,154 @@
+@import 'module/_components.less';
+@import 'module/_daterangepicker.less';
+@import 'module/_toolbar.less';
+@import 'module/_chart.less';
+@import 'module/_grid.less';
+@import 'module/_settings.less';
+
+.reports__dropdown {
+    .admin__action-dropdown {
+        background: transparent;
+        font-size: 1.4rem;
+    }
+
+    &.admin__action-dropdown-right {
+        .admin__action-dropdown {
+            span {
+                &::after {
+                    left: 0;
+                    right: -6px;
+                }
+            }
+        }
+        .admin__action-dropdown-menu {
+            left: 0;
+            right: auto;
+        }
+    }
+
+    &._active {
+        .admin__action-dropdown {
+            z-index: 101;
+            border-color: @color-gray68;
+            background: @color-white;
+        }
+
+        .admin__action-dropdown-menu {
+            z-index: 100;
+            border-color: @color-gray68;
+
+            > ul {
+                max-height: 45rem;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                white-space: nowrap;
+                cursor: pointer;
+                padding: 0.5rem 1rem 0.5rem 1rem;
+
+                span {
+                    display: block;
+                }
+
+                &:hover, &._active {
+                    background: @color-gray89;
+                }
+            }
+        }
+    }
+}
+
+.reports__menu {
+    position: absolute;
+    top: -68px;
+    left: -16px;
+
+    .admin__action-dropdown {
+        background: transparent;
+        color: #41362f;
+        font-size: 2.8rem;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: 0em;
+    }
+
+    &._active {
+        z-index: 1000;
+
+        .admin__action-dropdown {
+            border-color: @color-gray68;
+            background: #fff;
+
+            .admin__action-dropdown-text:after {
+                left: 0;
+                right: -6px;
+            }
+        }
+
+        .admin__action-dropdown-menu {
+            border-color: @color-gray68;
+            font-size: 1.3rem;
+            left: 0;
+            padding: 1.5rem 2rem 1.5rem 2rem;
+            right: auto;
+            width: 500px;
+
+            li {
+                width: 50%;
+                float: left;
+
+                a {
+                    padding: 1.2rem 0.5rem;
+                }
+
+                &:hover {
+                    background: @color-gray89;
+                }
+
+                &.separator {
+                    border-top: 1px solid @color-gray89;
+                    width: 100%;
+                    margin: 10px 0px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .admin__action-dropdown {
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+
+.data-grid-chart-wrap {
+
+
+    .chart {
+
+    }
+
+    .columns {
+        .lib-clearfix();
+        margin: 0px 0px 0px 40px;
+        align-self: center;
+        list-style: none;
+
+
+    }
+}
+
+.reports-report-view {
+    h1.page-title {
+        display: none;
+    }
+
+    .action-menu-item {
+        white-space: nowrap;
+    }
+}

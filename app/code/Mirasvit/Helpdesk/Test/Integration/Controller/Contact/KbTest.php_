@@ -1,0 +1,18 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Contact;
+
+class KbTest extends \Magento\TestFramework\TestCase\AbstractController
+{
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Contact\Kb::execute
+     */
+    public function testKbAction()
+    {
+        $this->dispatch('helpdesk/contact/kb');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers">
+            <group id="shippingperitem" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shipping Per Product</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="individual_rate_only" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Only if Individual Rate is used for at least one Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Method Name</label>
+                </field>
+                <field id="default_rate" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Rate Per Product</label>
+                </field>
+                <field id="use_default_rate" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Default Value</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If set to "Yes", the default rate will be used for all products with no specific shipping information.]]></comment>
+                </field>
+                <field id="base_rate" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Base Rate</label>
+                    <comment><![CDATA[Starting rate. Each item will add it's individual fee (if any) to this rate.]]></comment>
+                </field>
+                <field id="calc_separately" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Calculate each item separately</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[When set to "No" the extension ignores qty in the cart.]]></comment>
+                </field>
+                <field id="use_max" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use highest product rate for the whole order</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="min" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimal Value</label>
+                </field>
+                <field id="max" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximal Value</label>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show method if not applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="specificerrmsg" translate="label" type="textarea" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Displayed Error Message</label>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to applicable countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort order</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

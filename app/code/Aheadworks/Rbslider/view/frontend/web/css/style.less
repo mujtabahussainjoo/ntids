@@ -1,0 +1,42 @@
+.aw-rbslider-container {
+    margin: 0 auto 10px;
+}
+
+/* Custom styles for uikit dotnav component */
+.uk-slidenav-position {
+    &:hover {
+        .uk-dotnav{
+            display: flex;
+        }
+    }
+}
+.uk-dotnav {
+    margin-bottom: 10px;
+    display: none;
+    > * > * {
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        width: 13px;
+        height: 13px;
+    }
+    > .uk-active > * {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+}
+.uk-dotnav-contrast > * > * {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+}
+
+/* Custom styles for uikit slidenav component */
+.uk-slidenav-contrast {
+    text-shadow: 3px 3px 10px rgba(0,0,0,.5);
+}
+.uk-slidenav-position {
+    .uk-slidenav-next {
+        right: 0;
+    }
+    .uk-slidenav-previous {
+        left: 0;
+    }
+}

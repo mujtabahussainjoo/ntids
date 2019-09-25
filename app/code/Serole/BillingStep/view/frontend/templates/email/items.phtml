@@ -1,0 +1,62 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php $_order = $block->getOrder() ?>
+<?php if ($_order): ?>
+    <?php $_items = $_order->getAllItems(); ?>
+		<table cellspacing="0" cellpadding="0" border="0" width="650" style="border:1px solid #eaeaea">
+			<thead>
+				<tr>
+					<th align="left" bgcolor="#EAEAEA" style="width:45%;font-size:13px;padding:3px 9px"><?= /* @escapeNotVerified */  __('Items') ?></th>
+					<th align="left" bgcolor="#EAEAEA" style="font-size:13px;padding:3px 9px"><?= /* @escapeNotVerified */  __('Sku') ?></th>
+					<th align="center" bgcolor="#EAEAEA" style="font-size:13px;padding:3px 9px"><?= /* @escapeNotVerified */  __('Qty') ?></th>
+					<!--th align="right" bgcolor="#EAEAEA" style="font-size:13px;padding:3px 9px"><?= /* @escapeNotVerified */  __('Price') ?></th-->
+				</tr>
+			</thead>
+			<?php foreach ($_items as $_item): ?>
+				<tbody bgcolor="#F6F6F6">
+					<tr>
+						<td align="left" valign="top" style="width:45%;font-size:11px;padding:3px 9px;border-bottom:1px dotted #cccccc">
+							<strong style="font-size:11px"><?php print_r($_item->getData('name')); ?></strong>
+						</td>
+						<td align="left" valign="top" style="font-size:11px;padding:3px 9px;border-bottom:1px dotted #cccccc"><?php print_r($_item->getData('sku')); ?></td>
+						<td align="center" valign="top" style="font-size:11px;padding:3px 9px;border-bottom:1px dotted #cccccc"><?php print_r($_item->getData('qty_ordered'));?></td>
+						<!--td align="right" valign="top" style="font-size:11px;padding:3px 9px;border-bottom:1px dotted #cccccc">
+							<span class="m_6103879293941696782price"><?php print_r($_item->getData('original_price'));?></span>
+						</td-->
+					</tr>
+				</tbody>
+			<?php endforeach; ?>
+			<tbody style="text-align: -webkit-right">
+				<?= $block->getChildHtml('order_totals') ?>
+			</tbody>
+		</table>
+
+	
+    <?php if ($this->helper('Magento\GiftMessage\Helper\Message')->isMessagesAllowed('order', $_order, $_order->getStore()) && $_order->getGiftMessageId()): ?>
+        <?php $_giftMessage = $this->helper('Magento\GiftMessage\Helper\Message')->getGiftMessage($_order->getGiftMessageId()); ?>
+        <?php if ($_giftMessage): ?>
+            <br />
+            <table class="message-gift">
+                <tr>
+                    <td>
+                        <h3><?= /* @escapeNotVerified */  __('Gift Message for this Order') ?></h3>
+                        <strong><?= /* @escapeNotVerified */  __('From:') ?></strong> <?= $block->escapeHtml($_giftMessage->getSender()) ?>
+                        <br /><strong><?= /* @escapeNotVerified */  __('To:') ?></strong> <?= $block->escapeHtml($_giftMessage->getRecipient()) ?>
+                        <br /><strong><?= /* @escapeNotVerified */  __('Message:') ?></strong>
+                        <br /><?= $block->escapeHtml($_giftMessage->getMessage()) ?>
+                    </td>
+                </tr>
+            </table>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>
+
+
+

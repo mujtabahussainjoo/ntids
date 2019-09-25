@@ -1,0 +1,225 @@
+<div class="customer-summary">
+    <div class="section">
+        <div class="admin__fieldset-wrapper-title" tabindex="3">
+            <strong class="title">
+                <span data-bind="i18n: 'To'"></span>
+            </strong>
+        </div>
+
+        <input type="hidden" name="customer_email" data-field="customer_email" data-bind="value: emailTo">
+        <input type="hidden" name="customer_id" data-field="customer_id" data-bind="value: customer().id">
+        <input type="hidden" name="order_id" data-field="order_id" data-bind="value: orderId()">
+        <input type="hidden" name="cc" data-field="cc" data-bind="value: emailCc()">
+        <input type="hidden" name="bcc" data-field="bcc" data-bind="value: emailBcc()">
+        <div class="section-fields">
+            <div class="admin__field _required">
+                <div class="admin__field-control">
+                    <input class="admin__control-text required" type="email" placeholder="type email or name" autocomplete="off"
+                            data-field="helpdesk_search_field"
+                            data-bind='{
+                                value: emailTo,
+                                mageInit: {
+                                    suggest: {
+                                        termAjaxArgument: "query",
+                                        template: "#hdmxCustomerSuggest",
+                                        minLength: 2,
+                                        source: _autocompleteUrl,
+                                        ajaxOptions: {
+                                            blockAjaxLoader: ".suggest-loading-mask"
+                                        }
+                                    }
+                                }
+                            }'>
+                </div>
+            </div>
+            <div class="suggest-loading-mask" data-role="loader" style="display: none;">
+                <div class="ajax-block-loader" style="text-align: center;">
+                    <img alt="Loading..." data-bind="attr:{src:loaderImg}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="section" data-bind="visible: isShowSummary()">
+        <div class="admin__fieldset-wrapper-title" tabindex="3">
+            <strong class="title">
+                <span data-bind="i18n: 'Customer Summary'"></span>
+            </strong>
+        </div>
+
+        <div class="section-fields">
+            <div class="admin__field">
+                <label class="admin__field-label">
+                    <span data-bind="i18n: 'Assigned To Customer'"></span>
+                </label>
+
+                <div class="edit-block">
+                    <div data-bind="visible: !isEditCustomerMode()">
+                        <span class="link" data-bind="visible: isShowCustomer()">
+                            <a href="#"
+                               data-bind="attr:{href:customer().url}, text: customer().name"
+                               target="_blank"></a>
+                        </span>
+                        <span class="link" data-bind="visible: !isShowCustomer()">
+                            <span data-bind="i18n: 'Unassigned'"></span>
+                        </span>
+
+                        <button class="action-edit" data-bind="click: showEdit" type="button" title="Edit">
+                            <span data-bind="i18n: 'Edit'"></span>
+                        </button>
+                    </div>
+
+                    <div data-bind="visible: isEditCustomerMode()">
+                        <input class="admin__control-text" type="text" placeholder="type email or name"  autocomplete="off"
+                               data-field="helpdesk_search_customer"
+                                data-bind='{
+                                    hasFocus: isEditCustomerMode,
+                                    mageInit: {
+                                        suggest: {
+                                            termAjaxArgument: "query",
+                                            template: "#hdmxCustomerSuggest",
+                                            minLength: 2,
+                                            source: _autocompleteUrl,
+                                            ajaxOptions: {
+                                                blockAjaxLoader: ".suggest-loading-mask-customer"
+                                            }
+                                        }
+                                    }
+                                }'>
+                    </div>
+                    <div class="suggest-loading-mask-customer" data-role="loader" style="display: none;">
+                        <div class="ajax-block-loader" style="text-align: center;">
+                            <img alt="Loading..." data-bind="attr:{src:loaderImg}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label">
+                    <span data-bind="i18n: 'Cc'"></span>
+                    <button class="action-edit" data-bind="click: showEditCc" type="button" title="Edit">
+                        <span data-bind="i18n: 'Edit'"></span>
+                    </button>
+                </label>
+                <div class="edit-block">
+                    <div data-bind="visible: emailCc() || isEditCc()">
+
+                        <div data-bind="visible: !isEditCc()">
+                            <span class="link" data-bind="text: emailCc()"></span>
+                        </div>
+
+                        <div data-bind="visible: isEditCc()">
+                            <input class="admin__control-text"
+                                    data-bind="
+                                    value: emailCc(),
+                                    visible: isEditCc(),
+                                    event: {change: onCcChange}
+                                ">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label">
+                    <span data-bind="i18n: 'Bcc'"></span>
+                    <button class="action-edit" data-bind="click: showEditBcc" type="button" title="Edit">
+                        <span data-bind="i18n: 'Edit'"></span>
+                    </button>
+                </label>
+                <div class="edit-block">
+                    <div data-bind="visible: emailBcc() || isEditBcc()">
+
+                        <div data-bind="visible: !isEditBcc()">
+                            <span class="link" data-bind="text: emailBcc()"></span>
+                        </div>
+
+                        <div data-bind="visible: isEditBcc()">
+                            <input class="admin__control-text"
+                                    data-bind="
+                                    value: emailBcc(),
+                                    visible: isEditBcc(),
+                                    event: {change: onBccChange}
+                                ">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label">
+                    <span data-bind="i18n: 'Assigned To Order'"></span>
+                </label>
+                <div class="edit-block">
+                    <div data-bind="visible: hasOrders()">
+
+                        <div data-bind="visible: !isEditOrderMode()">
+                            <span class="link">
+                                <a href="#"
+                                        data-bind="attr:{href:getOrderById(orderId()).url}, text: getOrderById(orderId()).name"
+                                        target="_blank"></a>
+                            </span>
+                            <button class="action-edit" data-bind="click: showEditOrder" type="button" title="Edit">
+                                <span data-bind="i18n: 'Edit'"></span>
+                            </button>
+                        </div>
+
+                        <div data-bind="visible: isEditOrderMode()">
+                            <select class="admin__control-select"
+                                    data-bind="
+                                    options: customer().orders,
+                                    optionsText: 'name',
+                                    optionsValue: 'id',
+                                    value: orderId(),
+                                    visible: isEditOrderMode(),
+                                    event: {change: onOrderChange}
+                                ">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="admin__field-control" data-bind="visible: !hasOrders()" >
+                        <span data-bind="i18n: 'Customer does not have orders.'"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin__field" data-bind="visible: hasRmas()">
+                <label class="admin__field-label">
+                    <span data-bind="i18n: 'RMA'"></span>
+                </label>
+                <div class="edit-block">
+                    <div data-bind="foreach: { data: rmas(), as: 'rma' }">
+                        <div>
+                            <span class="link">
+                                <a href="#"
+                                    data-bind="attr:{href:rma.url}, text: rma.name"
+                                    target="_blank"></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script id="hdmxCustomerSuggest" type="text/x-magento-template">
+    <ul data-mage-init='{"menu":[]}'>
+        <% if (data.items.length) { %>
+        <% _.each(data.items, function(value){ %>
+        <li
+        <%= data.optionData(value) %>>
+        <a href="#" class="title"><%- value.name %></a>
+        <span class="type"><%- value.email %></span></li>
+        <% }); %>
+        <% } else if (data.noRecordsText) { %><span
+            class="mage-suggest-no-records">No customers found.</span><% } %>
+    </ul>
+</script>

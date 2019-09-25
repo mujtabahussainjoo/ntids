@@ -1,0 +1,58 @@
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
+    $items = $cart->getQuote()->getAllItems();
+    $itemsCount = $cart->getQuote()->getItemsCount();
+    $cartTotal = $cart->getQuote()->getGrandTotal();
+    if($itemsCount>0){?>
+        <div class="block-title" cartitems="yes">
+            <strong><span class="title-bar">Shopping Cart</span><span class="total"><?php echo number_format($cartTotal,2)?></span></strong>
+        </div>
+     <table class="past-orders table table-striped" style="width: 100%;">
+        <?php  foreach($items as $item){ ?>
+		 <tr>
+		 <td><?php echo $item->getName();?> </td>
+		 <td><?php echo $item->getQty(); ?>x</td>
+		 <td>$<?php echo number_format($item->getPriceInclTax(),2);?></td>
+		 <td><a class="item-delete btn-remove<?php echo "item-".$item->getId() ;?>" itemid="<?php echo $item->getId() ;?>">X</a></td>
+		 </tr>
+	         
+        <?php  } ?>
+     </table>
+<?php }else{ ?>
+        <div class="block-title" cartitems="no">
+            <strong><span class="title-bar">Shopping Cart</span><span class="total">$0.00</span></strong>
+        </div>
+       <div class="block-content">
+           <p class="empty">You have no items in your shopping cart.</p>
+       </div>
+<?php } ?>
+
+  <script>
+    require(['jquery', 'jquery/ui'], function($){
+        jQuery('.item-delete').on('click',function () {
+            //alert("123432");
+            var itemId = $(this).attr('itemid');
+            $.ajax({
+                url  : '<?php echo $this->getBaseUrl().'racvportal/cart/delete'; ?>',
+                type : 'POST',
+                data : {itemId:itemId},
+                dataType:'json',
+                async:false,
+                success : function(data) {
+                    console.log(data);
+                    if(data["status"] == 'sucess'){
+                        jQuery('.block-cart').html(data["html"]);
+                    }else if(data["status"] == 'error'){
+                        /*Populate erroe message here*/
+                    }
+                },
+                error : function(request,error){
+                   // alert(error.message);
+                }
+            });
+
+        });
+    });
+    </script>
+

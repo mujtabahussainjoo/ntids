@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <section id="kb" showInDefault="1" showInWebsite="1" showInStore="1" type="text" translate="label" sortOrder="100">
+            <label>Knowledge Base</label>
+            <tab>mirasvit</tab>
+            <resource>Mirasvit_Kb::config_kb</resource>
+            <group id="general" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                <label>General Settings</label>
+                <field id="base_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Base URL</label>
+                </field>
+                <field id="is_rating_enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Articles Rating</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_url_rewrite_enabled" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable SEO Friendly URLs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="article_links_limit" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Limit of article's links on category view page</label>
+                </field>
+                <field id="article_hide_author" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide article's author</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="article_hide_date" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide article's date</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="category_article_amount" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display article amount</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Allow to show amount of articles in category that does not contain other categories</comment>
+                </field>
+                <field id="category_url_exclude" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Exclude categories URL-keys from Article URL</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Allows to have URL's to articles with or without categories url-keys. After changing this option you need to re-save your articles using Update URL mass-action.</comment>
+                </field>
+            </group>
+            <group id="comments" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                <label>Comments</label>
+
+                <field id="provider" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Provider</label>
+                    <source_model>Mirasvit\Kb\Model\Config\Source\CommentProvider</source_model>
+                </field>
+
+                <field id="disqus_shortname" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disqus Shortname</label>
+                    <depends>
+                        <field id="*/*/provider">disqus</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

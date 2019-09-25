@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="core_layout_block_create_after">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\BlockCreateAfterObserver" />
+    </event>
+    <event name="controller_action_predispatch">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\ActionPredispatchObserver" />
+    </event>
+
+    <!-- Rule events -->
+    <event name="controller_action_predispatch_adminhtml_user_role_editrole">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Rule\PrepareObserver" />
+    </event>
+    <event name="controller_action_postdispatch_adminhtml_user_role_saverole">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Rule\SaveObserver" />
+    </event>
+
+    <!-- Category events -->
+    <event name="controller_action_predispatch_catalog_category_edit">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Category\EditPredispatchObserver" />
+        <observer name="amasty_rolepermissions_restrict_category_edit" instance="Amasty\Rolepermissions\Observer\Admin\Category\RestrictEditObserver" />
+    </event>
+    <event name="catalog_category_save_after">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Category\SaveAfterObserver" />
+    </event>
+    <event name="controller_action_predispatch_catalog_category_save">
+        <observer name="amasty_rolepermissions_restrict_category_edit" instance="Amasty\Rolepermissions\Observer\Admin\Category\RestrictEditObserver" />
+    </event>
+    <event name="controller_action_predispatch_catalog_category_delete">
+        <observer name="amasty_rolepermissions_restrict_category_edit" instance="Amasty\Rolepermissions\Observer\Admin\Category\RestrictEditObserver" />
+    </event>
+    <event name="catalog_category_prepare_save">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Category\PrepareSaveObserver"/>
+    </event>
+    <event name="catalog_category_load_after">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Category\LoadAfterObserver"/>
+    </event>
+    <event name="adminhtml_catalog_category_tree_can_add_sub_category">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Category\AddSubcategoryObserver"/>
+    </event>
+
+    <!-- Product events -->
+    <event name="catalog_product_save_before">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\SaveBeforeObserver" />
+    </event>
+    <event name="catalog_product_save_after">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\SaveAfterObserver" />
+    </event>
+    <event name="catalog_product_load_after">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\LoadAfterObserver" />
+    </event>
+    <event name="controller_action_postdispatch_catalog_product_edit">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\EditPostdispatchObserver" />
+    </event>
+    <event name="controller_action_postdispatch_catalog_product_index">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\IndexPostdispatchObserver" />
+    </event>
+    <event name="controller_action_predispatch_catalog_product_index">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\IndexPredispatchObserver" />
+    </event>
+    <event name="adminhtml_catalog_product_edit_prepare_form">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\PrepareFormObserver" />
+    </event>
+    <event name="controller_action_predispatch_catalog_product_massDelete">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\MassDeletePredispatchObserver" />
+    </event>
+    <event name="controller_action_postdispatch_catalog_product_set_index">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Product\EditPostdispatchObserver" />
+    </event>
+
+    <!-- Model events -->
+    <event name="model_save_before">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Model\SaveBeforeObserver" />
+    </event>
+    <event name="model_load_after">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\Model\LoadAfterObserver" />
+    </event>
+
+    <!-- Collection events -->
+    <event name="core_collection_abstract_load_before">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\CollectionLoadBeforeObserver" />
+    </event>
+    <event name="eav_collection_abstract_load_before">
+        <observer name="amasty_rolepermissions" instance="Amasty\Rolepermissions\Observer\Admin\CollectionLoadBeforeObserver" />
+    </event>
+</config>

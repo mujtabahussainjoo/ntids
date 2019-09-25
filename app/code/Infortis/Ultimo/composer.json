@@ -1,0 +1,28 @@
+{
+    "name": "Infortis\/Ultimo",
+    "description": "",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0"
+    },
+    "type": "magento2-module",
+    "version": "2.7.1",
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Infortis\\Ultimo\\": ""
+        }
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Infortis\/Ultimo"
+            ]
+        ]
+    }
+}

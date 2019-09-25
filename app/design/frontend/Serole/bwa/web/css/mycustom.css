@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "BebasNeueBold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/BebasNeueBold.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeueBold.woff") format("woff"), url("../fonts/BebasNeueBold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/ProximaNova-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ProximaNova-Extra";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/ProximaNova-Extrabld.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Extrabld.woff") format("woff"), url("../fonts/ProximaNova-Extrabld.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Neosans Black";
+    font-style: Bold;
+    font-weight: Bold;
+    src: url("../fonts/NeoSansStd-Regular.otf?#iefix");
+}
+.main.container {
+	background-color:#008bcc!important;
+	border-bottom: 32px solid #7F7F7F;
+	border-top: 15px solid #7F7F7F;
+}
+.header.links > li  {
+	background-color: #008bcc;
+	margin: 0 0 0 10px;
+	color:#fff;
+	
+}
+body {
+	font-family:"ProximaNova",sans-serif!important;
+	color:white!important;
+}
+
+@media (min-width: 768px){
+	.btn-rgtr-cust {
+		margin-left: 66%;
+		margin-top: 18% !important;
+	}
+	.customer-account-login .fieldset > .field:not(.choice) > .label{width: 100%!important;}
+	.customer-account-login .login-container .fieldset > .field.password > .control{width: 98%!important;}
+	.customer-account-login .field.required.password{width: 100%!important;}
+	.container {
+		max-width: 1159px!important;
+	}
+	.inner-container {
+		padding-left: inherit!important;
+		padding-right: inherit!important;
+	}
+	#mainmenu{line-height: 3.5!important;}
+	.right-column .item-right.item-interface:first-child {
+		border-bottom-right-radius: 0px;
+		background: #008BCC;
+		margin-top: -1.1%;
+	}
+	.mini-cart-heading .label{padding: 14px 0 0 0;}
+	/* .main-container{width: 83.8%!important;margin: 0% 0% 0% 8.1%;} */
+	.homepage-icons-five a.homepage-icon{width:20%!important;}
+	a.homepage-icon{
+		float: left;
+		display: block;
+		min-height: 120px;
+		text-align: center;
+	}
+	.homepage-icon > img{
+		display: block;
+		height: 100px;
+		width: auto;
+		text-align: center;
+		background-attachment: scroll;
+		background-position: center center;
+		background-repeat: no-repeat;
+		margin-left: auto;
+		margin-right: auto;
+		vertical-align: middle;
+		
+	}
+	.homepage-icon .h2, .homepage-icon .sub{
+		text-align: center;
+		display: block;
+		clear: both;
+		color: white;
+		font-size: 14px;
+	}
+	.navi-wrapper, .nav-regular {
+		/* background-color: #008BCC!important; */
+	}
+	.header-top .links > li > * {
+		line-height: 25px!important;
+	}
+	.footer-bottom-container {
+		margin-top: -8px!important;
+		margin-bottom: 1%;
+	}
+	.inner-container .section.links-wrapper-separators{margin-top: -1%;}
+	.inner-container .section.links-wrapper-separators .item.item-left{margin-top: 2%;}
+	.header.links > li > a {background-color: #008bcc;margin: 0 0 0 -1%;color:#fff;}	
+	.header.links > li > a:hover {background-color: #008bcc;margin: 0 0 0 -1px;color:#fff;}	
+	.mini-cart-heading .inner-heading .label:hover{margin: 0 0 0 0px;color:#333;}	
+	.mini-cart-heading .inner-heading .label{margin: 0 0 0 0px;color:#fff;}	
+	.header-top .dropdown-block .dropdown-heading{line-height: 22px!important;}
+	.login-container .block-content{margin-left: 2%!important;}
+	.customer-account-login .page-title-wrapper{margin-left: 1%!important;margin-right: 1%;}
+	.nav-regular .nav-item.level0 > a{
+		color: white!important;
+		font-family: "Neosans Black"!important;
+		font-weight: bold!important;
+		font-size: 1.0em!important;
+	}
+	.footer-top.footer .links > li > a{color: #fff!important;font-size: 12px;}
+	.footer-top.footer .links > li > a:hover{color: #fff!important;font-size: 12px;}
+	.footer .footer-copyright {
+		font-size: 14px!important;
+		line-height: 25px!important;
+		margin: 4px 0 0 0!important;
+		color: #fff!important;
+	}
+	.homepage-icon-wrapper {
+		padding-top: 1%!important;
+	}
+	.nav-container .nav .inner-container{
+		background: #008BCC;
+		border-radius: 5px;
+	}
+	.customer-account-login .page-title-custom {
+		font-size: 2.5em!important;
+		color: #ffffff;
+		font-family: "Neosans Black"!important;
+		font-weight: 700!important;
+	}
+	.owl-item img {
+		width: 98.8%!important;
+	}
+	#maincontent{margin-left:1%;}
+	.customer-account-login .page-title-custom{border-bottom: 1px solid #666666!important;}
+	#block-new-customer-heading,.customer-account-login .login h4{
+		font-family: "Neosans Black"!important;
+		font-weight: 700!important;
+		color: #666666;
+		font-size: 30px!important;
+	}
+	.homepage-icon > img.cat-experiences,.homepage-icon > img.cat-promotions {
+		height: 70px!important;
+		width: 60px!important;
+	}
+	.Promotions_title,.experiences_title{margin:13% 0 0 0!important;}
+}

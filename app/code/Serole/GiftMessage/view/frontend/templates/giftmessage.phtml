@@ -1,0 +1,268 @@
+<?php
+if($block->moduleStatus()):
+  if($block->getItemsCount()):
+     //if($block->getIsVirtual()):
+        if($block->isGiftMessageProductExist()):
+             if($block->getGiftEmailTemplateImages()):
+			                  echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('giftpage-banner')->toHtml();
+
+?>
+            <form class="form from-gift-message" action="<?php echo $block->getUrl('giftmessage/message/save')?>" method="post" id="from-gift-message" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
+               <fieldset class="fieldset create info">
+                    <legend class="legend"><span>Gift Message</span></legend><br>
+
+                    <div class="field field-name-toaddress required">
+                        <label class="label" for="toaddress">
+                            <span>To Name</span>
+                        </label>
+                        <div class="control">
+                            <?php if($block->getCustomerSession()->getToName()){?>
+                                <input type="text" id="toadddress" name="toadddress"  value="<?php echo $block->getCustomerSession()->getToName()?>" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true">
+                            <?php }else{ ?>
+                               <input type="text" id="toadddress" name="toadddress"  value="" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true">
+                            <?php } ?>
+                        </div>
+                    </div>
+
+                     <div class="field field-name-email required">
+                        <label class="label" for="email">
+                            <span>To Email</span>
+                        </label>
+
+                        <div class="control">
+                             <?php if($block->getCustomerSession()->getGiftEmail()){?>
+                                <input type="email" id="email" name="email"  value="<?php echo $block->getCustomerSession()->getGiftEmail() ?>" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true">
+                            <?php }else{ ?>
+                                <input type="email" id="email" name="email"  value="" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true">
+                             <?php } ?>
+                        </div>
+                    </div>
+
+                    <div class="field field-name-fromaddress required">
+                        <label class="label" for="fromaddress">
+                            <span>From Name</span>
+                        </label>
+                        <div class="control">
+                            <?php if($block->getCustomerSession()->getFromName()){?>
+                                <input type="text" id="fromaddress" name="fromaddress"  value="<?php echo $block->getCustomerSession()->getFromName()?>" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true">
+                            <?php }else{ ?>
+                                <input type="text" id="fromaddress" name="fromaddress"  value="" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true">
+                            <?php } ?>
+                        </div>
+                    </div>
+
+                    <div class="field field-name-message required">
+                        <label class="label" for="message">
+                            <span>Message</span>
+                        </label>
+                        <div class="control">
+                             <?php if($block->getCustomerSession()->getGiftMessage()){?>
+                                 <textarea type="text" id="message" name="message"  value="" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true"><?php echo $block->getCustomerSession()->getGiftMessage()?></textarea>
+                            <?php }else{ ?>
+                                 <textarea type="text" id="message" name="message"  value="" placeholder="" class="input-text required-entry"  data-validate="{required:true}" autocomplete="off" aria-required="true"> </textarea>
+                             <?php } ?>
+                        </div>
+                    </div>
+                   <div class="gift_block" style="float:left;">
+				   <p><b>Choose an eGift Template</b></p>
+					<div class="control gft_image">
+                    <?php 
+                    $m = 0;
+                    foreach($block->getGiftEmailTemplateImages() as $emailImageItem) :?>
+                        <?php if(file_exists($block->getImagePath($emailImageItem['image']))):?>
+                        <div class="gft_image_child">
+                           <input id="input_<?php echo $m; ?>" type="radio" class="radio required-entry gft-radio" data-validate="{'validate-one-required-by-name':true}" name="image" value="<?php echo $emailImageItem['id']?>"
+						   <?php if((int)$emailImageItem['id'] == (int)$block->getCustomerSession()->getGiftImage()){ echo "checked";} ?>/>
+						   <img style="cursor: pointer;" onclick="selectImg('input_<?php echo $m; ?>')" src="<?php echo $block->getImageurl($emailImageItem['image']);?>" width="125" height="125"/>
+                            <?php $emailTemplateName = $block->getEmailTemplateName($emailImageItem['emailtemplateid']); ?>
+                           <!--<p><?php //echo $emailTemplateName?></p>-->
+                           <p img="<?php echo $block->getImageurl($emailImageItem['image']);?>" class="previewImg" style="cursor: pointer; margin-top:2px;">Preview</p>
+                        </div>
+                        <?php endif;?>
+                    <?php $m++; endforeach; ?>
+					</div>
+				   </div>
+
+     <div class="actions-toolbar" style="float:left">
+                        <div class="primary">
+                            <button type="submit" id="savemsg" class="action submit primary" title="Update"><span>Save and Proceed to Checkout</span></button>
+                        </div>
+						<div class="primary">
+                            <button type="button" onclick="clearForm(this.form);" class="action submit primary" title="Update"><span>Reset</span></button>
+                        </div>
+						
+                    </div>
+                </fieldset>
+            </form>
+			               
+<?php
+             endif;
+         endif;
+      //endif;
+  endif;
+endif;
+?>
+<div id="giftImagepop" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#from-gift-message": {
+            "validation": {}
+        }
+    }
+</script>
+<script>
+function clearForm(oForm)
+{
+	var frm_elements = oForm.elements;
+
+	for (i = 0; i < frm_elements.length; i++)
+	{
+		field_type = frm_elements[i].type.toLowerCase();
+		switch (field_type)
+		{
+		case "text":
+		case "email":
+		case "password":
+		case "textarea":
+		case "hidden":
+			frm_elements[i].value = "";
+			break;
+		case "radio":
+		case "checkbox":
+			if (frm_elements[i].checked)
+			{
+				frm_elements[i].checked = false;
+			}
+			break;
+		case "select-one":
+		case "select-multi":
+			frm_elements[i].selectedIndex = -1;
+			break;
+		default:
+			break;
+		}
+	}
+
+}
+  function selectImg(id){
+     document.getElementById(id).checked=true;  
+   }
+
+   require(['jquery', 'jquery/ui'], function($){
+       $("#savemsg").click(function() {
+           localStorage.setItem('giftEmail', '');
+           var giftEmail = $('#email').val();
+           if (giftEmail) {
+               localStorage.setItem('giftEmail', giftEmail);
+               console.log(giftEmail);
+           }
+       });
+      /*var myName = localStorage.getItem('giftEmail');
+      console.log("MY Name"+myName);*/
+      $(".previewImg").click(function(){
+        var imgSrc = $(this).attr('img');
+        $(this).attr('id','giftmesssageImage');
+        $('.modal').css('display','block');
+        $('#img01').attr('src',imgSrc);
+      });
+      $('.close').click(function(){
+         $('.modal').css('display','none');
+      });
+    });
+</script>
+
+<style>  
+
+    #giftmesssageImage {
+		font-weight:bold;
+
+        border-radius: 5px;
+        cursor: pointer!important;
+        transition: 0.3s;
+    }
+
+    #giftmesssageImage:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)}
+        to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+</style>

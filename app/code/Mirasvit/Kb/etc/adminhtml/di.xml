@@ -1,0 +1,31 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Mirasvit\Core\Block\Adminhtml\Menu">
+        <arguments>
+            <argument name="menu" xsi:type="array">
+                <item name="kb" xsi:type="object">Mirasvit\Kb\Block\Adminhtml\Menu</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mirasvit\Kb\Ui\DataProvider\Category\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="categories" xsi:type="array">
+                    <item name="class" xsi:type="string">Mirasvit\Kb\Ui\DataProvider\Category\Modifier\Categories</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Mirasvit\Kb\Ui\DataProvider\Category\CategoryDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Mirasvit\Kb\Ui\DataProvider\Category\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Notification\MessageList">
+        <arguments>
+            <argument name="messages" xsi:type="array">
+                <item name="SeoCompatibility" xsi:type="string">Mirasvit\Kb\Model\System\Message\Compatibility</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,22 @@
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<div class="mageworx-extended-zones" id="sz-main-container">
+    <% _.map(zones, function(zone, key) { %>
+    <div class="sz-square <% if (!zone.image) { %>no-image<% } %>">
+        <div class="zone" id="zone-<%= zone.id %>" data-zone_id="<%= zone.id %>">
+            <div class="sz-table">
+                <div class="sz-table-cell">
+                    <% if (zone.image) { %>
+                    <img src="<%= zone.image %>" class="zone_image"/>
+                    <% } %>
+                    <h3 class="zone_name"><%= zone.name %></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+</div>

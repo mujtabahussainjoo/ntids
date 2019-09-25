@@ -1,0 +1,167 @@
+<?php
+/** @var Mirasvit\Helpdesk\Block\Contact\Form $block */
+$config = $block->getConfig();
+$customer = $block->getCustomer();
+$helpText = $block->getHelpText();
+?>
+<div id="hdmx__contact-popup" class="hdmx__contact-popup" style="display: none;">
+    <div class="hdmx__wrapper">
+        <?php if ($block->isKbEnabled()): ?>
+            <?= $block->getKbBlock()->toHtml() ?>
+        <?php endif ?>
+
+        <form action="<?= $block->getPostUrl() ?>" method="POST" data-id="hdmx__contact-form"
+              class="hdmx__contact-form helpdesk-contact-form"
+              enctype="multipart/form-data" data-mage-init='{"validation":{}}'>
+
+            <?= $block->getBlockHtml('formkey') ?>
+
+            <button type="button" class="action close">
+                <span>&times;</span>
+            </button>
+
+            <fieldset class="fieldset">
+                <legend class="legend"><?= $config->getFormTitle() ?></legend>
+                <?php if ($helpText): ?>
+                    <div>
+                        <p class="cms-content-important"><?= $helpText; ?></p>
+                    </div>
+                <?php endif; ?>
+
+                <?= $block->getChildHtml('helpdesk_contacts_schedule_status_feedback') ?>
+
+                <div class="field" style="display: none;">
+                    <label class="label" for="email"><?= __('Email') ?></label>
+
+                    <div class="control">
+                        <input type="text" name="email" data-id="email" class="email input-text">
+                    </div>
+                </div>
+
+                <div class="field required">
+                    <label class="label" for="subject"><?= $config->getSubjectTitle() ?></label>
+
+                    <div class="control">
+                        <input type="text" name="subject" class="input-text subject" data-id="subject"
+                               placeholder="<?= $config->getSubjectPlaceholder() ?>"
+                               value="<?= $block->getSearchQuery() ?>"
+                               data-validate="{required:true}">
+                    </div>
+                </div>
+
+                <div class="field required">
+                    <label class="label" for="message"><?= $config->getDescriptionTitle() ?></label>
+
+                    <div class="control">
+                            <textarea name="message" class="message input-text" rows="3" data-id="message"
+                                      placeholder="<?= $config->getDescriptionPlaceholder() ?>"
+                                      data-validate="{required:true}"></textarea>
+                    </div>
+                </div>
+
+                <?php if (!$customer): ?>
+                    <div class="fields group-2">
+                        <div class="field required">
+                            <label class="label" for="customer_name"><?= __('Name') ?></label>
+
+                            <div class="control">
+                                <input type="text" name='customer_name' id='customer_name'
+                                       class="input-text" data-validate="{required:true}">
+                            </div>
+                        </div>
+                        <div class="field required">
+                            <label class="label" for="customer_email"><?= __('Email') ?></label>
+
+                            <div class="control">
+                                <input type="text" name='customer_email' id='customer_email'
+                                       class="input-text validate-email" data-validate="{required:true}">
+                            </div>
+                        </div>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($block->getIsAllowPriority() || $block->getIsAllowDepartment()): ?>
+                    <div class="fields">
+                        <?php if ($block->getIsAllowPriority()): ?>
+                            <div class="field">
+                                <label class="label" for="priority_id"><?= __('Priority') ?></label>
+
+                                <div class="control">
+                                    <select name="priority_id" class="priority_id" data-id="priority_id">
+                                        <?php foreach ($block->getPriorityCollection() as $priority): ?>
+                                            <option
+                                                value="<?= $priority->getId() ?>"><?= $priority->getName() ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </div>
+                            </div>
+                        <?php endif ?>
+
+                        <?php if ($block->getIsAllowDepartment()): ?>
+                            <div class="field">
+                                <label class="label" for="department_id"><?= __('Department') ?></label>
+
+                                <div class="control">
+                                    <select name="department_id" class='department_id' data-id="department_id">
+                                        <?php foreach ($block->getDepartmentCollection() as $department): ?>
+                                            <option
+                                                value="<?= $department->getId() ?>"><?= $department->getName() ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </div>
+                            </div>
+                        <?php endif ?>
+                    </div>
+                <?php endif ?>
+
+                <?php if (count($block->getCustomFields())): ?>
+                    <div class="fields group-2">
+                        <?php foreach ($block->getCustomFields() as $field): ?>
+                            <div class="field <?= $field->getType() ?>">
+                                <label class="label" for="<?= $field->getCode() ?>"
+                                    <?= $field->getIsRequiredCustomer() ? 'class="_required"' : '' ?>>
+                                    <?= __($field->getName()) ?>
+                                </label>
+                                <div class="control">
+                                    <?= $block->getInputHtml($field) ?>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($block->isAttachmentEnabled()) : ?>
+                    <div class="field">
+                        <label for="attachment"><?= __('Attach files') ?></label>
+
+                        <div class="control">
+                            <input type='file' class='multi' name='attachment[]' data-id='attachment'/>
+                        </div>
+                    </div>
+                <?php endif ?>
+            </fieldset>
+
+            <div class="actions-toolbar">
+                <input type="hidden" name="hideit" class="hideit" data-id="hideit" value="">
+                <button type="submit" title="<?= __('Submit') ?>" class="action primary hdmx-submit-btn">
+                    <span><?= __('Submit Ticket') ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        'mage/validation'
+    ], function ($) {
+        var submitBtn = $('.action.primary', $('.hideit').parent());
+        $('form').on('invalid-form.validate', function(event, validation) {
+            $(submitBtn).show();
+        });
+        $(submitBtn).click(function() {
+            $(submitBtn).hide();
+        })
+    });
+</script>

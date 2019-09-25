@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  font-size: 14px!important;
+line-height: 1.42857143!important;
+}
+.footer-zigzag {
+    background-image: url(../images/bg_footer_zigzag.png)!important;
+    background-repeat: repeat-x!important;
+    height: 10px!important;
+    width: 100%!important;
+}
+.dropdown-block .dropdown-heading .caret {
+	    background-image: url(../images/bg_chevron_legal.gif)!important;
+		    height: 10px;
+    margin: 0 0 0 2px;
+    overflow: hidden;
+    text-indent: -999px;
+    vertical-align: middle;
+    width: 6px;
+} 
+.container-footer a {
+    padding-left: 10px;
+    background: url(../images/bg_chevron_legal.gif) no-repeat scroll 0 50% transparent;
+}
+footer ul li a:hover{
+	color:#EE4D9B!important;
+	text-decoration:underline!important;
+}
+footer ul li{
+	    margin: 0 10px 0 0!important;
+}
+.container-footer {
+    background: url(../images/bg_footer_carbon.png) repeat-x scroll 0 0 transparent!important;
+    padding-top: 40px!important;
+    height: 165px!important;
+	color:#fff!important;
+}
+.navi-wrapper, .nav-regular {
+    font-family: Helvetica,Arial,sans-serif !important;
+	font-weight: 700!important;
+}
+.container-full {
+    margin: 0 auto;
+width: 100%!important;
+}
+footer{margin-left:6%!important;}
+address {
+    font-style: normal;
+    font-size: 10px!important;
+    margin-top: 20px!important;
+}
+footer ul{
+    margin-bottom: -13px!important;
+    display: inline-flex;
+}
+footer ul li a{color:#fff!important;}
+.header-container {
+		margin-left: 0%!important;
+		width: 100%!important;
+	}
+.header-top-container {
+	background: url(../images/bg_carbon_52.png) top left repeat;
+	    padding: 6px!important;
+}
+.header-container2,.header-primary-container{ 
+margin-bottom:1.5%;
+}
+.header-primary-container {
+    border-bottom: 1px solid #EEE!important;
+}
+.header .logo-wrapper .logo {
+    max-width: 115%!important;
+    margin: -20px -27px 12px -14px!important;
+}
+.logo-wrapper {
+    margin-top: 12.5%!important;
+}
+.links-wrapper-separators-left .links > li:first-child {
+    margin: 0 13px!important;
+}
+.block-search form{
+	    right: -90px;
+}
+.header-top .dropdown-block .dropdown-heading {
+    max-height: 36px!important;
+    margin-top: -8px!important;
+}
+.header-container .right-column .dropdown-block {
+    top:11px!important;
+}
+.new-user{font-family: 'Georgia', serif!important;    font-weight: bold!important;}
+  h1, .h1, h2, .h2, h3, .h3, h4{  font-family: 'Georgia', serif!important;    font-weight: bold!important;}
+.header-container .right-column .dropdown-block{
+    background: -webkit-gradient( linear, left top, left bottom, from(#f7f7f7), color-stop(0.50, #f7f7f7), color-stop(0.50, #e8e8e8), color-stop(0.75, #e0e0e0), to(#e0e0e0));
+    border-radius: 2px 2px 2px 2px;
+    color: #555555;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 32px;
+    margin: 0 0 0;
+    padding: 0 0;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #FFFFFF;
+    right: 232px;
+}
+	.btn-rgtr-cust .primary .action, .btn-rgtr .primary .action {
+ background-image: linear-gradient(#e77dc0, #d9309b)!important;
+    border-color: #d9309b #d9309b hsl(322, 69%, 47.5%)!important;
+    border-color: #282828 #282828 hsl(0, 0%, 11%);
+    color: white !important;
+	    text-shadow: 0 -1px 1px #7B0040!important;
+	font-weight:bold!important
+}
+.account-links.top-links{
+    margin: 5px 30px 0 0!important;
+}
+.block-search .action.search .icon{
+	    color: #EE4D9B!important;
+}
+.links-wrapper-separators-left .links > li{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 32px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #FFFFFF;
+    border-radius: 2px 2px 2px 2px;
+    background: -webkit-gradient( linear, left top, left bottom, from(#f7f7f7), color-stop(0.50, #f7f7f7), color-stop(0.50, #e8e8e8), color-stop(0.75, #e0e0e0), to(#e0e0e0));
+    margin: 0 13px!important;
+}

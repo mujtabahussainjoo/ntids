@@ -1,0 +1,35 @@
+div[data-index="downloadable"] { 
+  display: none;
+}
+div[data-index="history"] { 
+  display: none;
+}
+div[data-index="review"] { 
+  display: none;
+}
+div[data-index="design"] { 
+  display: none;
+}
+div[data-index="schedule-design-update"] { 
+  display: none;
+}
+div[data-index="gift-options"] { 
+  display: none;
+}
+.catalog-product-edit #buttonsproduct_form_description button,.actions-split.save.primary #save-button,.action-toggle.primary.save.primary{   
+	background: #0f64ac!important;
+	border-color: #0f64ac!important;
+	color: #ffff!important;
+}
+.action-additional{background: transparent!important;color: #0f64ac!important;}
+#menu-mageplaza-core-menu,#menu-magento-marketplace-partners,.submenu .item-dispatches,.submenu .item-batches,.submenu .item-paypal-billing-agreement{display:none;}
+.order-methods-overlay{bottom:36px!important;}
+
+.dashboard-advanced-reports{display:none;}
+.message-system{display:none;}
+.store-front{display:none!important;}
+.notifications-action{display:none!important;}
+.action-help{display:none!important;}
+
+
+

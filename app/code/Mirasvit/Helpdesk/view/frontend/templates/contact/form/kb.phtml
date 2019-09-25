@@ -1,0 +1,82 @@
+<?php
+/** @var Mirasvit\Helpdesk\Block\Contact\Form $block */
+$config = $block->getConfig();
+$customer = $block->getCustomer();
+?>
+<form action="<?= $block->getKbResultUrl() ?>" method="POST"
+      class="hdmx__contact-form hdmx__kb-form" enctype="multipart/form-data" data-mage-init='{"validation":{}}'>
+
+    <?= $block->getBlockHtml('formkey') ?>
+
+    <button type="button" class="action close">
+        <span>&times;</span>
+    </button>
+
+    <fieldset class="fieldset">
+        <legend class="legend"><?= $config->getFormTitle() ?></legend>
+
+        <div class="field required">
+            <label class="label" for="question"><?= __('What is your question?') ?></label>
+
+            <div class="control">
+                <input type="text" name="s" data-id="question" class="input-text" placeholder=""
+                       value="<?= $block->getSearchQuery() ?>" autocomplete="off"
+                       data-validate="{required:true}">
+
+                <div class="hdmx__spinner" style="display: none">
+                    <div class="spinner-item spinner-item-1"></div>
+                    <div class="spinner-item spinner-item-2"></div>
+                    <div class="spinner-item spinner-item-3"></div>
+                    <div class="spinner-item spinner-item-4"></div>
+                    <div class="spinner-item spinner-item-5"></div>
+                    <div class="spinner-item spinner-item-6"></div>
+                    <div class="spinner-item spinner-item-7"></div>
+                    <div class="spinner-item spinner-item-8"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hdmx__result"></div>
+    </fieldset>
+</form>
+<script type="text/javascript">
+    //<![CDATA[
+    require([
+        'jquery',
+        'underscore'
+    ], function ($, _) {
+        $('.helpdesk-contact-form,#helpdesk-contacts-form').hide();
+        $('.hdmx__contact-form.hdmx__kb-form').submit(function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        var $input = $('[data-id="question"]', $('.hdmx__kb-form'));
+
+        $input.on('change keypress', _.debounce(search, 100));
+
+        function search(e) {
+            var $input = $(e.target);
+            var $form = $input.closest('.hdmx__kb-form');
+            $('.hdmx__spinner', $form).show();
+
+            $('#subject').val($(e.target).val());
+
+            $.ajax({
+                url:     '<?=$block->getKbResultUrl() ?>',
+                data:    $form.serialize(),
+                success: function (response) {
+                    if (response['success'] && $input.val() == response['query']) {
+                        $('.hdmx__spinner', $form).hide();
+                        $('.hdmx__result', $form).html(response['html']);
+                        var $popup = $('#hdmx__contact-popup');
+                        if (typeof window.center != 'undefined' && $popup.length) {
+                            window.center($popup);
+                        }
+                    }
+                }
+            });
+        }
+    });
+    //]]>
+</script>

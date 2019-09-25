@@ -1,0 +1,54 @@
+
+//
+//  Flex column
+//  _____________________________________________
+
+.lib-flex-container-column() {
+    .lib-vendor-prefix-display(flex);
+    .lib-vendor-prefix-flex-direction(column);
+}
+
+//
+//  Sidebar block title
+//  _____________________________________________
+
+.lib-sidebar-block-title-text() {
+    font-weight: normal;
+    font-size: @sidebar-block__title__font-size;
+    line-height: @sidebar-block__title__line-height;
+}
+.lib-sidebar-block-title() {
+    margin-bottom: @sidebar-block__title__margin-bottom;
+    padding-top: @sidebar-block__title__vert-padding;
+    padding-bottom: @sidebar-block__title__vert-padding;
+    border-bottom: 1px solid @global-border-color;
+    // min-height: @sidebar-block__title__line-height; // To keep the height even when title is empty (useful for itemsliders)
+}
+
+// .lib-sidebar-block-title() {
+//     margin-bottom: 15px;
+//     padding-top: 10px;
+//     padding-bottom: 10px;
+//     border-bottom: 1px solid #e5e5e5;
+//     > strong {
+//         font-weight: normal;
+//         font-size: 19px;
+//         line-height: 22px;
+//     }
+// }
+
+//
+//  Borders
+//  _____________________________________________
+
+.lib-global-border-color() {
+	border-color: @global-border-color;
+}
+
+.lib-global-border-color-light() {
+	border-color: @global-border-color__light;
+}
+
+.lib-global-border-color-dark() {
+	border-color: @global-border-color__dark;
+}

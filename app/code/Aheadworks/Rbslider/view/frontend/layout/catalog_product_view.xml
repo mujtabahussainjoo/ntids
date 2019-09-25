@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+            <block class="Aheadworks\Rbslider\Block\Banner" name="banner_product_menu_top" as="banner_product_menu_top" before="navigation.sections" />
+            <block class="Aheadworks\Rbslider\Block\Banner" name="banner_product_menu_bottom" as="banner_product_menu_bottom" after="navigation.sections" />
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Aheadworks\Rbslider\Block\Banner" name="banner_product_content_top" as="banner_product_content_top" before="product.info.main" />
+        </referenceContainer>
+        <referenceContainer name="page.bottom">
+            <block class="Aheadworks\Rbslider\Block\Banner" name="banner_product_page_bottom" as="banner_product_content_sidebar_bottom" after="-" />
+        </referenceContainer>
+    </body>
+</page>

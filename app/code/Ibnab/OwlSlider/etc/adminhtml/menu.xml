@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Ibnab_OwlSlider::owlslider_owlslider" title="Owl Slider" module="Ibnab_OwlSlider" sortOrder="11" resource="Ibnab_OwlSlider::owlslider_owlslider"/>
+
+		<add id="Ibnab_OwlSlider::owlslider_sliders" title="Manage Sliders" module="Ibnab_OwlSlider" sortOrder="11" parent="Ibnab_OwlSlider::owlslider_owlslider" action="ibnabowlslider/sliders" resource="Ibnab_OwlSlider::owlslider_sliders"/>
+
+        <add id="Ibnab_OwlSlider::owlslider_banners" title="Manage Banners" module="Ibnab_OwlSlider" sortOrder="11" parent="Ibnab_OwlSlider::owlslider_owlslider" action="ibnabowlslider/banners" resource="Ibnab_OwlSlider::owlslider_banners"/>
+
+    </menu>
+</config>

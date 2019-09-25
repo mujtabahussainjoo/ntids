@@ -1,0 +1,49 @@
+<?php
+/**
+ * $block->getCoreString()  \Mirasvit\Core\Helper\Text  $_coreString
+ * @var \Mirasvit\Kb\Block\Article\ListArticle $block
+ */
+?>
+<?php
+$collection = $block->getArticleCollection();
+?>
+
+<?php if ($collection->count()): ?>
+    <?= $block->getToolbarHtml() ?>
+
+    <ol class="kb-articles__list">
+        <?php foreach ($collection as $article): ?>
+            <li class="kb-articles__article">
+                <a href="<?= $article->getUrl() ?>"><?= $article->getName(); ?></a>
+
+                <div class="kb-article__metadata kb-article__metadata-list">
+                    <div class="author">
+                        <?php if ($block->isShowAuthor()): ?>
+                            <?= $article->getUser()->getName(); ?>
+                        <?php endif; ?>
+                        <?php if ($block->isShowDate()): ?>
+                            <?php if ($block->isShowAuthor()): ?>
+                                <?= __(' posted this at '); ?>
+                            <?php endif; ?>
+                            <?= $block->formatDate($article->getCreatedAt(), \IntlDateFormatter::MEDIUM); ?>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php if ($block->isRatingEnabled()): ?>
+                        <div class="rating">
+                            <i class="fa fa-thumbs-o-up"></i><?= $article->getPositiveVoteNum() ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+
+                <?php
+                $remainder = '';
+                echo $this->helper('Mirasvit\Core\Helper\Text')->truncate(strip_tags($article->getSummary()), 300, ' ...', $remainder, false);
+                ?>
+            </li>
+        <?php endforeach; ?>
+    </ol>
+    <?= $block->getToolbarHtml() ?>
+<?php else: ?>
+    <p><?= __('There are no articles available for this category'); ?></p>
+<?php endif ?>

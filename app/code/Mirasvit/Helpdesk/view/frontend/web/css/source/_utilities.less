@@ -1,0 +1,335 @@
+@screen__xxs: 320px;
+@screen__xs: 480px;
+@screen__s: 640px;
+@screen__m: 768px;
+@screen__l: 1024px;
+@screen__xl: 1440px;
+@media-common: true;
+
+@text__color__muted: #7d7d7d;
+
+//  Weights
+@font-weight__light: 300;
+@font-weight__regular: 400;
+@font-weight__heavier: 500;
+@font-weight__semibold: 600;
+@font-weight__bold: 700;
+
+@button__disabled__opacity: .5;
+
+@icon__position: before;
+@icon__text-hide: false;
+@icon__height: 26px;
+@icon__width: 26px;
+@icon__margin: '';
+@icon__vertical-align: middle;
+@icons__font-name: 'icons-blank-theme';
+@icon-font: @icons__font-name;
+@icon-font__position: @icon__position;
+@icon-font__text-hide: @icon__text-hide;
+@icon-font__margin: @icon__margin;
+@icon-font__size: inherit;
+@icon-font__line-height: @icon-font__size;
+@icon-font__color: inherit;
+@icon-font__color-hover: false;
+@icon-font__color-active: false;
+@icon-font__vertical-align: @icon__vertical-align;
+@icon-font__display: inline-block;
+
+
+//  Button with icon
+@button-icon__use: false;
+@button-icon__content: @icon-settings;
+@button-icon__font: @icon-font;
+@button-icon__font-size: 22px;
+@button-icon__line-height: @button-icon__font-size;
+@button-icon__color: inherit;
+@button-icon__margin: 0;
+@button-icon__vertical-align: top;
+@button-icon__position: @icon__position;
+@button-icon__text-hide: false;
+
+@icon-settings: '\e606';
+@icon-remove: '\e616';
+
+@button-icon__hover__font-color: inherit;
+@button-icon__active__font-color: inherit;
+
+.lib-clearfix() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.lib-css(
+  @_property,
+  @_value,
+  @_prefix: 0
+) when (@_prefix = 1)
+  and not (@_value = '')
+  and not (@_value = false)
+  and not (extract(@_value, 1) = false)
+  and not (extract(@_value, 2) = false)
+  and not (extract(@_value, 3) = false)
+  and not (extract(@_value, 4) = false)
+  and not (extract(@_value, 5) = false) {
+  -webkit-@{_property}: @_value;
+  -moz-@{_property}: @_value;
+  -ms-@{_property}: @_value;
+}
+
+.lib-css(
+  @_property,
+  @_value,
+  @_prefix: 0
+) when not (@_value = '')
+  and not (@_value = false)
+  and not (extract(@_value, 1) = false)
+  and not (extract(@_value, 2) = false)
+  and not (extract(@_value, 3) = false)
+  and not (extract(@_value, 4) = false)
+  and not (extract(@_value, 5) = false) {
+  @{_property}: @_value;
+}
+//
+//  Button reset
+//  ---------------------------------------------
+
+.lib-button-reset() {
+  background-image: none; // Reset unusual Firefox-on-Android default style
+  background: none;
+  -moz-box-sizing: content-box; // Hack: fix Firefox button line-height problem
+  border: 0;
+  box-shadow: none;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-shadow: none;
+  .lib-css(font-weight, @font-weight__regular);
+
+  &:focus,
+  &:active {
+    background: none;
+    border: none;
+  }
+
+  &:hover {
+    background: none;
+    border: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Disabling of clicks
+    .lib-css(opacity, @button__disabled__opacity);
+  }
+}
+
+.lib-button-icon (
+  @_icon-font-content,
+  @_icon-font: @button-icon__font,
+  @_icon-font-size: @button-icon__font-size,
+  @_icon-font-line-height: @button-icon__line-height,
+  @_icon-font-color: @button-icon__color,
+  @_icon-font-color-hover: @button-icon__hover__font-color,
+  @_icon-font-color-active: @button-icon__active__font-color,
+  @_icon-font-margin: @button-icon__margin,
+  @_icon-font-vertical-align: @button-icon__vertical-align,
+  @_icon-font-position: @button-icon__position,
+  @_icon-font-text-hide: @button-icon__text-hide
+) {
+  .lib-icon-font(
+  @_icon-font-content: @_icon-font-content,
+  @_icon-font: @_icon-font,
+  @_icon-font-size: @_icon-font-size,
+  @_icon-font-line-height: @_icon-font-line-height,
+  @_icon-font-color: @_icon-font-color,
+  @_icon-font-color-hover: @_icon-font-color-hover,
+  @_icon-font-color-active: @_icon-font-color-active,
+  @_icon-font-margin: @_icon-font-margin,
+  @_icon-font-vertical-align: @_icon-font-vertical-align,
+  @_icon-font-position: @_icon-font-position,
+  @_icon-font-text-hide: @_icon-font-text-hide
+  );
+}
+
+.lib-visually-hidden() {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.lib-icon-text-hide() {
+  > span {
+    .lib-visually-hidden();
+  }
+}
+
+._lib-icon-text-hide(@_icon-text-hide) when (@_icon-text-hide = true) {
+  .lib-icon-text-hide();
+}
+
+._lib-icon-font(
+  @_icon-font-content,
+  @_icon-font,
+  @_icon-font-size,
+  @_icon-font-line-height,
+  @_icon-font-color,
+  @_icon-font-margin,
+  @_icon-font-vertical-align
+) {
+  -webkit-font-smoothing: antialiased;
+  ._lib-icon-font-size(@_icon-font-size, @_icon-font-line-height);
+  .lib-css(color, @_icon-font-color);
+  .lib-css(content, @_icon-font-content);
+  .lib-css(font-family, @_icon-font);
+  .lib-css(margin, @_icon-font-margin);
+  .lib-css(vertical-align, @_icon-font-vertical-align);
+  display: inline-block;
+  font-weight: normal;
+  overflow: hidden;
+  speak: none;
+  text-align: center;
+}
+
+._lib-icon-font-size(@_icon-font-size, @_icon-font-line-height) {
+  .lib-css(font-size, @_icon-font-size);
+  .lib-css(line-height, @_icon-font-line-height);
+}
+
+.lib-icon-font(
+  @_icon-font-content,
+  @_icon-font: @icon-font,
+  @_icon-font-size: @icon-font__size,
+  @_icon-font-line-height: @icon-font__line-height,
+  @_icon-font-color: @icon-font__color,
+  @_icon-font-color-hover: @icon-font__color-hover,
+  @_icon-font-color-active: @icon-font__color-active,
+  @_icon-font-margin: @icon-font__margin,
+  @_icon-font-vertical-align: @icon-font__vertical-align,
+  @_icon-font-position: @icon-font__position,
+  @_icon-font-text-hide: @icon-font__text-hide,
+  @_icon-font-display: @icon-font__display
+) when (@_icon-font-position = before) {
+  ._lib-icon-text-hide(@_icon-font-text-hide);
+  .lib-css(display, @_icon-font-display);
+  text-decoration: none;
+
+  &:before {
+    ._lib-icon-font(
+    @_icon-font-content,
+    @_icon-font,
+    @_icon-font-size,
+    @_icon-font-line-height,
+    @_icon-font-color,
+    @_icon-font-margin,
+    @_icon-font-vertical-align
+    );
+  }
+
+  &:hover {
+    &:before {
+      .lib-css(color, @_icon-font-color-hover);
+    }
+  }
+
+  &:active {
+    &:before {
+      .lib-css(color, @_icon-font-color-active);
+    }
+  }
+}
+
+.lib-icon-font(
+  @_icon-font-content,
+  @_icon-font: @icon-font,
+  @_icon-font-size: @icon-font__size,
+  @_icon-font-line-height: @icon-font__line-height,
+  @_icon-font-color: @icon-font__color,
+  @_icon-font-color-hover: @icon-font__color-hover,
+  @_icon-font-color-active: @icon-font__color-active,
+  @_icon-font-margin: @icon-font__margin,
+  @_icon-font-vertical-align: @icon-font__vertical-align,
+  @_icon-font-position: @icon-font__position,
+  @_icon-font-text-hide: @icon-font__text-hide,
+  @_icon-font-display: @icon-font__display
+) when (@_icon-font-position = after) {
+  ._lib-icon-text-hide(@_icon-font-text-hide);
+  .lib-css(display, @_icon-font-display);
+  text-decoration: none;
+
+  &:after {
+    ._lib-icon-font(
+    @_icon-font-content,
+    @_icon-font,
+    @_icon-font-size,
+    @_icon-font-line-height,
+    @_icon-font-color,
+    @_icon-font-margin,
+    @_icon-font-vertical-align
+    );
+  }
+
+  &:hover {
+    &:after {
+      .lib-css(color, @_icon-font-color-hover);
+    }
+  }
+
+  &:active {
+    &:after {
+      .lib-css(color, @_icon-font-color-active);
+    }
+  }
+}
+.lib-rotate(@_rotation) {
+  -webkit-transform: rotate(@_rotation); //  Use in 8 Safari
+  -ms-transform: rotate(@_rotation); //  Use in 9 IE
+  transform: rotate(@_rotation);
+}
+
+@media only screen and (max-width: (@screen__xxs - 1)) {
+  .media-width('max', @screen__xxs);
+}
+
+@media only screen and (max-width: (@screen__xs - 1)) {
+  .media-width('max', @screen__xs);
+}
+
+@media only screen and (max-width: (@screen__s - 1)) {
+  .media-width('max', @screen__s);
+}
+
+@media only screen and (max-width: (@screen__m - 1)) {
+  .media-width('max', @screen__m);
+}
+
+@media only screen and (max-width: @screen__m) {
+  .media-width('max', (@screen__m + 1));
+}
+
+@media only screen and (min-width: @screen__m) {
+  .media-width('min', @screen__m);
+}
+
+@media all and (min-width: @screen__s) {
+  .media-width('min', @screen__s);
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') {
+
+}

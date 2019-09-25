@@ -1,0 +1,32 @@
+
+/******************************************AMRA****************************************/
+.footer-top .inner-container {
+		background: #ffffff !important;
+		 border-color: #000; 
+		 border-top-style: groove;
+ } 
+.block-search .block.block-content {
+padding:9px 37px 45px 264px!important;}
+
+.header-container2,.header-primary-container{ 
+margin-bottom:-1.5%;
+}
+.navi-wrapper,#mainmenu{
+	 background-color: #e2192c !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e2192c), to(#b41423)) !important;
+	background-color: rgba(0, 0, 0, 0)!important;
+	background-image: linear-gradient(to bottom, rgb(226, 25, 44) 0%, rgb(180, 20, 35) 100%)!important;
+	background-repeat: repeat!important;
+	border-radius:5px !important;
+	border:none !important;
+	background-color: #e2192c;
+    margin-bottom: 10px;
+}
+.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{ 
+	    background: #8a0303 !important;
+        border-color: #282828 #282828  !important;
+    color: white !important;
+}
+.main-container {
+    background-color: transparent!important;
+}

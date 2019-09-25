@@ -1,0 +1,160 @@
+<?php
+/**
+ * @var \Infortis\Base\Block\Html\Header $block
+ */
+?>
+<?php
+	echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('Footer_HBF')->toHtml();
+?>
+
+
+<?php
+ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+ $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
+ $frontendhide=$objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue("htmlelements/htmlelements/frontendhide",$storeScope);
+ $frontenddisable=$objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue("htmlelements/htmlelements/frontenddisable",$storeScope);
+
+// echo "<pre>";
+ // print_r (explode(",",$frontenddisable));
+// print_r ($frontendhide);
+?>
+<script>
+require(['jquery', 'jquery/ui'], function($){
+  jQuery(document).ajaxStop( function() {
+	var frontendHide ='<?php echo $frontendhide;?>';
+	var frontendDisable ='<?php echo $frontenddisable;?>';
+	var frontendHideElements = frontendHide.split(',');
+	var frontendDisableElements = frontendDisable.split(',');
+	if(jQuery( ".action-additional" ))
+	   //jQuery( ".action-additional" ).trigger( "click" );
+   if(jQuery( ".action-close" ))
+	 // jQuery( ".action-close" ).trigger( "click" );
+	for(k=0; k<frontendHideElements.length; ++k){
+		var fullString = frontendHideElements[k];
+		if (fullString.indexOf("class@") != -1){
+			 var classHideElements=fullString.split('@');
+			 var classHideElement=classHideElements[1];
+			 //alert(classHideElement);
+			 if(jQuery("."+classHideElement))
+		       jQuery("."+classHideElement).hide();
+		}else{
+			
+			var idHideElements= frontendHideElements[k];
+			//alert(idHideElements);
+			if(jQuery("#"+idHideElements))
+			    jQuery("#"+idHideElements).hide();
+			
+			if(jQuery("[name='"+idHideElements+"']"))
+			    jQuery("[name='"+idHideElements+"']").hide();
+			
+			if(jQuery("[title='"+idHideElements+"']"))
+			    jQuery("[title='"+idHideElements+"']").hide();
+			
+			if(jQuery("[data-index='"+idHideElements+"']"))
+			    jQuery("[data-index='"+idHideElements+"']").hide(); 
+		}	 
+	}
+	for(j=0; j<frontendDisableElements.length; ++j){
+		var fullStrings = frontendDisableElements[j];
+		if (fullStrings.indexOf("class@") != -1){
+			 var classDisableElements=fullStrings.split('@');
+			 var classDisableElement=classDisableElements[1];
+			 //alert(classDisableElement);
+			 if(jQuery("."+classDisableElement))
+		       jQuery("."+classDisableElement).prop("disabled", "disabled");
+		}else{
+			var idHideElements= frontendDisableElements[j];
+			//alert(idHideElements);
+			if(jQuery("#"+idHideElements))
+			    jQuery("#"+idHideElements).prop("disabled", "disabled");
+			console.log(jQuery("[name='"+idHideElements+"']").val());
+			 if(jQuery("[name='"+idHideElements+"']"))
+			    jQuery("[name='"+idHideElements+"']").prop("disabled", "disabled");
+			
+			if(jQuery("[title='"+idHideElements+"']"))
+			    jQuery("[title='"+idHideElements+"']").prop("disabled", "disabled");
+		}
+		//jQuery("."+classDisableElements).attr('disabled',true);
+	}
+  });
+  
+    jQuery(document).ready( function() {
+	var frontendHide ='<?php echo $frontendhide;?>';
+	var frontendDisable ='<?php echo $frontenddisable;?>';
+	var frontendHideElements = frontendHide.split(',');
+	var frontendDisableElements = frontendDisable.split(',');
+	if(jQuery( ".action-additional" ))
+	   //jQuery( ".action-additional" ).trigger( "click" );
+   if(jQuery( ".action-close" ))
+	  //jQuery( ".action-close" ).trigger( "click" );
+	for(k=0; k<frontendHideElements.length; ++k){
+		var fullString = frontendHideElements[k];
+		if (fullString.indexOf("class@") != -1){
+			 var classHideElements=fullString.split('@');
+			 var classHideElement=classHideElements[1];
+			 //alert(classHideElement);
+			 if(jQuery("."+classHideElement))
+		       jQuery("."+classHideElement).hide();
+		}else{
+			var idHideElements= frontendHideElements[k];
+			//alert(idHideElements);
+			if(jQuery("#"+idHideElements))
+			    jQuery("#"+idHideElements).hide();
+			
+			if(jQuery("[name='"+idHideElements+"']"))
+			    jQuery("[name='"+idHideElements+"']").hide();
+			
+			if(jQuery("[title='"+idHideElements+"']"))
+			    jQuery("[title='"+idHideElements+"']").hide();	
+			if(jQuery("[for='"+idHideElements+"']"))
+			    jQuery("[for='"+idHideElements+"']").hide();
+		}	 
+	}
+	for(j=0; j<frontendDisableElements.length; ++j){
+		var fullStrings = frontendDisableElements[j];
+		if (fullStrings.indexOf("class@") != -1){
+			 var classDisableElements=fullStrings.split('@');
+			 var classDisableElement=classDisableElements[1];
+			 //alert(classDisableElement);
+			 if(jQuery("."+classDisableElement))
+		       jQuery("."+classDisableElement).prop("disabled", "disabled");
+		}else{
+			var idHideElements= frontendDisableElements[j];
+			//alert(idHideElements);
+			if(jQuery("#"+idHideElements))
+			    jQuery("#"+idHideElements).prop("disabled", "disabled");
+			
+			 if(jQuery("[name='"+idHideElements+"']"))
+			    jQuery("[name='"+idHideElements+"']").prop("disabled", "disabled");
+			
+			if(jQuery("[title='"+idHideElements+"']"))
+			    jQuery("[title='"+idHideElements+"']").prop("disabled", "disabled");
+		}
+		//jQuery("."+classDisableElements).attr('disabled',true);
+	}
+  });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

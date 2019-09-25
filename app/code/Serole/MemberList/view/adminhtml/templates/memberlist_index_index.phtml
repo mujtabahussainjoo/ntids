@@ -1,0 +1,163 @@
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+$FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey'); 
+?>
+<main id="anchor-content" class="page-content">
+ <div class="page-main-actions">    
+	<div class="page-actions-placeholder"></div>
+	<div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+	  <div class="page-actions-inner" data-title="Edit Item">
+	    <div class="page-actions-buttons">
+			<button id="back" title="Back" type="button" class="action-default scalable back" onclick="window.location='<?php echo $block->getUrl('memberlist/memberlist/') ?>'" data-ui-id="memberlist-memberlist-edit-back-button">
+			   <span>Back</span>
+			</button>
+        </div>
+      </div>
+    </div>
+ </div>
+<div id="page:main-container" class="page-columns">
+<div id="container" class="main-col">
+<form name="myForm" id="myForm" method="post" enctype="multipart/form-data" action="">
+<div id="memberlist_tabs_main_section_content" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+  <div class="entry-edit form-inline">
+   <fieldset class="fieldset admin__fieldset " id="page_base_fieldset">
+	<legend class="admin__legend legend">
+	   <span>Upload Information</span>
+	</legend>
+	<br />
+    <input name="form_key" type="hidden" value="<?php echo $FormKey->getFormKey();?>">
+	 <div class="admin__field field field-member_number">
+		<div class="admin__field-control control" style="width:100%">
+			
+			This facility allows you to add, update or remove many users at once using a CSV file (comma separated).
+		   <br /><br />
+	    </div>
+	  </div>
+	  <div class="admin__field field field-member_number">
+			<label class="label admin__field-label" for="page_member_number" >
+			  <span>STEP1:</span>
+			</label>
+            <div class="admin__field-control control" style="width:55%; padding-top: 7px;">
+                Download a sample copy of the layout of the CSV file by clicking the link below.
+				 <?php 
+				   $baseURL = $this->getBaseUrl();
+				 ?>
+					<br />
+					<br />
+				<span>
+					  <a href="<?php echo  $baseURL."sampleCustomerMemberCsvFile/upload_default.csv"; ?>" download>Click Here to Download Sample CSV File</a>
+				</span>
+			</div>
+        </div>
+		<div class="admin__field field field-member_number">
+			<label class="label admin__field-label" for="page_member_number" >
+			  <span>STEP 2:</span>
+			</label>
+            <div class="admin__field-control control" style="width:55%; padding-top: 7px;">
+                Add values to the downloaded CSV file. All 3 columns MUST be filled for each row or the row will be skipped during upload
+			</div>
+        </div>
+		
+		<div class="admin__field field field-member_number">
+			<label class="label admin__field-label" for="page_member_number" >
+			  <span>STEP 3:</span>
+			</label>
+            <div class="admin__field-control control" style="width:55%; padding-top: 7px;">
+                Please Choose Store.
+					<?php
+					    $memberListHelper = $this->helper('Serole\MemberList\Helper\Data');
+						$stores = $memberListHelper->getStoreArray();
+						$storeOtions = '';
+						if(isset($stores) && !empty($stores)) {
+							foreach($stores as $key=>$store) {
+								
+									$storeOtions .= '<option value="'.$key.'">'.$store.'</option>';
+							}
+						} 
+					?>
+					<select name="webCode" id ="webCode"><?php echo $storeOtions; ?></select>
+					<div style="font-weight: bold; color: red; margin-top: 8px; margin-left: 15px;display:none;margin-bottom:-25px;" id="fileerror1">Please choose store.</div>
+			</div>
+        </div>
+		
+		<div class="admin__field field field-member_number">
+			<label class="label admin__field-label" for="page_member_number" >
+			  <span>STEP 4:</span>
+			</label>
+            <div class="admin__field-control control" style="width:55%; padding-top: 7px;">
+               Click "Browse" below and select the file on your computer<br /><br />
+					<input type="file" name="fileToUpload" id="fileToUpload">
+					<div style="font-weight: bold; color: red; margin-top: 8px; margin-left: 15px;;display:none;margin-bottom:-25px;" id="fileerror">Please choose csv file.</div>
+			</div>
+        </div>
+		
+		<div class="admin__field field field-member_number">
+			<label class="label admin__field-label" for="page_member_number" >
+			  <span>STEP 5:</span>
+			</label>
+            <div class="admin__field-control control" style="width:55%; padding-top: 7px;">
+               Choose what should be done if we encounter a row in the CSV, that is already in the system.<br />
+					<b>Note:</b> To "match" we only use the 1st column in the system<br /><br />
+					If the 1st column in the CSV matches a row in the system:<br /><br />
+					<ul style="margin-left:30px; list-style: none;">
+					<li><input type="radio" name="csv_matches" value="0" checked> Do nothing, Just ignore the row in the CSV file</li>
+					<li><input type="radio" name="csv_matches" value="2"> Delete the row in the system but do not add the row from the CSV file</li>
+					<li><input type="radio" name="csv_matches" value="1"> Update the row in the system with the values from the matching row in the CSV file
+					</li>
+					<li><input type="radio" name="csv_matches" value="3"> Delete all existing members and upload new member list</li>
+					</ul>
+			</div>
+        </div>
+		<div class="admin__field field field-member_number">
+			<label class="label admin__field-label" for="page_member_number" >
+			  <span>STEP 6:</span>
+			</label>
+            <div class="admin__field-control control" style="width:55%; padding-top: 7px;">
+               Press the upload button....
+			</div>
+        </div>
+		<div class="admin__field field field-member_number">
+		    <label class="label admin__field-label" for="page_member_number" >
+			  <span></span>
+			</label>
+            <div class="admin__field-control control" style="width:55%; padding-top: 7px;">
+               <button style="padding: 10px 20px;" onclick="return getData()" class="" type="submit" title="upload" id="upload">
+			     <span>Upload</span>
+			   </button>
+			</div>
+        </div>
+					
+				
+	 </fieldset>
+  </div>
+ </div>
+</form>
+</div>
+</div>
+</main>
+<script type="text/javascript">
+function getData() {
+	var csvupload =  document.getElementById('fileToUpload').value;
+	var sel = document.getElementById('webCode');
+    var sv = sel.options[sel.selectedIndex].value;
+	if(sv == '' || sv == 0) {
+		document.getElementById('fileerror1').style.display="block";
+		return false;
+	} else if(csvupload == '') {
+		document.getElementById('fileerror').style.display="block";
+		return false;
+	} else {
+		var csvuploadArr = csvupload.split(".") // Delimiter is a string
+		var fileLen = csvuploadArr.length;
+		var fileExt = csvuploadArr[fileLen-1];
+		if (fileExt != 'csv') {
+			document.getElementById('fileerror').innerHTML = 'Please choose CSV file for upload.';
+			document.getElementById('fileerror').style.display="block";
+			return false;
+		} else {
+			return true;
+		}
+		
+	}
+}
+</script>

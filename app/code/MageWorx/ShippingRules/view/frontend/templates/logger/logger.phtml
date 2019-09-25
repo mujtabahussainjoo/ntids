@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \MageWorx\ShippingRules\Helper\Data */
+$helper = $this->helper('MageWorx\ShippingRules\Helper\Data');
+if ($helper->isLoggerEnabled()) {
+    ?>
+    <script type="text/x-magento-init">
+    <?php
+        echo $this->helper(\Magento\Framework\Json\Helper\Data::class)->jsonEncode(
+            [
+                '*' => [
+                    'MageWorx_ShippingRules/js/shippingRulesLogger' => [
+                        'submitUrl' => $block->getUrl('mageworx_shippingrules/logger/index')
+                    ]
+                ],
+            ]
+        );
+        ?>
+    </script>
+    <?php
+}

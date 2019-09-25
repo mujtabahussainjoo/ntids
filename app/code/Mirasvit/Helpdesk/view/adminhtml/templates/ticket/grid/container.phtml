@@ -1,0 +1,21 @@
+<?php
+
+$headerHtml = $block->getHeaderHtml();
+$buttonsHtml = $block->getButtonsHtml();
+$gridHtml = $block->getGridHtml();
+?>
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td style="<?= $block->getHeaderWidth() ?>"><?= $headerHtml ?></td>
+            <td>
+            </td>
+            <td class="form-buttons"><?= $buttonsHtml ?></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <?= $block->getChildHtml('store_switcher') ?>
+    <?= $block->getChildHtml('search_form') ?>
+    <?= $gridHtml ?>
+</div>

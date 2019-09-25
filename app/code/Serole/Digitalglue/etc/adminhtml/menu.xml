@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <!--<add id="Serole_Digitalglue::parent" title="Digitalglue" module="Serole_Digitalglue" sortOrder="100" resource="Serole_Digitalglue::parent"/>-->
+		<add id="Serole_Digitalglue::digitalglue" title="Digital Glue Response" module="Serole_Digitalglue" sortOrder="20" parent="Magento_Sales::sales" action="digitalglue/digitalglue" resource="Serole_Digitalglue::digitalglue"/>
+    </menu>
+</config>

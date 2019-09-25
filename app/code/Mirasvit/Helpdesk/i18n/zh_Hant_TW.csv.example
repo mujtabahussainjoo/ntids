@@ -1,0 +1,136 @@
+Department,部
+"Create New Ticket",創建新票
+Status,狀態
+Priority,優先
+Replies,回复
+View,視圖
+"Help Desk",服務台
+"Thank you",謝謝
+"Create Ticket",創建票據
+"Your request was successfully submitted. You should receive a confirmation email shortly.",您的請求已成功提交。您應該很快收到確認電子郵件。
+Telephone,電話
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.",您的查詢已提交並將盡快回复。感謝您與我們聯繫。
+"Unable to submit your request. Please, try again later",無法提交您的請求。請稍後再試
+"Page not found.",找不到網頁。
+"Your message was successfuly posted",您的消息已成功發布
+"Your ticket was successfuly posted",您的機票已成功發布
+"Ticket was successfuly closed",機票成功關閉
+"Can't upload file %1 . Max allowed upload size is %2 MB.","無法上傳文件%1。最大允許的上傳大小是%2 MB。"
+"Allows only this file types: %1",只允許這種文件類型：%1
+"Message added",已添加消息
+"Internal note added",內部說明補充說
+"Third party message added",添加第三方消息
+"Private third party message added",添加了私人第三方消息
+"-- Please Select --","-  請選擇  -"
+"Contact Tab",聯繫人標籤
+"Contact Form",聯繫表
+" at %1 (%2) - %3","在%1（%2） -  %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.",您無權讀取此故障單。請與您的管理員聯繫。
+"Invalid Customer Email",客戶電子郵件無效
+"not set",沒有設置
+"Unknown time",未知的時間
+ago,前
+"from now",現在起
+"1 sec ago",1秒前
+"Open Ticket",打開票
+"Open Tickets",開放門票
+"! Blocked file - ","！被阻止的文件 -"
+Disabled,殘
+"AW Helpdesk",AW幫助台
+"MW Helpdesk",MW幫助台
+"File System",文件系統
+Database,數據庫
+Aqua,水族
+Grey,灰色
+Navy,海軍
+Silver,銀
+Black,黑色
+Green,綠色
+Olive,橄欖
+Teal,蒂爾
+Blue,藍色
+Lime,青檸
+Purple,紫色
+Fuchsia,紫紅色
+Maroon,栗色
+Red,紅
+Orange,橙子
+Yellow,黃色
+Text,文本
+Date,日期
+Checkbox,複選框
+"Drop-down list",下拉列表
+"In minutes...",在幾分鐘內......
+"In hours...",幾小時內...
+"In days...",幾天...
+"In weeks...",在幾週內......
+"In months...",幾個月...
+Custom,習慣
+"--Please Select--","- 請選擇 -"
+"New ticket created",新票已創建
+Success,成功
+Customer,顧客
+Staff,員工
+"Third party",第三方
+Closed,關閉
+"Opened 24hr",24小時開放
+"Helpdesk Tickets",服務台門票
+"Cannot delete ticket with id %1",無法刪除ID為%1的票證
+Edit,編輯
+"All Departments",所有部門
+Back,背部
+"24 hrs x 7 days","24小時x 7天"
+"Select working days/hours",選擇工作日/小時
+"Satisfaction survey",滿意度調查
+"to %1 (third party)",（第三方）
+"%1 (third party)",%1（第三方）
+"added %1 (%2)",添加%1（%2）
+"Ticket Summary",票務摘要
+"Ticket ID",門票ID
+Assignee,代理人
+"Additional Info",附加信息
+"Ticket History",票務歷史
+"Done by",完成
+Changes,變化
+Name,名稱
+"Attach files",附加文件
+Submit,提交
+"Submit Ticket",提交工單
+"What is your question?",你的問題是什麼？
+"We found the following topics that might be helpful:",我們發現以下可能有用的主題：
+"None of these are helpful - get in touch","這些都沒有幫助 - 取得聯繫"
+"We have not found topics that can be helpful.",我們還沒有找到有用的主題。
+"Contact Information",聯繫信息
+Comment,評論
+"We are open 24 x 7","我們是24 x 7開放"
+"We are closed",我們關門了
+"Timezone: %1",時區：%1
+"Please take a second to rate my reply...",請花一秒鐘評價我的回复...
+Great,大
+Awesome,真棒
+"Fast, friendly, helpful, pleasant. Great job!",快速，友好，樂於助人，愉快。做得好！
+"Just Okay",好吧
+"Fine, but definitely could have been better.",很好，但肯定會更好。
+"Not good",不好
+"Unfortunately, I wasn't happy with it at all.",不幸的是，我一點都不滿意。
+"Thank you for participating in our survey!",感謝您參與我們的調查！
+"If you would like to provide additional comments, please do so below:",如果您想提供其他意見，請在下面進行：
+Message,信息
+"Submit Message",提交信息
+"Thank you for your feedback!",感謝您的反饋意見！
+Attachments,附件
+Order,訂購
+"-- Select an Order --","- 選擇一個訂單 -"
+"Create ticket",創建票據
+"You don't have open tickets",你沒有開門票
+"Post a Reply",發表回复
+"Reopen Ticket",重新打開票
+"Close Ticket",關閉票
+History,歷史
+"Back to My Tickets",返回我的門票
+"Help Desk MX",幫助台MX
+"Contact Us",聯繫我們
+Open,打開
+Subject,學科
+"Last Activity",上次活動
+"Request ID",請求ID

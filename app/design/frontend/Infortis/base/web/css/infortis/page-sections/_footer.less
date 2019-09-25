@@ -1,0 +1,148 @@
+//
+//  Page footer
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+.footer-container {
+
+    .footer-top .inner-container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .item-left {
+        float: left;
+        margin-right: 20px;
+    }
+    .item-right {
+        float: right;
+        margin-left: 20px;
+    }
+
+    .footer-primary-top > .inner,
+    .footer-primary-bottom > .inner {
+        &:extend(.abs-add-clearfix all);
+    }
+    .footer-primary-top-spacing {
+        border-bottom: 1px solid;
+        border-color: #eee;
+        border-color: rgba(0, 0, 0, 0.05);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+    .footer-primary-bottom-spacing {
+        border-top: 1px solid;
+        border-color: #eee;
+        border-color: rgba(0, 0, 0, 0.05);
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+
+}
+
+.footer {
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+
+    //
+    //  Footer elements
+    //  ---------------------------------------------
+
+    .social-links .ib {
+        margin-bottom: 3px;
+    }
+    .footer-copyright {
+        font-size: 11px;
+        line-height: 16px;
+        margin: 4px 0;
+    }
+    .heading {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    ul li {
+        // Decrease default margin to minimum
+        margin-bottom: 2px;
+    }
+}
+
+
+
+} // end: media-common
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .footer-container {
+
+        //  Footer elements - align center
+
+        .footer-top > *,
+        .footer-top .links,
+        .footer-primary-top > *,
+        .footer-primary-bottom > *,
+        .footer-bottom > * {
+            text-align: center;
+        }
+
+        .footer-top .inner-container > .item,
+        .footer-top .links li,
+        .footer-primary-top .item,
+        .footer-primary-bottom .item,
+        .footer-bottom .item,
+        .footer-bottom .links li {
+            float: none;
+            display: inline-block;
+        }
+
+        //.footer-top .item, // Remomved because each link also has "item" class
+        .footer-top .inner-container > .item,
+        .footer-primary-top .item,
+        .footer-primary-bottom .item,
+        .footer-bottom .item {
+            //width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        //  Simplify links
+
+        .footer .links-wrapper-separators .links li a,
+        .footer .links-wrapper-separators-left .links li a {
+            background-image: none;
+        }
+
+        //  Footer elements
+
+        .footer-bottom .item {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .footer-copyright {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    }
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+// }

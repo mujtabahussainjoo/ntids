@@ -1,0 +1,136 @@
+Department,Departemen
+"Create New Ticket","Buat Tiket Baru"
+Status,Status
+Priority,Prioritas
+Replies,Balasan
+View,Melihat
+"Help Desk","Meja Bantuan"
+"Thank you","Terima kasih"
+"Create Ticket","Buat Tiket"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Permintaan Anda berhasil dikirim. Anda akan segera menerima email konfirmasi."
+Telephone,Telepon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Permintaan Anda telah disampaikan dan akan ditanggapi secepatnya. Terima kasih sudah menghubungi kami."
+"Unable to submit your request. Please, try again later","Tidak dapat mengirim permintaan Anda. Silakan, coba lagi nanti"
+"Page not found.","Halaman tidak ditemukan."
+"Your message was successfuly posted","Pesan Anda berhasil diposting"
+"Your ticket was successfuly posted","Tiket Anda berhasil diposting"
+"Ticket was successfuly closed","Tiket ditutup dengan sukses"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Tidak dapat mengunggah file %1. Ukuran unggahan maksimum yang diizinkan adalah %2 MB."
+"Allows only this file types: %1","Hanya bolehkan jenis file ini: %1"
+"Message added","Pesan ditambahkan"
+"Internal note added","Catatan internal ditambahkan"
+"Third party message added","Pesan pihak ketiga ditambahkan"
+"Private third party message added","Pesan pihak ketiga pribadi ditambahkan"
+"-- Please Select --","-- Silahkan pilih --"
+"Contact Tab","Hubungi Tab"
+"Contact Form","Formulir kontak"
+" at %1 (%2) - %3","di %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Anda tidak memiliki izin untuk membaca tiket ini. Silakan, hubungi administrator Anda."
+"Invalid Customer Email","Email Pelanggan Tidak Valid"
+"not set","tidak diatur"
+"Unknown time","Waktu tidak dikenal"
+ago,lalu
+"from now","mulai sekarang"
+"1 sec ago","1 detik yang lalu"
+"Open Ticket","Buka Tiket"
+"Open Tickets","Buka Tiket"
+"! Blocked file - ","! File yang diblokir -"
+Disabled,Cacat
+"AW Helpdesk","Helpdesk AW"
+"MW Helpdesk","MW Helpdesk"
+"File System","Berkas sistem"
+Database,Database
+Aqua,Aqua
+Grey,Abu-abu
+Navy,"Angkatan laut"
+Silver,Perak
+Black,Hitam
+Green,Hijau
+Olive,Zaitun
+Teal,Teal
+Blue,Biru
+Lime,"Jeruk nipis"
+Purple,Ungu
+Fuchsia,Fuchsia
+Maroon,"Merah tua"
+Red,Merah
+Orange,Jeruk
+Yellow,Kuning
+Text,Teks
+Date,Tanggal
+Checkbox,"Kotak centang"
+"Drop-down list","Daftar drop-down"
+"In minutes...","Dalam menit..."
+"In hours...","Dalam beberapa jam ..."
+"In days...","Dalam beberapa hari ..."
+"In weeks...","Dalam beberapa minggu ..."
+"In months...","Dalam beberapa bulan ..."
+Custom,Adat
+"--Please Select--","--Silahkan pilih--"
+"New ticket created","Tiket baru dibuat"
+Success,Keberhasilan
+Customer,Pelanggan
+Staff,Staf
+"Third party","Pihak ketiga"
+Closed,Tutup
+"Opened 24hr","Dibuka 24 jam"
+"Helpdesk Tickets","Tiket Helpdesk"
+"Cannot delete ticket with id %1","Tidak dapat menghapus tiket dengan ID %1"
+Edit,Edit
+"All Departments","Semua Departemen"
+Back,Kembali
+"24 hrs x 7 days","24 jam x 7 hari"
+"Select working days/hours","Pilih hari / jam kerja"
+"Satisfaction survey","Survei kepuasan"
+"to %1 (third party)","ke %1 (pihak ketiga)"
+"%1 (third party)","%1 (pihak ketiga)"
+"added %1 (%2)","menambahkan %1 (%2)"
+"Ticket Summary","Ringkasan Tiket"
+"Ticket ID","ID Tiket"
+Assignee,"Penerima tugas"
+"Additional Info","Informasi tambahan"
+"Ticket History","Riwayat Tiket"
+"Done by","Dilakukan oleh"
+Changes,Perubahan
+Name,Nama
+"Attach files","Lampirkan file"
+Submit,Menyerahkan
+"Submit Ticket","Kirim Tiket"
+"What is your question?","Apa pertanyaan Anda?"
+"We found the following topics that might be helpful:","Kami menemukan topik berikut yang mungkin bisa membantu:"
+"None of these are helpful - get in touch","Semua ini tidak membantu - berhubungan"
+"We have not found topics that can be helpful.","Kami belum menemukan topik yang dapat membantu."
+"Contact Information","Kontak informasi"
+Comment,Komentar
+"We are open 24 x 7","Kami buka 24 x 7"
+"We are closed","Kami sudah tutup"
+"Timezone: %1","Zona waktu: %1"
+"Please take a second to rate my reply...","Harap luangkan waktu untuk menilai balasan saya ..."
+Great,Besar
+Awesome,"Luar biasa"
+"Fast, friendly, helpful, pleasant. Great job!","Cepat, ramah, membantu, menyenangkan. Kerja bagus!"
+"Just Okay","OK aja"
+"Fine, but definitely could have been better.","Baik, tapi pasti bisa lebih baik."
+"Not good","Tidak baik"
+"Unfortunately, I wasn't happy with it at all.","Sayangnya, saya tidak senang sama sekali."
+"Thank you for participating in our survey!","Terima kasih telah berpartisipasi dalam survei kami!"
+"If you would like to provide additional comments, please do so below:","Jika Anda ingin memberikan komentar tambahan, silakan lakukan di bawah ini:"
+Message,Pesan
+"Submit Message","Kirim Pesan"
+"Thank you for your feedback!","Terima kasih atas tanggapan Anda!"
+Attachments,Lampiran
+Order,Memesan
+"-- Select an Order --","- Pilih Pesanan -"
+"Create ticket","Buat tiket"
+"You don't have open tickets","Anda tidak memiliki tiket terbuka"
+"Post a Reply","Posting Balasan"
+"Reopen Ticket","Buka kembali Tiket"
+"Close Ticket","Tutup Tiket"
+History,Sejarah
+"Back to My Tickets","Kembali ke Tiket Saya"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Hubungi kami"
+Open,Buka
+Subject,Subyek
+"Last Activity","Aktivitas terakhir"
+"Request ID","ID permintaan"

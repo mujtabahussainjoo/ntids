@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">permission_edit_form.permission_edit_form_data_source</item>
+            <item name="deps" xsi:type="string">permission_edit_form.permission_edit_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">permission_edit_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Permission\Control\BackButton</item>
+            <item name="delete" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Permission\Control\DeleteButton</item>
+            <item name="reset" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Permission\Control\ResetButton</item>
+            <item name="save" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Permission\Control\SaveButton</item>
+            <item name="save_and_continue" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Permission\Control\SaveAndContinueButton</item>
+        </item>
+    </argument>
+    <dataSource name="permission_edit_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Permission\DataProvider</argument>
+            <argument name="name" xsi:type="string">permission_edit_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">permission_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="helpdesk/permission/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">General Information</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="permission_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">permission_id</item>
+                </item>
+            </argument>
+        </field>
+        <field name="role_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Scope</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">role_id</item>
+                </item>
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Form\Permission\RolesOptionsProvider</item>
+            </argument>
+        </field>
+        <field name="department_ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Allows access to tickets of departments</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="dataScope" xsi:type="string">department_ids</item>
+                </item>
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Form\Permission\DepartmentOptionsProvider</item>
+            </argument>
+        </field>
+        <field name="is_ticket_remove_allowed">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Can Delete Tickets</item>
+                    <item name="dataScope" xsi:type="string">is_ticket_remove_allowed</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

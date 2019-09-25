@@ -1,0 +1,78 @@
+/*************************************************8g_mart************************/
+.block-search .block.block-content {
+    margin: 0px 0 0 366px!important;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit!important;
+  font-weight: inherit!important;
+  line-height: 1.1;
+  color: inherit;
+}
+@media (min-width: 768px){
+	.customer-account-login .fieldset.login strong{
+			font-weight:normal!important;
+		}
+		.btn-rgtr-cust {
+		margin-top: 17% !important;
+	}
+	.nav-regular li.level0 > a > span {
+		font-size: 15px!important;
+	}
+	.new-user{
+			font-size: 20px !important;
+			font-family: inherit!important;
+		font-weight: 500!important;
+		}
+	body {
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	  font-size: 14px!important;
+	  line-height: 1.42857143;
+	  color: #333333!important;
+	  background-color: #ffffff;
+	}
+	.block-search form {
+		
+		top: -30px!important;
+		position: relative;
+	}
+	.navi-wrapper, .nav-regular {
+		top: 45px!important;
+		margin: -61px 0 0 0!important;
+	}
+	.logo-wrapper {
+		margin-top: -15.5%!important;
+	}
+	.cms-index-index.page-layout-1column .column.main{display:none!important;}
+	.header-container .right-column .dropdown-block{
+		color: #026d9d!important;
+		margin-top: -6px!important;
+	}
+	.header-container .right-column .top-links ul {
+	margin-right: -13px!important;
+	}
+}

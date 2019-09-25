@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit" name="ibnabowlslider_sliders_edit"/>            
+        </referenceContainer>
+
+        <referenceContainer name="left">
+           <block class="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tab\Banners" template="sliders/edit.phtml"/>
+           <block class="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tabs" name="sliders_edit_tabs">
+            <block class="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tab\Form" name="sliders_edit_tab_from"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">main_section</argument>
+                <argument name="block" xsi:type="string">sliders_edit_tab_from</argument>
+            </action>
+            <block class="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tab\Second" name="sliders_edit_tab_second"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">second_section</argument>
+                <argument name="block" xsi:type="string">sliders_edit_tab_second</argument>
+            </action>
+            <block class="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tab\Banners" name="sliders_edit_tab_banners"/>
+
+            <action method="addTab">
+                <argument name="name" xsi:type="string">sliders_banners_section</argument>
+                <argument name="block" xsi:type="array">
+                    <item name="label" xsi:type="string">Select Banners of Sliders</item>
+                    <item name="title" xsi:type="string">Select Banners of Sliders</item>
+                    <item name="url" xsi:type="helper" helper="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tab\Banners::getTabUrl"></item>
+                    <item name="class" xsi:type="string">ajax</item>
+                </argument>
+                <!--<argument name="block" xsi:type="string">sliders_edit_tab_banners</argument>-->
+            </action>
+            <block class="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tab\Products" name="sliders_edit_tab_products"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">sliders_products_section</argument>
+                <argument name="block" xsi:type="array">
+                    <item name="label" xsi:type="string">Select Products</item>
+                    <item name="title" xsi:type="string">Select Products</item>
+                    <item name="url" xsi:type="helper" helper="Ibnab\OwlSlider\Block\Adminhtml\Sliders\Edit\Tab\Products::getTabUrl"></item>
+                    <item name="class" xsi:type="string">ajax</item>
+                </argument>
+                <!--<argument name="block" xsi:type="string">sliders_edit_tab_banners</argument>-->
+            </action>
+                <!--
+                <block class="Magento\Cms\Block\Adminhtml\Page\Edit\Tab\Content" name="cms_page_edit_tab_content"/>
+                <block class="Magento\Cms\Block\Adminhtml\Page\Edit\Tab\Design" name="cms_page_edit_tab_design"/>
+                <block class="Magento\Cms\Block\Adminhtml\Page\Edit\Tab\Meta" name="cms_page_edit_tab_meta"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">cms_page_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">content_section</argument>
+                    <argument name="block" xsi:type="string">cms_page_edit_tab_content</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">design_section</argument>
+                    <argument name="block" xsi:type="string">cms_page_edit_tab_design</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">meta_section</argument>
+                    <argument name="block" xsi:type="string">cms_page_edit_tab_meta</argument>
+                </action>
+                  -->
+            </block>
+        </referenceContainer>
+      
+    </body>
+</page>

@@ -1,0 +1,177 @@
+/**************Neat Tickets******************/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit!important;
+  font-weight: inherit!important;
+  line-height: 1.1;
+  color: inherit;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  font-size: 14px!important;
+  line-height: 1.42857143!important;
+  color: #333333!important;
+  background-color: #ffffff!important;
+}
+@media screen and (min-width: 280px) {
+	.gft_image_child {
+	margin: 0px 0px 60px 10px!important;
+    height: 130px!important;
+	float: left;
+	}
+}
+@media (min-width: 768px){
+	.gft_image_child {
+		margin: 5px 0px 60px 10px!important;
+		height: 120px!important;
+		float: left;
+	}
+	.gft_image{
+    width: 75%;
+	}
+	.gft-banner{
+	 width: 74%;
+
+	}
+	.unavailble{
+    color: #7eb1d7;
+    text-decoration: underline;
+	}
+	.actions-toolbar > .primary .action{
+		background-color:#7eb1d7;
+	}
+}
+@media (min-width: 768px){
+	.fieldset > .field:not(.choice) > .control {
+		width: 74%!important;
+	}
+}
+li.level0 > a > span {
+font-size: 14px!important;
+}
+.links > li > a:hover {
+text-decoration: underline;
+}
+	@media (min-width: 768px){
+	.header-container{ 
+		margin-left:0% !important;
+		width: 100% !important;
+	}
+	.customer-account-login .fieldset.login strong{
+		font-weight:normal!important;
+	}
+	.btn-rgtr-cust {
+    margin-top: 17% !important;
+}
+	.btn-rgtr .primary .action:hover, .btn-rgtr-cust .primary .action:hover{
+	text-decoration:underline!important;
+	color:#fff!important;
+	background-color:#45519E!important;
+	border:#45519E!important;
+	}
+	.btn-rgtr-cust .primary .action, .btn-rgtr .primary .action{
+		border-radius:0px!important;
+		background: #45519E !important;
+		border-color: #45519E #45519E;
+		color: white !important}
+	.navi-wrapper, .nav-regular {
+	float: left;
+	}
+	.customer-account-login .page-title-custom {
+    font-size: 34px!important;
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eeeeee;
+    margin-top: 0;
+    width: 100%;
+    color: #45519E!important;
+	}
+	.new-user{
+		font-size: 20px !important;
+		font-family: inherit!important;
+	font-weight: 500!important;
+	}
+	.block-search .block.block-content {
+		margin: 0 0 0 -72px!important;
+	}
+	.nav-container{
+	font-family: Arial!important;
+	}
+	.cms-index-index.page-layout-1column .column.main{display:none!important;}
+
+	.navi ul li.nav-1 {
+		   
+	border-right: 1px solid #e7e7e7!important;
+	border-left: 1px solid #e7e7e7!important;
+	}.navi ul li.nav-2 {
+		   
+	border-right: 1px solid #e7e7e7!important;
+	}.navi ul li.nav-3 {
+	border-right: 1px solid #e7e7e7!important;
+	}.navi ul li.nav-4 {
+	border-right: 1px solid #e7e7e7!important;
+	}.navi ul li.nav-5 {
+	border-right: 1px solid #e7e7e7!important;
+	}.navi ul li.nav-6 {
+	border-right: 1px solid #e7e7e7!important;
+	}.navi ul li.nav-7 {
+	border-right: 1px solid #e7e7e7!important;
+	}
+	.footer-container .item-left{
+			font-size: 12px!important;
+	}
+
+	.header-top .links > li > * {
+		line-height: 15px!important;
+	}
+	.links-wrapper-separators-left .links > li{
+			border-right: 1px solid #ddd!important;
+	}
+	.footer-container {
+		border-top: 1px solid #999999!important;
+	}
+	.header-container .right-column .dropdown-block{
+		
+			margin-top: -7px!important;
+	}
+	.header-container .right-column .top-links ul{
+		margin-right: -14px!important;
+		margin-top: 8px!important;
+	}
+	.block-search form{
+		top: -15px!important;
+	}
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="sage" sortOrder="200" translate="label">
+			<label>Sage</label>
+		</tab>
+		<section id="sage" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Sage Settings</label>
+			<tab>sage</tab>
+			<resource>Serole_Sage::config_serole_sage</resource>
+			<group id="apidetails" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>API Access Details</label>
+				<field id="apiurl" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0" translate="label" type="text">
+					<label>Api URL</label>
+					<comment/>
+				</field>
+				<field id="apiuser" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Api Username</label>
+					<comment/>
+				</field>
+				<field id="apipassword" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>API Password</label>
+					<comment/>
+				</field>
+			</group>
+			<group id="mssqldbdetails" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>MSSQL Access Details</label>
+				<field id="msserver" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Server</label>
+					<comment/>
+				</field>
+				<field id="msusername" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>User Name</label>
+					<comment/>
+				</field>
+				<field id="mspassword" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label" type="text">
+					<label>Password</label>
+					<comment/>
+				</field>
+				<field id="msdatabase" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label" type="text">
+					<label>Database</label>
+					<comment/>
+				</field>
+				<field id="msport" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label" type="text">
+					<label>Port</label>
+					<comment/>
+				</field>
+			</group>
+			<group id="mysqldbdetails" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>MYSQL(Magento) Access Details</label>
+				<field id="myserver" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Server</label>
+					<comment/>
+				</field>
+				<field id="myusername" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>User Name</label>
+					<comment/>
+				</field>
+				<field id="mypassword" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label" type="text">
+					<label>Password</label>
+					<comment/>
+				</field>
+				<field id="mydatabase" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label" type="text">
+					<label>Database</label>
+					<comment/>
+				</field>
+				<field id="myport" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label" type="text">
+					<label>Port</label>
+					<comment/>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

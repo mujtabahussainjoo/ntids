@@ -1,0 +1,26 @@
+<span class="cart-items">
+  
+</span>
+<script>
+
+require([
+    'jquery',
+    'domReady!'// wait for dom ready
+], function ($) {
+	    getCartData();
+		jQuery('.tocart').click(function(){
+			setTimeout(getCartData, 5000);
+		});
+		function getCartData(){ 
+			jQuery.ajax({
+				url: '<?php echo $block->getUrl('sidebarcart/index/index');?>',
+				data : {},
+				type: 'POST',
+				showLoader: true,
+				success: function (res) {					    
+					$('.cart-items').html(res);	
+				}
+			});
+		}
+ });
+</script>

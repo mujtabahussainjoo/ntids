@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <ultramegamenu>
+            <mainmenu>
+                <enable>1</enable>
+                <remove_on_home>0</remove_on_home>
+                <mode>0</mode>
+                <categories>1</categories>
+                <vertnav>0</vertnav>
+                <vertnav_collapsed>1</vertnav_collapsed>
+                <vertnav_collapsed_on_home>1</vertnav_collapsed_on_home>
+                <home>1</home>
+                <home_img>0</home_img>
+                <home_link_icon>0</home_link_icon>
+                <centered>0</centered>
+                <outermost_container>headPrimInner</outermost_container>
+                <fullwidth_dd_container>headPrimInner</fullwidth_dd_container>
+                <custom_block_floating>1</custom_block_floating>
+                <show_bullets>1</show_bullets>
+            </mainmenu>
+            <mobilemenu>
+                <threshold>992</threshold>
+                <!-- <collapsed>1</collapsed> -->
+                <show_blocks>0</show_blocks>
+                <hide_blocks_below>1</hide_blocks_below>
+                <show_items_only_blocks>1</show_items_only_blocks>
+            </mobilemenu>
+            <sidemenu>
+                <enable_category_main>1</enable_category_main>
+                <enable_category_additional>0</enable_category_additional>
+                <enable_home_main>0</enable_home_main>
+                <enable_home_additional>0</enable_home_additional>
+                <enable_cms_main>0</enable_cms_main>
+                <enable_cms_additional>0</enable_cms_additional>
+                <enable_product_main>0</enable_product_main>
+                <enable_product_additional>0</enable_product_additional>
+                <is_megamenu>0</is_megamenu>
+                <is_main>0</is_main>
+                <block_name>Categories</block_name>
+                <parent>current</parent>
+                <depth>2</depth>
+                <fallback>1</fallback>
+                <block_name_fallback/>
+                <num_of_products>0</num_of_products>
+                <hide_on_mobile>1</hide_on_mobile>
+                <!-- <hide_laynav_categories>1</hide_laynav_categories> -->
+            </sidemenu>
+            <category_labels>
+                <label1>New</label1>
+                <label2>Hot!</label2>
+            </category_labels>
+        </ultramegamenu>
+    </default>
+</config>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

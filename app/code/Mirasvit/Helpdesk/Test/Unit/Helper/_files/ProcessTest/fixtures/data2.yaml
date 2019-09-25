@@ -1,0 +1,85 @@
+eav:
+  customer:
+   - entity_id: 1
+     entity_type_id: 1
+     email: bob@example.com
+     firstname: Bob
+     lastname: Marli
+     created_at: 2013-10-01 00:00:00
+     store_id: 1
+     attribute_set_id: 0
+   - entity_id: 2
+     entity_type_id: 1
+     email: john@example.com
+     firstname: John
+     lastname: Doe
+     created_at: 2013-09-30 00:00:00
+     store_id: 1
+     attribute_set_id: 0
+   - entity_id: 3
+     entity_type_id: 1
+     email: will@example.com
+     firstname: Will
+     lastname: Smith
+     created_at: 2013-08-30 00:00:00
+     store_id: 1
+     attribute_set_id: 0
+tables:
+  helpdesk/email:
+    -
+      email_id: 2
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: Ticket Subject 2
+      body: Ticket Body 2
+      sender_name: John Doe
+      gateway_id: 2
+    -
+      email_id: 3
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: Ticket Subject 3
+      body: Ticket Body 3
+      sender_name: John Doe
+      gateway_id: 2
+    -
+      email_id: 4
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: '[#AAA-123-45678]Ticket Subject 4'
+      body: Ticket Body 4
+      sender_name: John Doe
+      gateway_id: 2
+  helpdesk/attachment:
+    -
+      attachement_id: 2
+      email_id: 2
+      message_id: 0
+      type: text
+      size: 100
+      body: body 2
+    -
+      attachement_id: 3
+      email_id: 2
+      message_id: 0
+      type: text
+      size: 100
+      body: body 3
+  helpdesk/department:
+    -
+      department_id: 2
+      name: Customer Care Department
+      sender_email: sales
+      is_active: 1
+      signature: "Customer Care Team"
+      sort_order: 10
+      is_notification_enabled: 1
+      notification_email: test@mirasvit.com
+  helpdesk/gateway:
+    -
+      gateway_id: 2
+      name: Gateway 2
+      department_id: 2
+      store_id: 1
+  helpdesk/ticket:
+  helpdesk/message:

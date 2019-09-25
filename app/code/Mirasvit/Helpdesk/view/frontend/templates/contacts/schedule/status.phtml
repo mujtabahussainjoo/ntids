@@ -1,0 +1,15 @@
+<?php
+//@codingStandardsIgnoreFile
+/** @var \Mirasvit\Helpdesk\Block\Contacts\Schedule\Status $block */
+
+$schedule = $block->getCurrentSchedule();
+?>
+<?php if ($schedule->isOpen()): ?>
+    <div class="hdmx__schedule-status status-open">
+        <?= $schedule->getOpenMessage(); ?>
+    </div>
+<?php else: ?>
+    <div class="hdmx__schedule-status status-close">
+        <?= $schedule->getFormattedClosedMessage() ?>
+    </div>
+<?php endif ?>

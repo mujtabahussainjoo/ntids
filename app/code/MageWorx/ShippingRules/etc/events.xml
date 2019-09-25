@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_quote_address_collect_totals_after">
+        <observer
+                name="mageworx_shippingrules_prepare_shipping_methods"
+                instance="MageWorx\ShippingRules\Observer\Sales\Quote\Address\CollectTotalsAfter"
+                />
+    </event>
+    <!-- Logging -->
+    <event name="mwx_start_rules_validation_processing">
+        <observer
+                name="mwx_log_start_rules_validation_processing"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_start_validate_rule">
+        <observer
+                name="mwx_log_start_validate_rule"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_invalid_rule">
+        <observer
+                name="mwx_log_invalid_rule"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_rule_stop_processing">
+        <observer
+                name="mwx_log_rule_stop_processing"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_stop_validate_rule">
+        <observer
+                name="mwx_log_stop_validate_rule"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_stop_validate_all_rules">
+        <observer
+                name="mwx_log_stop_validate_all_rules"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_start_applying_rules_process">
+        <observer
+                name="mwx_log_start_applying_rules_process"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_start_applying_rule">
+        <observer
+                name="mwx_log_start_applying_rule"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_rule_overwrite_rate_cost">
+        <observer
+                name="mwx_log_rule_overwrite_rate_cost"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_rule_method_disabled">
+        <observer
+                name="mwx_log_rule_method_disabled"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_end_applying_rule">
+        <observer
+                name="mwx_log_end_applying_rule"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_all_rules_are_applied">
+        <observer
+                name="mwx_log_all_rules_are_applied"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+    <event name="mwx_log_detailed_action">
+        <observer
+                name="mwx_log_log_detailed_action"
+                instance="MageWorx\ShippingRules\Observer\Logger\Log"
+                shared="true"
+                />
+    </event>
+</config>

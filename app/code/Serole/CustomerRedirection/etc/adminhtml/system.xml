@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+	<system>
+		
+	  <section id="customredirectionsection" translate="label" type="text"
+			sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Customer Redirection</label>
+			<tab>neatideas</tab>
+			<resource>Serole_CustomerRedirection::config_redirection</resource>
+
+			<group id="general" translate="label" type="text" sortOrder="1"
+				showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Settings</label>
+				<field id="active" translate="label" type="select" sortOrder="1"
+					showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enabled</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field> 			   
+			</group> 
+	   
+	       	<group id="customer_redirection_grp" translate="label" type="text" sortOrder="3"
+				showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Customer Group</label>
+				<field id="customer_group" translate="label" type="select"
+					   sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Customer Group</label>
+					<source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+					<comment><![CDATA[Please select the Customer Group on which you want to apply redirection. If not select any Customer Group then Redirection will apply for all Customer.]]></comment>
+				</field>
+			</group>
+
+			<group id="login_redirection_grp" translate="label" type="text"
+				  sortOrder="3" showInDefault="1" showInWebsite="1"
+				showInStore="1">
+				<label>Customer Login</label>
+				<field id="login_redirection" translate="label" type="select"
+					sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Login Redirection</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="login_redirection_path" translate="label" type="text"
+					sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+					<depends>
+						<field id="login_redirection">1</field>
+					</depends>
+					<label>Login Redirection Path</label>
+					<comment><![CDATA[Please Enter the Custom Url Redirection after Login.Example: customer/account or catalog/seo_sitemap/category]]></comment>
+					<validate>required-entry</validate>
+				</field>
+			</group>
+
+			<group id="logout_redirection_grp" translate="label" type="text"
+				   sortOrder="3" showInDefault="1" showInWebsite="1"
+				   showInStore="1">
+				<label>Customer Logout</label>
+				<field id="logout_redirection" translate="label" type="select"
+					   sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Logout Redirection</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="logout_redirection_path" translate="label" type="text"
+					   sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+					<depends>
+						<field id="logout_redirection">1</field>
+					</depends>
+					<label>Logout Redirection Path</label>
+					<comment><![CDATA[Please Enter the Custom Url Redirection after Login.Example: customer/account or catalog/seo_sitemap/category]]></comment>
+					<validate>required-entry</validate>
+				</field>
+			</group>
+
+			<group id="register_redirection_grp" translate="label" type="text"
+				     sortOrder="3" showInDefault="1" showInWebsite="1"  showInStore="1" >
+				<label>Customer Registration</label>
+				<field id="register_redirection" translate="label" type="select"
+					   sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Registration Redirection</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="register_redirection_path" translate="label" type="text"
+					   sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+					<depends>
+						<field id="register_redirection">1</field>
+					</depends>
+					<label>Registration Redirection Path</label>
+					<comment><![CDATA[Please Enter the Custom Url Redirection after Login.Example: customer/account or catalog/seo_sitemap/category]]></comment>
+					<validate>required-entry</validate>
+				</field>
+			</group>
+
+		</section>
+	</system>
+</config>

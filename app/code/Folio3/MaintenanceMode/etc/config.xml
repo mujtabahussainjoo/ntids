@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <MaintenanceMode>
+            <Configuration>
+                <isEnabled>0</isEnabled>
+                <adminAccess>0</adminAccess>
+                <allowedIPs></allowedIPs>
+                <pageStaticBlock>f3_maintenance</pageStaticBlock>
+                <showCountdown>0</showCountdown>
+                <upDateTime>Today</upDateTime>
+            </Configuration>
+        </MaintenanceMode>
+    </default>
+</config>

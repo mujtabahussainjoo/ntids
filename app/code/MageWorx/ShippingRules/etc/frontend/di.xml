@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Cart\Shipping">
+        <plugin name="mageworx_shippingrules_update_rate_result"
+                type="MageWorx\ShippingRules\Model\Plugin\Block\Cart\Shipping"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <!-- Prevent Full Page Caching -->
+    <type name="Magento\Customer\CustomerData\SectionPoolInterface">
+        <arguments>
+            <argument name="sectionSourceMap" xsi:type="array">
+                <!-- Locate customers data: country & region -->
+                <item name="location" xsi:type="string">MageWorx\ShippingRules\CustomerData\Location</item>
+                <!-- Use customers data on checkout (set shipping & billing address default values) -->
+                <item name="checkout-data" xsi:type="string">MageWorx\ShippingRules\CustomerData\CheckoutData</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Filter inactive regions plugin -->
+    <type name="Magento\Directory\Model\ResourceModel\Region\Collection">
+        <plugin name="mageworx_shippingrules_filter_inactive_regions"
+                type="MageWorx\ShippingRules\Model\Plugin\RegionCollection"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <!-- Add default values to address on cart page -->
+    <type name="Magento\Checkout\Block\Cart\Shipping">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <item name="defaultAddressValues" xsi:type="object">MageWorx\ShippingRules\Block\Cart\LayoutProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

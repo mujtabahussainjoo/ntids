@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<!-- 
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"> 
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="content">
+            <block class="Infortis\Base\Block\Product\View" name="product-view-wrapper" template="product/view.phtml" before="-">
+                <container name="container_product_image_1" label="Product View, Image Column" />
+                <container name="container_product_primary_1" label="Product View, Primary Column, Container 1" />
+                <container name="container_product_primary_2" label="Product View, Primary Column, Container 2" />
+                <container name="container_product_secondary_1" label="Product View, Secondary Column, Container 1" />
+                <container name="container_product_secondary_2" label="Product View, Secondary Column, Container 2" />
+                <container name="container_product_lower_primary_1" label="Product View, Lower Primary Column, Container 1" />
+                <container name="container_product_lower_primary_2" label="Product View, Lower Primary Column, Container 2" />
+                <container name="container_product_lower_secondary_1" label="Product View, Lower Secondary Column, Container 1" />
+                <container name="container_product_lower_secondary_2" label="Product View, Lower Secondary Column, Container 2" />
+
+                <!-- Static blocks -->
+                <block class="Magento\Cms\Block\Block" name="block_product_secondary_bottom">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_product_secondary_bottom</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <!-- Insert product view blocks into the new product view wrapper -->
+        <move element="product.info.main" destination="product-view-wrapper" />
+        <move element="product.info.media" destination="product-view-wrapper" />
+        <move element="bundle.options.container" destination="product-view-wrapper" />
+        <move element="product.info.details" destination="product-view-wrapper" />
+        <move element="catalog.product.related" destination="product-view-wrapper" />
+        <move element="product.info.upsell" destination="product-view-wrapper" />
+
+        <!-- Move some blocks to new positions -->
+        <!-- <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final" /> -->
+        <!-- <move element="product.info.social" destination="product.info.main" after="-" /> -->
+        <move element="product.info.overview" destination="product.info.main" before="product.info.price" />
+        <move element="container_product_primary_1" destination="product.info.main" before="product.info.price" />
+        <!-- <move element="container_product_primary_2" destination="product.info.main" after="-" /> -->
+
+        <!-- Move some blocks outside the "product.info.main" to manipulate their position inside template file -->
+        <move element="page.main.title" destination="product-view-wrapper" />
+        <move element="product.info.review" destination="product-view-wrapper" />
+
+        <!-- Product collateral data (tabs) -->
+        <referenceBlock name="product.info.details" template="Infortis_Base::product/view/details.phtml" >
+            <arguments>
+                <argument name="show_tabs" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::showTabs" />
+            </arguments>
+            <!-- Custom static blocks as tabs -->
+            <block class="Magento\Cms\Block\Block" name="product_cms_block1" group="detailed_info">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_product_tab1</argument>
+                    <argument name="title" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getStaticBlockTitle">
+                        <param name="id">block_product_tab1</param>
+                    </argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="product_cms_block2" group="detailed_info">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_product_tab2</argument>
+                    <argument name="title" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getStaticBlockTitle">
+                        <param name="id">block_product_tab2</param>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceBlock name="catalog.product.related">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getRelatedProductsTemplate" />
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="product.info.upsell">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="Infortis\Base\Helper\Template\Catalog\Product\View::getUpsellProductsTemplate" />
+                <!-- TODO: -->
+                <!-- <argument name="is_responsive" xsi:type="string">false</argument>
+                <argument name="show_items" xsi:type="string">3</argument> -->
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="checkout.cart.crosssell">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Infortis_Base::product/list/slider.phtml</argument>
+            </action>
+        </referenceBlock>
+
+
+
+    </body>
+</page>

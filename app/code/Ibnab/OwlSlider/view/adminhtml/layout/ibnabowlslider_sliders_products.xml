@@ -1,0 +1,14 @@
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd">
+    <container name="root" label="Root">
+        <block class="Ibnab\OwlSlider\Block\Adminhtml\Products\Grid" name="sliders.edit.tab.products"/>
+        <block class="Magento\Backend\Block\Widget\Grid\Serializer" name="sliders_edit_tab_productsgrid_serializer">
+            <arguments>
+                <argument name="input_names" xsi:type="string">position</argument>
+                <argument name="grid_block" xsi:type="string">sliders.edit.tab.products</argument>
+                <argument name="callback" xsi:type="string">getSelectedSliderProducts</argument>
+                <argument name="input_element_name" xsi:type="string">links[products]</argument>
+                <argument name="reload_param_name" xsi:type="string">products_slider</argument>
+            </arguments>
+        </block>
+    </container>
+</layout>

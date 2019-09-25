@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Magedelight_MembershipSubscription" setup_version="1.1.1">
+        <sequence>
+            <module name="Magento_Catalog" />
+            <module name="Magento_Customer" />
+        </sequence>
+    </module>
+</config>

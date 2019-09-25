@@ -1,0 +1,13 @@
+<div class="hdmx__reply">
+
+    <div data-bind="scope: 'replySwitcher'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+
+    <div class="admin__field">
+        <div class="admin__field-control" data-bind="html: field_html" data-field="helpdesk-reply-field"></div>
+        <div class="hdmx__reply-attachments">
+            <input type="file" name="attachment[]" class="multi" data-bind="afterRender: afterFileInputRender "/>
+        </div>
+    </div>
+</div>

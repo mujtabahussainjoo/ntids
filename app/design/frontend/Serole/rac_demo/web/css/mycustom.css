@@ -1,0 +1,219 @@
+/*************RAC***********/
+.header-container {
+    margin-left: 0% !important;
+    width: 100% !important;
+	 background-image:url('../images/header.png'); 
+	background-position: center -152px;
+}
+.catalog-category-view .main-container {
+	background-color:transparent!important;
+	
+}
+.right-column .item.item-right.item-interface{ 
+	background-color:#33424D;
+	margin-right: -11px;
+	color:#fff;
+}
+.page-layout-2columns-left .column.main {
+    margin-right: 5%!important;
+width: 72.166667%!important;
+}
+.products-list-ext .product-item-inner-content {
+    padding-top: 15px!important;
+}
+ .header.links a{color:#fff !important;  
+    line-height: 35px;
+    padding: 4px; 
+    background: transparent!important;
+	}
+.primary .register-submit {
+	border-radius:3px!important;
+	background:#ffd100!important;
+	    color: #495662 !important;
+		 border: 2px solid #f2a900!important;
+		    background-color: #ffd100 #ffd100!important;
+}
+.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{ 
+    color: #495662 !important;
+	    background-color: #ffd100 #ffd100 !important;
+		background:#ffd100!important;
+		 border: 2px solid #f2a900!important;
+}
+.product-info-main .box-tocart .field.qty{
+	display:none!important;
+}
+.product-img-column{
+	width: 45.33%!important;
+}
+ .logo {
+ margin: -9px 89px 79px 91px!important;
+ }
+.main.container {    
+	padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+.header-container .right-column .top-links ul {
+margin: -3px!important;
+}
+#product-addtocart-button{display:none!important}
+
+.product-info-main .price-box .price-wrapper .price {
+	display:none!important;
+}
+/* .category-cashback-rewards .products-list-ext .product-item-details, .category-cashback-rewards .products-list-ext .product-item-inner{  */
+    /* display: contents!important; */
+/* } */
+.fotorama__caption__wrap {
+display: none!important;
+}
+ .modes {display:none!important;}
+body {
+    color: #182d3c!important;
+}
+.category-cashback-rewards .products-list-ext .product-item-description {
+    color: #89959E;
+    font-size: 15px;
+
+}
+
+.category-cashback-rewards .products-list-ext .product-item-actions .action.primary {
+	display:none!important;
+}
+
+
+
+.categorypath-cashback-rewards.category-cashback-rewards .page-wrapper .main-container .main.container .inner-container .columns .column.main .products.wrapper.list.products-list.products-list-ext .product-items .product-item .product-item-info .product-item-img{
+	  padding: 4px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.categorypath-cashback-rewards.category-cashback-rewards .page-wrapper .main-container .main.container .inner-container .columns .column.main .products.wrapper.list.products-list.products-list-ext .product-items .product-item .product-item-info .products-list-ext .product-item-inner {
+display: initial!important;
+}
+.categorypath-cashback-rewards.category-cashback-rewards .page-wrapper .main-container .main.container .inner-container .columns .column.main .products.wrapper.list.products-list.products-list-ext .product-items .product-item .product-item-info .products-list-ext .product-item-details{
+display: initial!important;
+}
+.category-cashback-rewards .products-list-ext .price-box {
+	    display: none!important;
+}
+.products-list-ext .product-item-details {
+    padding-left: 130px !important;
+}
+.header-container .skip-link .counter, .dropdown-block .dropdown-heading .counter{
+	    background-color: #ffcc1b!important;
+}
+
+.main-container {
+    background:linear-gradient(to bottom, #D3D8D8 15%,#0000 100%)!important;
+	}
+ 
+ .homempage-slider{
+    background-color: #D3D8D8;
+    max-height: 350px;
+}
+	
+.big-buttons {
+  margin-top:28px;
+  margin-bottom:30px;
+}
+.big-buttons > a{
+  float:left;
+  display:block;
+  width:12%;
+  min-height:120px;
+  text-align: center;
+}
+.big-buttons > a.first {
+  margin-left:0;
+}
+.big-buttons > a.last {
+  border-right-width:0px;
+}
+.big-buttons > a:hover {
+  text-decoration: none;
+}
+.big-buttons > a:hover > .icon {
+  opacity:0.75;
+}
+.rac-big-buttons span.icon {
+    height: 180px!important;
+}
+.big-buttons span.icon{
+
+	display:block;
+	width:100%;
+	height:100px;
+	text-align:center;
+
+	background-attachment:scroll;
+	background-position: center center;
+	background-repeat: no-repeat; 
+}
+
+.big-buttons > a.cinema-tickets span.icon {
+   background-image: url("https://store.rac.com.au/skin/frontend/rac_new/default/images/cinema-tickets.png");
+   background-size:90%!important;
+  }
+.big-buttons > a.gift span.icon {
+ background-image: url("https://store.rac.com.au/skin/frontend/rac_new/default/images/gift-home.png");
+    background-size:90%!important;
+
+}
+.big-buttons > a.attraction span.icon {
+  background-image: url("https://store.rac.com.au/skin/frontend/rac_new/default/images/attractions-home.png");
+     background-size:90%!important;
+
+}
+.big-buttons > a.electronics span.icon {
+  background-image: url("https://store.rac.com.au/skin/frontend/rac_new/default/images/electronics-home.png");
+     background-size:90%!important;
+
+}
+.big-buttons > a.map_guide span.icon {
+  background-image: url("https://store.rac.com.au/skin/frontend/rac_new/default/images/map_guide-home.png");
+     background-size:90%!important;
+
+}
+.big-buttons > a.vehicle span.icon {
+  background-image: url("https://store.rac.com.au/skin/frontend/rac_new/default/images/vehicle-home.png");
+     background-size:90%!important;
+
+}
+.big-buttons > a.experiences span.icon {
+   background-image: url("https://store.rac.com.au/skin/frontend/rac_new/default/images/boat_142x142.png");
+      background-size:90%!important;
+
+   
+}
+/* .big-buttons > a.cashbackrewards span.icon { */
+   /* background-image: url("https://cdn1.vectorstock.com/i/thumb-large/09/75/cashback-service-simple-icon-money-transfer-vector-19940975.jpg"); */
+      /* background-size:98%!important; */
+
+
+/* } */
+
+.big-buttons .h2 {
+  font-size:14px;
+  color:#444;
+}
+
+.page-title
+{
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+@media (min-width: 768px){
+	.block-reorder .product-item .checkbox {
+		top: 22px;
+		margin-left: 10px!important;
+	}
+}

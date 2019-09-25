@@ -1,0 +1,283 @@
+<?php
+
+use \Nwdthemes\Revslider\Helper\Framework;
+use \Nwdthemes\Revslider\Model\Revslider\Framework\RevSliderBase;
+use \Nwdthemes\Revslider\Model\Revslider\Framework\RevSliderFunctions;
+use \Nwdthemes\Revslider\Model\Revslider\RevSliderGlobals;
+
+Framework::$RS_PLUGIN_URL = $block->getViewFileUrl(Framework::MODULE . '::') . '/';
+
+foreach($inlineStyles as $_styles) foreach ($_styles as $_style) echo $_style;
+?>
+<div id="waitaminute" style="<?php echo $waitstyle; ?>">
+    <div class="waitaminute-message"><i class="eg-icon-emo-coffee"></i><br><?php echo __("Please Wait..."); ?></div>
+</div>
+<?php echo $localizeScriptsHtml; ?>
+<script type="text/javascript">
+	var ajaxurl = "<?php echo RevSliderBase::$url_ajax; ?>";
+	var g_revNonce = "<?php echo $nonce; ?>";
+	var g_uniteDirPlugin = "revslider";
+	var g_urlContent = "<?php echo str_replace(array("\n", "\r", chr(10), chr(13)), array(''), $framework->content_url())."/"; ?>";
+	var g_urlAjaxShowImage = "<?php echo RevSliderBase::$url_ajax_showimage; ?>";
+	var g_urlAjaxActions = "<?php echo RevSliderBase::$url_ajax_actions; ?>";
+	var g_revslider_url = "<?php echo Framework::$RS_PLUGIN_URL; ?>";
+	var g_settingsObj = {};
+	var rs_pack_page_creation = <?php echo ($pack_page_creation == 'on') ? 'true' : 'false'; ?>;
+	var rs_single_page_creation = <?php echo ($single_page_creation == 'on') ? 'true' : 'false'; ?>;
+    var tp_color_picker_presets;
+    require(['jquery'], function(jQuery) {
+        tp_color_picker_presets = jQuery.parseJSON(<?php echo RevSliderFunctions::jsonEncodeForClientSide($tp_color_picker_presets); ?>);
+    });
+	var global_grid_sizes = {
+		'desktop': '<?php echo RevSliderBase::getVar($glval, 'width', 1230); ?>',
+		'notebook': '<?php echo RevSliderBase::getVar($glval, 'width_notebook', 1230); ?>',
+		'tablet': '<?php echo RevSliderBase::getVar($glval, 'width_tablet', 992); ?>',
+		'mobile': '<?php echo RevSliderBase::getVar($glval, 'width_mobile', 480); ?>'
+	};
+	var revMageImageUploadUrl = '<?php echo $framework->getBackendUrl('nwdthemes_revslider/gallery/index', ['type'=>'file_type']); ?>';
+    var RS_DEMO = <?php echo (Framework::RS_DEMO) ? 'true' : 'false'; ?>;
+    var timeline_timer = '',
+        add_meta_into = '';
+    define('wpColorPickerL10n', [], function() {
+        return <?php echo json_encode(array(
+            'clear' => __('Clear'),
+            'defaultString' => __('Default'),
+            'pick' => __('Select Color'),
+            'current' => __('Current Color')
+        )); ?>;
+    });
+</script>
+<div style="position:relative;">
+	<div id="div_debug"></div>
+
+	<div class='unite_error_message' id="error_message" style="display:none;"></div>
+
+	<div class='unite_success_message' id="success_message" style="display:none;"></div>
+
+	<div id="viewWrapper" class="view_wrapper<?php echo $wrapperClass; ?>">
+        <?php $framework->do_action('admin_notices'); ?>
+		<?php echo $this->getChildHtml("view"); ?>
+	</div>
+
+	<div id="divColorPicker" style="display:none;"></div>
+
+	<?php echo $this->getChildHtml("dialog-video"); ?>
+	<?php echo $this->getChildHtml("dialog-global-settings"); ?>
+
+	<div class="tp-plugin-version">
+		<span style="margin-right:15px">&copy; All rights reserved, <a href="http://nwdthemes.com/" target="_blank">NWDthemes</a>  ver. <?php echo $revSliderVersion; ?></span>
+	</div>
+	<div id="rs-shop-overview">
+		<?php
+		$shop_data = $framework->get_option('tp-shop');
+		?>
+	</div>
+
+	<div id="rs-preview-wrapper" style="display: none;">
+		<div id="rs-preview-wrapper-inner">
+			<div id="rs-preview-info">
+				<div class="rs-preview-toolbar">
+					<a class="rs-close-preview"><i class="eg-icon-cancel"></i></a>
+				</div>
+
+				<div data-type="desktop" class="rs-preview-device_selector_prev rs-preview-ds-desktop selected"></div>
+				<div data-type="notebook" class="rs-preview-device_selector_prev rs-preview-ds-notebook"></div>
+				<div data-type="tablet" class="rs-preview-device_selector_prev rs-preview-ds-tablet"></div>
+				<div data-type="mobile" class="rs-preview-device_selector_prev rs-preview-ds-mobile"></div>
+
+			</div>
+			<div class="rs-frame-preview-wrapper">
+				<iframe id="rs-frame-preview" name="rs-frame-preview"></iframe>
+			</div>
+		</div>
+	</div>
+	<form id="rs-preview-form" name="rs-preview-form" action="<?php echo $framework->getBackendUrl('nwdthemes_revslider/revslider/preview'); ?>" target="rs-frame-preview" method="post">
+		<input type="hidden" id="rs-client-action" name="client_action" value="">
+		<input type="hidden" id="rs-nonce" name="form_key" value="<?php echo $nonce; ?>">
+
+		<!-- SPECIFIC FOR SLIDE PREVIEW -->
+		<input type="hidden" name="data" value="" id="preview-slide-data">
+
+		<!-- SPECIFIC FOR SLIDER PREVIEW -->
+		<input type="hidden" id="preview_sliderid" name="sliderid" value="">
+		<input type="hidden" id="preview_slider_markup" name="only_markup" value="">
+	</form>
+
+
+	<div id="dialog_preview_sliders" class="dialog_preview_sliders" title="Preview Slider" style="display:none;">
+		<iframe id="frame_preview_slider" name="frame_preview_slider" style="width: 100%;"></iframe>
+	</div>
+</div>
+
+
+<div id="rs-premium-benefits-dialog" style="display: none;">
+	<div class="rs-premium-benefits-dialogtitles" id="rs-wrong-purchase-code-title">
+		<span class="oppps-icon"></span>
+		<span class="benefits-title-right">
+            <span class="rs-premium-benefits-dialogtitle"><?php echo __('Ooops... Wrong Purchase Code!'); ?></span>
+            <span class="rs-premium-benefits-dialogsubtitle"><?php echo __('Maybe just a typo? (Click <a target="_blank" href="https://revolution.themepunch.com/direct-customer-benefits/#productactivation">here</a> to find out how to locate your Slider Revolution purchase code.)'); ?></span>
+        </span>
+	</div>
+	<div style="display:none" class="rs-premium-benefits-dialogtitles" id="rs-plugin-cachewarning-title">
+		<span class="oppps-icon"></span>
+		<span class="benefits-title-right">
+            <span class="rs-premium-benefits-dialogtitle"><?php echo __('Make sure to clear all caches!'); ?></span>
+            <span class="rs-premium-benefits-dialogsubtitle"><?php echo __('Here are the most common cache issues explained.'); ?></span>
+        </span>
+	</div>
+	<div style="display:none" class="rs-premium-benefits-dialogtitles" id="rs-plugin-update-feedback-title">
+		<span class="oppps-icon-red"></span>
+		<span class="benefits-title-right">
+            <span class="rs-premium-benefits-dialogtitle"><?php echo __('Plugin Activation Required'); ?></span>
+            <span class="rs-premium-benefits-dialogsubtitle"><?php echo __('In order to download the <a target="_blank" href="http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380#item-description__update-history">latest update</a> instantly'); ?></span>
+        </span>
+	</div>
+	<div style="display:none" class="rs-premium-benefits-dialogtitles" id="rs-plugin-object-library-feedback-title">
+		<span class="oppps-icon"></span>
+		<span class="benefits-title-right">
+            <span class="rs-premium-benefits-dialogtitle"><?php echo __('Plugin Activation Required'); ?></span>
+            <span class="rs-premium-benefits-dialogsubtitle"><?php echo __('In order to download from the <a target="_blank" href="https://revolution.themepunch.com/object-library/">Object Library</a> instantly'); ?></span>
+        </span>
+	</div>
+	<div style="display:none" class="rs-premium-benefits-dialogtitles" id="rs-plugin-download-template-feedback-title">
+		<span class="oppps-icon"></span>
+		<span class="benefits-title-right">
+            <span class="rs-premium-benefits-dialogtitle"><?php echo __('Plugin Activation Required'); ?></span>
+            <span class="rs-premium-benefits-dialogsubtitle"><?php echo __('In order to gain instant access to the entire <a target="_blank" href="https://revolution.themepunch.com/examples/">Template Library</a>'); ?></span>
+        </span>
+	</div>
+
+	<div style="display:none" class="rs-premium-benefits-dialogtitles" id="rs-library-license-info-dialogtitle">
+		<span class="oppps-icon"></span>
+		<span class="benefits-title-right">
+            <span class="rs-premium-benefits-dialogtitle"><?php echo __('Object Library License Information'); ?></span>
+            <span class="rs-premium-benefits-dialogsubtitle"><?php echo __('What you need to know for using Slider Revolution elements in your projects'); ?></span>
+        </span>
+	</div>
+
+	<div id="basic_premium_benefits_block">
+		<div class="rs-premium-benefits-block rspb-withborder">
+			<h3><i class="big_present"></i><?php echo __('If you purchased a theme that bundled Slider Revolution'); ?></h3>
+			<ul>
+				<li><?php echo __('No activation needed to use to use / create sliders with Slider Revolution'); ?></li>
+				<li><?php echo __('Update manually through your theme'); ?></li>
+				<li><?php echo __('Access our <a target="_blank" class="rspb_darklink" href="https://www.themepunch.com/support-center/#support">FAQ database</a> and <a target="_blank" class="rspb_darklink" href="https://www.youtube.com/playlist?list=PLSCdqDWVMJPPDcH_57CNZvLckoB8cimJF">video tutorials</a> for help'); ?></li>
+			</ul>
+		</div>
+		<div class="rs-premium-benefits-block">
+			<h3><i class="big_diamond"></i><?php echo __('Activate Slider Revolution for'); ?> <span class="instant_access"></span> <?php echo __('to ...'); ?></h3>
+			<ul>
+				<li><?php echo __('<a target="_blank" href="https://revolution.themepunch.com/direct-customer-benefits/#liveupdates">Update</a> to the latest version directly from your dashboard'); ?></li>
+				<li><?php echo __('<a target="_blank" href="https://themepunch.ticksy.com/submit/">Support</a> ThemePunch ticket desk'); ?></li>
+				<li><?php echo __('<a target="_blank" href="https://revolution.themepunch.com/direct-customer-benefits/#addons">Add-Ons</a> for Slider Revolution'); ?></li>
+				<li><?php echo __('<a target="_blank" href="https://revolution.themepunch.com/examples/">Library</a> with tons of free premium slider templates'); ?></li>
+				<li><?php echo __('<a target="_blank" href="https://revolution.themepunch.com/direct-customer-benefits/#objectlibrary">Object Library</a> with tons of images ready to be used'); ?></li>
+			</ul>
+		</div>
+		<a target="_blank" class="get_purchase_code" href="http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380?ref=themepunch&license=regular&open_purchase_for_item_id=2751380&purchasable=source"><?php echo __('GET A PURCHASE CODE'); ?></a>
+	</div>
+
+	<div id="basic_objectlibrary_license_block">
+		<div id="license_object_library_type_list_new">
+			<span data-id="svg_license_content" class="license_obj_library_cats_filter">SVG</span>
+			<span data-id="ico_license_content" class="license_obj_library_cats_filter">ICON</span>
+			<span data-id="png_license_content" class="license_obj_library_cats_filter selected">PNG</span>
+			<span data-id="jpg_license_content" class="license_obj_library_cats_filter">JPG</span>
+		</div>
+
+		<div class="license_deep_content" id="svg_license_content" style="display:none">
+			<h3><i class="pe-7s-folder"></i><?php echo __('Terms of Using SVG Objects from the Object Library'); ?></h3>
+			<ul>
+				<li><?php echo __('Usage only allowed within Slider Revolution Plugin'); ?></li>
+				<li><?php echo __('A variety of sizes and densities can be also downloaded from the <br> <a target="_blank" class="rspb_darklink" href="https://github.com/google/material-design-icons">git repository</a>, making it even easier for developers to customize, share,<br> and re-use outside of Slider Revolution.'); ?></li>
+				<li><?php echo __('Licenses via Apache License. Read More at <a target="_blank" class="rspb_darklink" href="https://github.com/google/material-design-icons/blob/master/LICENSE">Google Material Design Icons</a>'); ?></li>
+
+			</ul>
+		</div>
+
+		<div class="license_deep_content" id="ico_license_content" style="display:none">
+			<h3><i class="pe-7s-folder"></i><?php echo __('Terms of Using ICON Objects from the Object Library'); ?></h3>
+			<ul>
+				<li><?php echo __('Please check the listed license files for details about how you can use the "FontAwesome" and "Stroke 7 Icon" font sets for commercial projects, open source projects, or really just about whatever you want.'); ?></li>
+				<li><?php echo __('Please respect all other icon fonts licenses for fonts not included directly into Slider Revolution.'); ?></li>
+
+			</ul>
+			<h3><i class="fa-icon-list-alt"></i><?php echo __('Further License Informations'); ?></h3>
+			<ul>
+				<li><strong>Font Awesome 4.6.3</strong> by @davegandy - http://fontawesome.io - @fontawesome<br>
+					License - <a target="_blank" href="http://fontawesome.io/license">http://fontawesome.io/license</a> (Font: SIL OFL 1.1, CSS: MIT License)</li>
+				<li><strong>Stroke 7 Icon Font Set</strong> by www.pixeden.com<br>
+					Get your Freebie Iconset at <a href="http://www.pixeden.com/icon-fonts/stroke-7-icon-font-set" target="_blank">http://www.pixeden.com/icon-fonts/stroke-7-icon-font-set</a></li>
+			</ul>
+		</div>
+
+		<div class="license_deep_content" id="png_license_content">
+			<h3><i class="pe-7s-folder"></i><?php echo __('Terms of Using PNG Objects from the Object Library'); ?></h3>
+			<ul>
+				<li><?php echo __('Usage only allowed within Slider Revolution Plugin'); ?></li>
+				<li><?php echo __('Licenses via extended license and cooperation with<br>author <a target="_blank" class="rspb_darklink" href="https://creativemarket.com/Qeaql">Qeaql</a>'); ?></li>
+				<li><?php echo __('If you need .psd files for objects, you can purchase it freom the original<br>author <a target="_blank" class="rspb_darklink" href="https://creativemarket.com/Qeaql/126175-Scene-creator-Top-view">here</a>'); ?></li>
+			</ul>
+		</div>
+
+		<div class="license_deep_content" id="jpg_license_content" style="display:none">
+			<h3><i class="pe-7s-folder"></i><?php echo __('Terms of Using JPG Objects from the Object Library'); ?></h3>
+			<ul>
+				<li><?php echo __('The pictures are free for personal and even for commercial use.'); ?></li>
+				<li><?php echo __('You can modify, copy and distribute the photos. All without asking for permission or setting a link to the source. So, attribution is not required.'); ?></li>
+				<li><?php echo __('The only restriction is that identifiable people may not appear in a bad light or in a way that they may find offensive, unless they give their consent.'); ?></li>
+				<li><?php echo __('The CC0 license was released by the non-profit organization Creative Commons (CC). Get more information about Creative Commons images and the license on the official license page.'); ?></li>
+				<li><?php echo __('<a target="_blank" class="rspb_darklink" href="http://allthefreestock.com/">All The Freestock</a> under the License <a target="_blank" class="rspb_darklink" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Creative Commons</a>'); ?></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+    <?php
+	$validated = $framework->get_option('revslider-valid', 'false');
+	?>
+	rs_plugin_validated = <?php echo ($validated == 'true') ? 'true' : 'false'; ?>;
+
+    require(['jquery', 'show_premium_dialog'], function(jQuery, show_premium_dialog) {
+
+        jQuery('body').on('click','.rs-preview-device_selector_prev', function() {
+            var btn = jQuery(this);
+            jQuery('.rs-preview-device_selector_prev.selected').removeClass("selected");
+            btn.addClass("selected");
+
+            var w = parseInt(global_grid_sizes[btn.data("type")],0);
+            if (w>1450) w = 1450;
+            jQuery('#rs-preview-wrapper-inner').css({maxWidth:w+"px"});
+
+        });
+
+        jQuery(window).resize(function() {
+            var ww = jQuery(window).width();
+            if (global_grid_sizes)
+                jQuery.each(global_grid_sizes,function(key,val) {
+                    if (ww<=parseInt(val,0)) {
+                        jQuery('.rs-preview-device_selector_prev.selected').removeClass("selected");
+                        jQuery('.rs-preview-device_selector_prev[data-type="'+key+'"]').addClass("selected");
+                    }
+                })
+        });
+
+		jQuery(document).ready(function(){
+			jQuery('#licence_obect_library, #regsiter-to-access-update-none, #regsiter-to-access-store-none, #register-wrong-purchase-code').click(function(){
+				var clicked = jQuery(this).attr('id');
+				show_premium_dialog(clicked);
+			});
+
+			jQuery('.license_obj_library_cats_filter').click(function() {
+				var t = jQuery(this);
+				jQuery('.license_obj_library_cats_filter').removeClass("selected");
+				t.addClass("selected");
+				jQuery('.license_deep_content').hide();
+				jQuery("#"+t.data('id')).show();
+			});
+
+		});
+
+	});
+</script>

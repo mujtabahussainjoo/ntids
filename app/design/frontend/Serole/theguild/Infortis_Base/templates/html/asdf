@@ -1,0 +1,136 @@
+<?php
+/**
+ * @var \Infortis\Base\Block\Html\Header $block
+ */
+?>
+<?php
+    $theme = $block->getHelperTheme();
+
+    // //Get HTML of header blocks
+    // $storeSwitcherHtml = $block->getChildHtml('store_switcher');
+    // $copyrightHtml = $block->getChildHtml('copyright');
+    // $footerLinksHtml = $block->getChildHtml('footer_links');
+    // $cmsFooterLinksContainerHtml = $block->getChildHtml('cms_footer_links_container');
+    // $newsletterHtml = $block->getChildHtml('subscribe');
+    // $magentoDefaultFooterContainerHtml = $block->getChildHtml('footer');
+?>
+<div class="footer-container page-footer">
+<div class="footer-container2">
+<div class="footer-container3">
+
+<?php 
+
+$urlInterface = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\UrlInterface');
+$url=$urlInterface->getCurrentUrl();
+
+
+?>
+
+<div class="container container-footer">
+    <footer role="contentinfo">
+        <ul>
+<li><a href="<?php echo $url?>help/contact-us.html">Contact Us</a></li>
+<li><a href="<?php echo $url?>terms">Website Terms &amp; Conditions</a></li>
+<li><a href="<?php echo $url?>privacy-policy-cookie-restriction-mode">Privacy Policy</a></li>
+<li><a href="<?php echo $url?>" target="_blank">Return to The Guild website</a></li>
+</ul>
+<div style="clear: left; float: left; padding-left: 5px; display: inline; max-width: 70%;">This service is provided by Neat Ideas for members of the Murdoch University Guild of Students. <br>For technical support please contact <a href="https://store.neatideas.com.au/theguild/help/contact-us.html">Neat Ideas</a>.</div>
+<!--div class="top_info"><span class="email">Email: <a href="mailto: Service@neatideas.com.au" target="_top">Service@neatideas.com.au</a></span></div-->
+<div class="top_info"><span class="email"><a href="http://support.neatideas.com.au:8080/servicedesk/customer/portal/1" target="_top">Click Here</a></span></div>
+<div class="top_info" style="float: left; clear: left; margin-bottom: -10px;"><img src="https://store.neatideas.com.au/media/wysiwyg/cardslogo.png" alt=""> A 1.5% processing charge&nbsp;will be applied to Visa, MasterCard, Amex &amp; PayPal payments.</div>
+        <address>© 2018 NeatIdeas</address>
+    </footer>
+</div>
+<br/>
+<div class="grid12-3">
+	<div class="mobile-collapsible" style="padding-right:20px;">
+
+		<h6 class="block-title heading">About {{var store.getFrontendName()}}</h6>
+		<div class="block-content">
+			<img src="{{media url="wysiwyg/infortis/ultimo/custom/logo-w.png"}}" alt="Ultimo Theme" />
+			<div class="feature first last">
+				<p>Ultimo is a premium Magento theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive.</p>
+				<h5><a class="go" href="http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?ref=infortis">Buy this theme</a></h5>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="grid12-3">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">Theme Features</h6>
+		<div class="block-content">
+			<ul class="disc">
+				<li><a href="{{store url='ultimo-responsive-magento-theme'}}">Theme Features</a></li>
+				<li><a href="{{store url='typography'}}">Typography</a></li>
+				<li><a href="#">Some Sample Link</a></li>
+				<li><a href="#">Meat Our Best Partners</a></li>
+				<li><a href="#">Latest Work Samples</a></li>
+				<li><a href="#">Our Other Projects</a></li>
+				<li><a href="#">One Click To Join Us</a></li>
+				<li><a href="#">Follow Us On Twitter</a></li>
+				<li><a href="http://infortis-themes.com/">Magento Themes</a></li>
+				<li><a href="#">Ecommerce</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="grid12-3">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">Footer Block</h6>
+		<div class="block-content">
+			<ul class="disc">
+				<li><a href="#">Delivery</a></li>
+				<li><a href="#">Track your order</a></li>
+				<li><a href="#">Some Sample Link</a></li>
+				<li><a href="#">Meat Our Best Partners</a></li>
+				<li><a href="#">Latest Work Samples</a></li>
+				<li><a href="#">Our Other Projects</a></li>
+				<li><a href="#">One Click To Join Us</a></li>
+				<li><a href="#">Follow Us On Twitter</a></li>
+				<li><a href="#">Buy gift cards</a></li>
+				<li><a href="#">Returns</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="grid12-3">
+	<div class="mobile-collapsible">
+
+		<h6 class="block-title heading">Key Features</h6>
+		<div class="block-content">
+			<div class="feature feature-icon-hover indent first">
+				<span class="ib ic ic-char">1</span>
+				<p class="no-margin">Unlimited colors, hundreds of customizable elements</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-char">2</span>
+				<p class="no-margin ">Customizable responsive layout based on fluid grid</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-char">3</span>
+				<p class="no-margin ">50+ placeholders to display custom content</p>
+			</div>
+			<div class="feature feature-icon-hover indent">
+				<span class="ib ic ic-char">4</span>
+				<p class="no-margin ">Create your custom sub-themes (variants)</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="clearer"></div>
+<br/>
+<br/>
+
+</div> <!-- end: footer-container3 -->
+</div> <!-- end: footer-container2 -->
+</div> <!-- end: footer-container -->
+

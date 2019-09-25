@@ -1,0 +1,28 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.addtocart">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Serole_ExternalProduct::product/view/addtocart.phtml</argument>
+            </action>
+        </referenceBlock> 
+		<referenceBlock name="product.info">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Serole_ExternalProduct::product/view/form.phtml</argument>
+            </action>
+        </referenceBlock>
+		<referenceBlock name="product.info.addtocart.bundle">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Serole_ExternalProduct::product/view/addtocart.phtml</argument>
+            </action>
+        </referenceBlock>
+		<referenceContainer name="sidebar.main">
+            <block class="Magento\Cms\Block\Block" name="block_product_secondary_bottom_2">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_product_secondary_bottom_2</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+		<referenceBlock name="breadcrumbs" template="Magento_Theme::html/breadcrumbs.phtml"/>
+    </body>
+</page>
+

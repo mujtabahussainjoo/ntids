@@ -1,0 +1,31 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Adminhtml\Report\Ticket;
+
+/**
+ * @magentoAppArea adminhtml
+ */
+class IndexTest extends \Magento\TestFramework\TestCase\AbstractBackendController
+{
+    /**
+     * setUp.
+     */
+    public function setUp()
+    {
+        $this->resource = 'Mirasvit_Helpdesk::helpdesk_ticket';
+        $this->uri = 'backend/helpdesk/ticket/index';
+        parent::setUp();
+    }
+
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Adminhtml\Report\Ticket\Index::execute
+     */
+    public function testIndexAction()
+    {
+        $this->dispatch('backend/helpdesk/ticket/index');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

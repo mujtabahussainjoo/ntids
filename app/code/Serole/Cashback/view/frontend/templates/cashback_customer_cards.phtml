@@ -1,0 +1,86 @@
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #33424D;
+  color: white;
+}
+</style>
+
+<table id="customers">
+  <tr>
+    <th>Id</th>
+    <th>Card Type</th>
+    <th>Owner Name</th>
+	<th>Card No</th>
+	<th>Issueng Bank</th>
+	<th>Verified</th>
+	<th>Status</th>
+	<th>Action</th>
+  </tr>
+  <?php
+$cards = $this->getAllCards(); 
+if(count($cards) > 0)
+{
+$i =1;
+foreach($cards as $card)
+{
+	
+  $cardData = $card->getData();
+  if($cardData['verified'] == 1)
+  {
+	  $cardData['verified'] = "OK";
+  }
+  else
+  {
+	  $cardData['verified'] = "NO";
+  }
+  if($cardData['status'] == 1)
+  {
+	  $cardData['status'] = "Active";
+	  $cardData['action'] = "Deactivate";
+  }
+  else
+  {
+	  $cardData['status'] = "Inactive";
+	  $cardData['action'] = "Activate";
+  }
+?>
+  <tr <?php if($cardData['status'] == "Inactive") echo "style='color:red;'"; ?>>
+    <td><?php echo $i; ?></td>
+    <td><?php echo $cardData['card_type']; ?></td>
+	<td><?php echo $cardData['owner_name']; ?></td>
+	<td><?php echo $cardData['card_no']; ?></td>
+	<td><?php echo $cardData['issuing_bank']; ?></td>
+	<td><?php echo $cardData['verified']; ?></td>
+	<td><?php echo $cardData['status']; ?></td>
+	<td style="text-decoration: underline;">
+	<a <?php if($cardData['status'] == "Inactive") echo "style='color:red;'"; ?> href="/rac_demo/cashback/customer/action/?id=<?php echo $cardData['id']; ?>&action=<?php echo $cardData['action']; ?>">
+	  <?php echo $cardData['action']; ?>
+	</a>
+	</td>
+  </tr>
+<?php 
+$i++; 
+} } else { ?>
+<tr>
+    <td colspan="8">There is no card data available</td>
+</tr>
+<?php } ?>
+</table>

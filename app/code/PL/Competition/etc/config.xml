@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <competition>
+            <general>
+                <enable>1</enable>
+                <is_disclaimer>0</is_disclaimer>
+                <is_dob>0</is_dob>
+                <url_prefix>competition</url_prefix>
+                <breadcrumbs>1</breadcrumbs>
+            </general>
+        </competition>
+    </default>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+	<event name="customer_login">
+		<observer name="customer_login_redirection"
+				  instance="Serole\CustomerRedirection\Observer\CustomerloginObserver" />
+	</event>
+	<event name="customer_logout">
+		<observer name="customer_logout_redirection"
+				  instance="Serole\CustomerRedirection\Observer\CustomerlogoutObserver" />
+	</event>
+	<event name="customer_register_success">
+		<observer name="customer_signup_redirection"
+				  instance="Serole\CustomerRedirection\Observer\CustomerregisterObserver" />
+	</event>
+</config>
+

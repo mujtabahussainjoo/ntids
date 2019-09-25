@@ -1,0 +1,87 @@
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+    background-size: cover!important;
+}
+.block-new-customer{display:none;width:0%;}
+.block-customer-login{width:100%!important;}
+#search::placeholder{color:#333!important;}
+@media (min-width: 768px){
+	.customer-account-create .main-container,.customer-account-login .main-container {
+		width: 43%!important;
+		margin-left: 30%!important;
+	}
+	.search .control{margin-top: 1%;}
+	.customer-account-create .password .label,.customer-account-create .label.confirmation-label{font-weight: bold;}
+	.customer-account-create .block-title,.customer-account-create .fieldset.create.info .legend,.customer-account-create .fieldset.create.account .legend{display:none;}
+	.customer-account-create .fieldset.create.info{margin: 0 0 0 0;}
+	.customer-account-create .page-title-wrapper{margin: 0 0 -10% 0;}
+	.customer-account-create .form.create.account {
+		min-width: 556px;
+		width: 50%;
+	}
+	.customer-account-create .actions-toolbar .primary .action.register-submit {
+		margin: 0% 0% 0% 0%!important;
+	}
+	.customer-account-create .sub{font-size:14px!important;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;}
+	.customer-account-create .h1{font-size:25px!important;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;}
+	.customer-account-create .fieldset > .field:not(.choice) > .label{width: 37%!important;}
+	#block-customer-login-heading{display:none;}
+	.fieldset.login .note{display:none;}
+	.register_link{margin-left:-34%;}
+	.header-container {
+		margin-left: 0%!important;
+		width: 100%!important;
+	}
+	.main-container {
+	    background-color: transparent!important;
+	}
+	.nav-regular li.level0 > a > span {
+		font-size: 14px;
+		font-weight: normal;
+		letter-spacing: -0.4px;
+	}
+	.header.links > li  {
+		background-color: #DC241F!important;
+		color: #fff!important;
+	}
+	.nav-container {
+		margin-top: 4%;
+	}
+	.logo-wrapper {
+		margin-top: 0%;
+	}
+	.header-primary {
+		padding-top: 0px!important;
+		padding-bottom: 0px!important;
+	}
+	.primary .register-submit {
+		background-image: none !important;
+		background-color: black !important;
+		border: 1px solid;
+		border-radius: 5px!important;
+		box-shadow: none;
+		color: white;
+		overflow: hidden;
+	}
+	.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{ 
+		background-image: none !important;
+		background-color: black !important;
+		border: 1px solid;
+		border-radius: 5px!important;
+		box-shadow: none;
+		color: white;
+		overflow: hidden;
+	}
+	.inner-heading > .label{font-size: 12px!important;}
+	.header.links > li > a{font-size: 12px!important;}
+	.header.links > li:first-child{margin-left: -2%;border-bottom-left-radius: 5px;}
+	.header.links > li:nth-child(2){margin-left: 2%;}
+	.mini-cart-heading{line-height: 32px!important;}
+	.dropdown-block.filled-heading .dropdown-heading .inner-heading {
+		padding: 0px 0px;
+		margin-top: -9%;
+		background: #DC241F;
+		border-bottom-right-radius: 5px;
+	}
+
+}

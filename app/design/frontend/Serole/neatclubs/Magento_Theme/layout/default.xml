@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+		<referenceBlock name="catalog.topnav" remove="true" />
+        <referenceBlock name="head.additional">
+            <block class="Infortis\Cgen\Block\AssetWrapper\Combined" name="head.additional.asset-wrapper" template="assets/wrapper/combined.phtml">
+                <arguments>
+                    <argument name="asset_name" xsi:type="string">cfg.css</argument>
+                    <argument name="asset_id" xsi:type="string">iult</argument>
+                </arguments>
+            </block>
+        </referenceBlock>    
+    </body>
+</page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="left">
+			<block as="sidebar_tiles" class="Serole\CategoriesTiles\Block\Sidebar\Tiles" name="sidebar.tiles" template="Serole_CategoriesTiles::sidebar/tiles.phtml"/>
+		</referenceBlock>
+		<referenceContainer name="sidebar.main">
+			<block as="sidebar_tiles" class="Serole\CategoriesTiles\Block\Sidebar\Tiles" name="sidebar.tiles" template="Serole_CategoriesTiles::sidebar/tiles.phtml"/>
+			<block class="Magento\Cms\Block\Block" name="block_product_secondary_bottom_2">
+				<arguments>
+					<argument name="block_id" xsi:type="string">block_product_secondary_bottom_2</argument>
+				</arguments>
+			</block>
+		</referenceContainer>
+	</body>
+</page>

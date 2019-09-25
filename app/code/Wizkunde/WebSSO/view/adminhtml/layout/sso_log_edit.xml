@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsdd" layout="admin-2columns-left">
+    <body>
+        <referenceContainer name="left">
+            <block class="Wizkunde\WebSSO\Block\Adminhtml\Log\Edit\Tabs" name="wizkunde_websso_log.edit.tabs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Wizkunde\WebSSO\Block\Adminhtml\Log\Edit" name="wizkunde_websso_log.edit" />
+        </referenceContainer>
+    </body>
+</page>

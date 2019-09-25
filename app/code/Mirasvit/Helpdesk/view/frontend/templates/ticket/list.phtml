@@ -1,0 +1,46 @@
+<?php
+/** @var \Mirasvit\Helpdesk\Block\Ticket\Listing $block */
+?>
+<?php
+$collection = $block->getTicketCollection()
+    ->joinFields()
+    ->setOrder('last_reply_at', 'desc');
+?>
+
+<?= $block->getChildHtml('helpdesk_mytickets_schedule_status') ?>
+
+<div class="hdmx__tickets">
+    <button title="<?= __("Create Enquiry") ?>" class="action create-button primary"
+            onclick="window.location = '<?= $block->getCreateUrl() ?>';return false;">
+        <span><?= __("Create Enquiry") ?></span>
+    </button>
+    <?php if ($collection->count()): ?>
+        <div class="table-wrapper">
+            <table class="data table hdmx__tickets-table">
+                <caption class="table-caption"><?= __('Tickets') ?></caption>
+                <thead>
+                <tr>
+                    <?php foreach ($block->getColumns() as $name => $column): ?>
+                        <th scope="col" class="col <?= $name ?>"><?= $column->getLabel() ?></th>
+                    <?php endforeach ?>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($collection as $ticket): ?>
+                    <tr>
+                        <?php foreach ($block->getColumns() as $name => $column): ?>
+                            <td data-th="<?= $column->getLabel() ?>" class="<?= $name ?>">
+                                <?= $block->getColumnHtml($column, $ticket) ?>
+                            </td>
+                        <?php endforeach ?>
+                    </tr>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php else: ?>
+        <div class="message info empty">
+            <span><?= __("You don't have open enquiries") ?></span>
+        </div>
+    <?php endif ?>
+</div>

@@ -1,0 +1,196 @@
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+/* Colors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Borders
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Elements with horizontal border - standard
+-------------------------------------------------------------- */
+// .product-info-main .product-info-price,
+.section-line
+{
+	&:extend(.abs-global-border-color all);
+}
+
+/* Elements with horizontal border - lighter
+-------------------------------------------------------------- */
+.product-info-main .product-info-price,
+.product-info-main .product-add-form,
+.product-view .product-info-price,
+.product-view .product-add-form
+{
+	&:extend(.abs-global-border-color-light all);
+}
+
+/* Elements with vertical border - standard
+-------------------------------------------------------------- */
+.custom-sidebar-right .inner,
+.custom-sidebar-left .inner
+{
+	&:extend(.abs-global-border-color all);
+}
+
+/* Elements with vertical border - lighter
+-------------------------------------------------------------- */
+/* Product grid/list */
+.products-list .product-shop-inner
+{
+	&:extend(.abs-global-border-color-light all);
+}
+
+/* Other elements with border
+-------------------------------------------------------------- */
+.swatch-option {
+	border-color:#cccccc;
+}
+
+
+/* Forms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Product options form colors
+-------------------------------------------------------------- */
+// .product-options dd select,
+// .product-options dd .input-text,
+// .product-options dd textarea,
+// .product-options ul.options-list { color:#888; }
+// .product-options dd select:hover,
+// .product-options dd select:focus,
+// .product-options dd textarea:hover,
+// .product-options dd textarea:focus,
+// .product-options ul.options-list:hover { color:#333; }
+
+
+
+/* Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Price on product page and MSRP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.product-view .price-box .price {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+
+
+
+/* Effects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Transitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Links and other selected elements
+-------------------------------------------------------------- */
+/* IMPORTANT: link transitions should be placed before other transitions */
+a,
+button,
+.menu-trigger .menu-trigger-inner,
+.menu-trigger .menu-trigger-inner .trigger-icon .line,
+.opener,
+a > .ib,
+a.feature-icon-hover > .ib
+/*, .header-mobile .skip-link*/
+{
+	transition:			color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-moz-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-webkit-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out;
+	-o-transition:		color 300ms ease-in-out, background-color 300ms ease-in-out;
+}
+a:hover,
+button:hover,
+.menu-trigger .menu-trigger-inner:hover,
+.menu-trigger .menu-trigger-inner:hover .trigger-icon .line,
+.opener:hover,
+.nav-item > a:hover + .opener, /* Opener following a link in mobile menu */
+a:hover > .ib,
+a.feature-icon-hover:hover > .ib
+{
+	transition-duration:			100ms;
+	-moz-transition-duration:		100ms;
+	-webkit-transition-duration:	100ms;
+	-o-transition-duration:			100ms;
+}
+
+/* Carets - in menu
+-------------------------------------------------------------- */
+.nav-regular a > .caret {
+	transition:			border-color 300ms ease-in-out, opacity 300ms ease-in-out;
+	-moz-transition:	border-color 300ms ease-in-out, opacity 300ms ease-in-out;
+	-webkit-transition:	border-color 300ms ease-in-out, opacity 300ms ease-in-out;
+	-o-transition:		border-color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+.nav-regular a:hover > .caret {
+	transition-duration:			100ms;
+	-moz-transition-duration:		100ms;
+	-webkit-transition-duration:	100ms;
+	-o-transition-duration:			100ms;
+}
+
+/* Interface icons: toolbar icons, pager, prev/next slide etc.
+-------------------------------------------------------------- */
+.sorter .view-mode .grid,
+.sorter .view-mode .list,
+.sorter .sort-by .category-asc,
+.sorter .sort-by .category-desc,
+
+/* Scroll to top */
+#scroll-to-top
+{
+	transition:			background-color 300ms ease-in-out, background-position 300ms ease-in-out;
+	-moz-transition:	background-color 300ms ease-in-out, background-position 300ms ease-in-out;
+	-webkit-transition:	background-color 300ms ease-in-out, background-position 300ms ease-in-out;
+	-o-transition:		background-color 300ms ease-in-out, background-position 300ms ease-in-out;
+}
+
+/* Elements with animated color, background color and borders
+-------------------------------------------------------------- */
+.product-options ul.options-list,
+
+/* Search */
+.form-search .button,
+
+/* Product image thumbnails */
+.product-view .product-img-box .more-views .thumbnails li a,
+
+/* Product mini-lists */
+.mini-products-list .product-image,
+.cart .crosssell .product-image,
+
+/* OPC accordion */
+.opc .step-title
+{
+	-moz-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+	-webkit-transition:	color 300ms ease-in-out, background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+	-o-transition:		color 300ms ease-in-out, background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+	transition:			color 300ms ease-in-out, background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+}
+
+
+/* Forms
+-------------------------------------------------------------- */
+input.input-text, 
+select, 
+textarea
+{
+	-moz-transition: all 300ms ease-in-out, box-shadow 300ms ease-in-out;
+	-webkit-transition: all 300ms ease-in-out, box-shadow 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out, box-shadow 300ms ease-in-out;
+	transition: all 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+
+
+} /* end: media-common */

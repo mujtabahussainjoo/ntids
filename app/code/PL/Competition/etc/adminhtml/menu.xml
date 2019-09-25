@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="PL_Competition::competition" title="Competition" module="PL_Competition" sortOrder="500" resource="PL_Competition::competition" parent="Magento_Backend::marketing"/>
+        <add id="PL_Competition::manage" title="Competition" module="PL_Competition" sortOrder="20" action="competition/competition" resource="PL_Competition::competition" parent="PL_Competition::competition"/>
+        <add id="PL_Competition::configuration" title="Configuration" sortOrder="30" module="PL_Competition" action="adminhtml/system_config/edit/section/competition" resource="PL_Competition::configuration" parent="PL_Competition::competition"/>
+    </menu>
+</config>

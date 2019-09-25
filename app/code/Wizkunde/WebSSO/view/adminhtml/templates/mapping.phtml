@@ -1,0 +1,77 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Wizkunde\WebSSO\Block\Adminhtml\Server\Edit\Tab\Mapping */
+
+?>
+<fieldset class="fieldset">
+    <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Manage Mappings') ?></span></legend>
+    <div id="manage-options-panel" data-index="attribute_options_select_container">
+        <div class="mapping-explanation" style="font-weight: bold; margin-bottom: 15px;">
+            Mappings will be automatically fetched from the identity provider after logging in for the first time<br />
+            Depending on if we can auto discover the login information, your login might succeed or fail at that login<br />
+            A failed login is nothing to worry about. Just come back here to check the discovered values and map them properly<br />
+            Several values will already be mapped with auto discovery
+        </div>
+
+        <table class="admin__control-table" data-index="attribute_options_select">
+            <thead>
+            <tr id="attribute-options-table">
+                <th class="col-draggable"></th>
+                <th class="col-default control-table-actions-th"><span><?php /* @escapeNotVerified */ echo __('IDP Mapping') ?></span></th>
+                <th class="col-default control-table-actions-th"></th>
+                <th class="col-default control-table-actions-th" style="min-width: 200px;"></th>
+                <th class="col-default control-table-actions-th"><span><?php /* @escapeNotVerified */ echo __('Magento Field') ?></span></th>
+            </tr>
+            </thead>
+            <tbody data-role="options-container" class="ignore-validate"></tbody>
+            <tfoot>
+            <tr>
+                <th colspan="4" class="validation">
+                    <input type="hidden" class="required-dropdown-attribute-entry" name="dropdown_attribute_validation"/>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+        <input type="hidden" id="option-count-check" value="" />
+    </div>
+    <script id="row-template" type="text/x-magento-template">
+        <tr>
+            <td class="col-draggable">
+                <div data-role="draggable-handle" class="draggable-handle" title="<?php /* @escapeNotVerified */ echo __('Sort Mapping'); ?>"></div>
+                <input data-role="order" type="hidden" name="mapping[order][<%- data.id %>]"  value="<%- data.sort_order %>" />
+            </td>
+            <td class="col-<%- data.id %>"><input name="mapping[value][<%- data.id %>][external]" value="<%- data.external %>" class="input-text required-option" type="text" /></td>
+            <td class="col-<%- data.id %>">
+                <select name="mapping[value][<%- data.id %>][transform]" value="<%- data.transform %>" class="required-option" id="external-<%- data.id %>" data-extra="extra-<%- id %>">
+                    <option value="string">Use value unmodified</option>
+                    <option value="split">Split by dots</option>
+                    <option value="default">Default value on empty</option>
+                    <option value="password">Magento Password Hash</option>
+                    <option value="before">Substring: Before occurance</option>
+                    <option value="after">Substring: After occurance</option>
+                    <option value="preg">PERL regular expression</option>
+                </select>
+            </td>
+            <td class="col-<%- data.id %>"><input name="mapping[value][<%- data.id %>][extra]" value="<%- data.extra %>" class="input-text" type="text" id="extra-<%- data.id %>" /></td>
+            <td class="col-<%- data.id %>"><select name="mapping[value][<%- data.id %>][internal]" value="<%- data.internal %>" class="required-option" id="internal-<%- data.id %>" style="width: 200px;"><option>Select attribute</option></select></td>
+        </tr>
+    </script>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Wizkunde_WebSSO/js/options": {
+                    "attributesData": <?php /* @noEscape */ echo json_encode($block->getModel()->getMappings(), JSON_HEX_QUOT); ?>,
+                    "eavAttributes": <?php /* @noEscape */ echo json_encode($block->getModel()->getEavAttributes(), JSON_HEX_QUOT); ?>,
+                    "isSortable":  1,
+                    "isReadOnly": 0
+                }
+            }
+        }
+    </script>
+</fieldset>

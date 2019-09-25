@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Amasty_AdminActionsLog::amaudit" title="Admin Actions Log" module="Amasty_AdminActionsLog" sortOrder="100" parent="Magento_Backend::system" resource="Amasty_AdminActionsLog::amaudit"/>
+        <add id="Amasty_AdminActionsLog::actions_log" title="Actions Log" module="Amasty_AdminActionsLog" sortOrder="10" parent="Amasty_AdminActionsLog::amaudit" action="amaudit/actionslog/index" resource="Amasty_AdminActionsLog::actions_log"/>
+        <add id="Amasty_AdminActionsLog::active_sessions" title="Active Sessions" module="Amasty_AdminActionsLog" sortOrder="20" parent="Amasty_AdminActionsLog::amaudit" action="amaudit/activesessions/index" resource="Amasty_AdminActionsLog::active_sessions"/>
+        <add id="Amasty_AdminActionsLog::login_attempts" title="Login Attempts" module="Amasty_AdminActionsLog" sortOrder="30" parent="Amasty_AdminActionsLog::amaudit" action="amaudit/loginattempts/index" resource="Amasty_AdminActionsLog::login_attempts"/>
+        <add id="Amasty_AdminActionsLog::page_visit_history" title="Page Visit History" module="Amasty_AdminActionsLog" sortOrder="40" parent="Amasty_AdminActionsLog::amaudit" action="amaudit/visithistory/index" resource="Amasty_AdminActionsLog::page_visit_history"/>
+    </menu>
+</config>

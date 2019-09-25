@@ -1,0 +1,1369 @@
+/**
+ * Category navigation menu
+ *
+ * .navi.nav-regular            - regular horizontal menu
+ * .navi.nav-regular.nav-vert   - regular vertical menu
+ * .navi.nav-mobile             - mobile menu accordion
+ *
+ * .nav-item                    - item
+ * .nav-item.parent             - item, parent of subcategories
+ * .nav-item.nav-item--parent   - item, parent of subcategories, has a dropdown
+ *
+ */
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+/* Common elements %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Category blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-block {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.nav-block--center {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/* Section line (separator) is lighter than other lines
+-------------------------------------------------------------- */
+.nav-block .section-line {
+    border-color: #eee;
+}
+
+/* Deprecated: custom static block block_header_nav_dropdown displayed as a dropdown
+-------------------------------------------------------------- */
+.navi .nav-custom-link .header-nav-dropdown-wrapper .heading {
+    margin: 10px 0;
+}
+
+
+
+/* Menu triggers.
+   Styles shared by vertical menu trigger and mobile menu trigger.
+   Styles similar to 1st-level links from the standard menu.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.menu-trigger {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.menu-trigger.active .menu-trigger-inner {
+    z-index: 4; /* One level above the top menu */
+    position: relative;
+}
+
+/* Mobile menu icon */
+.menu-trigger .trigger-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    margin: 0 4px 0 15px;
+}
+.menu-trigger .trigger-icon .line {
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    margin-bottom: 2px;
+}
+.menu-trigger .label {
+    margin-right: 10px;
+}
+
+
+/* Caret
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Only items with dropdown display the caret */
+.nav-regular .caret {
+    display: none;
+}
+.nav-regular .nav-item--parent > a .caret {
+    display: inline-block;
+}
+
+/* Caret inside dropdowns - right side caret */
+.nav-regular .nav-panel a .caret {
+    margin-left: 5px;
+    opacity: 0.2;
+}
+.nav-regular .nav-panel a:hover .caret {
+    opacity: 1;
+}
+
+
+/* Sticky logo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-item--stickylogo {
+    display: none;
+}
+.nav-item--stickylogo img {
+    padding-right: 10px;
+}
+
+/* Show only when sticky header active */
+.sticky-header .nav-item--stickylogo {
+    display: inline;
+}
+.header-container:not(.sticky-header) .nav-item--stickylogo {
+    display: none !important;
+}
+
+
+/* Home link
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Home link with icon inside a menu item
+-------------------------------------------------------------- */
+/* Class "feature" inside an item */
+.nav-regular .nav-item--home .ic {
+    display: inline-block;
+    font-size: 16px;
+    padding: 0;
+    width: 30px;
+    text-align: center;
+    vertical-align: middle;
+    float: none;
+    background-color: transparent !important; /* Remove default colors */
+}
+
+/* Single icon as a home link
+-------------------------------------------------------------- */
+.navi .nav-item--homeicon a {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    opacity: 1;
+    transition:         opacity 300ms ease-in-out;
+    -moz-transition:    opacity 300ms ease-in-out;
+    -webkit-transition: opacity 300ms ease-in-out;
+    -o-transition:      opacity 300ms ease-in-out;
+}
+.navi .nav-item--homeicon a:hover {
+    opacity: 0.7;
+    transition-duration:            100ms;
+    -moz-transition-duration:       100ms;
+    -webkit-transition-duration:    100ms;
+    -o-transition-duration:         100ms;
+}
+
+
+/* Category labels
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.cat-label {
+    padding:2px 4px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    line-height:18px;
+    text-transform:none;
+    text-shadow:none;
+    
+    transition:         color 450ms ease-in-out, background-color 450ms ease-in-out;
+    -moz-transition:    color 450ms ease-in-out, background-color 450ms ease-in-out;
+    -webkit-transition: color 450ms ease-in-out, background-color 450ms ease-in-out;
+    -o-transition:      color 450ms ease-in-out, background-color 450ms ease-in-out;
+}
+li > a:hover > span > .cat-label {
+    transition-duration:            100ms;
+    -moz-transition-duration:       100ms;
+    -webkit-transition-duration:    100ms;
+    -o-transition-duration:         100ms;
+}
+
+/* labels: 1st level
+-------------------------------------------------------------- */
+li.level0 > a > span { position:relative; }
+li.level0 > a > span > .cat-label {
+    position:absolute;
+    top:-10px; /*-14px*/
+    right:0;
+    padding:0 6px;
+    
+    font-size:14px;
+    line-height:22px;
+}
+
+/* Add pin (1st level only) */
+li.level0 > a > span > .pin-bottom:before {
+    position:absolute;
+    right:6px;
+    top:22px;
+    width:0;
+    height:0;
+    content:"";
+    border-style:solid;
+    border-width:4px;
+    border-color:transparent;
+
+    transition:         border-color 450ms ease-in-out;
+    -moz-transition:    border-color 450ms ease-in-out;
+    -webkit-transition: border-color 450ms ease-in-out;
+    -o-transition:      border-color 450ms ease-in-out;
+}
+li.level0 > a:hover > span > .pin-bottom:before {
+    transition-duration:            100ms;
+    -moz-transition-duration:       100ms;
+    -webkit-transition-duration:    100ms;
+    -o-transition-duration:         100ms;
+}
+
+/* labels: 2nd level
+-------------------------------------------------------------- */
+li.level1 > a > span > .cat-label {
+    display:inline-block !important;
+    padding:0 4px;
+    margin-left:5px;
+    vertical-align:middle;
+}
+
+/* labels: 3rd level
+-------------------------------------------------------------- */
+li.level2 > a > span > .cat-label {
+    display:inline-block !important;
+    padding:0 4px;
+    margin-left:2px;
+}
+
+/* Category labels inside mobile menu / vertical menu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-mobile li > a > span > .cat-label,
+.nav-vert li > a > span > .cat-label {
+    position:static;
+    display:inline-block !important;
+    padding:0 4px;
+    margin-left:5px;
+
+    /* Label size: all levels */
+    font-size:14px;
+    line-height:18px;
+}
+
+/* Hide pin */
+.nav-mobile li > a > span > .pin-bottom:before,
+.nav-vert li > a > span > .pin-bottom:before {
+    display:none;
+}
+
+
+/* Non-clickable links
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.navi a.no-click { cursor: default; }
+
+
+/* Remove highlight color on tap
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.navi,
+.menu-trigger,
+.nav-regular .nav-item.level0 > a { -webkit-tap-highlight-color: transparent; }
+
+
+
+/* Base styles of the menu %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.navi-wrapper {
+    position: relative;
+}
+.navi {
+    position: relative; /* Dropdown box position is relative to this container */
+    -webkit-transform: translateZ(0); /* Fix possible glitches during animation */
+}
+.navi > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Clearfix for menu items list */
+.navi > ul:before,
+.navi > ul:after {
+    display: table;
+    content: " ";
+}
+.navi > ul:after {
+    clear: both;
+}
+
+/* Items */
+.navi .nav-item {
+    margin: 0;
+}
+
+/* Show/hide mobile menu */
+.navi.nav-mobile-triggerable { 
+    display: none;
+
+    /* Important: menu needs to be cleared to avoid overlapping other elements inside nav bar, such as triggers and holders */
+    clear: both;
+}
+.navi.nav-mobile-triggerable.show { 
+    display: block;
+}
+
+/* Show/hide vertical menu */
+.navi.nav-vert-triggerable {
+    display: none;
+}
+.navi.nav-vert-triggerable.show {
+    display: block;
+}
+
+/* Pull up dropdowns above other elements
+-------------------------------------------------------------- */
+/* Top menu */
+.header-container .navi {
+    z-index: 3;
+}
+/* Sidebar menu */
+.navi.nav-regular.navi-sidebarmenu {
+    z-index: 2; /* One level below the top menu */
+}
+
+
+/* Bottom border
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-border-bottom {
+    clear: both;
+}
+
+
+
+/* Standard menu %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Height of the menu bar (and other elements inisde menu bar)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Top-level items and menu triggers */
+.menu-trigger,
+.nav-regular .nav-item.level0 > a {
+    line-height: 50px;
+}
+
+/* Other elements inisde menu bar need to have the same height as height of the menu bar.
+   Set max height to avoid issues with excessive height of the elements. */
+.nav-holder > *,
+.nav-holder .dropdown-block .dropdown-heading {
+    line-height: 50px; 
+    max-height: 50px;
+}
+
+
+/* Additional classes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Menu items aligned right
+-------------------------------------------------------------- */
+.nav-regular li.level0.right {
+    float: right;
+}
+
+/* Menu items centered within the menu bar
+-------------------------------------------------------------- */
+.nav-regular.centered {
+    text-align: center;
+}
+.nav-regular.centered li.level0
+{
+    float: none;
+    display: inline-block;
+}
+.nav-regular.centered li.level0.right,
+.nav-regular.centered li.level0.left
+{
+    float: none !important;
+}
+
+/* Sticky logo has to float left */
+.nav-regular.centered li.nav-item--stickylogo {
+    float: left;
+}
+
+
+/* Other elements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Openers */
+.nav-regular .opener { display: none; }
+
+/* Hide elements */
+.nav-regular .hide-in-desktop-menu { display: none !important; }
+
+
+
+/* Holders %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Holder for additional elements inside the menu bar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-holders-wrapper {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 4; /* One level above the top menu */
+    position: relative;
+    /* Important: do not add floating to this element. Otherwise menu items may leave a gap (in the place where holders wrapper is displayed)
+       after sticky menu suspends sticky mode. */
+}
+.nav-holders-wrapper .nav-holder {
+    margin: 0;
+    float: right; /* Required default floating */
+}
+
+
+/* Elements inside holder
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-holder > * {
+    display: block;
+}
+
+
+/* Specific elements inside holder
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Drop-downs
+-------------------------------------------------------------- */
+// // Deprecated: rule already exists in dropdown CSS
+// .nav-holder .dropdown-block .dropdown-heading .label {
+//     vertical-align: baseline; 
+// }
+
+/* Search box
+-------------------------------------------------------------- */
+/* Common styles for search box in holder, when it's displayed inisde menu bar */
+.nav-regular .nav-holder .block-search, /* <-- Deprecated */
+.nav-holders-wrapper .nav-holder .block-search
+{
+    width: inherit; /* Important: to avoid stretching the box to 100% */
+    float: none !important;
+    /* display: inline-block;
+    vertical-align: middle; */
+
+    /* IMPORTANT: use margin instead padding (to be able to set outline border for the search block) */
+    margin-left: 7px !important;
+
+    /* Override styles of search box when its inside element with class ".hp-blocks-holder--stacked" */
+    max-width: none;
+    margin: 0;
+}
+
+/* Drop-downs
+-------------------------------------------------------------- */
+/* Increase the default side padding when heading is "filled" */
+.nav-holder .dropdown-block.filled-heading .dropdown-heading .inner-heading {
+    padding: 0 15px;
+}
+
+/* When heading is NOT "filled", add some space at the left side to move it away from other menu items */
+.nav-holder .dropdown-block:not(.filled-heading) {
+    margin-left: 7px !important;
+}
+
+/* Common styles with mobile menu trigger
+-------------------------------------------------------------- */
+.menu-trigger,
+.nav-holder .dropdown-block .dropdown-heading {
+    font-size: 14px;
+}
+
+
+
+/* Vertical menu %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.navi.nav-vert-triggerable {
+    position: absolute;
+    left: 0;
+}
+
+/* Hide selected elements
+-------------------------------------------------------------- */
+/* Important: added ".nav-item" class to make the rule more specific */
+.nav-vert .nav-item.nav-item--home {
+    display: none !important;
+}
+.nav-vert .nav-item--stickylogo {
+    display: none !important;
+}
+
+
+/* Vertical menu trigger
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.vertnav-trigger {
+    float: left;
+    text-align: left;
+}
+
+
+/* Additional custom links inside menu bar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-inline-links {
+    float: left;
+    margin: 0;
+}
+
+
+
+/* Mobile menu %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Mobile menu trigger
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.mobnav-trigger {
+    display: none;
+}
+
+/* If trigger is next to the holders wrapper, make it float left
+   so that it doesn't span entire container and overlap holders. */
+.nav-holders-wrapper + .mobnav-trigger {
+    float: left;    
+}
+/* In left column, make it float right */
+.left-column .nav-holders-wrapper + .mobnav-trigger {
+    float: right;
+}
+/* In right column, make it float left */
+.right-column .nav-holders-wrapper + .mobnav-trigger {
+    float: left;
+}
+
+
+/* Dropdowns
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Dropdowns inside mobile menu */
+.nav-mobile .nav-panel--dropdown {
+    /* Override width which can be added to dropdowns of the regular menu */
+    width: 100% !important;
+
+    /* Reset of dropdown's inline positioning */
+    left: 0 !important;
+    top: 0 !important;
+}
+
+
+/* Dropdowns - categories without category blocks but with subcategories
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Simplify dropdown */
+/* Remove dropdown shadow and background color  */
+.nav-mobile .nav-item--only-subcategories > .nav-panel--dropdown {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent !important;
+}
+/* Remove padding of inner panel */
+.nav-mobile .nav-item--only-subcategories > .nav-panel--dropdown > .nav-panel-inner {
+    padding: 0 !important;
+}
+/* Stretch the central column */
+.nav-mobile .nav-item--only-subcategories > .nav-panel--dropdown > .nav-panel-inner > .nav-block--center {
+    margin: 0;
+    width: 100%;
+}
+/* Hide category blocks (in case there are any non-standard added by user's modifications) */
+.nav-mobile .nav-item--only-subcategories > .nav-panel--dropdown > .nav-panel-inner > .nav-block {
+    display: none;
+}
+
+
+/* Dropdowns - categories which have only category blocks 
+   but have no subcategories
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Special class "opt-sob" displays these items */
+
+/* On 1st level, by default hide these items */
+.nav-mobile .level0.nav-item.nav-item--only-blocks { display: none; }
+
+/* With special class "opt-sob", show these items */
+.nav-mobile.opt-sob .level0.nav-item.nav-item--only-blocks { display: block; }
+
+
+/* Dropdowns - show category blocks on selected topmost levels
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Structure of the selectors used below:
+   mobileMenu.modifier [level] categoryBlock 
+   mobileMenu.modifier [level] item > panel > innerPanel > categoryBlock 
+
+   Classes such as opt-sb0, opt-sb1 etc. are modifiers of the mobile menu.
+
+   To show category blocks on only the first level, we hide 
+   category blocks on all lower levels and simplify dropdowns.
+*/
+
+/* Default class "opt-sb0"
+   - hide category blocks on all level and simplify dropdowns.
+-------------------------------------------------------------- */
+.nav-mobile.opt-sb0 .nav-block { display: none; }
+.nav-mobile.opt-sb0 .nav-item > div { -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; background-color: transparent !important; } /* Remove dropdown shadow and background color */
+.nav-mobile.opt-sb0 .nav-item > div > div { padding: 0 !important; } /* Remove padding of inner panel */
+.nav-mobile.opt-sb0 .nav-item > div > div > .nav-block--center { margin: 0; width: 100%; } /* Stretch the central column */
+.nav-mobile.opt-sb0 .nav-item.nav-item--only-blocks { display: none; } /* Hide items containing only category blocks */
+
+/* Override styles which simplify dropdowns when default class "opt-sb0" is present.
+   When the default class is not present, we don't need to do this. */
+.nav-mobile.opt-sb0.opt-sob .nav-item.nav-item--only-blocks .nav-block { display: block; }
+/* .nav-mobile.opt-sb0.opt-sob .nav-item.nav-item--only-blocks > div { background-color: transparent !important; } */
+.nav-mobile.opt-sb0.opt-sob .nav-item.nav-item--only-blocks > div > div { padding: 20px !important; }
+.nav-mobile.opt-sb0.opt-sob .nav-item.nav-item--only-blocks > div > div > .nav-block--center { margin-top: 1%; margin-bottom: 1%; }
+
+/* Show on 1 topmost level
+-------------------------------------------------------------- */
+.nav-mobile.opt-sb1 ul.level0 .nav-block { display: none; }
+.nav-mobile.opt-sb1 ul.level0 .nav-item > div { -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; background-color: transparent !important; }
+.nav-mobile.opt-sb1 ul.level0 .nav-item > div > div { padding: 0 !important; }
+.nav-mobile.opt-sb1 ul.level0 .nav-item > div > div > .nav-block--center { margin: 0; width: 100%; }
+.nav-mobile.opt-sb1 ul.level0 .nav-item.nav-item--only-blocks { display: none; }
+
+/* Show on 2 topmost levels
+-------------------------------------------------------------- */
+.nav-mobile.opt-sb2 ul.level1 .nav-block { display: none; }
+.nav-mobile.opt-sb2 ul.level1 .nav-item > div { -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; background-color: transparent !important; }
+.nav-mobile.opt-sb2 ul.level1 .nav-item > div > div { padding: 0 !important; }
+.nav-mobile.opt-sb2 ul.level1 .nav-item > div > div > .nav-block--center { margin: 0; width: 100%; }
+.nav-mobile.opt-sb2 ul.level1 .nav-item.nav-item--only-blocks { display: none; }
+
+/* Show on 3 topmost levels
+-------------------------------------------------------------- */
+.nav-mobile.opt-sb3 ul.level2 .nav-block { display: none; }
+.nav-mobile.opt-sb3 ul.level2 .nav-item > div { -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; background-color: transparent !important; }
+.nav-mobile.opt-sb3 ul.level2 .nav-item > div > div { padding: 0 !important; }
+.nav-mobile.opt-sb3 ul.level2 .nav-item > div > div > .nav-block--center { margin: 0; width: 100%; }
+.nav-mobile.opt-sb3 ul.level2 .nav-item.nav-item--only-blocks { display: none; }
+
+/* Show on 4 topmost levels
+-------------------------------------------------------------- */
+.nav-mobile.opt-sb4 ul.level3 .nav-block { display: none; }
+.nav-mobile.opt-sb4 ul.level3 .nav-item > div { -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; background-color: transparent !important; }
+.nav-mobile.opt-sb4 ul.level3 .nav-item > div > div { padding: 0 !important; }
+.nav-mobile.opt-sb4 ul.level3 .nav-item > div > div > .nav-block--center { margin: 0; width: 100%; }
+.nav-mobile.opt-sb4 ul.level3 .nav-item.nav-item--only-blocks { display: none; }
+
+/* Show on 5 topmost levels
+-------------------------------------------------------------- */
+.nav-mobile.opt-sb5 ul.level4 .nav-block { display: none; }
+.nav-mobile.opt-sb5 ul.level4 .nav-item > div { -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; background-color: transparent !important; }
+.nav-mobile.opt-sb5 ul.level4 .nav-item > div > div { padding: 0 !important; }
+.nav-mobile.opt-sb5 ul.level4 .nav-item > div > div > .nav-block--center { margin: 0; width: 100%; }
+.nav-mobile.opt-sb5 ul.level4 .nav-item.nav-item--only-blocks { display: none; }
+
+/* Hide blocks on all levels below this breakpoint
+-------------------------------------------------------------- */
+/* Added more classes and selectors to these rules 
+   to increase specificity */
+@media only screen and (max-width: 479px) {
+    .navi.nav-mobile.opt-hide480 .nav-block { display: none !important; }
+    .navi.nav-mobile.opt-hide480 li.nav-item > div.nav-panel--dropdown { -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important; background-color: transparent !important; }
+    .navi.nav-mobile.opt-hide480 li.nav-item > div.nav-panel--dropdown > div { padding: 0 !important; }
+    .navi.nav-mobile.opt-hide480 li.nav-item > div > div > .nav-block--center { margin: 0 !important; width: 100% !important; }
+    .navi.nav-mobile.opt-hide480 li.nav-item.nav-item--only-blocks { display: none !important; }
+}
+
+
+/* Other elements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Carets
+-------------------------------------------------------------- */
+.nav-mobile .caret { display: none !important; }
+
+/* Sticky logo
+-------------------------------------------------------------- */
+.nav-mobile .nav-item--stickylogo { display: none !important; }
+
+/* Home link
+-------------------------------------------------------------- */
+.nav-mobile .nav-item--home { display: none !important; }
+
+/* Hide elements
+-------------------------------------------------------------- */
+.nav-mobile .hide-in-mobile-menu { display: none !important; }
+
+/* Hide containers for additional elements
+-------------------------------------------------------------- */
+.nav-mobile .nav-holder { display: none !important; }
+
+
+
+/* Miscellaneous %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Other modules/components
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* Item sliders
+-------------------------------------------------------------- */
+.navi .itemslider { margin-top:0; margin-bottom:0; }
+.navi .itemslider .item { padding-top:5px; padding-bottom:0; }
+.navi .itemslider .product-name a { display: inline-block; }
+.navi .itemslider .product-name { margin-top: 8px; }
+
+
+
+
+
+/* *************************************************************************************************************
+****************************************************************************************************************
+ DROPDOWN BOXES ************************************************************************************************
+****************************************************************************************************************
+************************************************************************************************************* */
+
+
+
+
+
+/* Common %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* All levels
+-------------------------------------------------------------- */
+.nav-regular .nav-item {
+    text-align: left;
+}
+.nav-regular .nav-item > a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Level 1 only
+-------------------------------------------------------------- */
+.nav-regular li.level0 { float: left; }
+.nav-regular li.level0 > a { padding: 0 12px; }
+.nav-regular li.level0 > a > span { display: inline-block; white-space: nowrap; }
+
+/* Top-level item on hover */
+.nav-regular li.level0:hover > a {
+    /* Pull up the link above the dropdown */
+    z-index: 2;
+    position: relative;
+}
+
+/* Caret */
+.nav-regular li.level0 > a .caret {
+    opacity: 0.3;
+
+    /* Fix: IE11
+        Set small line height to avoid issues:
+        - menu doesn't get additional border below the menu when menu items have dropdowns 
+        - menu doesn't get additional padding below the menu when menu items have dropdowns
+        */
+    line-height: 1;
+}
+.nav-regular li.level0.active > a .caret {
+    opacity: 1;
+}
+.nav-regular li.level0:hover > a .caret {
+    opacity: 1;
+}
+
+
+
+/* Dropdowns
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+
+/* All levels
+-------------------------------------------------------------- */
+.nav-regular .nav-panel--dropdown {
+    display:none;
+    position:absolute;
+    top:0;
+    background-color:#fff; /* To avoid transparent menu */
+    z-index: 1; /* To avoid links overlaping a dropdown */
+
+    /* Uncomment below line to fix possible glitches during animation in webkit browsers */
+    /*-webkit-transform: translateZ(0);*/
+}
+
+/* Inner wrapper of the dropdown (for additional padding etc.)
+-------------------------------------------------------------- */
+.navi .nav-panel-inner { padding: 20px; } /* Required value in pixels to keep padding consistent in different dropdowns */
+.navi .nav-panel-inner:before,
+.navi .nav-panel-inner:after { display: table; line-height: 0; content: ""; }
+.navi .nav-panel-inner:after { clear: both; }
+
+
+/* Full width dropdown
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-regular .nav-panel.full-width { width:100%; }
+.nav-regular .nav-panel.tmp-full-width { width:100% !important; } /* Temporary class required by js */
+
+
+/* Effects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Fade
+-------------------------------------------------------------- */
+.nav-regular.opt-fx-fade-inout .nav-panel .nav-item--parent > .nav-panel--dropdown {
+    display: block; /* Important: has to be visible before hover */
+    left: -10000px;
+    opacity: 0;
+    -moz-transition:    opacity 50ms ease-in-out 50ms, left 0s ease-in-out 100ms, top 0s ease-in-out 100ms;
+    -webkit-transition: opacity 50ms ease-in-out 50ms, left 0s ease-in-out 100ms, top 0s ease-in-out 100ms;
+    -o-transition:      opacity 50ms ease-in-out 50ms, left 0s ease-in-out 100ms, top 0s ease-in-out 100ms;
+    transition:         opacity 50ms ease-in-out 50ms, left 0s ease-in-out 100ms, top 0s ease-in-out 100ms;
+}
+.nav-regular.opt-fx-fade-inout .nav-panel .nav-item--parent:hover > .nav-panel--dropdown {
+    opacity: 1;
+    transition-delay:           50ms;
+    -moz-transition-delay:      50ms;
+    -webkit-transition-delay:   50ms;
+    -o-transition-delay:        50ms;
+}
+
+
+
+/* Mega dropdown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Dropdown
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* All levels
+-------------------------------------------------------------- */
+.nav-regular .mega > .nav-panel--dropdown {
+    margin:0;
+}
+
+/* Level 2+
+-------------------------------------------------------------- */
+.nav-regular .nav-panel li.mega { 
+    position: relative; /* Container of the dropdown has to be relative (only on levels 2+) */
+}
+.nav-regular .nav-panel li.mega:hover > .nav-panel--dropdown {
+    display: block;
+    left: 60px;
+    top: 0;
+}
+
+
+/* Inside mega dropdown
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Align submenu's content (grid) with the submenu */
+.nav-regular .nav-submenu--mega {
+    margin-left: -1%;
+    margin-right: -1%;
+}
+
+/* Items */
+.nav-regular .nav-submenu--mega .nav-item > a {
+    padding: 0px 4px 0px 7px; /* Less right padding to avoid word wrapping */
+}
+
+/* Inside mega dropdown, level 1: item
+-------------------------------------------------------------- */
+.nav-regular .nav-submenu--mega > .nav-item {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    padding-top: 0;
+    padding-bottom: 5px;
+}
+.nav-regular .nav-submenu--mega > .nav-item > a {
+    line-height: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* If item is a parent of subcategories, add bottom margin, but romove it if item is a parent of a dropdown */
+.nav-regular .nav-submenu--mega > .nav-item.parent > a {
+    margin-bottom: 5px;
+}
+.nav-regular .nav-submenu--mega > .nav-item.nav-item--parent > a {
+    margin-bottom: 0;
+}
+
+/* Inside mega dropdown, level 1: submenu
+-------------------------------------------------------------- */
+/* Each submenu has to be static unless it's a dropdown itself (e.g. if type "classic" was applied to the item).
+   Also, add bottom margin to panel, but romove it if it's a dropdown. */
+.nav-regular .nav-submenu--mega > li > .nav-panel {
+    position: static;
+    margin-bottom: 10px;
+}
+.nav-regular .nav-submenu--mega > li > .nav-panel--dropdown {
+    position: absolute;
+    margin-bottom: 0;
+}
+
+/* Inside mega dropdown, level 1: category blocks
+-------------------------------------------------------------- */
+.nav-regular .nav-submenu--mega > li > .nav-block--top {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.nav-regular .nav-submenu--mega > li > .nav-block--bottom {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Inside mega dropdown, level 2: item
+-------------------------------------------------------------- */
+.nav-regular .nav-submenu--mega > li > ul > li > a {
+    line-height: 24px;
+}
+
+/* Inside mega dropdown, level 2: item with bullet.
+   If mega dropdown has additional bullets 
+   (displayed for 2nd and 3rd level items).
+-------------------------------------------------------------- */
+
+/* Added ":not(.nav-item--parent)" to not display bullet if the item is inside a dropdown
+   (e.g. if type "classic" was applied to 2nd-level cat, 3rd level cats will be inside a dropdown so remove bullets from 3rd level cats) */
+.nav-regular.with-bullets .nav-submenu--mega > li:not(.nav-item--parent) > ul > li > a {
+    padding-left: 28px;
+    position: relative;
+}
+.nav-regular.with-bullets .nav-submenu--mega > li:not(.nav-item--parent) > ul > li > a:before {
+    content: "\e263";
+    line-height: 24px; /* The same as actual height of the item */
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    width: 24px; /* Not larger than the left padding of the item */
+    transition:         left 150ms ease-out;
+    -moz-transition:    left 150ms ease-out;
+    -webkit-transition: left 150ms ease-out;
+    -o-transition:      left 150ms ease-out;
+}
+.nav-regular.with-bullets .nav-submenu--mega > li:not(.nav-item--parent) > ul > li > a:hover:before {
+    left: 4px;
+}
+
+/* If there's an icon inside mega dropdown, it needs to have the same line height as the item  */
+.nav-regular.with-bullets .nav-submenu--mega > li:not(.nav-item--parent) > ul > li > a .ic {
+    line-height: 24px;
+}
+
+/* Remove bullet if item has an icon */
+.nav-regular.with-bullets .nav-submenu--mega > li > ul > li.iconic > a:before {
+    display: none;
+}
+
+/* Inside mega dropdown, level 2: submenu dropdown
+-------------------------------------------------------------- */
+.nav-regular .nav-submenu--mega > li > ul > .nav-item--parent > .nav-panel--dropdown {
+}
+.nav-regular .nav-submenu--mega > li > ul > .nav-item--parent:hover > .nav-panel--dropdown {
+    left: 60%;
+    /* TODO - add z-index if dropdown should be displayed over the containing item (which in "classic" dropdown has a background and covers the child dropdown) */
+    /* z-index: 3; */
+}
+
+
+
+/* Classic dropdown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Level 2+
+-------------------------------------------------------------- */
+.nav-regular .classic > .nav-panel--dropdown > li > a {
+    line-height: 36px;
+    padding-left: 10px;
+}
+.nav-regular .classic > .nav-panel--dropdown > li > a .caret {
+    float: right;
+    margin-right: 10px;
+
+    /* Important: 
+       when floating, caret needs to have the same height as item.
+       Caret may exceed height of the item so we apply small negative margin.
+       */
+    line-height: inherit; 
+    margin-bottom: -2px;
+}
+
+
+/* Dropdown
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* All levels
+-------------------------------------------------------------- */
+.nav-regular .classic > .nav-panel--dropdown {
+    margin:0;
+    padding:10px;
+    width:16em;
+    min-width:12em;
+}
+
+/* Level 2+
+-------------------------------------------------------------- */
+/* Container of the dropdown has to be relative */
+.nav-regular .nav-panel li.classic {
+    position: relative;
+}
+.nav-regular .nav-panel li.classic:hover > .nav-panel--dropdown {
+    display:block;
+    left:100%;
+    top:0;
+}
+
+/* If classic dropdown is on the 1 level of mega dropdown, change positioning */
+.nav-regular .nav-submenu--mega > li.classic:hover > .nav-panel--dropdown {
+    left:60px;
+    top:20px;
+}
+
+
+/* Inside dropdown
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-regular .nav-panel li.classic:hover > a {
+    /* TODO - add z-index (must be greater than dropdown's) if the link should be displayed over the child dropdown 
+       (link in "classic" dropdown has a background so it would cover the child dropdown and dropdown's shadow) */
+    /* z-index: 2; */
+    position: relative;
+}
+
+
+
+/* Simple submenu - no dropdown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* When submenu has to be displayed not as a dropdown, but as a simple nested list (with slight left indent) */
+
+.nav-regular .nav-item.simple > ul {
+    padding-left: 10px;
+}
+
+/* If mega dropdown has additional bullets (displayed for 2nd and 3rd level items in mega dropdown) */
+.nav-regular.with-bullets .nav-item.simple > ul {
+    padding-left: 28px; /* The same space as for standard item */
+}
+
+/* Bullets */
+.nav-regular .nav-item.simple > ul > li > a {
+    line-height: 24px;
+    padding-left: 15px !important; /* Override item standard padding */
+    position: relative;
+    opacity: 0.6;
+}
+.nav-regular .nav-item.simple:hover > ul > li > a {
+    opacity: 1;
+}
+.nav-regular .nav-item.simple > ul > li > a:before {
+    content: "\e263";
+    font-size: 10px;
+    line-height: 24px; /* The same as actual height of the item */
+    left: -2px;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    width: 10px; /* Not larger than the left padding of the item */
+    transition:         left 150ms ease-out;
+    -moz-transition:    left 150ms ease-out;
+    -webkit-transition: left 150ms ease-out;
+    -o-transition:      left 150ms ease-out;
+}
+.nav-regular .nav-item.simple > ul > li > a:hover:before {
+    left: 3px;
+}
+
+
+
+/* Vertical menu %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* All levels
+-------------------------------------------------------------- */
+.nav-vert li.level0 {
+    float: none !important; /* Add "!important" to override floating of right-aligned items */
+}
+.nav-vert li.level0 > a {
+    padding-left: 10px;
+    padding-right: 7px;
+}
+.nav-vert li.level0 > a .caret {
+    float: right;
+
+    /* Important: 
+       when floating, caret needs to have the same height as item.
+       Caret may exceed height of the item so we apply small negative margin.
+       */
+    line-height: inherit; 
+    margin-bottom: -2px;
+}
+
+
+/* Dropdown
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Level 1
+-------------------------------------------------------------- */
+.nav-vert li.level0 > .nav-panel--dropdown {
+    /* We may need to set static left positionning to prevent styling issues (inaccurate positionning via JS: non pixel-perfect) */
+    left: 100% !important;
+}
+
+
+
+/* Item with icon %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Important: it has to be defined after item with bullet */
+.navi .nav-item.iconic > a {
+    position: relative;
+    padding-left: 28px !important;
+}
+.navi .nav-item.iconic > a .ic {
+    content: "\e226";
+    font-size: 14px;
+    line-height: 36px; /* The same as actual height of the item */
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    width: 28px; /* Not larger than the left padding of the item */
+}
+
+
+
+/* Itemgrid for menu dropdown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.dd-itemgrid > .nav-item {
+    float:left;
+    padding-left:1%;
+    padding-right:1%;
+}
+
+/* Itemgrid: different numbers of columns
+-------------------------------------------------------------- */
+/* Clear first item in each row (row: group of n items) */
+
+/* Item grid: 1 column */
+.dd-itemgrid-1col > .nav-item { width:98%; }
+
+/* Item grid: 2 columns */
+.dd-itemgrid-2col > .nav-item { width:48%; }
+.dd-itemgrid-2col > .nav-item:nth-child(2n+1) { clear:left; }
+
+/* Item grid: 3 columns */
+.dd-itemgrid-3col > .nav-item { width:31.3333%; }
+.dd-itemgrid-3col > .nav-item:nth-child(3n+1) { clear:left; }
+
+/* Item grid: 4 columns */
+.dd-itemgrid-4col > .nav-item { width:23%; }
+.dd-itemgrid-4col > .nav-item:nth-child(4n+1) { clear:left; }
+
+/* Item grid: 5 columns */
+.dd-itemgrid-5col > .nav-item { width:18%; }
+.dd-itemgrid-5col > .nav-item:nth-child(5n+1) { clear:left; }
+
+/* Item grid: 6 columns */
+.dd-itemgrid-6col > .nav-item { width:14.6666%; }
+.dd-itemgrid-6col > .nav-item:nth-child(6n+1) { clear:left; }
+
+/* Item grid: 7 columns */
+.dd-itemgrid-7col > .nav-item { width:12.2857%; }
+.dd-itemgrid-7col > .nav-item:nth-child(7n+1) { clear:left; }
+
+/* Item grid: 8 columns */
+.dd-itemgrid-8col > .nav-item { width:10.5%; }
+.dd-itemgrid-8col > .nav-item:nth-child(8n+1) { clear:left; }
+
+
+
+
+
+/* *************************************************************************************************************
+****************************************************************************************************************
+ MOBILE MENU ACCORDION *****************************************************************************************
+****************************************************************************************************************
+************************************************************************************************************* */
+
+
+
+
+
+/* Accordion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-acco {
+    list-style-type: none;
+}
+.nav-acco li.nav-item {
+    list-style-type:none;
+    display:block;
+    float:left;
+    width:100% !important; /* Use "!important" to override grid units styling */
+    padding:0 !important;
+    margin:0 !important;
+    position:relative; /* For opener positioning */
+}
+.nav-acco ul.nav-panel {
+    display:block;
+    float:left;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+
+/* Items
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* Space for openner if item has children. Space has to be a few pixels wider than openner */
+.nav-acco li.parent > a {
+    padding-right: 54px;
+}
+
+/* All levels
+-------------------------------------------------------------- */
+.nav-acco .nav-item > a {
+    line-height: 50px;
+    display: block;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+/* Level 1
+-------------------------------------------------------------- */
+.nav-acco li.level0 > a {
+    font-size: 18px;
+    // text-transform: uppercase;
+}
+
+/* Level 2
+-------------------------------------------------------------- */
+.nav-acco li.level1 > a {
+    padding-left: 30px;
+    font-size: 16px;
+    // text-transform: uppercase;
+}
+
+/* Level 3
+-------------------------------------------------------------- */
+.nav-acco li.level2 > a {
+    padding-left: 50px;
+    font-size: 16px;
+    // text-transform: none;
+}
+
+/* Level 4
+-------------------------------------------------------------- */
+.nav-acco li.level3 > a
+{
+    padding-left: 70px;
+    font-size: 14px;
+    // text-transform: none;
+}
+
+/* Level 5+
+-------------------------------------------------------------- */
+.nav-acco li.level3 .nav-item > a
+{
+    padding-left: 90px;
+    font-size: 12px;
+    text-transform: none;
+}
+
+
+/* Opener
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.nav-acco .opener {
+    position:absolute;
+    right:0;
+    top:0;
+    display:block;
+    cursor:pointer;
+    text-align:center;
+    
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.nav-acco .opener:hover {
+    background-color:rgba(0,0,0, 0.05);
+}
+
+
+
+
+
+/* *************************************************************************************************************
+****************************************************************************************************************
+ SIDEBAR MENU **************************************************************************************************
+****************************************************************************************************************
+************************************************************************************************************* */
+
+
+
+
+
+/* Simple vertical accordion in sidebar menu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.sideacco {
+    float: left;
+    width: 100%;
+}
+
+/* Number of products in category */
+.sideacco .number {
+    color: #aaa;
+    margin-left: 3px;
+}
+
+
+/* Category labels inside vertical menu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+/* All levels */
+.sideacco li > a > span > .cat-label {
+    position: static;
+    display: inline-block !important;
+    padding: 0 4px;
+    margin-left: 3px;
+}
+
+/* Hide pin */
+.sideacco li > a > span > .pin-bottom:before {
+    display: none;
+}
+
+
+
+} /* end: media-common */

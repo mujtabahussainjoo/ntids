@@ -1,0 +1,30 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>My cart</title>
+        <!-- 
+		demo
+		<css src="Serole_SideBarCart::css/css.css"/>
+		<script src="Serole_SideBarCart::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+    </head> 
+
+    <body>
+
+
+        <referenceContainer name="sidebar.main">
+            <block class="Serole\SideBarCart\Block\Index\Sidebar" name="sidebarcart" before="-" template="Serole_SideBarCart::sidebarcart.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Serole\SideBarCart\Block\Index\Index" name="sidebarcart" template="Serole_SideBarCart::sidebarcart.phtml"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

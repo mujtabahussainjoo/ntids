@@ -1,0 +1,131 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-success">
+    <?php if ($block->getOrderId()):?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= __('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php  else :?>
+            <p><?= __('Your order # is: <span>%1</span>.', $block->escapeHtml($block->getOrderId())) ?></p>
+        <?php endif;?>
+        <p><?= /* @escapeNotVerified */ __('We\'ll email you an order confirmation with details and tracking info.') ?></p>
+    <?php endif;?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $block->getContinueUrl() ?>"><span><?= /* @escapeNotVerified */ __('Continue Shopping') ?></span></a>
+        </div>
+    </div>
+</div>
+
+<?php
+$orderId = $block->getOrderId();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$orderObj = $objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($orderId);
+$invoiceCount = count($orderObj->getInvoiceCollection());
+$orderSerialCodeObj = $objectManager->create('\Serole\Serialcode\Model\OrderitemSerialcode')->getCollection();
+$orderSerialCodeObj->addFieldToFilter('OrderID', $orderId);
+$orderSerialCodeObj->addFieldToFilter('status', 1);
+if($invoiceCount):
+    if(!empty($orderSerialCodeObj->getData())):
+        $serialCodeItems = $orderSerialCodeObj->getData();
+        $pdfHelper = $objectManager->create('\Serole\Pdf\Helper\Pdf');
+        $fileBasepath = $pdfHelper->getRootBaseDir()."/neatideafiles/";
+        $fileBaseUrl = $pdfHelper->getBaseStoreUrl()."/neatideafiles/";
+        $filePath = $fileBasepath."pdf/".$block->getOrderId().".pdf";
+        $fileUrl = $fileBaseUrl."pdf/".$block->getOrderId().".pdf";
+        ?>
+        <?php if(file_exists($filePath)){ ?>
+        <p><strong> <a href="<?php echo $fileUrl;?>" target="_blank" style="color:#0000FF;">Click here</a></strong> to download file</p>
+    <?php } ?>
+        <table style="width:100%">
+        <tr>
+            <th style="width:20%;text-align: center">Sku</th>
+            <th style="width:20%;text-align: center">Serial Code</th>
+            <th style="width:60%;text-align: center">Barcode</th>
+        </tr>
+
+        <?php
+        foreach ($orderObj->getAllItems() as $orderItem) {
+            $orderItemid = $orderItem->getItemId();
+            $isVirtul = $orderItem->getIsVirtual();
+            $sku = $orderItem->getSku();
+            $productType = $orderItem->getProductType();
+            $productId = $orderItem->getProductId();
+            $orderQty = $orderItem->getQtyOrdered();
+
+            if ($orderItem->getProductType() == 'bundle') {
+                $orderItemid = $orderItem->getData('item_id');
+                $bundleSku = $orderItem->getSku();
+                $bundleSerialCodes = $pdfHelper->checkBundleSerialData($serialCodeItems, $bundleSku);
+                if (!empty($bundleSerialCodes)) {
+                    $bundleItemscollection = $objectManager->create('Magento\Sales\Model\Order\Item')->getCollection();
+                    $bundleItemscollection->addAttributeToFilter('order_id', $orderObj->getEntityId());
+                    $bundleItemscollection->addAttributeToFilter('parent_item_id', $orderItem->getData('item_id'));
+                    $bundleItemscollection->addAttributeToFilter('product_type', 'virtual');
+
+                    ?>
+                    <tr>
+                        <td rowspan="<?php echo count($bundleSerialCodes) + 1; ?>" style="text-align: center"><?php echo $orderItem->getSku(); ?></td>
+                    </tr>
+                    <?php
+                    foreach ($bundleItemscollection as $bundleItem){
+                        $childItemSku = $bundleItem->getSku();
+                        $childItemSerialCodes = $pdfHelper->getChildItemSerialCodes($bundleSerialCodes,$childItemSku);
+                        foreach ($childItemSerialCodes as $childItem){
+                            $imagePath = $fileBasepath . 'barcodeimages/barcode-' . $orderId . '-item-' . $childItem['SerialNumber'] . '.png';
+                            $imageUrl = $fileBaseUrl . 'barcodeimages/barcode-' . $orderId . '-item-' . $childItem['SerialNumber'] . '.png';
+                            ?>
+                            <tr>
+                                <td style="text-align: center"><?php echo $childItem['SerialNumber']; ?></td>
+                                <?php if(file_exists($imagePath)){?>
+                                    <td style="text-align: center"><img src="<?php echo $imageUrl ?>"/></td>
+                                <?php } ?>
+                            </tr>
+                        <?php      }
+                    }
+                }
+            } elseif ($orderItem->getProductType() == 'virtual' && $orderItem->getParentItemId() == '') {
+                $filterArray = $pdfHelper->getSerialCodesByFilter($serialCodeItems, $sku, $parentsku = '');
+                ?>
+
+                <?php if (!empty($filterArray)) { ?>
+                    <tr>
+                        <td class="virtual-sku virtual" rowspan="<?php echo count($filterArray) + 1; ?>" style="text-align: center"> <?php echo $orderItem->getSku(); ?> </td>
+                    </tr>
+                    <?php foreach ($filterArray as $serialCodeItem) { ?>
+                        <tr>
+                            <td class="virtual-serial virtual" style="text-align: center">
+                                <?php echo $serialCodeItem['SerialNumber']; ?>
+                            </td>
+                            <td class="virtual-barcode virtual" style="text-align: center">
+                                <?php
+                                $imagePath = $fileBasepath . 'barcodeimages/barcode-' . $orderId . '-item-' . $serialCodeItem['SerialNumber'] . '.png';
+                                $imageUrl = $fileBaseUrl . 'barcodeimages/barcode-' . $orderId . '-item-' . $serialCodeItem['SerialNumber'] . '.png';
+                                if (file_exists($imagePath)) { ?>
+                                    <img style="vertical-align: 81%;height: 69%;margin-top: -2%;" src="<?php echo $imageUrl ?>"/>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+
+                <?php  } ?>
+
+
+                <?php
+            }
+
+       }?>
+      </table>
+<?php   endif;
+endif;
+?>

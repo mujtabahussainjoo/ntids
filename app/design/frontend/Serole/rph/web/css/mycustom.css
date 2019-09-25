@@ -1,0 +1,25 @@
+/***********Rph*******/
+@media (min-width: 768px){
+	.nav-container .container.nav  .inner-container{
+		background: linear-gradient(to bottom, #fcfcfc 0%,#d0d0d0 100%) !important;
+		line-height: 3.6 !important;
+	}
+	.header-top .links > li > * {
+		line-height: 40px!important;
+	}
+	.footer .footer-copyright {
+		font-size: 14px!important;
+		line-height: 25px!important;
+		margin: 4px 0 0 0!important;
+	}
+	.nav-regular.centered li.level0 {
+		float: none;
+		display: inline-block;
+		border-left: 2px solid #EDEDED;
+	}
+	.navi-wrapper .menu-trigger, .nav-regular .nav-item.level0 > a {
+		line-height: 52px!important;
+	}
+	.back{color:#333!important;}
+	.back:hover{color:#333!important;}
+}

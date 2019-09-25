@@ -1,0 +1,18 @@
+{
+    "name": "serole/theme-frontend-westpacextras",
+    "description": "N/A",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
+        "infortis/theme-frontend-ultimo": "^2.0.0"
+    },
+    "type": "magento2-theme",
+    "version": "2.7.1",
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

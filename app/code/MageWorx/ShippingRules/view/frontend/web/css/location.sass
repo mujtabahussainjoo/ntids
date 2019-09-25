@@ -1,0 +1,215 @@
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
+#sz-main-container
+  width: 100%
+  max-width: 960px
+  margin: 0 auto
+
+  .slick-prev,
+  .slick-next
+    width: 35px
+    height: 35px
+    opacity: .6
+    transition: all .3s ease-in
+
+    &:hover
+      opacity: 1
+
+    &:before
+      display: none
+
+  .slick-prev
+    background: url(../image/left-arrow.svg) center center / contain no-repeat
+    left: -30px
+
+  .slick-next
+    background: url(../image/right-arrow.svg) center center / contain no-repeat
+    right: -30px
+
+.shipping-zone-location-container
+  position: relative
+  float: right
+  -webkit-font-smoothing: antialiased
+  margin: 0
+  margin-left: 15px
+  vertical-align: top
+  top: 1px
+  display: inline-block
+  speak: none
+  text-align: center
+
+.shipping-zone-selector
+  overflow-y: scroll
+
+  .page-main-actions
+    margin-bottom: 50px
+
+#select-shipping-zone
+  position: relative
+  max-width: 300px
+  height: 30px
+  display: block
+  top: -1px
+  cursor: pointer
+  text-decoration: none
+  font-size: 16px
+  color: black
+  padding: 0 50px 0 20px
+  border: 1px solid #c2c2c2
+  line-height: 30px
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+  &:after
+    content: ""
+    width: 9px
+    height: 18px
+    display: block
+    position: absolute
+    right: 10px
+    top: 6px
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAABICAMAAACtHXe2AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAgVBMVEUAAACIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4eIh4f///8hxX0YAAAAKXRSTlMAQuL2iwHVl+BreIiGepNtn2kDpXGap/0Gs7KcZVusYKGVfvTnT+jze4gO2XIAAAABYktHRCpTvtSeAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAoUlEQVRIx+3V2w6CMBAE0HqpQOsFUASvqCi6//+DhvYDZkgI+tB9PslmNtmMmkxnc63gLEQkwi4WyiXCOfNbB+N6Z6Fbks4GN6JbQbd2ziCmo+BGdBvoUucy5PJtL7cjXQHdvmMlYtWBYdXRLT0xqjxT6vJvKr9Syp+/plQW1JBK3yjlHzihlAlqSKXulLI9FCraB1fHDVfaT0qpV/v+YPUFNJlBKmX9iOsAAAAASUVORK5CYII=') center center / cover no-repeat
+
+  .sz-inner
+    span
+      color: #d00616
+
+
+.mageworx-extended-zones
+  .zone_name
+    display: inline-block
+    font-size: 1em
+    font-weight: 300
+    text-transform: uppercase
+    color: black
+    padding-bottom: 10px
+
+  .selected
+    .zone_name
+      font-weight: bold
+      border-bottom: 3px solid black
+
+.shipping-zone-selector
+  .sz-left-content, .sz-right-content
+    float: left
+    width: 100%
+    clear: both
+
+.mageworx-extended-zones .sz-square
+  width: 170px
+
+  .zone
+    .sz-table
+      .sz-table-cell
+        text-align: center
+
+#sz-select-address-container
+  display: table
+  margin: 0 auto
+  padding: 15px 0
+
+.sz-fields-container
+  text-align: center
+
+  hr
+    width: 100%
+    background-color: #ddd
+    margin: 0
+
+  .field-wrapper
+    display: table-row
+    margin-top: 2.1rem
+
+    .field,
+    .control
+      display: table-cell
+
+    .field
+      width: 150px
+      padding-right: 15px
+      font-weight: bold
+      font-size: 18px
+      text-transform: uppercase
+      padding-bottom: 10px
+      text-align: right
+      color: black
+
+      &:last-child
+        padding-bottom: 0
+
+  .fieldset
+    width: 100%
+    max-width: 1000px
+    text-align: center
+    margin: 0 auto
+
+.zone_image
+  width: 100%
+  margin: 0 auto
+  max-width: 140px
+  padding: 5px
+  border-radius: 50%
+  border: 1px solid #e0e0e0
+
+.sz-icon
+  position: relative
+  top: -3px
+  display: inline-block
+  width: 30px
+  height: 30px
+  vertical-align: middle
+  margin-right: 10px
+
+  .flag
+    &.none
+    background: red
+
+@media only screen and (max-width: 900px)
+  #sz-main-container
+    width: auto
+    margin: 0 5%
+
+  #select-shipping-zone
+    padding: 0 4px
+    margin-right: 10px
+
+    &:after
+      display: none
+
+    .sz-inner
+      display: none
+
+    .sz-icon
+      margin-right: 0
+
+@media only screen and (max-width: 768px)
+  .shipping-zone-location-container
+    margin-left: 0
+  #select-shipping-zone
+    margin-left: 0
+
+@media only screen and (max-width: 639px)
+  #select-shipping-zone
+    margin-top: 10px
+
+@media only screen and (max-width: 600px)
+  #sz-select-address-container
+    width: 100%
+    text-align: center
+
+  .sz-fields-container
+    .field-wrapper
+      display: block
+
+      .field
+        display: inline-block
+        text-align: center
+
+      .control
+        display: block
+
+@import flags

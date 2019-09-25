@@ -1,0 +1,189 @@
+/**************************demo********************/ 
+.actions a.print{display:none!important;}
+.main-container {
+   background-color: transparent!important; 
+}
+body{
+	    background-size: 100%!important;
+}
+.footer-container {
+	background-color: transparent!important; 
+}
+.footer-top-container {
+    margin-bottom: -64px!important;
+}
+.nav.container {
+    background-color: #fff!important;
+}
+.header-top-container {
+		margin-top: -11px!important;
+
+   }
+
+.previewImg{font-weight:bold!important; color:#7EB1D7 !important;cursor:pointer!important;}
+.nav.container.clearer .inner-container{background-color: #fff !important;}
+.footer-bottom ,.footer-top{
+    background-color: transparent !important; 
+    color: #000 !important; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: linear-gradient(to right, #ffffff 51%,#6da7d2 100%)!important; 
+}
+.header.container {
+    background-color: transparent!important; 
+    background: linear-gradient(to right, #ffffff 51%,#6da7d2 100%)!important; 
+}
+/*------------fontcss-------------*/
+@font-face {
+    font-family: 'StagSans-Semibold';
+    src: url('../fonts/stagsemibold.eot');
+    src: url('../fonts/stagsemibold.eot?#iefix') format('embedded-opentype'), url('../fonts/stagsemibold.woff2') format('woff2'), url('../fonts/stagsemibold.woff') format('woff'), url('../fonts/stagsemibold.svg#Playfair Display') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+
+@media (min-width: 768px){
+	.page-layout-2columns-right.catalog-category-view .filter-options-content .items{margin: 0px 46px!important;}
+	.nav.container.clearer .inner-container{border-radius: 5px;}
+	.catalog-category-view .sticker-wrapper.top-left{display:none!important;}
+	.catalog-category-view .products-list-ext.hover-effect .item:hover{border-top: 1px solid #f5f5f5;box-shadow:none;margin-left:0%;margin-right:0%;padding-left:0%; padding-right:0%;}
+	.filter-options-title:after {right: 0px!important;}
+	.catalog-product-view .actions-toolbar .secondary{margin:0px 0% 0% 40%!important;}
+	.catalog-product-view .field.item.choice + .product-item-name .product-item-link span {
+		padding: 0px 0px 0px 16px !important;
+	}
+	.catalog-product-view .form.reorder .actions-toolbar { margin-top: 0%!important; margin-left: 10%!important;}
+	.block-reorder .product-item .checkbox {
+		top: 22px;
+		margin-left: 5px!important;
+	}	
+	.page-layout-2columns-left.catalog-category-view .block-reorder .product-item .checkbox {
+		top: 22px;
+		margin-left: -50px!important;
+	}	
+	.customer-account-index .block-reorder .product-item .checkbox {
+		top: 24px!important;
+		margin-left: -45px!important;
+	}
+	.customer-account-index .actions-toolbar .secondary {
+		float: unset!important;
+		margin: 0px 0% 0% 42%!important;
+	}
+	.catalog-product-view .block-reorder .product-item .checkbox{top: 2px;margin-left:-46px!important}
+	.catalog-product-view .actions-toolbar > .primary,.catalog-product-view .actions-toolbar > .secondary{margin-top: 10%!important;}
+	.catalog-category-view .form.reorder .actions-toolbar {
+		margin-top: 9%!important;
+	}
+	.catalog-product-view .sidebar .product-items-names .product-item-name {margin-left: -20px !important;}
+	.sidebar .product-items-names .product-item-name {margin-left: 14px !important;}
+	.sidebar .block .block-title strong{font-size:15px;}
+	.catalog-category-view.page-layout-2columns-right .item {padding-left: 0px!important;}
+	body {font-family: 'Exo 2', sans-serif !important;}
+	.vertnav-trigger, .nav-regular .nav-item.level0 > a, .nav-holder .dropdown-block .dropdown-heading {
+		font-size: 14px!important;
+		text-transform: none!important;
+	}
+	.page-title .base{
+		font-family: 'StagSans-Semibold'!important;
+		
+	}	
+	.footer-top.footer.container{border-radius: 5px!important;}
+	.main.container{border-radius: 5px!important;}
+	/* .header-primary.header.container{border-radius: 5px!important;} */
+	.nav.container {background-color: #fff;border-radius: 5px;}
+	.nav-container.skip-content{border-radius: 5px !important;}
+	.main-container {
+		background-color: transparent !important;
+		margin-top:0px !important;
+	}
+	.checkout-index-index .item{padding-left: 0px!important;}
+	.catalog-product-view #super-product-table .item{padding-left: 20px!important; width:70% !important;}
+	.catalog-category-view #narrow-by-list .item{margin: 0px -51% 0% -50px!important;}
+	.breadcrumbs .item{padding-left: 2px!important;}
+	/* .item{padding-left: 52px!important;} */
+	.navi > ul {
+		margin:0% !important;
+		line-height: 50px !important;
+	}
+	.navi-wrapper, .nav-regular {
+		border-radius: 10px !important;
+	}
+	.container{ 
+		margin-top:9.6px !important;
+
+	}
+	.slideshow-wrapper-additional {
+		width: 96.3%;
+		margin-left: 21px;
+	}
+	
+	.header-primary-container {
+		/* background-color: #fff; */
+		margin-top: -9px;
+		margin-top: -9px;
+		border-bottom-left-radius: 10px !important;
+		border-bottom-right-radius: 10px !important;
+	}
+	/* .minisearch .field.search{margin: 0% 8% 0% -20% !important;} */
+	#action-search{background-color:#6FA8D2;}
+	.footer-container {margin-top: 10px !important;}
+	.bottom-line-cust { margin-top: 16.5% !important;}
+	.navi-wrapper .menu-trigger, .nav-regular .nav-item.level0 > a {line-height: 51px!important;}
+	.block.block-reorder .block-title {
+		border-style: outset!important;
+		border-width: 1px!important;
+		border-right-width: 0px!important;
+		border-left-width: 0px!important;
+		padding: 0px 20px;
+		border-bottom: 1px solid transparent;
+		border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
+		margin: 0px 0px 0px;
+		/* border-color: #dddddd; */
+		/* background-color: #f5f5f5; */
+		color: white;
+		border-color: #EB8822;
+		background: #eb8822;
+		background: -moz-linear-gradient(top, #eb8822 0%, #fcbb29 100%);
+		background: -webkit-linear-gradient(top, #eb8822 0%,#fcbb29 100%);
+		background: linear-gradient(to bottom, #eb8822 0%,#fcbb29 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb8822', endColorstr='#fcbb29',GradientType=0 );
+	}
+	.sidebar .block .block-title strong{ 
+		line-height: 48px !important;
+	}
+	.field.item.choice + .product-item-name .product-item-link span {
+		padding: 0px -4px 0px 0px !important;
+	}
+	.block {
+		border-color: #eb8822!important;
+	}
+	.product-info-main .page-title-wrapper .page-title {
+		margin-bottom: 20px!important;
+		line-height: 15px!important;
+	}
+	.product-info-main .page-title-wrapper .page-title {
+		margin-top: 5px!important;
+		font-size: 3.2rem;
+	}
+}
+/* HIDE RADIO */
+.gft_image input{ 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* IMAGE STYLES */
+.gft_image input[type=radio] + img{
+	height:100%!important;
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+.gft_image input[type=radio]:checked + img  {
+  outline: 2px solid #f00!important;
+}

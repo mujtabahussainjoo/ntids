@@ -1,0 +1,304 @@
+//
+//  Infortis Base theme overrides
+//
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files
+
+
+
+//
+//  Buttons variables
+//  _____________________________________________
+
+//
+//  Buttons
+//  ---------------------------------------------
+
+//  Font style
+
+@button__font-weight: 600;
+@button__padding: 8px 15px; // Vertical padding increased by 1 to compensate removed border
+
+//  Display settings
+
+@button__border-radius: 0;
+
+//  Default = secondary button
+
+@button__color: @primary__color;
+@button__background: @theme-color__bg-gray;
+@button__border: none;
+
+@button__hover__color: @color-white;
+@button__hover__background: @primary__color;
+@button__hover__border: false;
+
+@button__active__color: false;
+@button__active__background: false;
+@button__active__border: false;
+
+//  Primary button
+
+@button-primary__color: @color-white;
+@button-primary__background: @theme-color__primary;
+@button-primary__border: none;
+
+@button-primary__hover__color: @color-white;
+@button-primary__hover__background: @primary__color;
+@button-primary__hover__border: false;
+
+@button-primary__active__background: false;
+@button-primary__active__border: false;
+@button-primary__active__color: false;
+
+//  Large button
+// @button__font-size__l: @font-size__l;
+// @button__line-height__l: @font-size__l + 4;
+@button__padding__l: 15px 17px; // Vertical padding increased by 1 to compensate removed border
+
+//  Small button
+// @button__font-size__s: 11px;
+// @button__line-height__s: @button__font-size__s + 1;
+// @button__padding__s: @indent__xs 8px;
+
+//
+//  Color variables
+//  _____________________________________________
+
+//@primary__color: #333; // Note: Blank theme's default is the same, #333
+
+//
+//  Layout grid
+//  _____________________________________________
+
+//  Variables used for layout grid
+
+@total-columns: 24; //Default = 12
+
+//  Variables for layout columns
+
+@layout-column__sidebar-width: 5; //Default = 2
+@layout-column__left-width: @layout-column__sidebar-width;
+@layout-column__right-width: @layout-column__sidebar-width;
+
+//  Checkout columns width
+
+@layout-column-checkout__width-left: 6; //Default = 3
+
+//
+//  Checkout layout
+//  ---------------------------------------------
+
+@checkout-wrapper__columns: 16;
+@checkout-sidebar__columns: 8;
+
+//
+//  Form variables
+//  _____________________________________________
+
+//
+//  Form elements inputs default variables
+//  ---------------------------------------------
+
+//  Focus state
+
+//@form-element-input__focus__color: #51a7e8; // Blue
+
+//
+//  Pager variables
+//  _____________________________________________
+
+// @pager-label__display: none;
+// @pager-reset-spaces: true;  // Reset spaces between inline-block elements
+
+// @pager__font-size: @font-size__s;
+@pager__font-weight: false;
+@pager__line-height: 32px;
+
+// @pager-item__display: inline-block;
+// @pager-item__margin: 0 2px 0 0;
+@pager-item__padding: 0; // 0 4px;
+
+// @pager-actions__padding: 0;
+
+//  Pager current page
+@pager-current__font-weight: 400; // Current page item is "strong" tag, set normal weight
+@pager-current__color: false;
+
+//  Pager current page
+@pager-current__font-weight: 400; // Current page item is "strong" tag, set normal weight
+@pager-current__color: false;
+// @pager-current__border: false;
+// @pager-current__background: false;
+// @pager-current__gradient: false;
+// @pager-current__gradient-direction: false;
+// @pager-current__gradient-color-start: false;
+// @pager-current__gradient-color-end: false;
+
+//  Pager link page
+// @pager__gradient: false;
+// @pager__gradient-direction: false;
+
+//  Pager link default
+@pager__color: false;
+// @pager__border: false;
+// @pager__text-decoration: none;
+// @pager__background: false;
+// @pager__gradient-color-start: false;
+// @pager__gradient-color-end: false;
+
+//  Pager link visited
+@pager__visited__color: false;
+// @pager__visited__border: false;
+// @pager__visited__background: false;
+// @pager__visited__gradient-color-start: false;
+// @pager__visited__gradient-color-end: false;
+
+//  Pager link hover
+@pager__hover__color: false;
+// @pager__hover__border: false;
+// @pager__hover__text-decoration: none;
+// @pager__hover__background: false;
+// @pager__hover__gradient-color-start: false;
+// @pager__hover__gradient-color-end: false;
+
+//  Pager link active
+@pager__active__color: false;
+// @pager__active__border: false;
+// @pager__active__background: false;
+// @pager__active__gradient-color-start: false;
+// @pager__active__gradient-color-end: false;
+
+//  Pager link.action
+// @pager-icon__use: true;
+// @pager-icon__previous-content: @icon-prev;
+// @pager-icon__next-content: @icon-next;
+// @pager-icon__text-hide: true;
+// @pager-icon__position: before;
+// @pager-icon__font: @icon-font;
+@pager-icon__font-margin: 0 0 0 1px; // 0 0 0 -6px;
+// @pager-icon__font-vertical-align: top;
+@pager-icon__font-size: 32px; // 46px;
+// @pager-icon__font-line-height: @icon-font__line-height;
+
+//  Pager link.action gradient: element has a gradient background
+// @pager-action__gradient: false; // [true|false]
+// @pager-action__gradient-direction: false; // [true|false]
+
+//  Pager link.action default
+// @pager-action__color: @text__color__muted;
+@pager-action__border: false; //@border-width__base solid @border-color__base;
+// @pager-action__text-decoration: @pager__text-decoration;
+// @pager-action__background: @pager__background;
+// @pager-action__gradient-color-start: false;
+// @pager-action__gradient-color-end: false;
+
+//
+//  Search
+//  _____________________________________________
+
+@autocomplete__border: false; // Border for autocomplete items
+@autocomplete-item__border: 1px solid #f1f1f1; // Top border for autocomplete items
+
+//
+//  Typography variables
+//  _____________________________________________
+
+//
+//  Focus
+//  ---------------------------------------------
+
+@focus__color: rgba(81,167,232,0.5);
+@focus__box-shadow: inset 0 1px 2px rgba(0,0,0,0.075), 0 0 5px rgba(81,167,232,0.5);
+
+//
+//  Headings
+//  ---------------------------------------------
+
+@h1__margin-bottom__desktop: 20px; // var from: blank/Magento_Theme/web/css/source/_module.less
+
+// @heading__font-family__base: false;
+// @heading__font-weight__base: @font-weight__light;
+// @heading__line-height__base: 1.1;
+// @heading__color__base: false;
+// @heading__font-style__base: false;
+@heading__margin-top__base: 0; //@indent__base;
+@heading__margin-bottom__base: 10px; //@indent__base;
+
+@h1__font-size: ceil((@font-size__base * 2)); //28 //original: ceil((@font-size__base * 1.85)); // 26px
+// @h1__font-color: @heading__color__base;
+// @h1__font-family: @heading__font-family__base;
+@h1__font-weight: normal;
+// @h1__font-style: @heading__font-style__base;
+// @h1__line-height: @heading__line-height__base;
+// @h1__margin-top: 0;
+@h1__margin-bottom: 20px; //@heading__margin-bottom__base
+// @h1__font-size-desktop: ceil((@font-size__base * 2.85)); // 40px
+
+@h2__font-size: ceil((@font-size__base * 2)); //28 //original: ceil((@font-size__base * 1.85)); // 26px
+// @h2__font-color: @heading__color__base;
+// @h2__font-family: @heading__font-family__base;
+@h2__font-weight: normal;
+// @h2__font-style: @heading__font-style__base;
+// @h2__line-height: @heading__line-height__base;
+@h2__margin-top: @heading__margin-top__base; //@indent__m
+// @h2__margin-bottom: @heading__margin-bottom__base;
+
+@h3__font-size: ceil((@font-size__base * 1.71)); //24; //original: ceil((@font-size__base * 1.28)); // 18px
+// @h3__font-color: @heading__color__base;
+// @h3__font-family: @heading__font-family__base;
+@h3__font-weight: normal;
+// @h3__font-style: @heading__font-style__base;
+// @h3__line-height: @heading__line-height__base;
+@h3__margin-top: @heading__margin-top__base; //@indent__base * .75
+@h3__margin-bottom: @heading__margin-bottom__base;
+
+@h4__font-size: ceil((@font-size__base * 1.35)); //19 //original: @font-size__base; // 14px
+// @h4__font-color: @heading__color__base;
+// @h4__font-family: @heading__font-family__base;
+@h4__font-weight: normal;
+// @h4__font-style: @heading__font-style__base;
+// @h4__line-height: @heading__line-height__base;
+// @h4__margin-top: @heading__margin-top__base;
+// @h4__margin-bottom: @heading__margin-bottom__base;
+
+@h5__font-size: ceil((@font-size__base * 1.14)); //16 //original: ceil((@font-size__base * .85)); // 12px
+// @h5__font-color: @heading__color__base;
+// @h5__font-family: @heading__font-family__base;
+@h5__font-weight: normal;
+// @h5__font-style: @heading__font-style__base;
+// @h5__line-height: @heading__line-height__base;
+// @h5__margin-top: @heading__margin-top__base;
+// @h5__margin-bottom: @heading__margin-bottom__base;
+
+@h6__font-size: @font-size__base; //14 //original: ceil((@font-size__base * .7)); // 10px
+// @h6__font-color: @heading__color__base;
+// @h6__font-family: @heading__font-family__base;
+@h6__font-weight: normal;
+// @h6__font-style: @heading__font-style__base;
+// @h6__line-height: @heading__line-height__base;
+// @h6__margin-top: @heading__margin-top__base;
+// @h6__margin-bottom: @heading__margin-bottom__base;
+
+//
+//  Links
+//  ---------------------------------------------
+
+@link__color: @theme-color__gray;
+@link__text-decoration: none;
+
+@link__visited__color: false;
+@link__visited__text-decoration: false;
+
+@link__hover__color: @theme-color__primary;
+@link__hover__text-decoration: false;
+
+@link__active__color: false;
+@link__active__text-decoration: false;
+
+//
+//  Widgets
+//  _____________________________________________
+
+@widgets-indent__bottom: 0; //@indent__base

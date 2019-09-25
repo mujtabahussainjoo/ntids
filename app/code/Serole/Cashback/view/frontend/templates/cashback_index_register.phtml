@@ -1,0 +1,60 @@
+<style>
+.regcard input[type=text], select {
+  width: 100%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.regcard input[type=submit] {
+  width: 100%;
+  background-color: #FFDD11;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.regcard input[type=submit]:hover {
+  background-color: #FFCC1B;
+}
+
+.regcard {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:50%;
+  margin-left:255px;
+}
+</style>
+
+<div class="regcard">
+  <form action="/rac_demo/cashback/index/save/" method="post">
+  
+    <label for="country">Card Type</label>
+    <select id="card_type" name="card_type">
+      <option value="visa">Visa</option>
+      <option value="mastercard">Mastercard</option>
+      <option value="americanexpress">American Express</option>
+    </select>
+
+    <label for="owner_name">Card Holder Name</label>
+    <input type="text" id="owner_name" name="owner_name" placeholder="Card Holder Name">
+	
+	<label for="card_no">Card NO</label>
+    <input type="text" id="card_no" name="card_no" placeholder="Card No">
+	
+	<label for="cvv_no">CVV</label>
+    <input type="text" id="cvv_no" name="cvv_no" placeholder="CVV">
+	
+	<label for="issuing_bank">Issuing Bank</label>
+    <input type="text" id="issuing_bank" name="issuing_bank" placeholder="Issuing Bank">
+
+
+    <input type="submit" value="Submit">
+  </form>
+</div>

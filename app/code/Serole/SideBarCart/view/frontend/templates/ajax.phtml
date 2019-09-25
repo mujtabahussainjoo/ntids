@@ -1,0 +1,83 @@
+<?php
+  $cartItems = $block->getData();
+  $cartData = $cartItems['data'];
+  $cartDataCount = count($cartData);
+  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+  $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+  $url=$storeManager->getStore()->getBaseUrl();
+?>
+<div class="bagDrop filter-options-item" id="bagDrop" style="margin: 20px 0 20px 0px;">
+    <span class="heading filter-options-title" style="font-weight:600;font-size:inherit;font-family: inherit;">My cart</span>
+    <?php if( $cartDataCount > 1 ): ?>
+        <a href="#" class="arr up off" id="bagDropScrollUp"></a>
+    <?php endif; ?>
+    <div class="bagDropWindow">
+		<?php if( $cartDataCount > 0 ): ?>
+        <div class="bagDropList" id="bagDropList">
+			<div class="actions" style="margin: 5% 0 0px 50%;">
+				<button type="button" title="Checkout" class="button" onclick="window.location='<?php echo $url.'checkout/index'?>'" ><span><span>Checkout</span></span></button>
+			</div>
+            <?php $total=0; ?>
+            <?php foreach( $cartData as $item )	: ?>
+				<div class="separator"></div>
+                <?php $product = $item->getProduct(); ?>
+                <?php $image = $product['small_image'] == '' ? '/pub/static/frontend/Clear/usb2u/en_GB/images/default-category-image_1.png' : '/pub/media/catalog/product' . $product['small_image']; ?>
+				<div class="section-actions" style="float: right;">
+					<button type="button" title="edit" class="button edit" onclick="window.location='<?php echo $product['request_path']; ?>'" ><span><span></span></span></button>	
+					<button onclick="window.location='<?php echo "sidebarcart/index/remove?itemId=".$item->getId()?>'" id="clear-item" value="<?php echo $itemId=$item->getId(); ?>" class="action tocart primary" style="margin: 0px 0px 0px 0px;width:100%;" title="<?php echo __('Clear Item') ?>" ><?php echo __('') ?>
+					</button>
+				</div>
+                <a style="color:#333!important;" href="<?php echo $product['request_path']; ?>" class="bagDropListItem">
+                    <img style="width: 38%;float: left;margin: 0px 7px 0px 4px;"src="<?php echo $image; ?>">
+                    <p style="font-size: 12px;margin: 0px 0 0px 40%;">
+                        <span class="name"><?php echo $product['name']; ?></span><br>
+						<span class="qty"><?php echo $item->getQty(); ?></span>
+						<?php $special_price= $product['special_price']; ?>
+						<?php if($special_price){?>
+							<span class="price">x <?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency(number_format($product['special_price'],2),true,false); ?></span>
+						<?php }else{?>
+							<span class="price">x <?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency(number_format($product['price'],2),true,false); ?></span>
+						<?php }?>
+                    </p>
+                </a>
+            <?php  
+			$price=$product['price'];
+			if($special_price){ 
+				$price=$product['special_price'];
+			}
+			$quantity=$item->getQty();
+			$sub_total=$price*$quantity;
+			$total+=$sub_total;	
+			?>
+            <?php endforeach; ?>
+			<div class="separator"></div>
+			<p class="subtotal" style="margin: 0 0px 8px 20px;">
+				<span class="label">Cart Subtotal:</span> <span class="price">
+			<?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency(number_format($total,2),true,false); ?>
+				</span>
+
+			</p>
+        </div>
+		<?php else: ?>
+			<div class="emptyList" style="margin: 14px 0 0 20px;"><strong>No products in your basket.</strong></div>
+		<?php endif; ?>
+    </div>
+    <?php if( $cartDataCount > 1 ): ?>
+        <a href="#" class="arr dn" id="bagDropScrollDown"></a>
+    <?php endif; ?>
+</div>
+<style>
+
+.separator{
+	margin-bottom: 15px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.heading{
+	font-family: 'Open Sans';
+	font-weight: normal;
+    font-size: 19px;
+    line-height: 24px;
+}
+</style>

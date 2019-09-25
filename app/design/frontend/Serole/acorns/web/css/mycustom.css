@@ -1,0 +1,133 @@
+/**raizinvest**/
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: #ffffff;
+}
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@media (min-width: 768px){ 
+
+/*Imp for textbox*/
+	.customer-account-login .fieldset > .field:not(.choice) > .label{width: 100%!important;}
+	.customer-account-login .login-container .fieldset > .field.password > .control{width: 98%!important;}
+	.customer-account-login .field.required.password{width: 100%!important;}
+/*Imp for textbox*/	
+	.item.item-left > ul > li > a{color:#fff;}
+	.footer-bottom-container {
+		margin-top: -3%!important;
+	}
+	.footer-top.footer.container{margin-top:-1%;}
+	.header-top-container {
+		margin: -1% 0px -1.5% 0!important;
+	}
+	.new-user,.login h4 {
+		font-size: 22px !important;
+		font-family: 'Nunito', sans-serif;
+		font-weight: 700;
+	}
+	.page-title-custom{font-family: 'Nunito', sans-serif;font-weight: 700;}
+	.nav-container {
+		margin: -3% 0 0 -5px;
+	}
+	.header-container .logo-wrapper .logo img {
+		width: 120%!important;
+		max-width: 120%;
+	}
+	#header-search{margin: -3% 0 0 0!important;}
+	.block-search .action.search .icon {
+		font-size: 14px!important;
+		height: 33px!important;
+	}
+	.footer-container{margin: 3% 0 0 0;background:linear-gradient(to bottom, rgba(47,174,143,1) 0%,rgba(47,146,174,1) 100%);}
+	.block-search .input-text{height: 34px!important;}
+	.header .logo-wrapper .logo {
+		display: inline-block;
+		max-width: 100%;
+		margin: 0px 0px 0px 0px;
+		text-decoration: none !important;
+	}
+	.header-container2,.header-primary-container{ 
+		margin-bottom:0.5%;
+	}
+	.nav-regular li.level0 > a > span {
+		border-bottom: 0px solid transparent;
+		font-weight: normal;
+		letter-spacing: -0.8px;
+	}
+	.navi-wrapper,#mainmenu{
+		border:none !important;
+		margin-left: -5%;
+		margin-top: 1%;
+	}
+	.links > li {
+		color:#fff!important;
+	}
+	.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{
+			background-image: none !important;
+		background-color: black !important;
+		border: 1px solid;
+		border-radius: 5px!important;
+		box-shadow: none;
+		color: white;
+		overflow: hidden;
+	}
+	.primary .register-submit {
+			background-image: none !important;
+		background-color: black !important;
+		border: 1px solid;
+		border-radius: 5px!important;
+		box-shadow: none;
+		color: white;
+		overflow: hidden;
+	}
+	.btn-rgtr-cust {
+		margin-left: 66%;
+		margin-top: 19% !important;
+	}
+	.main.container{margin-top:0%;}
+	.inner-container{margin-top:1.3%!important;}
+	.header-container {
+		width: 100%!important;
+		margin-left: 0%!important;
+		box-shadow: rgba(23, 23, 24, 0.3) 0px 1px 3px;
+	}
+	.main.container {
+		box-shadow: rgba(23, 23, 24, 0.3) 0px 1px 3px;
+	}
+	.header-container .right-column .top-links ul {
+    margin-right: -8px!important;
+	}
+	.header-container .right-column .dropdown-block {
+    margin-top: 0px!important;
+	}
+	.header-top-container {
+    margin: -1.5% 0px -1.5% 0!important;
+	}
+	.main-container {
+		background-color: transparent!important;
+	}
+	.main.container .inner-container{border-left: 1px solid #F3F3F3;border-right: 1px solid #F3F3F3;}
+	.main.container {padding-top: 0px!important; padding-bottom: 0px!important;}
+	.inner-heading > .label{font-size: 12px!important;}
+	.header.links > li > a{font-size: 12px!important;}
+	.header.links > li:first-child{margin-left: -2%;border-bottom-right-radius: 5px;background:#221B33;}
+	.header.links > li:nth-child(2){margin-left: 2%;border-bottom-right-radius: 5px;background:#221B33;}
+	.mini-cart-heading{line-height: 30px!important;}
+	.dropdown-block.filled-heading .dropdown-heading .inner-heading {
+		padding: 0px 10px;
+		margin-top: -3%;
+		background: #221B33;
+		border-bottom-right-radius: 5px;
+	}
+	.hp-block.right-column.grid12-8 > div.item:first-child{margin-top: 0%;}
+	.footer-top.footer.container a{font-family: 'Open Sans', sans-serif!important;font-size: 13px!important;}
+	.item.item-right.block_footer_payment{font-family: 'Open Sans', sans-serif!important;font-size: 13px!important;padding-top: 0%;}
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+		font-family: 'Open Sans', sans-serif!important;
+		font-weight: 700!important;
+	}
+	h1, .h1 {
+		font-size: 25px!important;
+	}
+	.customer-account-login .page-title{border-bottom: 0px solid #eeeeee!important;}
+}

@@ -1,0 +1,135 @@
+.report__toolbar {
+    .lib-clearfix();
+
+    font-size: 0; //remove white spaces
+
+    section {
+        .lib-clearfix();
+
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-right: 1.5rem;
+
+        &.hidden {
+            display: none;
+        }
+
+        &.right {
+            float: right;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .admin__action-dropdown-wrap {
+        .admin__action-dropdown {
+            background: #fff;
+            border: 1px solid #adadad;
+            border-radius: 2px;
+            padding: 0.6rem 2.5em 0.6rem 1rem;
+
+            .admin__action-dropdown-text {
+                &:after {
+                    //left: -10px;
+                    right: -10px;
+                    top: 30px;
+                    border-top: 1px solid #fff;
+                    height: 7px;
+                }
+            }
+        }
+
+        .admin__action-dropdown-menu {
+            width: 64rem;
+            //left: -20rem !important;
+            margin-top: -3px;
+            border-radius: 2px;
+            padding: 1rem;
+
+            li {
+                width: 15rem;
+                display: block;
+                float: left;
+                overflow: hidden;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 4rem;
+                    height: 3rem;
+                    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+                }
+            }
+        }
+    }
+
+    .admin__action-multiselect-wrap {
+        .admin__action-multiselect {
+            overflow: visible;
+        }
+    }
+
+    .report__toolbar-field {
+        .admin__control-text {
+            width: auto;
+        }
+    }
+}
+
+.report__toolbar-filter-date {
+    position: relative;
+
+    > input {
+        min-width: 250px;
+    }
+}
+
+.reports__toolbar-dimension {
+    margin-right: 1rem;
+
+
+
+    .dimension-label {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}
+
+.report__toolbar-store.admin__action-dropdown-wrap  {
+    .admin__action-dropdown-menu {
+        width: 33rem;
+        left: -2rem !important;
+
+        li {
+            float: none !important;
+            width: 30rem !important;
+
+            &.website {
+                padding-left: 2.5rem !important;;
+            }
+
+            &.group {
+                padding-left: 4.5rem !important;;
+            }
+
+            &.store {
+                padding-left: 6.5rem !important;;
+            }
+        }
+    }
+}
+
+.reportbuilder-report-edit {
+    #datepicker-dropdown {
+        z-index: 1000;
+    }
+}

@@ -1,0 +1,323 @@
+//
+//  Override styles from selected default Magento files without
+//  overriding entire file.
+//  Files overridden in the following order:
+//  library files, module files, blank theme module files, blank theme CSS files.
+//
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+//
+//  Form fields focus border and shadow
+//  Magento/lib
+//  From: lib/web/css/source/lib/_resets.less
+//  ---------------------------------------------
+
+._keyfocus *,
+input:not([disabled]),
+textarea:not([disabled]),
+select:not([disabled]) {
+    &:focus {
+        .lib-css(box-shadow, @focus__box-shadow);
+        .lib-css(border-color, @focus__border-color); // Base theme variable
+    }
+}
+
+
+
+
+//
+//  Magento/lib
+//  From: /lib/web/mage/gallery/gallery.less
+//  ---------------------------------------------
+
+.magnifier-preview {
+    z-index: 1;
+}
+
+.circular-lense {
+    .magnify-lens,
+    .magnifier-preview {
+        border-radius: 50%;
+    }
+}
+
+// .gallery-placeholder {
+//     .fotorama__stage {
+//         border: 1px solid #eee;
+//         margin-bottom: 10px;
+//         padding: 5px;
+//         // TODO: will only work correctly with "border-box":
+//         box-sizing: border-box;
+//     }
+//     .fotorama__nav--thumbs .fotorama__nav__frame--thumb {
+//         border: 1px solid #eee;
+//         padding: 3px;
+//         // TODO: will only work correctly with "border-box":
+//         box-sizing: border-box;
+//     }
+// }
+// .fotorama__thumb-border {
+//     // border-color: #29b7ad;
+// }
+
+
+
+//
+//  Magento/Swatches
+//  From: /module-swatches/view/frontend/web/css/swatches.css
+//  ---------------------------------------------
+
+//  Added ".swatch-attribute" class to make the
+//  rules more specific
+
+.items-grid,
+.products-grid,
+.products-list {
+    .swatch-attribute-options {
+        margin-top: 0;
+    }
+}
+.swatch-attribute {
+    .swatch-option:not(.disabled):hover {
+        outline-width: 2px;
+    }
+
+    .swatch-option,
+    .swatch-option.text {
+        padding: 3px;
+        min-width: 20px;
+        height: 20px;
+        line-height: 20px;
+        vertical-align: top; // To keep space between lines of swatches when product grid items are centered
+        margin-bottom: @product-listing__swatch__bottom-space;
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    // If swatches inside links (layered navigation)
+    // right margin on last element needs to be restored
+    a > .swatch-option,
+    a > .swatch-option.text {
+        &:last-child {
+            margin-right: 5px;
+        }
+    }
+}
+
+//  Set borders
+
+.swatch-attribute {
+
+    // Remove border from all swatches
+    .swatch-option {
+        border: 1px solid rgba(0, 0, 0, 0);
+        /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); */ // Or: outer shadow
+    }
+
+    // Remove border on hover
+    .swatch-option:not(.disabled):hover,
+    .swatch-option.color:not(.disabled):hover {
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    // // Remove inner light border from selected swatch
+    // .swatch-option.selected {
+    //     border: 1px solid rgba(0, 0, 0, 0);
+    // }
+
+    // If white color, add light border to distinguish the swatch from its surroundings
+    .swatch-option[option-tooltip-value="#ffffff"] {
+        border-color: #eee;
+        /* box-shadow: inset 0px 0px 7px rgba(0,0,0, 0.07); */ // Or: inset shadow
+    }
+}
+
+//  In product view
+
+.product-view {
+    .swatch-attribute {
+        .swatch-option {
+            padding: 3px;
+            min-width: 30px;
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+
+//
+//  Magento/blank
+//  From: /theme-frontend-blank/Magento_Checkout/web/css/source/module/checkout/_authentication.less
+//  ---------------------------------------------
+
+//  Position "Sign up" button just above the progress bar
+
+.authentication-wrapper {
+    margin-top: 0px;
+}
+
+
+
+//
+//  Magento/blank
+//  From: /theme-frontend-blank/Magento_Checkout/web/css/source/module/checkout/_progress-bar.less
+//  ---------------------------------------------
+
+.opc-progress-bar {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+
+//
+//  Magento/blank
+//  From: /theme-frontend-blank/Magento_Review/web/css/source/_module.less
+//  ---------------------------------------------
+
+.rating-summary .rating-result {
+    margin-left: 0; // Remove negative offset
+    z-index: 0; // Prevent ratings overlaping product image magnifier (or other pop-ups)
+}
+
+
+
+//
+//  Magento/blank
+//  From: /theme-frontend-blank/web/css/source/_loaders.less
+//  ---------------------------------------------
+
+.loading-mask {
+    background: rgba(255, 255, 255, 0.8); // Increased opacity of the overlay
+}
+
+
+
+//
+//  Magento/blank
+//  From: /theme-frontend-blank/web/css/source/_pages.less
+//  ---------------------------------------------
+
+.pages {
+    .item {
+        margin: 0 1px 0 0;
+    }
+
+    .page,
+    .action {
+        width: 32px;
+    }
+
+    .page,
+    .current .page {
+        text-align: center;
+    }
+    
+    .action {
+        &.previous {
+            margin-right: 0;
+        }
+        &.next {
+            margin-left: 0;
+        }
+    }
+}
+
+
+
+
+} // end: media-common
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+
+    //
+    //  Magento/blank
+    //  From: /theme-frontend-blank/Magento_Checkout/web/css/source/module/checkout/_authentication.less
+    //  ---------------------------------------------
+
+    //  Position "Sign up" button just above the progress bar. Add "checkout-container" to make the selector more specific.
+
+    .checkout-container .authentication-wrapper {
+        margin-top: -10px;
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    //
+    //  Magento/lib
+    //  From: /lib/web/mage/gallery/gallery.less
+    //  ---------------------------------------------
+
+    .magnify-lens,
+    .magnifier-preview {
+        display: none !important;        
+    }
+
+}
+
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    //
+    //  Magento/lib
+    //  From: /lib/web/mage/gallery/gallery.less
+    //  ---------------------------------------------
+
+    .magnifier-preview {
+        -moz-box-shadow: 0 3px 10px rgba(0,0,0, 0.15);
+        -webkit-box-shadow: 0 3px 10px rgba(0,0,0, 0.15);
+        box-shadow: 0 3px 10px rgba(0,0,0, 0.15);
+    }
+
+    //
+    //  Magento/blank
+    //  From: /theme-frontend-blank/web/css/source/_actions-toolbar.less
+    //  ---------------------------------------------
+    .checkout-index-index {
+        .column:not(.sidebar-main) form .actions-toolbar, 
+        .column:not(.sidebar-additional) form .actions-toolbar {
+            margin-left: 0;
+        }
+    }
+    // // Original code:
+    // form {
+    //     .actions-toolbar {
+    //         .column:not(.sidebar-main) &,
+    //         .column:not(.sidebar-additional) & {
+    //             &:extend(.abs-margin-for-forms-desktop all);
+    //         }
+    //     }
+    // }
+
+}

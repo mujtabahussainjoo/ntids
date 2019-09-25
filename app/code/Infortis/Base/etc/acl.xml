@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">        
+                <resource id="Infortis_Infortis::admin">
+                    <resource id="Infortis_Base::themes" sortOrder="20" title="Infortis Themes">
+                        <resource id="Infortis_Base::base_theme_config" sortOrder="10" title="Infortis Themes - Configuration"/>
+                        <resource id="Infortis_Base::import_export_page_block" sortOrder="20" title="CMS Page and Block Import"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

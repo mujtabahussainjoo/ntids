@@ -1,0 +1,136 @@
+Department,Deild
+"Create New Ticket","Búðu til nýjan miða"
+Status,Staða
+Priority,Forgangur
+Replies,Svar
+View,Útsýni
+"Help Desk",Hjálparspjall
+"Thank you","Þakka þér fyrir"
+"Create Ticket","Búðu til miða"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Beiðni þín var skilað með góðum árangri. Þú ættir að fá staðfestingarbréf innan skamms."
+Telephone,Sími
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Fyrirspurnin þín var lögð fram og verður svarað eins fljótt og auðið er. Þakka þér fyrir að hafa samband við okkur."
+"Unable to submit your request. Please, try again later","Ekki er hægt að senda inn beiðni þína. Vinsamlegast reyndu aftur síðar"
+"Page not found.","Síða ekki fundin."
+"Your message was successfuly posted","Skilaboðin þín voru vel send"
+"Your ticket was successfuly posted","Miða þín var vel sett upp"
+"Ticket was successfuly closed","Miða var vel lokað"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Ekki er hægt að hlaða upp skrá %1. Hámarks leyfilegt upphæð er %2 MB."
+"Allows only this file types: %1","Leyfir aðeins þessum skrágerðum: %1"
+"Message added","Skilaboð bætt við"
+"Internal note added","Innri athugasemd bætt við"
+"Third party message added","Skilaboð þriðja aðila bætt við"
+"Private third party message added","Einkaskilaboð frá þriðja aðila bætt við"
+"-- Please Select --","-- Vinsamlegast veldu --"
+"Contact Tab","Hafa samband við flipann"
+"Contact Form",Tengiliður
+" at %1 (%2) - %3","á %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Þú hefur ekki heimild til að lesa þennan miða. Vinsamlegast hafðu samband við stjórnandann þinn."
+"Invalid Customer Email","Ógilt netfang viðskiptavina"
+"not set","ekki sett"
+"Unknown time","Óþekktur tími"
+ago,síðan
+"from now","héðan frá"
+"1 sec ago","Fyrir 1 sek síðan"
+"Open Ticket","Opið miða"
+"Open Tickets","Opna miða"
+"! Blocked file - ","! Lokað skrá -"
+Disabled,Óvirk
+"AW Helpdesk","AW þjónustuborð"
+"MW Helpdesk","MW Helpdesk"
+"File System",Skráarkerfi
+Database,Gagnagrunnur
+Aqua,Aqua
+Grey,Grey
+Navy,Navy
+Silver,Silfur
+Black,Svartur
+Green,Grænn
+Olive,Olive
+Teal,Teal
+Blue,Blár
+Lime,Límóna
+Purple,Purple
+Fuchsia,Fuchsia
+Maroon,Maroon
+Red,Rauður
+Orange,Orange
+Yellow,Gulur
+Text,Texti
+Date,Dagsetning
+Checkbox,Kassi
+"Drop-down list","Drop-down listi"
+"In minutes...","Í mínútum ..."
+"In hours...","Í klukkustundum ..."
+"In days...","Á dögum ..."
+"In weeks...","Í vikum ..."
+"In months...","Í mánuðum ..."
+Custom,Sérsniðin
+"--Please Select--","--Vinsamlegast veldu--"
+"New ticket created","Ný miða búin til"
+Success,Árangur
+Customer,Viðskiptavinur
+Staff,Starfsfólk
+"Third party","Þriðji aðili"
+Closed,Lokað
+"Opened 24hr","Opnað 24 klst"
+"Helpdesk Tickets","Hjálparmiða miða"
+"Cannot delete ticket with id %1","Ekki er hægt að eyða miða með auðkenni %1"
+Edit,Breyta
+"All Departments","Allar deildir"
+Back,"Til baka"
+"24 hrs x 7 days","24 klst x 7 daga"
+"Select working days/hours","Veldu vinnudaga / klst"
+"Satisfaction survey",Tilraunakönnun
+"to %1 (third party)","til %1 (þriðja aðila)"
+"%1 (third party)","%1 (þriðji aðili)"
+"added %1 (%2)","bætti við %1 (%2)"
+"Ticket Summary",Samantektarmiða
+"Ticket ID","Ticket ID"
+Assignee,Umsjónarmaður
+"Additional Info",Viðbótarupplýsingar
+"Ticket History",Miðasaga
+"Done by","Gert af"
+Changes,Breytingar
+Name,Nafn
+"Attach files","Hengdu við skrár"
+Submit,"Senda inn"
+"Submit Ticket","Senda miða"
+"What is your question?","Hver er spurningin þín?"
+"We found the following topics that might be helpful:","Við fundum eftirfarandi atriði sem gætu verið gagnlegar:"
+"None of these are helpful - get in touch","Ekkert af þessu er gagnlegt - hafðu samband"
+"We have not found topics that can be helpful.","Við höfum ekki fundið efni sem getur verið gagnlegt."
+"Contact Information","Tengiliður Upplýsingar"
+Comment,Athugasemd
+"We are open 24 x 7","Við erum opin 24 x 7"
+"We are closed","Við erum lokuð"
+"Timezone: %1","Tímabelti: %1"
+"Please take a second to rate my reply...","Vinsamlegast taktu annað til að meta svarið mitt ..."
+Great,Great
+Awesome,Æðislegur
+"Fast, friendly, helpful, pleasant. Great job!","Fljótur, vingjarnlegur, hjálpsamur, skemmtilegur. Frábært starf!"
+"Just Okay","Bara allt í lagi"
+"Fine, but definitely could have been better.","Fínn, en örugglega gæti verið betra."
+"Not good","Ekki gott"
+"Unfortunately, I wasn't happy with it at all.","Því miður var ég ekki ánægður með það yfirleitt."
+"Thank you for participating in our survey!","Þakka þér fyrir að taka þátt í könnuninni okkar!"
+"If you would like to provide additional comments, please do so below:","Ef þú vilt bæta við athugasemdum skaltu vinsamlegast gera það hér að neðan:"
+Message,Skilaboð
+"Submit Message","Senda skilaboð"
+"Thank you for your feedback!","Þakka þér fyrir athugasemdir þínar!"
+Attachments,Viðhengi
+Order,Order
+"-- Select an Order --","- Veldu pöntun -"
+"Create ticket","Búðu til miða"
+"You don't have open tickets","Þú hefur ekki opna miða"
+"Post a Reply","Senda svar"
+"Reopen Ticket","Enduropna miða"
+"Close Ticket","Loka Ticket"
+History,Saga
+"Back to My Tickets","Aftur á miða mína"
+"Help Desk MX","Hjálp skrifborð MX"
+"Contact Us","Hafðu samband við okkur"
+Open,Opna
+Subject,Efni
+"Last Activity","Síðasta virkni"
+"Request ID","Beiðni ID"

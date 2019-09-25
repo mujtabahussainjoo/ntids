@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd" class="Mirasvit\Report\Ui\Report\Settings\Form">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">report_settings_form.report_settings_form_data_source</item>
+            <item name="deps" xsi:type="string">report_settings_form.report_settings_form_data_source</item>
+            <item name="namespace" xsi:type="string">report_settings_form</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="ajaxSaveType" xsi:type="string">simple</item>
+            <!--<item name="dataScope" xsi:type="string">data</item>-->
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <!--<item name="cancel" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Back</item>
+                <item name="sort_order" xsi:type="string">10</item>
+                <item name="class" xsi:type="string">back</item>
+                <item name="on_click" xsi:type="string"/>
+            </item>-->
+            <item name="save" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Save</item>
+                <item name="class" xsi:type="string">action-default primary</item>
+                <item name="sort_order" xsi:type="string">1</item>
+                <item name="on_click" xsi:type="string"/>
+                <item name="data_attribute" xsi:type="array">
+                    <item name="mage-init" xsi:type="array">
+                        <item name="buttonAdapter" xsi:type="array">
+                            <item name="actions" xsi:type="array">
+                                <item name="0" xsi:type="array">
+                                    <item name="targetName" xsi:type="string">report_settings_form.report_settings_form.general.columns</item>
+                                    <item name="actionName" xsi:type="string">resetSearch</item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="report_settings_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Mirasvit\Report\Ui\Report\Settings\DataProvider</argument>
+            <argument name="name" xsi:type="string">report_settings_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">report</argument>
+            <argument name="requestFieldName" xsi:type="string">report</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="report/settings/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Available Columns</item>
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+
+        <field name="report">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                </item>
+            </argument>
+        </field>
+
+        <container name="columns">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataScope" xsi:type="string">columns</item>
+                    <item name="component" xsi:type="string">Mirasvit_Report/js/settings/columns</item>
+                </item>
+            </argument>
+        </container>
+    </fieldset>
+</form>

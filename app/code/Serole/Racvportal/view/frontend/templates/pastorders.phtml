@@ -1,0 +1,63 @@
+<div class="content-inner-html">
+    <h2>Orders completed in the last 2 weeks</h2>
+    <?php
+      $orderData = $block->getData();
+    ?>
+      <table class="past-orders table table-striped">
+          <tr>
+              <th>Order #</th>
+              <th>Date</th>
+              <th>Shop</th>
+              <th>User</th>
+              <th class="order-total">Total</th>
+              <th></th>
+			  <th></th>
+          </tr>
+
+          <?php
+              $baseUrl = $this->getPdfFileUrl();
+          ?>
+
+      <?php
+          if($orderData['data']) {
+              foreach ($orderData['data'] as $key => $orderItem) { ?>
+                  <tr class="<?php if ($key % 2 == 0) {
+                      echo "even";
+                  } else {
+                      echo "odd";
+                  } ?>">
+                      <td><?php echo $orderItem['increment_id'] ?></td>
+                      <td><?php echo $orderItem['created_at'] ?></td>
+                      <td><?php echo $orderItem['shop_name'] ?></td>
+                      <td><?php echo $orderItem['customer_firstname'] . ' ' . $orderItem['customer_lastname'] ?></td>
+                      <td><?php echo $orderItem['grand_total'] ?></td>
+                      <?php if (isset($orderItem['increment_id'])) {
+                          if (file_exists($this->getPdfFilePath($orderItem['increment_id']))) { ?>
+                              <?php $url = $baseUrl . "racvportal/pdf/download/incrementid/" . $orderItem['increment_id']; ?>
+                              <td>
+                                  <button class="button pastorder-button" onclick='window.open("<?php echo $url ?>")'>
+                                      Download
+                                  </button>
+                              </td>
+                              <?php
+                          }
+                      }
+					  if(count($orderData['data']) == 1)
+					  {
+                      ?>
+					  <td>
+					  <button id="can_btn" class="button cancel-button">
+                          Cancel
+                      </button></td>
+					  <?php
+					  }
+					  ?>
+                  </tr>
+       <?php  }
+          } else{?>
+              <tr>
+                  <p>No Data found</p>
+              </tr>
+         <?php }?>
+      </table>
+</div>

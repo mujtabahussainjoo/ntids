@@ -1,0 +1,136 @@
+Department,Nodaļa
+"Create New Ticket","Izveidot jaunu biļeti"
+Status,Statuss
+Priority,Prioritāte
+Replies,Atbildes
+View,Skats
+"Help Desk","Palīdzības dienests"
+"Thank you",Paldies
+"Create Ticket","Izveidot biļeti"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Jūsu pieprasījums tika veiksmīgi iesniegts. Tūlīt jums vajadzētu saņemt apstiprinājuma e-pastu."
+Telephone,Tālrunis
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Jūsu pieprasījums tika iesniegts, un uz to tiks sniegta atbilde, cik drīz vien iespējams. Paldies, ka sazinājāties ar mums."
+"Unable to submit your request. Please, try again later","Nevar iesniegt jūsu pieprasījumu. Lūdzu, pamēģiniet vēlreiz vēlāk"
+"Page not found.","Lapa nav atrasta."
+"Your message was successfuly posted","Jūsu ziņa tika veiksmīgi ievietota"
+"Your ticket was successfuly posted","Jūsu biļete tika veikta veiksmīgi"
+"Ticket was successfuly closed","Biļete tika veiksmīgi slēgta"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Nevaru augšupielādēt failu %1. Maksimāli pieļaujamais augšupielādes izmērs ir %2 MB."
+"Allows only this file types: %1","Ļauj izmantot tikai šos failu tipus: %1"
+"Message added","Ziņa pievienota"
+"Internal note added","Pievienota iekšējā piezīme"
+"Third party message added","Trešās personas ziņojums ir pievienots"
+"Private third party message added","Privātā trešās puses ziņa ir pievienota"
+"-- Please Select --","-- Lūdzu izvēlieties --"
+"Contact Tab","Cilne Kontakt"
+"Contact Form","Saziņas veidlapa"
+" at %1 (%2) - %3","pie %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Jums nav atļauju lasīt šo biļeti. Lūdzu, sazinieties ar savu administratoru."
+"Invalid Customer Email","Nederīgs klienta e-pasts"
+"not set","nav uzstādīts"
+"Unknown time","Nezināms laiks"
+ago,pirms
+"from now","no šī brīža"
+"1 sec ago","1 sekunde atpakaļ"
+"Open Ticket","Atvērt biļeti"
+"Open Tickets","Atvērt biļetes"
+"! Blocked file - ","! Bloķēts fails -"
+Disabled,Invalīds
+"AW Helpdesk","AW palīdzības dienests"
+"MW Helpdesk","MW palīdzības dienests"
+"File System","Failu sistēma"
+Database,"Datu bāze"
+Aqua,Aqua
+Grey,Pelēks
+Navy,
+Silver,Sudrabs
+Black,Melns
+Green,Zaļš
+Olive,Olīvu
+Teal,Teal
+Blue,Zila
+Lime,Laims
+Purple,Violets
+Fuchsia,Fuksija
+Maroon,Maroon
+Red,Sarkans
+Orange,Apelsīns
+Yellow,Dzeltens
+Text,Teksts
+Date,Datums
+Checkbox,"Izvēles rūtiņa"
+"Drop-down list","Izvēlnes saraksts"
+"In minutes...","Minūtēs ..."
+"In hours...","Stundās ..."
+"In days...","Dienās ..."
+"In weeks...","Nedēļas ..."
+"In months...","Mēnešos ..."
+Custom,Pielāgots
+"--Please Select--","--Lūdzu izvēlieties--"
+"New ticket created","Izveidots jauns biļete"
+Success,Panākumi
+Customer,Klients
+Staff,Personāls
+"Third party","Trešā ballīte"
+Closed,Slēgts
+"Opened 24hr","Atvērts 24 stundas"
+"Helpdesk Tickets","Palīdzības dienesta biļetes"
+"Cannot delete ticket with id %1","Nevar izdzēst biļeti ar id %1"
+Edit,Rediģēt
+"All Departments","Visi departamenti"
+Back,Atpakaļ
+"24 hrs x 7 days","24 stundas x 7 dienas"
+"Select working days/hours","Atlasiet darba dienas / stundas"
+"Satisfaction survey","Apmierinātības aptauja"
+"to %1 (third party)","uz %1 (trešā puse)"
+"%1 (third party)","%1 (trešā puse)"
+"added %1 (%2)","pievienots %1 (%2)"
+"Ticket Summary","Biļetes kopsavilkums"
+"Ticket ID","Biļešu ID"
+Assignee,Īpašnieks
+"Additional Info","Papildus informācija"
+"Ticket History","Biļešu vēsture"
+"Done by","To izdarījis"
+Changes,Izmaiņas
+Name,Nosaukums
+"Attach files","Pievienojiet failus"
+Submit,Iesniegt
+"Submit Ticket","Iesniegt biļeti"
+"What is your question?","Kads ir tavs jautajums?"
+"We found the following topics that might be helpful:","Mēs atradām šādas tēmas, kas varētu būt noderīgas:"
+"None of these are helpful - get in touch","Neviens no tiem nav noderīgs - sazināties"
+"We have not found topics that can be helpful.","Mēs neesam atraduši tēmas, kas varētu būt noderīgas."
+"Contact Information",Kontaktinformācija
+Comment,Komentārs
+"We are open 24 x 7","Mēs esam atvērti 24 x 7"
+"We are closed","Mēs esam slēgti"
+"Timezone: %1","Laika josla: %1"
+"Please take a second to rate my reply...","Lūdzu, veltiet otro, lai novērtētu manu atbildi ..."
+Great,Lieliski
+Awesome,Satriecošs
+"Fast, friendly, helpful, pleasant. Great job!","Ātri, draudzīgi, izpalīdzīgi, patīkami. Lielisks darbs!"
+"Just Okay","Tikai labi"
+"Fine, but definitely could have been better.","Labi, bet noteikti varēja būt labāk."
+"Not good","Nav labi"
+"Unfortunately, I wasn't happy with it at all.","Diemžēl man vispār nebija apmierināti."
+"Thank you for participating in our survey!","Paldies, ka piedalījāties mūsu aptaujā!"
+"If you would like to provide additional comments, please do so below:","Ja vēlaties sniegt papildu komentārus, lūdzu, rīkojieties šādi:"
+Message,Ziņa
+"Submit Message","Iesniegt ziņojumu"
+"Thank you for your feedback!","Paldies par jūsu atsauksmēm!"
+Attachments,Pielikumi
+Order,Pasūtījums
+"-- Select an Order --","- Izvēlieties Pasūtījumu -"
+"Create ticket","Izveidojiet biļeti"
+"You don't have open tickets","Jums nav atvērtu biļešu"
+"Post a Reply","Publicēt atbildi"
+"Reopen Ticket","Atkārtoti atvērt biļeti"
+"Close Ticket","Aizvērt biļeti"
+History,Vēsture
+"Back to My Tickets","Atpakaļ uz maniem biļetēm"
+"Help Desk MX","Palīdzības centrs MX"
+"Contact Us","Sazinies ar mums"
+Open,Atvērt
+Subject,Priekšmets
+"Last Activity","Pēdējā darbība"
+"Request ID","Pieprasījuma ID"

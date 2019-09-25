@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">rule_edit_form.rule_edit_form_data_source</item>
+            <item name="deps" xsi:type="string">rule_edit_form.rule_edit_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">rule_edit_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Rule\Control\BackButton</item>
+            <item name="delete" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Rule\Control\DeleteButton</item>
+            <item name="reset" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Rule\Control\ResetButton</item>
+            <item name="save" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Rule\Control\SaveButton</item>
+            <item name="save_and_continue" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Rule\Control\SaveAndContinueButton</item>
+        </item>
+    </argument>
+    <dataSource name="rule_edit_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Mirasvit\Helpdesk\Ui\Form\Rule\DataProvider</argument>
+            <argument name="name" xsi:type="string">rule_edit_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">rule_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="helpdesk/rule/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">General Information</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="rule_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">rule_id</item>
+                </item>
+            </argument>
+        </field>
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Rule Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="required" xsi:type="boolean">true</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_active">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Active</item>
+                    <item name="dataScope" xsi:type="string">is_active</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+        </field>
+        <field name="sort_order">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Priority</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-digits" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="tooltip" xsi:type="array">
+                        <item name="link" xsi:type="string">http://docs.mirasvit.com/module-helpdesk/current/configuration/workflow</item>
+                        <item name="description" xsi:type="string">Arranged in the ascending order. 0 is the highest.</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_stop_processing">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Stop Further Rules Processing</item>
+                    <item name="dataScope" xsi:type="string">is_stop_processing</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <fieldset name="conditions">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Conditions</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="event">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Model\Config\Source\Rule\Event</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Event</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">event</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </field>
+        <container name="conditions_apply_to" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="namespace" xsi:type="string">rule_edit_form</item>
+                    <item name="ns" xsi:type="string">rule_edit_form</item>
+                </item>
+            </argument>
+            <htmlContent name="html_content">
+                <argument name="block" xsi:type="object">Mirasvit\Helpdesk\Block\Adminhtml\Rule\Edit\Tab\Condition</argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="namespace" xsi:type="string">rule_edit_form</item>
+                        <item name="ns" xsi:type="string">rule_edit_form</item>
+                    </item>
+                </argument>
+            </htmlContent>
+        </container>
+    </fieldset>
+
+    <fieldset name="actions">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Actions</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="status_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Form\Rule\StatusOptionsProvider</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Set Status</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">status_id</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </field>
+        <field name="priority_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Form\Rule\PriorityOptionsProvider</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Set Priority</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">priority_id</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </field>
+        <field name="department_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Form\Rule\DepartmentOptionsProvider</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Set Department</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">department_id</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </field>
+        <field name="user_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Form\Rule\UserOptionsProvider</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Set Owner</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">user_id</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_archive">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Form\Rule\ArchiveOptionsProvider</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Archive</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">is_archive</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </field>
+        <field name="add_tags">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Add Tags</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="tooltip" xsi:type="array">
+                        <item name="link" xsi:type="string">http://docs.mirasvit.com/module-helpdesk/current/configuration/workflow</item>
+                        <item name="description" xsi:type="string">comma-separated list</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="remove_tags">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Remove Tags</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                    <item name="tooltip" xsi:type="array">
+                        <item name="link" xsi:type="string">http://docs.mirasvit.com/module-helpdesk/current/configuration/workflow</item>
+                        <item name="description" xsi:type="string">comma-separated list</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <fieldset name="notifications">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Notifications</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="is_send_owner">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Send email to ticket owner</item>
+                    <item name="dataScope" xsi:type="string">is_send_owner</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_send_department">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Send email to all department users</item>
+                    <item name="dataScope" xsi:type="string">is_send_department</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_send_user">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Send email to customer</item>
+                    <item name="dataScope" xsi:type="string">is_send_user</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </field>
+        <field name="other_email">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Send email to other email addresses</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="tooltip" xsi:type="array">
+                        <item name="link" xsi:type="string">http://docs.mirasvit.com/module-helpdesk/current/configuration/workflow</item>
+                        <item name="description" xsi:type="string">comma-separated list</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="email_subject">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Email subject</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </field>
+        <field name="email_body">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Email Body</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_send_attachment">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Attach files which were attached to the last message</item>
+                    <item name="dataScope" xsi:type="string">is_send_attachment</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

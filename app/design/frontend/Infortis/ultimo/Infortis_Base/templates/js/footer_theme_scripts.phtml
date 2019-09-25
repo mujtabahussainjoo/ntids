@@ -1,0 +1,560 @@
+<?php
+/**
+ * Additional scripts
+ */
+?>
+<?php
+    $theme = $this->helper('Infortis\Base\Helper\Data');
+    $gc = $theme->getCfgGroup('category_grid');
+?>
+<script type="text/javascript">
+//<![CDATA[
+
+requirejs(['jquery'], function(jQuery) {
+
+    <?php //Products grid: set equal height for grid items ?>
+    <?php if ($gc['equal_height']): ?>
+
+        var gridItemsEqualHeightApplied = false;
+        function setGridItemsEqualHeight()
+        {
+            var bottomMinSpace = 20; // Minimum space below the button at the bottom of the item
+            var gridItemMaxHeight = 0;
+            var gridItemMaxPaddingBottom = 0;
+            var $listContainer = jQuery('.category-products-grid');
+            var $listItems = $listContainer.children('ol').children();
+            var centered = $listContainer.hasClass('centered');
+            var $row = jQuery();
+
+            $listItems.each(function() {
+
+                var $item = jQuery(this);
+                var $actionsBlock = $item.find('.actions');
+
+                // Check if first item in a row
+                if ($item.css("clear") == "left")
+                {
+                    // If row not empty, apply the max values to all items in a row
+                    if ($row.length)
+                    {
+                        $row.css({
+                            "height": gridItemMaxHeight + "px", 
+                            "padding-bottom": gridItemMaxPaddingBottom + "px"
+                        });
+
+                        // Reset the row collection and reset the max values
+                        $row = jQuery();
+                        gridItemMaxHeight = 0;
+                        gridItemMaxPaddingBottom = 0;
+                    }
+                }
+                $row = $row.add($item);
+
+                $item.css("height", "auto"); <?php //Reset height ?>
+                gridItemMaxHeight = Math.max(gridItemMaxHeight, $item.height());
+
+                // Use constant bottomMinSpace as bottom offset for the actions container
+                $actionsBlock.css("bottom", bottomMinSpace + "px");
+
+                // Align button to the center
+                if (centered)
+                {
+                    var objectWidth = $actionsBlock.width();
+                    var availableWidth = $item.width();
+                    var space = availableWidth - objectWidth;
+                    var leftOffset = ~~(space / 2);
+                    $actionsBlock.css("padding-left", leftOffset + "px"); <?php // Set left offset of the button ?>
+                }
+
+                // Set bottom padding wich equals to: actions container height + bottomMinSpace
+                var currentPaddingBottom = bottomMinSpace + $actionsBlock.innerHeight();
+                gridItemMaxPaddingBottom = Math.max(gridItemMaxPaddingBottom, currentPaddingBottom);
+
+                $item.css("padding-bottom", currentPaddingBottom + "px"); // TODO: possibly redundant. Padding will be applied for the entire row.
+
+            });
+
+            // Apply the max values to all items in the last row
+            if ($row.length)
+            {
+                $row.css({
+                    "height": gridItemMaxHeight + "px", 
+                    "padding-bottom": gridItemMaxPaddingBottom + "px"
+                });
+            }
+            
+            gridItemsEqualHeightApplied = true;
+
+        }
+
+    <?php endif; //end: equal_height ?>
+
+
+
+    jQuery(function($) {
+
+
+
+        // Products grid: equal height of items
+        <?php if ($gc['equal_height']): ?>
+
+            $(document).on('last-swatch-found', function(e) {
+                setGridItemsEqualHeight();
+                $(document).off('last-swatch-found');
+                e.stopPropagation();
+            });
+
+            setGridItemsEqualHeight();
+            
+        <?php endif; ?>
+
+
+
+        <?php // Products grid: item hover effect ?>
+        <?php if ($gc['hover_effect']): ?>
+
+            var startHeight;
+            var startPaddingBottom;
+            $('.category-products-grid').on('mouseenter', '.item', function() {
+
+                    var $item = $(this);
+
+                <?php if ($gc['disable_hover_effect']): // If hover effect disabled for vieport width below specified value ?>
+                    <?php // Start: viewport width condition ?>
+                    if ($(window).width() >= <?php echo $gc['disable_hover_effect']; ?>)
+                    {
+                <?php endif; ?>
+
+                    <?php if ($gc['equal_height']): ?>
+                        if (gridItemsEqualHeightApplied === false)
+                        {
+                            return false;
+                        }
+                    <?php endif; ?>
+
+                    var bottomMinSpace = 20;
+                    var paddingBottom2 = 0;
+                    var $actionsBlock = $item.find('.actions');
+
+                    startHeight = $item.height();
+                    startPaddingBottom = parseInt($item.css("padding-bottom"));
+
+                    $item.css("height", "auto"); // Reset height
+                    $item.find(".display-onhover").fadeIn(400, "easeOutCubic"); // Show elements visible on hover
+                    var h2 = $item.height();
+                    
+                    // -------------------------------------------------------------------------
+                    // Compare start padding with new on-hover padding, calculate the difference
+
+                    // Get actions height and calculate new padding
+                    // Calculate new bottom padding wich equals to: actions container height + bottomMinSpace
+                    paddingBottom2 = bottomMinSpace + $actionsBlock.innerHeight();
+
+                    // Calculate difference between start padding and new padding
+                    var paddingBottomDiff = paddingBottom2 - startPaddingBottom;
+
+                    // Apply only if new padding is larger than start padding
+                    if (paddingBottomDiff > 0)
+                    {
+                        $item.css("padding-bottom", paddingBottom2 + "px");
+                    }
+
+                    // -------------------------------------------------------------------------
+                    // Compare start height with new (on-hover) height, calculate the difference.
+                    // Important: new height includes difference between start padding and new padding
+                    var diff = 0;
+                    if (h2 < startHeight)
+                    {
+                        $item.height(startHeight);
+                    }
+                    else
+                    {
+                        $item.height(h2);
+                        diff = h2 - startHeight;
+                        if (paddingBottomDiff > 0)
+                        {
+                            diff += paddingBottomDiff;
+                        }
+                    }
+                    
+                    // -------------------------------------------------------------------------
+                    // Apply height difference as nagative margin, but only if new height
+                    // is larger than start height.
+                    if (diff > 0)
+                    {
+                        $item.css("margin-bottom", "-" + diff + "px");
+                    }
+
+                <?php if ($gc['disable_hover_effect']): // If hover effect disabled for vieport width below specified value ?>
+                    } <?php // end: viewport width condition ?>
+                <?php endif; ?>
+                
+            }).on('mouseleave', '.item', function() {
+
+                    var $item = $(this);
+
+                <?php if ($gc['disable_hover_effect']): //If hover effect disabled for vieport width below specified value ?>
+                <?php // Start: viewport width condition ?>
+                    if ($(window).width() >= <?php echo $gc['disable_hover_effect']; ?>)
+                    {
+                <?php endif; ?>
+
+                    // Clean up
+                    $item.find(".display-onhover").stop(true).hide();
+                    $item.css("margin-bottom", "");
+
+                    <?php // Return the default height and bottom padding. If "Egual Height" disabled, unset existing values. ?>
+                    <?php if ($gc['equal_height']): ?>
+                        $item.height(startHeight);
+                        $item.css("padding-bottom", startPaddingBottom);
+                    <?php else: ?>
+                        $item.css("height", "");
+                        $item.css("padding-bottom", "");
+                    <?php endif; ?>
+
+                <?php if ($gc['disable_hover_effect']): //If hover effect disabled for vieport width below specified value ?>
+                    } <?php // end: viewport width condition ?>
+                <?php endif; ?>
+                
+            });
+        
+        <?php else: // hover effect NOT enabled ?>
+        
+            <?php // Display elements visible on hover ?>
+            $('.category-products-grid').on('mouseenter', '.item', function() {
+                $(this).find(".display-onhover").fadeIn(400, "easeOutCubic");
+            }).on('mouseleave', '.item', function() {
+                $(this).find(".display-onhover").stop(true).hide();
+            });
+        
+        <?php endif; ?>
+
+
+
+        <?php // Display product alternative image ?>
+        $('.items-grid, .products-list').on('mouseenter', '.product-item-img', function() {
+            $(this).find(".alt-img").fadeIn(400, "easeOutCubic");
+        }).on('mouseleave', '.product-item-img', function() {
+            $(this).find(".alt-img").stop(true).fadeOut(400, "easeOutCubic");
+        });
+
+
+
+        <?php //Fade on hover ?>
+        $('.fade-on-hover').on('mouseenter', function() {
+            $(this).animate({opacity: 0.75}, 300, 'easeInOutCubic');
+        }).on('mouseleave', function() {
+            $(this).stop(true).animate({opacity: 1}, 300, 'easeInOutCubic');
+        });
+
+
+
+        // Drop-down
+        var ddBlockSelector = '.dropdown-block-trigger'; // '.dropdown-block';
+        var ddOpenTimeout;
+        var dMenuPosTimeout;
+        var DD_DELAY_IN = 200;
+        var DD_DELAY_OUT = 0;
+        var DD_ANIMATION_IN = 0;
+        var DD_ANIMATION_OUT = 0;
+
+        $(document).on('mouseenter touchstart', ddBlockSelector, function(e) {
+
+            var dd = $(this);
+            var ddHeading = dd.children('.dropdown-heading');
+            var ddContent = dd.children('.dropdown-content');
+
+            // If dd is not opened yet (or not initialized yet)
+            var isDdOpened = dd.data('ddOpened');
+            if (isDdOpened === false || isDdOpened === undefined)
+            {
+                // Clear old position of dd menu
+                ddContent.css("left", "");
+                ddContent.css("right", "");
+
+                // Show dd menu
+                clearTimeout(ddOpenTimeout);
+                ddOpenTimeout = setTimeout(function() {
+                    
+                    dd.addClass('open');
+                    dd.data('ddOpened', true);
+                    
+                }, DD_DELAY_IN);
+
+                ddContent.stop(true, true).delay(DD_DELAY_IN).fadeIn(DD_ANIMATION_IN, "easeOutCubic");
+                
+                // Set new position of dd menu.
+                // This code is delayed the same amount of time as dd animation.
+                clearTimeout(dMenuPosTimeout);
+                dMenuPosTimeout = setTimeout(function() {
+
+                    if (ddContent.offset().left < 0)
+                    {
+                        var space = dd.offset().left; // Space available on the left of dd
+                        ddContent.css("left", (-1)*space);
+                        ddContent.css("right", "auto");
+                    }
+                
+                }, DD_DELAY_IN);
+
+            } // end: dd is not opened yet
+
+        }).on('mouseleave', ddBlockSelector, function(e) {
+
+            var dd = $(this);
+            var ddContent = dd.children('.dropdown-content');
+
+            clearTimeout(ddOpenTimeout); // Clear, to close dd on mouseleave
+            ddContent.stop(true, true).delay(DD_DELAY_OUT).fadeOut(DD_ANIMATION_OUT, "easeInCubic");
+            if (ddContent.is(":hidden"))
+            {
+                ddContent.hide();
+            }
+            dd.removeClass('open');
+
+            // Clear dd open flag
+            dd.data('ddOpened', false);
+
+            // After hiding, clear the click event flag
+            dd.data('ddClickIntercepted', false);
+
+        }).on('click', ddBlockSelector, function(e) {
+
+            var dd = $(this);
+            var ddHeading = dd.children('.dropdown-heading');
+            var ddContent = dd.children('.dropdown-content');
+
+            // Only if the heading was clicked
+            if ($.contains(ddHeading[0], e.target) || ddHeading.is(e.target))
+            {
+                // Only after the first click already happened, the second click can close the dropdown
+                if (dd.data('ddClickIntercepted'))
+                {
+                    if (dd.hasClass('open'))
+                    {
+                        clearTimeout(ddOpenTimeout); // Clear, to close dd on mouseleave
+                        ddContent.stop(true, true).delay(DD_DELAY_OUT).fadeOut(DD_ANIMATION_OUT, "easeInCubic");
+                        if (ddContent.is(":hidden"))
+                        {
+                            ddContent.hide();
+                        }
+                        dd.removeClass('open');
+
+                        // Clear dd open flag
+                        dd.data('ddOpened', false);
+
+                        // After hiding, clear the click event flag
+                        dd.data('ddClickIntercepted', false);
+                    }
+                }
+                else 
+                {
+                    // Set the click event flag
+                    dd.data('ddClickIntercepted', true);
+                }
+            }
+
+        });
+
+
+
+        // Back to top
+        var windowScroll_t;
+        $(window).scroll(function(){
+            
+            clearTimeout(windowScroll_t);
+            windowScroll_t = setTimeout(function() {
+                                        
+                if ($(this).scrollTop() > 100)
+                {
+                    $('#scroll-to-top').fadeIn();
+                }
+                else
+                {
+                    $('#scroll-to-top').fadeOut();
+                }
+            
+            }, 500);
+            
+        });
+        
+        $('#scroll-to-top').click(function(){
+            $("html, body").animate({scrollTop: 0}, 600, "easeOutCubic");
+            return false;
+        });
+
+
+
+        <?php //Event: deferred resize ?>
+        var dResize = {
+
+            winWidth : 0
+            , winHeight : 0
+            , windowResizeTimeout : null
+
+            , init : function()
+            {
+                dResize.winWidth = $(window).width();
+                dResize.winHeight = $(window).height();
+                dResize.windowResizeTimeout;
+
+                $(window).on('resize', function(e) {
+                    clearTimeout(dResize.windowResizeTimeout);
+                    dResize.windowResizeTimeout = setTimeout(function() {
+                        dResize.onEventResize(e);
+                    }, 50);
+                });
+            }
+
+            , onEventResize : function(e)
+            {
+                //Prevent from executing the code in IE when the window wasn't actually resized
+                var winNewWidth = $(window).width();
+                var winNewHeight = $(window).height();
+
+                //Code in this condition will be executed only if window was actually resized
+                if (dResize.winWidth != winNewWidth || dResize.winHeight != winNewHeight)
+                {
+                    //Trigger deferred resize event
+                    $(window).trigger("themeResize", e);
+
+                    //Additional code executed on deferred resize
+                    dResize.onEventDeferredResize();
+                }
+
+                //Update window size variables
+                dResize.winWidth = winNewWidth;
+                dResize.winHeight = winNewHeight;
+            }
+
+            , onEventDeferredResize : function() //Additional code, execute after window was actually resized
+            {
+
+                //Products grid: equal height of items
+                <?php if ($gc['equal_height']): ?>
+
+                    setGridItemsEqualHeight();
+
+                <?php endif; ?>
+
+            }
+
+        }; //end: dResize
+
+        dResize.init();
+
+
+
+    }); //end: on document ready
+
+
+
+    jQuery(window).on('load',function() {
+
+        <?php //Products grid: equal height of items ?>
+        <?php if ($gc['equal_height']): ?>
+
+            setGridItemsEqualHeight();
+
+        <?php endif; ?>
+
+    }); //end: on load
+
+
+
+}); //end: requirejs
+
+
+
+requirejs(['jquery', 'enquire'], function(jQuery, enquire) {
+
+    jQuery(function($) {
+
+        // Collapsible block
+        // This plugin requires a specific markup structure. The plugin expects a set of elements that it
+        // will use as the toggle link. It then hides all immediately following siblings and toggles the sibling's
+        // visibility when the toggle link is clicked.
+        //
+        // Example markup:
+        // <div class="block">
+        //     <div class="block-title">Trigger</div>
+        //     <div class="block-content">Content that should show when </div>
+        // </div>
+        //
+        // JS: jQuery('.block-title').toggleSingle();
+        //
+        // Options:
+        //     destruct: defaults to false, but if true, the plugin will remove itself, display content, and remove event handlers
+
+        jQuery.fn.toggleSingle = function (options) {
+
+            // passing destruct: true allows
+            var settings = $.extend({
+                destruct: false
+            }, options);
+
+            return this.each(function () {
+                if (!settings.destruct) {
+                    $(this).on('click', function () {
+                        $(this)
+                            .next()
+                            .toggleClass('no-display')
+                            .parent()
+                            .toggleClass('active');
+                            // .toggleClass('active')
+                            // .next()
+                            // .toggleClass('no-display');
+                    });
+                    // Hide the content
+                    $this = $(this);
+                    if (!$this.parent().hasClass('active'))
+                    {
+                        $this.next().addClass('no-display');
+                    }
+                }
+                else
+                {
+                    // Remove event handler so that the toggle link can no longer be used
+                    $(this).off('click');
+                    // Remove all classes that were added by this plugin
+                    $(this)
+                        .next()
+                        .removeClass('no-display')
+                        .parent()
+                        .removeClass('active');
+                }
+
+            });
+
+        } // end: toggleSingle
+
+        var breakpointScreenM = 768; // The same value as Magento's breakpoint @screen__m
+
+        // Blocks collapsing on smaller viewports
+        enquire.register('(max-width: ' + (breakpointScreenM - 1) + 'px)', {
+            setup: function () {
+                this.toggleElements = $(
+                    '.sidebar .block:not(#layered-filter-block) .block-title, ' +
+                    '.mobile-collapsible .block-title'
+                );
+            },
+            match: function () {
+                this.toggleElements.toggleSingle();
+            },
+            unmatch: function () {
+                this.toggleElements.toggleSingle({destruct: true});
+            }
+        });
+
+        // Blocks collapsing on all viewports.
+        // For backward compatibility exclude blocks which have both classes: "collapsible" and "mobile-collapsible" 
+        $('.collapsible:not(.mobile-collapsible) .block-title').toggleSingle();
+
+    }); //end: on document ready
+
+}); //end: requirejs
+
+
+
+//]]>
+</script>

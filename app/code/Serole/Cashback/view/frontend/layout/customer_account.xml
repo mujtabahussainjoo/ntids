@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="cashback-dashboard">
+                <arguments>
+                    <argument name="path" xsi:type="string">cashback/customer/dashboard</argument>
+                    <argument name="label" xsi:type="string">Reward Dashboard</argument>
+                </arguments>
+			</block>
+			<block class="Magento\Framework\View\Element\Html\Link\Current" name="cashback-orders">
+				<arguments>
+					<argument name="path" xsi:type="string">cashback/customer/orders</argument>
+                    <argument name="label" xsi:type="string">My Merchant Orders</argument>
+                </arguments>
+            </block>
+			<block class="Magento\Framework\View\Element\Html\Link\Current" name="cashback-used">
+				<arguments>
+					<argument name="path" xsi:type="string">cashback/customer/used</argument>
+                    <argument name="label" xsi:type="string">Used Points</argument>
+                </arguments>
+            </block>
+			 <block class="Magento\Framework\View\Element\Html\Link\Current" name="cashback-cards">
+				<arguments>
+					<argument name="path" xsi:type="string">cashback/customer/cards</argument>
+                    <argument name="label" xsi:type="string">My Cards</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

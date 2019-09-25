@@ -1,0 +1,7 @@
+<?php
+/** @var \Mirasvit\Helpdesk\Block\Ticket\View\Summary\Order $block */
+$ticket = $block->getItem();
+?>
+<?php if ($ticket->getOrderId()): ?>
+    <?= $block->getOrderLabel($ticket->getOrderId(), $block->getOrderUrl($ticket->getOrderId())) ?>
+<?php endif ?>

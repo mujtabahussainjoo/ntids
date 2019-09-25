@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_StoreRestrictionPro
+ * @author     Raj KB <magepsycho@gmail.com>
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magepsycho_storerestrictionpro>
+
+            <general>
+                <enabled>0</enabled>
+                <debug>0</debug>
+            </general>
+
+            <new_account_settings>
+                <new_account_registration_option>1</new_account_registration_option>
+                <new_account_registration_enable_disabled_message>1</new_account_registration_enable_disabled_message>
+                <new_account_registration_disabled_message>Sorry new account creation is disabled. You can contact us via email: info@store.com if you are interested.</new_account_registration_disabled_message>
+            </new_account_settings>
+
+            <restricted_settings>
+                <restriction_type>1</restriction_type>
+
+                <restricted_accessible>
+                    <allowed_customer_groups>-1</allowed_customer_groups>
+                    <redirection_type>1</redirection_type>
+                    <redirection_type_cms>home</redirection_type_cms>
+                    <redirection_type_custom>/contact</redirection_type_custom>
+                    <store_error_message>This is a restricted store.</store_error_message>
+                    <customer_group_error_message>The customer group that you belong to is not allowed to access this store.</customer_group_error_message>
+                    <allowed_module_pages>paypal/*/*</allowed_module_pages>
+                </restricted_accessible>
+            </restricted_settings>
+
+        </magepsycho_storerestrictionpro>
+    </default>
+</config>

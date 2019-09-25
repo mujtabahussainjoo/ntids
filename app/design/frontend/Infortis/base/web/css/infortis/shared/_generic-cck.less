@@ -1,0 +1,131 @@
+/**
+ * Theme Content Construction Kit
+ */
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+
+/* Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Vertically centered content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.v-centered-content {
+    display:table;
+}
+.v-centered-content .v-center {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+
+/* Heading of a content section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*/
+.section-title { clear:both; margin:0; display:block; }
+.section-title.padding-right { padding-right:80px !important; }
+
+/* Horizontal line */
+.section-line {
+    clear:both;
+    display:block;
+    font-size:0;
+    line-height:0;
+    height:0;
+    margin:0 0 10px;
+    padding:10px 0 0;
+    background:none;
+    border-bottom:1px solid #e5e5e5;
+    text-indent:-9999em;
+    overflow:hidden;
+}
+
+
+
+/* Vertical links %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.links {
+    margin: 0;
+}
+.links > li {
+    float: left;
+    margin-bottom: 0;
+}
+.links > li > *,
+.links > li.label {
+    display: block;
+    line-height: 36px;
+    padding: 0 7px;
+}
+
+.links > li.label {
+    padding-left: 0;
+}
+.rtl .links > li.label {
+    padding-right: 0;
+    padding-left: 7px;
+}
+
+/* Links with separators (at the right side)
+-------------------------------------------------------------- */
+.links-wrapper-separators .links > li {
+    margin-left: -1px;
+}
+.links-wrapper-separators .links > li:first-child {
+    margin-left: 0;
+}
+.links-wrapper-separators .links > li > * {
+    background-image: url(../images/img/link-separator.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+.links-wrapper-separators .links > li:last-child > * {
+    background-image: none;
+}
+.links-wrapper-separators .links > li.hide-separator > * {
+    background-image: none;
+}
+.links-wrapper-separators .links > li.separator-left > * {
+    background-position: left center;
+}
+
+/* Links with separators (at the left side)
+-------------------------------------------------------------- */
+.links-wrapper-separators-left .links > li {
+    margin-left: -1px;
+}
+.links-wrapper-separators-left .links > li:first-child {
+    margin-left: 0;
+}
+.links-wrapper-separators-left .links > li > * {
+    background-image: url(../images/img/link-separator.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.links-wrapper-separators-left .links > li:first-child > * {
+    background-image: none;
+}
+.links-wrapper-separators-left .links > li.hide-separator > * {
+    background-image: none;
+}
+.links-wrapper-separators-left .links > li.separator-right > * {
+    background-position: right center;
+}
+
+/* If label is first child, remove the background from the next item */
+.links-wrapper-separators-left .links > li.label:first-child + li > * {
+    background-image: none;
+}
+
+
+
+} /* end: media-common */

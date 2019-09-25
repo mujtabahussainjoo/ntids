@@ -1,0 +1,31 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Adminhtml\Draft;
+
+/**
+ * @magentoAppArea adminhtml
+ */
+class UpdateTest extends \Magento\TestFramework\TestCase\AbstractBackendController
+{
+    /**
+     * setUp.
+     */
+    public function setUp()
+    {
+        $this->resource = 'Mirasvit_Helpdesk::helpdesk_draft';
+        $this->uri = 'backend/helpdesk/draft/update';
+        parent::setUp();
+    }
+
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Adminhtml\Draft\Update::execute
+     */
+    public function testUpdateAction()
+    {
+        $this->dispatch('backend/helpdesk/draft/update');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

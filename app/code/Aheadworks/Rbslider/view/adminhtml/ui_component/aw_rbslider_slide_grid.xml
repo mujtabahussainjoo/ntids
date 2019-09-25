@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Copyright 2016 aheadWorks. All rights reserved.
+* See LICENSE.txt for license details.
+*/
+-->
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">aw_rbslider_slide_grid.aw_rbslider_slide_grid_data_source</item>
+            <item name="deps" xsi:type="string">aw_rbslider_slide_grid.aw_rbslider_slide_grid_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">slide_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Create New Slide</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/new</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="aw_rbslider_slide_grid_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">aw_rbslider_slide_grid_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sticky" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="templates" xsi:type="array">
+                        <item name="filters" xsi:type="array">
+                            <item name="select" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <filterSelect name="banner_id">
+                <argument name="optionsProvider" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Aheadworks\Rbslider\Model\ResourceModel\Banner\Collection</argument>
+                </argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">componentType = column, index = ${ $.index }:visible</item>
+                        </item>
+                        <item name="caption" xsi:type="string" translate="true">Select...</item>
+                        <item name="label" xsi:type="string" translate="true">Banner</item>
+                        <item name="dataScope" xsi:type="string">banner_id</item>
+                    </item>
+                </argument>
+            </filterSelect>
+            <filterSelect name="customer_group_id">
+                <argument name="optionsProvider" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Magento\Customer\Ui\Component\Listing\Column\Group\Options</argument>
+                </argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">componentType = column, index = ${ $.index }:visible</item>
+                        </item>
+                        <item name="caption" xsi:type="string" translate="true">Select...</item>
+                        <item name="label" xsi:type="string" translate="true">Customer Group</item>
+                        <item name="dataScope" xsi:type="string">customer_group_id</item>
+                    </item>
+                </argument>
+            </filterSelect>
+            <filterSelect name="store_id">
+                <argument name="optionsProvider" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Aheadworks\Rbslider\Ui\Component\Listing\Columns\Store\Options</argument>
+                </argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">componentType = column, index = ${ $.index }:visible</item>
+                        </item>
+                        <item name="label" xsi:type="string" translate="true">Store View</item>
+                        <item name="dataScope" xsi:type="string">store_id</item>
+                        <item name="captionValue" xsi:type="string">0</item>
+                    </item>
+                </argument>
+            </filterSelect>
+        </filters>
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="selectProvider" xsi:type="string">aw_rbslider_slide_grid.aw_rbslider_slide_grid.slide_columns.ids</item>
+                    <item name="displayArea" xsi:type="string">bottom</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+            <action name="delete">
+                <argument name="primaryFieldName" xsi:type="string">id</argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                        <item name="url" xsi:type="url" path="aw_rbslider_admin/slide/massDelete"/>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete slides</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected slides?</item>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+            <action name="add_to_banner">
+                <argument name="primaryFieldName" xsi:type="string">id</argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">add_to_banner</item>
+                        <item name="label" xsi:type="string" translate="true">Add to Banner</item>
+                    </item>
+                </argument>
+                <argument name="actions" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Aheadworks\Rbslider\Ui\Component\MassAction\Banner\Options</argument>
+                    <argument name="data" xsi:type="array">
+                        <item name="type" xsi:type="string">add_to_banner</item>
+                        <item name="urlPath" xsi:type="string">aw_rbslider_admin/slide/massAddToBanner</item>
+                        <item name="paramName" xsi:type="string">banner_id</item>
+                    </argument>
+                </argument>
+            </action>
+            <action name="remove_from_banner">
+                <argument name="primaryFieldName" xsi:type="string">id</argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">remove_from_banner</item>
+                        <item name="label" xsi:type="string" translate="true">Remove from Banner</item>
+                    </item>
+                </argument>
+                <argument name="actions" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Aheadworks\Rbslider\Ui\Component\MassAction\Banner\Options</argument>
+                    <argument name="data" xsi:type="array">
+                        <item name="urlPath" xsi:type="string">aw_rbslider_admin/slide/massRemoveFromBanner</item>
+                        <item name="paramName" xsi:type="string">banner_id</item>
+                        <item name="type" xsi:type="string">remove_from_banner</item>
+                    </argument>
+                </argument>
+            </action>
+            <action name="status">
+                <argument name="primaryFieldName" xsi:type="string">id</argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">status</item>
+                        <item name="label" xsi:type="string" translate="true">Change status</item>
+                    </item>
+                </argument>
+                <argument name="actions" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Aheadworks\Rbslider\Ui\Component\MassAction\Status\Options</argument>
+                    <argument name="data" xsi:type="array">
+                        <item name="urlPath" xsi:type="string">aw_rbslider_admin/slide/massStatus</item>
+                        <item name="paramName" xsi:type="string">status</item>
+                    </argument>
+                </argument>
+            </action>
+        </massaction>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="slide_columns">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </column>
+        <column name="thumbnail" class="Aheadworks\Rbslider\Ui\Component\Listing\Columns\Thumbnail">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/thumbnail</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="has_preview" xsi:type="string">1</item>
+                    <item name="label" xsi:type="string" translate="true">Thumbnail</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </column>
+        <column name="name" class="Aheadworks\Rbslider\Ui\Component\Listing\Columns\Name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="component" xsi:type="string">Aheadworks_Rbslider/js/ui/grid/columns/name</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="type" xsi:type="string">slide</item>
+                </item>
+            </argument>
+        </column>
+        <column name="status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Aheadworks\Rbslider\Model\Source\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </column>
+        <column name="banners" class="Aheadworks\Rbslider\Ui\Component\Listing\Columns\Banners">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Aheadworks_Rbslider/js/ui/grid/columns/linkage</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Assigned to Banners</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="customer_group_ids" class="Aheadworks\Rbslider\Ui\Component\Listing\Columns\Group">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Aheadworks_Rbslider/js/ui/grid/columns/html</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Customer Groups</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                </item>
+            </argument>
+        </column>
+        <column name="store_ids" class="Aheadworks\Rbslider\Ui\Component\Listing\Columns\Store">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Aheadworks_Rbslider/js/ui/grid/columns/html</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Store View</item>
+                    <item name="sortOrder" xsi:type="number">80</item>
+                </item>
+            </argument>
+        </column>
+        <column name="display_from" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Display From</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="sortOrder" xsi:type="number">90</item>
+                </item>
+            </argument>
+        </column>
+        <column name="display_to" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Display To</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="sortOrder" xsi:type="number">100</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Layout">
+        <plugin name="infortis_cgen_magento_framework_view_layout" type="Infortis\Cgen\Plugin\Magento\Framework\View\Layout"/>
+    </type>
+    <type name="Magento\Framework\App\FrontControllerInterface">
+        <plugin name="infortis_cgen_magento_framework_app_frontcontrollerinterface" type="Infortis\Cgen\Plugin\Magento\Framework\App\FrontController"/>
+    </type>
+</config>

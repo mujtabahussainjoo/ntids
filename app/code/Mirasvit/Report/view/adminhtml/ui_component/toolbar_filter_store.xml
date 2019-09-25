@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"
+           class="Mirasvit\Report\Ui\Component\Toolbar\Filter\Store">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="component" xsi:type="string">Mirasvit_Report/js/toolbar/filter/store</item>
+        </item>
+    </argument>
+</component>

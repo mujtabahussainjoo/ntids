@@ -1,0 +1,310 @@
+/*************************************HBF**************/
+	.header-container {
+		margin-left: 0%!important;
+		width: 100%!important;
+	}
+	.header-container .right-column .dropdown-block {
+		margin-top: 0px!important;
+	}
+	.header.links > li  {
+		background-color: #003959;
+	}
+	.nav-regular li.level0 > a > span {
+		font-size: 19px;
+		font-weight: normal;
+		letter-spacing: -0.4px;
+	}
+	.movie > a > p > strong{
+	color: #00ACB8;
+    text-decoration: underline;
+	}
+	.cms-hbf-home .main-container {
+		background-color: #00ACB8!important;
+	}
+
+	.cms-hbf-home .main.container{
+		background-color:#00ACB8;
+	}
+
+
+	.homepage-banner {
+		text-align: center;
+		padding-top: 15px;
+	}
+	.homepage-banner img {
+		max-width: 100%;
+	}
+
+
+	.big-buttons{
+		padding-left:0%;
+	}
+
+	.big-buttons >movie > a > span > strong {
+		color: #00ACB8;
+		text-decoration: underline;
+	}
+	.row {
+		margin-right: 0px; 
+		margin-left: 0px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	.movie { 
+	display: block;
+		font-size: 18px;
+		color: #073A58;
+		font-weight: bold;
+		margin-top: 5px; 
+		border-radius:5px;
+		 background-color: #fff;
+		   height: 280px;
+		width: 80%;
+		text-align:center;
+		
+		
+		
+	}
+	.movie-icon{
+		background-image: url("https://store.neatideas.com.au/skin/frontend/hbf/default/images/homepage/Movie.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		min-height: 107px;
+	}
+
+	.thempark{
+		display: block;
+		font-size: 18px;
+			color: #073A58;
+		font-weight: bold;
+			height: 280px;
+		width: 80%;
+		background-color:#fff;
+		 min-height: 100px; 
+		margin-top: 5px;
+	  border-radius:5px;
+	  text-align:center;
+	}
+	.thempark-icon{
+		background-image: url("https://store.neatideas.com.au/skin/frontend/hbf/default/images/homepage/Adventure.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		min-height: 107px;
+		
+	}
+	.funinthecity{
+			color: #073A58;
+		font-weight: bold;
+		display: block;
+		font-size: 17px;
+			height: 280px;
+		width: 80%;
+		background-color:#fff;
+		min-height: 100px;
+		margin-top: 5px;
+	  border-radius:5px;
+	  text-align:center;
+	}
+
+	.funinthecity-icon{
+		background-image: url("https://store.neatideas.com.au/skin/frontend/hbf/default/images/homepage/Golf.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		min-height: 107px;
+		
+	}
+
+
+	.rottnestisland { 
+		color: #073A58;
+		display: block;
+		font-size: 18px;
+		font-weight: bold;
+		height: 280px;
+		width: 80%;
+	   margin-top: 5px;
+		border-radius:5px;
+		 background-color: #fff;
+		min-height: 100px;
+		text-align:center;
+		
+		
+	}
+	.rottnestisland-icon{
+		background-image: url("https://store.neatideas.com.au/skin/frontend/hbf/default/images/homepage/Cruise.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		min-height: 107px;
+		
+	}
+	.right-column .item-right.item-interface:first-child {
+		border-bottom-right-radius: 0px;
+		background: #003959;
+		margin: -12px 0 0px 0px;
+	}
+	.header-top .dropdown-block .dropdown-heading{line-height: 50px!important;}
+	.field.search .control{margin:0 -3px 0 0px;}
+	.block-search .block.block-content {padding: 0 0 0 0!important;}
+	.footer-bottom.footer.container .item.item-left {margin: 0 0 0 0!important;}
+	}
+
+	
+.evoucher{
+	background-image: url(../images/eVoucher_200.png);
+	display: block;
+    position: absolute;
+    left: 15px;
+    top: 135px;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin-left: -15px;
+    margin-top: -2px;
+	z-index:10;
+}
+.mailout{
+	background-image: url(../images/Mailout_200.png);
+	display: block;
+    position: absolute;
+    left: 15px;
+    top: 135px;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin-left: -15px;
+    margin-top: -2px;
+	z-index:10;
+ }
+ .page-title .base{
+ font-family: "FS Me Web",Arial,Helvetica,sans-serif!important;
+ }
+ .hdmx__contact-button.hdmx__contact-button-left {
+display:none!important;
+}
+.sidebar.sidebar-additional{
+	display:none!important;
+}	
+.product-primary-column.product-shop.grid12-5.product-info-main {
+    width: 64.67%!important;
+}
+.page-product-grouped .item {
+    padding-left: 20px!important;
+}
+.page-product-grouped .box-tocart .fieldset .actions .action.primary.tocart {
+    padding: 13px!important;
+    margin: 67px 0px 86px -73px;
+}
+.category-view{display:none!important;}
+.catalog-category-view .filter-options-content{display:block!important;}
+.products-list-ext .product-item-name {
+    width: 320% !important;
+}
+.products-list-ext .product-item-description {
+    margin: 37px 0 0 0;
+    margin-left: 15px;
+}
+.filter-options-content{
+	display:block!important;
+}
+.block-bundle-summary {
+    top: 270px;
+    left: -151px;
+}
+.bundle-summary .subtitle {
+    margin-top: 37%!important;
+}
+.block-bundle-summary {
+    margin-top: 0%!important;
+}
+.catalog-product-view .block-bundle-summary {
+    width: 88.6%!important;
+}
+@media (max-width:768px){
+	.evoucher{
+		background-image: url(../images/evouchermobile.png);
+		display: block;
+		position: absolute;
+		left: 15px;
+		top: 68px;
+		height: 100%;
+		width: 100%;
+		background-repeat: no-repeat;
+		margin-left: -15px;
+		margin-top: 0px;
+		z-index: 10;
+	}
+	.mailout{
+	background-image: url(../images/mailoutmobile.png);
+		display: block;
+		position: absolute;
+		left: 15px;
+		top: 68px;
+		height: 100%;
+		width: 100%;
+		background-repeat: no-repeat;
+		margin-left: -15px;
+		margin-top: 0px;
+		z-index: 10;
+	}
+	#billingemail{margin-bottom: 15px;}
+	.products-list-ext .product-item-name {
+    width: 98% !important;
+	}
+	.price-box.price-final_price{
+    width: 170px;
+	}
+	.base .price-container .price-wrapper .price{font-size:14px;}
+	.page-product-grouped .box-tocart .fieldset .actions .action.primary.tocart {
+     margin: 0 0 0 0;
+	}
+	.product-info-main .special-price .price-label + .price-wrapper{font-size:14px;}
+	.price-container.price-final_price{font-size:14px;}
+	.checkout-onepage-success a.action.primary{padding:8px;}
+		.bagDrop{display:none;}
+
+}
+input[name="deliveryemail"] {
+    width: 100%!important;
+    border-radius: 5px;
+}
+.helpdesk-ticket-index .hdmx__tickets .action.primary {
+    margin-top: -65px;
+}
+.helpdesk-ticket-view .hdmx__ticket-summary tr:nth-child(2) {
+    display: none;
+}
+.helpdesk-ticket-view .hdmx__ticket-summary tr:nth-child(3) {
+    display: none;
+}
+.helpdesk-ticket-index .department {
+    display: none;
+}
+
+
+.checkout-onepage-success .continue-toolbar .primary.continuebtn {
+    float: left;
+    margin-left: 0;
+    margin-right: 15px;
+}		
+@media (max-width: 768px){
+	.allbt {
+		margin: 0 0 0 0!important;
+	}
+}
+	
+ .products-list-ext .product-item-details {
+    padding-left: 30px !important;
+}
+.product.description.product-item-description ul > li {
+    margin-bottom: 0px!important;
+}
+.block-title.filter-title strong{display:none;}
+.checkout-cart-index .actions-toolbar .primary{
+	float:left!important;
+}
+.toolbar.toolbar-products{
+    margin-left: -27px;
+}
+
+
+/*****************HBF**************/

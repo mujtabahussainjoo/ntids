@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">sales_order_view_helpdesk_tickets_grid.sales_order_view_helpdesk_tickets_grid_data_source</item>
+            <item name="deps" xsi:type="string">sales_order_view_helpdesk_tickets_grid.sales_order_view_helpdesk_tickets_grid_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">sales_order_helpdesk_tickets_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add_ticket" xsi:type="string">Mirasvit\Helpdesk\Block\Adminhtml\Ticket\View\Order\AddTicketButton</item>
+        </item>
+    </argument>
+    <dataSource name="sales_order_view_helpdesk_tickets_grid_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">MirasvitTicketGridDataProvider</argument>
+            <argument name="name" xsi:type="string">sales_order_view_helpdesk_tickets_grid_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">ticket_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">ticket_id</item>
+                    </item>
+                    <item name="filter_url_params" xsi:type="array">
+                        <item name="order_id" xsi:type="string">*</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <exportButton name="export_button"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters">
+            <filterSelect name="store_id">
+                <argument name="optionsProvider" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Magento\Store\Ui\Component\Listing\Column\Store\Options</argument>
+                </argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">ns = ${ $.ns }, componentType = column, index = ${ $.index }:visible</item>
+                        </item>
+                        <item name="caption" xsi:type="string" translate="true">All Store Views</item>
+                        <item name="dataScope" xsi:type="string">store_id</item>
+                        <item name="label" xsi:type="string" translate="true">Purchased From</item>
+                    </item>
+                </argument>
+            </filterSelect>
+        </filters>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="sales_order_helpdesk_tickets_columns">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="childDefaults" xsi:type="array">
+                    <item name="fieldAction" xsi:type="array">
+                        <item name="provider" xsi:type="string">sales_order_view_helpdesk_tickets_grid.sales_order_view_helpdesk_tickets_grid.sales_order_helpdesk_tickets_columns.actions</item>
+                        <item name="target" xsi:type="string">applyAction</item>
+                        <item name="params" xsi:type="array">
+                            <item name="0" xsi:type="string">view</item>
+                            <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                        </item>
+                    </item>
+                </item>
+            </item>
+        </argument>
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">ticket_id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="code">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </column>
+        <column name="subject">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Subject</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </column>
+        <column name="customer_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Customer Name</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </column>
+        <column name="last_reply_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Last Replier</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+        </column>
+        <column name="user_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Component\Listing\Columns\UserOptions</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">User</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </column>
+        <column name="department_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Model\ResourceModel\Department\Collection</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Department</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="status_id" class="Mirasvit\Helpdesk\Ui\Component\Listing\Columns\StatusColumn">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                    <item name="fieldClass" xsi:type="string">hdmx__status</item>
+                </item>
+            </argument>
+        </column>
+        <column name="priority_id" class="Mirasvit\Helpdesk\Ui\Component\Listing\Columns\PriorityColumn">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Priority</item>
+                    <item name="sortOrder" xsi:type="number">71</item>
+                    <item name="fieldClass" xsi:type="string">hdmx__priority</item>
+                </item>
+            </argument>
+        </column>
+        <column name="folder">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Mirasvit\Helpdesk\Ui\Component\Listing\Columns\FolderOptions</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="editor" xsi:type="string">select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Folder</item>
+                    <item name="sortOrder" xsi:type="number">95</item>
+                    <item name="default" xsi:type="string">1</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="store_id" class="Magento\Store\Ui\Component\Listing\Column\Store">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Store View</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="reply_cnt">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Replies #</item>
+                    <item name="sortOrder" xsi:type="number">110</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="mailing_date" class="Mirasvit\Helpdesk\Ui\Component\Listing\Columns\FriendlyDateAt">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Mail was sent</item>
+                    <item name="sortOrder" xsi:type="number">115</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="created_at" class="Mirasvit\Helpdesk\Ui\Component\Listing\Columns\FriendlyDateAt">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Created</item>
+                    <item name="sortOrder" xsi:type="number">120</item>
+                </item>
+            </argument>
+        </column>
+        <column name="updated_at" class="Mirasvit\Helpdesk\Ui\Component\Listing\Columns\FriendlyDateAt">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Modified</item>
+                    <item name="sortOrder" xsi:type="number">130</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="last_reply_at" class="Mirasvit\Helpdesk\Ui\Component\Listing\Columns\FriendlyDateAt">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Last Reply At</item>
+                    <item name="sortOrder" xsi:type="number">140</item>
+                </item>
+            </argument>
+        </column>
+        <column name="status_sort_order">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Status Sort Order</item>
+                    <item name="sortOrder" xsi:type="number">150</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                </item>
+            </argument>
+        </column>
+        <actionsColumn name="actions" class="Mirasvit\Helpdesk\Ui\Component\Listing\Columns\TicketActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">ticket_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

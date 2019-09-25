@@ -1,0 +1,806 @@
+<div class="container container-header1"style="margin-left: -30px;">
+    <header role="banner">
+        <a href="<?php echo $block->getStoreUrl(); ?>" title="RACV Ticket Portal" class="logo">
+            <img src="<?php echo $this->getStoreLogoUrl(); ?>" alt="RACV Ticket Portal">
+        </a>
+        <div class="quick-access">
+            <div class="clearfix">
+                <ul class="header-info">
+                    <li class="customer-memberno"><?php echo $this->getMemberNo() ?></li>
+                    <li class="customer-name"><?php echo $this->getCustomerName() ?></li>
+                    <li class="shop-name"><?php echo $this->getShopName() ?></li>
+                    <li><a href="#" class="popup-pastorders">Past All Orders</a></li>
+                    <li><a href="#" class="popup-past-shoporders">Past Shop Orders</a></li>
+                    <li><a href="#" class="popup-customer-pastorders">Agent Past Orders</a></li>
+                    <li><a href="#" class="popup-customer-lastorders">Agent Last Order</a></li>
+                    <li><a href="<?php echo $block->getStoreUrl()."racvportal/report/index/"; ?>" class="salereport">Sales Report</a></li>
+                    <li><a href="<?php echo $this->getLogoutUrl() ?>">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>
+<?php
+$categories = $block->getStoreCategories();
+$image = 'category_page_grid';
+//$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_helper = $this->getHelpOut();
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+?>
+
+<!---------------mamincontent----->
+<div class="container container-main">
+    <div class="layout layout-2-cols">
+        <div role="main">
+            <div class="std">
+                <div class="portal-category-container">
+                    <?php foreach ($categories as $category):
+                        $categoryData = $block->getCategoryData($category->getEntityId());
+                        //$categoryData['entity_id']; $categoryData['name']; $categoryData['image'];
+                        $categoryId = $categoryData['entity_id'];
+                        ?>
+                        <?php
+                        $categories = [$categoryId];
+                        //$productObj = $objectManager->create('\Magento\Catalog\Model\ResourceModel\Product\CollectionFactory')->create();
+                        $productObj = $this->getProductCollFactory()->create();
+                        $productObj->addAttributeToSelect('*');
+                        $productObj->addCategoriesFilter(['in' => $categories]);
+                        //echo $productObj->getSelect();
+                        ?>
+                        <div class="category-container" id="category-598">
+                            <div  class="part1">
+                                <div class="category-products">
+                                    <div class="category-header">
+                                        <?php if(isset($categoryData['image'])): ?>
+                                            <img src=<?php echo $this->getDefaultBaseUrl()."/pub/media/catalog/category/".$categoryData['image']?> class="category-logo">
+                                        <?php endif; ?>
+                                    </div>
+                                    <ul class="products-list">
+                                        <?php foreach($productObj as $_product){
+                                            $productImage = $block->getImage($_product, $image);
+                                            ?>
+
+                                            <li class="item">
+                                                <div>
+                                                    <div class="product-image popup-info productdata-popup-img">
+                                                        <?= $productImage->toHtml() ?>
+                                                    </div>
+
+                                                    <div class="product-shop">
+                                                        <h2 class="product-name">
+                                                            <?php
+                                                            $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                                                            ?>
+                                                            <div class="productdata-popup" productid="<?php echo $_product->getId()?>">
+                                                                <?= /* @escapeNotVerified */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+                                                            </div>
+                                                        </h2>
+
+                                                        <div class="price-box">
+                                                            <p class="old-price">
+                                                                <span class="price-label">Regular Price:</span>
+                                                                <span class="price" id="old-price-706">$
+                                                                <?php echo number_format($_product->getPrice(),2);?>
+
+                                                            </span>
+                                                            </p>
+                                                            <?php if($_product->getFinalPrice() < $_product->getPrice()){ ?>
+                                                                <p class="special-price">
+                                                                    <span class="price-label">Member Price</span>
+                                                                    <span class="price" id="product-price-706">$
+                                                                    <?php echo number_format($_product->getFinalPrice(),2);?>
+                                                                </span>
+                                                                </p>
+                                                            <?php } ?>
+                                                        </div>
+
+                                                        <div class="input-group">
+                                                           <span class="input-group-btn">
+                                                              <button type="button" sku="<?php echo $_product->getSku() ?>" class="btn btn-default btn-number btn-sm  btn-sm btn-number-min <?php echo $_product->getSku().'-minus';?>">
+                                                                  <span class="glyphicon glyphicon-minus"></span>
+                                                              </button>
+                                                            </span>
+                                                            <input type="text" name="qty" class="qty form-control input-number input-sm <?php echo $_product->getSku().'-qty';?>" value="1" min="1" max="99" maxlength="2">
+                                                            <span class="input-group-btn">
+                                                              <button type="button" sku="<?php echo $_product->getSku() ?>" class="btn btn-default btn-number btn-sm btn-sm btn-number-plus <?php echo $_product->getSku().'-plus';?>">
+                                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+
+                                                        <button type="button" title="Add to Cart" productid="<?php echo $_product->getId();?>" sku="<?php echo $_product->getSku()?>"class="button btn-cart" id="addcart"
+                                                                productname = "<?php echo $_product->getName()?>">
+                                                            <span><span>Add to Cart</span></span>
+                                                        </button>
+
+                                                        <div class="desc std">
+                                                            <?php echo $_product->getShortDescription();?>
+                                                        </div>
+
+                                                    </div>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach;?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aside role="complementary">
+        <div class="block block-cart">
+        </div>
+        <div class="block block-buttons">
+            <div class="block-content">
+                <button  type="button" title="Get Tickets" class="button btn-gettickets btn-gettickets-color" id="gettickets">
+                    <span><span>Secure <br />Tickets</span></span>
+                </button>
+                <button  type="button" title="Confirm Order" class="button btn-confirmorder" id="confirmorder">
+                    <span><span>Confirm & <br />Print Tickets</span></span>
+                </button>
+                <button  type="button" title="Cancel Order" class="button btn-cancelorder" id="cancelorder">
+                    <span><span>Cancel<br />Order</span></span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+
+    <div class="modal" id="popup">
+        <span class="closee">X</span>
+        <div class="html-content">
+            <div class="loader">
+                <img class="cart-ajax-loader" src="<?php echo $this->getViewFileUrl('Serole_Racvportal::images/loader.gif');?>" alt="Loading....." style="position: absolute" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ticketmodal" id="ticketpopup">
+        <div class="loader-content" style="height: 35%!important;">
+            <div class="loaders">
+                <img class="cart-ajax-loader" src="<?php echo $this->getViewFileUrl('Serole_Racvportal::images/loader.gif');?>" alt="Loading....." style="position: absolute;top: 5%!important;" />
+				<div class="msg" style="margin: 20% 0px 0px 5%;">
+					<h3>Sit tight we are securing your tickets...</h3>
+					<p>Please don't close your browser. Your wait time is less than 1 minute.</p>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="<?php echo $this->getViewFileUrl('Serole_Racvportal::css/bootstrap.min.css');?>">
+    <script type="application/javascript">
+        require(['jquery', 'jquery/ui','popupjs'], function($){
+
+            var addhtml = "<div class='loader'>";
+            addhtml += "<img class='cart-ajax-loader' src='<?php echo $this->getViewFileUrl('Serole_Racvportal::images/loader.gif');?>' alt='Loading.....' style='position: absolute;top: 5%!important;' />";
+            addhtml += "<div class='msg' style='margin: 20% 0px 0px 5%;'><h3>Sit tight we are securing your tickets...</h3><p>Please don't close your browser. Your wait time is less than 1 minute.</p></div>";
+            addhtml += "</div>";
+
+            jQuery('.modal').css('display','none');
+
+            jQuery('.btn-number-min').click(function () {
+                var type = 'min';
+                var inputClass = $(this).attr('sku')+"-qty";
+                qtyUpdate(type,inputClass);
+            });
+
+            jQuery('.btn-number-plus').click(function () {
+                var type = 'plus';
+                var inputClass = $(this).attr('sku')+"-qty";
+                qtyUpdate(type,inputClass);
+            });
+
+            function qtyUpdate(type,inputClass){
+                var qtyValue = parseInt($('.'+inputClass).attr('value'));
+                if(type == 'min'){
+					if(qtyValue == 1)
+						$('.'+inputClass).attr('value',1);
+					else{
+                        var updateQtyValue = Number(qtyValue) - 1;
+                        $('.'+inputClass).attr('value',updateQtyValue);
+					}
+                    
+                }else{
+                    var updateQtyValue = Number(qtyValue) + 1; 
+                    $('.'+inputClass).attr('value',updateQtyValue);
+                }
+            }
+            var productId = '';
+            var productSku = '';
+            var qty = '';
+            var addtocart = 0;
+            var productName = '';
+
+            ajaxrequest(productSku,productId,qty,addtocart,productName,popSuccessMessage='no',popErrorMessage='yes');
+            headerInfo();
+
+            function headerInfo(){
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/headerinfo'; ?>',
+                    type : 'POST',
+                    data : {},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        if (data['customersession'] == 'yes'){
+                            console.log(data);
+                            /* if(data['html']){
+                                 jQuery('.quick-access').html(data['html']);
+                             }*/
+                            if(data['memberno']){
+                                jQuery('.header-info .customer-memberno').text(data['memberno']);
+                            }
+                            if(data['customername']){
+                                //console.log("inside condition");
+                                jQuery('.header-info .customer-name').text(data['customername']);
+                            }
+                            if(data['shopname']){
+                                jQuery('.header-info .shop-name').text(data['shopname']);
+                            }
+                        }else{
+                            $.notify({message: "Please Login"},{type: 'danger'});
+                        }
+                    },
+                    error : function(request,error){
+                        console.log(error);
+                        $.notify({message: "Something went wrong "+error},{type: 'danger'});
+                    }
+                });
+            }
+
+            /*Product adding to cart*/
+            jQuery('.btn-cart').click(function(){
+                    jQuery('.btn-gettickets').removeClass('deactive-gettickets');
+                    jQuery('.btn-gettickets').removeAttr('disabled')
+                    var productSku = $(this).attr('sku');
+                    var productId = $(this).attr('productid');
+                    var qty = $('.'+productSku+'-qty').attr('value');
+                    var addtocart = 1;
+                    productName = $(this).attr('productname');
+                    if(qty > 0){
+                        $.notify({message: 'Updating...'}, {type: 'loading'});
+                        ajaxrequest(productSku, productId, qty, addtocart, productName, popSuccessMessage = 'yes', popErrorMessage = 'yes');
+                    }else{
+                        $.notify({message: "Quantity shold be more than zero"},{type: 'danger'});
+                    }
+            });
+
+            /*Create Order*/
+            //jQuery('.btn-gettickets').click(function () {
+            jQuery(document).on("click", ".btn-gettickets",function() {
+				jQuery('.qty').val(1);
+                jQuery('.ticketmodal').removeAttr('id');
+                jQuery('.msg').css('display','block !important');
+                jQuery('.ticketmodal').css('display','block !important');
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/createorder'; ?>',
+                    type : 'POST',
+                    data : {},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        //console.log(data);
+                        jQuery('.ticketmodal').attr('id','ticketpopup');
+                        if (data['customersession'] == 'yes'){
+                            if (data["status"] == 'sucess') {
+                                jQuery('.btn-gettickets').removeAttr('id');
+                                jQuery('#tickerpopup').css('display','none')
+                                jQuery('.block-cart').html(data["html"]);
+                                jQuery('.btn-gettickets').attr("disabled", "disabled");
+                                jQuery('.btn-gettickets').addClass('deactive-gettickets');
+
+                                jQuery('.btn-confirmorder').removeAttr("disabled");
+                                jQuery('.btn-confirmorder').addClass("active-confirmorder");
+
+                                jQuery('.btn-cancelorder').removeAttr("disabled");
+                                jQuery('.btn-cancelorder').addClass("active-cancelorder");
+
+                                if (data["orderid"]) {
+                                    $.notify({message: 'Tickets are confirmed'},{type: 'success'});
+                                    jQuery('.btn-cart').attr("disabled", "disabled");
+                                    //jQuery('.item-delete').attr("disabled", "disabled");
+                                    jQuery('.btn-confirmorder').attr("orderid", data["orderid"]);
+                                    jQuery('.item-delete').css('display','none');
+                                } else {
+                                    $.notify({message: 'Order Id not assigned some thing went wrong'},{type: 'danger'});
+                                    jQuery('.btn-confirmorder').attr("disabled", "disabled");
+                                }
+                            }else if (data["status"] == 'error') {
+                                //console.log(data['outofstock']);
+                                if(data['outofstock'] == 1){
+                                    $.notify({message: "Product is out of stock "+data['message']},{type: 'danger'});
+                                }else{
+                                    $.notify({message: "Something went wrong --"+data['message']},{type: 'danger'});
+                                }
+                            }
+                        }else{
+                            $.notify({message: "Please Login"},{type: 'danger'});
+                            location.reload();
+                        }
+                    },
+                    error : function(request,error){
+                        console.log(error);
+                        $.notify({message: "Something went wrong "+error},{type: 'danger'});
+                    }
+                });
+            });
+
+            /*Invoice Create*/
+            //jQuery('.btn-confirmorder').click(function () {
+            jQuery(document).on("click", ".btn-confirmorder",function() {
+                jQuery('.ticketmodal').removeAttr('id');
+                //jQuery('.msg').hide();
+                jQuery('.ticketmodal').css('display','block !important');
+                var orderId = jQuery('.btn-confirmorder').attr('orderid');
+                var popuphtml = "<div class='loader-content-cross'>X</div>";
+                popuphtml += "<div class='order-data'>";
+                popuphtml += "<h3 style='margin-top: 20%;text-align: center;'>Order Confirmed <br/>Your Order id is: <span style='color:#0a0a86;'>"+orderId+"</span></h3>";
+                //popuphtml += "<button class='button-pdf-download'>Download eVoucher</button>";
+                //popuphtml += "<div class='pdf-button'><a class='button-pdf-download'>Download eVoucher</a></div>";
+                popuphtml += "</div>";
+
+                if(orderId) {
+                    $.ajax({
+                        url: '<?php echo $this->getBaseUrl() . 'racvportal/cart/confirmorder'; ?>',
+                        type: 'POST',
+                        data: {orderId:orderId},
+                        dataType: 'json',
+                        async: true,
+                        success: function (data) {
+                            //jQuery('.ticketmodal').attr('id','ticketpopup');
+                            if(data['customersession'] == 'yes') {
+                                if (data["status"] == 'sucess') {
+                                    //jQuery('.ticketmodal').attr('id','ticketpopup');
+                                    $.notify({message: "Order "+data['orderid']+" is Confirmed"},{type: 'success'});
+                                    console.log(data);
+                                    var url = data['url'];
+                                    if(data['filestatus']== 'yes'){
+                                        popuphtml += "<div class='pdf-button'><a href="+url+" class='button-pdf-download'>Download eVoucher</a></div>";
+                                        console.log(popuphtml);
+                                    }
+                                    jQuery('.block-cart').html(data["html"]);
+                                    jQuery('.loader-content').html(popuphtml);
+
+                                    jQuery('.btn-confirmorder').attr("disabled", "disabled");
+                                    jQuery('.btn-confirmorder').removeAttr("orderid");
+                                    jQuery('.btn-cart').removeAttr("disabled");
+                                    jQuery('.item-delete').removeAttr("disabled");
+                                    jQuery('.btn-cancelorder').attr("disabled", "disabled");
+                                    jQuery('.btn-cancelorder').removeClass('active-cancelorder');
+
+                                    jQuery('.btn-confirmorder').removeClass("active-confirmorder");
+                                    jQuery('.btn-confirmorder').removeClass("active-cancelorder");
+                                }else{
+                                    $.notify({message: "Order is not confirmed, something went wrong"},{type: 'danger'});
+                                }
+                            }else{
+                                $.notify({message: "Please Login"},{type: 'danger'});
+                                location.reload();
+                            }
+                        },
+                        error: function (request, error) {
+                            $.notify({message: "Please Login"},{type: 'danger'});
+                            location.reload();
+                        }
+                    });
+                }else{
+                    $.notify({message: "Order Id is't assigned, Please contact customer care"},{type: 'danger'});
+                    location.reload();
+                }
+            });
+
+            jQuery(document).on("click", ".loader-content-cross",function() {
+                jQuery('.ticketmodal').attr('id','ticketpopup');
+                jQuery('.loader-content').html(addhtml);
+            });           
+
+            //jQuery('.btn-cancelorder').click(function () {
+            jQuery(document).on("click", ".btn-cancelorder",function() {
+                jQuery('.ticketmodal').removeAttr('id');
+                jQuery('.ticketmodal').css('display','block !important');
+                var orderId = jQuery('.btn-confirmorder').attr('orderid');
+
+                var popuphtml = "<div class='loader-content-cross'>X</div>";
+                popuphtml += "<div class='order-data'>";
+                popuphtml += "<h3 style='margin-top: 10%;text-align: center;'>Your Order<span style='color:#0a0a86;'></span> is cancelled</h3>";
+                popuphtml += "</div>";
+
+                if(orderId) {
+                    $.ajax({
+                        url: '<?php echo $this->getBaseUrl() . 'racvportal/cart/cancelorder'; ?>',
+                        type: 'POST',
+                        data: {orderId:orderId},
+                        dataType: 'json',
+                        async: true,
+                        success: function (data) {
+                            //console.log(data);
+                            //jQuery('.ticketmodal').attr('id','ticketpopup');
+                            if(data['status'] == 'sucess') {
+                                if (data["customersession"] == 'yes') {
+                                    //jQuery('.ticketmodal').attr('id','ticketpopup');
+                                    $.notify({message: orderId+" Order Cancled"},{type: 'success'});
+                                    jQuery('.loader-content').html(popuphtml);
+
+                                    jQuery('.block-cart').html(data["html"]);
+                                    jQuery('.btn-confirmorder').attr("disabled", "disabled");
+                                    jQuery('.btn-confirmorder').removeAttr("orderid");
+                                    jQuery('.btn-cart').removeAttr("disabled");
+                                    jQuery('.item-delete').removeAttr("disabled");
+                                    jQuery('.btn-cancelorder').attr("disabled", "disabled");
+                                    jQuery('.btn-confirmorder').removeClass("active-confirmorder");
+                                    jQuery('.btn-cancelorder').removeClass("active-cancelorder");
+                                }else{
+                                    //console.log(data);
+                                    $.notify({message: "Please Login"},{type: 'danger'});
+                                    //location.reload();
+                                }
+                            }else{
+                                $.notify({message: "Something Went wrong"},{type: 'danger'});
+                            }
+                        },
+                        error: function (request, error) {
+                            $.notify({message: "Something went wrong"},{type: 'danger'});
+                        }
+                    });
+                }else{
+                    $.notify({message: "Order id not assigned, Please contact customer care"},{type: 'danger'});
+                    location.reload();
+                }
+            });
+
+
+            /*Delete cart Item*/
+            jQuery(document).on("click", ".item-delete",function() {
+                //jQuery('.item-delete').on('click',function () {
+                $.notify({message: "Updating....."},{type: 'loading'});
+                var itemId = $(this).attr('itemid');
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/delete';?>',
+                    type : 'POST',
+                    data : {itemId:itemId},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        if(data['customersession'] == 'yes') {
+                            if (data["status"] == 'sucess') {
+                                $.notify({message: "Item Deleted"},{type: 'success'});
+                                jQuery('.block-cart').html(data["html"]);
+                            } else if (data["status"] == 'error') {
+                                $.notify({message: "Something went wrong"},{type: 'danger'});
+                            }
+                            var checkQty = jQuery('.block-title').attr('cartitems');
+                            if(checkQty == 'yes'){
+                                jQuery('.btn-gettickets').attr('id','gettickets');
+                            }else{
+                                jQuery('.btn-gettickets').removeAttr('id');
+                            }
+                        }else{
+                            if(data['status'] = 'error'){
+                                $.notify({message: data['message']}, {type: 'danger'});
+                            }else{
+                                $.notify({message: "Please Login"}, {type: 'danger'});
+                                location.reload();
+                            }
+                        }
+
+                    },
+                    error : function(request,error){
+                        $.notify({message: "Something went wrong"},{type: 'danger'});
+                    }
+                });
+
+            });
+
+
+            function ajaxrequest(productSku,productId,qty,addtocart,productName,popSuccessMessage,popErrorMessage){				
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/ajax'; ?>',
+                    type : 'POST',
+                    data : {sku:productSku,productId:productId,qty:qty,addtocart:addtocart},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        //console.log(data);
+                        if(data['customersession'] == 'yes') {
+                            if (data["status"] == 'sucess') {
+                                if (data['productadded'] = 'yes') {
+                                    if(popSuccessMessage == 'yes') {
+                                        $.notify({message: productName+" product Added to cart"},{type: 'success'});
+                                        jQuery('.btn-gettickets').attr('id','gettickets');
+                                    }else {
+                                        jQuery('.block-buttons').html(data['buttonhtml']);
+                                    }
+
+                                    jQuery('.block-cart').html(data["html"]);
+                                    if(data['cartitems']){
+                                        jQuery('.btn-gettickets').removeAttr('disabled')
+                                    }
+                                    var checkQty = jQuery('.block-title').attr('cartitems');
+                                    if(checkQty == 'yes'){
+                                        jQuery('.btn-gettickets').attr('id','gettickets');
+                                    }else{
+                                        jQuery('.btn-gettickets').attr('disabled','disabled');
+                                        if(!data['isOrderPending']) {
+                                            console.log("Order pending"+data['isOrderPending']);
+                                            jQuery('.btn-confirmorder').attr('disabled', 'disabled');
+                                            jQuery('.btn-cancelorder').attr('disabled', 'disabled');
+                                        }else{
+                                            jQuery('.btn-cart').attr('disabled', 'disabled');
+											jQuery('.item-delete').css('display','none');
+                                        }
+
+                                        jQuery('.btn-gettickets').removeAttr('id');
+                                    }
+                                }
+                            } else if(data["status"] == 'error') {
+                                if(data['outofstock'] == 1){
+                                    $.notify({message: "Product is out of stock"},{type: 'danger'});
+                                }else{
+                                    $.notify({message: "Something went wrong"},{type: 'danger'});
+                                }
+                            }
+                        }else {
+                            if(data['status'] = 'error'){
+                                $.notify({message: data['message']}, {type: 'danger'});
+                            }else{
+                                $.notify({message: "Please Login"}, {type: 'danger'});
+                                location.reload();
+                            }
+                        }
+
+                    },
+                    error : function(request,error){
+                        $.notify({message: "Something went wrong"},{type: 'danger'});
+                    }
+                });
+            }
+
+            jQuery('.productdata-popup-img .product-image-wrapper').on('click','img',function(){
+                var productid = $(this).attr('productid');
+                if(productid){
+                    $.ajax({
+                        url  : '<?php echo $this->getBaseUrl().'racvportal/cart/productdata'; ?>',
+                        type : 'POST',
+                        data : {productid:productid},
+                        dataType:'json',
+                        async:true,
+                        success : function(data) {
+                            //console.log(data);
+                            if(data['customersession'] == 'yes') {
+                                if (data["status"] == 'sucess') {
+                                    jQuery('.modal .html-content').html(data["html"]);
+                                    jQuery('.modal').css('display','block')
+                                }
+                            }else {
+                                if(data['status'] = 'error'){
+                                    $.notify({message: data['message']}, {type: 'danger'});
+                                }else{
+                                    $.notify({message: "Please Login"}, {type: 'danger'});
+                                    location.reload();
+                                }
+                            }
+
+                        },
+                        error : function(request,error){
+                            $.notify({message: "Something went wrong"},{type: 'danger'});
+                        }
+                    });
+                }
+            });
+
+            jQuery('.productdata-popup').click(function () {
+                var productid = $(this).attr('productid');
+                if(productid){
+                    $.ajax({
+                        url  : '<?php echo $this->getBaseUrl().'racvportal/cart/productdata'; ?>',
+                        type : 'POST',
+                        data : {productid:productid},
+                        dataType:'json',
+                        async:true,
+                        success : function(data) {
+                            //console.log(data);
+                            if(data['customersession'] == 'yes') {
+                                if (data["status"] == 'sucess') {
+                                    jQuery('.modal .html-content').html(data["html"]);
+                                    jQuery('.modal').css('display','block')
+                                }
+                            }else {
+                                if(data['status'] = 'error'){
+                                    $.notify({message: data['message']}, {type: 'danger'});
+                                }else{
+                                    $.notify({message: "Please Login"}, {type: 'danger'});
+                                    location.reload();
+                                }
+                            }
+
+                        },
+                        error : function(request,error){
+                            $.notify({message: "Something went wrong"},{type: 'danger'});
+                        }
+                    });
+                }
+            });
+
+            jQuery('.productdata-popup-img.product-image-photo').click(function () {
+                //alert("hii");
+                var productid = $(this).attr('productid');
+                if(productid){
+                    $.ajax({
+                        url  : '<?php echo $this->getBaseUrl().'racvportal/cart/productdata'; ?>',
+                        type : 'POST',
+                        data : {productid:productid},
+                        dataType:'json',
+                        async:true,
+                        success : function(data) {
+                            //console.log(data);
+                            if(data['customersession'] == 'yes') {
+                                if (data["status"] == 'sucess') {
+                                    jQuery('.modal .html-content').html(data["html"]);
+                                    jQuery('.modal').css('display','block')
+
+                                    jQuery().html()
+                                }
+                            }else {
+                                if(data['status'] = 'error'){
+                                    $.notify({message: data['message']}, {type: 'danger'});
+                                }else{
+                                    $.notify({message: "Please Login"}, {type: 'danger'});
+                                    location.reload();
+                                }
+                            }
+
+                        },
+                        error : function(request,error){
+                            $.notify({message: "Something went wrong"},{type: 'danger'});
+                        }
+                    });
+                }
+            });
+
+            /*All Past orders*/
+            jQuery('.popup-pastorders').click(function () {
+                jQuery('.modal').css('display','block');
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                    type : 'POST',
+                    data : {customer:"no",shop:"no",order:"all"},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        //console.log(data);
+                        if(data['customersession'] == 'yes') {
+                            if (data["status"] == 'sucess') {
+                                jQuery('.modal .html-content').html(data["html"]);
+                                /*jQuery('.modal').css('display','block')*/
+                            }
+                        }else {
+                            if(data['status'] = 'error'){
+                                $.notify({message: data['message']}, {type: 'danger'});
+                            }else{
+                                $.notify({message: "Please Login"}, {type: 'danger'});
+                                location.reload();
+                            }
+                        }
+
+                    },
+                    error : function(data,request,error){
+                        //console.log(data);
+                        //console.log(request);
+                        //console.log(error);
+                        $.notify({message: "Something went wrong"},{type: 'danger'});
+                    }
+                });
+            });
+
+            /*past Shop order*/
+            jQuery('.popup-past-shoporders').click(function () {
+                jQuery('.modal').css('display','block');
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                    type : 'POST',
+                    data : {customer:"no",shop:"yes",order:"all"},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        //console.log(data);
+                        if(data['customersession'] == 'yes') {
+                            if (data["status"] == 'sucess') {
+                                jQuery('.modal .html-content').html(data["html"]);
+                                jQuery('.modal').css('display','block')
+                            }
+                        }else {
+                            if(data['status'] = 'error'){
+                                $.notify({message: data['message']}, {type: 'danger'});
+                            }else{
+                                $.notify({message: "Please Login"}, {type: 'danger'});
+                                location.reload();
+                            }
+                        }
+
+                    },
+                    error : function(request,error){
+                        console.log(error);
+                        $.notify({message: "Something went wrong"},{type: 'danger'});
+                    }
+                });
+            });
+
+            /*Customer All past orders*/
+            jQuery('.popup-customer-pastorders').click(function () {
+                jQuery('.modal').css('display','block');
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                    type : 'POST',
+                    data : {customer:"yes",shop:"no",order:"all"},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        //console.log(data);
+                        if(data['customersession'] == 'yes') {
+                            if (data["status"] == 'sucess') {
+                                jQuery('.modal .html-content').html(data["html"]);
+                                jQuery('.modal').css('display','block')
+                            }
+                        }else {
+                            if(data['status'] = 'error'){
+                                $.notify({message: data['message']}, {type: 'danger'});
+                            }else{
+                                $.notify({message: "Please Login"}, {type: 'danger'});
+                                location.reload();
+                            }
+                        }
+
+                    },
+                    error : function(request,error){
+                        console.log(error);
+                        $.notify({message: "Something went wrong"},{type: 'danger'});
+                    }
+                });
+            });
+
+
+            /*Customer Last order*/
+            jQuery('.popup-customer-lastorders').click(function () {
+                jQuery('.modal').css('display','block');
+                $.ajax({
+                    url  : '<?php echo $this->getBaseUrl().'racvportal/cart/pastorders'; ?>',
+                    type : 'POST',
+                    data : {customer:"yes",shop:"no",order:"no"},
+                    dataType:'json',
+                    async:true,
+                    success : function(data) {
+                        //console.log(data);
+                        if(data['customersession'] == 'yes') {
+                            if (data["status"] == 'sucess') {
+                                jQuery('.modal .html-content').html(data["html"]);
+                                jQuery('.modal').css('display','block')
+                            }
+                        }else {
+                            if(data['status'] = 'error'){
+                                $.notify({message: data['message']}, {type: 'danger'});
+                            }else{
+                                $.notify({message: "Please Login"}, {type: 'danger'});
+                                location.reload();
+                            }
+                        }
+
+                    },
+                    error : function(request,error){
+                        console.log(error);
+                        $.notify({message: "Something went wrong"},{type: 'danger'});
+                    }
+                });
+            });
+
+
+            jQuery('.modal .closee').click(function () {
+                jQuery('.modal').css('display','none')
+                jQuery('.modal .html-content').html(addhtml);
+            });
+        });
+    </script>
+

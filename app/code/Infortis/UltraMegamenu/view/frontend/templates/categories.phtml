@@ -1,0 +1,132 @@
+<?php
+/**
+ * Sidebar menu
+ *
+ * @var Infortis\UltraMegamenu\Block\Navigation $block
+ */
+?>
+<?php
+    $helper = $block->getHelperData();
+    $html = '';
+
+    //Is mega menu type enabled for the sidebar menu
+    $isMegamenu = $block->getData('is_megamenu'); //getIsMegamenu();
+    if ($isMegamenu === NULL) //Param not set
+    {
+        $isMegamenu = $helper->getCfg('sidemenu/is_megamenu');
+    }
+
+    $menuId = '';
+    if ($isMegamenu)
+    {
+        //Render mega menu
+        $html = $block->renderCategoriesMenuHtml(FALSE, 0, 'level-top');
+
+        //Should this sidebar menu be marked as the main menu
+        if ($helper->isSidebarMenuMainMenu($block->getData('is_main')))
+        {
+            $menuId = 'mainmenu2'; //Add special identifier
+        }
+    }
+    else //Sidebar menu as simple accordion
+    {
+        //Get starting category - a point where traverse begins
+        $categoryId = $block->getData('parent'); //$block->getParent();
+        if ($categoryId === NULL) //Param not set
+        {
+            $categoryId = $helper->getCfg('sidemenu/parent');
+        }
+
+        //Get depth of recursion - how many levels of subcategories retrieve
+        $depth = $block->getData('depth'); //$block->getDepth();
+        if ($depth === NULL) //Param not set
+        {
+            $depth = intval($helper->getCfg('sidemenu/depth'));
+        }
+        else
+        {
+            $depth = intval($depth);
+        }
+
+        //Render simple accordion
+        $html = $block->renderMe(true, $categoryId, $depth);
+    }
+
+    if (!$html)
+    {
+        return '';
+    }
+
+    //Sidebar block title
+    $title = $block->renderBlockTitle();
+
+    //Optionally hide the block
+    $visibilityClass = $helper->getCfg('sidemenu/hide_on_mobile') ? ' hide-below-768' : '';
+
+    //if the sidebar menu was marked as the main menu, the block needs to be hidden on mobile
+    if (!empty($menuId))
+    {
+        $visibilityClass .= ' hide-when-mobile-header';
+    }
+?>
+<div class="block block-vertnav clearfix<?php echo $visibilityClass; ?>">
+    <?php if ($title): ?>
+        <div class="block-title">
+            <strong><span><?php echo $title; ?></span></strong>
+        </div>
+    <?php endif; ?>
+    <div class="block-content">
+        <?php if ($isMegamenu): ?>
+            <?php if (!empty($menuId)): ?>
+                <div id="nav-marker-regular2"></div>
+            <?php endif; ?>
+            <?php //By default add vertical menu class ?>
+            <nav<?php if (!empty($menuId)) echo " id=\"{$menuId}\""; ?> class="navi navi-sidebarmenu nav-regular nav-vert opt-fx-fade-inout <?php echo $helper->getBlocksVisibilityClassOnMobile(); ?>">
+                <ul>
+                    <?php echo $html; ?>
+                </ul>
+            </nav>
+        <?php else: //Display simple accordion instead of mega menu ?>
+            <ul class="uaccordion uaccordion-style1 sideacco">
+                <?php echo $html; ?>
+            </ul>
+        <?php endif; ?>
+    </div>
+</div>
+<?php if ($isMegamenu): ?>
+<script type="text/javascript">
+//<![CDATA[
+
+    requirejs(['jquery', 'ultramegamenu'], function(jQuery, ultramegamenu) {
+
+        //TODO: tmp workaround
+        var sidebarMenuOutermostContainer = jQuery('#maincontent > .columns');
+        
+        // var sidebarMenuOutermostContainer = jQuery('#page-columns');
+        // if (sidebarMenuOutermostContainer.length === 0)
+        // {
+        //     sidebarMenuOutermostContainer = jQuery('#maincontent > .columns');
+        // }
+
+        var sidebarMenuSettings = {
+            mode: 0
+            , mobileMenuThreshold: <?php echo intval($helper->getCfg('mobilemenu/threshold')); ?>
+            , isVerticalLayout: true
+            , initVerticalMenuCollapsed: <?php echo ($helper->getCfg('mainmenu/vertnav_collapsed')) ? 'true' : 'false'; ?>
+            , outermostContainer: sidebarMenuOutermostContainer
+        };
+
+        <?php if (!empty($menuId)): ?>
+            <?php echo "var sidebarMenuContainer = jQuery('#{$menuId}');"; ?>
+        <?php else: ?>
+            var sidebarMenuContainer = jQuery('.navi-sidebarmenu');
+        <?php endif; ?>
+
+        var theSidebarMenu = sidebarMenuContainer.ultramegamenu(sidebarMenuSettings).data("infortis-ultramegamenu");
+        theSidebarMenu.enableDropdowns();
+
+    }); //end: requirejs
+
+//]]>
+</script>
+<?php endif; ?>

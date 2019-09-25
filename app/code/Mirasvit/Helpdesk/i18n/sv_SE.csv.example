@@ -1,0 +1,136 @@
+Department,Avdelning
+"Create New Ticket","Skapa ny biljett"
+Status,Status
+Priority,Prioritet
+Replies,Svar
+View,Se
+"Help Desk",Kundtjänst
+"Thank you",Tack
+"Create Ticket","Skapa biljett"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","Din förfrågan har skickats in. Du borde få ett bekräftelsemeddelande inom kort."
+Telephone,Telefon
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","Din förfrågan har skickats in och kommer att besvaras så snart som möjligt. Tack för att du kontaktar oss."
+"Unable to submit your request. Please, try again later","Det gick inte att skicka din förfrågan. Snälla, försök igen senare"
+"Page not found.","Sidan hittas inte."
+"Your message was successfuly posted","Ditt meddelande skickades till framgång"
+"Your ticket was successfuly posted","Din biljett var framgångsrik publicerad"
+"Ticket was successfuly closed","Biljetten lyckades stängas"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","Kan inte ladda upp fil %1. Max tillåten uppladdningsstorlek är %2 MB."
+"Allows only this file types: %1","Tillåter bara följande filtyper: %1"
+"Message added","Meddelandet lagts till"
+"Internal note added","Intern anteckning läggs till"
+"Third party message added","Tredje parts meddelande tillagt"
+"Private third party message added","Privatmeddelande från tredje part har lagts till"
+"-- Please Select --","-- Vänligen välj --"
+"Contact Tab","Kontakta fliken"
+"Contact Form",Kontaktformulär
+" at %1 (%2) - %3","vid %1 (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","Du har inte behörighet att läsa den här biljetten. Vänligen kontakta din administratör."
+"Invalid Customer Email","Ogiltig kund-e-postadress"
+"not set","inte inställd"
+"Unknown time","Okänd tid"
+ago,sedan
+"from now","från nu"
+"1 sec ago","1 sekund sedan"
+"Open Ticket","Öppna biljett"
+"Open Tickets","Öppna biljetter"
+"! Blocked file - ","! Blockerad fil -"
+Disabled,Inaktiverad
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW Helpdesk"
+"File System",Filsystem
+Database,Databas
+Aqua,Aqua
+Grey,Grå
+Navy,Marin
+Silver,Silver
+Black,Svart
+Green,Grön
+Olive,Oliv
+Teal,Kricka
+Blue,Blå
+Lime,Kalk
+Purple,Lila
+Fuchsia,Fuchsia
+Maroon,Rödbrun
+Red,Röd
+Orange,Orange
+Yellow,Gul
+Text,Text
+Date,Datum
+Checkbox,Kryss~~POS=TRUNC
+"Drop-down list",Listrutan
+"In minutes...","På några minuter ..."
+"In hours...","I timmar ..."
+"In days...","I dagar ..."
+"In weeks...","I veckor ..."
+"In months...","I månader ..."
+Custom,Beställnings
+"--Please Select--","--Vänligen välj--"
+"New ticket created","Ny biljett skapad"
+Success,Framgång
+Customer,Kund
+Staff,Personal
+"Third party","Tredje part"
+Closed,Stängd
+"Opened 24hr","Öppet 24 timmar"
+"Helpdesk Tickets",Helpdesk-biljetter
+"Cannot delete ticket with id %1","Kan inte radera biljett med id %1"
+Edit,Redigera
+"All Departments","Alla avdelningar"
+Back,Tillbaka
+"24 hrs x 7 days","24 timmar x 7 dagar"
+"Select working days/hours","Välj arbetsdagar / timmar"
+"Satisfaction survey",Nöjdhetsundersökning
+"to %1 (third party)","till %1 (tredje part)"
+"%1 (third party)","%1 (tredje part)"
+"added %1 (%2)","lagt till %1 (%2)"
+"Ticket Summary",Biljettöversikt
+"Ticket ID",Biljett-ID
+Assignee,Innehavare
+"Additional Info","Ytterligare info"
+"Ticket History",Biljetthistorik
+"Done by","Gjord av"
+Changes,Förändringar
+Name,Namn
+"Attach files","Bifoga filer"
+Submit,Lämna
+"Submit Ticket","Skicka biljett"
+"What is your question?","Vad är din fråga?"
+"We found the following topics that might be helpful:","Vi hittade följande ämnen som kan vara till hjälp:"
+"None of these are helpful - get in touch","Ingen av dessa är till hjälp - ta kontakt"
+"We have not found topics that can be helpful.","Vi har inte hittat ämnen som kan vara till hjälp."
+"Contact Information","Kontakt information"
+Comment,Kommentar
+"We are open 24 x 7","Vi är öppna 24 x 7"
+"We are closed","Vi har stängt"
+"Timezone: %1","Tidszon: %1"
+"Please take a second to rate my reply...","Vänligen ta en sekund för att betygsätta mitt svar ..."
+Great,Bra
+Awesome,"Grymt bra"
+"Fast, friendly, helpful, pleasant. Great job!","Snabb, vänlig, hjälpsam, trevlig. Bra jobbat!"
+"Just Okay","Bara okej"
+"Fine, but definitely could have been better.","Bra, men definitivt kunde ha varit bättre."
+"Not good","Inte bra"
+"Unfortunately, I wasn't happy with it at all.","Tyvärr var jag inte nöjd med det alls."
+"Thank you for participating in our survey!","Tack för att du deltog i vår enkät!"
+"If you would like to provide additional comments, please do so below:","Om du vill ge ytterligare kommentarer, gör så här nedan:"
+Message,Meddelande
+"Submit Message","Skicka meddelande"
+"Thank you for your feedback!","Tack för din feedback!"
+Attachments,Bilagor
+Order,Beställa
+"-- Select an Order --","- Välj en beställning -"
+"Create ticket","Skapa biljett"
+"You don't have open tickets","Du har inte öppna biljetter"
+"Post a Reply","Skicka ett svar"
+"Reopen Ticket","Återupptagna biljett"
+"Close Ticket","Stäng biljett"
+History,Historia
+"Back to My Tickets","Tillbaka till Mina biljetter"
+"Help Desk MX","Help Desk MX"
+"Contact Us","Kontakta oss"
+Open,Öppen
+Subject,Ämne
+"Last Activity","Sista aktiviteten"
+"Request ID",Förfrågnings-ID

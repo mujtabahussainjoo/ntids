@@ -1,0 +1,52 @@
+<?php
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+/** @var \MageWorx\ShippingRules\Block\Adminhtml\Store\Switcher\Form\Renderer\Fieldset $block */
+?>
+<?php
+/** @var \Magento\Framework\Data\Form\Element\Fieldset $element */
+$element = $block->getElement();
+$elementFieldContainerId = $element->getFieldsetContainerId();
+if ($elementFieldContainerId): ?>
+<div id="<?php echo $elementFieldContainerId ?>">
+    <?php endif; ?>
+    <?php if (!$element->getNoContainer()): ?>
+    <fieldset class="admin__fieldset fieldset <?php echo $element->getClass() ?>"
+              id="<?php echo $element->getHtmlId() ?>">
+        <?php endif; ?>
+        <?php $legend = $element->getLegend(); ?>
+        <?php if ($legend): ?>
+            <legend class="admin__legend legend">
+                <span><?php echo $legend ?></span>
+                <?php echo $block->getHintHtml() ?>
+            </legend><br/>
+            <?php echo $element->getHeaderBar() ?>
+        <?php else: ?>
+            <?php echo $block->getHintHtml() ?>
+        <?php endif; ?>
+        <div class="admin__fieldset tree-store-scope">
+            <?php $comment = $element->getComment(); ?>
+            <?php if ($comment): ?>
+                <p class="comment"><?php echo $block->escapeHtml($comment) ?></p>
+            <?php endif; ?>
+            <?php
+            if ($element->hasHtmlContent()):
+                echo $element->getHtmlContent();
+            else:
+                foreach ($element->getChildren() as $firstChild) {
+                    echo '<span class="' . $firstChild->getData('class') . ' store-switcher-container ">';
+                    echo $firstChild->getHtml();
+                    echo '</span>';
+                }
+            endif;
+            ?>
+        </div>
+        <?php echo $element->getSubFieldsetHtml() ?>
+        <?php if (!$element->getNoContainer()): ?>
+    </fieldset>
+<?php endif; ?>
+    <?php if ($elementFieldContainerId): ?>
+</div>
+<?php endif; ?>

@@ -1,0 +1,26 @@
+{
+  "name": "nwdthemes/revslider",
+  "type": "magento2-module",
+  "description": "Slider Revolution for Magento 2",
+  "keywords": ["Magento2", "Slider", "Revolution"],
+  "homepage": "https://nwdthemes.com/extensions/slider-revolution/",
+  "aaaminimum-stability": "dev",
+  "license": "AFL - Academic Free License (AFL 3.0)",
+  "authors": [
+    {
+      "name": "NWDthemes"
+    }
+  ],
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "magento/magento-composer-installer": "*"
+  },
+  "extra": {
+    "map": [
+      [
+        "*",
+        "Nwdthemes/Revslider"
+      ]
+    ]
+  }
+}

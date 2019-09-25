@@ -1,0 +1,33 @@
+<?php
+$helper                     = $block->getGroupSwitcherHelper();
+$isGroupEditable            = $helper->getConfigHelper()->isGroupSelectionEditable();
+$isValidCustomerForEdit     = $helper->isValidCustomerForEdit();
+?>
+<div class="field group_id<?php if ($block->isRequired()) echo ' required' ?>">
+    <label class="label" for="<?php /* @escapeNotVerified */ echo $block->getFieldId('group_id')?>">
+        <span><?php /* @escapeNotVerified */ echo $block->getGroupLabel() ?></span>
+    </label>
+    <div class="control">
+        <?php
+            if ( ($block->getIsEditPage() && ! $isGroupEditable)
+                 || ($block->getIsEditPage() && ! $isValidCustomerForEdit)
+            ) :
+        ?>
+            <?php
+            $customerId = $block->getObject()->getId();
+            $groupId    = $customerId ? $helper->loadCustomer($customerId)->getGroupId() : $block->getObject()->getGroupId();
+            echo $helper->getGroupCodeById($groupId);
+            ?>
+        <?php else : ?>
+
+        <select id="<?php /* @escapeNotVerified */ echo $block->getFieldId('group_id')?>" name="<?php /* @escapeNotVerified */ echo $block->getFieldName('group_id')?>" title="<?php /* @escapeNotVerified */ echo $block->getGroupLabel() ?>"<?php if ($block->isRequired()):?> class="validate-select" data-validate="{required:true}"<?php endif; ?> <?php /* @escapeNotVerified */ echo $block->getFieldParams() ?>>
+            <?php $options  = $block->getGroupSelectOptions(); ?>
+            <?php $value    = $block->getObject()->getGroupId(); ?>
+            <?php foreach ($options as $option):?>
+                <option value="<?php /* @escapeNotVerified */ echo $option['value'] ?>"<?php if ($option['value'] == $value) echo ' selected="selected"' ?>><?php /* @escapeNotVerified */ echo __($option['label']) ?></option>
+            <?php endforeach;?>
+        </select>
+
+        <?php endif ?>
+    </div>
+</div>

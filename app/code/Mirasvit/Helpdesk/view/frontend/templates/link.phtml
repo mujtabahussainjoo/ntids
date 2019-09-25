@@ -1,0 +1,28 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/* @var $block \Mirasvit\Helpdesk\Block\Link */
+?>
+<?php if ($block->isShow()): ?>
+    <li class="link helpdesk wishlist" data-bind="scope: 'helpdesk'">
+        <a <?= $block->getLinkAttributes() ?>><?= $block->escapeHtml($block->getLabel()) ?>
+            <!-- ko if: helpdesk().amount -->
+            <span data-bind="text: helpdesk().amount" class="counter amount"></span>
+            <!-- /ko -->
+        </a>
+    </li>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "helpdesk": {
+                            "component": "Mirasvit_Helpdesk/js/view/helpdesk",
+                            "requestUrl": "<?= $block->getAjaxUrl() ?>"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<?php endif;?>

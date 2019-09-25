@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <ultraslideshow>
+            <general>
+                <blocks>sample_slideshow_1</blocks>
+                <position2>1</position2> <!-- boxed -->
+                <position1>0</position1>
+                <hide>0</hide>
+                <margin_top/>
+                <margin_bottom/>
+                <effect/>
+                <timeout>10000</timeout>
+                <speed>200</speed>
+                <auto_speed>500</auto_speed>
+                <smooth_height>0</smooth_height>
+                <pause>1</pause>
+                <loop>1</loop>
+            </general>
+            <banners>
+                <banners>sample_slideshow_additional_banners_1</banners>
+                <position>right</position>
+                <gutter>1</gutter>
+                <hide>1</hide>
+            </banners>
+            <navigation>
+                <nav_buttons>1</nav_buttons>
+                <pagination>2</pagination>
+                <pagination_position>over-bottom-centered</pagination_position>
+            </navigation>
+        </ultraslideshow>
+    </default>
+</config>

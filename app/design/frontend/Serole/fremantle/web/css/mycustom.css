@@ -1,0 +1,191 @@
+
+/*****fermantla*/
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    /* line-height: 2; */
+    color: #333333;
+}	
+
+.header-container{ 
+	margin-left:0%;
+	width: 100%!important;
+}
+.page-title-wrapper h1{font-size: 25px!important;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;}
+.header-container2,.header-primary-container{ 
+	margin-bottom:-0.5%!important;
+}
+.header-container .right-column .dropdown-block {
+    margin-top: 0px!important;
+}
+.main-container {
+    /* background-color: #fff; */
+    margin-top: 20px!important;
+}
+
+.header .logo-wrapper .logo {
+
+    margin: 0px 4px 16px 9px;
+}
+.block-search .block.block-content {
+    padding: 0px 0px 31px 0px;
+}
+.footer-top-container{
+	background-color: #01759C;border-top: 3px solid #F4C31D;
+}
+.nav.container {
+    background-color: #f8f8f8!important;
+}
+.nav-container {
+	width: 100%;
+	float: left;
+	margin: 0 0 -1em 0;
+	padding: 0;
+	background-color:#F8F8F8!important; 
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);	
+}
+.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{   
+ background-color: #F2CC4F !important;  
+ background-image: linear-gradient(#F4C31D, #F2CC4F);
+    border-color: #F2CC4F #F2CC4F #BA9D3D;
+    color: white !important;}
+.primary .register-submit {   
+ background-color: #F2CC4F !important;   
+ background-image: linear-gradient(#F4C31D, #F2CC4F);
+    border-color: #F2CC4F #F2CC4F #BA9D3D;
+    color: white !important;}
+	
+	
+.account-nav .content {
+	background:transparent!important;
+    border-color: #01759C!important;
+    color: white!important;
+	padding: 10px 15px;
+    border: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+
+}
+.account-nav .item {
+    border-bottom: 1px solid #dddddd;
+    margin: -1px 0 0;
+}
+a.action,a.edit{
+	color:#01759C!important;
+}
+
+@media (min-width: 768px){
+	.header-top .dropdown-block .dropdown-heading{line-height: 28px!important;}
+	.logo-wrapper {
+		margin-top: -12%!important;
+	}
+	.new-user,#block-customer-login-heading h4{
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+		font-size: 22px !important;
+		font-weight: 500!important;
+	}
+	.filter-options-content {
+		background-color: #ffffff !important;
+		border-color: #01759C !important;
+		margin-left: 5px !important;
+	}
+	.header-top .links > li > * {
+		line-height: 30px;
+	}	
+	.nav-item a:hover{color:#333!important;}
+	.btn-rgtr-cust {
+		margin-left: 66%;
+		margin-top: 14% !important;
+	}
+	.filter-options-title {
+		color: #fff;
+		padding: 10px 0px 10px 20px;
+		border-bottom: 1px solid transparent;
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+		border-color: #01759C!important;
+		background-color: #01759C!important;
+	}
+	
+	.create.account .legend,.create.info .legend{
+		font-weight: normal;
+		font-size: 20px;
+		color: #000;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	.password .label,.confirmation-label{
+		font-weight: 700;
+		color: #000;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	.nav-container {
+		border-top: 3px solid #F4C31D;
+		line-height:3.3;
+	}
+	
+	
+}
+
+.product-item-name > a, .product.name a > a {
+	color:#01759c!important;
+    text-decoration: none;
+}
+.products-list .product-name{
+	font-family: inherit!important;
+    font-weight: 500!important;
+}
+.product-view .action.primary, .action.primary.checkout{
+	background-color: #F2CC4F !important;
+	background-image: none;
+	border-color: #F2CC4F #F2CC4F #BA9D3D;    border-radius: 7px !important;
+    box-shadow: none;
+    color: #fff !important;
+    cursor: pointer;
+    font-family: "StagSemiBold",Arial,Helvetica,"Lucinda Grande";
+    font-size: 14px;
+    font-weight: normal;
+    height: auto;
+    letter-spacing: 0.072em;
+    line-height: 15px;
+    padding: 10px 15px;
+    pointer-events: auto;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: 70%!important;}
+.products-list-ext .product-item-actions .action.primary{background-color: #F2CC4F !important;
+    background-image: none;
+	border-color: #F2CC4F #F2CC4F #BA9D3D;    border-radius: 7px !important;
+    box-shadow: none;
+    color: #fff !important;
+    cursor: pointer;
+    font-family: "StagSemiBold",Arial,Helvetica,"Lucinda Grande";
+    font-size: 14px;
+    font-weight: normal;
+    height: auto;
+    letter-spacing: 0.072em;
+    line-height: 15px;
+    padding: 10px 15px;
+    pointer-events: auto;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: 70%!important;}
+	
+.pages .current .page{
+    background-color: #01759C!important;
+    color: #ffff!important;
+}
+.pages .page{
+	background-color: #ffff!important;
+    color: #01759C!important;
+    border: 1px solid #ddd!important;
+}
+.catalog-category-view .products-list-ext .product-item-img {
+	padding: 0 0 0 0!important;
+}
+.catalog-category-view .products-list-ext .item {
+	padding-bottom: 0px!important;
+}

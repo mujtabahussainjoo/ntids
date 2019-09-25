@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="helpdesk_department_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Department\Grid\Collection</item>
+                <item name="helpdesk_field_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Field\Grid\Collection</item>
+                <item name="helpdesk_gateway_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Gateway\Grid\Collection</item>
+                <item name="helpdesk_pattern_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Pattern\Grid\Collection</item>
+                <item name="helpdesk_permission_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Permission\Grid\Collection</item>
+                <item name="helpdesk_priority_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Priority\Grid\Collection</item>
+                <item name="helpdesk_rule_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Rule\Grid\Collection</item>
+                <item name="helpdesk_satisfaction_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Satisfaction\Grid\Collection</item>
+                <item name="helpdesk_schedule_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Schedule\Grid\Collection</item>
+                <item name="helpdesk_status_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Status\Grid\Collection</item>
+                <item name="helpdesk_template_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Template\Grid\Collection</item>
+                <item name="helpdesk_ticket_listing_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Ticket\Grid\Collection</item>
+                <item name="sales_order_view_helpdesk_tickets_grid_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Ticket\Grid\Collection</item>
+                <item name="customer_order_view_helpdesk_tickets_grid_data_source" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Ticket\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Mirasvit\Helpdesk\Model\ResourceModel\Ticket\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mst_helpdesk_ticket</argument>
+            <argument name="eventPrefix" xsi:type="string">helpdesk_ticket_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">ticket_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Mirasvit\Helpdesk\Model\ResourceModel\Ticket</argument>
+        </arguments>
+    </type>
+    <virtualType name="HelpdeskGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MirasvitTicketGridDataProvider" type="Mirasvit\Helpdesk\Ui\Component\DataProvider\TicketGridDataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Ticket\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="DepartmentGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Department\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="FieldGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Field\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="GatewayGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Gateway\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="PatternGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Pattern\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="PermissionGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Permission\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="PriorityGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Priority\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RuleGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Rule\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SatisfactionGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Status\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ScheduleGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Schedule\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="StatusGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Status\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="TemplateGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mirasvit\Helpdesk\Model\ResourceModel\Template\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HelpdeskGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="AdminTicketEditTabs" type="Mirasvit\Helpdesk\Block\Adminhtml\Ticket\Edit\Tabs"/>
+    <virtualType name="AdminTicketEditTab" type="Mirasvit\Helpdesk\Block\Adminhtml\Ticket\Edit"/>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="HelpdeskCommand" xsi:type="object">Mirasvit\Helpdesk\Console\Command\HelpdeskCommand</item>
+                <item name="HelpdeskGatewayCommand" xsi:type="object">Mirasvit\Helpdesk\Console\Command\HelpdeskGatewayCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magecomp\Recaptcha\Block\Recaptcha">
+        <plugin name="HelpdeskContactFormPlugin" type="Mirasvit\Helpdesk\Plugin\ContactForm" sortOrder="10"/>
+    </type>
+
+    <!--REPOSITORY-->
+    <preference for="Mirasvit\Helpdesk\Api\Repository\Ticket\FolderRepositoryInterface"
+                type="Mirasvit\Helpdesk\Repository\Ticket\FolderRepository" />
+    <preference for="Mirasvit\Helpdesk\Api\Repository\TicketRepositoryInterface"
+                type="Mirasvit\Helpdesk\Repository\TicketRepository" />
+    <preference for="Mirasvit\Helpdesk\Api\Data\TicketSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+
+    <!--SERVICE-->
+    <preference for="Mirasvit\Helpdesk\Api\Service\Order\OrderManagementInterface"
+                type="Mirasvit\Helpdesk\Service\Order\OrderManagement" />
+    <preference for="Mirasvit\Helpdesk\Api\Service\Customer\CustomerManagementInterface"
+                type="Mirasvit\Helpdesk\Service\Customer\CustomerManagement" />
+    <preference for="Mirasvit\Helpdesk\Api\Service\Ticket\TicketManagementInterface"
+                type="Mirasvit\Helpdesk\Service\Ticket\TicketManagement" />
+
+    <type name="Mirasvit\Report\Api\Repository\ReportRepositoryInterface">
+        <arguments>
+            <argument name="reports" xsi:type="array">
+                <item name="helpdesk_overview" xsi:type="string">Mirasvit\Helpdesk\Reports\Overview</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--LOGGER-->
+    <type name="Mirasvit\Helpdesk\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Mirasvit\Helpdesk\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">MirasvitHelpdeskLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Mirasvit\Helpdesk\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Mirasvit\Helpdesk\Logger\FatalHandler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Mirasvit\Helpdesk\Logger\FatalLogger">
+        <arguments>
+            <argument name="name" xsi:type="string">MirasvitHelpdeskFatalLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Mirasvit\Helpdesk\Logger\FatalHandler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Magento\Contact\Block\ContactForm" type="Mirasvit\Helpdesk\Block\Contact\Form" />
+</config>

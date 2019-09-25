@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magedelight
+* Copyright (C) 2017 Magedelight <info@magedelight.com>
+*
+* @category Magedelight
+* @package Magedelight_MembershipSubscription
+* @copyright Copyright (c) 2017 Mage Delight (http://www.magedelight.com/)
+* @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+* @author Magedelight <info@magedelight.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider">
+        <plugin name="membership_duration" type="Magedelight\MembershipSubscription\Plugin\Model\Product\Form\ProductDataProvider" sortOrder="-1"/>
+    </type>
+    <type name="Magento\Customer\Model\Customer\DataProvider">
+        <plugin name="customerattribute" type="Magedelight\MembershipSubscription\Plugin\Model\Customer\CustomerDataProvider" sortOrder="-1"/>
+    </type>
+    
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="modulename" xsi:type="array">
+                    <item name="class" xsi:type="string">Magedelight\MembershipSubscription\Ui\DataProvider\Product\Modifier\MembershipTab</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+     <type name="Magedelight\MembershipSubscription\Ui\DataProvider\Product\Modifier\MembershipTab">
+        <arguments>
+            <argument name="formName" xsi:type="string">product_form</argument>
+            <argument name="dataScopeName" xsi:type="string">product_form.product_form</argument>
+            <argument name="dataSourceName" xsi:type="string">product_form.product_form_data_source</argument>
+        </arguments>
+    </type>
+</config>
+
+
+

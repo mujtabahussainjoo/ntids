@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="member_list" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Member List Configuration</label>
+            <tab>customer</tab>
+            <resource>Serole_MemberList::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+				<field id="ml_yesno" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="ml_member_no_required" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Member Number Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="ml_member_no_validate" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Member Number Validation Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="ml_memberno_title" translate="label" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Member Number Title</label>
+                </field>
+				<field id="ml_first_name_required" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is First Name validation Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="ml_last_name_required" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Last Name validation Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="ml_email_required" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Email Domain validation Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="ml_email_format" translate="label" type="textarea" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Required Email Domain</label>
+					<comment><![CDATA["," separated email id domain(e.g guild.curtin.edu.au).]]></comment>
+                </field>
+				
+				
+				<!--<field id="ml_sample_file" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sample CSV file</label>
+				</field>-->
+            </group>
+        </section>
+    </system>
+</config>

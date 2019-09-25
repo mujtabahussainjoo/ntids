@@ -1,0 +1,8 @@
+.show-load-icon {
+    width: 16px;
+    height: 16px;
+    background: #fff url(MageWorx_GeoIP::images/sm-ajax-loader.gif) no-repeat;
+    display: inline-block;
+}
+
+

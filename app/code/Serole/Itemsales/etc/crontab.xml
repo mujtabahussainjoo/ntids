@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="serole"> <!-- Doesn't need to be unique -->
+        <job name="itemsales_sendmonthlyemail" instance="Serole\Itemsales\Cron\SendMonthyReport" method="execute">
+            <schedule>0 0 0 4 *</schedule>
+        </job>
+    </group>
+</config>

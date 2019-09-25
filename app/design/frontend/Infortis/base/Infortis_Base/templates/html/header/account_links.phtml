@@ -1,0 +1,21 @@
+<?php
+    $theme = $this->helper('Infortis\Base\Helper\Data');
+    $accountLinksHtml = '';
+
+    //Default Magento Top Links
+    if ($theme->getCfg('header/top_links'))
+    {
+        $accountLinksHtml .= $block->getChildHtml('top.links');
+    }
+
+    //Additional custom links
+    if ($tmpHtml = $block->getChildHtml('block_header_top_links'))
+    {
+        $accountLinksHtml .= $tmpHtml;
+    }
+?>
+<?php if ($accountLinksHtml): ?>
+    <div id="header-account" class="account-links top-links links-wrapper-separators-left skip-content skip-content--style">
+        <?php echo $accountLinksHtml; ?>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_AdminActionsLog
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="amaudit_successful_log_mailing_template" label="Send audit log to the configured email" file="amaudit_successful_log_mailing_template.html" type="html" module="Amasty_AdminActionsLog" area="adminhtml"/>
+    <template id="amaudit_unsuccessful_log_mailing_template" label="Send unsuccessful audit log to the configured email" file="amaudit_unsuccessful_log_mailing_template.html" type="html" module="Amasty_AdminActionsLog" area="adminhtml"/>
+    <template id="amaudit_suspicious_log_mailing_template" label="Send suspicious audit log to the configured email" file="amaudit_suspicious_log_mailing_template.html" type="html" module="Amasty_AdminActionsLog" area="adminhtml"/>
+</config>

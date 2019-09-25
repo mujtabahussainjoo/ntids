@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="\Amasty\Rolepermissions\Api\Data\RuleInterface" type="\Amasty\Rolepermissions\Model\Rule"/>
+    <type name="Magento\Backend\Block\Store\Switcher">
+        <plugin name="Amasty_Rolepermissions::Store_Switcher" type="Amasty\Rolepermissions\Plugin\Block\Adminhtml\Store\Switcher" />
+    </type>
+    <type name="Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Websites">
+        <plugin name="Amasty_Rolepermissions::Websites_Tab" type="Amasty\Rolepermissions\Plugin\Tab\Websites" />
+    </type>
+    <type name="Magento\Store\Model\System\Store">
+        <plugin name="Amasty_Rolepermissions::System_Store" type="Amasty\Rolepermissions\Plugin\System\Store" />
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Collection">
+        <plugin name="Amasty_Rolepermissions::Product_Collection" type="Amasty\Rolepermissions\Plugin\Product\Collection" />
+    </type>
+    <preference for="Magento\Catalog\Block\Adminhtml\Category\Tree" type="Amasty\Rolepermissions\Rewrite\Category\Tree" />
+    <type name="Magento\Ui\Component\MassAction">
+        <plugin name="Amasty_Rolepermissions::MassAction" type="Amasty\Rolepermissions\Plugin\Ui\MassAction" />
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <plugin name="Amasty_Rolepermissions::Ui_Data_Provider" type="Amasty\Rolepermissions\Plugin\Ui\DataProvider" sortOrder="9999"/>
+    </type>
+
+    <virtualType name="RoleRuleAssociatedEntityMap" type="Magento\Framework\DataObject">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="products" xsi:type="array">
+                    <item name="column" xsi:type="string">product_id</item>
+                    <item name="table" xsi:type="string">amasty_amrolepermissions_rule_product</item>
+                    <item name="modeValue" xsi:type="const">\Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Products::MODE_SELECTED</item>
+                    <item name="modeColumn" xsi:type="string">product_access_mode</item>
+                </item>
+                <item name="categories" xsi:type="array">
+                    <item name="column" xsi:type="string">category_id</item>
+                    <item name="table" xsi:type="string">amasty_amrolepermissions_rule_category</item>
+                    <item name="modeValue" xsi:type="const">\Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Categories::MODE_SELECTED</item>
+                    <item name="modeColumn" xsi:type="string">category_access_mode</item>
+                </item>
+                <item name="scope_websites" xsi:type="array">
+                    <item name="column" xsi:type="string">website_id</item>
+                    <item name="table" xsi:type="string">amasty_amrolepermissions_rule_website</item>
+                    <item name="modeValue" xsi:type="const">\Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Scope::MODE_SITE</item>
+                    <item name="modeColumn" xsi:type="string">scope_access_mode</item>
+                </item>
+                <item name="scope_storeviews" xsi:type="array">
+                    <item name="column" xsi:type="string">storeview_id</item>
+                    <item name="table" xsi:type="string">amasty_amrolepermissions_rule_storeview</item>
+                    <item name="modeValue" xsi:type="const">\Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Scope::MODE_VIEW</item>
+                    <item name="modeColumn" xsi:type="string">scope_access_mode</item>
+                </item>
+                <item name="attributes" xsi:type="array">
+                    <item name="column" xsi:type="string">attribute_id</item>
+                    <item name="table" xsi:type="string">amasty_amrolepermissions_rule_attribute</item>
+                    <item name="modeValue" xsi:type="const">\Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Attributes::MODE_SELECTED</item>
+                    <item name="modeColumn" xsi:type="string">attribute_access_mode</item>
+                </item>
+                <item name="roles" xsi:type="array">
+                    <item name="column" xsi:type="string">role_id</item>
+                    <item name="table" xsi:type="string">amasty_amrolepermissions_rule_role</item>
+                    <item name="modeValue" xsi:type="const">\Amasty\Rolepermissions\Block\Adminhtml\Role\Tab\Roles::MODE_SELECTED</item>
+                    <item name="modeColumn" xsi:type="string">role_access_mode</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Amasty\Rolepermissions\Model\ResourceModel\Rule">
+        <arguments>
+            <argument name="associatedEntityMap" xsi:type="object">RoleRuleAssociatedEntityMap</argument>
+        </arguments>
+    </type>
+</config>

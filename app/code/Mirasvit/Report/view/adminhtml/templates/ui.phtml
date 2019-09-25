@@ -1,0 +1,44 @@
+<div id="root">
+    <div class="spinner">
+        <i></i>
+    </div>
+</div>
+
+<style>
+    .spinner {
+        position: fixed;
+        left: calc(50% - 5rem);
+        top: calc(50% - 5rem);
+    }
+
+    .spinner i {
+        width: 3rem;
+        height: 3rem;
+        display: block;
+        border: 3px solid #FFCC01;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1.1s infinite linear;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<?php if (file_exists(dirname(__FILE__) . '/../web/ui/app.min.js')
+    || strpos($_SERVER['HTTP_HOST'], '.mirasvit.com') === false): ?>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="<?= $block->getViewFileUrl('Mirasvit_Report::ui/app.min.css') ?>"/>
+    <script src="<?= $block->getViewFileUrl('Mirasvit_Report::ui/vendor.min.js') ?>" async></script>
+    <script src="<?= $block->getViewFileUrl('Mirasvit_Report::ui/app.min.js') ?>" async></script>
+<?php else: ?>
+    <script src="http://localhost:3000/app.js" async></script>
+    <script src="http://localhost:3000/vendor.js" async></script>
+<?php endif ?>
+

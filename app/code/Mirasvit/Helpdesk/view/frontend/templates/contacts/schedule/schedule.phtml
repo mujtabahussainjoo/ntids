@@ -1,0 +1,28 @@
+<?php
+//@codingStandardsIgnoreFile
+/** @var \Mirasvit\Helpdesk\Block\Contacts\Schedule\Schedule $block */
+/** @var \Mirasvit\Helpdesk\Model\Schedule $schedule */
+$schedule = $block->getSchedule();
+?>
+
+<div class="hdmx__schedule-title"><?= $schedule->getName() ?></div>
+
+<?php if ($schedule->getType() == \Mirasvit\Helpdesk\Model\Config::SCHEDULE_TYPE_ALWAYS): ?>
+    <p><?= __("We are open 24 x 7") ?></p>
+<?php elseif ($schedule->getType() == \Mirasvit\Helpdesk\Model\Config::SCHEDULE_TYPE_CLOSED): ?>
+    <p><?= __("We are closed") ?></p>
+<?php else: ?>
+    <table>
+        <?php foreach ($schedule->getWorkingHours() as $day): ?>
+            <tbody>
+            <tr>
+                <td class="day"><?= $day->getWeekdayLocalized() ?></td>
+                <td>
+                    <?= $day->getWorkingTime() ?>
+                </td>
+            </tr>
+            </tbody>
+        <?php endforeach ?>
+    </table>
+    <small><?= __("Timezone: %1", $schedule->getTimezoneOffset()) ?></small>
+<?php endif ?>

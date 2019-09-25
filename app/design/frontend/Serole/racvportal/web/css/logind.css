@@ -1,0 +1,130 @@
+body {
+       padding-top: 90px!important;
+    background-color: #009BDE!important;
+}
+
+
+@media (min-width: 992px)
+.layout.layout-1-col div[role="main"] {
+    float: left;
+    width: 100%;
+}
+.main.container {
+    background-color: #009BDE!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+.main-container {
+    background-color: transparent!important;
+}
+.page-title-custom{
+	display:none!important;
+}
+.hdmx__contact-button {
+	display:none!important;
+}
+.logo{
+    display: block!important;
+    width: 200px!important;
+    height: 150px!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    background-position: center top!important;
+    background-repeat: no-repeat!important;
+    
+}
+.account-login {
+    width: 500px!important;
+    margin-left: 33%!important;
+    margin-right: 33%!important;
+}
+ .layout {
+    background-color: transparent;
+    color: white;
+}
+ul, ol {
+    margin-top: 0!important;
+    margin-bottom: 10px!important;
+}
+ul, ol {
+    margin: 0!important;
+    padding: 0!important;
+    list-style: none!important;
+}
+.input-text {
+    display: block!important;
+    width: 100%!important;
+    height: 34px!important;
+    padding: 0px 0px!important;
+    font-size: 14px!important;
+    line-height: 1.42857143!important;
+	    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	border: 1px solid #cccccc!important;
+	border-radius: 4px!important;
+}
+.form-list label.required em {
+    float: right!important;
+    font-style: normal!important;
+    color: #a94442!important;
+    position: absolute!important;
+    top: 0!important;
+    right: -8px!important;
+}
+p.required {
+    text-align: right!important;
+    color: #a94442!important;
+}
+p {
+    margin: 0 0 10px!important;
+}
+.form-list label {
+    position: relative!important;
+}
+.form-list li {
+    margin-bottom: 15px!important;
+}
+.buttons-set button.button {
+    margin-left: 10px;
+}
+.buttons-set button.button {
+    float: right;
+    
+}
+
+#send2 {
+   width: 0% !important;
+}
+button.login-button {
+	border-radius:5px;
+    border: 2px solid transparent;
+    padding: 10px 60px;
+    background-color: yellow !important;
+    background-image: none !important;
+    border-color: yellow;
+    color: #009BDE !important;
+}
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.account-login .content {
+    min-height: 242px;
+}
+ .form-list select {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}

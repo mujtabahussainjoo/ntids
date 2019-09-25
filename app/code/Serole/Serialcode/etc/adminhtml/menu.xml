@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!--<add id="Serole_Serialcode::manager" title="Serial Codes" module="Serole_Serialcode" sortOrder="12" resource="Serole_Serialcode::manager" />-->
+        <add id="Serole_Serialcode::serole_codegrid" title="Manage Serialcode Items" parent="Magento_Sales::sales" action="serial/codes/index"  module="Serole_Serialcode" sortOrder="12" resource="Serole_Serialcode::manager" />
+    </menu>
+</config>

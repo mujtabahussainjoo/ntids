@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+    <body>
+        <referenceContainer name="js">
+            <block class="MagePsycho\RedirectPro\Block\Adminhtml\System\Config\Form\Field\ManualContent"
+                   template="MagePsycho_RedirectPro::system/config/manual.phtml" />
+        </referenceContainer>
+    </body>
+</page>

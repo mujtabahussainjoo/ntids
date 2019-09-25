@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var \Infortis\Base\Block\Html\Header\Logo $block
+ */
+?>
+<?php
+	$logoSrc = $block->getStickyLogoSrc();
+?>
+<?php if ($logoSrc !== false): ?>
+	<li class="nav-item nav-item--stickylogo level0 level-top nav-holder">
+		<img
+			src="<?php /* @escapeNotVerified */ echo $logoSrc; ?>"
+			alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt(); ?>"
+		/>
+	</li>
+<?php endif; ?>

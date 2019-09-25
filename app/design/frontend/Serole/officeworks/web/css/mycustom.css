@@ -1,0 +1,57 @@
+/**********************************************office WORKS***************/
+@font-face {
+font-family:"OfficeworksBoldRegular";src:url("../fonts/officeworksbold.eot?#iefix") format("embedded-opentype"),url("../fonts/officeworksbold.svg#OfficeworksBoldRegular") format("svg"),url("../fonts/officeworksbold.woff") format("woff"),url("../fonts/officeworksbold.ttf") format("truetype");
+}
+@font-face {
+font-family:"OfficeworksBookRegular";
+src:url("../fonts/officeworksbook.eot?#iefix") format("embedded-opentype"),url("../fonts/officeworksbook.svg#OfficeworksBookRegular") format("svg"),url("../fonts/officeworksbook.woff") format("woff"),url("../fonts/officeworksbook.ttf") format("truetype");
+}
+@font-face {
+font-family:"OfficeworksDemiRegular";src:url("../fonts/officeworksdemi.eot?#iefix") format("embedded-opentype"),url("../fonts/officeworksdemi.svg#OfficeworksDemiRegular") format("svg"),url("../fonts/officeworksdemi.woff") format("woff"),url("../fonts/officeworksdemi.ttf") format("truetype");
+}
+@font-face {
+font-family:"OfficeworksMediumRegular";
+src:url("../fonts/officeworksmedium.eot?#iefix") format("embedded-opentype"), 
+	url("../fonts/officeworksmedium.svg#OfficeworksMediumRegular") format("svg"), 
+	url("../fonts/officeworksmedium.woff") format("woff"), 
+	url("../fonts/officeworksmedium.ttf") format("truetype");
+}
+.footer-top .inner-container {
+border-top-style: groove;
+}
+.header-container2,.header-primary-container{ 
+margin-bottom:0.5%;
+}
+.navi-wrapper,#mainmenu{
+	
+	border:none !important;
+	background-color: #005BAB;
+    margin-bottom: 10px;
+}
+.btn-rgtr-cust .primary .action,.btn-rgtr .primary .action{
+	 background: linear-gradient(to bottom, rgba(1,156,220,1) 0%,rgba(2,140,197,1) 100%);
+    border-color: #028CC5 !important;
+    color: white !important;
+}
+.primary .register-submit {
+		 background: linear-gradient(to bottom, rgba(1,156,220,1) 0%,rgba(2,140,197,1) 100%);
+    border-color: #028CC5 !important;
+    color: white !important;
+}
+
+.field-name-lastname .label,.field-name-lastname .label,.field-name-firstname .label,.confirmation-label,.password .label,.legend,.page-title .base,#block-customer-login-heading,#block-new-customer-heading,h1, h2, h3 {
+    font-family: OfficeworksBoldRegular,Arial!important;
+    font-weight: 400;
+}
+.page-title .base,h1, .h1 {
+    font-size: 25px;
+}
+@media (min-width: 768px){
+	body {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+		font-size: 14px!important;
+		line-height: 1.42857143;
+		color: #333333;
+	}
+	.header-top .dropdown-block .dropdown-heading{line-height: 28px!important;}
+}

@@ -1,0 +1,184 @@
+.competition-list{
+    margin: 0;
+    list-style: none;
+}
+.competition-list li.item{
+    margin-bottom: 30px;
+    position: relative;
+}
+.competition-list li.item .item-details h2.item-name{
+    margin: 0; color:#ff5501;
+}
+.competition-list li.item .competition-content .item-thumb{
+    float: left;
+}
+.competition-list li.item .competition-content .fix-content{
+    margin-left: 200px;
+}
+.competition-list li.item .competition-content:after{
+    clear: both;
+    content: '.';
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    display: block;
+}
+.competition-list li.item .competition-content{
+    padding-top: 13px;
+}
+.read-more .enter-btn{
+
+}
+.compet_date{
+    color:#000;
+}
+.competition-view:after{
+    clear: both;
+    content: '.';
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    display: block;
+}
+.competition-view .cimg-wrapper{
+    float: right;
+    width: 40%;
+}
+.competition-view .citem_details{
+    float: left;
+    width: 50%;
+}
+.competition-view .more-thumbs{
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+.competition-view .more-thumbs li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+    margin-right: 5px;
+    border: solid 1px #ccc;
+}
+.competition-view .more-thumbs:after{
+    clear: both;
+    content: '.';
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    display: block;
+}
+
+.competition-view .compet_form .button-actions{
+    padding-top: 20px;
+}
+ul.more-thumbs{
+    margin-top: 10px;
+}
+.terms-conditions-popup-link{
+    cursor: pointer;
+}
+.terms-conditions-popup-link:hover{
+    text-decoration: underline;
+}
+.terms-conditions-popup-wrapper{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+.terms-conditions-popup{
+    background: none repeat scroll 0 0 #fff;
+    -moz-box-shadow: 0 0 10px 5px;
+    -webkit-box-shadow: 0 0 10px 5px;
+    box-shadow: 0 0 10px 5px;
+    display: inline-block;
+    margin: 5% 0 0;
+    max-width: 70%;
+    max-height: 80%;
+    overflow: auto;
+    min-width: 300px;
+    padding: 20px;
+    text-align: left;
+}
+.competition-ended-layer{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.competition-ended-layer > h2 {
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+}
+.competition-ended-layer > span {
+    display: inline-block;
+    font-size: 18px;
+    width: 80%;
+}
+
+.disclaimer-popup{
+    position: fixed;
+    width: 600px;
+    background: #fff;
+    top:50%;
+    margin-top: -200px;
+    left:50%;
+    margin-left: -300px;
+    z-index: 99;
+
+}
+.disclaimer-popup-wrapper{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 98;
+    display: none;
+}
+.disclaimer-popup .content{
+    position: relative;
+}
+.disclaimer-popup .content a.close-disclaimer-icon{
+    position: absolute;
+    right:-32px;
+    top:-1px;
+    width: 32px;
+    height:32px;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #000;
+    color:#fff;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    z-index: 99;
+}
+.disclaimer-popup .content #terms-conditions-competition{
+    padding: 20px;
+    height: 400px;
+    overflow: auto;
+
+}
+#terms-conditions-popup-link,
+.competition-view .fieldset > .field > label.label[for="terms"]{ display: inline-block; vertical-align: top;}
+.competition-view .field.terms .control{
+    float: left;
+    display: inline-block;
+}

@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<?php
+/** @var $block \MageWorx\ShippingRules\Block\Zone\Selector */
+/** @var $helper \MageWorx\ShippingRules\Helper\Data */
+$helper = $this->helper('MageWorx\ShippingRules\Helper\Data');
+?>
+<div class="block shipping-zone-location-container"
+     data-bind="scope: 'location'"
+     data-role="location"
+     style="width: 30px; height: 30px;"
+>
+    <div class="loading-mask" data-role="location-loader" data-bind="visible: !zoneLabel" style="position:absolute;height:30px; width: 30px;">
+        <div class="loader">
+            <img alt="Loader" src="<?php echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                 style="position:static; height:30px; width: 30px;">
+        </div>
+    </div>
+    <a id="select-shipping-zone" class="action" data-bind="click: toggleModal, html: zoneLabel, visible: zoneLabel"
+       style="display:none;">
+    </a>
+</div>
+<script type="text/x-magento-init">
+{
+    "[data-role=location]": {
+        "Magento_Ui/js/core/app": <?php echo $block->getJsLayout(); ?>
+    }
+}
+
+
+</script>

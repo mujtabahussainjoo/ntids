@@ -1,0 +1,5 @@
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd">
+    <container name="root" label="Root">
+        <block class="Ibnab\OwlSlider\Block\Adminhtml\Banners\Grid" name="sliders.edit.tab.banners"/>
+    </container>
+</layout>

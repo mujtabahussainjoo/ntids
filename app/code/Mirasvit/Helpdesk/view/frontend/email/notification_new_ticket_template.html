@@ -1,0 +1,60 @@
+<!--@subject {{var ticket.getEmailSubject('New ticket created')}} @-->
+{{var preheader_text | raw}}
+
+{{template config_path="design/email/header_template"}}
+
+{{var hidden_separator|raw}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "Dear %name," name=$customer.name}}</p>
+            <p>{{trans "Thank you for contacting us!"}}</p>
+
+            <p>{{trans "This is an automated response confirming the receipt of your ticket. One of our agents will get
+                back to you
+                as soon as possible."}}</p>
+        </td>
+    </tr>
+    <tr class="email-summary">
+        <td>
+            <table class="ticket-details">
+                <tr>
+                    <th>{{trans "Ticket ID"}}</th>
+                    <td>{{var ticket.code}}</td>
+                </tr>
+                <tr>
+                    <th>{{trans "Subject"}}</th>
+                    <td>{{var ticket.subject}}</td>
+                </tr>
+                <tr>
+                    <th>{{trans "Department"}}</th>
+                    <td>{{var ticket.department}}</td>
+                </tr>
+                <tr>
+                    <th>{{trans "Status"}}</th>
+                    <td>{{var ticket.status}}</td>
+                </tr>
+                <tr>
+                    <th>{{trans "Priority"}}</th>
+                    <td>{{var ticket.priority}}</td>
+                </tr>
+                <tr>
+                    <th>{{trans "Details"}}</th>
+                    <td><p>{{var ticket.getLastMessageHtmlText()|raw}}</p></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr class="email-information">
+        <td>
+            <p>{{trans "You can check the status of reply to this ticket online at:"}}
+                <a href="{{var ticket.getExternalUrl() }}">{{var ticket.getExternalUrl() }}</a></p>
+        </td>
+    </tr>
+</table>
+
+{{var ticket.getHiddenCodeHtml()|raw}}
+
+{{template config_path="design/email/footer_template"}}

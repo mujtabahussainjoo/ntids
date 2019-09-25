@@ -1,0 +1,138 @@
+<?php
+$_competition = $block->getDetails();
+?>
+
+
+<div class="competition-view">
+    <div class="cimg-wrapper">
+        <?php if($_competition->getData('image')):?>
+        <div class="competition-image">
+            <a rel="lightbox" href="<?php echo $this->helper('PL\Competition\Helper\Resize')->imageResize($_competition->getImage(),600,600)?>" class="lightbox competition-image"><img alt="" src="<?php echo $this->helper('PL\Competition\Helper\Resize')->imageResize($_competition->getImage(),400,400)?>" width="400" height="400"></a>
+        </div>
+        <?php endif;?>
+        <?php $thumbs = $this->helper('PL\Competition\Helper\Data')->getThumbnailList($_competition); ?>
+        <?php if(count($thumbs) > 0):?>
+        <ul class="more-thumbs">
+            <?php for($i=0; $i < count($thumbs); $i++):?>
+            <li><a rel="lightbox" class="lightbox competition-thumb" href="<?php echo $this->helper('PL\Competition\Helper\Resize')->imageResize($thumbs[$i],600,600)?>"><img src="<?php echo $this->helper('PL\Competition\Helper\Resize')->imageResize($thumbs[$i],90,90)?>" width="90" height="90"></a></li>
+            <?php endfor;?>
+        </ul>
+        <?php endif;?>
+    </div>
+    <div class="citem_details">
+        <?php if($_competition->getLogo()!= ""): ?>
+        <div class="cimg_logo">
+            <img src="<?php echo $block->getImageUrl($_competition,'logo')?>" width="90" height="38">
+        </div>
+        <?php endif;?>
+        <div class="competition-title">
+            <h2 class="item-name"><?php echo $_competition->getTitle();?></h2>
+        </div>
+        <?php echo $_competition->getDescription();?>
+        <div class="compet_date">
+            <?php echo __("Start");?>: <?php echo date("M d, Y",strtotime($_competition->getDateFrom()));?>
+            <?php echo __("End");?>: <?php echo date("M d, Y",strtotime($_competition->getDateTo()));?>
+        </div>
+        <form data-mage-init='{"validation":{}}' class="form competition" action="<?php echo $block->getFormActionUrl()?>" id="competition-form" method="post">
+            <fieldset class="fieldset">
+                <legend class="legend"><span><?php echo __('Get the chance to become lucky ones') ?></span></legend><br />
+                <div class="field firstname required">
+                    <label class="label" for="firstname"><span><?php echo __('First Name') ?></span></label>
+                    <div class="control">
+                        <input name="firstname" id="firstname" title="<?php  echo __('First Name') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+                    </div>
+                </div>
+                <div class="field lastname required">
+                    <label class="label" for="lastname"><span><?php echo __('Last Name') ?></span></label>
+                    <div class="control">
+                        <input name="lastname" id="lastname" title="<?php  echo __('Last Name') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+                    </div>
+                </div>
+                <?php if($this->helper('PL\Competition\Helper\Data')->isDob()):?>
+                <div class="field dob required">
+                    <label class="label" for="dob"><span><?php echo __('Date of Birth') ?></span></label>
+                    <div class="control">
+                        <input name="dob" placeholder="dd/mm/yyyy" id="dob" title="<?php  echo __('Date of Birth') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+                    </div>
+                </div>
+                <?php endif;?>
+                <div class="field email required">
+                    <label class="label" for="email"><span><?php echo __('Email') ?></span></label>
+                    <div class="control">
+                        <input name="email" id="email" title="<?php  echo __('Email') ?>" value="" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+                    </div>
+                </div>
+                <div class="field comment required">
+                    <label class="label" for="comment"><span><?php echo __('How would you use') ?></span></label>
+                    <div class="control">
+                        <textarea onKeyDown ="limitText(this,document.getElementById('numleft'),255);" onKeyUp = "limitText(this,document.getElementById('numleft'),255);" name="comment" id="comment" title="<?php echo __('How would you use') ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+                        <div id="counter">You have <span id="numleft">255</span> chars left.</div>
+                    </div>
+                </div>
+                <?php if($this->helper('PL\Competition\Helper\Data')->isDisclaimer()):?>
+                <div class="field terms required">
+                    <label class="label" for="terms"><a href="javascript:void(0)" id="terms-conditions-popup-link">Accept Terms & Conditions</a></label>
+                    <div class="control">
+                        <input value="1" class="input-text" name="terms" id="terms" type="checkbox" data-validate="{required:true}"/>
+                    </div>
+                </div>
+                <?php endif;?>
+            </fieldset>
+
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" title="<?php  echo __('Submit') ?>" class="action submit primary">
+                        <span><?php  echo __('Submit') ?></span>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<?php if($this->helper('PL\Competition\Helper\Data')->isDisclaimer()):?>
+<div class="disclaimer-popup-wrapper">
+    <div class="disclaimer-popup">
+        <div class="content">
+            <a href="javascript:void(0)" class="close-disclaimer-icon">X</a>
+            <div id="terms-conditions-competition"> <?php echo $_competition->getData('disclaimer'); ?> </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        jQuery('document').ready(function($){
+            $('.close-disclaimer-icon').click(function(){
+                $('.disclaimer-popup-wrapper').hide();
+            });
+            $('#terms-conditions-popup-link').click(function(){
+                $('.disclaimer-popup-wrapper').show();
+            })
+        })
+
+
+    </script>
+<?php endif;?>
+
+<script type="text/javascript">
+    //<![CDATA[
+    function limitText(textElement, countElement, limit) {
+        if (textElement.value.length > limit) {
+            textElement.value = textElement.value.substring(0, limit);
+        } else {
+            countElement.innerHTML = limit - textElement.value.length;
+        }
+    }
+    //]]>
+</script>
+<script type="text/javascript">
+    jQuery('document').ready(function($){
+        $("a.lightbox").fancybox({
+            "overlayShow": true,
+            "transitionIn": "elastic",
+            "transitionOut": "elastic",
+            "overlayColor": "#000",
+            "overlayOpacity": "0.6"
+        });
+    })
+</script>
+

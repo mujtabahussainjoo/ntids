@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="mirasvit_helpdesk" instance="\Mirasvit\Helpdesk\Model\Cron" method="magentoCronRun">
+            <schedule>*/1 * * * *</schedule>
+        </job>
+        <job name="mirasvit_helpdesk2" instance="\Mirasvit\Helpdesk\Model\Cron" method="magentoCronEveryHourRun">
+            <schedule>10 * * * *</schedule>
+        </job>
+    </group>
+</config>

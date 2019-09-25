@@ -1,0 +1,38 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * Currency switcher
+ *
+ * @see \Magento\Directory\Block\Currency
+ */
+?>
+<?php if ($block->getCurrencyCount() > 1): ?>
+<?php
+    $currencies = $block->getCurrencies();
+    $currentCurrencyCode = $block->getCurrentCurrencyCode();
+    $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : '';
+
+    $helperHeader = $this->helper('Infortis\Base\Helper\Template\Theme\Html\Header');
+    $blockClasses = $helperHeader->getDropdownsClasses();
+?>
+<div class="dropdown-block<?php echo $blockClasses; ?> dropdown-block-trigger currency-switcher<?php if ($id) echo ' currency-switcher' . $id; ?>" id="switcher-currency<?php /* @escapeNotVerified */ echo $id?>">
+    <div class="dropdown-heading">
+        <span class="inner-heading language-<?php echo $block->escapeHtml($block->getCurrentCurrencyCode()) ?>">
+            <span class="label"><?php /* @escapeNotVerified */ echo __('Currency') ?></span>
+            <span class="label"><?php echo $block->escapeHtml($currentCurrencyCode) ?></span>
+            <span class="caret"></span>
+        </span>
+    </div>
+    <ul class="dropdown-content">
+        <?php foreach ($currencies as $_code => $_name): ?>
+            <?php if ($_code != $currentCurrencyCode): ?>
+                <li class="currency-<?php /* @escapeNotVerified */ echo $_code ?> switcher-option">
+                    <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getSwitchCurrencyPostData($_code); ?>'><?php /* @escapeNotVerified */ echo $_code ?> - <?php /* @escapeNotVerified */ echo $_name ?></a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

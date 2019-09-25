@@ -1,0 +1,136 @@
+Department,დეპარტამენტი
+"Create New Ticket","ახალი ბილეთის შექმნა"
+Status,სტატუსი
+Priority,პრიორიტეტი
+Replies,პასუხები
+View,ნახვა
+"Help Desk","დახმარება სამაგიდო"
+"Thank you",გმადლობთ
+"Create Ticket","ბილეთის შექმნა"
+"Your request was successfully submitted. You should receive a confirmation email shortly.","თქვენი მოთხოვნა წარმატებით იქნა წარმოდგენილი. თქვენ დაუყოვნებლივ მიიღებთ დადასტურებას ელ."
+Telephone,ტელეფონი
+"Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.","შეისწავლეთ თქვენი გამოძიება და მოხდება რაც შეიძლება მალე გამოეხმაუროთ. გმადლობთ, რომ დაგვიკავშირდით."
+"Unable to submit your request. Please, try again later","თქვენი მოთხოვნის წარდგენა შეუძლებელია. გთხოვთ სცადოთ მოგვიანებით"
+"Page not found.","გვერდი არ მოიძებნა."
+"Your message was successfuly posted","თქვენი წერილი წარმატებული გამოქვეყნდა"
+"Your ticket was successfuly posted","თქვენი ბილეთი წარმატებული იყო"
+"Ticket was successfuly closed","ბილეთი წარმატებული იყო დახურული"
+"Can't upload file %1 . Max allowed upload size is %2 MB.","ვერ ატვირთეთ ფაილი %1. მაქსიმალური დაშვება ატვირთვის ზომაა ______ MB."
+"Allows only this file types: %1","მხოლოდ ამ ფაილის ტიპს საშუალებას იძლევა: %1"
+"Message added","შეტყობინება დამატებულია"
+"Internal note added","შიდა შენიშვნა დასძინა"
+"Third party message added","მესამე მხარის გაგზავნა დასძინა"
+"Private third party message added","პირადი მესამე მხარის გაგზავნა დასძინა"
+"-- Please Select --","- გთხოვთ აირჩიოთ -"
+"Contact Tab","კონტაქტი Tab"
+"Contact Form","საკონტაქტო ფორმა"
+" at %1 (%2) - %3","______ (%2) - %3"
+"You don't have permissions to read this ticket. Please, contact your administrator.","ამ ბილეთის წაკითხვის უფლება არ გაქვთ. გთხოვთ, დაუკავშირდეთ ადმინისტრატორს."
+"Invalid Customer Email","არასწორი მომხმარებლის ელ"
+"not set","არ არის მითითებული"
+"Unknown time","უცნობი დრო"
+ago,წინ
+"from now",დღეიდან
+"1 sec ago","1 წამის წინ"
+"Open Ticket","ღია ბილეთი"
+"Open Tickets","ღია ბილეთები"
+"! Blocked file - ","! დაბლოკილი ფაილი -"
+Disabled,გამორთულია
+"AW Helpdesk","AW Helpdesk"
+"MW Helpdesk","MW დახმარება"
+"File System","ფაილების სისტემა"
+Database,"მონაცემთა ბაზა"
+Aqua,აკვა
+Grey,რუხი
+Navy,საზღვაო
+Silver,ვერცხლისფერი
+Black,შავი
+Green,მწვანე
+Olive,ზეთისხილი
+Teal,Teal
+Blue,ლურჯი
+Lime,ცაცხვი
+Purple,მეწამული
+Fuchsia,ფუჩია
+Maroon,Maroon
+Red,წითელი
+Orange,ნარინჯისფერი
+Yellow,ყვითელი
+Text,ტექსტი
+Date,თარიღი
+Checkbox,Checkbox
+"Drop-down list","ჩამოსაშლელი სია"
+"In minutes...","წუთებში ..."
+"In hours...","საათში ..."
+"In days...","დღის განმავლობაში ..."
+"In weeks...","კვირის განმავლობაში ..."
+"In months...","თვეში ..."
+Custom,საბაჟო
+"--Please Select--","- აირჩიეთ -"
+"New ticket created","ახალი ბილეთი შეიქმნა"
+Success,წარმატება
+Customer,დამკვეთი
+Staff,თანამშრომლები
+"Third party","მესამე ნაწილი"
+Closed,დახურულია
+"Opened 24hr","გაიხსნა 24 საათი"
+"Helpdesk Tickets","დახმარების ბილეთები"
+"Cannot delete ticket with id %1","Id%1- სთან ბილეთის წაშლა ვერ მოხერხდა"
+Edit,რედაქტირება
+"All Departments","ყველა დეპარტამენტი"
+Back,უკან
+"24 hrs x 7 days","24 სთ x 7 დღე"
+"Select working days/hours","აირჩიეთ სამუშაო დღეები / საათი"
+"Satisfaction survey","კმაყოფილების კვლევა"
+"to %1 (third party)","_____ (მესამე მხარე)"
+"%1 (third party)","%1 (მესამე მხარე)"
+"added %1 (%2)","დამატებულია %1 (%2)"
+"Ticket Summary","ბილეთის რეზიუმე"
+"Ticket ID","ბილეთის ID"
+Assignee,დავალება
+"Additional Info","დამატებითი ინფორმაცია"
+"Ticket History","ბილეთის ისტორია"
+"Done by",შესრულებულია
+Changes,ცვლილებები
+Name,სახელი
+"Attach files","ფაილების მიმაგრება"
+Submit,წარუდგინოს
+"Submit Ticket","ბილეთის გაგზავნა"
+"What is your question?","რა არის თქვენი კითხვა?"
+"We found the following topics that might be helpful:","ჩვენ აღმოვაჩინეთ შემდეგი თემები, რომლებიც შეიძლება სასარგებლო იყოს:"
+"None of these are helpful - get in touch","არცერთი მათგანი სასარგებლოა - დაუკავშირდით"
+"We have not found topics that can be helpful.","ჩვენ ვერ ვნახეთ ისეთი თემები, რომლებიც შეიძლება სასარგებლო იყოს."
+"Contact Information","საკონტაქტო ინფორმაცია"
+Comment,კომენტარი
+"We are open 24 x 7","ჩვენ ღია ვართ 24 x 7"
+"We are closed","დაკეტილები ვართ"
+"Timezone: %1","დროის სარტყელი: %1"
+"Please take a second to rate my reply...","გთხოვთ, გადაგიღოთ მეორე პასუხი ჩემი პასუხი ..."
+Great,დიდი
+Awesome,გასაოცარია
+"Fast, friendly, helpful, pleasant. Great job!","სწრაფი, მეგობრული, სასარგებლო, სასიამოვნო. ყოჩაღ!"
+"Just Okay","უბრალოდ Okay"
+"Fine, but definitely could have been better.","კარგი, მაგრამ ნამდვილად უკეთესი იქნებოდა."
+"Not good","არ არის კარგი"
+"Unfortunately, I wasn't happy with it at all.","სამწუხაროდ, მე საერთოდ არ ვიყავი კმაყოფილი."
+"Thank you for participating in our survey!","გმადლობთ, რომ მონაწილეობა მიიღოთ ჩვენს კვლევაში!"
+"If you would like to provide additional comments, please do so below:","თუ გსურთ დამატებითი კომენტარები მიანიჭოთ, გთხოვთ გააკეთოთ ქვემოთ:"
+Message,შეტყობინება
+"Submit Message","გაგზავნა გაგზავნა"
+"Thank you for your feedback!","გმადლობთ თქვენი გამოხმაურებისათვის!"
+Attachments,მიმაგრებული
+Order,დაალაგე
+"-- Select an Order --","- აირჩიეთ შეკვეთა -"
+"Create ticket","ბილეთის შექმნა"
+"You don't have open tickets","ღია ბილეთები არ გაქვთ"
+"Post a Reply","გამოხმაურების გამოქვეყნება"
+"Reopen Ticket","ბილეთის აღდგენა"
+"Close Ticket","დახურვა ბილეთი"
+History,ისტორია
+"Back to My Tickets","დაბრუნება ჩემი ბილეთები"
+"Help Desk MX","დახმარება სამაგიდე MX"
+"Contact Us",დაგვიკავშირდით
+Open,გახსნა
+Subject,თემა
+"Last Activity","ბოლო აქტივობა"
+"Request ID","მოთხოვნა ID"

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="wizkunde" translate="label" type="text" sortOrder="2000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Wizkunde WebSSO Configuration</label>
+            <tab>general</tab>
+            <resource>Wizkunde_WebSSO::server</resource>
+            <group id="websso" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled_frontend" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SSO Enabled For Magento Customer Login</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="frontend_server" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Server For Magento Customer Login</label>
+                    <source_model>Wizkunde\WebSSO\Model\Config\Source\Server</source_model>
+                </field>
+                <field id="enabled_backend" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SSO Enabled For Magento Backend User</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="backend_server" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Server For Magento Backend User Login</label>
+                    <source_model>Wizkunde\WebSSO\Model\Config\Source\Server</source_model>
+                </field>
+                <field id="cms_mapping_error" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CMS Page for failed login</label>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                </field>
+                <field id="email_welcome_send" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send customer registration welcome email on SSO login</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="firewall" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>WebSSO Frontend Firewall</label>
+                <depends>
+                    <field id="wizkunde/websso/enabled_frontend">1</field>
+                </depends>
+                <field id="forced" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Immediate login at Frontend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="wizkunde/websso/enabled_frontend">1</field>
+                    </depends>
+                </field>
+                <field id="cms_whitelist" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CMS Whitelist</label>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                    <depends>
+                        <field id="wizkunde/websso/enabled_frontend">1</field>
+                        <field id="wizkunde/firewall/forced">1</field>
+                    </depends>
+                </field>
+                <field id="ip_whitelist" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>IP Whitelist (comma separated)</label>
+                    <depends>
+                        <field id="wizkunde/websso/enabled_frontend">1</field>
+                        <field id="wizkunde/firewall/forced">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="logging" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>WebSSO Audit Log</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Audit Log Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="severity" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Audit Log Severity</label>
+                    <source_model>Wizkunde\WebSSO\Model\Config\Source\Severity</source_model>
+                    <depends>
+                        <field id="wizkunde/logging/enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

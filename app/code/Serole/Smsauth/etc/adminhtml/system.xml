@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="smsauth" sortOrder="200" translate="label">
+			<label>Second Level Authentication</label>
+		</tab>
+		<section id="smsauth" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Second Level Auth Settings</label>
+			<tab>smsauth</tab>
+			<resource>Serole_Sage::config_serole_smsauth</resource>
+			<group id="apidetails" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Second Level Auth Details</label>
+				<field id="smsauth_yesno" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="smsauth_cart_total_limit" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0" translate="label" type="text">
+					<label>Cart Total amount Limit</label>
+					<comment/>
+				</field>
+				<field id="smsauth_cart_qty_limit" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Cart Total Qty Limit</label>
+					<comment/>
+				</field>
+				<field id="smsauth_day_limit" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Days Limit</label>
+					<comment/>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

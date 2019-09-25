@@ -1,0 +1,42 @@
+<?php
+
+   namespace Serole\Racvportal\Controller\Cart;
+
+   class Createcreditmemo extends \Serole\Racvportal\Controller\Cart\Ajax{
+
+       public function execute(){
+
+           try {
+               $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/ajaxcart-create-creditmemo.log');
+               $logger = new \Zend\Log\Logger();
+               $logger->addWriter($writer);
+               if ($this->getRequest()->isAjax()) {
+                  $parms = $this->getRequest()->getParams();
+                  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                  $orderData = $objectManager->create(\Magento\Sales\Model\Order::class)->loadByIncrementId($parms['orderid']);
+                  $invoice = $orderData->getInvoiceCollection();
+                  $invoiceincrementid = '';
+                  foreach ($invoice as $invoiceItem){
+                      $invoiceincrementid = $invoiceItem->getIncrementId();
+                  }
+                   //$invoicedata = $this->invoiceObj->loadByIncrementId($invoiceincrementid);
+                   $invoicedata = $objectManager->create(\Magento\Sales\Model\Order\Invoice::class)->loadByIncrementId($invoiceincrementid);
+                   $creditmemo = $objectManager->create(\Magento\Sales\Model\Order\CreditmemoFactory::class)->createByOrder($orderData);
+                   $creditmemo->setInvoice($invoicedata );
+                   $objectManager->create(\Magento\Sales\Model\Service\CreditmemoService::class)->refund($creditmemo);
+                   $orderData->setState('closed');
+                   $orderData->setStatus('closed');
+                   $orderData->save();
+                   ob_start();
+                   $data = array();
+                   $data['status'] = 'success';
+                   echo json_encode($data);
+               }
+           }catch (\Exception $e){
+               $logger->info($e->getMessage());
+               $data['status'] = 'error';
+               $data['message'] = $e->getMessage();
+               echo json_encode($data);
+           }
+       }
+   }

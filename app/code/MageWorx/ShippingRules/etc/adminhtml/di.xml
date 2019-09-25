@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Carriers -->
+    <virtualType name="MageWorx\ShippingRules\Ui\DataProvider\Carrier\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="general" xsi:type="array">
+                    <item name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Carrier\Form\Modifier\General</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+                <item name="methods" xsi:type="array">
+                    <item name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Carrier\Form\Modifier\Methods</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Ui\DataProvider\Carrier\Form\CarrierDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">MageWorx\ShippingRules\Ui\DataProvider\Carrier\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <!-- Methods -->
+    <virtualType name="MageWorx\ShippingRules\Ui\DataProvider\Method\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="general" xsi:type="array">
+                    <item name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Method\Form\Modifier\General</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+                <item name="rates" xsi:type="array">
+                    <item name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Method\Form\Modifier\Rates</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Ui\DataProvider\Method\Form\MethodDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">MageWorx\ShippingRules\Ui\DataProvider\Method\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <!-- Rates -->
+    <virtualType name="MageWorx\ShippingRules\Ui\DataProvider\Rate\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="general" xsi:type="array">
+                    <item name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Rate\Form\Modifier\General</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Ui\DataProvider\Rate\Form\RateDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">MageWorx\ShippingRules\Ui\DataProvider\Rate\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <!-- Regions -->
+    <virtualType name="MageWorx\ShippingRules\Ui\DataProvider\Region\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="general" xsi:type="array">
+                    <item name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\Region\Form\Modifier\General</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Ui\DataProvider\Region\Form\RegionDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">MageWorx\ShippingRules\Ui\DataProvider\Region\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <!-- Pop-up Zones -->
+    <virtualType name="MageWorx\ShippingRules\Ui\DataProvider\ExtendedZone\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="general" xsi:type="array">
+                    <item name="class" xsi:type="string">MageWorx\ShippingRules\Ui\DataProvider\ExtendedZone\Form\Modifier\General</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MageWorx\ShippingRules\Ui\DataProvider\ExtendedZone\Form\ExtendedZoneDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">MageWorx\ShippingRules\Ui\DataProvider\ExtendedZone\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+</config>

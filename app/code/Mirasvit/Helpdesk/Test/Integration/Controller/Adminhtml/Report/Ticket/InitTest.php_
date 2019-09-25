@@ -1,0 +1,31 @@
+<?php
+
+namespace Mirasvit\Helpdesk\Controller\Adminhtml\Report\Ticket;
+
+/**
+ * @magentoAppArea adminhtml
+ */
+class InitTest extends \Magento\TestFramework\TestCase\AbstractBackendController
+{
+    /**
+     * setUp.
+     */
+    public function setUp()
+    {
+        $this->resource = 'Mirasvit_Helpdesk::helpdesk_ticket';
+        $this->uri = 'backend/helpdesk/ticket/init';
+        parent::setUp();
+    }
+
+    /**
+     * @covers  Mirasvit\Helpdesk\Controller\Adminhtml\Report\Ticket\Init::execute
+     */
+    public function testInitAction()
+    {
+        $this->dispatch('backend/helpdesk/ticket/init');
+        $body = $this->getResponse()->getBody();
+        $this->assertNotEmpty($body);
+        $this->assertNotEquals('noroute', $this->getRequest()->getControllerName());
+        $this->assertFalse($this->getResponse()->isRedirect());
+    }
+}

@@ -1,0 +1,24 @@
+<!--Use 'stepCode' as id attribute-->
+<li data-bind="fadeVisible: isVisible, attr: { id: stepCode }">
+    <div class="step-title" data-bind="i18n: stepTitle" data-role="title"></div>
+    <div id="checkout-step-title" class="step-content field _required "  data-role="content">
+        <form id="deliveryemailform" data-bind="submit: navigateToNextStep" novalidate="novalidate"><div class="space" style="margin: 3px 0 0 0;"></div>
+            <label class="label">Delivery Email<span style="color: #e02b27;font-size: 1.2rem;margin: 0 0 0 5px;">*</span>(eVoucher will be sent to this address)</label>
+            <div class="control">
+                <input type="email" name="deliveryemail" id="deliveryemail"></input>
+            </div>
+            <br/>
+            <!--<label class="label">Confirm Delivery Email</label>
+            <div class="control">
+                <input type="email" name="confirmdeliveryemail" id="confirmdeliveryemail"></input>
+            </div>-->
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span><!-- ko i18n: 'Next'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>

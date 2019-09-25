@@ -1,0 +1,102 @@
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //  Newsletter subscription
+    .block.newsletter {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        .form.subscribe {
+            display: table;
+            width: 100%;
+        }
+
+        .fieldset {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .field {
+            margin: 0;
+
+            .control {
+                //  New sizes
+                .lib-icon-font(
+                @icon-envelope,
+                @_icon-font-size: @interface-element__height__base,
+                @_icon-font-line-height: @interface-element__height__base,
+                @_icon-font-color: @form-element-input-placeholder__color
+                );
+                display: block;
+
+                &:before {
+                    position: absolute;
+                }
+            }
+        }
+
+        input {
+            //  New sizes
+            padding-left: @interface-element__height__base;
+            height: @interface-element__height__base;
+        }
+
+        .title {
+            display: none;
+        }
+
+        .label {
+            &:extend(.abs-visually-hidden all);
+        }
+
+        .actions {
+            display: table-cell;
+            vertical-align: top;
+            width: 1%;
+        }
+
+        .action.subscribe {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            margin-left: -1px;
+            //  New:
+            line-height: @interface-element__height__base;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        // width: 32%;
+        width: 300px;
+        margin: 0;
+
+        .field {
+            margin-right: 5px;
+
+            .control {
+                width: 100%;
+            }
+        }
+
+        // .action.subscribe {
+        //     border-radius: 3px;
+        // }
+    }
+}

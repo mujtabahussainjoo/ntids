@@ -1,0 +1,81 @@
+<?php
+/**
+ * @var \Infortis\Base\Block\Html\Header $block
+ */
+?>
+<?php
+    // $theme = $block->getHelperTheme();
+    $helperHeader = $block->getHelperHeader();
+
+    // Logo
+    $logoHtml = $block->getChildHtml('site-logo');
+
+    // Get grid classes for header sections
+    $grid = $helperHeader->getGridClasses();
+
+    // Get positions of header blocks
+    $position = $helperHeader->getPositions();
+
+    // Add logo to position
+    $html = array();
+    $html[$position['logo']][] = '<div class="logo-wrapper">' . $logoHtml . '</div>';
+?>
+<div id="header-container" class="header-container header-container-micro header-regular page-header">
+    <div id="top" class="header-container2">
+        <div class="header-container3">
+
+            <div class="header-primary-container">
+                <div class="header-primary header container">
+                    <div class="inner-container">
+
+                        <?php
+                        //Important: do not add any additional blocks directly inside the "hp-blocks-holder" div.
+                        //Additional blocks, if needed, can be added inside columns (left, central, righ).
+                        ?>
+                        <div class="hp-blocks-holder">
+
+                            <?php if (isset($grid['primLeftCol'])): ?>
+                                <!-- Left column -->
+                                <div class="hp-block left-column <?php echo $grid['primLeftCol']; ?>">
+                                    <?php echo $this->getChildHtml('container_header_primary_left_1'); ?>
+                                    <?php if (isset($html['primLeftCol'])): ?>
+                                        <?php foreach ($html['primLeftCol'] as $element): ?>
+                                            <div class="item"><?php echo $element; ?></div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div> <!-- end: left column -->
+                            <?php endif; ?>
+
+                            <?php if (isset($grid['primCentralCol'])): ?>
+                                <!-- Central column -->
+                                <div class="hp-block central-column <?php echo $grid['primCentralCol']; ?>">
+                                    <?php echo $this->getChildHtml('container_header_primary_central_1'); ?>
+                                    <?php if (isset($html['primCentralCol'])): ?>
+                                        <?php foreach ($html['primCentralCol'] as $element): ?>
+                                            <div class="item"><?php echo $element; ?></div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div> <!-- end: central column -->
+                            <?php endif; ?>
+
+                            <?php if (isset($grid['primRightCol'])): ?>
+                                <!-- Right column -->
+                                <div class="hp-block right-column <?php echo $grid['primRightCol']; ?>">
+                                    <?php echo $this->getChildHtml('container_header_primary_right_1'); ?>
+                                    <?php if (isset($html['primRightCol'])): ?>
+                                        <?php foreach ($html['primRightCol'] as $element): ?>
+                                            <div class="item"><?php echo $element; ?></div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div> <!-- end: right column -->
+                            <?php endif; ?>
+                            
+                        </div> <!-- end: hp-blocks-holder -->
+
+                    </div> <!-- end: inner-container -->
+                </div> <!-- end: header-primary -->
+            </div> <!-- end: header-primary-container -->
+
+        </div> <!-- end: header-container3 -->
+    </div> <!-- end: header-container2 -->
+</div> <!-- end: header-container -->

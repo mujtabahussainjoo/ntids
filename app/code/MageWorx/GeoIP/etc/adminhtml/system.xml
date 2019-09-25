@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mageworx" sortOrder="2001">
+            <label>MageWorx</label>
+        </tab>
+        <section id="mageworx_geoip" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>GeoIP Extensions</label>
+            <tab>mageworx</tab>
+            <resource>MageWorx_GeoIP::config_geoip</resource>
+            <group id="geoip_database" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>GeoIP DataBase</label>
+                <field id="database_type" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Database Type]]></label>
+                    <source_model>MageWorx\GeoIP\Model\Source\DbType</source_model>
+                </field>
+                <field id="database_update" translate="label comment" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Update Current Database]]></label>
+                    <frontend_model>MageWorx\GeoIP\Block\Adminhtml\System\Config\Update</frontend_model>
+                    <comment><![CDATA[Remember that http://maxmind.com has limits on downloads of GeoIP database per day]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

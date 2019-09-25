@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Nwdthemes_Base::base" title="NWDthemes Extensions">
+                    <resource id="Nwdthemes_Revslider::revslider" title="Slider Revolution" sortOrder="100">
+                        <resource id="Nwdthemes_Revslider::overview" title="Slider Overview" sortOrder="100" />
+                        <resource id="Nwdthemes_Revslider::navigation" title="Navigation Editor" sortOrder="110" />
+                        <resource id="Nwdthemes_Revslider::addon" title="Add-Ons" sortOrder="120" />
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Nwdthemes_Revslider::config" title="Slider Revolution" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

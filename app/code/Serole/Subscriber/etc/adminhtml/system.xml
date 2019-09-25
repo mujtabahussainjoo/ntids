@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="serole" sortOrder="999" translate="label">
+			<label>Serole</label>
+		</tab>
+		<section id="subscriber" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Subscriber</label>
+			<tab>serole</tab>
+			<resource>Serole_Subscriber::config_serole_subscriber</resource>
+			<group id="subscriber" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Subscriber</label>
+				<field id="path" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Path Of File</label>
+				</field>
+				<field id="mailto" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Mail To</label>
+				</field>
+				<field id="mailfrom" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Mail From</label>
+				</field>	
+				<field id="host" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Host</label>
+				</field>
+				<field id="username" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>User Name</label>
+					<comment/>
+				</field>
+				<field id="password" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Password</label>
+					<comment/>
+				</field>
+				<field id="port" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Port</label>
+					<comment/>
+				</field>
+				<field id="status" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Status</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

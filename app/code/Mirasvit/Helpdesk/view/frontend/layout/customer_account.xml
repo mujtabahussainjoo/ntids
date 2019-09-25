@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Mirasvit\Helpdesk\Block\Account\Link" ifconfig="helpdesk/frontend/is_active" name="customer-account-navigation-helpdesk-link">
+                <arguments>
+                    <argument name="path" xsi:type="string">helpdesk</argument>
+                    <argument name="label" xsi:type="string">Help Desk</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

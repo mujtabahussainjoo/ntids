@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Wizkunde_WebSSO::wizkunde" title="Wizkunde" module="Wizkunde_WebSSO" sortOrder="10" action="sso/server" resource="Wizkunde_WebSSO::server"/>
+        <add id="Wizkunde_WebSSO::server" title="Servers" module="Wizkunde_WebSSO" parent="Wizkunde_WebSSO::wizkunde" sortOrder="10" action="sso/server" resource="Wizkunde_WebSSO::server"/>
+        <add id="Wizkunde_WebSSO::log" title="Audit Log" module="Wizkunde_WebSSO" parent="Wizkunde_WebSSO::wizkunde" sortOrder="10" action="sso/log" resource="Wizkunde_WebSSO::server"/>
+    </menu>
+</config>

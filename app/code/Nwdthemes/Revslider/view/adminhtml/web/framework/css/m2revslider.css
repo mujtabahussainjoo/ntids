@@ -1,0 +1,171 @@
+#anchor-content { background: #ddd; color: #444; font-family: "Open Sans",sans-serif; padding: 10px 20px; }
+.wrapper-popup #anchor-content { background: none; color: #333; font-family: Arial,sans-serif; }
+.disabled_control { cursor: default !important; }
+#form_slider_main td input.code { max-width: 400px; }
+.nav-bar li, .nav-bar dd {margin-bottom: 0;}
+.nav-bar { font-size: 12px; }
+p.super {margin-top: 0;}
+.header-right p, .header-right input, .footer, .footer p, .footer select {font-size: 0.95em;}
+.adminhtml-nwdrevslider-slide .ui-autocomplete {background-image: none;max-height: 350px;overflow-y: auto;overflow-x: hidden;}
+* html .adminhtml-nwdrevslider-slide .ui-autocomplete { height: 350px;}
+.preview_slider_store_select { float:  left; margin: 7px 0 0 14px; }
+form.form_layers[name="form_layers"] { display: block; }
+.tp-plugin-version {padding-bottom: 10px;}
+#button_general_settings { margin-right: 10px;}
+.wrapper .wrap {margin-left: 0; margin-right: 0;}
+.wrapper #viewWrapper .rs-mini-toolbar.sticky { right: 0; }
+#slide-general-settings-content select#store_id { min-height: 126px; }
+.rs_breadcrumbs { overflow: hidden; }
+#css-template-handling-dd, #animin-template-handling-dd, #animout-template-handling-dd { z-index: 2 !important; }
+form.form_layers[name="form_layers"] { z-index: 97 !important; }
+#top-toolbar-wrapper { z-index: 96 !important; }
+#hor-css-linear { z-index: 2 !important; }
+#verlinie { z-index: 97 !important; }
+#hor-css-linear-cover-right, #hor-css-linear-cover-left { z-index: 9 !important; }
+.wunderadmin .wp-core-ui select { display: inline; line-height: inherit; padding: inherit; height: inherit }
+.slide-main-settings-form label:not(.wa_checkbox_wrapper) { min-width: 200px; }
+input.slidetitleinput {vertical-align: inherit;}
+.notification-global .label {display: inline; min-width: inherit; width: inherit; }
+#tp-thelistoffonts .ui-menu-item a,
+#tp-thelistofclasses .ui-menu-item a { text-decoration: none; }
+.tls-title-wrapper { white-space: nowrap !important; }
+.rs-layer-editor-view .menu-wrapper {z-index: 5700;}
+#viewWrapper .title_line {box-sizing: initial;}
+#viewWrapper .wrap {margin-left: 0;margin-right: 0;}
+.page-content .tp-plugin-version {padding-right: 0;}
+
+.tpdialogs.ui-dialog, .rs-open-premium-benefits-dialog-container.ui-dialog {
+    top: inherit;
+    left: inherit;
+    width: inherit;
+    min-width: initial;
+    opacity: inherit;
+    transition: inherit;
+    visibility: inherit;
+    box-sizing: inherit;
+}
+.tpdialogs.ui-dialog:not(.fullscreen-dialog-window), .rs-open-premium-benefits-dialog-container.ui-dialog {
+    transform: scale(1);
+}
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.tp-slider-new-dialog-title {
+    box-sizing: initial;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.tp-slider-new-dialog-title .ui-dialog-titlebar-close {
+    background: 0 0;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #666;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+}
+.tp-slider-new-dialog-title .ui-dialog-titlebar-close,
+.tp-slider-new-dialog-title .ui-button.ui-widget.ui-dialog-titlebar-close,
+.tp-slider-new-dialog-title .ui-dialog-titlebar-close:before,
+.tp-slider-new-dialog-title .ui-button.ui-widget.ui-dialog-titlebar-close:before {
+    width: 55px !important;
+    height: 55px !important;
+    line-height: 55px !important;
+    font-size: 20px !important;
+    font-weight: inherit !important;
+    color: #fff;
+    vertical-align: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.objectlibrary_dialog .ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.tp-slider-new-dialog-title .ui-button.ui-widget.ui-dialog-titlebar-close:before {
+    font-size: 20px !important;
+    font-weight: 900 !important;
+    line-height: 70px !important;
+}
+.ui-dialog.rs-open-premium-benefits-dialog-container .ui-button.ui-dialog-titlebar-close {height:22px; width:20px; background:url(../../admin/assets/images/oops/close_cross_x.png); top:30px; right:30px; }
+.ui-dialog.rs-open-premium-benefits-dialog-container .ui-button.ui-dialog-titlebar-close:hover { opacity: 0.75 }
+.tpdialogs.ui-dialog .ui-button {
+    background: inherit;
+    text-shadow: inherit;
+    font: inherit;
+    box-shadow: inherit;
+    padding: 0 10px 1px 10px;
+    white-space: inherit;
+    display: inline-block;
+    letter-spacing: inherit;
+    height: inherit;
+    border:1px solid #ccc;
+    -webkit-appearance: none;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #555;
+    float: none;
+    min-width: initial;
+}
+.tpdialogs.ui-dialog .ui-button:hover {
+    background: #fafafa;
+    border-color: #999;
+    color: #222;
+}
+.tpdialogs.ui-dialog .ui-button.ui-dialog-titlebar-close:hover {
+    background: inherit;
+    border-color: inherit;
+}
+.tpdialogs.ui-dialog .ui-button.ui-dialog-titlebar-close:hover:before {
+    color: #adadad;
+}
+
+.tpdialogs.ui-dialog .ui-dialog-buttonpane,
+.tpdialogs.ui-dialog .ui-dialog-content {
+    padding: 16px;
+}
+#viewWrapper #mastertimer-wrapper {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.setting_box h3 {
+    box-sizing: initial;
+}
+.nwdthemes-revslider-revslider-preview #anchor-content,
+.nwdthemes_revslider-revslider-preview #anchor-content {
+    padding: 0;
+    display: inline;
+}
+.nwdthemes-revslider-revslider-preview .page-wrapper,
+.nwdthemes_revslider-revslider-preview .page-wrapper {
+    margin: 0;
+    display: inline;
+    width: 100%;
+}
+body.nwdthemes-revslider-revslider-preview,
+body.nwdthemes_revslider-revslider-preview {
+    min-width: initial;
+    display: inline;
+}
+.timeline .tl-fullanim {
+    box-sizing: initial;
+}
+.edit_slide_wrapper .timeline {
+    margin-top: 0;
+}
+.master-rightcell {
+    box-sizing: initial;
+}
+
+.rs-layer-editor-view .modal-slide { z-index:5900; }
+.rs-layer-editor-view .modal-popup { z-index:5901; }
+
+
+.tpdialogs_z { z-index: 100001 !important; }
+.tpdialogs_z + .ui-widget-overlay {
+    z-index: 100000 !important;
+}

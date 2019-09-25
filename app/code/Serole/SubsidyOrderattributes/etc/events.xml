@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_place_after">
+        <observer name="subsidy_orderplace_after" instance="Serole\SubsidyOrderattributes\Observer\Order" />
+    </event>
+</config>

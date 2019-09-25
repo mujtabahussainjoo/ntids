@@ -1,0 +1,35 @@
+<script>
+/**
+ * Created by:  Milan Simek
+ * Company:     Plugin Company
+ *
+ * LICENSE: http://plugin.company/docs/magento-extensions/magento-extension-license-agreement
+ *
+ * YOU WILL ALSO FIND A PDF COPY OF THE LICENSE IN THE DOWNLOADED ZIP FILE
+ *
+ * FOR QUESTIONS AND SUPPORT
+ * PLEASE DON'T HESITATE TO CONTACT US AT:
+ *
+ * SUPPORT@PLUGIN.COMPANY
+ */
+    require([
+        'jquery',
+        "uiRegistry",
+        'Magento_Ui/js/modal/alert',
+        'PluginCompany_CouponImport/js/couponimporter',
+        'prototype'
+    ], function(jQuery, registry, alert, couponImporter) {
+        
+        window.importCoupons = function(idPrefix, fieldSetId, importUrl, grid) {
+            couponImporter
+                .setWrapperEmId(idPrefix + fieldSetId)
+                .setImportUrl(importUrl)
+                .setGridJsObject(grid)
+                .setFileEmId(idPrefix + 'coupon_upload')
+                .setCouponTextAreaEmId(idPrefix + 'pasted_coupons')
+            ;
+            couponImporter.import();
+            return;
+        }
+    });
+</script>

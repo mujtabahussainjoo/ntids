@@ -1,0 +1,51 @@
+<?php
+/** @var Mirasvit\Helpdesk\Block\Contact\Form $block */
+$config = $block->getConfig();
+$customer = $block->getCustomer();
+if (!$config->getContactFormIsActive()) {
+    return;
+}
+?>
+<div id="hdmx__contact-button" class="hdmx__contact-button hdmx__contact-button-<?= $config->getPosition() ?>"
+     style="background-color: <?= $config->getColor() ?>;">
+    <span><?= $config->getTitle() ?></span>
+</div>
+
+<?= $this->getChildHtml('form') ?>
+
+<div class="hdmx__contact-overlay" id="helpdesk-contact-form-overlay" style="display:none;">&nbsp;</div>
+<script type="text/javascript">
+    //<![CDATA[
+    require([
+        'jquery',
+    ], function ($) {
+        var $popup = $('#hdmx__contact-popup');
+        $('#hdmx__contact-button').bind('click', function () {
+            $popup.show();
+            center($popup);
+
+            $('#helpdesk-contact-form-overlay').show();
+        });
+
+        $('#hdmx__contact-popup .close').bind('click', function () {
+            $popup.hide();
+            $('#helpdesk-contact-form-overlay').hide();
+        });
+
+        $popup.one("DOMSubtreeModified", function() {
+            center($popup);
+        });
+
+        $(window).bind('resize', function () {
+            center($popup);
+        });
+    });
+
+    function center($el) {
+        var top = (jQuery(window).height() - $el.outerHeight()) / 2;
+        $el.css({
+            top: (top > 0 ? top : 0) + 'px'
+        });
+    }
+    //]]>
+</script>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Serole\MemberList\Block\Adminhtml\Memberlist" name="memberlist_memberlist_listing"/>
+        </referenceContainer>
+        <referenceContainer name="admin.memberlist.memberlist.grid"></referenceContainer>
+    </body>
+</page>

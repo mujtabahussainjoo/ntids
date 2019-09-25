@@ -1,0 +1,157 @@
+<div class='wrap'>
+    <div class="clear_both"></div>
+    <div class="title_line" style="margin-bottom:10px">
+        <?php
+        $icon_general = '<div class="icon32" id="icon-options-general"></div>';
+        echo $framework->apply_filters( 'rev_icon_general_filter', $icon_general );
+        ?>
+        <a class="button-primary revgreen button_save_general_settings float_right mtop_10 mleft_10"><?php echo __('Save Settings'); ?></a>
+    </div>
+
+    <div class="clear_both"></div>
+
+    <div id="rs-global-settings-dialog-wrap">
+        <form name="form_general_settings" id="form_general_settings">
+            <script type="text/javascript">
+                g_settingsObj['form_general_settings'] = {};
+
+                require(['jquery', 'revSettings', 'admin'], function(jQuery, RevSliderSettings) {
+                    jQuery(document).ready(function () {
+
+                        RevSliderSettings.createModernOnOff();
+
+                        jQuery('.tp-moderncheckbox').each(function () {
+                            RevSliderSettings.onoffStatus(jQuery(this));
+                        });
+                    });
+                });
+            </script>
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Include RevSlider libraries globally:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <input type="checkbox" id="includes_globally_1" name="includes_globally" class="tp-moderncheckbox" data-unchecked="off" <?php $framework->checked($includes_globally, "on");?>>
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("ON - Add CSS and JS Files to all pages. </br>Off - CSS and JS Files will be only loaded on pages specified below and on pages with 'nwdthemes_revslider_default' layout update handle added."); ?></i>
+                </div>
+            </div>
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Pages to include RevSlider libraries:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <input type="text" class="regular-text" id="pages_for_includes" name="pages_for_includes" value="<?php echo $pages_for_includes; ?>">
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("Specify the handles or url keys for pages on the front end where slider includes will be included to. Example: cms_page_view,catalog_product_view,about-us"); ?></i>
+                </div>
+            </div>
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Enable Markup Export option:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <input type="checkbox" id="show_dev_export_1" name="show_dev_export" class="tp-moderncheckbox" data-unchecked="off" <?php $framework->checked($show_dev_export, 'on'); ?>>
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("This will enable the option to export the Slider Markups to copy/paste it directly into websites."); ?></i>
+                </div>
+            </div>
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Font Loading URL:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <input id="change_font_loading" name="change_font_loading" type="text" class="regular-text" value="<?php echo $change_font_loading; ?>">
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("Insert something in it and it will be used instead of https://fonts.googleapis.com/css?family= (For example: http://fonts.useso.com/css?family= which will also work for chinese visitors)"); ?></i>
+                </div>
+            </div>
+
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Default Settings for Advanced Responsive Grid Sizes:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <div>
+                        <?php echo __('Desktop Grid Width'); ?>
+                        <input id="width" name="width" type="text" class="textbox-small" value="<?php echo $width; ?>">
+                    </div>
+                    <div>
+                        <?php echo __('Notebook Grid Width'); ?>
+                        <input id="width_notebook" name="width_notebook" type="text" class="textbox-small" value="<?php echo $width_notebook; ?>">
+                    </div>
+                    <div>
+                        <?php echo __('Tablet Grid Width'); ?>
+                        <input name="width_tablet" type="text" class="textbox-small" value="<?php echo $width_tablet; ?>">
+                    </div>
+                    <div>
+                        <?php echo __('Mobile Grid Width'); ?>
+                        <input name="width_mobile" type="text" class="textbox-small" value="<?php echo $width_mobile; ?>">
+                    </div>
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("Define the default Grid Sizes for devices: Desktop, Tablet and Mobile"); ?></i>
+                </div>
+            </div>
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Enable Blank Page Creation for Slider Packages:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <input type="checkbox" id="" name="pack_page_creation" class="tp-moderncheckbox" data-unchecked="off" <?php $framework->checked($pack_page_creation, 'on'); ?>>
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("Enable option to automatically create a Blank Page if a Slider Pack is installed."); ?></i>
+                </div>
+            </div>
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Enable Blank Page Creation for Single Sliders:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <input type="checkbox" id="" value="on" name="single_page_creation" class="tp-moderncheckbox" data-unchecked="off" <?php $framework->checked($single_page_creation, 'on'); ?>>
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("Enable option to automatically create a Blank Page if a Single Slider is installed."); ?></i>
+                </div>
+            </div>
+
+            <div class="rs-global-setting">
+                <div class="rs-gs-tc">
+                    <label><?php echo __("Enable Google Font Download:"); ?></label>
+                </div>
+                <div class="rs-gs-tc">
+                    <select id="load_google_fonts" name="load_google_fonts">
+                        <option <?php $framework->selected($load_google_fonts, 'off'); ?> value="off"><?php echo __('Load from Google'); ?></option>
+                        <option <?php $framework->selected($load_google_fonts, 'preload'); ?> value="preload"><?php echo __('Preload from Google'); ?></option>
+                        <option <?php $framework->selected($load_google_fonts, 'disable'); ?> value="disable"><?php echo __('Disable, Load on your own'); ?></option>
+                    </select>
+                    <p><a id="trigger_font_deletion" class="button-primary revblue" original-title="" href="javascript:void(0);"><?php echo __('Update Preload Fonts'); ?></a></p>
+                </div>
+                <div class="rs-gs-tc">
+                    <i style=""><?php echo __("Set this option on how to handle Google Fonts:"); ?></i>
+                    <i style=""><?php echo __("- Load from Google: will include fonts from Google Server."); ?></i>
+                    <i style=""><?php echo __("- Preload from Google: will download used fonts from Google Server and store them on your installation."); ?></i>
+                    <i style=""><?php echo __("- Disable: No fonts will be loaded, please include them yourself."); ?></i>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div style="margin: 10px 0;">
+        <a class="button-primary revgreen button_save_general_settings" original-title=""><?php echo __('Save Settings'); ?></a>
+    </div>
+    <span id="loader_general_settings" class="loader_round mleft_10" style="display: none;"></span>
+
+</div>

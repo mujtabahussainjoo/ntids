@@ -1,0 +1,51 @@
+body.helpdesk-ticket-index {
+    .admin__data-grid-wrap {
+        overflow: visible;
+    }
+}
+
+.mst-helpdesk__ticket-listing-columns-subject {
+    position: relative;
+
+    .quick-view {
+        background: #fff;
+        box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.35);
+        padding: 2rem 0;
+        position: absolute;
+        left: 3rem;
+        z-index: 1000000;
+        width: 60rem;
+        border-radius: .2rem;
+
+        &.top {
+            bottom: 100%;
+        }
+
+        &.bottom {
+            top: 100%;
+        }
+
+        .subject {
+            font-weight: bold;
+            display: block;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+
+            .status {
+                margin-right: 1rem;
+            }
+        }
+
+        .hdmx__message {
+            margin: 0 1rem 0 1.7rem;
+        }
+
+        hr {
+            border: none;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+            height: .5rem;
+            margin: 2rem 0;
+        }
+    }
+}
+
